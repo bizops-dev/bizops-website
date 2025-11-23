@@ -1,0 +1,50 @@
+
+import React from 'react';
+
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  hoverEffect?: boolean;
+  variant?: 'default' | 'outline' | 'flat' | 'dark';
+  onClick?: () => void;
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+}
+
+const Card: React.FC<CardProps> = ({ 
+  children, 
+  className = "", 
+  hoverEffect = false,
+  variant = 'default',
+  onClick,
+  padding = 'md'
+}) => {
+  
+  const baseStyles = "rounded-2xl transition-all duration-300 relative overflow-hidden group";
+  
+  const variants = {
+    default: "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm",
+    outline: "bg-transparent border border-slate-200 dark:border-slate-700",
+    flat: "bg-slate-50 dark:bg-slate-800/50 border-none",
+    dark: "bg-slate-900 text-white border border-slate-800"
+  };
+
+  const paddings = {
+    none: "p-0",
+    sm: "p-4",
+    md: "p-6 md:p-8",
+    lg: "p-8 md:p-10"
+  };
+
+  const hoverStyles = hoverEffect ? "hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 dark:hover:border-primary-700 hover:ring-2 hover:ring-primary-500/10 cursor-pointer" : "";
+
+  return (
+    <div 
+      className={`${baseStyles} ${variants[variant]} ${paddings[padding]} ${hoverStyles} ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Card;

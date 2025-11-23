@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core -->
+  <url><loc>https://bizops.id/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://bizops.id/login</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/demo</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/tour</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <!-- Platform -->
+  <url><loc>https://bizops.id/platform</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/hr</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/finance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/operations</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/sales</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/supply-chain</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/governance</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bizops.id/platform/automation-ai</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/platform/multi-company</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/platform/portals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/platform/analytics</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/capabilities/mobile</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/capabilities/collaboration</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/capabilities/self-hosted</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <!-- Solutions -->
+  <url><loc>https://bizops.id/solutions</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/construction</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/retail</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/outsourcing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/consulting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/manufacturing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/solutions/enterprise</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/role/ceo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/role/finance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/role/hr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/role/it</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/role/ops</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  
+  <!-- Services -->
+  <url><loc>https://bizops.id/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/services/implementation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/services/custom-dev</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/services/training</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/services/support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <!-- Commercial -->
+  <url><loc>https://bizops.id/pricing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  
+  <!-- Resources -->
+  <url><loc>https://bizops.id/blog</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/events</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/customers</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/roadmap</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/download</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/integrations</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/glossary</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bizops.id/status</loc><changefreq>always</changefreq><priority>0.5</priority></url>
+  
+  <!-- Tools -->
+  <url><loc>https://bizops.id/resources/roi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/resources/migration</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/resources/compare</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/docs</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/docs/sysreq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  
+  <!-- Company -->
+  <url><loc>https://bizops.id/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/why-bizops</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/careers</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bizops.id/trust</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/media-kit</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://bizops.id/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <!-- Partners -->
+  <url><loc>https://bizops.id/partners</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/partners/apply</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bizops.id/partners/startup</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  
+  <!-- Legal -->
+  <url><loc>https://bizops.id/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/legal/sla</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/legal/dpa</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/legal/ai-ethics</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/security/report</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bizops.id/sitemap</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+</urlset>

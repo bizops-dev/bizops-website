@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="description" content="BizOps - The Adaptive Business Operating System. Solusi ERP Indonesia terintegrasi untuk HRIS, Finance, Accounting, dan Operasional Supply Chain.">
+    <meta name="keywords" content="ERP Indonesia, HRIS, Accounting Software, Aplikasi Bisnis, Payroll System, BizOps">
+    <meta name="author" content="PT Divistant Teknologi Indonesia">
+    
+    <!-- PWA & Mobile Readiness -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BizOps">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=180&h=180&fit=crop">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Security: Content Security Policy (CSP) - Relaxed for Dev/Preview Compatibility -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    
+    <title>BizOps | The Adaptive Business Operating System</title>
+    
+    <!-- Performance Optimizations: DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://aistudiocdn.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://aistudiocdn.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS: Prevent Layout Shift (CLS) and Flash of Unstyled Content -->
+    <style>
+      body { margin: 0; background-color: #ffffff; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+      html.dark body { background-color: #020617; }
+      #root { min-height: 100vh; display: flex; flex-direction: column; }
+      /* Ensure hero skeleton has height before hydration */
+      .min-h-screen { min-height: 100vh; }
+      
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#EFF6FF',
+                500: '#3B82F6',
+                600: '#2563EB',
+                900: '#0F172A',
+                950: '#020617',
+              },
+              accent: {
+                500: '#F59E0B',
+              },
+              slate: {
+                850: '#1e293b', // Custom for dark mode cards
+                900: '#0f172a', // deep
+                950: '#020617', // deepest
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@18.3.1",
+    "react/": "https://aistudiocdn.com/react@18.3.1/",
+    "react-dom": "https://aistudiocdn.com/react-dom@18.3.1?deps=react@18.3.1",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@18.3.1/client?deps=react@18.3.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@6.26.1?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@0.439.0?deps=react@18.3.1",
+    "@sentry/react": "https://aistudiocdn.com/@sentry/react@8.26.0?deps=react@18.3.1",
+    "@opentelemetry/api": "https://esm.sh/@opentelemetry/api@1.7.0",
+    "@opentelemetry/sdk-trace-web": "https://esm.sh/@opentelemetry/sdk-trace-web@1.18.1",
+    "@opentelemetry/sdk-trace-base": "https://esm.sh/@opentelemetry/sdk-trace-base@1.18.1",
+    "@opentelemetry/core": "https://esm.sh/@opentelemetry/core@1.18.1",
+    "@opentelemetry/resources": "https://esm.sh/@opentelemetry/resources@1.18.1",
+    "@opentelemetry/semantic-conventions": "https://esm.sh/@opentelemetry/semantic-conventions@1.18.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- Chatwoot Widget -->
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://chat.divistant.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'xUJjrxXkJywFrTx87bnJmKWq',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

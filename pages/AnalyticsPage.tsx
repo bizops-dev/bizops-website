@@ -1,0 +1,73 @@
+
+import React from 'react';
+import Button from '../components/Button';
+import { BarChart2, PieChart, FileBarChart, Calendar, Filter } from 'lucide-react';
+import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
+
+const AnalyticsPage: React.FC = () => {
+  return (
+    <div className="flex flex-col">
+      <SEO title="Real-time Dashboard & Custom Report Builder | BizOps" description="Buat laporan bisnis kustom tanpa coding. Analisis data penjualan, stok, dan keuangan dengan fitur Drag-and-Drop Report Builder yang powerful." />
+
+      {/* Hero */}
+      <section className="bg-slate-900 py-24 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
+             <BarChart2 className="w-8 h-8 text-primary-400" />
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Laporan Anda, Cara Anda.<br/>Tanpa Coding.
+          </h1>
+          <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Setiap bisnis punya cara unik melihat data. Jangan terpaku pada laporan standar yang kaku. Dengan <em>Report Builder</em>, Anda menjadi analis data bagi perusahaan Anda sendiri.
+          </p>
+          <Link to="/demo">
+             <Button size="lg" variant="white">Coba Report Builder</Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Key Capabilities */}
+      <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               
+               <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-6">
+                     <PieChart className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Real-time Dashboard</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                     Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.
+                  </p>
+               </div>
+
+               <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center mb-6">
+                     <Filter className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Drag-and-Drop Report Builder</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                     Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.
+                  </p>
+               </div>
+
+               <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center mb-6">
+                     <Calendar className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Auto-Schedule Email</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                     Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.
+                  </p>
+               </div>
+
+            </div>
+         </div>
+      </section>
+    </div>
+  );
+};
+
+export default AnalyticsPage;
