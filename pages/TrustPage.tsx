@@ -162,7 +162,7 @@ const TrustPage: React.FC = () => {
                   <ul className="space-y-4 text-sm text-slate-600">
                      <li className="flex gap-3">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
-                        <span><strong>Redundansi Geografis:</strong> Database direplikasi secara real-time ke Availability Zone sekunder (misal: Jakarta -> Singapore).</span>
+                        <span><strong>Redundansi Geografis:</strong> Database direplikasi secara real-time ke Availability Zone sekunder (misal: Jakarta → Singapore).</span>
                      </li>
                      <li className="flex gap-3">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
