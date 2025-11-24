@@ -1,11 +1,13 @@
 
 import { 
   HardHat, ShoppingCart, UserCheck, Briefcase, Factory, 
-  Building, TrendingUp, DollarSign, Users, Server 
+  Building, TrendingUp, DollarSign, Users, Server, Package
 } from 'lucide-react';
 
+import type { IndustryData, RoleData } from '../types';
+
 // --- INDUSTRIES DATA ---
-export const industriesData: Record<string, any> = {
+export const industriesData: Record<string, IndustryData> = {
   'construction': {
     title: "Construction & Engineering",
     subtitle: "Built for The Field, Managed from The Office.",
@@ -129,7 +131,7 @@ export const industriesData: Record<string, any> = {
 };
 
 // --- ROLES DATA ---
-export const rolesData: Record<string, any> = {
+export const rolesData: Record<string, RoleData> = {
   'ceo': {
     title: "CEO & Founders",
     subtitle: "The Captain's View",
@@ -192,6 +194,22 @@ export const rolesData: Record<string, any> = {
     challenges: [
        { pain: "Shadow IT", context: "User menggunakan aplikasi liar karena sistem kantor tidak user-friendly.", gain: "Unified Ecosystem", gainDesc: "Satu platform modern yang disukai user, mengurangi kebutuhan aplikasi pihak ketiga." },
        { pain: "Maintenance Hell", context: "Menghabiskan waktu untuk patching server dan fix bug sistem legacy.", gain: "Low Maintenance", gainDesc: "Arsitektur Docker yang stabil dan update OTA (Over-The-Air) yang mulus." }
+    ]
+  },
+  'ops': {
+    title: "Ops Managers",
+    subtitle: "Execution Excellence",
+    icon: Package,
+    metaTitle: "Operations Management & Supply Chain Software",
+    metaDesc: "Kelola proyek, inventory, dan supply chain dengan visibilitas real-time. Kontrol biaya operasional dan pastikan on-time delivery.",
+    heroHeadline: "Deliver on Time, Every Time.",
+    heroSub: "Hilangkan blind spot operasional. Pantau progres proyek, kontrol stok gudang, dan kelola logistik dari satu dashboard terpusat.",
+    cta: { btn: "Demo Modul Operations", head: "Tingkatkan Efisiensi Operasional Anda" },
+    dashboardInsight: "Real-time Operations Command Center",
+    dashboardFeatures: ["Project S-Curve Status", "Inventory Alert", "On-Time Delivery Rate", "Cost Variance Analysis"],
+    challenges: [
+       { pain: "Project Delays", context: "Proyek sering molor karena tidak ada visibilitas real-time terhadap progres dan kendala di lapangan.", gain: "Real-time Visibility", gainDesc: "Pantau kurva-S proyek dan terima laporan harian langsung dari lapangan via mobile app. Deteksi masalah sebelum jadi krisis." },
+       { pain: "Stockout & Overstock", context: "Kehilangan penjualan karena stok kosong, atau modal mati karena stok menumpuk di gudang.", gain: "Smart Inventory Control", gainDesc: "Sistem menghitung re-order point otomatis berdasarkan tren penjualan. Cegah stockout tanpa overstock." }
     ]
   }
 };

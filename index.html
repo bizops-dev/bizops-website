@@ -15,21 +15,19 @@
     <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=180&h=180&fit=crop">
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Security: Content Security Policy (CSP) - Relaxed for Dev/Preview Compatibility -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    <!-- Security: Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://chat.divistant.com https://aistudiocdn.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://aistudiocdn.com; connect-src 'self' https://chat.divistant.com https://*.sentry.io https://*.ingest.sentry.io; frame-src 'self' https://chat.divistant.com;">
     
     <title>BizOps | The Adaptive Business Operating System</title>
     
     <!-- Performance Optimizations: DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="dns-prefetch" href="https://aistudiocdn.com">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://aistudiocdn.com">
     
@@ -54,45 +52,6 @@
       }
     </style>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                50: '#EFF6FF',
-                500: '#3B82F6',
-                600: '#2563EB',
-                900: '#0F172A',
-                950: '#020617',
-              },
-              accent: {
-                500: '#F59E0B',
-              },
-              slate: {
-                850: '#1e293b', // Custom for dark mode cards
-                900: '#0f172a', // deep
-                950: '#020617', // deepest
-              }
-            },
-            fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.5s ease-out',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
     <script type="importmap">
 {
   "imports": {
@@ -113,7 +72,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

@@ -15,7 +15,7 @@ const AboutPage: React.FC = () => {
         <div className="inline-flex items-center justify-center p-2 px-4 bg-slate-100 rounded-full text-slate-600 text-sm font-semibold mb-6">
            Engineering Sovereignty & Vision
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
           Bermitra dengan Tim Praktisi yang Mengerti Masalah Nyata di Lapangan.
         </h1>
         <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
@@ -25,7 +25,7 @@ const AboutPage: React.FC = () => {
 
       {/* Origin Story Timeline */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-         <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Our Origin Story</h2>
+         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center leading-tight">Our Origin Story</h2>
          <div className="relative border-l-2 border-slate-200 ml-4 md:ml-0 md:pl-0 space-y-16">
             
             {aboutContent.timeline.map((item, idx) => (
@@ -138,7 +138,7 @@ const AboutPage: React.FC = () => {
                </div>
             </div>
 
-            <div className="bg-slate-50 rounded-3xl p-8 lg:p-12 flex flex-col justify-center">
+            <div className="bg-slate-50 rounded-2xl p-8 lg:p-12 flex flex-col justify-center">
                <h3 className="text-2xl font-bold text-slate-900 mb-4">Engineering First DNA</h3>
                <p className="text-slate-600 mb-6 text-lg leading-relaxed">
                   Kami bukan sekadar perusahaan penjualan. 70% dari total tim kami adalah <strong>Product, Engineering, & QA</strong>. Ini memastikan fokus utama perusahaan adalah inovasi produk dan stabilitas sistem, bukan sekadar operasi marketing yang agresif. Kami berinvestasi pada kode, bukan hanya pada iklan.

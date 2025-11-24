@@ -43,9 +43,13 @@ export const initMonitoring = () => {
       // @ts-ignore
       environment: import.meta.env?.MODE || process.env?.NODE_ENV || 'production',
     });
-    console.log("BizOps Monitoring Initialized");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("BizOps Monitoring Initialized");
+    }
   } else {
-    console.log("BizOps Monitoring: No DSN found, skipping initialization.");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("BizOps Monitoring: No DSN found, skipping initialization.");
+    }
   }
 };
 
@@ -59,6 +63,8 @@ export const initHeatmap = () => {
     // if (HOTJAR_ID) {
     //    (function(h,o,t,j,a,r){ ... })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     // }
-    console.log("BizOps Heatmap: Analytics Ready (Script injection skipped in mock env)");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("BizOps Heatmap: Analytics Ready (Script injection skipped in mock env)");
+    }
   }
 };

@@ -48,9 +48,14 @@ export const initTelemetry = () => {
     // 4. Auto-Instrument Network Requests (Fetch Monkey Patch)
     instrumentFetch();
 
-    console.log(`[BizOps Telemetry] OTel Initialized for ${SERVICE_NAME}`);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`[BizOps Telemetry] OTel Initialized for ${SERVICE_NAME}`);
+    }
   } catch (e) {
-    console.error('[BizOps Telemetry] Failed to init:', e);
+    // Always log errors, but use proper error reporting in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[BizOps Telemetry] Failed to init:', e);
+    }
   }
 };
 

@@ -37,7 +37,7 @@ const PricingPage: React.FC = () => {
 
       <Section>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
             Harga Transparan, ROI Terukur.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
@@ -139,7 +139,7 @@ const PricingPage: React.FC = () => {
         </CardSlider>
 
         {/* Trust Badges Row */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-24 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-24 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
               <ShieldCheck className="w-5 h-5" />
               <span className="text-sm font-bold">Secure Payment</span>

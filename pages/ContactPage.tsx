@@ -50,7 +50,7 @@ const ContactPage: React.FC = () => {
            
            {/* Info */}
            <div>
-              <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">Hubungi Tim BizOps</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Hubungi Tim BizOps</h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
                  Ada pertanyaan teknis, kemitraan, atau sekadar ingin menyapa? Tim kami siap membantu Anda.
               </p>

@@ -4,8 +4,10 @@ import {
   Smartphone, Server, Share2, MessageSquare, Layers 
 } from 'lucide-react';
 
+import type { ModuleData } from '../types';
+
 // --- MODULES DATA ---
-export const modulesData: Record<string, any> = {
+export const modulesData: Record<string, ModuleData> = {
   'hr': {
     title: "Human Capital Management (HRIS)",
     subtitle: "Empower Your People, Automate The Admin.",

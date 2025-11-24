@@ -71,7 +71,7 @@ const IndustryPage: React.FC = () => {
             </div>
             <span className="text-primary-400 font-bold tracking-wide uppercase text-sm bg-primary-900/50 px-3 py-1 rounded-full border border-primary-800">Industry Solution</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 max-w-4xl leading-tight">{data.subtitle}</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 max-w-4xl leading-tight">{data.subtitle}</h1>
           <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">{data.description}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/demo">
@@ -88,7 +88,7 @@ const IndustryPage: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">The Industry Challenge</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">The Industry Challenge</h2>
             <p className="text-lg text-slate-600">Pain points umum yang menghambat pertumbuhan perusahaan {data.title}.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -110,7 +110,7 @@ const IndustryPage: React.FC = () => {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="mb-16 text-center">
-             <h2 className="text-3xl font-bold text-slate-900">The BizOps Solution</h2>
+             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">The BizOps Solution</h2>
              <p className="text-slate-600 mt-4">Bagaimana kami menyelesaikan masalah tersebut secara sistematis.</p>
            </div>
            
@@ -129,7 +129,7 @@ const IndustryPage: React.FC = () => {
                    
                    {/* Visual Placeholder */}
                    <div className="flex-1 w-full">
-                      <div className="bg-white p-2 rounded-3xl shadow-xl border border-slate-200 transform hover:scale-[1.02] transition-transform duration-500">
+                      <div className="bg-white p-2 rounded-2xl shadow-xl border border-slate-200 transform hover:scale-[1.02] transition-transform duration-300">
                           <div className="bg-slate-100 rounded-2xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
                               <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200"></div>
                               <div className="relative z-10 text-center p-8">
@@ -140,7 +140,7 @@ const IndustryPage: React.FC = () => {
                                   <span className="text-xs text-slate-400 uppercase tracking-widest">Interface Preview</span>
                               </div>
                               {/* Decorative Lines */}
-                              <div className="absolute bottom-0 left-0 w-full h-1 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+                              <div className="absolute bottom-0 left-0 w-full h-1 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                           </div>
                       </div>
                    </div>
@@ -153,7 +153,7 @@ const IndustryPage: React.FC = () => {
       {/* Case Scenario (Story) */}
       <section className="py-24 bg-white border-t border-slate-100">
          <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-primary-50 rounded-3xl p-8 md:p-12 relative overflow-hidden border border-primary-100">
+            <div className="bg-primary-50 rounded-2xl p-8 md:p-12 relative overflow-hidden border border-primary-100">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                     <CheckCircle className="w-32 h-32 text-primary-600" />
                 </div>

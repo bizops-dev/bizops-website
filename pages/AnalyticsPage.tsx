@@ -16,7 +16,7 @@ const AnalyticsPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <BarChart2 className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Laporan Anda, Cara Anda.<br/>Tanpa Coding.
           </h1>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">

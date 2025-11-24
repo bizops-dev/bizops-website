@@ -7,7 +7,7 @@ const LoginPage: React.FC = () => {
   return (
     <div className="min-h-[calc(100vh-80px)] bg-slate-50 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 text-center mb-10">
-        <h1 className="text-3xl font-bold text-slate-900">Login Portal Gateway</h1>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">Login Portal Gateway</h1>
         <p className="text-slate-600">Pilih tipe akun Anda untuk melanjutkan ke workspace yang sesuai.</p>
       </div>
 

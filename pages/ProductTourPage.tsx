@@ -35,7 +35,7 @@ const ProductTourPage: React.FC = () => {
            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-500/20 rounded-full text-primary-400 text-sm font-medium mb-6 border border-primary-500/30">
               <MousePointer className="w-4 h-4" /> Interactive Demo
            </div>
-           <h1 className="text-3xl md:text-5xl font-bold mb-6">Rasakan Kemudahannya Sebelum Membeli.</h1>
+           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">Rasakan Kemudahannya Sebelum Membeli.</h1>
            <p className="text-xl text-slate-400">
               Pilih peran Anda dan lihat bagaimana BizOps bekerja dalam 30 detik. Tanpa login, tanpa sales call.
            </p>
@@ -56,7 +56,7 @@ const ProductTourPage: React.FC = () => {
         </div>
 
         {/* Simulation Container */}
-        <div className="max-w-5xl mx-auto bg-slate-800 rounded-3xl border-8 border-slate-700 shadow-2xl overflow-hidden aspect-video relative flex flex-col">
+        <div className="max-w-5xl mx-auto bg-slate-800 rounded-2xl border-8 border-slate-700 shadow-2xl overflow-hidden aspect-video relative flex flex-col">
            {/* Mock App Header */}
            <div className="bg-white text-slate-900 p-4 border-b border-slate-200 flex justify-between items-center h-16 shrink-0">
               <div className="font-bold text-lg">{scenarios.find(s=>s.id === activeScenario)?.title}</div>

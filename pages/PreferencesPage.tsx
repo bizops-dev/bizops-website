@@ -22,7 +22,7 @@ const PreferencesPage: React.FC = () => {
            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
            </div>
-           <h1 className="text-3xl font-bold text-slate-900 mb-4">Kendalikan Isi Inbox Anda</h1>
+           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">Kendalikan Isi Inbox Anda</h1>
            <p className="text-slate-600">
               Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.
            </p>

@@ -10,7 +10,7 @@ const AccessibilityPage: React.FC = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-6">Teknologi untuk Semua Orang, Tanpa Kecuali.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">Teknologi untuk Semua Orang, Tanpa Kecuali.</h1>
            <p className="text-xl text-slate-600 leading-relaxed">
               Kami percaya bahwa produktivitas adalah hak asasi setiap pekerja. BizOps berkomitmen memenuhi standar WCAG 2.1 Level AA.
            </p>

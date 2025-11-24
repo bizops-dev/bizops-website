@@ -20,7 +20,7 @@ const SolutionsPage: React.FC = () => {
            <div className="inline-flex items-center justify-center p-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 text-primary-600 dark:text-primary-400">
               <LayoutGrid className="w-8 h-8" />
            </div>
-           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">Tailored for Your Context.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Tailored for Your Context.</h1>
            <p className="text-xl text-slate-600 dark:text-slate-400">
               Because the operational needs of a Construction firm are vastly different from a Retail chain. Explore solutions built specifically for your industry and role.
            </p>

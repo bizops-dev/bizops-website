@@ -32,7 +32,7 @@ const CapabilityPage: React.FC = () => {
             <div className="inline-flex p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{data.subtitle}</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">{data.subtitle}</h1>
             <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-3xl mx-auto">{data.description}</p>
             <Link to="/demo">
                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">Download Technical Sheet</Button>
@@ -43,7 +43,7 @@ const CapabilityPage: React.FC = () => {
       {/* Technical Features */}
       <section className="py-24 bg-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">Technical Specifications</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-16 leading-tight">Technical Specifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                {data.features.map((item: any, idx: number) => (
                   <div key={idx} className="flex gap-6 p-8 border border-slate-200 rounded-2xl bg-white hover:border-primary-200 hover:shadow-lg transition-all">
@@ -66,7 +66,7 @@ const CapabilityPage: React.FC = () => {
       {data.extraSection && (
         <section className="py-24 bg-slate-50 border-t border-slate-200">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">{data.extraSection.title}</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-12 leading-tight">{data.extraSection.title}</h2>
               
               {data.extraSection.type === 'table' && (
                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">

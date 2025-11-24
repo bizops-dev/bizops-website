@@ -16,7 +16,7 @@ const PortalsPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Berhenti Menjadi Admin<br/>untuk Klien Anda.
           </h1>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -31,7 +31,7 @@ const PortalsPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                
                {/* Customer Portal */}
-               <div className="bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
+               <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
                   <div className="bg-blue-600 p-8 text-white">
                      <ShoppingBag className="w-10 h-10 mb-4" />
                      <h3 className="text-2xl font-bold">B2B Customer Portal</h3>
@@ -59,7 +59,7 @@ const PortalsPage: React.FC = () => {
                </div>
 
                {/* Vendor Portal */}
-               <div className="bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
+               <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
                   <div className="bg-amber-600 p-8 text-white">
                      <Truck className="w-10 h-10 mb-4" />
                      <h3 className="text-2xl font-bold">Supplier / Vendor Portal</h3>

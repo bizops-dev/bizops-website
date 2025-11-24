@@ -20,8 +20,9 @@ const MigrationPage: React.FC = () => {
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.xlsx,.csv';
-    input.onchange = (e: any) => {
-      const file = e.target.files[0];
+    input.onchange = (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      const file = target.files?.[0];
       if (file) {
         setFileName(file.name);
         setCheckStatus('checking');
@@ -42,7 +43,7 @@ const MigrationPage: React.FC = () => {
         
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-6">Pindahan "Rumah Digital" Tanpa Stress.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">Pindahan "Rumah Digital" Tanpa Stress.</h1>
            <p className="text-xl text-slate-600">
               Kami tahu memindahkan data operasional bertahun-tahun adalah proses yang menakutkan. Kami menyiapkan panduan terstruktur dan alat bantu otomatis.
            </p>
@@ -167,7 +168,7 @@ const MigrationPage: React.FC = () => {
         </div>
 
         {/* Service Options */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden">
            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
               <div className="p-12 text-center md:text-left">
                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0">

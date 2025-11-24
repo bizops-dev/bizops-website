@@ -15,7 +15,7 @@ const TrustPage: React.FC = () => {
         <div className="inline-flex items-center justify-center p-3 bg-green-50 rounded-xl mb-6 shadow-sm border border-green-100">
           <Shield className="w-8 h-8 text-green-600" />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
           Keamanan Tanpa Kompromi.
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -55,7 +55,7 @@ const TrustPage: React.FC = () => {
       <section className="bg-slate-900 py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Defense in Depth Architecture</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">Defense in Depth Architecture</h2>
               <p className="text-slate-400">Tiga lapisan keamanan yang saling melindungi.</p>
            </div>
            
@@ -130,7 +130,7 @@ const TrustPage: React.FC = () => {
       {/* Disaster Recovery (New) */}
       <section className="py-24 bg-white border-t border-slate-200">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Business Continuity & Disaster Recovery</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center leading-tight">Business Continuity & Disaster Recovery</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                <div>
@@ -181,7 +181,7 @@ const TrustPage: React.FC = () => {
       {/* Bottom CTA */}
       <section className="py-20 bg-slate-900 text-white text-center">
          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl font-bold mb-6">Butuh Dokumen Audit?</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-6 leading-tight">Butuh Dokumen Audit?</h2>
             <p className="text-slate-400 mb-8">
                Unduh Security Whitepaper dan laporan audit kepatuhan kami untuk tim IT Security Anda.
             </p>

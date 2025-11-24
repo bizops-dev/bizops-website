@@ -39,7 +39,7 @@ const ROIPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-4">Kalkulator ROI Investasi Teknologi</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Kalkulator ROI Investasi Teknologi</h1>
            <p className="text-lg text-slate-600">
               Jangan menebak, hitung dengan data. Gunakan kalkulator interaktif ini untuk mengestimasi potensi penghematan biaya operasional tahunan.
            </p>
@@ -48,7 +48,7 @@ const ROIPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
            
            {/* Left: Inputs */}
-           <div className="lg:col-span-5 bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+           <div className="lg:col-span-5 bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
               <h2 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                  <div className="p-2 bg-primary-50 rounded-lg text-primary-600"><Calculator className="w-5 h-5" /></div>
                  Input Variabel Operasional
@@ -142,7 +142,7 @@ const ROIPage: React.FC = () => {
               </div>
 
               {/* Main Result */}
-              <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+              <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
                  <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div>
                        <h2 className="text-lg font-medium text-slate-300 mb-2">Total Penghematan Tahun Pertama</h2>

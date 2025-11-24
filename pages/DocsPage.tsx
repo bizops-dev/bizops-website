@@ -25,7 +25,7 @@ const DocsPage: React.FC = () => {
       <Section>
         {/* Header & Search */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">How can we help you?</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">How can we help you?</h1>
            <div className="relative group">
               <Search className="absolute left-4 top-3.5 text-slate-400 w-5 h-5 group-focus-within:text-primary-500 transition-colors" />
               <input 
@@ -65,7 +65,7 @@ const DocsPage: React.FC = () => {
         </div>
 
         {/* Developer / API Section */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden relative mb-24">
+        <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white overflow-hidden relative mb-24">
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
                  <div className="flex items-center gap-3 mb-6">

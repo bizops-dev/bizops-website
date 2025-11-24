@@ -38,7 +38,7 @@ const PartnerApplyPage: React.FC = () => {
         <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 animate-fade-in-up">
           <CheckCircle className="w-10 h-10" aria-hidden="true" />
         </div>
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Aplikasi Anda Diterima!</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">Aplikasi Anda Diterima!</h2>
         <p className="text-slate-600 max-w-lg mx-auto mb-8 text-lg">
           Terima kasih atas minat Anda bergabung dengan Ekosistem BizOps. Partner Manager kami sedang meninjau profil bisnis Anda dan akan menghubungi dalam 1-2 hari kerja.
         </p>
@@ -52,7 +52,7 @@ const PartnerApplyPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-slate-900 py-16 text-white text-center">
          <div className="max-w-4xl mx-auto px-4">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6">Ubah Jasa Konsultasi Menjadi Bisnis Produk Berbasis Aset.</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Ubah Jasa Konsultasi Menjadi Bisnis Produk Berbasis Aset.</h1>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
                Langkah pertama menuju transformasi model bisnis Anda. Isi data di bawah untuk mendapatkan Partner Kit (Proposal Margin, Brosur Whitelabel tanpa logo kami, dan Akses Demo Partner Console) serta jadwal Business Review dengan tim kami.
             </p>

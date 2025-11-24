@@ -15,7 +15,7 @@ const BlogDetailPage: React.FC = () => {
   if (!post) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Article Not Found</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 leading-tight">Article Not Found</h1>
         <Link to="/blog"><Button>Back to Blog</Button></Link>
       </div>
     );
@@ -78,7 +78,7 @@ const BlogDetailPage: React.FC = () => {
                  {post.category}
               </span>
            </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               {post.title}
            </h1>
            <div className="flex items-center justify-center gap-6 text-slate-500 dark:text-slate-400 text-sm">
@@ -95,7 +95,7 @@ const BlogDetailPage: React.FC = () => {
         </header>
 
         {/* Hero Image with LCP Optimization */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-xl aspect-[21/9] bg-slate-100 dark:bg-slate-900">
+        <div className="mb-16 rounded-2xl overflow-hidden shadow-xl aspect-[21/9] bg-slate-100 dark:bg-slate-900">
            <img 
              src={post.image} 
              alt={`Illustration for ${post.title}`} 
@@ -141,7 +141,7 @@ const BlogDetailPage: React.FC = () => {
       {/* Related / CTA */}
       <section className="mt-24 bg-slate-50 dark:bg-slate-900 py-16 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Ready to Implement These Strategies?</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Ready to Implement These Strategies?</h2>
             <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
                Don't let insights just be insights. Transform your operations with BizOps ERP today.
             </p>

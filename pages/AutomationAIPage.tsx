@@ -16,7 +16,7 @@ const AutomationAIPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Biarkan Sistem yang Bekerja,<br/>Bukan Anda.
           </h1>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -33,7 +33,7 @@ const AutomationAIPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                <div>
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Workflow Automation (No-Code Logic)</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Workflow Automation (No-Code Logic)</h2>
                   <div className="space-y-8">
                      <div className="flex gap-4">
                         <div className="mt-1 p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg h-fit">
@@ -65,7 +65,7 @@ const AutomationAIPage: React.FC = () => {
                   </div>
                </div>
                {/* Visual Placeholder */}
-               <div className="bg-slate-100 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 aspect-square flex items-center justify-center relative shadow-inner">
+               <div className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square flex items-center justify-center relative shadow-inner">
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
                   <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg max-w-xs w-full relative z-10">
                      <div className="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">
@@ -88,7 +88,7 @@ const AutomationAIPage: React.FC = () => {
       {/* Applied AI */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white text-center mb-16">Applied AI Capabilities</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white text-center mb-16 leading-tight">Applied AI Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
                   <BrainCircuit className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-6" />

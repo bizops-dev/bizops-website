@@ -13,7 +13,7 @@ const SysReqPage: React.FC = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-4">Spesifikasi Teknis</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Spesifikasi Teknis</h1>
            <p className="text-lg text-slate-600">
               Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.
            </p>

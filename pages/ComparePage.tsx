@@ -30,14 +30,14 @@ const ComparePage: React.FC = () => {
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
             BizOps vs {data.competitorName}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.subtitle}</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.subtitle}</h1>
           <p className="text-xl text-slate-600">{data.description}</p>
         </div>
 
         {/* LAYOUT 1: MATRIX (For Odoo) */}
         {data.type === 'matrix' && (
           <>
-            <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-16">
+            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-16">
               <div className="grid grid-cols-1 md:grid-cols-4 bg-slate-900 text-white font-bold text-lg">
                 <div className="p-6 md:col-span-1 hidden md:block">Aspek</div>
                 <div className="p-6 text-slate-400 bg-slate-800/50">{data.headers[1]}</div>
@@ -74,7 +74,7 @@ const ComparePage: React.FC = () => {
 
             {/* Strategy Section (Two-Tier) */}
             {data.strategy && (
-               <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden">
+               <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden">
                   <div className="relative z-10 max-w-3xl">
                      <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                         <Layers className="w-6 h-6 text-primary-400" />
@@ -99,7 +99,7 @@ const ComparePage: React.FC = () => {
         {data.type === 'analysis' && (
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {data.scenarios.map((scene: any, idx: number) => (
-                 <div key={idx} className={`rounded-3xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
+                 <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
                     <div className="flex items-center gap-3 mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
                        <h3 className="text-xl font-bold text-slate-900">{scene.name}</h3>

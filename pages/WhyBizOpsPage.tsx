@@ -15,7 +15,7 @@ const WhyBizOpsPage: React.FC = () => {
 
       {/* Hero */}
       <Section className="text-center">
-         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Modernisasi Operasional Tanpa Merombak Segalanya.
          </h1>
          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -25,12 +25,12 @@ const WhyBizOpsPage: React.FC = () => {
 
       {/* The Sweet Spot (Quadrant Chart) */}
       <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-16">The BizOps "Sweet Spot"</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-slate-900 dark:text-white mb-16 leading-tight">The BizOps "Sweet Spot"</h2>
             
             <div className="flex flex-col lg:flex-row gap-16 items-center">
                
                {/* Visual Chart */}
-               <div className="w-full lg:w-1/2 aspect-square max-w-[500px] relative bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 p-8">
+               <div className="w-full lg:w-1/2 aspect-square max-w-[500px] relative bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-8">
                   {/* Axes */}
                   <div className="absolute top-8 bottom-8 left-1/2 w-px bg-slate-300 dark:bg-slate-700 transform -translate-x-1/2"></div>
                   <div className="absolute left-8 right-8 top-1/2 h-px bg-slate-300 dark:bg-slate-700 transform -translate-y-1/2"></div>
@@ -92,7 +92,7 @@ const WhyBizOpsPage: React.FC = () => {
 
       {/* Top 5 Reasons */}
       <Section>
-         <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-16">5 Alasan Strategis Berinvestasi di BizOps</h2>
+         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-slate-900 dark:text-white mb-16 leading-tight">5 Alasan Strategis Berinvestasi di BizOps</h2>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyBizOpsContent.reasons.map((reason, idx) => (
                <Card key={idx} hoverEffect className="h-full">
@@ -125,7 +125,7 @@ const WhyBizOpsPage: React.FC = () => {
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full text-sm font-bold mb-4">
                   <Leaf className="w-4 h-4" /> Sustainability & Efficiency
                </div>
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
                   Clean Code, Lean Infrastructure.
                </h2>
                <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
@@ -148,7 +148,7 @@ const WhyBizOpsPage: React.FC = () => {
                   </li>
                </ul>
             </div>
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg">
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg">
                <div className="flex justify-between items-end border-b border-slate-100 dark:border-slate-800 pb-4 mb-4">
                   <span className="text-sm font-medium text-slate-500">Server Resource Usage (50 Users)</span>
                   <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">-50%</span>
@@ -180,7 +180,7 @@ const WhyBizOpsPage: React.FC = () => {
       {/* Final CTA */}
       <Section dark className="text-center">
          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">Masa Depan Operasional Anda Dimulai Di Sini.</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 leading-tight">Masa Depan Operasional Anda Dimulai Di Sini.</h2>
             <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
                Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.
             </p>

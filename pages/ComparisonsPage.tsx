@@ -18,7 +18,7 @@ const ComparisonsPage: React.FC = () => {
            <div className="inline-flex items-center justify-center p-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 text-primary-600 dark:text-primary-400">
               <Activity className="w-8 h-8" />
            </div>
-           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">Bandingkan Transparan: Data vs Klaim Marketing.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Bandingkan Transparan: Data vs Klaim Marketing.</h1>
            <p className="text-xl text-slate-600 dark:text-slate-400">
               Kami percaya pada transparansi radikal. Lihat bagaimana fitur dan arsitektur BizOps disandingkan dengan solusi populer lainnya di pasar agar Anda bisa mengambil keputusan terbaik.
            </p>
@@ -46,9 +46,9 @@ const ComparisonsPage: React.FC = () => {
         </div>
 
         {/* ROI Calculator Section */}
-        <div className="bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden">
+        <div className="bg-slate-900 dark:bg-slate-800 rounded-2xl p-8 md:p-16 text-center text-white relative overflow-hidden">
            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">Masih Ragu soal Investasi?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">Masih Ragu soal Investasi?</h2>
               <p className="text-slate-300 mb-10 text-lg">
                  Berhenti menebak. Gunakan Kalkulator ROI interaktif kami untuk mengestimasi berapa banyak biaya operasional (lembur, fraud, inefisiensi) yang bisa Anda hemat.
               </p>

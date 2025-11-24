@@ -125,7 +125,7 @@ const LegalPage: React.FC = () => {
              {/* Content */}
              <div className="lg:col-span-3">
                 <div className="mb-8 pb-8 border-b border-slate-100">
-                   <h1 className="text-4xl font-bold text-slate-900 mb-4">{data.title}</h1>
+                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">{data.title}</h1>
                    <p className="text-xl text-slate-600">{data.subtitle}</p>
                 </div>
                 

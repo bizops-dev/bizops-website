@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 
 const ModulePage: React.FC = () => {
   const { moduleId } = useParams<{ moduleId: string }>();
-  const data = moduleId ? modulesData[moduleId] : null;
+  const data: ModuleData | null = moduleId ? modulesData[moduleId] : null;
 
   if (!data) {
     return (
@@ -42,7 +42,7 @@ const ModulePage: React.FC = () => {
       "ratingValue": "4.8",
       "ratingCount": "124"
     },
-    "featureList": data.features.map((f: any) => f.title).join(", "),
+    "featureList": data.features.map((f) => f.title).join(", "),
     "publisher": {
       "@type": "Organization",
       "name": "PT Divistant Teknologi Indonesia"
@@ -66,7 +66,7 @@ const ModulePage: React.FC = () => {
                    <Icon className="w-4 h-4" />
                    {data.title}
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.subtitle}</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.subtitle}</h1>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">{data.description}</p>
                 <div className="flex gap-4">
                    <Link to="/demo">
@@ -77,7 +77,7 @@ const ModulePage: React.FC = () => {
 
               {/* Visual Cue Placeholder */}
               <div className="relative">
-                 <div className="bg-slate-50 rounded-3xl p-4 border border-slate-200 aspect-[4/3] flex gap-4 items-center justify-center shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                 <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 aspect-[4/3] flex gap-4 items-center justify-center shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
                     {/* Mock Split View: Mobile Left, Web Right */}
                     <div className="w-1/3 h-[90%] bg-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-xs shadow-xl border-4 border-slate-700">
                        Mobile App
@@ -94,9 +94,9 @@ const ModulePage: React.FC = () => {
       {/* 2. Key Features (Capabilities) */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Key Capabilities</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-12 text-center leading-tight">Key Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {data.features.map((feat: any, idx: number) => (
+            {data.features.map((feat, idx) => (
               <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-shadow">
                 <div className="mt-1 flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                    <Check className="w-5 h-5 text-green-600" />
@@ -130,7 +130,7 @@ const ModulePage: React.FC = () => {
                      <Smartphone className="w-6 h-6" />
                      <span className="font-bold uppercase tracking-wider text-sm">The Mobile Advantage</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6">{data.mobileAdvantage.title}</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">{data.mobileAdvantage.title}</h2>
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">{data.mobileAdvantage.desc}</p>
                   <Link to="/download">
                      <Button variant="outline" className="border-slate-600 text-white hover:bg-white hover:text-slate-900">Lihat Aplikasi Mobile</Button>
@@ -148,11 +148,11 @@ const ModulePage: React.FC = () => {
                   <LinkIcon className="w-8 h-8 text-primary-600" />
                </div>
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">The End-to-End Connection</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">The End-to-End Connection</h2>
             <p className="text-lg text-slate-500 mb-12">Bagaimana modul ini berbicara dengan bagian lain bisnis Anda.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               {data.connections && data.connections.map((conn: any, idx: number) => (
+               {data.connections && data.connections.map((conn, idx) => (
                   <div key={idx} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-left relative overflow-hidden group hover:border-primary-200 transition-colors">
                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <ArrowRight className="w-24 h-24 text-primary-600" />

@@ -49,8 +49,10 @@ const CookieConsent: React.FC = () => {
     setShowSettings(false);
     
     // Apply logic based on consent (Mock implementation)
-    if (prefs.analytics) console.log("[BizOps] Analytics Cookies Enabled");
-    if (prefs.marketing) console.log("[BizOps] Marketing Cookies Enabled");
+    if (process.env.NODE_ENV === 'development') {
+      if (prefs.analytics) console.log("[BizOps] Analytics Cookies Enabled");
+      if (prefs.marketing) console.log("[BizOps] Marketing Cookies Enabled");
+    }
   };
 
   const handleAcceptAll = () => {
