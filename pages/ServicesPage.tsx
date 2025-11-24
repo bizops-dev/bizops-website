@@ -20,7 +20,7 @@ const ServicesPage: React.FC = () => {
            <div className="inline-flex items-center justify-center p-3 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 text-primary-600 dark:text-primary-400">
               <Briefcase className="w-8 h-8" />
            </div>
-           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">Pastikan Kesuksesan Implementasi ERP Anda.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Pastikan Kesuksesan Implementasi ERP Anda.</h1>
            <p className="text-xl text-slate-600 dark:text-slate-400">
               Kami tidak sekadar menjual lisensi lalu menghilang. Tim ahli kami mendampingi setiap tahap transformasi digital untuk memastikan sistem benar-benar diadopsi dan memberi hasil.
            </p>
@@ -29,7 +29,7 @@ const ServicesPage: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
            {services.map((service) => (
-              <div key={service.id} className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col">
+              <div key={service.id} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col">
                  <div className="flex items-start justify-between mb-8">
                     <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform">
                        <service.icon className="w-8 h-8" />
@@ -62,8 +62,8 @@ const ServicesPage: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="bg-primary-600 rounded-3xl p-12 text-center text-white">
-           <h2 className="text-3xl font-bold mb-4">Butuh Paket Layanan Kustom?</h2>
+        <div className="bg-primary-600 rounded-2xl p-12 text-center text-white">
+           <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">Butuh Paket Layanan Kustom?</h2>
            <p className="text-primary-100 mb-8 max-w-2xl mx-auto">
               Setiap perusahaan memiliki tantangan unik. Mari diskusikan strategi implementasi yang paling sesuai dengan anggaran dan lini masa Anda.
            </p>

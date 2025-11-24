@@ -49,7 +49,7 @@ const PartnersPage: React.FC = () => {
             <div className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-500 mb-6">
               <Zap className="w-4 h-4 mr-2" /> Whitelabel Program Available
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-8 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8 leading-tight">
               Miliki Produk Software ERP Sendiri <span className="text-primary-400">Tanpa Menulis Satu Baris Kode Pun.</span>
             </h1>
             <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl">
@@ -71,13 +71,13 @@ const PartnersPage: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Now? The Tech-Enabled Shift</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">Why Now? The Tech-Enabled Shift</h2>
             <p className="text-slate-600">Industri jasa sedang berubah. Jangan sampai tertinggal.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
             {/* The Old Way */}
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 opacity-80">
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 opacity-80">
               <h3 className="text-xl font-bold text-slate-500 mb-2 uppercase tracking-wide">{partnerContent.shift.old.title}</h3>
               <h4 className="text-lg font-bold text-slate-900 mb-4">{partnerContent.shift.old.subtitle}</h4>
               <p className="text-slate-600 leading-relaxed">
@@ -86,7 +86,7 @@ const PartnersPage: React.FC = () => {
             </div>
 
             {/* The New Way */}
-            <div className="p-8 rounded-3xl bg-primary-50 border border-primary-100 relative shadow-lg">
+            <div className="p-8 rounded-2xl bg-primary-50 border border-primary-100 relative shadow-lg">
                <div className="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                   FUTURE
                </div>
@@ -162,7 +162,7 @@ const PartnersPage: React.FC = () => {
                <p className="text-slate-600">Hitung potensi pendapatan pasif Anda.</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
                {/* Control Panel */}
                <div className="p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-100">
                   <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">

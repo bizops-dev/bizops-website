@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
                 <Link to="/platform" className="text-slate-600 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 font-medium text-sm flex items-center gap-1 transition-colors py-2 px-1">
                   Platform <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <div className="absolute top-full left-0 mt-0 w-[750px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-2 overflow-hidden">
+                <div className="absolute top-full left-0 mt-0 w-[600px] max-w-[90vw] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
                   {/* Left Column: Modules */}
                   <div className="p-6 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800">
                      <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
@@ -199,7 +199,7 @@ const Navbar: React.FC = () => {
                  <Link to="/solutions" className="text-slate-600 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 font-medium text-sm flex items-center gap-1 transition-colors py-2 px-1">
                   Solutions <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <div className="absolute top-full left-0 mt-0 w-[550px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-2 overflow-hidden">
+                <div className="absolute top-full left-0 mt-0 w-[500px] max-w-[90vw] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
                    <div className="p-4 bg-white dark:bg-slate-900">
                       <div className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 py-2 mb-2">By Industry</div>
                       <div className="space-y-1">
@@ -241,7 +241,7 @@ const Navbar: React.FC = () => {
                 <Link to="/services" className="text-slate-600 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 font-medium text-sm flex items-center gap-1 transition-colors py-2 px-1">
                   Services <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <div className="absolute top-full left-0 mt-0 w-[280px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-2 z-50 translate-y-2 group-hover:translate-y-0">
+                <div className="absolute top-full left-0 mt-0 w-64 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-left p-2 z-50 translate-y-2 group-hover:translate-y-0">
                    <Link to="/services/implementation" className="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all">
                       <Wrench className="w-4 h-4 text-slate-400" /> Implementation
                    </Link>
@@ -266,7 +266,7 @@ const Navbar: React.FC = () => {
                  <button className="text-slate-600 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 font-medium text-sm flex items-center gap-1 focus:outline-none transition-colors py-2 px-1">
                   Resources <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </button>
-                <div className="absolute top-full right-0 mt-0 w-[600px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-2 overflow-hidden">
+                <div className="absolute top-full right-0 mt-0 w-[500px] max-w-[90vw] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right p-0 z-50 translate-y-2 group-hover:translate-y-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
                    
                    {/* Column 1: Knowledge & Insights */}
                    <div className="p-5 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800">
@@ -339,7 +339,7 @@ const Navbar: React.FC = () => {
                 <button className="text-slate-600 dark:text-slate-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 font-medium text-sm flex items-center gap-1 focus:outline-none transition-colors py-2 px-1">
                   Company <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </button>
-                <div className="absolute top-full right-0 mt-0 w-[240px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right p-2 z-50 translate-y-2 group-hover:translate-y-0">
+                <div className="absolute top-full right-0 mt-0 w-56 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform origin-top-right p-2 z-50 translate-y-2 group-hover:translate-y-0">
                    <Link to="/about" className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all">About Us</Link>
                    <Link to="/why-bizops" className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all">Why BizOps?</Link>
                    <Link to="/careers" className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all">Careers</Link>

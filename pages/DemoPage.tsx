@@ -85,7 +85,7 @@ const DemoPage: React.FC = () => {
         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 animate-bounce">
           <CheckCircle className="w-8 h-8" aria-hidden="true" />
         </div>
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Mengalihkan ke WhatsApp...</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Mengalihkan ke WhatsApp...</h2>
         <p className="text-slate-600 dark:text-slate-400 max-w-md mx-auto mb-8">
           Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.
         </p>
@@ -100,7 +100,7 @@ const DemoPage: React.FC = () => {
           
           {/* Left: Form */}
           <div>
-            <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Validasi Solusi untuk Bisnis Anda</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Validasi Solusi untuk Bisnis Anda</h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
               Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.
             </p>

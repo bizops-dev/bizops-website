@@ -11,7 +11,7 @@ const CareersPage: React.FC = () => {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
           {careersContent.hero.headline}
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -22,7 +22,7 @@ const CareersPage: React.FC = () => {
       {/* Engineering Culture */}
       <section className="bg-slate-50 py-24 mb-24">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-16 text-center">Engineering Culture (Why Top Talent Loves Us)</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-16 text-center leading-tight">Engineering Culture (Why Top Talent Loves Us)</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                
                {careersContent.culture.map((cult, idx) => (
@@ -45,7 +45,7 @@ const CareersPage: React.FC = () => {
 
       {/* Benefit Stack */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-         <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">The Total Rewards System</h2>
+         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center leading-tight">The Total Rewards System</h2>
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {careersContent.benefits.map((ben, idx) => (
               <div key={idx} className="flex gap-4 p-6 border border-slate-100 rounded-xl hover:border-primary-100 transition-colors">
@@ -67,7 +67,7 @@ const CareersPage: React.FC = () => {
       {/* Hiring Process */}
       <section className="bg-slate-900 text-white py-24 mb-24">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-16 text-center">Hiring Process: What to Expect</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-16 text-center leading-tight">Hiring Process: What to Expect</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
                {/* Connecting Line */}
                <div className="hidden md:block absolute top-8 left-0 w-full h-1 bg-slate-700 -z-10 transform translate-y-4"></div>
@@ -85,7 +85,7 @@ const CareersPage: React.FC = () => {
 
       {/* Openings */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-         <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Open Positions</h2>
+         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center leading-tight">Open Positions</h2>
          <div className="space-y-4">
             {jobsData.map((job, idx) => (
                <div key={idx} className="bg-white border border-slate-200 p-6 rounded-xl hover:border-primary-500 hover:shadow-md transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-6">

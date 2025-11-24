@@ -22,7 +22,7 @@ const NotFoundPage: React.FC = () => {
             <span className="text-4xl">😵‍💫</span>
          </div>
          
-         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">
             Oops! Halaman Ini Sedang "Cuti Di Luar Tanggungan".
          </h1>
          <p className="text-lg text-slate-600 mb-10 leading-relaxed">

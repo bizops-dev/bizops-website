@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Bell, Settings, Radio, Calendar, FileText, Info, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 
 interface Notification {
@@ -10,6 +11,7 @@ interface Notification {
   time: string;
   type: 'info' | 'blog' | 'event' | 'system';
   read: boolean;
+  url?: string;
 }
 
 const mockNotifications: Notification[] = [
@@ -20,6 +22,7 @@ const mockNotifications: Notification[] = [
     time: '2 hours ago',
     type: 'info',
     read: false,
+    url: '/roadmap',
   },
   {
     id: '2',
@@ -28,6 +31,7 @@ const mockNotifications: Notification[] = [
     time: '5 hours ago',
     type: 'event',
     read: false,
+    url: '/events',
   },
   {
     id: '3',
@@ -36,6 +40,7 @@ const mockNotifications: Notification[] = [
     time: '1 day ago',
     type: 'system',
     read: true,
+    url: '/status',
   },
   {
     id: '4',
@@ -44,6 +49,7 @@ const mockNotifications: Notification[] = [
     time: '2 days ago',
     type: 'blog',
     read: true,
+    url: '/blog',
   }
 ];
 
@@ -149,10 +155,11 @@ const NotificationCenter: React.FC = () => {
               </div>
             ) : (
               notifications.map((n) => (
-                <div 
-                  key={n.id} 
+                <Link
+                  key={n.id}
+                  to={n.url || '#'}
                   onClick={() => markAsRead(n.id)}
-                  className={`p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors flex gap-3 ${!n.read ? 'bg-primary-50/30 dark:bg-primary-900/10' : ''}`}
+                  className={`block p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors flex gap-3 ${!n.read ? 'bg-primary-50/30 dark:bg-primary-900/10' : ''}`}
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-700 shadow-sm`}>
                     {getIcon(n.type)}
@@ -169,7 +176,7 @@ const NotificationCenter: React.FC = () => {
                     </p>
                     <span className="text-[10px] text-slate-400 block">{n.time}</span>
                   </div>
-                </div>
+                </Link>
               ))
             )}
           </div>

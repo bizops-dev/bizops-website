@@ -21,7 +21,7 @@ const StatusPage: React.FC = () => {
                  </div>
               </div>
            </div>
-           <h1 className="text-3xl font-bold text-slate-900 mb-2">{statusData.currentStatus}</h1>
+           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 leading-tight">{statusData.currentStatus}</h1>
            <div className="flex items-center gap-4 text-sm text-slate-500">
               <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {statusData.lastUpdated}</span>
               <span className="flex items-center gap-1"><Activity className="w-4 h-4" /> API Latency: {statusData.apiResponseTime}</span>

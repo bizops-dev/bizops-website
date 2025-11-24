@@ -102,7 +102,7 @@ const PlatformPage: React.FC = () => {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
           Satu Platform, Kendali Penuh.
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
@@ -154,7 +154,7 @@ const PlatformPage: React.FC = () => {
       {/* Tech Architecture */}
       <section className="mt-24 py-16 bg-white border-t border-slate-100">
          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-8 text-slate-900">Arsitektur Terbuka yang Siap Tumbuh</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-slate-900 leading-tight">Arsitektur Terbuka yang Siap Tumbuh</h2>
             <div className="bg-slate-50 p-8 rounded-2xl shadow-inner border border-slate-200 inline-block">
                <div className="flex flex-col md:flex-row items-center gap-8 justify-center text-slate-800">
                   <div className="p-4 bg-white shadow-sm border border-slate-200 rounded-lg text-sm font-semibold flex flex-col gap-1">

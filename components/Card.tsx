@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({
     lg: "p-8 md:p-10"
   };
 
-  const hoverStyles = hoverEffect ? "hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 dark:hover:border-primary-700 hover:ring-2 hover:ring-primary-500/10 cursor-pointer" : "";
+  const hoverStyles = hoverEffect ? "hover:shadow-xl hover:-translate-y-2 hover:border-primary-300 dark:hover:border-primary-700 hover:ring-2 hover:ring-primary-500/10 cursor-pointer transition-shadow duration-300" : "";
 
   return (
     <div 

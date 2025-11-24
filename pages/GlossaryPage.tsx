@@ -18,7 +18,7 @@ const GlossaryPage: React.FC = () => {
            <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-xl mb-6 text-primary-600">
               <BookOpen className="w-8 h-8" />
            </div>
-           <h1 className="text-4xl font-bold text-slate-900 mb-6">Pahami Bahasa Bisnis & Teknologi.</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">Pahami Bahasa Bisnis & Teknologi.</h1>
            <p className="text-xl text-slate-600">
               Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.
            </p>
@@ -59,9 +59,9 @@ const GlossaryPage: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+        <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ingin Menerapkan Konsep Ini Secara Otomatis?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">Ingin Menerapkan Konsep Ini Secara Otomatis?</h2>
               <p className="text-slate-300 mb-8">
                  BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.
               </p>

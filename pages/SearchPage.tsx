@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Search, ArrowRight, FileText, Box, BookOpen, User, HelpCircle } from 'lucide-react';
 import Button from '../components/Button';
+import EmptyState from '../components/EmptyState';
 import { Link } from 'react-router-dom';
 import { searchMockData } from '../data/content';
 import SEO from '../components/SEO';
@@ -26,6 +27,30 @@ const SearchPage: React.FC = () => {
     }
   };
 
+  const getResultUrl = (item: typeof searchMockData[0]) => {
+    // Map search results to actual URLs based on category and title
+    if (item.category === 'product') {
+      if (item.title.includes('Human Capital') || item.title.includes('HRIS')) return '/platform/hr';
+      if (item.title.includes('Finance')) return '/platform/finance';
+      if (item.title.includes('Operations')) return '/platform/operations';
+      if (item.title.includes('Sales')) return '/platform/sales';
+      if (item.title.includes('Supply Chain')) return '/platform/supply-chain';
+      return '/platform';
+    }
+    if (item.category === 'docs') {
+      if (item.title.includes('Integrasi') || item.title.includes('Payment')) return '/integrations';
+      if (item.title.includes('Error') || item.title.includes('Budget')) return '/docs';
+      return '/docs';
+    }
+    if (item.category === 'blog') {
+      return '/blog';
+    }
+    if (item.category === 'partner') {
+      return '/partners';
+    }
+    return '/';
+  };
+
   return (
     <div className="pt-16 pb-24 bg-white min-h-[80vh]">
       <SEO title="Search Results" description="Global search across BizOps ecosystem." />
@@ -34,7 +59,7 @@ const SearchPage: React.FC = () => {
         
         {/* Search Header */}
         <div className="mb-12 text-center">
-           <h1 className="text-3xl font-bold text-slate-900 mb-6">Pencarian Global</h1>
+           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">Pencarian Global</h1>
            <div className="relative max-w-2xl mx-auto">
               <input 
                 type="text" 
@@ -65,23 +90,29 @@ const SearchPage: React.FC = () => {
 
         {/* Results */}
         <div className="space-y-6" role="region" aria-live="polite">
-           {query && filteredResults.length === 0 ? (
-              <div className="text-center py-12 bg-slate-50 rounded-2xl border border-slate-100">
-                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-slate-300">
-                    <Search className="w-8 h-8" aria-hidden="true" />
-                 </div>
-                 <h3 className="text-lg font-bold text-slate-900 mb-2">Tidak ditemukan hasil untuk "{query}"</h3>
-                 <p className="text-slate-500 mb-8 max-w-md mx-auto">
-                    Coba gunakan kata kunci yang lebih umum atau periksa ejaan Anda.
-                 </p>
-                 <div className="flex justify-center gap-4">
-                    <Link to="/docs"><Button variant="outline" size="sm">Buka Dokumentasi</Button></Link>
-                    <Link to="/contact"><Button size="sm">Hubungi Support</Button></Link>
-                 </div>
-              </div>
+           {!query ? (
+              <EmptyState
+                type="empty"
+                icon={Search}
+                title="Mulai Pencarian"
+                description="Ketikan kata kunci di atas untuk mencari di seluruh konten BizOps."
+              />
+           ) : filteredResults.length === 0 ? (
+              <EmptyState
+                type="no-results"
+                icon={Search}
+                title={`Tidak ditemukan hasil untuk "${query}"`}
+                description="Coba gunakan kata kunci yang lebih umum atau periksa ejaan Anda."
+                actionLabel="Buka Dokumentasi"
+                onAction={() => window.location.href = '/docs'}
+              />
            ) : (
               filteredResults.map((res, idx) => (
-                 <div key={idx} className="bg-white p-6 rounded-xl border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all group cursor-pointer">
+                 <Link 
+                    key={idx} 
+                    to={getResultUrl(res)}
+                    className="block bg-white p-6 rounded-xl border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all group cursor-pointer"
+                 >
                     <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
                        {getIcon(res.category)}
                        <span>{res.path}</span>
@@ -98,15 +129,8 @@ const SearchPage: React.FC = () => {
                        </span>
                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all" aria-hidden="true" />
                     </div>
-                 </div>
+                 </Link>
               ))
-           )}
-           
-           {/* Default State hints */}
-           {!query && (
-              <div className="text-center py-12 text-slate-400">
-                 <p>Mulai ketik untuk mencari di seluruh ekosistem BizOps.</p>
-              </div>
            )}
         </div>
 

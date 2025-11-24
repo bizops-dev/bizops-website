@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
                   New: AI-Powered Stock Forecasting
                 </Badge>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
                 The Adaptive Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-500">Operating System.</span>
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed max-w-lg">
@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
               <div className="mt-10 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
                  <div className="flex -space-x-2">
                     {[1,2,3,4].map(i => (
-                       <div key={i} className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-900 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">
+                       <div key={i} className="w-11 h-11 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-900 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">
                           {String.fromCharCode(64+i)}
                        </div>
                     ))}
@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
 
             {/* Right Visual - Abstract Dashboard */}
             <div className="relative lg:ml-auto w-full">
-               <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden aspect-[4/3] transform hover:scale-[1.02] transition-transform duration-500 will-change-transform">
+               <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden aspect-[4/3] transform hover:scale-[1.02] transition-transform duration-300 will-change-transform">
                   {/* Fake UI Header */}
                   <div className="h-10 border-b border-slate-700 flex items-center px-4 gap-2 bg-slate-800/50">
                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -130,7 +130,7 @@ const HomePage: React.FC = () => {
                </div>
                
                {/* Floating Badge */}
-               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4 animate-bounce duration-[3000ms]">
+               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4 animate-bounce duration-[2000ms]">
                   <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                      <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
                   </div>
@@ -162,7 +162,7 @@ const HomePage: React.FC = () => {
       {/* 3. The Problems (The Cost of Chaos) */}
       <Section>
             <div className="text-center max-w-3xl mx-auto mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Berhenti Mengelola Bisnis Kompleks dengan Sistem yang Terpisah (Silo)</h2>
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Berhenti Mengelola Bisnis Kompleks dengan Sistem yang Terpisah (Silo)</h2>
                <p className="text-lg text-slate-600 dark:text-slate-400">
                   Tantangan terbesar perusahaan saat ini bukan pada kompetisi, melainkan inefisiensi internal akibat data yang tidak berbicara satu sama lain.
                </p>
@@ -187,7 +187,7 @@ const HomePage: React.FC = () => {
         
         <div className="relative z-10">
           <div className="mb-16 md:text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">9 Pilar Operasional, Satu Aliran Data Tanpa Putus.</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">9 Pilar Operasional, Satu Aliran Data Tanpa Putus.</h2>
             <p className="text-slate-400 text-lg">
               BizOps bukan sekadar kumpulan modul; ini adalah organisme digital yang menghubungkan setiap denyut nadi perusahaan Anda.
             </p>
@@ -223,10 +223,10 @@ const HomePage: React.FC = () => {
 
             {/* Tab Content (Right) */}
             <div className="lg:col-span-8">
-               <div className="bg-slate-800 rounded-3xl p-8 md:p-12 border border-slate-700 h-full flex flex-col justify-center animate-fade-in-up key={activeTab}">
+               <div className="bg-slate-800 rounded-2xl p-8 md:p-12 border border-slate-700 h-full flex flex-col justify-center animate-fade-in-up key={activeTab}">
                   <div className="mb-8">
                      <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Impact on Business</h3>
-                     <p className="text-2xl md:text-3xl font-medium text-white leading-snug">
+                     <p className="text-xl md:text-2xl lg:text-3xl font-medium text-white leading-relaxed">
                         "{activeSolution.impact}"
                      </p>
                   </div>
@@ -271,7 +271,7 @@ const HomePage: React.FC = () => {
       {/* 5. Unique Value Proposition (UVP) */}
       <Section className="border-b border-slate-100 dark:border-slate-800">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Mengapa BizOps Berbeda?</h2>
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Mengapa BizOps Berbeda?</h2>
                <p className="text-slate-600 dark:text-slate-400 text-lg">Kami tidak membangun software generik. Kami membangun solusi untuk konteks lokal Indonesia.</p>
             </div>
             
@@ -293,7 +293,7 @@ const HomePage: React.FC = () => {
       <Section className="bg-slate-50 dark:bg-slate-900/50">
             <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
                <div className="max-w-2xl">
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Terhubung dengan Ekosistem Digital</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Terhubung dengan Ekosistem Digital</h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
                      BizOps bukan pulau terisolasi. Arsitektur Open API kami siap bicara dengan Bank, Pajak, dan E-Commerce.
                   </p>
@@ -321,7 +321,7 @@ const HomePage: React.FC = () => {
       {/* 7. Industry Solutions Section */}
       <Section>
             <div className="text-center max-w-3xl mx-auto mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Solusi Spesifik Industri</h2>
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Solusi Spesifik Industri</h2>
                <p className="text-lg text-slate-600 dark:text-slate-400">
                   Karena operasional Toko Retail berbeda jauh dengan Kontraktor Sipil. Kami memahami nuansa bisnis Anda.
                </p>
@@ -351,7 +351,7 @@ const HomePage: React.FC = () => {
       <Section dark>
             <div className="flex flex-col md:flex-row gap-16 items-start">
                <div className="md:w-1/3 sticky top-24">
-                  <h2 className="text-3xl font-bold mb-6 text-white">Implementasi Tanpa Drama.</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-white leading-tight">Implementasi Tanpa Drama.</h2>
                   <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                      Kami tidak sekadar memberikan login dan pergi. Kami menggunakan metodologi "30-Day Sprint" untuk memastikan sistem benar-benar dipakai dan data valid.
                   </p>
@@ -362,7 +362,7 @@ const HomePage: React.FC = () => {
                <div className="md:w-2/3 grid grid-cols-1 gap-6">
                   {homeProcess.map((step, idx) => (
                      <div key={idx} className="bg-slate-800 p-8 rounded-2xl border border-slate-700 flex gap-6 items-start hover:bg-slate-700 transition-colors">
-                        <div className="text-5xl font-black text-slate-600 opacity-50">{step.step}</div>
+                        <div className="text-4xl md:text-5xl font-black text-slate-600 opacity-50">{step.step}</div>
                         <div>
                            <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                            <p className="text-slate-300">{step.desc}</p>
@@ -376,7 +376,7 @@ const HomePage: React.FC = () => {
       {/* 9. Roles / Persona Section */}
       <Section className="bg-slate-50 dark:bg-slate-900/50">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Didesain untuk Para Pemimpin</h2>
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Didesain untuk Para Pemimpin</h2>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                   Setiap role memiliki dashboard khusus. BizOps memberikan data yang relevan, bukan sekadar tabel membingungkan.
                </p>
@@ -401,7 +401,7 @@ const HomePage: React.FC = () => {
       <Section>
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-100 dark:border-slate-800 pb-8">
                <div>
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Built on Open Standards, Ready for Scale.</h2>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">Built on Open Standards, Ready for Scale.</h2>
                   <p className="text-slate-600 dark:text-slate-400 max-w-xl">
                      Kami tidak membangun sistem tertutup (proprietary black box). BizOps dibangun di atas fondasi teknologi open-source kelas dunia yang menjamin keberlanjutan.
                   </p>
@@ -445,7 +445,7 @@ const HomePage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-800">
                {globalStats.map((stat, idx) => (
                   <div key={idx} className="p-4">
-                     <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                     <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>
                      <div className="text-slate-400 text-sm uppercase tracking-wider font-medium">{stat.label}</div>
                   </div>
                ))}
@@ -457,7 +457,7 @@ const HomePage: React.FC = () => {
       <Section className="bg-primary-900 relative overflow-hidden" containerClassName="relative z-10 text-center">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">Siap Mentransformasi Operasional Bisnis Anda?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">Siap Mentransformasi Operasional Bisnis Anda?</h2>
           <p className="text-xl text-primary-100 mb-10">
              Bergabunglah dengan perusahaan-perusahaan yang telah beralih dari sistem yang kaku ke sistem yang adaptif.
           </p>

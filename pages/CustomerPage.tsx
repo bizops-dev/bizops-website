@@ -14,7 +14,7 @@ const CustomerPage: React.FC = () => {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
           Mereka yang Telah Bertransformasi.
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -26,7 +26,7 @@ const CustomerPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <CardSlider desktopClassName="md:flex md:flex-col md:space-y-16 md:gap-0" mobileItemWidth="w-[90vw]">
             {customerStories.map((story, idx) => (
-               <div key={idx} className="bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden flex flex-col lg:flex-row group hover:shadow-xl transition-shadow h-full md:h-auto mb-4 md:mb-0">
+               <div key={idx} className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden flex flex-col lg:flex-row group hover:shadow-xl transition-shadow h-full md:h-auto mb-4 md:mb-0">
                   
                   {/* Left: Narrative */}
                   <div className="p-8 lg:p-12 flex-1 flex flex-col">
@@ -97,7 +97,7 @@ const CustomerPage: React.FC = () => {
       
       {/* CTA */}
       <div className="mt-24 text-center max-w-3xl mx-auto px-4">
-         <h2 className="text-2xl font-bold text-slate-900 mb-4">Apakah Bisnis Anda Menghadapi Tantangan Serupa?</h2>
+         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 leading-tight">Apakah Bisnis Anda Menghadapi Tantangan Serupa?</h2>
          <p className="text-slate-600 mb-8">
             Setiap industri memiliki keunikan. Diskusikan masalah spesifik Anda dengan tim ahli kami yang berpengalaman di bidang Anda.
          </p>

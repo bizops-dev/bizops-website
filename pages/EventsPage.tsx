@@ -40,7 +40,7 @@ const EventsPage: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-4">BizOps Academy & Events</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">BizOps Academy & Events</h1>
            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Tingkatkan kompetensi tim Anda. Ikuti sesi edukasi gratis tentang digitalisasi bisnis, manajemen keuangan, dan strategi HR.
            </p>
@@ -76,10 +76,10 @@ const EventsPage: React.FC = () => {
         </div>
 
         {/* On-Demand Library */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
+        <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white">
            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div>
-                 <h2 className="text-3xl font-bold mb-4">On-Demand Library</h2>
+                 <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">On-Demand Library</h2>
                  <p className="text-slate-400 max-w-xl">
                     Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.
                  </p>

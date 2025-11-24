@@ -52,17 +52,28 @@ export type IndustryData = {
   caseStudy: string;
 };
 
+export type RoleChallenge = {
+  pain: string;
+  context: string;
+  gain: string;
+  gainDesc: string;
+};
+
 export type RoleData = {
   title: string;
   subtitle: string;
-  description: string;
+  icon: LucideIcon;
   metaTitle: string;
   metaDesc: string;
-  icon: LucideIcon;
-  challenges: Array<Challenge>;
-  solutions: Array<Solution>;
-  caseStudyTitle: string;
-  caseStudy: string;
+  heroHeadline: string;
+  heroSub: string;
+  cta?: {
+    btn: string;
+    head: string;
+  };
+  dashboardInsight: string;
+  dashboardFeatures: Array<string>;
+  challenges?: Array<RoleChallenge>;
 };
 
 export type ModuleFeature = {

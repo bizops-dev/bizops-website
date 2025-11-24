@@ -12,7 +12,7 @@ const DownloadPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               Kontrol Bisnis dari Genggaman.
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">

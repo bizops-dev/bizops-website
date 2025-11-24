@@ -16,7 +16,7 @@ const CustomDevPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Code className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Fitur Standar Tidak Cukup?<br/>Kami Bangunkan Untuk Anda.
           </h1>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -32,7 +32,7 @@ const CustomDevPage: React.FC = () => {
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Why Build Custom with Us?</h2>
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white leading-tight">Why Build Custom with Us?</h2>
                <p className="text-slate-600 dark:text-slate-400 mt-2">Pendekatan "Low Code" kami memastikan development cepat dan aman.</p>
             </div>
             
@@ -71,9 +71,9 @@ const CustomDevPage: React.FC = () => {
       {/* Use Cases */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white text-center mb-16">Real World Use Cases</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white text-center mb-16 leading-tight">Real World Use Cases</h2>
             <div className="space-y-8">
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
                   <div className="flex-shrink-0 p-4 bg-green-100 dark:bg-green-900/20 rounded-2xl">
                      <Briefcase className="w-8 h-8 text-green-600 dark:text-green-400" />
                   </div>
@@ -84,7 +84,7 @@ const CustomDevPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
                   <div className="flex-shrink-0 p-4 bg-blue-100 dark:bg-blue-900/20 rounded-2xl">
                      <Settings className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
@@ -95,7 +95,7 @@ const CustomDevPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
                   <div className="flex-shrink-0 p-4 bg-amber-100 dark:bg-amber-900/20 rounded-2xl">
                      <LinkIcon className="w-8 h-8 text-amber-600 dark:text-amber-400" />
                   </div>

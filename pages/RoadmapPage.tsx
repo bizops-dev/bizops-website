@@ -9,7 +9,7 @@ const RoadmapPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-           <h1 className="text-4xl font-bold text-slate-900 mb-4">Public Product Roadmap</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Public Product Roadmap</h1>
            <p className="text-lg text-slate-600">
               Software yang statis adalah software yang mati. Kami membagikan peta jalan pengembangan kami secara publik karena kami percaya pada transparansi.
            </p>
@@ -36,7 +36,7 @@ const RoadmapPage: React.FC = () => {
 
         {/* Request Feature */}
         <div className="mt-20 bg-slate-900 rounded-2xl p-12 text-center text-white">
-           <h2 className="text-3xl font-bold mb-4">Punya Ide Fitur?</h2>
+           <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">Punya Ide Fitur?</h2>
            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
               Produk terbaik dibangun berdasarkan masukan pengguna nyata. Suarakan kebutuhan bisnis unik Anda.
            </p>

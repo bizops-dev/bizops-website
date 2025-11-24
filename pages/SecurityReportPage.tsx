@@ -15,7 +15,7 @@ const SecurityReportPage: React.FC = () => {
            <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6 text-red-600">
               <Shield className="w-8 h-8" />
            </div>
-           <h1 className="text-4xl font-bold text-slate-900 mb-4">Bantu Kami Menjaga BizOps Tetap Aman</h1>
+           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Bantu Kami Menjaga BizOps Tetap Aman</h1>
            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Kami menghargai kontribusi komunitas peneliti keamanan (security researchers) yang bertindak dengan itikad baik (Responsible Disclosure).
            </p>
@@ -40,7 +40,7 @@ const SecurityReportPage: React.FC = () => {
            </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
            <div className="bg-slate-900 text-white p-8">
               <h2 className="text-2xl font-bold flex items-center gap-3"><Lock className="w-6 h-6 text-amber-400" /> Secure Reporting Form</h2>
               <p className="text-slate-400 mt-2">Laporan Anda dienkripsi dan dikirim langsung ke tim CISO kami.</p>
