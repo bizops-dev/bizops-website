@@ -4,8 +4,10 @@ import {
   Building, TrendingUp, DollarSign, Users, Server 
 } from 'lucide-react';
 
+import type { IndustryData, RoleData } from '../types';
+
 // --- INDUSTRIES DATA ---
-export const industriesData: Record<string, any> = {
+export const industriesData: Record<string, IndustryData> = {
   'construction': {
     title: "Construction & Engineering",
     subtitle: "Built for The Field, Managed from The Office.",
@@ -129,7 +131,7 @@ export const industriesData: Record<string, any> = {
 };
 
 // --- ROLES DATA ---
-export const rolesData: Record<string, any> = {
+export const rolesData: Record<string, RoleData> = {
   'ceo': {
     title: "CEO & Founders",
     subtitle: "The Captain's View",

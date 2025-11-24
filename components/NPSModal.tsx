@@ -38,7 +38,9 @@ const NPSModal: React.FC = () => {
     setRating(score);
     setStep('comment');
     // In a real app, send score to analytics endpoint here
-    console.log(`[NPS] Score recorded: ${score}`);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`[NPS] Score recorded: ${score}`);
+    }
   };
 
   const handleSubmitComment = (e: React.FormEvent) => {

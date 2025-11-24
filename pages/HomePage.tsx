@@ -15,8 +15,8 @@ const HomePage: React.FC = () => {
   const activeSolution = homeSolutions.find(s => s.id === activeTab) || homeSolutions[0];
 
   // Helper to convert object to array for mapping
-  const industries = Object.entries(industriesData).map(([key, val]) => ({ id: key, ...(val as any) }));
-  const roles = Object.entries(rolesData).map(([key, val]) => ({ id: key, ...(val as any) }));
+  const industries = Object.entries(industriesData).map(([key, val]) => ({ id: key, ...val }));
+  const roles = Object.entries(rolesData).map(([key, val]) => ({ id: key, ...val }));
 
   // Schema.org WebSite
   const websiteSchema = {

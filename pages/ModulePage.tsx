@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 
 const ModulePage: React.FC = () => {
   const { moduleId } = useParams<{ moduleId: string }>();
-  const data = moduleId ? modulesData[moduleId] : null;
+  const data: ModuleData | null = moduleId ? modulesData[moduleId] : null;
 
   if (!data) {
     return (
@@ -42,7 +42,7 @@ const ModulePage: React.FC = () => {
       "ratingValue": "4.8",
       "ratingCount": "124"
     },
-    "featureList": data.features.map((f: any) => f.title).join(", "),
+    "featureList": data.features.map((f) => f.title).join(", "),
     "publisher": {
       "@type": "Organization",
       "name": "PT Divistant Teknologi Indonesia"
@@ -96,7 +96,7 @@ const ModulePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Key Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {data.features.map((feat: any, idx: number) => (
+            {data.features.map((feat, idx) => (
               <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex items-start gap-4 hover:shadow-md transition-shadow">
                 <div className="mt-1 flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                    <Check className="w-5 h-5 text-green-600" />
@@ -152,7 +152,7 @@ const ModulePage: React.FC = () => {
             <p className="text-lg text-slate-500 mb-12">Bagaimana modul ini berbicara dengan bagian lain bisnis Anda.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               {data.connections && data.connections.map((conn: any, idx: number) => (
+               {data.connections && data.connections.map((conn, idx) => (
                   <div key={idx} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-left relative overflow-hidden group hover:border-primary-200 transition-colors">
                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <ArrowRight className="w-24 h-24 text-primary-600" />

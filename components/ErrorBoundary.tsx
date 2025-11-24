@@ -2,6 +2,7 @@
 import React, { ErrorInfo, ReactNode } from "react";
 import Button from "./Button";
 import { AlertTriangle, RefreshCw } from "lucide-react";
+import * as Sentry from "@sentry/react";
 
 interface ErrorBoundaryProps {
   children?: ReactNode;
@@ -24,6 +25,24 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
+    // Report to Sentry if available
+    try {
+      Sentry.captureException(error, {
+        contexts: {
+          react: {
+            componentStack: errorInfo.componentStack,
+          },
+        },
+        tags: {
+          errorBoundary: true,
+        },
+      });
+    } catch (sentryError) {
+      // Silently fail if Sentry is not initialized
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Sentry error reporting failed:', sentryError);
+      }
+    }
   }
 
   public render() {
