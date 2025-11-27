@@ -131,7 +131,7 @@ const PricingPage: React.FC = () => {
 
              <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-6">
                <p className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-2">Fitur Utama:</p>
-               {['Core ERP (HR, Finance, Sales)', 'Mobile App Karyawan (Basic)', 'Shared Cloud Hosting', 'Standard Email Support', 'No Hidden Fees'].map(f => (
+               {['Recommended for 50 Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App Karyawan (Basic)', 'Shared Cloud Hosting', 'Standard Email Support'].map(f => (
                  <div key={f} className="flex gap-3 text-sm text-slate-600 dark:text-slate-300">
                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
                    <span>{f}</span>
@@ -181,7 +181,7 @@ const PricingPage: React.FC = () => {
 
              <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-6">
                <p className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-2">Semua di Business, plus:</p>
-               {['Manufacturing & Assets', 'Mobile App (Advanced)', 'Dedicated Performance', 'Priority Chat Support', 'Assisted Setup', 'Unlimited Users'].map(f => (
+               {['Recommended for 200 Users', 'Manufacturing & Assets', 'Mobile App (Advanced)', 'Dedicated Performance', 'Priority Chat Support', 'Assisted Setup'].map(f => (
                  <div key={f} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
                    <div className="bg-primary-100 dark:bg-primary-900/50 rounded-full p-0.5">
                      <Check className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
@@ -230,7 +230,7 @@ const PricingPage: React.FC = () => {
 
              <div className="space-y-4 flex-grow relative z-10 border-t border-slate-800 pt-6">
                <p className="text-xs font-bold text-amber-500 uppercase tracking-wider mb-2">Enterprise Exclusive:</p>
-               {['Private / On-Premise', 'Custom Module Install', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map(f => (
+               {['Unlimited Users Capacity', 'Private / On-Premise', 'Custom Module Install', 'Full Database Access', 'Whitelabel Mobile App'].map(f => (
                  <div key={f} className="flex gap-3 text-sm text-slate-300">
                    <Check className="w-5 h-5 text-amber-500 flex-shrink-0" />
                    <span>{f}</span>

@@ -36,10 +36,10 @@ export const pricingPlans: PricingPlan[] = [
     cta: 'Mulai Trial Gratis 14 Hari',
     features: [
       'Core ERP (HR, Finance, Sales, Purchasing)',
-      'Mobile App Karyawan (Basic)',
+      'Recommended up to 50 Users',
       'Shared Cloud Infrastructure',
       'Standard Support (Email)',
-      'Standard Customization'
+      'No Hidden Fees'
     ]
   },
   {
@@ -54,7 +54,7 @@ export const pricingPlans: PricingPlan[] = [
     cta: 'Konsultasi Paket Growth',
     features: [
       'All ERP Modules (Manufacturing, Assets, Projects)',
-      'Mobile App Karyawan (Advanced)',
+      'Recommended up to 200 Users',
       'Dedicated VPS Resource',
       'Priority Support (Chat/WA)',
       'Advanced Reporting'
@@ -70,10 +70,10 @@ export const pricingPlans: PricingPlan[] = [
     description: 'Kebebasan penuh kustomisasi, integrasi & infrastruktur.',
     cta: 'Ajukan Penawaran Kustom',
     features: [
+      'Unlimited Users Capacity',
       'Private Cloud / On-Premise',
       'Custom Module Installation',
       'Full Database Access',
-      'White-label Mobile App',
       'Dedicated Account Manager'
     ]
   }
@@ -156,22 +156,6 @@ export const addOns = [
     description: 'Tambahan penyimpanan SSD',
     price: 100000,
     unit: 'per 10GB/bulan',
-    availableFor: ['business', 'growth']
-  },
-  {
-    id: 'extra-user-ess',
-    name: 'Extra ESS User',
-    description: 'Akses karyawan hanya untuk ESS (Mobile App)',
-    price: 15000,
-    unit: 'per user/bulan',
-    availableFor: ['business', 'growth', 'enterprise']
-  },
-  {
-    id: 'extra-user-system',
-    name: 'Extra System User',
-    description: 'Akses full ke Dashboard/Desk (Admin/Staff)',
-    price: 75000,
-    unit: 'per user/bulan',
     availableFor: ['business', 'growth']
   },
   {
