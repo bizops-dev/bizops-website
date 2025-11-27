@@ -1,4 +1,4 @@
-// BizOps Pricing Model Data (Business Focused)
+// BizOps Pricing Model Data (Ultimate Version)
 
 export interface PricingPlan {
   id: string;
@@ -11,6 +11,7 @@ export interface PricingPlan {
   popular?: boolean;
   cta: string;
   features: string[];
+  recommendedFor: string[];
 }
 
 export interface FeatureCategory {
@@ -24,11 +25,22 @@ export interface FeatureCategory {
   }[];
 }
 
+export interface ServiceAddon {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  unit: string;
+  availableFor: string[];
+  category: 'infrastructure' | 'implementation' | 'support' | 'integration';
+  recommended?: boolean;
+}
+
 export const pricingPlans: PricingPlan[] = [
   {
     id: 'business',
     name: 'Business',
-    tagline: 'Untuk Startups / SME',
+    tagline: 'Untuk Startups & SME',
     priceMonthly: 3000000,
     priceYearly: 2500000,
     currency: 'IDR',
@@ -40,7 +52,8 @@ export const pricingPlans: PricingPlan[] = [
       'Shared Cloud Infrastructure',
       'Standard Support (Email)',
       'No Hidden Fees'
-    ]
+    ],
+    recommendedFor: ['Startup', 'SME', 'Single Location', 'Simple Workflow']
   },
   {
     id: 'growth',
@@ -58,7 +71,8 @@ export const pricingPlans: PricingPlan[] = [
       'Dedicated VPS Resource',
       'Priority Support (Chat/WA)',
       'Advanced Reporting'
-    ]
+    ],
+    recommendedFor: ['Multi-Branch', 'Manufacturing', 'Complex Workflow', 'API Integration']
   },
   {
     id: 'enterprise',
@@ -75,7 +89,8 @@ export const pricingPlans: PricingPlan[] = [
       'Custom Module Installation',
       'Full Database Access',
       'Dedicated Account Manager'
-    ]
+    ],
+    recommendedFor: ['Enterprise', 'BUMN', 'High Security', 'Custom Development', 'On-Premise']
   }
 ];
 
@@ -149,53 +164,112 @@ export const featureComparison: FeatureCategory[] = [
   }
 ];
 
-export const addOns = [
+export const addOns: ServiceAddon[] = [
+  // Infrastructure
   {
     id: 'extra-storage',
     name: 'Extra Storage',
-    description: 'Tambahan penyimpanan SSD',
+    description: 'Tambahan penyimpanan SSD untuk dokumen & attachment',
     price: 100000,
     unit: 'per 10GB/bulan',
-    availableFor: ['business', 'growth']
+    availableFor: ['business', 'growth'],
+    category: 'infrastructure'
   },
   {
     id: 'dedicated-ip',
     name: 'Dedicated IP Address',
-    description: 'Alamat IP statis khusus untuk keamanan',
+    description: 'Alamat IP statis untuk whitelisting & enhanced security',
     price: 250000,
     unit: 'per bulan',
-    availableFor: ['growth']
+    availableFor: ['growth', 'enterprise'],
+    category: 'infrastructure'
+  },
+  
+  // Implementation Services
+  {
+    id: 'impl-express',
+    name: 'Express Implementation (2 Minggu)',
+    description: 'Fast-track setup: Database config, master data template, 1x training',
+    price: 5000000,
+    unit: 'one-time',
+    availableFor: ['business'],
+    category: 'implementation'
   },
   {
     id: 'impl-standard',
-    name: 'Implementation Pack (Standard)',
-    description: 'Setup database, input master data template, training online 2 sesi',
-    price: 7500000,
+    name: 'Standard Implementation (1 Bulan)',
+    description: 'Setup database, input master data, workflow basic, 3x training online',
+    price: 10000000,
     unit: 'one-time',
-    availableFor: ['business']
+    availableFor: ['business', 'growth'],
+    category: 'implementation',
+    recommended: true
   },
   {
     id: 'impl-pro',
-    name: 'Implementation Pack (Professional)',
-    description: 'Setup, migrasi data (clean), workflow config, training 5 sesi',
-    price: 15000000,
+    name: 'Professional Implementation (2 Bulan)',
+    description: 'Full setup, data migration (clean), custom workflow, 6x training, 1x onsite',
+    price: 25000000,
     unit: 'one-time',
-    availableFor: ['growth']
+    availableFor: ['growth', 'enterprise'],
+    category: 'implementation'
   },
   {
+    id: 'data-migration',
+    name: 'Data Migration Service',
+    description: 'Migrasi data dari sistem lama (cleaning, mapping, validation)',
+    price: 8000000,
+    unit: 'per sistem',
+    availableFor: ['business', 'growth', 'enterprise'],
+    category: 'implementation'
+  },
+  
+  // Support Services
+  {
     id: 'training-extra',
-    name: 'Extra Online Training',
-    description: 'Sesi training tambahan per modul (2 jam)',
+    name: 'Extra Training Session',
+    description: 'Sesi training tambahan per modul (2 jam, online)',
     price: 1500000,
     unit: 'per sesi',
-    availableFor: ['business', 'growth', 'enterprise']
+    availableFor: ['business', 'growth', 'enterprise'],
+    category: 'support'
   },
   {
     id: 'onsite-visit',
-    name: 'On-site Visit / Support',
-    description: 'Kunjungan tim teknis ke lokasi (Jadetabek)',
+    name: 'On-site Visit',
+    description: 'Kunjungan tim teknis ke lokasi (Jadetabek, 1 hari)',
     price: 3500000,
     unit: 'per hari',
-    availableFor: ['growth', 'enterprise']
+    availableFor: ['growth', 'enterprise'],
+    category: 'support'
+  },
+  {
+    id: 'dedicated-support',
+    name: 'Dedicated Support 24/7',
+    description: 'Akses prioritas support via hotline dengan SLA 2 jam',
+    price: 2500000,
+    unit: 'per bulan',
+    availableFor: ['enterprise'],
+    category: 'support'
+  },
+  
+  // Integration Services
+  {
+    id: 'api-integration',
+    name: 'API Integration (Per Endpoint)',
+    description: 'Integrasi ke sistem eksternal via REST API',
+    price: 5000000,
+    unit: 'per integrasi',
+    availableFor: ['growth', 'enterprise'],
+    category: 'integration'
+  },
+  {
+    id: 'custom-report',
+    name: 'Custom Report Development',
+    description: 'Pembuatan laporan kustom sesuai kebutuhan bisnis',
+    price: 2000000,
+    unit: 'per report',
+    availableFor: ['growth', 'enterprise'],
+    category: 'integration'
   }
 ];
