@@ -2,7 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Users, Package, Shield, Rocket, CheckCircle2, Send, ArrowRight, ArrowLeft, 
   Building2, Server, Database, Briefcase, Clock, Zap, HelpCircle, AlertCircle,
-  FileText, Settings, TrendingUp, Globe, Check, Info, Factory, Store, UserCheck, HardHat, GraduationCap, Stethoscope, MoreHorizontal, Cloud, HardDrive, LayoutGrid
+  FileText, Settings, TrendingUp, Globe, Check, Info, Factory, Store, UserCheck, 
+  HardHat, GraduationCap, Stethoscope, MoreHorizontal, Cloud, HardDrive, LayoutGrid
 } from 'lucide-react';
 import Button from './Button';
 import Card from './Card';
@@ -40,6 +41,9 @@ interface AssessmentData {
 }
 
 const PricingCalculator: React.FC = () => {
+  // Define icon aliases at the top to avoid ReferenceErrors
+  const CalendarIcon = Clock;
+
   const [currentStep, setCurrentStep] = useState<Step>('assessment');
   const [assessmentStep, setAssessmentStep] = useState(1); // 1-6 sub-steps
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -353,7 +357,7 @@ const PricingCalculator: React.FC = () => {
                       { id: 'construction', name: 'Konstruksi', icon: HardHat },
                       { id: 'education', name: 'Pendidikan', icon: GraduationCap },
                       { id: 'healthcare', name: 'Kesehatan', icon: Stethoscope },
-                      { id: 'fnb', name: 'F&B', icon: Info }, // Using Info as placeholder or other icon
+                      { id: 'fnb', name: 'F&B', icon: Info },
                       { id: 'other', name: 'Lainnya', icon: MoreHorizontal },
                     ].map(ind => (
                       <SelectableCard
@@ -542,7 +546,7 @@ const PricingCalculator: React.FC = () => {
                   {[
                     { id: 'urgent', label: 'ASAP / Urgent', desc: '< 1 Bulan', icon: Zap },
                     { id: '1month', label: 'Standard', desc: '1 - 2 Bulan', icon: Clock },
-                    { id: '3months', label: 'Planned', desc: '3+ Bulan', icon: CalendarIcon } // Using Clock as placeholder
+                    { id: '3months', label: 'Planned', desc: '3+ Bulan', icon: CalendarIcon }
                   ].map(time => (
                     <SelectableCard
                       key={time.id}
@@ -678,12 +682,6 @@ const PricingCalculator: React.FC = () => {
     );
   };
 
-  // Icon placeholder fix
-  const CalendarIcon = Clock; 
-
-  // --- RENDER RECOMMENDATION & CUSTOMIZE ---
-  // (Menggunakan layout yang sudah ada tapi dipoles dikit)
-  
   const renderRecommendationStep = () => {
      const recPlan = pricingPlans.find(p => p.id === recommendedPlanId);
      return (
@@ -932,7 +930,7 @@ const PricingCalculator: React.FC = () => {
       {currentStep === 'assessment' && renderAssessmentStep()}
       {currentStep === 'recommendation' && renderRecommendationStep()}
       {currentStep === 'customize' && renderCustomizeStep()}
-      {/* Quote Modal tetap sama... */}
+      
       {showQuoteModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[100] p-4 animate-in fade-in zoom-in duration-200">
           <Card className="max-w-md w-full shadow-2xl relative overflow-hidden">
