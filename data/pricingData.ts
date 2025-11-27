@@ -167,11 +167,35 @@ export const addOns = [
     availableFor: ['growth']
   },
   {
-    id: 'implementation-pack',
-    name: 'Implementation Pack',
-    description: 'Jasa setup, konfigurasi, dan training awal',
+    id: 'impl-standard',
+    name: 'Implementation Pack (Standard)',
+    description: 'Setup database, input master data template, training online 2 sesi',
+    price: 7500000,
+    unit: 'one-time',
+    availableFor: ['business']
+  },
+  {
+    id: 'impl-pro',
+    name: 'Implementation Pack (Professional)',
+    description: 'Setup, migrasi data (clean), workflow config, training 5 sesi',
     price: 15000000,
     unit: 'one-time',
-    availableFor: ['business', 'growth']
+    availableFor: ['growth']
+  },
+  {
+    id: 'training-extra',
+    name: 'Extra Online Training',
+    description: 'Sesi training tambahan per modul (2 jam)',
+    price: 1500000,
+    unit: 'per sesi',
+    availableFor: ['business', 'growth', 'enterprise']
+  },
+  {
+    id: 'onsite-visit',
+    name: 'On-site Visit / Support',
+    description: 'Kunjungan tim teknis ke lokasi (Jadetabek)',
+    price: 3500000,
+    unit: 'per hari',
+    availableFor: ['growth', 'enterprise']
   }
 ];
