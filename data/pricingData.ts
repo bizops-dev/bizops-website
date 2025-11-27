@@ -1,4 +1,4 @@
-// BizOps Pricing Model Data (Frappe Ecosystem + Custom ESS)
+// BizOps Pricing Model Data (Business Focused)
 
 export interface PricingPlan {
   id: string;
@@ -32,14 +32,14 @@ export const pricingPlans: PricingPlan[] = [
     priceMonthly: 3000000,
     priceYearly: 2500000,
     currency: 'IDR',
-    description: 'Cloud ERP berbasis Frappe dengan modul standar essensial.',
+    description: 'Cloud ERP lengkap untuk operasional bisnis sehari-hari.',
     cta: 'Mulai Trial Gratis 14 Hari',
     features: [
-      'Core Modules (HR, Buying, Selling, Accounting)',
-      'Custom ESS (Basic Access)',
+      'Core ERP (HR, Finance, Sales, Purchasing)',
+      'Mobile App Karyawan (Basic)',
       'Shared Cloud Infrastructure',
       'Standard Support (Email)',
-      'No Custom Apps'
+      'Standard Customization'
     ]
   },
   {
@@ -49,15 +49,15 @@ export const pricingPlans: PricingPlan[] = [
     priceMonthly: 9000000,
     priceYearly: 7500000,
     currency: 'IDR',
-    description: 'Dedicated resources & modul lengkap untuk scaling up.',
+    description: 'Performa dedicated & fitur lengkap untuk scaling up.',
     popular: true,
     cta: 'Konsultasi Paket Growth',
     features: [
-      'All Frappe Modules (Manufacturing, Assets, Projects)',
-      'Custom ESS (Advanced Features)',
+      'All ERP Modules (Manufacturing, Assets, Projects)',
+      'Mobile App Karyawan (Advanced)',
       'Dedicated VPS Resource',
       'Priority Support (Chat/WA)',
-      'Server Access (Limited)'
+      'Advanced Reporting'
     ]
   },
   {
@@ -67,13 +67,13 @@ export const pricingPlans: PricingPlan[] = [
     priceMonthly: 0, // Custom
     priceYearly: 0, // Custom
     currency: 'IDR',
-    description: 'Kebebasan penuh kustomisasi Frappe & infrastruktur.',
+    description: 'Kebebasan penuh kustomisasi, integrasi & infrastruktur.',
     cta: 'Ajukan Penawaran Kustom',
     features: [
       'Private Cloud / On-Premise',
-      'Install Custom Frappe Apps',
-      'Full Database & Server Access (Root)',
-      'White-label Custom ESS App',
+      'Custom Module Installation',
+      'Full Database Access',
+      'White-label Mobile App',
       'Dedicated Account Manager'
     ]
   }
@@ -81,76 +81,70 @@ export const pricingPlans: PricingPlan[] = [
 
 export const featureComparison: FeatureCategory[] = [
   {
-    category: 'Core Modules (Frappe Based)',
+    category: 'Core ERP Features',
     features: [
-      { name: 'Accounting & Finance', business: true, growth: true, enterprise: true, description: 'General Ledger, AP/AR, Banking, Tax' },
-      { name: 'HR & Payroll', business: true, growth: true, enterprise: true, description: 'Employee, Attendance, Payroll, Leave' },
-      { name: 'Buying & Selling', business: true, growth: true, enterprise: true, description: 'CRM, Quotation, PO, Invoicing' },
-      { name: 'Inventory Management', business: true, growth: true, enterprise: true, description: 'Stock, Serial/Batch, Multi-warehouse' },
-      { name: 'Asset Management', business: false, growth: true, enterprise: true, description: 'Depreciation, Maintenance, Movement' },
-      { name: 'Manufacturing', business: false, growth: true, enterprise: true, description: 'BOM, Work Order, Production Plan' },
-      { name: 'Project Management', business: false, growth: true, enterprise: true, description: 'Tasks, Timesheets, Costing' },
-      { name: 'Quality Control', business: false, growth: true, enterprise: true, description: 'Inspection, Goals' },
-      { name: 'Helpdesk / Support', business: false, growth: true, enterprise: true, description: 'Tickets, SLA, Issues' },
-      { name: 'Website & Portal', business: false, growth: true, enterprise: true, description: 'Web Builder, Customer Portal' },
+      { name: 'Accounting & Finance', business: true, growth: true, enterprise: true, description: 'GL, AP/AR, Banking, Tax' },
+      { name: 'HR & Payroll', business: true, growth: true, enterprise: true, description: 'Employee, Payroll, Leave' },
+      { name: 'Sales & CRM', business: true, growth: true, enterprise: true, description: 'Leads, Quotation, Invoice' },
+      { name: 'Procurement & Inventory', business: true, growth: true, enterprise: true, description: 'PO, Stock, Multi-warehouse' },
+      { name: 'Asset Management', business: false, growth: true, enterprise: true, description: 'Depreciation, Tracking' },
+      { name: 'Manufacturing', business: false, growth: true, enterprise: true, description: 'BOM, Production Planning' },
+      { name: 'Project Management', business: false, growth: true, enterprise: true, description: 'Tasks, Timesheets, Billing' },
+      { name: 'Quality Control', business: false, growth: true, enterprise: true, description: 'Inspections & Goals' },
+      { name: 'Helpdesk / Support', business: false, growth: true, enterprise: true, description: 'Ticketing System' },
+      { name: 'Website Builder', business: false, growth: true, enterprise: true, description: 'Company Profile / Portal' },
     ]
   },
   {
-    category: 'Custom ESS (BizOps Exclusive)',
+    category: 'Employee Mobile App (ESS)',
     features: [
-      { name: 'Mobile Attendance (GPS)', business: true, growth: true, enterprise: true, description: 'Check-in/out via Mobile App' },
+      { name: 'Mobile Attendance (GPS)', business: true, growth: true, enterprise: true, description: 'Check-in/out via App' },
       { name: 'Leave & Expense Request', business: true, growth: true, enterprise: true, description: 'Self-service submission' },
-      { name: 'Payslip View', business: true, growth: true, enterprise: true, description: 'Download payslip PDF' },
+      { name: 'Payslip Download', business: true, growth: true, enterprise: true, description: 'PDF Payslip access' },
       { name: 'Approval Workflow', business: 'Standard', growth: 'Advanced Multi-level', enterprise: 'Custom Logic' },
-      { name: 'Team Dashboard', business: false, growth: true, enterprise: true, description: 'Manager view for team stats' },
-      { name: 'Shift Scheduling', business: false, growth: true, enterprise: true, description: 'Shift roster & swap request' },
-      { name: 'Overtime Request', business: false, growth: true, enterprise: true, description: 'Overtime calculation integration' },
-      { name: 'Company Announcement', business: false, growth: true, enterprise: true, description: 'News feed & broadcast' },
-      { name: 'Whitelabel App', business: false, growth: false, enterprise: true, description: 'Custom Logo & App Name' },
-      { name: 'Custom ESS Features', business: false, growth: false, enterprise: true, description: 'Bespoke development' },
+      { name: 'Team Dashboard', business: false, growth: true, enterprise: true, description: 'Manager view' },
+      { name: 'Shift Scheduling', business: false, growth: true, enterprise: true, description: 'Roster & swap request' },
+      { name: 'Overtime Request', business: false, growth: true, enterprise: true, description: 'Calculated overtime' },
+      { name: 'Company Announcement', business: false, growth: true, enterprise: true, description: 'Broadcast news' },
+      { name: 'Whitelabel App', business: false, growth: false, enterprise: true, description: 'Custom Logo & Branding' },
+      { name: 'Custom App Features', business: false, growth: false, enterprise: true, description: 'Bespoke development' },
     ]
   },
   {
     category: 'Infrastructure & Performance',
     features: [
-      { name: 'Server Type', business: 'Shared Cloud', growth: 'Dedicated VPS', enterprise: 'Private / On-Prem' },
-      { name: 'CPU Allocation', business: 'Shared vCPU', growth: '2 vCPU Dedicated', enterprise: 'Custom (4+ vCPU)' },
-      { name: 'RAM Allocation', business: 'Shared Memory', growth: '4 GB Dedicated', enterprise: 'Custom (8GB+)' },
+      { name: 'Deployment Type', business: 'Shared Cloud', growth: 'Dedicated Cloud', enterprise: 'Private / On-Prem' },
+      { name: 'Computing Power', business: 'Standard', growth: 'High Performance', enterprise: 'Custom / Unlimited' },
       { name: 'Storage (SSD)', business: '20 GB', growth: '80 GB', enterprise: 'Custom / Scalable' },
-      { name: 'Database Access', business: false, growth: 'Read-Replica (Add-on)', enterprise: 'Full Access (Root)' },
-      { name: 'Server Access (SSH)', business: false, growth: false, enterprise: true },
-      { name: 'Background Workers', business: 'Shared Queue', growth: 'Dedicated Queue', enterprise: 'Custom Configuration' },
+      { name: 'Database Access', business: false, growth: 'Read-Only (Add-on)', enterprise: 'Full Access' },
+      { name: 'Background Jobs', business: 'Shared Queue', growth: 'Dedicated Queue', enterprise: 'Custom Configuration' },
       { name: 'Backup Frequency', business: 'Daily', growth: 'Daily + On-demand', enterprise: 'Real-time / Custom' },
-      { name: 'Redis Cache', business: 'Shared', growth: 'Dedicated Instance', enterprise: 'Dedicated Cluster' },
-      { name: 'Data Location', business: 'Jakarta Region', growth: 'Jakarta Region', enterprise: 'Any Region / On-Prem' },
+      { name: 'Server Location', business: 'Jakarta', growth: 'Jakarta', enterprise: 'Any Region / On-Prem' },
     ]
   },
   {
-    category: 'Customization & Extensibility',
+    category: 'Customization Capabilities',
     features: [
-      { name: 'Frappe Custom Fields', business: 'Yes', growth: 'Yes', enterprise: 'Yes' },
+      { name: 'Custom Fields & Forms', business: 'Yes', growth: 'Yes', enterprise: 'Yes' },
       { name: 'Print Format Builder', business: 'Yes', growth: 'Yes', enterprise: 'Yes' },
-      { name: 'Server Scripts', business: 'Restricted', growth: 'Allowed (Safe Mode)', enterprise: 'Full Access' },
-      { name: 'Client Scripts', business: 'Yes', growth: 'Yes', enterprise: 'Yes' },
-      { name: 'Install Custom Apps', business: false, growth: false, enterprise: true, description: 'Install 3rd party Frappe Apps' },
-      { name: 'Custom API Endpoints', business: false, growth: false, enterprise: true },
+      { name: 'Scripting / Logic', business: 'Restricted', growth: 'Safe Mode', enterprise: 'Full Access' },
+      { name: 'Install Custom Modules', business: false, growth: false, enterprise: true, description: 'Add-on modules' },
+      { name: 'API Integration', business: 'Standard API', growth: 'Full API Access', enterprise: 'Custom Endpoints' },
       { name: 'Workflow Builder', business: 'Basic', growth: 'Advanced', enterprise: 'Unlimited' },
       { name: 'Webhooks', business: '5 Hooks', growth: '20 Hooks', enterprise: 'Unlimited' },
-      { name: 'Module Hiding/Disabling', business: true, growth: true, enterprise: true },
-      { name: 'Source Code Access', business: false, growth: false, enterprise: true, description: 'For Custom Apps only' },
+      { name: 'Module Configuration', business: true, growth: true, enterprise: true },
     ]
   },
   {
-    category: 'Support & Services',
+    category: 'Support & Implementation',
     features: [
-      { name: 'Support Channel', business: 'Email / Ticket', growth: 'WhatsApp / Chat', enterprise: 'Dedicated Channel' },
+      { name: 'Support Channel', business: 'Email / Ticket', growth: 'WhatsApp / Chat', enterprise: 'Dedicated Team' },
       { name: 'Response Time (SLA)', business: '48 Hours', growth: '12 Hours', enterprise: '4 Hours / Custom' },
-      { name: 'Implementation', business: 'Self-Service / Docs', growth: 'Assisted Setup', enterprise: 'Full Turnkey' },
+      { name: 'Implementation', business: 'Self-Service / Guide', growth: 'Assisted Setup', enterprise: 'Full Turnkey' },
       { name: 'Training', business: 'Video Tutorials', growth: '2x Online Session', enterprise: 'On-site Training' },
-      { name: 'Version Upgrade', business: 'Auto (Latest)', growth: 'Scheduled', enterprise: 'On-demand / LTS' },
       { name: 'Bug Fix Priority', business: 'Standard', growth: 'High', enterprise: 'Critical' },
       { name: 'Consultation', business: false, growth: 'Monthly Review', enterprise: 'Weekly / On-demand' },
-      { name: 'Data Migration', business: 'Excel Import', growth: 'Excel Import + Assist', enterprise: 'Custom Scripting' },
+      { name: 'Data Migration', business: 'Excel Import', growth: 'Excel Import + Assist', enterprise: 'Custom Migration' },
     ]
   }
 ];
@@ -183,7 +177,7 @@ export const addOns = [
   {
     id: 'dedicated-ip',
     name: 'Dedicated IP Address',
-    description: 'Alamat IP statis khusus untuk whitelist',
+    description: 'Alamat IP statis khusus untuk keamanan',
     price: 250000,
     unit: 'per bulan',
     availableFor: ['growth']
