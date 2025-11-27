@@ -10,6 +10,7 @@ import Section from '../components/Section';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
 import PricingFeatureTable from '../components/PricingFeatureTable';
+import FAQAccordion from '../components/FAQAccordion';
 
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
@@ -183,14 +184,7 @@ const PricingPage: React.FC = () => {
             <HelpCircle className="w-6 h-6 text-primary-500" />
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
-             {pricingFaqs.map((faq, idx) => (
-                <Card key={idx} className="p-6">
-                   <h3 className="font-bold text-slate-900 dark:text-white mb-2">{faq.q}</h3>
-                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{faq.a}</p>
-                </Card>
-             ))}
-          </div>
+          <FAQAccordion faqs={pricingFaqs} />
         </div>
 
         {/* Partner CTA */}

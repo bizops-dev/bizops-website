@@ -50,73 +50,73 @@ const PricingFeatureTable: React.FC = () => {
         </p>
       </div>
 
-      {/* Desktop Table View */}
-      <div className="hidden lg:block overflow-x-auto">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-slate-100 dark:bg-slate-800">
-              <th className="text-left py-4 px-6 font-bold text-slate-900 dark:text-white sticky left-0 bg-slate-100 dark:bg-slate-800 z-10">
-                Fitur
-              </th>
-              <th className="text-center py-4 px-6 font-bold text-slate-900 dark:text-white">
-                <div className="text-lg">Business</div>
-                <div className="text-sm font-normal text-slate-600 dark:text-slate-400 mt-1">
-                  IDR 2.5 Jt/bln
-                </div>
-              </th>
-              <th className="text-center py-4 px-6 font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20">
-                <div className="text-lg">Growth</div>
-                <div className="text-sm font-normal text-slate-600 dark:text-slate-400 mt-1">
-                  IDR 7.5 Jt/bln
-                </div>
-                <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mt-2">
-                  POPULAR
-                </div>
-              </th>
-              <th className="text-center py-4 px-6 font-bold text-slate-900 dark:text-white">
-                <div className="text-lg">Enterprise</div>
-                <div className="text-sm font-normal text-slate-600 dark:text-slate-400 mt-1">
-                  Custom
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {featureComparison.map((category, catIdx) => (
-              <React.Fragment key={category.category}>
-                {/* Category Header */}
-                <tr className="bg-slate-50 dark:bg-slate-900/50 border-t-2 border-slate-200 dark:border-slate-700">
-                  <td colSpan={4} className="py-3 px-6 font-bold text-slate-900 dark:text-white sticky left-0 bg-slate-50 dark:bg-slate-900/50">
-                    {category.category}
-                  </td>
-                </tr>
-                {/* Features */}
+      {/* Desktop Accordion View */}
+      <div className="hidden lg:block space-y-4">
+        {/* Header Row */}
+        <Card padding="none">
+          <div className="grid grid-cols-4 gap-4 p-6 bg-slate-100 dark:bg-slate-800">
+            <div className="font-bold text-slate-900 dark:text-white">Fitur</div>
+            <div className="text-center">
+              <div className="font-bold text-slate-900 dark:text-white">Business</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400 mt-1">IDR 2.5 Jt/bln</div>
+            </div>
+            <div className="text-center bg-primary-50 dark:bg-primary-900/20 rounded-lg p-2">
+              <div className="font-bold text-primary-600 dark:text-primary-400">Growth</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400 mt-1">IDR 7.5 Jt/bln</div>
+              <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mt-2">
+                POPULAR
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="font-bold text-slate-900 dark:text-white">Enterprise</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400 mt-1">Custom</div>
+            </div>
+          </div>
+        </Card>
+
+        {/* Categories */}
+        {featureComparison.map((category) => (
+          <Card key={category.category} padding="none">
+            <button
+              onClick={() => toggleCategory(category.category)}
+              className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                {category.category}
+              </h3>
+              {expandedCategories.includes(category.category) ? (
+                <ChevronUp className="w-5 h-5 text-slate-500" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-slate-500" />
+              )}
+            </button>
+
+            {expandedCategories.includes(category.category) && (
+              <div className="border-t border-slate-200 dark:border-slate-800">
                 {category.features.map((feature, idx) => (
-                  <tr
-                    key={`${catIdx}-${idx}`}
-                    className="border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors"
+                  <div
+                    key={idx}
+                    className="grid grid-cols-4 gap-4 p-4 border-b border-slate-100 dark:border-slate-800/50 last:border-b-0 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                   >
-                    <td className="py-4 px-6 text-slate-700 dark:text-slate-300 sticky left-0 bg-white dark:bg-slate-950">
+                    <div className="text-slate-700 dark:text-slate-300">
                       <div className="flex items-center gap-2">
                         <span>{feature.name}</span>
                         {feature.description && (
-                          <span className="text-xs text-slate-500 dark:text-slate-500">
-                            ({feature.description})
-                          </span>
+                          <span className="text-xs text-slate-500">({feature.description})</span>
                         )}
                       </div>
-                    </td>
-                    <td className="py-4 px-6">{renderFeatureValue(feature.business)}</td>
-                    <td className="py-4 px-6 bg-primary-50/30 dark:bg-primary-900/10">
+                    </div>
+                    <div className="flex justify-center">{renderFeatureValue(feature.business)}</div>
+                    <div className="flex justify-center bg-primary-50/30 dark:bg-primary-900/10 rounded">
                       {renderFeatureValue(feature.growth)}
-                    </td>
-                    <td className="py-4 px-6">{renderFeatureValue(feature.enterprise)}</td>
-                  </tr>
+                    </div>
+                    <div className="flex justify-center">{renderFeatureValue(feature.enterprise)}</div>
+                  </div>
                 ))}
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
+              </div>
+            )}
+          </Card>
+        ))}
       </div>
 
       {/* Mobile Accordion View */}
