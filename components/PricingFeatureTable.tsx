@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, X, Minus, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { featureComparison, FeatureCategory } from '../data/pricingData';
 import Card from './Card';
 
@@ -195,7 +195,7 @@ const PricingFeatureTable: React.FC = () => {
             <span className="text-slate-700 dark:text-slate-300">Not Available</span>
           </div>
           <div className="flex items-center gap-2">
-            <Minus className="w-5 h-5 text-slate-500" />
+            <span className="text-slate-500">-</span>
             <span className="text-slate-700 dark:text-slate-300">
               Custom text indicates feature level or limit
             </span>
