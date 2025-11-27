@@ -818,11 +818,13 @@ const PricingCalculator: React.FC = () => {
                        support: { title: 'Dukungan Teknis', icon: Users, color: 'text-green-500', bg: 'bg-green-100' },
                     };
 
+                    const CategoryIcon = config[category].icon;
+
                     return (
                        <Card key={category} className="overflow-hidden border-0 shadow-lg">
                           <div className="bg-slate-50 dark:bg-slate-800/50 p-4 border-b border-slate-100 dark:border-slate-700 flex items-center gap-3">
                              <div className={`p-2 rounded-lg ${config[category].bg}`}>
-                                <config[category].icon className={`w-5 h-5 ${config[category].color}`} />
+                                <CategoryIcon className={`w-5 h-5 ${config[category].color}`} />
                              </div>
                              <h3 className="font-bold text-lg text-slate-900 dark:text-white">{config[category].title}</h3>
                           </div>
