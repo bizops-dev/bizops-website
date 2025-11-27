@@ -123,6 +123,7 @@ const SEORoute: React.FC<SEORouteProps> = ({ component: Component, title, desc, 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const PlatformPage = lazy(() => import('./pages/PlatformPage'));
 const PricingPage = lazy(() => import('./pages/PricingPage'));
+const PricingCalculatorPage = lazy(() => import('./pages/PricingCalculatorPage'));
 const DemoPage = lazy(() => import('./pages/DemoPage'));
 const PartnersPage = lazy(() => import('./pages/PartnersPage'));
 const PartnerApplyPage = lazy(() => import('./pages/PartnerApplyPage'));
@@ -201,6 +202,7 @@ const App: React.FC = () => {
                   
                   {/* Pages with Specific JSON-LD/SEO Handling (Direct Component) */}
                   <Route path="/pricing" element={<PricingPage />} />
+                  <Route path="/pricing-calculator" element={<PricingCalculatorPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />
                   <Route path="/events" element={<EventsPage />} />
 

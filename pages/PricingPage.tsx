@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, HelpCircle, Server, ShieldCheck, Lock, RefreshCw } from 'lucide-react';
+import { Check, HelpCircle, Server, ShieldCheck, Lock, RefreshCw, Calculator } from 'lucide-react';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { pricingFaqs } from '../data/content';
@@ -57,6 +57,19 @@ const PricingPage: React.FC = () => {
             >
               Tahunan (Hemat 20%)
             </button>
+          </div>
+
+          {/* Pricing Calculator CTA */}
+          <div className="mt-8">
+            <Link to="/pricing-calculator">
+              <Button variant="accent" size="lg">
+                <Calculator className="w-5 h-5 mr-2" />
+                Custom Pricing Calculator
+              </Button>
+            </Link>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+              Need more flexibility? Use our interactive calculator to customize your solution.
+            </p>
           </div>
         </div>
 
