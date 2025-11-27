@@ -1,181 +1,256 @@
 
 import React from 'react';
-import { Check, Users, DollarSign, Briefcase, TrendingUp, Package, BarChart, ArrowRight } from 'lucide-react';
+import { 
+  Check, ArrowRight, Layers, Smartphone, 
+  Server, Share2, MessageSquare, ShieldCheck, Zap, Database, Globe,
+  Users, DollarSign, Briefcase, TrendingUp
+} from 'lucide-react';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
-import CardSlider from '../components/CardSlider';
 import SEO from '../components/SEO';
+import Section from '../components/Section';
+import Badge from '../components/Badge';
+import Card from '../components/Card';
+import { modulesData, capabilitiesData, integrationsData } from '../data/content';
 
 const PlatformPage: React.FC = () => {
-  const modules = [
-    {
-      id: 'hr',
-      icon: Users,
-      color: 'blue',
-      title: 'Human Capital (HCM)',
-      desc: 'Dari onboarding digital via Academy (LMS) hingga perhitungan PPh 21 yang kompleks. Smart Attendance menggunakan Geo-fencing & Face Recognition.',
-      features: ['Payroll Otomatis', 'Employee Self-Service']
-    },
-    {
-      id: 'finance',
-      icon: DollarSign,
-      color: 'green',
-      title: 'Finance & Procurement',
-      desc: 'Mengintegrasikan Purchase Request (PR) dari lapangan langsung ke meja persetujuan Finance. Laporan Neraca dan Laba Rugi terbentuk otomatis.',
-      features: ['Multi-level Approval', 'Real-time Accounting']
-    },
-    {
-      id: 'operations',
-      icon: Briefcase,
-      color: 'purple',
-      title: 'Operations & Projects',
-      desc: 'Memantau kurva-S proyek secara real-time. Daily Field Report memungkinkan pelaporan kendala lapangan langsung dari HP.',
-      features: ['Project Costing', 'Timesheet Geo-tagging']
-    },
-    {
-      id: 'sales',
-      icon: TrendingUp,
-      color: 'amber',
-      title: 'Commercial & Growth',
-      desc: 'CRM mobile-first. Salesman dapat membuat Quotation resmi di hadapan klien, cek stok real-time, dan konversi menjadi Sales Order.',
-      features: ['Mobile CRM', 'Instant Quotation']
-    },
-    {
-      id: 'supply-chain',
-      icon: Package,
-      color: 'red',
-      title: 'Supply Chain',
-      desc: 'Kelola inventaris di multi-gudang. Fitur Asset Tracking dengan QR Code memudahkan audit aset fisik dan melacak riwayat pemeliharaannya.',
-      features: ['QR Stock Opname', 'Multi-Warehouse']
-    },
-    {
-      id: 'governance',
-      icon: BarChart,
-      color: 'slate',
-      title: 'Governance & Insight',
-      desc: 'Immutable Audit Trail mencatat setiap perubahan data. Dashboard BI menyajikan data mentah menjadi wawasan visual untuk C-Level.',
-      features: ['Audit Logs Forensik', 'BI Dashboard']
-    }
-  ];
+  
+  // Helper to convert objects to arrays
+  const modules = Object.entries(modulesData).map(([key, val]) => ({ id: key, ...val }));
+  const capabilities = Object.entries(capabilitiesData).map(([key, val]) => ({ id: key, ...val }));
 
-  const colorMap: Record<string, string> = {
-    blue: 'bg-blue-50 text-blue-600',
-    green: 'bg-green-50 text-green-600',
-    purple: 'bg-purple-50 text-purple-600',
-    amber: 'bg-amber-50 text-amber-600',
-    red: 'bg-red-50 text-red-600',
-    slate: 'bg-slate-100 text-slate-600'
-  };
-
-  // JSON-LD Structured Data for Platform Suite
-  const platformSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "BizOps Enterprise Suite",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Cloud, Web, Android, iOS",
-    "description": "Satu platform ERP yang dirancang untuk menskalakan bisnis dari 50 hingga 5.000+ karyawan. Menghubungkan HR, Finance, dan Ops.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "540"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "2500000",
-      "priceCurrency": "IDR",
-      "availability": "https://schema.org/InStock"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "PT Divistant Teknologi Indonesia"
-    }
+  // Default color fallback
+  const getColor = (id: string) => {
+    const map: Record<string, string> = {
+      'hr': 'bg-pink-50 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400',
+      'finance': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+      'operations': 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
+      'sales': 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
+      'supply-chain': 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
+      'governance': 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+    };
+    return map[id] || 'bg-slate-50 text-slate-600';
   };
 
   return (
-    <div className="pt-16 pb-24 bg-slate-50">
+    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title="BizOps Platform | Modul Lengkap ERP Terintegrasi" 
         description="Eksplorasi modul lengkap BizOps: HRIS, Akuntansi, CRM, Inventory, dan Project Management dalam satu platform terintegrasi." 
-        structuredData={platformSchema}
       />
 
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-          Satu Platform, Kendali Penuh.
-        </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
-          Dirancang untuk menskalakan bisnis dari 50 hingga 5.000+ karyawan. Kami menghubungkan titik-titik operasional yang terpisah menjadi satu garis lurus efisiensi.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-           <Link to="/demo">
-              <Button size="lg" className="shadow-lg">Lihat Demo Platform</Button>
-           </Link>
-           <Link to="/docs">
-              <Button variant="outline" size="lg">Baca Dokumentasi</Button>
-           </Link>
-        </div>
-      </section>
+      {/* 1. HERO SECTION */}
+      <div className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent dark:from-primary-900/20 pointer-events-none"></div>
 
-      {/* Modules Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge variant="outline" className="mb-8">The Operating System for Business</Badge>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight">
+            Satu Platform, <br className="hidden md:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+            BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+             <Link to="/demo">
+                <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30">Lihat Demo Platform</Button>
+             </Link>
+             <Link to="/docs">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/50 backdrop-blur-sm">Baca Dokumentasi Teknis</Button>
+             </Link>
+          </div>
+
+          {/* Abstract Connection Visual */}
+          <div className="mt-20 relative max-w-4xl mx-auto h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+             <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent absolute top-1/2 left-0"></div>
+             <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Users className="w-6 h-6 text-pink-500"/></div>
+             <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><DollarSign className="w-6 h-6 text-emerald-500"/></div>
+             <div className="z-10 bg-white dark:bg-slate-900 border-4 border-primary-100 dark:border-primary-900/50 p-4 rounded-2xl shadow-lg transform scale-125"><Layers className="w-8 h-8 text-primary-600"/></div>
+             <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Briefcase className="w-6 h-6 text-blue-500"/></div>
+             <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><TrendingUp className="w-6 h-6 text-amber-500"/></div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. CORE CAPABILITIES (Why Platform?) */}
+      <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+         <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Fondasi Teknologi Modern</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+               Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.
+            </p>
+         </div>
+
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap) => {
+               const isSpecialPage = ['automation-ai', 'multi-company', 'portals', 'analytics'].includes(cap.id);
+               const linkUrl = isSpecialPage ? `/platform/${cap.id}` : `/capabilities/${cap.id}`;
+               
+               return (
+                  <Link key={cap.id} to={linkUrl} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group hover:shadow-xl hover:-translate-y-1 block h-full">
+                     <div className="flex items-center justify-between mb-6">
+                        <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:text-primary-600 transition-colors">
+                           <cap.icon className="w-8 h-8" />
+                        </div>
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity text-primary-500">
+                           <ArrowRight className="w-5 h-5" />
+                        </div>
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{cap.title}</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-3">
+                        {cap.description}
+                     </p>
+                     <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
+                        <ul className="space-y-3">
+                           {cap.features.slice(0, 3).map((feat: any, i: number) => (
+                              <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-500 dark:text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
+                                 <Check className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                                 <span>{feat.title}</span>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  </Link>
+               );
+            })}
+         </div>
+      </Section>
+
+      {/* 3. MODULES GRID */}
+      <Section>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+           <Badge variant="outline" className="mb-4">Comprehensive Suite</Badge>
+           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Modul yang Saling Terhubung</h2>
+           <p className="text-lg text-slate-600 dark:text-slate-400">
+             Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.
+           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((mod) => (
             <Link 
               key={mod.id} 
               to={`/platform/${mod.id}`}
-              className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group block h-full"
+              className="group h-full"
             >
-              <div className="flex flex-col h-full">
-                <div className={`w-14 h-14 ${colorMap[mod.color]} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <mod.icon className="w-7 h-7" />
+              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50" hoverEffect>
+                <div className="flex items-start justify-between mb-8">
+                   <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
+                     <mod.icon className="w-8 h-8" />
+                   </div>
+                   <ArrowRight className="w-6 h-6 text-slate-300 group-hover:text-primary-500 -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors flex items-center justify-between">
-                  {mod.title}
-                  <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                </h3>
-                <p className="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
-                  {mod.desc}
+                
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">{mod.title}</h3>
+                <p className="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed flex-grow">
+                  {mod.subtitle}
                 </p>
-                <ul className="space-y-2 text-sm text-slate-700 mt-auto">
-                   {mod.features.map(f => (
-                      <li key={f} className="flex gap-2 items-center">
-                         <Check className="w-4 h-4 text-green-500" /> {f}
-                      </li>
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
+                   {mod.features.slice(0, 3).map((f: any, idx: number) => (
+                      <span key={idx} className="text-xs font-bold px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-700 group-hover:shadow-sm transition-all border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600">
+                         {f.title}
+                      </span>
                    ))}
-                </ul>
-              </div>
+                </div>
+              </Card>
             </Link>
           ))}
-        </CardSlider>
-      </section>
+        </div>
+      </Section>
 
-      {/* Tech Architecture */}
-      <section className="mt-24 py-16 bg-white border-t border-slate-100">
-         <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-slate-900 leading-tight">Arsitektur Terbuka yang Siap Tumbuh</h2>
-            <div className="bg-slate-50 p-8 rounded-2xl shadow-inner border border-slate-200 inline-block">
-               <div className="flex flex-col md:flex-row items-center gap-8 justify-center text-slate-800">
-                  <div className="p-4 bg-white shadow-sm border border-slate-200 rounded-lg text-sm font-semibold flex flex-col gap-1">
-                    <span className="text-slate-500 text-xs uppercase">Database</span>
-                    PostgreSQL
-                  </div>
-                  <div className="hidden md:block h-px w-12 bg-slate-300"></div>
-                  <div className="p-4 bg-primary-50 border border-primary-200 shadow-sm rounded-lg text-sm font-semibold text-primary-700 flex flex-col gap-1">
-                    <span className="text-primary-400 text-xs uppercase">Backend</span>
-                    BizOps Core Engine
-                  </div>
-                  <div className="hidden md:block h-px w-12 bg-slate-300"></div>
-                   <div className="flex flex-col gap-2">
-                      <div className="p-2 bg-white border border-slate-200 shadow-sm rounded text-xs font-medium">Mobile App (Flutter)</div>
-                      <div className="p-2 bg-white border border-slate-200 shadow-sm rounded text-xs font-medium">Web Dashboard (React)</div>
-                      <div className="p-2 bg-white border border-slate-200 shadow-sm rounded text-xs font-medium">REST API</div>
-                   </div>
+      {/* 4. INTEGRATION ECOSYSTEM */}
+      <Section dark className="relative overflow-hidden">
+         {/* Abstract Lines */}
+         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')] pointer-events-none"></div>
+         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none"></div>
+         
+         <div className="relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
+               <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                     API-First Ecosystem. <br />
+                     <span className="text-primary-400">Bukan Pulau Terisolasi.</span>
+                  </h2>
+                  <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-lg">
+                     BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.
+                  </p>
+                  <Link to="/integrations">
+                     <Button variant="white" size="lg">Jelajahi Library Integrasi</Button>
+                  </Link>
+               </div>
+               
+               {/* Integration Grid Visualization */}
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {integrationsData.map((cat, idx) => (
+                     <div key={idx} className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 hover:border-slate-600 transition-colors group">
+                        <div className="flex items-center justify-between mb-4">
+                           <div className="text-sm font-bold text-primary-400 uppercase tracking-wider">{cat.category}</div>
+                           <Share2 className="w-4 h-4 text-slate-600 group-hover:text-primary-400 transition-colors"/>
+                        </div>
+                        <ul className="space-y-3">
+                           {cat.apps.slice(0, 2).map((app, i) => (
+                              <li key={i} className="flex items-center gap-3 text-white text-sm font-medium">
+                                 <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.5)]"></div>
+                                 <span className="group-hover:translate-x-1 transition-transform">{app.name}</span>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  ))}
                </div>
             </div>
          </div>
-      </section>
+      </Section>
+
+      {/* 5. TECH STACK */}
+      <Section className="bg-slate-50 dark:bg-slate-900/50">
+         <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-12">Dibangun dengan Teknologi Open Source Terbaik</h2>
+            
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+               {[
+                  { name: 'Python', icon: 'PY' },
+                  { name: 'React', icon: 'RC' },
+                  { name: 'PostgreSQL', icon: 'PG' },
+                  { name: 'Redis', icon: 'RD' },
+                  { name: 'Docker', icon: 'DK' },
+                  { name: 'Flutter', icon: 'FL' }
+               ].map((tech) => (
+                  <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default">
+                     <div className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
+                        {tech.icon}
+                     </div>
+                     <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-600 transition-colors">{tech.name}</span>
+                  </div>
+               ))}
+            </div>
+         </div>
+      </Section>
+
+      {/* 6. CTA */}
+      <Section className="py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
+         <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 -z-10"></div>
+         <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
+               Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?
+            </h2>
+            <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
+               Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+               <Link to="/demo">
+                  <Button size="lg" className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
+               </Link>
+               <Link to="/contact">
+                  <Button variant="outline" size="lg" className="h-16 px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
+               </Link>
+            </div>
+         </div>
+      </Section>
     </div>
   );
 };

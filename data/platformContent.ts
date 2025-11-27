@@ -1,7 +1,8 @@
 
 import { 
   Users, DollarSign, Briefcase, TrendingUp, Package, BarChart, 
-  Smartphone, Server, Share2, MessageSquare, Layers 
+  Smartphone, Server, Share2, MessageSquare, Layers,
+  Sparkles, Globe, Layout, PieChart
 } from 'lucide-react';
 
 import type { ModuleData } from '../types';
@@ -71,7 +72,7 @@ export const modulesData: Record<string, ModuleData> = {
       { title: "Project Budgeting (RAB vs Actual)", desc: "Kendalikan margin keuntungan. Sistem memberikan peringatan dini (Early Warning) jika realisasi biaya mendekati batas anggaran RAB sebelum kerugian terjadi." },
       { title: "Task Management & Geo-Tagged Timesheet", desc: "Tim mencatat waktu kerja via aplikasi mobile dengan GPS tagging. Data ini menjadi dasar perhitungan biaya tenaga kerja per proyek yang presisi." },
       { title: "Daily Field Report", desc: "Pelaksana lapangan menginput cuaca, volume kerja, dan kendala beserta foto bukti. Data dikompilasi otomatis menjadi Kurva-S progres proyek." },
-      { title: "Contextual Collaboration (Raven)", desc: "Fitur chat yang menempel pada Task/Project. Diskusikan kendala teknis langsung pada tugas terkait untuk jejak audit komunikasi yang jelas." }
+      { title: "Contextual Collaboration", desc: "Fitur chat yang menempel pada Task/Project. Diskusikan kendala teknis langsung pada tugas terkait untuk jejak audit komunikasi yang jelas." }
     ],
     mobileAdvantage: {
       title: "Update Progres Langsung dari Site",
@@ -220,7 +221,7 @@ export const capabilitiesData: Record<string, any> = {
     description: "Masalah terbesar komunikasi kerja adalah hilangnya konteks. BizOps menyatukan percakapan dengan data. Diskusikan pekerjaan tepat di tempat pekerjaan itu berada (Dokumen Transaksi).",
     icon: MessageSquare,
     features: [
-      { title: "Document-Based Chat (Raven)", desc: "Setiap dokumen (Invoice, Task, Project) memiliki panel chat terdedikasi. Diskusi menempel selamanya pada konteksnya." },
+      { title: "Document-Based Chat", desc: "Setiap dokumen (Invoice, Task, Project) memiliki panel chat terdedikasi. Diskusi menempel selamanya pada konteksnya." },
       { title: "Smart Mentions & Notifications", desc: "Gunakan @User atau @Role untuk memanggil rekan kerja. Notifikasi push instan memastikan respon cepat." },
       { title: "Audit Trail of Communication", desc: "Percakapan bisnis menjadi bagian dari sejarah dokumen. Bukti pendukung keputusan yang tidak bisa dihapus sembarangan." },
       { title: "Integrated File Sharing", desc: "Drag-and-drop file pendukung langsung ke kolom chat. Sentralisasi dokumen agar tidak tercecer di chat pribadi." }
@@ -236,6 +237,54 @@ export const capabilitiesData: Record<string, any> = {
       { title: "Mobile App Re-Build Service", desc: "Kami mengkompilasi ulang (re-build) APK/IPA dengan Package ID unik dan App Icon milik Anda. Terpisah dari app publik." },
       { title: "Custom Domain & SSL", desc: "Akses sistem melalui domain Anda sendiri (erp.perusahaankita.com) dengan sertifikat SSL otomatis." },
       { title: "Branded SMTP & Reports", desc: "Email notifikasi dan PDF (Invoice/Slip Gaji) dikirim menggunakan server email dan kop surat perusahaan Anda." }
+    ]
+  },
+  'automation-ai': {
+    title: "Automation & AI",
+    subtitle: "Bekerja Lebih Cerdas, Bukan Lebih Keras.",
+    description: "Hilangkan tugas repetitif dengan engine otomatisasi tanpa kode (No-Code Automation). Biarkan AI membantu analisis tren dan prediksi bisnis Anda.",
+    icon: Sparkles,
+    features: [
+      { title: "Workflow Builder", desc: "Buat alur kerja otomatis (If-This-Then-That) untuk notifikasi, persetujuan, atau update status tanpa coding." },
+      { title: "AI Forecasting", desc: "Prediksi penjualan dan kebutuhan stok menggunakan algoritma machine learning berdasarkan data historis." },
+      { title: "Smart OCR", desc: "Ekstrak data otomatis dari foto struk belanja atau faktur vendor untuk input data yang lebih cepat." },
+      { title: "Anomaly Detection", desc: "Sistem mendeteksi transaksi mencurigakan atau di luar kewajaran dan memberi peringatan otomatis." }
+    ]
+  },
+  'multi-company': {
+    title: "Multi-Company Structure",
+    subtitle: "Satu Sistem untuk Banyak Entitas.",
+    description: "Kelola holding company dengan banyak anak perusahaan (PT/CV) dalam satu database. Konsolidasi laporan keuangan menjadi mudah dan real-time.",
+    icon: Globe,
+    features: [
+      { title: "Centralized Master Data", desc: "Share data produk, pelanggan, dan vendor antar perusahaan untuk standarisasi grup." },
+      { title: "Inter-Company Transactions", desc: "Transaksi jual-beli antar entitas grup otomatis terjurnal di kedua buku besar." },
+      { title: "Consolidated Reporting", desc: "Laporan Laba Rugi dan Neraca gabungan tersedia instan tanpa proses manual Excel." },
+      { title: "Shared Service Center", desc: "Pusatkan fungsi HR, IT, atau Finance untuk melayani seluruh grup dari satu dashboard." }
+    ]
+  },
+  'portals': {
+    title: "Self-Service Portals",
+    subtitle: "Libatkan Pelanggan & Vendor Secara Langsung.",
+    description: "Berikan akses terbatas yang aman kepada pihak eksternal untuk berinteraksi dengan sistem Anda. Kurangi beban admin dalam melayani permintaan status.",
+    icon: Layout,
+    features: [
+      { title: "Customer Portal", desc: "Pelanggan dapat melihat katalog, membuat pesanan, cek status pengiriman, dan download invoice mandiri." },
+      { title: "Vendor Portal", desc: "Supplier dapat submit penawaran harga (RFQ), upload tagihan, dan cek status pembayaran." },
+      { title: "Candidate Portal", desc: "Pelamar kerja dapat upload CV, ikut tes online, dan cek status lamaran kerja." },
+      { title: "Support Ticket Portal", desc: "Pusat bantuan mandiri untuk pelaporan kendala dan tracking status penyelesaiannya." }
+    ]
+  },
+  'analytics': {
+    title: "Analytics & Report Builder",
+    subtitle: "Data Anda, Cara Anda.",
+    description: "Jangan terpaku pada laporan standar. Buat laporan kustom sesuai kebutuhan unik bisnis Anda dengan tool Report Builder yang powerful.",
+    icon: PieChart,
+    features: [
+      { title: "Drag & Drop Report Builder", desc: "Desain laporan kolom atau pivot table dengan mudah. Pilih field, filter, dan grouping sesuai kebutuhan." },
+      { title: "Custom Dashboards", desc: "Buat dashboard personal untuk setiap role dengan widget grafik, angka kunci, dan shortcut." },
+      { title: "Auto-Email Reports", desc: "Jadwalkan pengiriman laporan rutin (harian/mingguan) ke email manajemen secara otomatis." },
+      { title: "Excel/PDF Export", desc: "Export data laporan ke format standar untuk analisis lanjutan di spreadsheet." }
     ]
   }
 };

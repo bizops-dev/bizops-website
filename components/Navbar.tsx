@@ -162,7 +162,7 @@ const Navbar: React.FC = () => {
                            Native Mobile App
                         </Link>
                         <Link to="/capabilities/collaboration" className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 hover:shadow-sm rounded-lg transition-all">
-                           Contextual Chat (Raven)
+                           Contextual Chat
                         </Link>
                         <Link to="/integrations" className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 hover:shadow-sm rounded-lg transition-all">
                            Integrations Library

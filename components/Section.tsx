@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = memo(({
   dark = false
 }) => {
   const bgClass = dark ? 'bg-slate-900 text-white' : 'bg-white dark:bg-slate-950 text-slate-900 dark:text-white';
-  const paddingClass = noPadding ? '' : 'py-16 md:py-24 lg:py-32';
+  const paddingClass = noPadding ? '' : 'py-16 md:py-20 lg:py-24';
   
   return (
     <section id={id} className={`${bgClass} ${paddingClass} ${className} transition-colors duration-300`}>

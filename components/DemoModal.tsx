@@ -23,7 +23,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     const company = (form.elements.namedItem('modalCompany') as HTMLInputElement).value;
     const interest = (form.elements.namedItem('modalInterest') as HTMLSelectElement).value;
 
-    const phone = "6281234567890"; // Sales Number
+    const phone = "622139702834"; // Sales Number
     const text = `Halo BizOps, saya ${name} dari ${company}. Saya tertarik demo tentang ${interest}. Mohon info jadwal available.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 

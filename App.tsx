@@ -59,17 +59,22 @@ const SessionTracker = () => {
 
   useEffect(() => {
     // 3. Personalization: Check for Resume Opportunity on Homepage
+    let timer: ReturnType<typeof setTimeout>;
+
     if (location.pathname === '/') {
       const lastVisit = localStorage.getItem('bizops_last_visit');
       if (lastVisit && lastVisit !== '/') {
         setResumePath(lastVisit);
         // Delay toast slightly for better UX
-        const timer = setTimeout(() => setShowToast(true), 2000);
-        return () => clearTimeout(timer);
+        timer = setTimeout(() => setShowToast(true), 2000);
       }
     } else {
       setShowToast(false);
     }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, [location]);
 
   if (!showToast || !resumePath) return null;

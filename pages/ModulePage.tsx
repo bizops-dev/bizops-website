@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { modulesData } from '../data/content';
+import type { ModuleData } from '../types';
 import Button from '../components/Button';
 import { Check, Smartphone, Link as LinkIcon, ArrowRight, ArrowDown } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -130,8 +131,8 @@ const ModulePage: React.FC = () => {
                      <Smartphone className="w-6 h-6" />
                      <span className="font-bold uppercase tracking-wider text-sm">The Mobile Advantage</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">{data.mobileAdvantage.title}</h2>
-                  <p className="text-slate-300 text-lg leading-relaxed mb-8">{data.mobileAdvantage.desc}</p>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">{data.mobileAdvantage?.title}</h2>
+                  <p className="text-slate-300 text-lg leading-relaxed mb-8">{data.mobileAdvantage?.desc}</p>
                   <Link to="/download">
                      <Button variant="outline" className="border-slate-600 text-white hover:bg-white hover:text-slate-900">Lihat Aplikasi Mobile</Button>
                   </Link>

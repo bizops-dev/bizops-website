@@ -65,7 +65,7 @@ const DemoPage: React.FC = () => {
     const industry = formData.get('industry') as string;
     
     // Generate WhatsApp Link
-    const phone = "6281234567890"; // Replace with actual sales number
+    const phone = "622139702834"; // Sales Number
     const message = `Halo BizOps, saya ${name} dari ${company}. Saya tertarik untuk demo produk (Industri: ${industry}). Email saya: ${email}.`;
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 

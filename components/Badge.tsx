@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'success' | 'warning' | 'danger' | 'neutral' | 'outline' | 'dark';
+  variant?: 'primary' | 'success' | 'warning' | 'danger' | 'neutral' | 'outline' | 'dark' | 'outline-white';
   className?: string;
   size?: 'sm' | 'md';
 }
@@ -16,6 +16,7 @@ const Badge: React.FC<BadgeProps> = memo(({ children, variant = 'neutral', class
     danger: "bg-red-50 text-red-700 border-red-100 dark:bg-red-900/30 dark:text-red-300 dark:border-red-800",
     neutral: "bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700",
     outline: "bg-transparent text-slate-600 border-slate-300 dark:text-slate-400 dark:border-slate-600",
+    'outline-white': "bg-transparent text-white border-white/30",
     dark: "bg-slate-900 text-white border-slate-800 dark:bg-white dark:text-slate-900"
   };
 

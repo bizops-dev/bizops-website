@@ -70,21 +70,31 @@ const ContactPage: React.FC = () => {
                        <Phone className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <div>
-                       <h3 className="font-bold text-slate-900 dark:text-white mb-1">WhatsApp Support</h3>
-                       <a href="#" className="text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400">+62 812-3456-7890 (Mon-Fri, 09:00 - 17:00)</a>
+                       <h3 className="font-bold text-slate-900 dark:text-white mb-1">Phone Support</h3>
+                       <a href="tel:+622139702834" className="text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400">+62 21 39702834 (Mon-Fri, 09:00 - 17:00)</a>
                     </div>
                  </div>
                  <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/30 rounded-xl flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
                        <MapPin className="w-6 h-6" aria-hidden="true" />
                     </div>
-                    <div>
-                       <h3 className="font-bold text-slate-900 dark:text-white mb-1">Headquarters</h3>
-                       <p className="text-slate-600 dark:text-slate-400">
-                          South Quarter Tower C, Level 22<br />
-                          Jl. R.A. Kartini Kav 8, Cilandak<br />
-                          Jakarta Selatan 12430
-                       </p>
+                    <div className="space-y-4">
+                       <div>
+                          <h3 className="font-bold text-slate-900 dark:text-white mb-1">Headquarters</h3>
+                          <p className="text-slate-600 dark:text-slate-400">
+                             Eco-S Sahid Sudirman Residence<br />
+                             Jl. Jenderal Sudirman No.86, Karet Tengsin<br />
+                             Tanah Abang, Jakarta 10250
+                          </p>
+                       </div>
+                       <div>
+                          <h3 className="font-bold text-slate-900 dark:text-white mb-1">R&D Center</h3>
+                          <p className="text-slate-600 dark:text-slate-400">
+                             Jl. Ampel No.23, Demangan Baru<br />
+                             Caturtunggal, Kec. Depok, Sleman<br />
+                             Yogyakarta 55281
+                          </p>
+                       </div>
                     </div>
                  </div>
                  <div className="flex items-start gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Globe, Moon, Sun, ChevronDown, ArrowRight, ShieldCheck, Signal, Cookie, FileText, Lock, AlertCircle } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Globe, Moon, Sun, ChevronDown, ArrowRight, ShieldCheck, Signal, Cookie, FileText, Lock, AlertCircle } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -74,10 +74,14 @@ const Footer: React.FC = () => {
                 <div className="flex items-start gap-3 group">
                    <MapPin className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0 mt-0.5" aria-hidden="true" />
                    <span className="group-hover:text-slate-300 transition-colors">
-                     South Quarter, Tower C, Level 22<br/>
-                     Jl. R.A. Kartini Kav 8, Cilandak<br/>
-                     Jakarta Selatan, 12430.
+                     Eco-S Sahid Sudirman Residence<br/>
+                     Jl. Jenderal Sudirman No.86, Karet Tengsin<br/>
+                     Tanah Abang, Jakarta 10250.
                    </span>
+                </div>
+                <div className="flex items-center gap-3 group">
+                   <Phone className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0" aria-hidden="true" />
+                   <a href="tel:+622139702834" className="hover:text-white hover:underline transition-colors focus:outline-none">+62 21 39702834</a>
                 </div>
                 <div className="flex items-center gap-3 group">
                    <Mail className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0" aria-hidden="true" />
