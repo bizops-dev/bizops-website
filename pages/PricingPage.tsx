@@ -44,18 +44,18 @@ const PricingPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <div className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <div className="relative overflow-hidden bg-slate-50 dark:bg-slate-900/50 pt-16 pb-20 lg:pt-24 lg:pb-32">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/50 dark:bg-blue-900/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-overlay filter" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-100/50 dark:bg-amber-900/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-overlay filter" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/40 dark:bg-blue-900/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-overlay filter" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-100/40 dark:bg-amber-900/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-overlay filter" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="primary" size="sm" className="mb-6">
+          <Badge variant="primary" size="sm" className="mb-6 shadow-sm">
             ✨ Best Value ERP Solution
           </Badge>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
             Harga Transparan, <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400">
               Tanpa Biaya Tersembunyi.
@@ -141,7 +141,7 @@ const PricingPage: React.FC = () => {
            </div>
 
            {/* Plan 2: Growth (Popular) */}
-           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border-2 border-primary-500 dark:border-primary-500 p-8 flex flex-col h-full transform scale-100 lg:scale-105 z-10 relative">
+           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border-2 border-primary-500 dark:border-primary-500 p-8 flex flex-col h-full transform scale-100 lg:scale-105 z-10 relative transition-transform duration-300">
              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-600 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1 whitespace-nowrap">
                <Zap className="w-4 h-4 fill-current" />
                MOST POPULAR
