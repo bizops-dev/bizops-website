@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 import { AlertCircle } from 'lucide-react';
 
 // Helper to generate ARIA IDs
@@ -19,7 +19,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
 }
 
-export const Input: React.FC<InputProps> = ({ label, error, helperText, icon, className = "", ...props }) => {
+export const Input: React.FC<InputProps> = memo(({ label, error, helperText, icon, className = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
@@ -52,7 +52,9 @@ export const Input: React.FC<InputProps> = ({ label, error, helperText, icon, cl
       )}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
@@ -61,7 +63,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: { value: string; label: string }[];
 }
 
-export const Select: React.FC<SelectProps> = ({ label, error, helperText, options, className = "", ...props }) => {
+export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, options, className = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
@@ -91,7 +93,9 @@ export const Select: React.FC<SelectProps> = ({ label, error, helperText, option
       )}
     </div>
   );
-};
+});
+
+Select.displayName = 'Select';
 
 interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
@@ -99,7 +103,7 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   helperText?: string;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({ label, error, helperText, className = "", ...props }) => {
+export const TextArea: React.FC<TextAreaProps> = memo(({ label, error, helperText, className = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
@@ -120,13 +124,15 @@ export const TextArea: React.FC<TextAreaProps> = ({ label, error, helperText, cl
       )}
     </div>
   );
-};
+});
+
+TextArea.displayName = 'TextArea';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: React.ReactNode; // Updated to ReactNode to allow links
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ label, className = "", ...props }) => (
+export const Checkbox: React.FC<CheckboxProps> = memo(({ label, className = "", ...props }) => (
   <label className="flex items-start gap-3 cursor-pointer group">
     <div className="relative flex items-center mt-0.5">
       <input 
@@ -140,4 +146,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({ label, className = "", ...pr
     </div>
     <span className="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors select-none">{label}</span>
   </label>
-);
+));
+
+Checkbox.displayName = 'Checkbox';

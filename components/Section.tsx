@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface SectionProps {
   dark?: boolean;
 }
 
-const Section: React.FC<SectionProps> = ({ 
+const Section: React.FC<SectionProps> = memo(({ 
   children, 
   className = "", 
   id, 
@@ -28,6 +28,8 @@ const Section: React.FC<SectionProps> = ({
       </div>
     </section>
   );
-};
+});
+
+Section.displayName = 'Section';
 
 export default Section;

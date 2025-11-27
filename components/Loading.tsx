@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 
-const Loading: React.FC = () => {
+const Loading: React.FC = memo(() => {
   return (
     <div className="fixed inset-0 bg-white dark:bg-slate-950 z-50 flex flex-col items-center justify-center transition-colors duration-300">
       <div className="relative">
@@ -20,6 +20,8 @@ const Loading: React.FC = () => {
       </div>
     </div>
   );
-};
+});
+
+Loading.displayName = 'Loading';
 
 export default Loading;

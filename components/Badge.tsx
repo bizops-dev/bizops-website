@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface BadgeProps {
   size?: 'sm' | 'md';
 }
 
-const Badge: React.FC<BadgeProps> = ({ children, variant = 'neutral', className = '', size = 'sm' }) => {
+const Badge: React.FC<BadgeProps> = memo(({ children, variant = 'neutral', className = '', size = 'sm' }) => {
   const variants = {
     primary: "bg-primary-50 text-primary-700 border-primary-100 dark:bg-primary-900/30 dark:text-primary-300 dark:border-primary-800",
     success: "bg-green-50 text-green-700 border-green-100 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800",
@@ -29,6 +29,8 @@ const Badge: React.FC<BadgeProps> = ({ children, variant = 'neutral', className 
       {children}
     </span>
   );
-};
+});
+
+Badge.displayName = 'Badge';
 
 export default Badge;

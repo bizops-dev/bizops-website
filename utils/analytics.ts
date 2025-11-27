@@ -37,6 +37,9 @@ export const reportWebVitals = (onPerfEntry?: (metric: any) => void) => {
 };
 
 export const logToConsole = (metric: any) => {
+  // Only log in development mode
+  if (process.env.NODE_ENV !== 'development') return;
+  
   // Simple logger for development "Audit"
   const thresholds = {
     LCP: 2500,

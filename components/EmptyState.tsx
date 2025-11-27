@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { LucideIcon } from 'lucide-react';
 import Button from './Button';
 import { Inbox, Search, FileX, AlertCircle } from 'lucide-react';
@@ -22,7 +22,7 @@ const defaultIcons: Record<EmptyStateType, LucideIcon> = {
   'empty': FileX,
 };
 
-const EmptyState: React.FC<EmptyStateProps> = ({
+const EmptyState: React.FC<EmptyStateProps> = memo(({
   type = 'no-data',
   icon,
   title,
@@ -52,7 +52,9 @@ const EmptyState: React.FC<EmptyStateProps> = ({
       )}
     </div>
   );
-};
+});
+
+EmptyState.displayName = 'EmptyState';
 
 export default EmptyState;
 

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 
 interface CardProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface CardProps {
   padding?: 'none' | 'sm' | 'md' | 'lg';
 }
 
-const Card: React.FC<CardProps> = ({ 
+const Card: React.FC<CardProps> = memo(({ 
   children, 
   className = "", 
   hoverEffect = false,
@@ -45,6 +45,8 @@ const Card: React.FC<CardProps> = ({
       {children}
     </div>
   );
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;
