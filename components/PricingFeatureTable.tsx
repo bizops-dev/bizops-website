@@ -4,9 +4,17 @@ import { featureComparison, FeatureCategory } from '../data/pricingData';
 import Card from './Card';
 
 const PricingFeatureTable: React.FC = () => {
+  // Safety check for data
+  const data = featureComparison || [];
+  const initialCategory = data.length > 0 ? data[0].category : '';
+
   const [expandedCategories, setExpandedCategories] = useState<string[]>([
-    featureComparison[0]?.category || ''
+    initialCategory
   ]);
+
+  if (data.length === 0) {
+    return null; // Or render loading state
+  }
 
   const toggleCategory = (category: string) => {
     setExpandedCategories(prev =>
@@ -75,7 +83,7 @@ const PricingFeatureTable: React.FC = () => {
         </Card>
 
         {/* Categories */}
-        {featureComparison.map((category) => (
+        {data.map((category) => (
           <Card key={category.category} padding="none">
             <button
               onClick={() => toggleCategory(category.category)}
@@ -121,7 +129,7 @@ const PricingFeatureTable: React.FC = () => {
 
       {/* Mobile Accordion View */}
       <div className="lg:hidden space-y-4">
-        {featureComparison.map((category) => (
+        {data.map((category) => (
           <Card key={category.category} padding="none">
             <button
               onClick={() => toggleCategory(category.category)}
