@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Check, HelpCircle, Server, ShieldCheck, Lock, RefreshCw, Calculator, ArrowRight, Zap, Building2, Globe } from 'lucide-react';
+import { Check, HelpCircle, Server, ShieldCheck, Lock, RefreshCw, Calculator, ArrowRight, Zap, Building, Globe } from 'lucide-react';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { pricingFaqs } from '../data/content';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
-import Card from '../components/Card';
 import Badge from '../components/Badge';
 import PricingFeatureTable from '../components/PricingFeatureTable';
 import FAQAccordion from '../components/FAQAccordion';
@@ -13,11 +12,14 @@ import FAQAccordion from '../components/FAQAccordion';
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
 
+  // Fallback if data is missing
+  const faqs = pricingFaqs || [];
+
   // Prepare JSON-LD for FAQ
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": pricingFaqs.map(faq => ({
+    "mainEntity": faqs.map(faq => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
@@ -92,7 +94,7 @@ const PricingPage: React.FC = () => {
              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-400 to-slate-500 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
              <div className="mb-6">
                <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <Building2 className="w-6 h-6 text-slate-400" />
+                 <Building className="w-6 h-6 text-slate-400" />
                  Business
                </h3>
                <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">Untuk Startups & UMKM yang ingin efisiensi.</p>
@@ -303,7 +305,7 @@ const PricingPage: React.FC = () => {
               Jawaban untuk pertanyaan yang sering diajukan calon pelanggan kami.
             </p>
           </div>
-          <FAQAccordion faqs={pricingFaqs} />
+          <FAQAccordion faqs={faqs} />
         </div>
 
         {/* Partner CTA */}
