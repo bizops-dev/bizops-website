@@ -9,6 +9,7 @@ import CardSlider from '../components/CardSlider';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
+import PricingFeatureTable from '../components/PricingFeatureTable';
 
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
@@ -169,6 +170,11 @@ const PricingPage: React.FC = () => {
               <Server className="w-5 h-5" />
               <span className="text-sm font-bold">99.9% Uptime SLA</span>
            </div>
+        </div>
+
+        {/* Feature Comparison Table */}
+        <div className="mb-24">
+          <PricingFeatureTable />
         </div>
 
         {/* FAQs */}

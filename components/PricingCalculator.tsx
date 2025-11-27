@@ -1,103 +1,79 @@
 import React, { useState, useMemo } from 'react';
-import { Users, Server, Database, Shield, Rocket, CheckCircle2, Send, Printer } from 'lucide-react';
+import { Users, Package, Shield, Rocket, CheckCircle2, Send, Printer, Plus } from 'lucide-react';
 import Button from './Button';
 import Card from './Card';
-
-interface Module {
-  id: string;
-  name: string;
-  description: string;
-  basePrice: number;
-  pricePerUser: number;
-}
-
-const MODULES: Module[] = [
-  { id: 'hrms', name: 'HRIS & Payroll', description: 'Human Resource Management System', basePrice: 50, pricePerUser: 5 },
-  { id: 'finance', name: 'Finance & Accounting', description: 'Financial Management & Reporting', basePrice: 80, pricePerUser: 8 },
-  { id: 'supply', name: 'Supply Chain', description: 'Inventory & Procurement', basePrice: 70, pricePerUser: 7 },
-  { id: 'crm', name: 'Sales & CRM', description: 'Customer Relationship Management', basePrice: 60, pricePerUser: 6 },
-  { id: 'project', name: 'Project Management', description: 'Task & Project Tracking', basePrice: 40, pricePerUser: 4 },
-  { id: 'analytics', name: 'Business Intelligence', description: 'Analytics & Reporting', basePrice: 90, pricePerUser: 9 },
-];
-
-const HOSTING_OPTIONS = [
-  { id: 'cloud', name: 'Cloud Hosting', price: 100, description: 'Secure cloud infrastructure' },
-  { id: 'onpremise', name: 'On-Premise', price: 0, description: 'Self-hosted solution' },
-  { id: 'hybrid', name: 'Hybrid Cloud', price: 150, description: 'Best of both worlds' },
-];
-
-const SUPPORT_PACKAGES = [
-  { id: 'basic', name: 'Basic Support', price: 0, description: 'Email support, 48h response' },
-  { id: 'standard', name: 'Standard Support', price: 200, description: 'Priority email & phone, 24h response' },
-  { id: 'premium', name: 'Premium Support', price: 500, description: 'Dedicated account manager, 4h response' },
-  { id: 'enterprise', name: 'Enterprise Support', price: 1000, description: '24/7 support with SLA guarantee' },
-];
-
-const IMPLEMENTATION_OPTIONS = [
-  { id: 'self', name: 'Self Implementation', hours: 0, pricePerHour: 0, description: 'DIY with documentation' },
-  { id: 'starter', name: 'Starter Pack', hours: 40, pricePerHour: 150, description: 'Basic setup & training' },
-  { id: 'business', name: 'Business Pack', hours: 80, pricePerHour: 150, description: 'Full implementation & training' },
-  { id: 'enterprise', name: 'Enterprise Pack', hours: 160, pricePerHour: 150, description: 'Custom implementation & migration' },
-];
+import { pricingPlans, addOns } from '../data/pricingData';
 
 const PricingCalculator: React.FC = () => {
-  const [users, setUsers] = useState(10);
-  const [selectedModules, setSelectedModules] = useState<string[]>(['hrms', 'finance']);
-  const [hosting, setHosting] = useState('cloud');
-  const [storage, setStorage] = useState(50);
-  const [support, setSupport] = useState('basic');
-  const [implementation, setImplementation] = useState('starter');
+  const [selectedPlan, setSelectedPlan] = useState('growth');
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
+  const [selectedAddOns, setSelectedAddOns] = useState<{ [key: string]: number }>({});
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
+  const selectedPlanData = pricingPlans.find(p => p.id === selectedPlan);
+
   const calculations = useMemo(() => {
-    // Calculate modules cost
-    const modulesCost = MODULES
-      .filter(m => selectedModules.includes(m.id))
-      .reduce((sum, m) => sum + m.basePrice + (m.pricePerUser * users), 0);
+    if (!selectedPlanData) return { basePrice: 0, addOnsTotal: 0, discount: 0, total: 0, effectiveMonthly: 0 };
 
-    // Hosting cost
-    const hostingCost = HOSTING_OPTIONS.find(h => h.id === hosting)?.price || 0;
+    // Base plan price
+    const basePrice = billingCycle === 'yearly' 
+      ? selectedPlanData.priceYearly 
+      : selectedPlanData.priceMonthly;
 
-    // Storage cost (additional beyond 50GB)
-    const storageCost = storage > 50 ? (storage - 50) * 0.5 : 0;
+    // Add-ons total (monthly)
+    const addOnsTotal = Object.entries(selectedAddOns).reduce((sum, [addOnId, quantity]) => {
+      const addOn = addOns.find(a => a.id === addOnId);
+      if (!addOn) return sum;
+      // For one-time items, we'll prorate over 12 months if yearly
+      if (addOn.unit.includes('one-time') && billingCycle === 'yearly') {
+        return sum + (addOn.price * quantity / 12);
+      }
+      return sum + (addOn.price * quantity);
+    }, 0);
 
-    // Support cost
-    const supportCost = SUPPORT_PACKAGES.find(s => s.id === support)?.price || 0;
+    // Monthly subtotal
+    const monthlySubtotal = basePrice + addOnsTotal;
 
-    // Implementation (one-time)
-    const implOption = IMPLEMENTATION_OPTIONS.find(i => i.id === implementation);
-    const implementationCost = (implOption?.hours || 0) * (implOption?.pricePerHour || 0);
-
-    // Monthly subscription
-    const monthlyTotal = modulesCost + hostingCost + storageCost + supportCost;
-
-    // Yearly discount (20% off)
-    const yearlyDiscount = billingCycle === 'yearly' ? monthlyTotal * 0.2 : 0;
-    const yearlyTotal = billingCycle === 'yearly' ? monthlyTotal * 12 - yearlyDiscount : 0;
+    // Yearly calculation
+    const yearlyTotal = billingCycle === 'yearly' ? monthlySubtotal * 12 : 0;
+    const discount = 0; // Already included in yearly price
+    
+    const effectiveMonthly = billingCycle === 'yearly' ? monthlySubtotal : monthlySubtotal;
+    const total = billingCycle === 'yearly' ? yearlyTotal : monthlySubtotal;
 
     return {
-      modulesCost,
-      hostingCost,
-      storageCost,
-      supportCost,
-      monthlyTotal,
-      yearlyTotal,
-      yearlyDiscount,
-      implementationCost,
-      effectiveMonthly: billingCycle === 'yearly' ? yearlyTotal / 12 : monthlyTotal,
+      basePrice,
+      addOnsTotal,
+      discount,
+      total,
+      effectiveMonthly,
+      monthlySubtotal
     };
-  }, [users, selectedModules, hosting, storage, support, implementation, billingCycle]);
+  }, [selectedPlan, billingCycle, selectedAddOns, selectedPlanData]);
 
-  const toggleModule = (moduleId: string) => {
-    setSelectedModules(prev =>
-      prev.includes(moduleId)
-        ? prev.filter(id => id !== moduleId)
-        : [...prev, moduleId]
-    );
+  const handleAddOnChange = (addOnId: string, quantity: number) => {
+    setSelectedAddOns(prev => {
+      if (quantity === 0) {
+        const newAddOns = { ...prev };
+        delete newAddOns[addOnId];
+        return newAddOns;
+      }
+      return { ...prev, [addOnId]: quantity };
+    });
   };
 
-  const handleSendQuote = () => {
+  const formatIDR = (amount: number) => {
+    if (amount === 0) return 'Custom';
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(amount);
+  };
+
+  const handleSendQuote = (e: React.FormEvent) => {
+    e.preventDefault();
     // In real implementation, this would send email
     alert('Quote functionality would send email to customer');
     setShowQuoteModal(false);
@@ -108,200 +84,153 @@ const PricingCalculator: React.FC = () => {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">BizOps Pricing Calculator</h1>
         <p className="text-xl text-slate-600 dark:text-slate-400">
-          Configure your perfect solution and get instant pricing
+          Hitung biaya berlangganan sesuai kebutuhan bisnis Anda
         </p>
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Configuration Panel */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Number of Users */}
+          {/* Plan Selection */}
           <Card>
             <div className="flex items-center gap-3 mb-4">
-              <Users className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Number of Users</h3>
-            </div>
-            <input
-              type="range"
-              min="1"
-              max="500"
-              value={users}
-              onChange={(e) => setUsers(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-700"
-            />
-            <div className="flex justify-between mt-2">
-              <span className="text-sm text-slate-600 dark:text-slate-400">1 user</span>
-              <span className="text-2xl font-bold text-primary-600">{users} users</span>
-              <span className="text-sm text-slate-600 dark:text-slate-400">500+ users</span>
-            </div>
-          </Card>
-
-          {/* Modules Selection */}
-          <Card>
-            <div className="flex items-center gap-3 mb-4">
-              <Rocket className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Select Modules</h3>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              {MODULES.map(module => (
-                <label
-                  key={module.id}
-                  className={`flex items-start gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                    selectedModules.includes(module.id)
-                      ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                      : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedModules.includes(module.id)}
-                    onChange={() => toggleModule(module.id)}
-                    className="mt-1"
-                  />
-                  <div className="flex-1">
-                    <div className="font-semibold">{module.name}</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">{module.description}</div>
-                    <div className="text-sm text-primary-600 mt-1">
-                      ${module.basePrice} + ${module.pricePerUser}/user/month
-                    </div>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </Card>
-
-          {/* Hosting Type */}
-          <Card>
-            <div className="flex items-center gap-3 mb-4">
-              <Server className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Hosting Type</h3>
+              <Package className="w-6 h-6 text-primary-600" />
+              <h3 className="text-xl font-bold">Pilih Paket</h3>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
-              {HOSTING_OPTIONS.map(option => (
+              {pricingPlans.map(plan => (
                 <label
-                  key={option.id}
+                  key={plan.id}
                   className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                    hosting === option.id
+                    selectedPlan === plan.id
                       ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
                       : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
-                  }`}
+                  } ${plan.popular ? 'ring-2 ring-primary-500/20' : ''}`}
                 >
                   <input
                     type="radio"
-                    name="hosting"
-                    value={option.id}
-                    checked={hosting === option.id}
-                    onChange={(e) => setHosting(e.target.value)}
+                    name="plan"
+                    value={plan.id}
+                    checked={selectedPlan === plan.id}
+                    onChange={(e) => setSelectedPlan(e.target.value)}
                     className="mb-2"
                   />
-                  <div className="font-semibold">{option.name}</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400 mb-2">{option.description}</div>
+                  {plan.popular && (
+                    <div className="inline-block bg-primary-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                      POPULAR
+                    </div>
+                  )}
+                  <div className="font-semibold text-lg">{plan.name}</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400 mb-2">{plan.tagline}</div>
                   <div className="text-primary-600 font-bold">
-                    {option.price === 0 ? 'Free' : `$${option.price}/month`}
+                    {plan.priceYearly === 0 ? 'Custom' : formatIDR(plan.priceYearly)}
+                    {plan.priceYearly > 0 && <span className="text-xs text-slate-500">/bulan</span>}
                   </div>
                 </label>
               ))}
             </div>
+
+            {/* Features List */}
+            {selectedPlanData && (
+              <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+                <h4 className="font-semibold mb-3 text-slate-900 dark:text-white">Fitur Termasuk:</h4>
+                <ul className="space-y-2">
+                  {selectedPlanData.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Card>
 
-          {/* Storage */}
+          {/* Add-ons */}
           <Card>
             <div className="flex items-center gap-3 mb-4">
-              <Database className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Storage (GB)</h3>
+              <Plus className="w-6 h-6 text-primary-600" />
+              <h3 className="text-xl font-bold">Tambahan (Opsional)</h3>
             </div>
-            <input
-              type="range"
-              min="10"
-              max="500"
-              step="10"
-              value={storage}
-              onChange={(e) => setStorage(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-700"
-            />
-            <div className="flex justify-between mt-2">
-              <span className="text-sm text-slate-600 dark:text-slate-400">10 GB</span>
-              <span className="text-xl font-bold text-primary-600">{storage} GB</span>
-              <span className="text-sm text-slate-600 dark:text-slate-400">500 GB</span>
+            <div className="space-y-4">
+              {addOns
+                .filter(addOn => 
+                  selectedPlan === 'enterprise' || addOn.availableFor.includes(selectedPlan)
+                )
+                .map(addOn => (
+                  <div
+                    key={addOn.id}
+                    className="flex items-center justify-between p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary-300 transition-colors"
+                  >
+                    <div className="flex-1">
+                      <div className="font-semibold text-slate-900 dark:text-white">{addOn.name}</div>
+                      <div className="text-sm text-slate-600 dark:text-slate-400">{addOn.description}</div>
+                      <div className="text-sm text-primary-600 mt-1">
+                        {formatIDR(addOn.price)} {addOn.unit}
+                      </div>
+                    </div>
+                    <div className="ml-4">
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        value={selectedAddOns[addOn.id] || 0}
+                        onChange={(e) => handleAddOnChange(addOn.id, parseInt(e.target.value) || 0)}
+                        className="w-20 px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-center focus:ring-2 focus:ring-primary-500"
+                      />
+                    </div>
+                  </div>
+                ))}
             </div>
-            <p className="text-sm text-slate-500 mt-2">First 50GB included, $0.50/GB/month for additional storage</p>
           </Card>
 
-          {/* Support Package */}
+          {/* Billing Cycle */}
           <Card>
             <div className="flex items-center gap-3 mb-4">
               <Shield className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Support Package</h3>
+              <h3 className="text-xl font-bold">Siklus Pembayaran</h3>
             </div>
-            <div className="space-y-3">
-              {SUPPORT_PACKAGES.map(pkg => (
-                <label
-                  key={pkg.id}
-                  className={`flex items-center gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                    support === pkg.id
-                      ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                      : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="support"
-                    value={pkg.id}
-                    checked={support === pkg.id}
-                    onChange={(e) => setSupport(e.target.value)}
-                  />
-                  <div className="flex-1">
-                    <div className="font-semibold">{pkg.name}</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">{pkg.description}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-primary-600 font-bold">
-                      {pkg.price === 0 ? 'Free' : `$${pkg.price}/month`}
-                    </div>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </Card>
-
-          {/* Implementation Service */}
-          <Card>
-            <div className="flex items-center gap-3 mb-4">
-              <Rocket className="w-6 h-6 text-primary-600" />
-              <h3 className="text-xl font-bold">Implementation Service</h3>
-            </div>
-            <div className="space-y-3">
-              {IMPLEMENTATION_OPTIONS.map(option => (
-                <label
-                  key={option.id}
-                  className={`flex items-center gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                    implementation === option.id
-                      ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
-                      : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="implementation"
-                    value={option.id}
-                    checked={implementation === option.id}
-                    onChange={(e) => setImplementation(e.target.value)}
-                  />
-                  <div className="flex-1">
-                    <div className="font-semibold">{option.name}</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">{option.description}</div>
-                    <div className="text-xs text-slate-500 mt-1">
-                      {option.hours > 0 ? `${option.hours} hours × $${option.pricePerHour}/hour` : 'Free'}
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-primary-600 font-bold">
-                      {option.hours === 0 ? 'Free' : `$${option.hours * option.pricePerHour}`}
-                    </div>
-                    <div className="text-xs text-slate-500">one-time</div>
-                  </div>
-                </label>
-              ))}
+            <div className="grid md:grid-cols-2 gap-4">
+              <label
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  billingCycle === 'monthly'
+                    ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
+                    : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="billing"
+                  value="monthly"
+                  checked={billingCycle === 'monthly'}
+                  onChange={(e) => setBillingCycle(e.target.value as 'monthly')}
+                  className="mb-2"
+                />
+                <div className="font-semibold">Bulanan</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">
+                  Bayar per bulan, fleksibel
+                </div>
+              </label>
+              <label
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  billingCycle === 'yearly'
+                    ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/20'
+                    : 'border-slate-200 dark:border-slate-700 hover:border-primary-300'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="billing"
+                  value="yearly"
+                  checked={billingCycle === 'yearly'}
+                  onChange={(e) => setBillingCycle(e.target.value as 'yearly')}
+                  className="mb-2"
+                />
+                <div className="font-semibold">Tahunan</div>
+                <div className="text-sm text-green-600 dark:text-green-400 font-medium">
+                  Hemat 20% 🎉
+                </div>
+              </label>
             </div>
           </Card>
         </div>
@@ -310,81 +239,52 @@ const PricingCalculator: React.FC = () => {
         <div className="lg:col-span-1">
           <div className="sticky top-4">
             <Card className="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 border-2 border-primary-200 dark:border-primary-800">
-              <h3 className="text-2xl font-bold mb-6 text-center">Pricing Summary</h3>
-
-              {/* Billing Cycle Toggle */}
-              <div className="flex gap-2 mb-6 bg-white dark:bg-slate-800 p-1 rounded-lg">
-                <button
-                  onClick={() => setBillingCycle('monthly')}
-                  className={`flex-1 py-2 px-4 rounded-md font-semibold transition-all ${
-                    billingCycle === 'monthly'
-                      ? 'bg-primary-600 text-white'
-                      : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  Monthly
-                </button>
-                <button
-                  onClick={() => setBillingCycle('yearly')}
-                  className={`flex-1 py-2 px-4 rounded-md font-semibold transition-all ${
-                    billingCycle === 'yearly'
-                      ? 'bg-primary-600 text-white'
-                      : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  Yearly
-                  <span className="text-xs block text-green-600 dark:text-green-400">Save 20%</span>
-                </button>
-              </div>
+              <h3 className="text-2xl font-bold mb-6 text-center">Ringkasan Harga</h3>
 
               {/* Cost Breakdown */}
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600 dark:text-slate-400">Modules ({users} users)</span>
-                  <span className="font-semibold">${calculations.modulesCost.toFixed(2)}</span>
+                  <span className="text-slate-600 dark:text-slate-400">
+                    Paket {selectedPlanData?.name}
+                  </span>
+                  <span className="font-semibold">{formatIDR(calculations.basePrice)}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-600 dark:text-slate-400">Hosting</span>
-                  <span className="font-semibold">${calculations.hostingCost.toFixed(2)}</span>
-                </div>
-                {calculations.storageCost > 0 && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-600 dark:text-slate-400">Extra Storage</span>
-                    <span className="font-semibold">${calculations.storageCost.toFixed(2)}</span>
-                  </div>
-                )}
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-600 dark:text-slate-400">Support</span>
-                  <span className="font-semibold">${calculations.supportCost.toFixed(2)}</span>
-                </div>
+
+                {Object.entries(selectedAddOns).map(([addOnId, quantity]) => {
+                  const addOn = addOns.find(a => a.id === addOnId);
+                  if (!addOn || quantity === 0) return null;
+                  return (
+                    <div key={addOnId} className="flex justify-between text-sm">
+                      <span className="text-slate-600 dark:text-slate-400">
+                        {addOn.name} ({quantity}x)
+                      </span>
+                      <span className="font-semibold">
+                        {formatIDR(addOn.price * quantity)}
+                      </span>
+                    </div>
+                  );
+                })}
 
                 <div className="border-t border-slate-300 dark:border-slate-600 pt-3 mt-3">
                   <div className="flex justify-between text-sm font-semibold">
-                    <span>Monthly Subtotal</span>
-                    <span>${calculations.monthlyTotal.toFixed(2)}</span>
+                    <span>Subtotal per Bulan</span>
+                    <span>{formatIDR(calculations.monthlySubtotal)}</span>
                   </div>
                 </div>
 
                 {billingCycle === 'yearly' && (
                   <>
-                    <div className="flex justify-between text-sm text-green-600 dark:text-green-400">
-                      <span>Yearly Discount (20%)</span>
-                      <span>-${calculations.yearlyDiscount.toFixed(2)}</span>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-slate-600 dark:text-slate-400">× 12 bulan</span>
+                      <span className="font-semibold">{formatIDR(calculations.total)}</span>
                     </div>
-                    <div className="flex justify-between text-sm font-semibold">
-                      <span>Yearly Total</span>
-                      <span>${calculations.yearlyTotal.toFixed(2)}</span>
+                    <div className="flex justify-between text-sm text-green-600 dark:text-green-400">
+                      <span>Hemat (vs bulanan)</span>
+                      <span>
+                        {formatIDR((calculations.monthlySubtotal * 0.25 / 0.8) * 12)}
+                      </span>
                     </div>
                   </>
-                )}
-
-                {calculations.implementationCost > 0 && (
-                  <div className="border-t border-slate-300 dark:border-slate-600 pt-3 mt-3">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-600 dark:text-slate-400">Implementation (one-time)</span>
-                      <span className="font-semibold text-amber-600">${calculations.implementationCost.toFixed(2)}</span>
-                    </div>
-                  </div>
                 )}
               </div>
 
@@ -392,17 +292,14 @@ const PricingCalculator: React.FC = () => {
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 mb-6">
                 <div className="text-center">
                   <div className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                    {billingCycle === 'yearly' ? 'Effective Monthly Cost' : 'Monthly Cost'}
+                    {billingCycle === 'yearly' ? 'Biaya per Bulan' : 'Total per Bulan'}
                   </div>
                   <div className="text-5xl font-bold text-primary-600 mb-2">
-                    ${calculations.effectiveMonthly.toFixed(2)}
-                  </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">
-                    per month
+                    {formatIDR(calculations.effectiveMonthly)}
                   </div>
                   {billingCycle === 'yearly' && (
                     <div className="mt-3 text-xs text-slate-500">
-                      Billed annually: ${calculations.yearlyTotal.toFixed(2)}
+                      Total tahunan: {formatIDR(calculations.total)}
                     </div>
                   )}
                 </div>
@@ -411,7 +308,8 @@ const PricingCalculator: React.FC = () => {
               {/* Action Buttons */}
               <div className="space-y-3">
                 <Button variant="primary" size="lg" fullWidth>
-                  Get Started
+                  <Rocket className="w-5 h-5 mr-2" />
+                  Mulai Sekarang
                 </Button>
                 <div className="grid grid-cols-2 gap-2">
                   <Button
@@ -420,7 +318,7 @@ const PricingCalculator: React.FC = () => {
                     onClick={() => setShowQuoteModal(true)}
                   >
                     <Send className="w-4 h-4 mr-2" />
-                    Send Quote
+                    Kirim
                   </Button>
                   <Button
                     variant="outline"
@@ -438,15 +336,15 @@ const PricingCalculator: React.FC = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    <span>30-day money-back guarantee</span>
+                    <span>Trial gratis 14 hari</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    <span>Free data migration</span>
+                    <span>Migrasi data gratis</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    <span>No credit card required for trial</span>
+                    <span>Tidak perlu kartu kredit</span>
                   </div>
                 </div>
               </div>
@@ -459,15 +357,15 @@ const PricingCalculator: React.FC = () => {
       {showQuoteModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <Card className="max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4">Send Quote</h3>
-            <form onSubmit={(e) => { e.preventDefault(); handleSendQuote(); }}>
+            <h3 className="text-2xl font-bold mb-4">Kirim Penawaran</h3>
+            <form onSubmit={handleSendQuote}>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Name *</label>
+                  <label className="block text-sm font-semibold mb-2">Nama *</label>
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
                 <div>
@@ -475,34 +373,34 @@ const PricingCalculator: React.FC = () => {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Company Name</label>
+                  <label className="block text-sm font-semibold mb-2">Nama Perusahaan</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Phone Number</label>
+                  <label className="block text-sm font-semibold mb-2">Nomor Telepon</label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
               </div>
               <div className="flex gap-3 mt-6">
                 <Button type="submit" variant="primary" fullWidth>
-                  Send Quote
+                  Kirim Penawaran
                 </Button>
                 <Button
                   type="button"
                   variant="outline"
                   onClick={() => setShowQuoteModal(false)}
                 >
-                  Cancel
+                  Batal
                 </Button>
               </div>
             </form>
@@ -514,4 +412,3 @@ const PricingCalculator: React.FC = () => {
 };
 
 export default PricingCalculator;
-
