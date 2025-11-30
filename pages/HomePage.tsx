@@ -366,219 +366,180 @@ const HomePage: React.FC = () => {
                </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 items-start">
+            {/* 5. PRICING COMPARISON - Bento Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                
-               {/* 1. Fragmented SaaS (The Chaos) */}
-               <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-1 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-500 hover:shadow-2xl hover:shadow-red-900/10">
-                  <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-50 to-transparent dark:from-slate-800/50 dark:to-transparent rounded-t-3xl pointer-events-none"></div>
+               {/* LEFT COLUMN: The Problems (Span 5) */}
+               <div className="lg:col-span-5 flex flex-col gap-6">
                   
-                  <div className="p-8 relative">
-                     <div className="flex items-center justify-between mb-6">
-                        <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl text-red-600 dark:text-red-400">
-                           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                  {/* Card 1: Fragmented Stack */}
+                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 flex-1">
+                     <div className="absolute top-0 right-0 p-4">
+                         <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500">
+                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                         </div>
+                     </div>
+                     <div className="mb-4">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #1</span>
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Fragmented Stack</h3>
+                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
+                        Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span>
+                     </p>
+
+                     {/* Detailed Cost Breakdown */}
+                     <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>CRM License</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">Rp 150rb<span className="font-normal text-[8px]">/user</span></span>
                         </div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Opsi #1</span>
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>Accounting App</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">Rp 250rb<span className="font-normal text-[8px]">/user</span></span>
+                        </div>
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>HRIS App</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">Rp 20rb<span className="font-normal text-[8px]">/user</span></span>
+                        </div>
                      </div>
                      
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Fragmented Stack</h3>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 h-10 leading-relaxed">
-                        Menggabungkan 3-5 aplikasi SaaS berbeda (Accounting, HR, CRM, Inventory).
-                     </p>
-
-                     {/* Metrics */}
-                     <div className="space-y-6 mb-8">
-                        <div>
-                           <div className="flex justify-between text-xs font-bold text-slate-500 uppercase mb-2">
-                              <span>Total Monthly Cost</span>
-                              <span className="text-red-500">Mahal (Variable)</span>
-                           </div>
-                           <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800">
-                              <div className="flex justify-between items-end">
-                                 <span className="text-sm text-slate-600 dark:text-slate-300">50 Users Combined</span>
-                                 <span className="text-2xl font-bold text-slate-900 dark:text-white">~Rp 21 Jt</span>
-                              </div>
-                              <div className="text-[10px] text-slate-400 mt-1 text-right italic">Akumulasi langganan per app</div>
-                           </div>
+                     <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                        <div className="flex justify-between items-end mb-1">
+                           <span className="text-xs text-slate-500 uppercase font-bold">Total Cost (50 Users)</span>
+                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </div>
-
-                        <div>
-                           <div className="flex justify-between text-xs font-bold text-slate-500 uppercase mb-2">Implementation Time</div>
-                           <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                              <div className="h-full bg-red-400 w-3/4 rounded-full"></div>
-                           </div>
-                           <div className="flex justify-between text-xs mt-1 text-slate-500">
-                              <span>Cepat install</span>
-                              <span className="font-semibold text-red-500">Lama integrasi (3-6 bln)</span>
-                           </div>
+                        <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
+                           <div className="bg-red-400 h-full w-[90%]"></div>
                         </div>
-                     </div>
-
-                     {/* Downsides */}
-                     <div className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
-                        <div className="flex gap-3">
-                           <div className="mt-1 min-w-[16px] text-red-500"><svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></div>
-                           <p className="text-sm text-slate-600 dark:text-slate-400"><strong className="text-slate-900 dark:text-white">Data Silo:</strong> Stok di gudang tidak otomatis update ke accounting.</p>
-                        </div>
-                        <div className="flex gap-3">
-                           <div className="mt-1 min-w-[16px] text-red-500"><svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></div>
-                           <p className="text-sm text-slate-600 dark:text-slate-400"><strong className="text-slate-900 dark:text-white">Vendor Fatigue:</strong> Mengelola banyak tagihan dan support yang saling lempar tanggung jawab.</p>
+                        <div className="flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Integration Time:</span>
+                            <span className="text-red-500 font-bold">3-6 Bulan</span>
                         </div>
                      </div>
                   </div>
-               </div>
 
-               {/* 2. Legacy ERP (The Burden) */}
-               <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-1 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-900/10 transform md:translate-y-4">
-                  <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-50 to-transparent dark:from-slate-800/50 dark:to-transparent rounded-t-3xl pointer-events-none"></div>
-
-                  <div className="p-8 relative">
-                     <div className="flex items-center justify-between mb-6">
-                        <div className="p-3 bg-amber-100 dark:bg-amber-900/30 rounded-xl text-amber-600 dark:text-amber-400">
-                           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                        </div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Opsi #2</span>
+                  {/* Card 2: Legacy ERP */}
+                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 flex-1">
+                     <div className="absolute top-0 right-0 p-4">
+                         <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500">
+                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                         </div>
                      </div>
-
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Global Legacy ERP</h3>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 h-10 leading-relaxed">
-                        Software enterprise global dengan model lisensi per user yang kaku.
+                     <div className="mb-4">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #2</span>
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Legacy / Global ERP</h3>
+                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
+                        Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span>
                      </p>
 
-                     {/* Metrics */}
-                     <div className="space-y-6 mb-8">
-                        <div>
-                           <div className="flex justify-between text-xs font-bold text-slate-500 uppercase mb-2">
-                              <span>Total Monthly Cost</span>
-                              <span className="text-amber-500">Per User License</span>
-                           </div>
-                           <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800">
-                              <div className="flex justify-between items-end">
-                                 <span className="text-sm text-slate-600 dark:text-slate-300">50 Users License</span>
-                                 <span className="text-2xl font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt</span>
-                              </div>
-                              <div className="text-[10px] text-slate-400 mt-1 text-right italic">+ Biaya Implementasi Mahal</div>
-                           </div>
+                     {/* Detailed Cost Breakdown */}
+                     <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>Standard License</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">~Rp 210rb<span className="font-normal text-[8px]">/user</span></span>
                         </div>
-
-                        <div>
-                           <div className="flex justify-between text-xs font-bold text-slate-500 uppercase mb-2">Implementation Time</div>
-                           <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                              <div className="h-full bg-amber-400 w-full rounded-full"></div>
-                           </div>
-                           <div className="flex justify-between text-xs mt-1 text-slate-500">
-                              <span>Lambat</span>
-                              <span className="font-semibold text-amber-500">6 - 12 Bulan</span>
-                           </div>
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>Implementation</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">$$$ (Extra)</span>
+                        </div>
+                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                           <span>Maintenance</span>
+                           <span className="font-bold text-slate-700 dark:text-slate-300">~20% / year</span>
                         </div>
                      </div>
-
-                     {/* Downsides */}
-                     <div className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
-                        <div className="flex gap-3">
-                           <div className="mt-1 min-w-[16px] text-amber-500"><svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
-                           <p className="text-sm text-slate-600 dark:text-slate-400"><strong className="text-slate-900 dark:text-white">Growth Penalty:</strong> Biaya naik drastis setiap kali Anda merekrut karyawan baru.</p>
+                     
+                     <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+                        <div className="flex justify-between items-end mb-1">
+                           <span className="text-xs text-slate-500 uppercase font-bold">Total Cost (50 Users)</span>
+                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </div>
-                        <div className="flex gap-3">
-                           <div className="mt-1 min-w-[16px] text-amber-500"><svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
-                           <p className="text-sm text-slate-600 dark:text-slate-400"><strong className="text-slate-900 dark:text-white">Rigid System:</strong> Sulit dikustomisasi dengan proses bisnis unik lokal Indonesia.</p>
+                        <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
+                           <div className="bg-amber-400 h-full w-[60%]"></div>
+                        </div>
+                         <div className="flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Implementation Time:</span>
+                            <span className="text-amber-500 font-bold">6-12 Bulan</span>
                         </div>
                      </div>
                   </div>
+
                </div>
 
-               {/* 3. BizOps (The Solution) */}
-               <div className="group relative bg-slate-900 rounded-[2rem] p-1 shadow-2xl shadow-primary-900/30 transform md:-translate-y-6 ring-1 ring-white/10">
-                  {/* Glowing Border Animation */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-blue-500 to-primary-500 rounded-[2rem] p-[2px] opacity-100 animate-border-pulse pointer-events-none"></div>
-                  
-                  <div className="bg-slate-950 rounded-[1.9rem] p-8 relative h-full flex flex-col overflow-hidden">
-                     {/* Abstract Background */}
-                     <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-                     <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-blue-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+               {/* RIGHT COLUMN: The Solution (Span 7) */}
+               <div className="lg:col-span-7">
+                  <div className="group relative bg-[#0B1120] rounded-[2.5rem] p-1 shadow-2xl shadow-primary-900/40 ring-1 ring-white/10 h-full">
+                     {/* Glowing Border Animation */}
+                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-primary-500 to-blue-600 rounded-[2.5rem] p-[2px] opacity-100 animate-border-pulse pointer-events-none"></div>
+                     
+                     <div className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full flex flex-col justify-between overflow-hidden">
+                        {/* Abstract Background */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-                     <div className="relative z-10 flex-grow">
-                        <div className="flex items-center justify-between mb-8">
-                           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-                              <CheckCircle2 className="w-3.5 h-3.5" /> Recommended
+                        <div className="relative z-10">
+                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
+                                 <CheckCircle2 className="w-3.5 h-3.5" /> The BizOps Way
+                              </div>
+                              <div className="text-left md:text-right">
+                                 <p className="text-xs text-blue-200 uppercase tracking-widest font-extrabold">Best Value Choice</p>
+                              </div>
                            </div>
-                           <div className="text-right">
-                              <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Best Value</p>
+
+                           <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
+                              Satu Platform.<br/>
+                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Tanpa Batas User.</span>
+                           </h3>
+                           <p className="text-base text-slate-300 mb-10 max-w-lg leading-relaxed font-light">
+                              Platform terintegrasi dengan harga flat yang adil. Infrastruktur managed service, siap mendukung pertumbuhan bisnis Anda tanpa penalti biaya.
+                           </p>
+
+                           {/* Main Metric */}
+                           <div className="bg-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/10 mb-8 relative group-hover:bg-white/10 transition-colors duration-500">
+                               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-green-400 to-emerald-600 rounded-l-3xl"></div>
+                               <div className="grid grid-cols-2 gap-8">
+                                   <div>
+                                       <p className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Flat Monthly Cost</p>
+                                       <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
+                                       <p className="text-[10px] text-slate-500 mt-1">Paket Business (50 User)</p>
+                                   </div>
+                                   <div className="flex flex-col justify-center items-end text-right">
+                                       <div className="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
+                                           HEMAT 85%
+                                       </div>
+                                       <p className="text-[10px] text-slate-400">vs Fragmented Stack</p>
+                                   </div>
+                               </div>
+                           </div>
+
+                           {/* Features Grid */}
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                               <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
+                                   <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
+                                   <div>
+                                       <h4 className="text-white font-bold text-sm">Local Compliance</h4>
+                                       <p className="text-[10px] text-slate-400 mt-0.5">Pajak, BPJS, Kasbon Ready.</p>
+                                   </div>
+                               </div>
+                               <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
+                                   <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
+                                   <div>
+                                       <h4 className="text-white font-bold text-sm">Managed Infrastructure</h4>
+                                       <p className="text-[10px] text-slate-400 mt-0.5">Server & Security Included.</p>
+                                   </div>
+                               </div>
                            </div>
                         </div>
 
-                        <h3 className="text-3xl font-extrabold text-white mb-2">BizOps Platform</h3>
-                        <p className="text-sm text-slate-300 mb-10 h-10 leading-relaxed">
-                           Satu platform terintegrasi. Harga flat yang adil. Infrastruktur managed service.
-                        </p>
-
-                        {/* Metrics Highlight */}
-                        <div className="space-y-8 mb-10">
-                           <div>
-                              <div className="flex justify-between text-xs font-bold text-primary-300 uppercase mb-2">
-                                 <span>Flat Monthly Cost</span>
-                                 <span className="text-green-400">Save 85%</span>
-                              </div>
-                              <div className="p-5 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm relative overflow-hidden group-hover:bg-white/10 transition-colors">
-                                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary-400 to-blue-500"></div>
-                                 <div className="flex justify-between items-end">
-                                    <div>
-                                       <span className="text-sm text-slate-300 block mb-1">Paket Business (50 User)</span>
-                                       <span className="text-4xl font-black text-white tracking-tight">Rp 3 Jt</span>
-                                    </div>
-                                    <div className="text-right">
-                                       <div className="text-xs text-slate-400 line-through">Rp 21.000.000</div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <div>
-                              <div className="flex justify-between text-xs font-bold text-primary-300 uppercase mb-2">Implementation Time</div>
-                              <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                 <div className="h-full bg-gradient-to-r from-green-400 to-primary-500 w-1/4 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-                              </div>
-                              <div className="flex justify-between text-xs mt-2 text-slate-400">
-                                 <span className="text-white font-bold">Cepat (2-4 Minggu)</span>
-                                 <span>Siap Pakai</span>
-                              </div>
-                           </div>
+                        <div className="mt-10 relative z-10">
+                           <Link to="/pricing-calculator">
+                              <Button fullWidth variant="primary" className="h-14 text-base font-bold shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 border-none bg-gradient-to-r from-blue-600 to-primary-600 hover:from-blue-500 hover:to-primary-500 transition-all transform hover:scale-[1.01]">
+                                 Hitung Penghematan Anda
+                              </Button>
+                           </Link>
                         </div>
-
-                        {/* Unique Benefits */}
-                        <div className="space-y-4">
-                           <div className="flex items-start gap-4">
-                              <div className="p-1 bg-green-500/20 rounded-full text-green-400 mt-0.5"><CheckCircle2 className="w-4 h-4" /></div>
-                              <div>
-                                 <h4 className="text-sm font-bold text-white">Local Compliance Ready</h4>
-                                 <p className="text-xs text-slate-400 mt-0.5">Faktur Pajak, PPh 21/23, BPJS, & Kasbon ready out-of-the-box.</p>
-                              </div>
-                           </div>
-                           <div className="flex items-start gap-4">
-                              <div className="p-1 bg-blue-500/20 rounded-full text-blue-400 mt-0.5"><CheckCircle2 className="w-4 h-4" /></div>
-                              <div>
-                                 <h4 className="text-sm font-bold text-white">Managed Infrastructure</h4>
-                                 <p className="text-xs text-slate-400 mt-0.5">Termasuk server, security, backup, & maintenance. Terima beres.</p>
-                              </div>
-                           </div>
-                           <div className="flex items-start gap-4">
-                              <div className="p-1 bg-purple-500/20 rounded-full text-purple-400 mt-0.5"><CheckCircle2 className="w-4 h-4" /></div>
-                              <div>
-                                 <h4 className="text-sm font-bold text-white">Local Support Team</h4>
-                                 <p className="text-xs text-slate-400 mt-0.5">Support Bahasa Indonesia via WhatsApp. Bukan tiket bot.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div className="mt-10 relative z-10">
-                        <Link to="/pricing-calculator">
-                           <Button fullWidth variant="primary" className="h-14 text-lg font-bold shadow-xl shadow-primary-500/20 hover:shadow-primary-500/40 border-none bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-500 hover:to-blue-500">
-                              Hitung Penghematan Anda
-                           </Button>
-                        </Link>
-                        <p className="text-center text-[10px] text-slate-500 mt-4">
-                           *Estimasi penghematan dibandingkan total biaya Fragmented SaaS untuk 50 user.
-                        </p>
                      </div>
                   </div>
                </div>
