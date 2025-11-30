@@ -59,7 +59,7 @@ const LoginPage: React.FC = () => {
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 w-fit">
              <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 bg-slate-900 rounded-lg">
                 <div className="w-4 h-4 bg-white rounded-sm transform rotate-45"></div>
-             </div>
+             </Stack>
              <span className="font-bold text-xl text-slate-900 dark:text-white">BizOps</span>
           </Link>
 
@@ -106,7 +106,7 @@ const LoginPage: React.FC = () => {
                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{getLoginTitle()}</Typography>
                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">{getLoginDesc()}</Typography>
                 </div>
-             </div>
+             </Stack>
 
              <form onSubmit={handleLogin} className="space-y-5">
                 
@@ -176,10 +176,10 @@ const LoginPage: React.FC = () => {
           <Stack direction="row" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400">
              <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> SOC2 Compliant</span>
              <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> 256-bit SSL</span>
-          </div>
+          </Stack>
 
         </Container>
-      </div>
+      </Stack>
 
       {/* RIGHT: VISUAL SECTION (Desktop Only) */}
       <Stack direction="row" gap={4} align="center" justify="center" className="hidden w-1/2 bg-[#0F172A] relative overflow-hidden">
@@ -201,22 +201,22 @@ const LoginPage: React.FC = () => {
                >
                   {loginType === 'employee' && (
                      <div className="bg-slate-800/50 backdrop-blur-md p-6 rounded-2xl border border-slate-700 shadow-2xl text-left transform rotate-[-2deg]">
-                        <Stack direction="row" gap={4} align="center" className="mb-4 border-b border-slate-700 pb-4">
-                           <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-500 text-white font-bold">
+                        <div className="flex items-center gap-4 mb-4 border-b border-slate-700 pb-4">
+                           <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">JD</div>
                            <div>
                               <div className="text-white font-bold">John Doe</div>
                               <div className="text-slate-400 text-xs">Senior Engineer</div>
                            </div>
                            <div className="ml-auto text-green-400 text-xs">● Active</div>
-                        </Stack>
-                        <Stack direction="col" gap={3}>
+                        </div>
+                        <div className="space-y-3">
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>
                            <div className="h-2 w-1/2 bg-slate-700 rounded-full"></div>
-                           <Stack direction="row" gap={2} className="mt-4">
+                           <div className="mt-4 flex gap-2">
                               <span className="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">Payroll Ready</span>
                               <span className="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">Payslip Generated</span>
                            </div>
-                        </Stack>
+                        </div>
                      </div>
                   )}
                   {loginType === 'admin' && (
@@ -232,15 +232,15 @@ const LoginPage: React.FC = () => {
                         <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-6">
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
-                        <Stack direction="col" gap={2}>
-                           <Stack direction="row" gap={4} justify="between" className="text-sm text-indigo-200">
+                        <div className="space-y-2">
+                           <div className="flex justify-between text-sm text-indigo-200">
                               <span>Active Clients</span>
                               <span className="font-bold text-white">14</span>
-                           </Stack>
+                           </div>
                            <div className="w-full bg-indigo-950 rounded-full h-2">
                               <div className="bg-indigo-400 h-2 rounded-full w-[70%]"></div>
                            </div>
-                        </Stack>
+                        </div>
                      </div>
                   )}
                </motion.div>
@@ -282,8 +282,8 @@ const LoginPage: React.FC = () => {
          <div className="absolute bottom-8 left-8 text-slate-500 text-xs">
             © 2024 BizOps Indonesia. All rights reserved.
          </div>
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 };
 

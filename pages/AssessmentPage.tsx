@@ -278,7 +278,7 @@ const AssessmentPage = () => {
             <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-slate-900/50 border border-white/10 text-primary-400 text-sm font-medium mb-8 backdrop-blur-md">
               <LayoutDashboard className="w-4 h-4" /> 
               <span>Executive Assessment Tool</span>
-            </div>
+            </Stack>
             
             <Typography variant="h1" as="h1" className="font-bold text-white leading-tight tracking-tight">Unlock Your <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Digital Potential</span></Typography>
@@ -295,7 +295,7 @@ const AssessmentPage = () => {
                 <div key={idx} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-lg bg-slate-900 text-primary-400 shrink-0">
                     <item.icon className="w-5 h-5" />
-                  </div>
+                  </Stack>
                   <div>
                     <div className="font-semibold text-white">{item.text}</div>
                     <div className="text-xs text-slate-500">{item.desc}</div>
@@ -360,7 +360,7 @@ const AssessmentPage = () => {
                         <div className="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
                           <div className="bg-slate-600 h-full w-2/3 opacity-30 group-hover:bg-primary-500 group-hover:opacity-100 transition-all duration-500" />
                         </div>
-                      </div>
+                      </Stack>
                     </div>
                   ))}
                 </Stack>
@@ -385,9 +385,9 @@ const AssessmentPage = () => {
               </button>
               <MethodologyReference />
             </div>
-          </div>
+          </Stack>
         )}
-      </div>
+      </Stack>
     );
   }
 
@@ -408,7 +408,7 @@ const AssessmentPage = () => {
             <div className="text-center mb-8">
               <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mx-auto mb-6 shadow-inner border border-white/5">
                 <Users className="w-8 h-8 text-primary-400" />
-              </div>
+              </Stack>
               <Typography variant="h2" as="h2">Profil Penilai</Typography>
               <Typography variant="caption" className="text-slate-400">Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.</Typography>
             </div>
@@ -502,7 +502,7 @@ const AssessmentPage = () => {
             </form>
           </motion.div>
         </Container>
-      </div>
+      </Stack>
     );
   }
 
@@ -523,12 +523,12 @@ const AssessmentPage = () => {
             <div className="w-24 h-24 rounded-full border-4 border-slate-800 border-t-primary-500" />
             <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0">
               <Cpu className="w-8 h-8 text-primary-500" />
-            </div>
+            </Stack>
           </motion.div>
           <Typography variant="h2" as="h2">Memproses Hasil Assessment...</Typography>
           <Typography variant="body" className="text-slate-400">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</Typography>
         </div>
-      </div>
+      </Stack>
     );
   }
 
@@ -544,7 +544,7 @@ const AssessmentPage = () => {
                 <Stack direction="row" gap={3} align="center" className="mb-3">
                   <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
                     <CheckCircle className="w-3 h-3" /> Assessment Completed
-                  </div>
+                  </Stack>
                   {/* Reset Button Moved Here */}
                   <button 
                     onClick={handleReset}
@@ -604,14 +604,14 @@ const AssessmentPage = () => {
                           {results.avgScore.toFixed(1)}
                         </span>
                         <Typography variant="caption" className="text-slate-500">/ 5.0</Typography>
-                     </div>
-                  </div>
+                     </Stack>
+                  </Stack>
                   
                   <Typography variant="h2" as="h2" className="font-bold text-white">{results.maturityLevel.title}</Typography>
                   <div className={`px-3 py-1 rounded-full text-xs font-bold text-white mb-4 ${results.maturityLevel.color} print:bg-gray-200 print:text-black`}>
                     Level {results.maturityLevel.level}
                   </div>
-                </div>
+                </Stack>
               </div>
 
               {/* Executive Summary Text */}
@@ -727,12 +727,12 @@ const AssessmentPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Search className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Solution Finder</Typography>
                    <Typography variant="caption" className="text-slate-400">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Cari Solusi <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
 
                 {/* ROI Calculator */}
@@ -742,12 +742,12 @@ const AssessmentPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
                     <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Hitung Biaya <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
 
                 {/* Expert Consultation */}
@@ -757,12 +757,12 @@ const AssessmentPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
                     <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
               </Grid>
            </div>
@@ -802,7 +802,7 @@ const AssessmentPage = () => {
                 </div>
                 <MethodologyReference />
               </div>
-            </div>
+            </Stack>
           )}
         </Container>
       </div>
@@ -972,7 +972,7 @@ const AssessmentPage = () => {
                       See Results <CheckCircle className="w-4 h-4 ml-1" />
                     </Button>
                   )}
-                </div>
+                </Stack>
               </motion.div>
             </AnimatePresence>
           </div>

@@ -264,7 +264,7 @@ const ROIPage: React.FC = () => {
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg group-hover:scale-110 transition-transform">
                          <TrendingUp className="w-5 h-5" />
-                      </div>
+                      </Stack>
                       <Typography variant="caption" className="text-blue-400">Soft Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
@@ -277,7 +277,7 @@ const ROIPage: React.FC = () => {
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg group-hover:scale-110 transition-transform">
                          <Clock className="w-5 h-5" />
-                      </div>
+                      </Stack>
                       <Typography variant="caption" className="text-amber-400">Hard Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
@@ -290,7 +290,7 @@ const ROIPage: React.FC = () => {
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg group-hover:scale-110 transition-transform">
                          <AlertTriangle className="w-5 h-5" />
-                      </div>
+                      </Stack>
                       <Typography variant="caption" className="text-red-400">Risk Avoidance</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Loss Prevention</Typography>
@@ -303,7 +303,7 @@ const ROIPage: React.FC = () => {
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg group-hover:scale-110 transition-transform">
                          <Database className="w-5 h-5" />
-                      </div>
+                      </Stack>
                       <Typography variant="caption" className="text-purple-400">Hard Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
@@ -328,16 +328,16 @@ const ROIPage: React.FC = () => {
                                <div className="text-xs text-emerald-300 font-medium">ROI Year 1</div>
                                <div className="text-lg font-bold text-emerald-400">{roiPercentage.toFixed(0)}%</div>
                              </div>
-                          </div>
+                          </Stack>
                           <Stack direction="row" gap={3} align="center" className="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl">
                              <div className="p-1 bg-blue-500 rounded-full text-white"><Clock className="w-3 h-3" /></div>
                              <div className="text-left">
                                <div className="text-xs text-blue-300 font-medium">Break Even</div>
                                <div className="text-lg font-bold text-blue-400">{paybackMonths < 1 ? "< 1 Bulan" : `${paybackMonths.toFixed(1)} Bulan`}</div>
                              </div>
-                          </div>
+                          </Stack>
                        </Stack>
-                    </div>
+                    </Stack>
 
                     <Stack direction="col" gap={3} className="w-full md:w-auto min-w-[200px]">
                        <Button 
@@ -371,7 +371,7 @@ const ROIPage: React.FC = () => {
                      <Typography variant="h4" as="h4">Catatan Analis</Typography>
                      <Typography variant="caption" className="text-slate-500 leading-relaxed">Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.</Typography>
                   </div>
-              </div>
+              </Stack>
 
            </Stack>
         </Grid>
@@ -396,7 +396,7 @@ const ROIPage: React.FC = () => {
                 <div className="text-center mb-6">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl mx-auto mb-4">
                     <FileText className="w-6 h-6" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">Simpan Kalkulasi ROI</Typography>
                   <Typography variant="caption" className="text-slate-400">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</Typography>
                 </div>
@@ -463,7 +463,7 @@ const ROIPage: React.FC = () => {
                   </Button>
                 </form>
               </motion.div>
-            </div>
+            </Stack>
           )}
         </AnimatePresence>
 

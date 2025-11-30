@@ -35,7 +35,7 @@ function fixClosingTag(filePath, lineNum, expected, found) {
 }
 
 let iteration = 0;
-const maxIterations = 50;
+const maxIterations = 200;
 
 while (iteration < maxIterations) {
   iteration++;

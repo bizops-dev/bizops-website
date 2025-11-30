@@ -113,7 +113,7 @@ const DemoPage: React.FC = () => {
         <Typography variant="h2" as="h2">Mengalihkan ke WhatsApp...</Typography>
         <Typography variant="body-lg" className="text-slate-400">Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.</Typography>
         <Button variant="primary" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
-      </div>
+      </Stack>
     );
   }
 
@@ -142,7 +142,7 @@ const DemoPage: React.FC = () => {
                 >
                   <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-wider mb-6">
                     <Video className="w-3 h-3" /> Live Walkthrough
-                  </div>
+                  </Stack>
                   <Typography variant="h1" as="h1" className="font-extrabold text-white leading-tight tracking-tight">Lihat BizOps <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">In Action.</span></Typography>
                   <Typography variant="body-lg" className="text-slate-400">Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.</Typography>
@@ -156,7 +156,7 @@ const DemoPage: React.FC = () => {
                       <div key={idx} className="flex gap-5">
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 shadow-inner">
                           <item.icon className="w-6 h-6 text-primary-400" />
-                        </div>
+                        </Stack>
                         <div>
                           <Typography variant="h4" as="h4" className="font-bold text-white">{item.title}</Typography>
                           <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>
@@ -180,7 +180,7 @@ const DemoPage: React.FC = () => {
                     </Stack>
                   </Grid>
                 </motion.div>
-              </div>
+              </Stack>
 
               {/* Right: Form */}
               <div className="lg:col-span-7">

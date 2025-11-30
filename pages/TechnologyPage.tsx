@@ -51,17 +51,17 @@ const TechnologyPage: React.FC = () => {
                   <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-2">Presentation Layer</Badge>
                      <Typography variant="h3" as="h3">Client Apps</Typography>
-                  </div>
+                  </Stack>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">SPA Desk (Vue/React)</Typography>
-                     </div>
+                     </Stack>
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Smartphone className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Mobile App (Flutter)</Typography>
-                     </div>
+                     </Stack>
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Public Portal (Jinja)</Typography>
-                     </div>
+                     </Stack>
                   </Grid>
                </Grid>
 
@@ -71,7 +71,7 @@ const TechnologyPage: React.FC = () => {
                   <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 mb-2">Business Applications</Badge>
                      <Typography variant="h3" as="h3">Integrated Modules</Typography>
-                  </div>
+                  </Stack>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      {/* ERPNext */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
@@ -130,7 +130,7 @@ const TechnologyPage: React.FC = () => {
                   <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mb-2">Application Core</Badge>
                      <Typography variant="h3" as="h3">Frappe Framework</Typography>
-                  </div>
+                  </Stack>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Code className="w-5 h-5 text-primary-500" /> 
@@ -161,27 +161,27 @@ const TechnologyPage: React.FC = () => {
                   <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-2">Infrastructure Services</Badge>
                      <Typography variant="h3" as="h3">Data & Processing</Typography>
-                  </div>
+                  </Stack>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Database</Typography>
                         <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </div>
+                     </Stack>
                      <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Caching</Typography>
                         <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </div>
+                     </Stack>
                      <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Queue</Typography>
                         <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </div>
+                     </Stack>
                      <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Realtime</Typography>
                         <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </div>
+                     </Stack>
                   </Grid>
                </Grid>
-            </div>
+            </Stack>
          </Container>
       </Section>
 
@@ -191,7 +191,7 @@ const TechnologyPage: React.FC = () => {
             <div>
                <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl mb-6">
                   <Cpu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-               </div>
+               </Stack>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
@@ -321,7 +321,7 @@ const TechnologyPage: React.FC = () => {
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl mb-6 text-blue-600 dark:text-blue-400">
                      <Share2 className="w-6 h-6" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">REST API Generik</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.</Typography>
                   <div className="bg-slate-100 dark:bg-slate-900 p-3 rounded text-xs text-slate-600 dark:text-slate-400">
@@ -332,18 +332,18 @@ const TechnologyPage: React.FC = () => {
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl mb-6 text-purple-600 dark:text-purple-400">
                      <Workflow className="w-6 h-6" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">Webhooks & Events</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.</Typography>
-               </div>
+               </Stack>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl mb-6 text-emerald-600 dark:text-emerald-400">
                      <Puzzle className="w-6 h-6" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">Virtual DocType</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.</Typography>
-               </div>
+               </Stack>
             </Grid>
          </Container>
       </Section>
@@ -363,24 +363,24 @@ const TechnologyPage: React.FC = () => {
                         <div>
                            <Typography variant="h4" as="h4">Background Workers</Typography>
                            <Typography variant="caption" className="text-slate-400">Tugas berat seperti generate laporan PDF, email bulk, dan posting akuntansi diproses di background (via Redis Queue/BullMQ) agar UI tetap responsif.</Typography>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                      <Stack direction="row" gap={4}>
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Intelligent Caching</Typography>
                            <Typography variant="caption" className="text-slate-400">Konfigurasi sistem, permission, dan metadata disimpan di Redis Cache untuk akses super cepat (sub-millisecond).</Typography>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                      <Stack direction="row" gap={4}>
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Socket.io Realtime</Typography>
                            <Typography variant="caption" className="text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</Typography>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                   </Stack>
-               </div>
+               </Stack>
                
                <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative">
                   <div className="absolute top-0 right-0 p-4">
@@ -394,7 +394,7 @@ const TechnologyPage: React.FC = () => {
                         <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
                            <span className="text-green-400">Active</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-blue-500 w-3/4 animate-pulse"></div>
                         </div>
@@ -403,7 +403,7 @@ const TechnologyPage: React.FC = () => {
                         <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Background Workers (Default/Short/Long)</span>
                            <span className="text-green-400">Processing</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-purple-500 w-1/2"></div>
                         </div>
@@ -412,7 +412,7 @@ const TechnologyPage: React.FC = () => {
                         <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Socket.io Service</span>
                            <span className="text-green-400">Connected: 1,240</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-emerald-500 w-full"></div>
                         </div>
@@ -421,7 +421,7 @@ const TechnologyPage: React.FC = () => {
                         <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Redis Cache Hit Rate</span>
                            <span className="text-green-400">98.5%</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-amber-500 w-[98%]"></div>
                         </div>
@@ -446,28 +446,28 @@ const TechnologyPage: React.FC = () => {
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500 transition-colors group h-full">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-6 h-6 text-purple-400" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">AI & ML Integration</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.</Typography>
-               </div>
+               </Stack>
 
                {/* IoT Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group h-full">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Network className="w-6 h-6 text-blue-400" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.</Typography>
-               </div>
+               </Stack>
 
                {/* High Security */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group h-full">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Lock className="w-6 h-6 text-emerald-400" />
-                  </div>
+                  </Stack>
                   <Typography variant="h3" as="h3">Enterprise Security</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.</Typography>
-               </div>
+               </Stack>
             </CardSlider>
          </Container>
       </Section>
@@ -482,25 +482,25 @@ const TechnologyPage: React.FC = () => {
                   <Stack direction="row" gap={4} align="center" className="mb-6">
                      <Box className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Containerized (Docker)</Typography>
-                  </div>
+                  </Stack>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Isolated Environments</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Easy Versioning</li>
                   </ul>
-               </div>
+               </Stack>
 
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
                   <Stack direction="row" gap={4} align="center" className="mb-6">
                      <HardDrive className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Platform Agnostic</Typography>
-                  </div>
+                  </Stack>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> No Vendor Lock-in</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Horizontal Scaling</li>
                   </ul>
-               </div>
+               </Stack>
             </Grid>
          </Container>
       </Section>
@@ -521,7 +521,7 @@ const TechnologyPage: React.FC = () => {
          </Container>
       </Section>
 
-    </div>
+    </Stack>
   );
 };
 

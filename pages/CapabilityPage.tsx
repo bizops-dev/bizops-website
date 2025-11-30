@@ -20,7 +20,7 @@ const CapabilityPage: React.FC = () => {
         <SEO title="Page Not Found" />
         <Typography variant="h1" as="h1">Capability Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
-      </div>
+      </Stack>
     );
   }
 
@@ -35,7 +35,7 @@ const CapabilityPage: React.FC = () => {
          <Container size="7xl" className="text-center">
             <Stack direction="row" gap={4} className="p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />
-            </div>
+            </Stack>
             <Typography variant="h1" as="h1" className="font-bold leading-tight">{data.subtitle}</Typography>
             <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{data.description}</Typography>
             <Link to="/demo">
@@ -54,8 +54,8 @@ const CapabilityPage: React.FC = () => {
                      <Stack direction="row" gap={4} className="mt-1">
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 text-primary-600 rounded-xl border border-primary-100">
                            <Check className="w-6 h-6" />
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.title}</Typography>
                         <Typography variant="body" className="text-slate-600 leading-relaxed">{item.desc}</Typography>

@@ -251,7 +251,7 @@ const NeedsAnalysisPage = () => {
             >
               <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
                 <Crosshair className="w-4 h-4" /> Solution Finder 2.0
-              </div>
+              </Stack>
               
               <Typography variant="h1" as="h1" className="font-bold leading-tight tracking-tight">Temukan Solusi BizOps <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Yang Paling Tepat.</span></Typography>
@@ -271,7 +271,7 @@ const NeedsAnalysisPage = () => {
                 <Stack direction="row" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> No Sign-up Required
                 </Stack>
-              </div>
+              </Stack>
             </motion.div>
 
             {/* Right Column: Feature Visuals */}
@@ -292,7 +292,7 @@ const NeedsAnalysisPage = () => {
                     <Typography variant="h3" as="h3">Holistic Diagnosis</Typography>
                     <Typography variant="caption" className="text-slate-400 leading-relaxed">Kami tidak hanya melihat software, tapi juga kesiapan tim (People) dan alur kerja (Process).</Typography>
                   </div>
-                </div>
+                </Stack>
 
                 {/* Card 2: Roadmap */}
                 <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
@@ -303,7 +303,7 @@ const NeedsAnalysisPage = () => {
                     <Typography variant="h3" as="h3">Actionable Roadmap</Typography>
                     <Typography variant="caption" className="text-slate-400 leading-relaxed">Dapatkan timeline implementasi langkah demi langkah, dari Quick Win hingga Optimization.</Typography>
                   </div>
-                </div>
+                </Stack>
 
                 {/* Card 3: Difference */}
                 <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
@@ -314,8 +314,8 @@ const NeedsAnalysisPage = () => {
                     <Typography variant="h3" as="h3">Practical Solution</Typography>
                     <Typography variant="caption" className="text-slate-400 leading-relaxed">Berbeda dengan Maturity Assessment yang hanya memberi skor, kami memberi resep solusi.</Typography>
                   </div>
-                </div>
-              </div>
+                </Stack>
+              </Grid>
 
               {/* Decorative Circle */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-blue-500/20 rounded-full -z-10 animate-[spin_60s_linear_infinite]" />
@@ -323,7 +323,7 @@ const NeedsAnalysisPage = () => {
             </motion.div>
           </Grid>
         </Container>
-      </div>
+      </Stack>
     );
   }
 
@@ -711,7 +711,7 @@ const NeedsAnalysisPage = () => {
           </motion.div>
           <Typography variant="h2" as="h2">Mengkurasi Solusi...</Typography>
           <Typography variant="body" className="text-slate-400">Menghubungkan {selectedPainPoints.length} tantangan bisnis dengan solusi PPT kami.</Typography>
-      </div>
+      </Stack>
     );
   }
 
@@ -739,7 +739,7 @@ const NeedsAnalysisPage = () => {
                 <Button onClick={() => navigate('/contact')} className="gap-2">
                    Diskusi Proposal <ArrowRight className="w-4 h-4" />
                 </Button>
-             </div>
+             </Stack>
           </Stack>
 
           <Grid cols={12} gap={8}>
@@ -888,12 +888,12 @@ const NeedsAnalysisPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Hitung Potensi ROI</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.</Typography>
                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Buka Kalkulator ROI <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
 
                 {/* Maturity Assessment */}
@@ -903,12 +903,12 @@ const NeedsAnalysisPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <PieChart className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Maturity Assessment</Typography>
                    <Typography variant="caption" className="text-slate-400">Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).</Typography>
                     <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Mulai Audit <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
 
                 {/* Expert Consultation */}
@@ -918,12 +918,12 @@ const NeedsAnalysisPage = () => {
                 >
                    <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
-                   </div>
+                   </Stack>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.</Typography>
                     <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
-                   </div>
+                   </Stack>
                 </div>
               </Grid>
            </div>

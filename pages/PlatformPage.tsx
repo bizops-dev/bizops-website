@@ -151,7 +151,7 @@ const PlatformPage: React.FC = () => {
                               <div className="h-6 bg-slate-800 rounded w-full"></div>
                            </div>
                            <div className="mt-4 text-xs text-slate-500">Preview Form Layout</div>
-                        </div>
+                        </Stack>
                      </Stack>
                   </Stack>
                   
@@ -162,9 +162,9 @@ const PlatformPage: React.FC = () => {
                         <div className="text-xs opacity-80">Development Time</div>
                         <div className="text-sm font-bold">10x Faster</div>
                      </div>
-                  </div>
-               </div>
-            </div>
+                  </Stack>
+               </Stack>
+            </Stack>
             
             <div className="order-1 lg:order-2">
                <Badge className="mb-6 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">The Citizen Developer Era</Badge>
@@ -176,7 +176,7 @@ const PlatformPage: React.FC = () => {
                   <li className="flex items-start gap-4">
                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 mt-1">
                         <Layout className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                     </div>
+                     </Stack>
                      <div>
                         <Typography variant="h4" as="h4">Visual Form Builder</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Desain form input data kompleks dengan validasi logic, perhitungan otomatis, dan relasi antar data tanpa menulis satu baris kode pun.</Typography>
@@ -185,7 +185,7 @@ const PlatformPage: React.FC = () => {
                   <li className="flex items-start gap-4">
                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 mt-1">
                         <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                     </div>
+                     </Stack>
                      <div>
                         <Typography variant="h4" as="h4">Workflow Automation</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Atur alur persetujuan (approval) bertingkat, notifikasi email/WA otomatis, dan trigger aksi berdasarkan perubahan status dokumen.</Typography>
@@ -194,7 +194,7 @@ const PlatformPage: React.FC = () => {
                   <li className="flex items-start gap-4">
                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 mt-1">
                         <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                     </div>
+                     </Stack>
                      <div>
                         <Typography variant="h4" as="h4">Instant Mobile App</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Setiap aplikasi yang Anda buat otomatis tersedia di mobile app (iOS/Android) dengan dukungan offline mode untuk pekerja lapangan.</Typography>
@@ -202,8 +202,8 @@ const PlatformPage: React.FC = () => {
                   </li>
                </ul>
             </div>
-         </Grid>
-      </Section>
+         </Stack>
+      </Stack>
 
       {/* 3. MODULES GRID */}
       <Section>
@@ -307,7 +307,7 @@ const PlatformPage: React.FC = () => {
                   <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32">
                      <Stack direction="row" gap={4} align="center" justify="center" className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
                         {tech.icon}
-                     </div>
+                     </Stack>
                      <div>
                         <div className="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary-600 transition-colors">{tech.name}</div>
                         <div className="text-[10px] text-slate-400 font-medium mt-0.5">{tech.desc}</div>
@@ -320,12 +320,12 @@ const PlatformPage: React.FC = () => {
             <Stack direction="row" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
                <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
                   <Check className="w-5 h-5 text-primary-600" />
-               </div>
+               </Stack>
                <div className="text-left">
                   <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Official Partner</div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white">Frappe Technologies</div>
                </div>
-            </div>
+            </Stack>
 
             <Stack direction="row" gap={4} justify="center">
                <Link to="/platform/technologies/architecture">
@@ -353,7 +353,7 @@ const PlatformPage: React.FC = () => {
             </Stack>
          </Container>
       </Section>
-    </Stack>
+    </div>
   );
 };
 

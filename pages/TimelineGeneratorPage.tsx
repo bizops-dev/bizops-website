@@ -74,7 +74,7 @@ const TimelineGeneratorPage: React.FC = () => {
         <Container size="3xl" className="text-center mb-12">
            <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200 dark:border-blue-800">
               <Calendar className="w-4 h-4" /> Project Planner
-           </div>
+           </Stack>
            <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight">Estimasi Waktu Implementasi <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Secara Realistis</span></Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Setiap perusahaan berbeda. Masukkan parameter proyek Anda untuk mendapatkan Timeline & Resource Plan yang akurat.</Typography>
         </Container>
@@ -194,7 +194,7 @@ const TimelineGeneratorPage: React.FC = () => {
                   <Button onClick={handleGenerate} size="lg" className="gap-2 shadow-lg shadow-primary-500/20">
                      Generate Timeline Project <ArrowRight className="w-4 h-4" />
                   </Button>
-               </div>
+               </Stack>
             </motion.div>
           ) : (
             /* --- RESULT VIEW --- */
@@ -260,7 +260,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                     W{i+1}
                                  </div>
                               ))}
-                           </div>
+                           </Stack>
                         </Stack>
 
                         {/* Phases Bars */}
