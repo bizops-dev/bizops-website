@@ -72,7 +72,7 @@ const TrustPage: React.FC = () => {
                </div>
                <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">All Systems Operational</span>
             </div>
-            <div className="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400 font-mono">
+            <div className="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Uptime (30 Days): 99.99%</span>
                <span className="hidden sm:flex items-center gap-1"><RefreshCw className="w-3 h-3" /> Last Updated: Just now</span>
                <Link to="/status" className="text-emerald-600 hover:underline">View History &rarr;</Link>
@@ -189,25 +189,25 @@ const TrustPage: React.FC = () => {
                   
                   <div className="relative z-10 flex flex-col gap-4 h-full justify-center">
                       <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between">
-                         <div className="flex items-center gap-3 text-emerald-400 font-mono text-xs">
+                         <div className="flex items-center gap-3 text-emerald-400 text-xs">
                             <Globe className="w-4 h-4" /> Cloudflare WAF
                          </div>
                          <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                       </div>
                       <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-8">
-                         <div className="flex items-center gap-3 text-blue-400 font-mono text-xs">
+                         <div className="flex items-center gap-3 text-blue-400 text-xs">
                             <Server className="w-4 h-4" /> Load Balancer
                          </div>
                          <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
                       </div>
                       <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-16">
-                         <div className="flex items-center gap-3 text-purple-400 font-mono text-xs">
+                         <div className="flex items-center gap-3 text-purple-400 text-xs">
                             <Lock className="w-4 h-4" /> App Server (Pod)
                          </div>
                          <div className="h-2 w-2 rounded-full bg-purple-500 animate-pulse"></div>
                       </div>
                       <div className="bg-emerald-900/50 backdrop-blur border border-emerald-500/30 p-4 rounded-xl flex items-center justify-between ml-24 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-                         <div className="flex items-center gap-3 text-white font-mono text-xs font-bold">
+                         <div className="flex items-center gap-3 text-white text-xs font-bold">
                             <Database className="w-4 h-4" /> Encrypted DB
                          </div>
                          <div className="flex gap-1">

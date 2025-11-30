@@ -107,7 +107,7 @@ const StatusPage: React.FC = () => {
                        </div>
                        <div className="text-right">
                           <span className="text-sm font-medium text-green-600 dark:text-green-400 block">{sys.status}</span>
-                          <span className="text-[10px] text-slate-400 font-mono">{sys.uptime} uptime</span>
+                          <span className="text-[10px] text-slate-400">{sys.uptime} uptime</span>
                        </div>
                     </div>
                  ))}
@@ -145,7 +145,7 @@ const StatusPage: React.FC = () => {
                        <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                           <AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}
                        </h4>
-                       <span className="text-xs font-mono text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
+                       <span className="text-xs text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 pl-6 border-l-2 border-slate-200 dark:border-slate-800 ml-2">
                        {inc.desc}

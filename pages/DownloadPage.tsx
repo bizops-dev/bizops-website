@@ -54,7 +54,7 @@ const DownloadPage: React.FC = () => {
               <div className="flex items-center gap-6">
                  <div className="hidden sm:block p-2 bg-white rounded-xl shadow-md border border-slate-100">
                     {/* Mock QR Code */}
-                    <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] font-mono p-1 text-center leading-tight">
+                    <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] p-1 text-center leading-tight">
                        SCAN TO<br/>DOWNLOAD
                     </div>
                  </div>

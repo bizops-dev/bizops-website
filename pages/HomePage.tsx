@@ -349,132 +349,146 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 5. PRICING COMPARISON: Why Cheaper? */}
+      {/* 5. PRICING COMPARISON: The New Paradigm */}
       <section aria-labelledby="pricing-heading" className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden border-t border-slate-100 dark:border-slate-800">
+         {/* Decorative Mesh Gradient */}
+         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-slate-50 to-transparent dark:from-slate-900/30 dark:to-transparent pointer-events-none"></div>
+
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
                <h2 id="pricing-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-                  Hemat Hingga 60% Biaya IT
+                  Berhenti Membayar <span className="text-red-500">Double</span> untuk <br className="hidden md:block" /> Fitur yang Sama.
                </h2>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-                  Model harga kami dirancang untuk skalabilitas. Tanpa penalti biaya saat tim Anda bertambah besar.
+                  Model "per user license" menghukum pertumbuhan bisnis Anda. Kami menawarkan pendekatan yang lebih adil: Bayar kapasitas, bukan kepala.
                </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 items-stretch">
-               {/* 1. Fragmented Stack */}
-               <div className="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col h-full hover:border-red-200 dark:hover:border-red-900/30 transition-colors duration-300">
-                  <div className="mb-6">
-                     <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400 mb-2">Fragmented SaaS</h3>
-                     <p className="text-xs text-slate-500 h-8">Langganan banyak aplikasi terpisah (CRM, HR, Accounting).</p>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-end">
+               
+               {/* 1. Fragmented Stack (The Complexity Trap) */}
+               <div className="group relative p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-[85%] flex flex-col justify-between">
+                  <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-400 to-orange-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   
-                  <div className="space-y-4 mb-8 flex-grow">
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">Harga Dasar</span>
-                        <span className="font-bold text-slate-900 dark:text-white">Per User / App</span>
+                  <div>
+                     <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold uppercase tracking-wider">
+                        Old Way #1
                      </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">CRM + Sales</span>
-                        <span className="font-mono">Rp 150rb/user</span>
-                     </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">Accounting</span>
-                        <span className="font-mono">Rp 250rb/user</span>
-                     </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">HRIS</span>
-                        <span className="font-mono">Rp 20rb/user</span>
-                     </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2 text-red-500">
-                        <span>Integrasi Data</span>
-                        <span className="font-bold">Manual / Mahal</span>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Fragmented SaaS</h3>
+                     <p className="text-sm text-slate-500 mb-6">Langganan terpisah untuk CRM, Accounting, HRIS.</p>
+                     
+                     <div className="space-y-3 mb-6">
+                         <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
+                             <span className="font-semibold">Multiple Subscriptions</span>
+                             <span className="font-mono font-bold">$$$</span>
+                         </div>
+                         <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
+                             <span className="font-semibold">Integration Cost</span>
+                             <span className="font-mono font-bold">High</span>
+                         </div>
                      </div>
                   </div>
 
-                  <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
-                     <div className="text-xs text-slate-500 mb-1 uppercase tracking-wide">Estimasi Total (50 User)</div>
-                     <div className="text-3xl font-bold text-slate-400">Rp 21 Jt<span className="text-sm font-normal">/bln</span></div>
+                  <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
+                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Impact:</p>
+                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Biaya IT membengkak seiring bertambahnya aplikasi.</p>
                   </div>
                </div>
 
-               {/* 2. Competitor ERP (Per User) */}
-               <div className="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col h-full hover:border-amber-200 dark:hover:border-amber-900/30 transition-colors duration-300">
-                  <div className="mb-6">
-                     <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400 mb-2">Platform Sejenis</h3>
-                     <p className="text-xs text-slate-500 h-8">ERP Global atau Kompetitor Lokal dengan model lisensi user.</p>
-                  </div>
-                  
-                  <div className="space-y-4 mb-8 flex-grow">
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">Harga Dasar</span>
-                        <span className="font-bold text-slate-900 dark:text-white">Per User License</span>
+               {/* 2. Competitor ERP (The User Tax) */}
+               <div className="group relative p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-[85%] flex flex-col justify-between">
+                  <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                  <div>
+                     <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold uppercase tracking-wider">
+                        Old Way #2
                      </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">All Modules</span>
-                        <span className="font-mono">Rp 300rb/user</span>
-                     </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
-                        <span className="text-slate-600 dark:text-slate-400">Implementation</span>
-                        <span className="font-mono">Biaya Tinggi</span>
-                     </div>
-                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2 text-amber-600">
-                        <span>Hidden Cost</span>
-                        <span className="font-bold">Add-ons & Maintenance</span>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Legacy / Global ERP</h3>
+                     <p className="text-sm text-slate-500 mb-6">Model lisensi per user. Makin banyak karyawan, makin mahal.</p>
+
+                     <div className="space-y-3 mb-6">
+                         <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
+                             <span className="font-semibold">License Fee</span>
+                             <span className="font-mono font-bold">Per User</span>
+                         </div>
+                         <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
+                             <span className="font-semibold">Implementation</span>
+                             <span className="font-mono font-bold">Expensive</span>
+                         </div>
                      </div>
                   </div>
 
-                  <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
-                     <div className="text-xs text-slate-500 mb-1 uppercase tracking-wide">Estimasi Total (50 User)</div>
-                     <div className="text-3xl font-bold text-slate-500">Rp 15 Jt<span className="text-sm font-normal">/bln</span></div>
+                  <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
+                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Impact:</p>
+                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Menghambat rekrutmen user baru karena biaya lisensi.</p>
                   </div>
                </div>
 
-               {/* 3. BizOps (Flat) */}
-               <div className="relative p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-2xl transform md:scale-105 z-10 border border-primary-500/30 flex flex-col h-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 blur-[100px] rounded-full pointer-events-none"></div>
-                  
-                  <div className="mb-6 relative z-10">
-                     <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                        BizOps Platform
-                        <span className="text-[10px] bg-primary-500 text-white px-2 py-0.5 rounded-full animate-pulse uppercase tracking-wider">Best Value</span>
-                     </h3>
-                     <p className="text-xs text-slate-300 h-8">All-in-One ERP dengan harga paket flat yang transparan.</p>
-                  </div>
+               {/* 3. BizOps (The Smart Way) */}
+               <div className="relative p-1 rounded-[2rem] bg-gradient-to-b from-primary-400 to-blue-600 shadow-2xl shadow-primary-900/20 transform md:-translate-y-4 z-10">
+                  <div className="bg-slate-900 rounded-[1.9rem] p-8 h-full flex flex-col justify-between relative overflow-hidden">
+                     {/* Glow Effects */}
+                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 blur-[80px] rounded-full pointer-events-none"></div>
+                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-                  <div className="space-y-4 mb-8 relative z-10 flex-grow">
-                     <div className="flex justify-between items-center text-sm border-b border-white/10 pb-2">
-                        <span className="text-slate-300">Metode Harga</span>
-                        <span className="font-bold text-primary-200">Flat Package Price</span>
-                     </div>
-                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
-                        <span className="text-sm font-bold">All Modules Included</span>
-                        <CheckCircle2 className="w-5 h-5 text-green-400" />
-                     </div>
-                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
-                        <span className="text-sm font-bold">Cloud Infrastructure</span>
-                        <CheckCircle2 className="w-5 h-5 text-green-400" />
-                     </div>
-                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
-                        <span className="text-sm font-bold">Unlimited Integration</span>
-                        <CheckCircle2 className="w-5 h-5 text-green-400" />
-                     </div>
-                  </div>
+                     <div className="relative z-10">
+                        <div className="mb-6 flex justify-between items-start">
+                           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 text-xs font-bold uppercase tracking-wider">
+                              The BizOps Way
+                           </div>
+                           <div className="p-2 bg-primary-500 rounded-lg shadow-lg shadow-primary-500/40">
+                              <CheckCircle2 className="w-5 h-5 text-white" />
+                           </div>
+                        </div>
 
-                  <div className="pt-6 border-t border-white/10 relative z-10">
-                     <div className="text-xs text-primary-200 mb-1 uppercase tracking-wide">Paket Business (Up to 50 Users)</div>
-                     <div className="text-4xl font-black text-white">Rp 3 Jt<span className="text-sm font-normal text-slate-300">/bln</span></div>
-                     <div className="text-[10px] text-slate-400 mt-2">*Harga flat satu kantor, bukan per kepala.</div>
-                  </div>
-                  
-                  <div className="mt-8 relative z-10">
-                     <Link to="/pricing-calculator">
-                        <Button fullWidth variant="primary" className="h-12 text-sm shadow-lg shadow-primary-500/25">
-                           Hitung ROI Anda
-                        </Button>
-                     </Link>
+                        <h3 className="text-2xl font-bold text-white mb-2">Unified Platform Model</h3>
+                        <p className="text-sm text-slate-300 mb-8 leading-relaxed">
+                           Harga paket flat berdasarkan kapasitas bisnis, bukan jumlah kepala. Scale-up fleksibel sesuai kebutuhan.
+                        </p>
+
+                        <div className="space-y-4 mb-8">
+                           <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                              <div className="mt-1 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 text-green-400">
+                                 <CheckCircle2 className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                 <h4 className="font-bold text-white text-sm">Flat Core Package</h4>
+                                 <p className="text-xs text-slate-400 mt-1">Include kuota user & core modules dalam satu harga bulanan tetap.</p>
+                              </div>
+                           </div>
+
+                           <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                              <div className="mt-1 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400">
+                                 <ArrowRight className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                 <h4 className="font-bold text-white text-sm">Flexible Scaling</h4>
+                                 <p className="text-xs text-slate-400 mt-1">Upgrade ke "Growth Plan" untuk fitur advanced, atau beli Add-on modul/service spesifik.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div className="relative z-10 pt-6 border-t border-white/10">
+                        <div className="flex justify-between items-end mb-4">
+                           <div>
+                              <p className="text-xs text-primary-300 uppercase tracking-wide mb-1">Starting From</p>
+                              <div className="text-3xl font-black text-white">Rp 3 Jt<span className="text-sm font-normal text-slate-400">/bln</span></div>
+                           </div>
+                           <div className="text-right">
+                              <p className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Capacity</p>
+                              <div className="text-sm font-bold text-white bg-white/10 px-3 py-1 rounded-lg border border-white/10">Up to 50 Users</div>
+                           </div>
+                        </div>
+                        <Link to="/pricing-calculator">
+                           <Button fullWidth variant="primary" className="shadow-lg shadow-primary-500/25">
+                              Hitung ROI Anda
+                           </Button>
+                        </Link>
+                     </div>
                   </div>
                </div>
+
             </div>
          </div>
       </section>

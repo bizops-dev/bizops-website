@@ -187,7 +187,7 @@ const MediaKitPage: React.FC = () => {
            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               <motion.div whileHover={{ y: -5 }} className="group">
                  <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
-                    <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
+                    <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                  </div>
                  <div className="flex justify-between items-center px-2">
                     <div>
@@ -196,7 +196,7 @@ const MediaKitPage: React.FC = () => {
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#2563EB', 'c1')} 
-                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
                        {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
                        {copied !== 'c1' && <Copy className="w-3 h-3" />}
@@ -206,7 +206,7 @@ const MediaKitPage: React.FC = () => {
 
               <motion.div whileHover={{ y: -5 }} className="group">
                  <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
-                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
+                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                  </div>
                  <div className="flex justify-between items-center px-2">
                     <div>
@@ -215,7 +215,7 @@ const MediaKitPage: React.FC = () => {
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#0F172A', 'c2')} 
-                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
                        {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
                        {copied !== 'c2' && <Copy className="w-3 h-3" />}
@@ -225,7 +225,7 @@ const MediaKitPage: React.FC = () => {
 
               <motion.div whileHover={{ y: -5 }} className="group">
                  <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
-                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
+                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                  </div>
                  <div className="flex justify-between items-center px-2">
                     <div>
@@ -234,7 +234,7 @@ const MediaKitPage: React.FC = () => {
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#10B981', 'c3')} 
-                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
                        {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
                        {copied !== 'c3' && <Copy className="w-3 h-3" />}
@@ -244,7 +244,7 @@ const MediaKitPage: React.FC = () => {
 
               <motion.div whileHover={{ y: -5 }} className="group">
                  <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
-                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
+                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                  </div>
                  <div className="flex justify-between items-center px-2">
                     <div>
@@ -253,7 +253,7 @@ const MediaKitPage: React.FC = () => {
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#F59E0B', 'c4')} 
-                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
                        {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
                        {copied !== 'c4' && <Copy className="w-3 h-3" />}
