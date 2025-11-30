@@ -45,11 +45,11 @@ const GlossaryPage: React.FC = () => {
                  </div>
                  <div className="space-y-4">
                     <div>
-                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Definisi</span>
+                       <Typography variant="caption" className="text-slate-400">Definisi</Typography>
                        <Typography variant="caption" className="text-slate-700 leading-relaxed">{item.def}</Typography>
                     </div>
                     <div className="pt-4 border-t border-slate-200">
-                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Why It Matters</span>
+                       <Typography variant="caption" className="text-slate-400">Why It Matters</Typography>
                        <Typography variant="caption" className="text-slate-600 leading-relaxed">"{item.context}"</Typography>
                     </div>
                  </div>

@@ -45,7 +45,7 @@ const ManagedServicesPage: React.FC = () => {
                >
                   <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
                      <Building className="w-4 h-4 text-primary-500" />
-                     <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">New Offering</span>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-300">New Offering</Typography>
                   </motion.div>
                   
                   <motion.h1 variants={FADE_UP_VARIANTS} className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
@@ -91,7 +91,7 @@ const ManagedServicesPage: React.FC = () => {
                            <div className={`w-14 h-14 ${item.bg} rounded-2xl flex items-center justify-center shadow-lg`}>
                               <item.icon className={`w-7 h-7 ${item.color}`} />
                            </div>
-                           <span className="text-xs font-bold text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 px-2 py-1 rounded-md shadow-sm border border-slate-200 dark:border-slate-700">{item.text}</span>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-300">{item.text}</Typography>
                         </div>
                      ))}
 

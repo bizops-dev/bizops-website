@@ -1,0 +1,152 @@
+[36m[34m🚀 Final Push - Target 100% (2,320 opportunities)[0m
+
+[36mProcessing 65 pages...[0m
+
+[32m✓ AboutPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+[33m○ AccessDeniedPage.tsx[0m
+[33m○ AccessibilityPage.tsx[0m
+[33m○ AnalyticsPage.tsx[0m
+[32m✓ AssessmentPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ AutomationAIPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ BlogDetailPage.tsx[0m
+  [35m├─[0m 3 spans/paragraphs
+[32m✓ BlogPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 1 divs
+[33m○ CapabilityPage.tsx[0m
+[33m○ CareersPage.tsx[0m
+[33m○ ComingSoonPage.tsx[0m
+[32m✓ ComparePage.tsx[0m
+  [35m├─[0m 3 spans/paragraphs
+[32m✓ ComparisonsPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ ContactPage.tsx[0m
+  [35m├─[0m 2 divs
+[32m✓ CustomDevPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ CustomerPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+[33m○ DemoPage.tsx[0m
+[32m✓ DocsPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+[32m✓ DownloadPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+[33m○ ErrorPage.tsx[0m
+[32m✓ EventDetailPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ EventsPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ GlossaryPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ HomePage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ IndustryPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+[33m○ IntegrationsPage.tsx[0m
+[32m✓ LegalPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ LoginPage.tsx[0m
+  [35m├─[0m 2 divs
+[32m✓ MaintenancePage.tsx[0m
+  [35m├─[0m 3 spans/paragraphs
+[32m✓ ManagedServicesPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+[32m✓ MediaKitPage.tsx[0m
+  [35m├─[0m 4 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ MigrationPage.tsx[0m
+  [35m├─[0m 2 divs
+[32m✓ ModulePage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 2 divs
+[33m○ MultiCompanyPage.tsx[0m
+[32m✓ NeedsAnalysisPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 6 divs
+[33m○ NotFoundPage.tsx[0m
+[33m○ PartnerApplyPage.tsx[0m
+[32m✓ PartnerDirectoryPage.tsx[0m
+  [35m├─[0m 2 divs
+[32m✓ PartnersPage.tsx[0m
+  [35m├─[0m 7 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ PlatformPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 1 divs
+[33m○ PortalsPage.tsx[0m
+[32m✓ PreferencesPage.tsx[0m
+  [35m├─[0m 1 divs
+[33m○ PricingCalculatorPage.tsx[0m
+[32m✓ PricingPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ ProductTourPage.tsx[0m
+  [35m├─[0m 3 spans/paragraphs
+  [35m├─[0m 7 divs
+[32m✓ ROIPage.tsx[0m
+  [35m├─[0m 7 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ ResourcesPage.tsx[0m
+  [35m├─[0m 3 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ RoadmapPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ RolePage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 1 divs
+[33m○ SearchPage.tsx[0m
+[32m✓ SecurityReportPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ ServiceDetailPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ ServicesPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+[33m○ SitemapPage.tsx[0m
+[33m○ SolutionsPage.tsx[0m
+[32m✓ StartupProgramPage.tsx[0m
+  [35m├─[0m 3 divs
+[32m✓ StatusPage.tsx[0m
+  [35m├─[0m 6 spans/paragraphs
+  [35m├─[0m 2 divs
+[32m✓ SysReqPage.tsx[0m
+  [35m├─[0m 1 divs
+[32m✓ TechnologyPage.tsx[0m
+  [35m├─[0m 7 spans/paragraphs
+  [35m├─[0m 3 divs
+[33m○ ThankYouPage.tsx[0m
+[32m✓ TimelineGeneratorPage.tsx[0m
+  [35m├─[0m 4 divs
+[33m○ TrustPage.tsx[0m
+[32m✓ UseCaseDetailPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+[32m✓ UseCasesPage.tsx[0m
+  [35m├─[0m 1 spans/paragraphs
+  [35m├─[0m 1 divs
+[32m✓ WhyBizOpsPage.tsx[0m
+  [35m├─[0m 2 spans/paragraphs
+  [35m├─[0m 2 divs
+
+[32m[34m✨ Complete![0m
+[36mFiles changed: 46/65[0m
+[36mTotal changes: 144[0m
+  [35m├─[0m Spans/Paragraphs: 78
+  [35m├─[0m Divs: 66
+  [35m├─[0m Buttons: 0
+  [35m└─[0m Links: 0
+
+[33mRemaining Opportunities:[0m
+  [35m├─[0m Headings: 3
+  [35m├─[0m Paragraphs: 13
+  [35m└─[0m Divs (Container/Grid): 783
+
+[36mEstimated Total: 1262 / 2,320 (54%)[0m

@@ -149,7 +149,7 @@ const ROIPage: React.FC = () => {
                  <div>
                     <div className="flex justify-between mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Jumlah Staf Admin</Typography>
-                       <span className="text-sm font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">{adminCount} Orang</span>
+                       <Typography variant="caption" className="text-blue-400">{adminCount} Orang</Typography>
                     </div>
                     <input 
                       type="range" min="1" max="50" value={adminCount} 
@@ -179,7 +179,7 @@ const ROIPage: React.FC = () => {
                             onChange={(e) => setEfficiencyRate(parseInt(e.target.value))}
                             className="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                           />
-                          <span className="text-sm font-bold text-emerald-400 w-10">{efficiencyRate}%</span>
+                          <Typography variant="caption" className="text-emerald-400">{efficiencyRate}%</Typography>
                         </div>
                         <Typography variant="body" className="text-slate-500">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
                     </div>
@@ -189,7 +189,7 @@ const ROIPage: React.FC = () => {
                  <div>
                     <div className="flex justify-between mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Lembur (Jam/Orang/Bulan)</Typography>
-                       <span className="text-sm font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">{overtime} Jam</span>
+                       <Typography variant="caption" className="text-amber-400">{overtime} Jam</Typography>
                     </div>
                     <input 
                       type="range" min="0" max="100" value={overtime} 
@@ -262,7 +262,7 @@ const ROIPage: React.FC = () => {
                       <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <TrendingUp className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-bold bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Soft Savings</span>
+                      <Typography variant="caption" className="text-blue-400">Soft Savings</Typography>
                     </div>
                     <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
@@ -275,7 +275,7 @@ const ROIPage: React.FC = () => {
                       <div className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <Clock className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-bold bg-amber-500/10 text-amber-400 px-2 py-1 rounded">Hard Savings</span>
+                      <Typography variant="caption" className="text-amber-400">Hard Savings</Typography>
                     </div>
                     <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
@@ -288,7 +288,7 @@ const ROIPage: React.FC = () => {
                       <div className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <AlertTriangle className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-bold bg-red-500/10 text-red-400 px-2 py-1 rounded">Risk Avoidance</span>
+                      <Typography variant="caption" className="text-red-400">Risk Avoidance</Typography>
                     </div>
                     <Typography variant="h3" as="h3">Loss Prevention</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
@@ -301,7 +301,7 @@ const ROIPage: React.FC = () => {
                       <div className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <Database className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-bold bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Hard Savings</span>
+                      <Typography variant="caption" className="text-purple-400">Hard Savings</Typography>
                     </div>
                     <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>

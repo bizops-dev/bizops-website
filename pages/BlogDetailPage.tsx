@@ -211,7 +211,7 @@ const BlogDetailPage: React.FC = () => {
                         ))}
                      </div>
                      <div className="flex items-center gap-4">
-                        <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Share</span>
+                        <Typography variant="caption" className="text-slate-500">Share</Typography>
                         <div className="flex gap-2">
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
@@ -255,7 +255,7 @@ const BlogDetailPage: React.FC = () => {
                         <div className="flex items-center gap-4 mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
                               <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
-                                 <span className="text-xl font-bold text-blue-600">{post.author.charAt(0)}</span>
+                                 <Typography variant="body-xl" className="text-blue-600">{post.author.charAt(0)}</Typography>
                               </div>
                            </div>
                            <div>
@@ -342,7 +342,7 @@ const BlogDetailPage: React.FC = () => {
                <div className="max-w-2xl">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
                      <Rocket className="w-4 h-4 text-blue-400" />
-                     <span className="text-xs font-bold text-blue-300 uppercase tracking-widest">Start Your Journey</span>
+                     <Typography variant="caption" className="text-blue-300">Start Your Journey</Typography>
                   </div>
                   <Typography variant="h2" as="h2" className="font-bold tracking-tight leading-[1.1] text-white">Turn Insights into <br/>
                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Actionable Growth.</span></Typography>

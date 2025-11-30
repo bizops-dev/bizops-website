@@ -51,13 +51,13 @@ const TechnologyPage: React.FC = () => {
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <Globe className="w-5 h-5 text-blue-500" /> <span className="text-sm font-medium dark:text-slate-300">SPA Desk (Vue/React)</span>
+                        <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">SPA Desk (Vue/React)</Typography>
                      </div>
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <Smartphone className="w-5 h-5 text-blue-500" /> <span className="text-sm font-medium dark:text-slate-300">Mobile App (Flutter)</span>
+                        <Smartphone className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Mobile App (Flutter)</Typography>
                      </div>
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <Globe className="w-5 h-5 text-blue-500" /> <span className="text-sm font-medium dark:text-slate-300">Public Portal (Jinja)</span>
+                        <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Public Portal (Jinja)</Typography>
                      </div>
                   </div>
                </div>
@@ -161,19 +161,19 @@ const TechnologyPage: React.FC = () => {
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-4 gap-4">
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <span className="text-xs text-slate-500 uppercase font-bold mb-1">Database</span>
+                        <Typography variant="caption" className="text-slate-500">Database</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Database className="w-4 h-4 text-purple-500"/> MariaDB</div>
                      </div>
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <span className="text-xs text-slate-500 uppercase font-bold mb-1">Caching</span>
+                        <Typography variant="caption" className="text-slate-500">Caching</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Zap className="w-4 h-4 text-purple-500"/> Redis</div>
                      </div>
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <span className="text-xs text-slate-500 uppercase font-bold mb-1">Queue</span>
+                        <Typography variant="caption" className="text-slate-500">Queue</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Layers className="w-4 h-4 text-purple-500"/> BullMQ / RQ</div>
                      </div>
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                        <span className="text-xs text-slate-500 uppercase font-bold mb-1">Realtime</span>
+                        <Typography variant="caption" className="text-slate-500">Realtime</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Activity className="w-4 h-4 text-purple-500"/> Node.js / Socket.io</div>
                      </div>
                   </div>

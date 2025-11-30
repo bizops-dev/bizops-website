@@ -69,7 +69,7 @@ const PricingPage: React.FC = () => {
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
              </span>
-             <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</span>
+             <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</Typography>
           </div>
 
           <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />

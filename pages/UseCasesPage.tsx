@@ -141,7 +141,7 @@ const UseCasesPage: React.FC = () => {
              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm mx-auto"
            >
               <BookOpen className="w-3.5 h-3.5 text-blue-400" />
-              <span className="text-xs font-bold text-blue-300 uppercase tracking-widest">Case Studies Library</span>
+              <Typography variant="caption" className="text-blue-300">Case Studies Library</Typography>
            </motion.div>
            
            <motion.h1 

@@ -141,7 +141,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
         <Link to={`/legal/${id}`}>
            <div className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive ? 'bg-white shadow-sm ring-1 ring-slate-200 text-primary-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}>
               <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-primary-600' : 'text-slate-400 group-hover:text-slate-600'}`} />
-              <span className="text-sm">{label}</span>
+              <Typography variant="caption">{label}</Typography>
               {isActive && <ChevronRight className="w-4 h-4 ml-auto text-primary-400" />}
            </div>
         </Link>
@@ -204,7 +204,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                className={`flex items-center gap-3 px-4 py-3 rounded-lg mb-1 last:mb-0 ${activeDocId === link.id ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-600 hover:bg-slate-50'}`}
                             >
                                <link.icon className={`w-4 h-4 ${activeDocId === link.id ? 'text-primary-600' : 'text-slate-400'}`} />
-                               <span className="text-sm">{link.label}</span>
+                               <Typography variant="caption">{link.label}</Typography>
                                {activeDocId === link.id && <CheckCircle className="w-4 h-4 ml-auto text-primary-600" />}
                             </Link>
                          ))}

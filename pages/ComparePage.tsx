@@ -53,13 +53,13 @@ const ComparePage: React.FC = () => {
                     {/* Them */}
                     <div className="text-slate-600 flex items-start gap-3">
                        <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
-                       <span className="text-sm">{row.them}</span>
+                       <Typography variant="caption">{row.them}</Typography>
                     </div>
 
                     {/* Us */}
                     <div className="text-slate-900 font-medium flex items-start gap-3 bg-primary-50 rounded-lg p-3">
                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                       <span className="text-sm">{row.us}</span>
+                       <Typography variant="caption">{row.us}</Typography>
                     </div>
 
                     {/* Impact */}
@@ -113,7 +113,7 @@ const ComparePage: React.FC = () => {
                     <div className="space-y-4 mb-8">
                        {scene.metrics.map((m: any, i: number) => (
                           <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
-                             <span className="text-sm text-slate-500">{m.label}</span>
+                             <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
                              <span className="font-bold text-slate-900">{m.val}</span>
                           </div>
                        ))}

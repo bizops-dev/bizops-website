@@ -152,7 +152,7 @@ const PartnersPage: React.FC = () => {
                       </div>
                       <div className="mt-6 pt-4 border-t border-slate-700 flex justify-between items-center">
                          <span className="text-slate-400 font-medium">Total Partner Earnings</span>
-                         <span className="text-2xl font-bold text-white">Rp 195.000.000</span>
+                         <Typography variant="body" className="text-2xl text-white">Rp 195.000.000</Typography>
                       </div>
                    </div>
                 </div>
@@ -302,7 +302,7 @@ const PartnersPage: React.FC = () => {
                <div>
                   <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Lisensi (Bulan)</Typography>
-                     <span className="text-sm font-bold text-white">{formatCurrency(sellingPrice)}</span>
+                     <Typography variant="caption" className="text-white">{formatCurrency(sellingPrice)}</Typography>
                   </div>
                   <input 
                      type="range" min="1000000" max="10000000" step="500000"
@@ -316,7 +316,7 @@ const PartnersPage: React.FC = () => {
                <div>
                   <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Biaya Setup (One-time)</Typography>
-                     <span className="text-sm font-bold text-white">{formatCurrency(setupFee)}</span>
+                     <Typography variant="caption" className="text-white">{formatCurrency(setupFee)}</Typography>
                   </div>
                   <input 
                      type="range" min="5000000" max="100000000" step="1000000"
@@ -332,7 +332,7 @@ const PartnersPage: React.FC = () => {
                <div>
                   <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Dasar Partner</Typography>
-                     <span className="text-sm font-bold text-slate-400">{formatCurrency(partnerCost)}</span>
+                     <Typography variant="caption" className="text-slate-400">{formatCurrency(partnerCost)}</Typography>
                   </div>
                   <input 
                      type="range" min="200000" max="9000000" step="100000"
@@ -379,7 +379,7 @@ const PartnersPage: React.FC = () => {
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
                         <div className="text-sm text-slate-500 mb-1">Margin Lisensi (Recurring)</div>
                         <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                           {formatCurrency(monthlyMarginPerClient)} <span className="text-xs text-slate-400 font-normal">/client/bln</span>
+                           {formatCurrency(monthlyMarginPerClient)} <Typography variant="caption" className="text-slate-400">/client/bln</Typography>
                         </div>
                      </div>
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
@@ -402,7 +402,7 @@ const PartnersPage: React.FC = () => {
                            <Typography variant="body" className="text-slate-500">Total Profit Bersih (License Margin + Implementation Fees)</Typography>
                         </div>
                         <div className="text-right">
-                           <span className="text-2xl font-extrabold text-slate-900 dark:text-white">{formatCurrency(year1Profit)}</span>
+                           <Typography variant="body" className="text-2xl text-slate-900 dark:text-white">{formatCurrency(year1Profit)}</Typography>
                         </div>
                      </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-4 overflow-hidden">
@@ -423,7 +423,7 @@ const PartnersPage: React.FC = () => {
                            <Typography variant="body" className="text-slate-500">Dengan akumulasi klien tahun sebelumnya</Typography>
                         </div>
                         <div className="text-right">
-                           <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">{formatCurrency(year2Profit)}</span>
+                           <Typography variant="body" className="text-3xl text-transparent">{formatCurrency(year2Profit)}</Typography>
                         </div>
                      </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-6 overflow-hidden">

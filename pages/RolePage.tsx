@@ -56,7 +56,7 @@ const RolePage: React.FC = () => {
              className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/5 backdrop-blur-xl rounded-full mb-10 border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)] ring-1 ring-white/5 group hover:bg-white/10 transition-colors"
           >
               <Icon className="w-5 h-5 text-primary-400 group-hover:scale-110 transition-transform duration-300" />
-              <span className="text-sm font-medium text-slate-200 tracking-wide uppercase">Role-Based Experience</span>
+              <Typography variant="caption" className="text-slate-200">Role-Based Experience</Typography>
           </motion.div>
           
           <Typography variant="h1" as="h1" className="font-bold leading-[1.1] tracking-tight font-sans"><span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">

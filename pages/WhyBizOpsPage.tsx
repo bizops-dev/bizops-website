@@ -92,7 +92,7 @@ const WhyBizOpsPage: React.FC = () => {
                            B
                         </div>
                      </div>
-                     <span className="text-sm font-bold text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 rounded-full border border-primary-100 dark:border-primary-800">BizOps</span>
+                     <Typography variant="caption" className="text-primary-700 dark:text-primary-300">BizOps</Typography>
                   </div>
                </div>
 
@@ -272,7 +272,7 @@ const WhyBizOpsPage: React.FC = () => {
                         <Typography variant="h4" as="h4">Server Resource Usage</Typography>
                         <Typography variant="body" className="text-slate-500">Benchmark: 50 Concurrent Users</Typography>
                      </div>
-                     <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">-75% Usage</span>
+                     <Typography variant="caption" className="text-green-700">-75% Usage</Typography>
                   </div>
                   
                   <div className="space-y-8">

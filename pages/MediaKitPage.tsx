@@ -100,7 +100,7 @@ const MediaKitPage: React.FC = () => {
                        <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30">
                           <div className="w-5 h-5 bg-white rounded-md transform rotate-45"></div>
                        </div>
-                       <span className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">BizOps</span>
+                       <Typography variant="body" className="text-3xl text-slate-900 dark:text-white">BizOps</Typography>
                     </div>
                  </div>
                  <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-6">
@@ -128,7 +128,7 @@ const MediaKitPage: React.FC = () => {
                        <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
                           <div className="w-5 h-5 bg-slate-900 rounded-md transform rotate-45"></div>
                        </div>
-                       <span className="text-3xl font-extrabold tracking-tight text-white">BizOps</span>
+                       <Typography variant="body" className="text-3xl text-white">BizOps</Typography>
                     </div>
                  </div>
                  <div className="relative z-10 w-full border-t border-slate-700/50 pt-6">
@@ -409,7 +409,7 @@ const MediaKitPage: React.FC = () => {
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6">
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-normal">~50 Words</span></Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500">~50 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
@@ -421,7 +421,7 @@ const MediaKitPage: React.FC = () => {
 
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6">
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-normal">~100 Words</span></Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <Typography variant="caption" className="text-slate-500">~100 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>

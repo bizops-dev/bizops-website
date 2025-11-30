@@ -111,7 +111,7 @@ const CustomDevPage: React.FC = () => {
               <motion.div initial="hidden" animate="visible" variants={STAGGER_CONTAINER}>
                  <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
                     <Code className="w-3 h-3 text-blue-500" />
-                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Tailor-Made Solutions</span>
+                    <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Tailor-Made Solutions</Typography>
                  </motion.div>
 
                  <motion.h1 variants={FADE_UP_VARIANTS} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">

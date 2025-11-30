@@ -55,7 +55,7 @@ const StatusPage: React.FC = () => {
         {/* --- UPTIME HISTORY --- */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
            <div className="flex justify-between items-end mb-6">
-              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <span className="text-xs font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">90 Days</span></Typography>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <Typography variant="caption" className="text-slate-500">90 Days</Typography></Typography>
               <span className="text-green-600 dark:text-green-400 font-bold text-lg">99.99%</span>
            </div>
            
@@ -99,7 +99,7 @@ const StatusPage: React.FC = () => {
                           </div>
                        </div>
                        <div className="text-right">
-                          <span className="text-sm font-medium text-green-600 dark:text-green-400 block">{sys.status}</span>
+                          <Typography variant="caption" className="text-green-600 dark:text-green-400">{sys.status}</Typography>
                           <span className="text-[10px] text-slate-400">{sys.uptime} uptime</span>
                        </div>
                     </div>
@@ -119,7 +119,7 @@ const StatusPage: React.FC = () => {
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
                        </div>
-                       <span className="text-sm font-medium text-green-600 dark:text-green-400">{sys.status}</span>
+                       <Typography variant="caption" className="text-green-600 dark:text-green-400">{sys.status}</Typography>
                     </div>
                  ))}
               </div>
@@ -134,12 +134,12 @@ const StatusPage: React.FC = () => {
                  <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-colors">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
                        <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}</Typography>
-                       <span className="text-xs text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
+                       <Typography variant="caption" className="text-slate-500">{inc.date}</Typography>
                     </div>
                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{inc.desc}</Typography>
                     <div className="flex items-center gap-4 pl-6 ml-2">
-                       <span className="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded border border-green-100 dark:border-green-900/30">Resolved</span>
-                       <span className="text-xs text-slate-500">Duration: {inc.duration}</span>
+                       <Typography variant="caption" className="text-green-600 dark:text-green-400">Resolved</Typography>
+                       <Typography variant="caption" className="text-slate-500">Duration: {inc.duration}</Typography>
                     </div>
                  </div>
               ))}

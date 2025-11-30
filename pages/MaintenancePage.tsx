@@ -66,19 +66,19 @@ const MaintenancePage: React.FC = () => {
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-all">
                     <Mail className="w-5 h-5" />
                  </div>
-                 <span className="text-xs text-slate-400">Email</span>
+                 <Typography variant="caption" className="text-slate-400">Email</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#1DA1F2] group-hover:text-white transition-all">
                     <Twitter className="w-5 h-5" />
                  </div>
-                 <span className="text-xs text-slate-400">Twitter</span>
+                 <Typography variant="caption" className="text-slate-400">Twitter</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-white transition-all">
                     <Linkedin className="w-5 h-5" />
                  </div>
-                 <span className="text-xs text-slate-400">LinkedIn</span>
+                 <Typography variant="caption" className="text-slate-400">LinkedIn</Typography>
               </a>
            </div>
         </motion.div>

@@ -687,7 +687,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className="p-3 md:p-4 bg-blue-900/20 border border-blue-500/50 rounded-lg ring-2 ring-blue-500/20 cursor-pointer group" onClick={onNext}>
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-blue-300 font-bold">PENDING MATCH</span>
-                                 <span className="text-xs md:text-sm font-bold text-white">+ 45.500.000</span>
+                                 <Typography variant="caption" className="text-white">+ 45.500.000</Typography>
                               </div>
                               <div className="text-xs md:text-sm text-white font-medium group-hover:text-blue-300 transition-colors">TRF FRM CV SUMBER REJEKI</div>
                               <div className="mt-2 text-[10px] md:text-xs text-blue-400 flex items-center gap-1">
@@ -712,7 +712,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className="p-3 bg-purple-900/10 border border-purple-500/30 rounded-lg border-dashed">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-purple-300 font-bold">INV-2023-005</span>
-                                 <span className="text-xs md:text-sm font-bold text-white">45.500.000</span>
+                                 <Typography variant="caption" className="text-white">45.500.000</Typography>
                               </div>
                               <div className="text-xs md:text-sm text-slate-300">CV Sumber Rejeki</div>
                               <div className="mt-2 text-[10px] md:text-xs text-slate-500">Waiting for bank match...</div>
@@ -998,7 +998,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className={`w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center ${m.c}`}>
                               <m.i className="w-5 h-5" />
                            </div>
-                           <span className="text-sm font-bold text-slate-300">{m.n}</span>
+                           <Typography variant="caption" className="text-slate-300">{m.n}</Typography>
                         </div>
                      ))}
                   </div>

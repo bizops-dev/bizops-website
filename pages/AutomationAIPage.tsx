@@ -66,7 +66,7 @@ const AutomationAIPage: React.FC = () => {
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
                   <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg max-w-xs w-full relative z-10">
                      <div className="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">
-                        <span className="text-xs font-bold text-slate-500 uppercase">Logic Flow</span>
+                        <Typography variant="caption" className="text-slate-500">Logic Flow</Typography>
                         <div className="flex gap-1"><div className="w-2 h-2 bg-red-400 rounded-full"></div><div className="w-2 h-2 bg-yellow-400 rounded-full"></div><div className="w-2 h-2 bg-green-400 rounded-full"></div></div>
                      </div>
                      <div className="space-y-3 text-xs">

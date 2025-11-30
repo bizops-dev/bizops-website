@@ -124,7 +124,7 @@ const PlatformPage: React.FC = () => {
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        <span className="text-xs text-slate-400 ml-2">App Builder Studio</span>
+                        <Typography variant="caption" className="text-slate-400">App Builder Studio</Typography>
                      </div>
                      <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase">Drag & Drop Mode</div>
                   </div>

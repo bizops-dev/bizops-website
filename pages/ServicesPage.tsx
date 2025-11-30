@@ -88,7 +88,7 @@ const ServicesPage: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Accepting New Enterprise Partners</span>
+              <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Accepting New Enterprise Partners</Typography>
            </motion.div>
 
            <Typography variant="h1" as="h1" className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><span className="block text-slate-400 dark:text-slate-500 text-2xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
@@ -288,7 +288,7 @@ const ServicesPage: React.FC = () => {
                                         </div>
                                         <div>
                                            <span className="font-bold block text-sm">{item.title}</span>
-                                           <span className="text-xs text-slate-400">{item.desc}</span>
+                                           <Typography variant="caption" className="text-slate-400">{item.desc}</Typography>
                                         </div>
                                      </li>
                                   ))}

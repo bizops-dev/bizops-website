@@ -403,7 +403,7 @@ const NeedsAnalysisPage = () => {
                     }`}
                   >
                     <ind.icon className="w-6 h-6" />
-                    <span className="text-xs font-medium">{ind.label}</span>
+                    <Typography variant="caption">{ind.label}</Typography>
                   </button>
                 ))}
               </div>

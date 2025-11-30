@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
       >
-        <span className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary-600 transition-colors">{question}</span>
+        <Typography variant="body-lg" className="text-slate-900 dark:text-white group-hover:text-primary-600">{question}</Typography>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
            <ChevronRight className="w-5 h-5" />
         </div>

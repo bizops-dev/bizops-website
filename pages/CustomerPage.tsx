@@ -125,7 +125,7 @@ const CustomerPage: React.FC = () => {
                className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md"
             >
                <ShieldCheck className="w-4 h-4 text-green-400" />
-               <span className="text-sm font-bold text-white uppercase tracking-wide">Trusted by Leaders</span>
+               <Typography variant="caption" className="text-white">Trusted by Leaders</Typography>
             </motion.div>
 
             <motion.h1 

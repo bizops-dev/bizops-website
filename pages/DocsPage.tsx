@@ -171,7 +171,7 @@ const DocsPage: React.FC = () => {
                        <ChevronRight className="w-4 h-4 text-slate-400 absolute right-3 top-2.5 rotate-90 pointer-events-none" />
                     </div>
                     <span className="inline-block w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
-                    <span className="text-sm text-slate-400">All systems operational</span>
+                    <Typography variant="caption" className="text-slate-400">All systems operational</Typography>
                  </div>
 
                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.</Typography>

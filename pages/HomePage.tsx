@@ -382,7 +382,7 @@ const HomePage: React.FC = () => {
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <div className="flex justify-between items-end mb-1">
-                           <span className="text-xs text-slate-500 uppercase font-bold">Total Cost (50 Users)</span>
+                           <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </div>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
@@ -426,7 +426,7 @@ const HomePage: React.FC = () => {
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <div className="flex justify-between items-end mb-1">
-                           <span className="text-xs text-slate-500 uppercase font-bold">Total Cost (50 Users)</span>
+                           <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </div>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">

@@ -120,7 +120,7 @@ const ServiceDetailPage: React.FC = () => {
                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8"
                  >
                     <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></div>
-                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Enterprise Service</span>
+                    <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Enterprise Service</Typography>
                  </motion.div>
 
                  <motion.h1 
@@ -233,7 +233,7 @@ const ServiceDetailPage: React.FC = () => {
 
                            {/* Center Marker */}
                            <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 flex items-center justify-center z-10 hidden md:flex">
-                              <span className="text-lg font-bold text-slate-400">{idx + 1}</span>
+                              <Typography variant="body-lg" className="text-slate-400">{idx + 1}</Typography>
                            </div>
 
                            {/* Empty Side for Balance */}

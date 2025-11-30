@@ -421,7 +421,7 @@ const UseCaseDetailPage: React.FC = () => {
                   </div>
                   <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
                     <div className="flex items-center justify-between">
-                       <span className="text-sm text-slate-500">Module Category</span>
+                       <Typography variant="caption" className="text-slate-500">Module Category</Typography>
                        <span className={`px-3 py-1 rounded-lg ${theme.bgLight} ${theme.bgDark} text-xs font-bold ${theme.primary} uppercase border ${theme.border}`}>
                           {data.category}
                        </span>

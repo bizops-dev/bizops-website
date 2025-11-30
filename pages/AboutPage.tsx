@@ -168,7 +168,7 @@ const AboutPage: React.FC = () => {
                        <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                        <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
                           <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
-                          <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
+                          <Typography variant="caption" className="text-slate-300">{val.proof}</Typography>
                        </div>
                     </motion.div>
                   ))}
@@ -192,7 +192,7 @@ const AboutPage: React.FC = () => {
                     <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                     <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
                        <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
-                       <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
+                       <Typography variant="caption" className="text-slate-300">{val.proof}</Typography>
                     </div>
                  </motion.div>
                ))}

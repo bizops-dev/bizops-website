@@ -600,7 +600,7 @@ const AssessmentPage = () => {
                         <span className={`text-5xl font-bold ${results.maturityLevel.color.replace('bg-', 'text-')}`}>
                           {results.avgScore.toFixed(1)}
                         </span>
-                        <span className="text-xs text-slate-500 font-medium uppercase tracking-widest mt-1">/ 5.0</span>
+                        <Typography variant="caption" className="text-slate-500">/ 5.0</Typography>
                      </div>
                   </div>
                   

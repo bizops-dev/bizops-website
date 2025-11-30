@@ -123,7 +123,7 @@ const BlogPage: React.FC = () => {
                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-md"
             >
                <TrendingUp className="w-4 h-4 text-blue-400" />
-               <span className="text-xs font-bold text-blue-300 uppercase tracking-widest">Executive Insights</span>
+               <Typography variant="caption" className="text-blue-300">Executive Insights</Typography>
             </motion.div>
             
             <motion.h1 
@@ -158,7 +158,7 @@ const BlogPage: React.FC = () => {
                <div className="mb-24">
                   <div className="flex items-center gap-2 mb-6">
                      <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
-                     <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Editor's Choice</span>
+                     <Typography variant="caption" className="text-slate-500">Editor's Choice</Typography>
                   </div>
                   <Link to={`/blog/${featuredPost.slug}`} className="group relative block w-full rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform hover:-translate-y-1 duration-500">
                      <div className="absolute inset-0 bg-slate-900">

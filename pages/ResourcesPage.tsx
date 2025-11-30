@@ -149,7 +149,7 @@ const ResourcesPage = () => {
           <div className="space-y-8 flex flex-col">
             {latestBlogs.slice(1, 3).map((post, idx) => (
               <div key={idx} className="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:border-primary-300 transition-colors">
-                <span className="text-xs font-bold text-primary-600 mb-2">{post.category}</span>
+                <Typography variant="caption" className="text-primary-600">{post.category}</Typography>
                 <Typography variant="h3" as="h3" className="text-lg font-bold text-slate-900 dark:text-white hover:text-primary-600"><Link to={`/blog/${post.slug}`}>{post.title}</Link></Typography>
                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{post.summary}</Typography>
                 <div className="text-xs text-slate-500 mt-auto">
@@ -249,8 +249,8 @@ const ResourcesPage = () => {
               {upcomingEvents.map((event, idx) => (
                 <div key={idx} className="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow">
                   <div className="flex-shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg flex flex-col items-center justify-center text-center">
-                    <span className="text-xs font-bold text-slate-500 uppercase">{event.date.split(' ')[1]}</span>
-                    <span className="text-xl font-bold text-slate-900 dark:text-white">{event.date.split(' ')[0]}</span>
+                    <Typography variant="caption" className="text-slate-500">{event.date.split(' ')[1]}</Typography>
+                    <Typography variant="body-xl" className="text-slate-900 dark:text-white">{event.date.split(' ')[0]}</Typography>
                   </div>
                   <div>
                     <span className="text-xs font-bold text-purple-600 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded-full mb-1 inline-block">
