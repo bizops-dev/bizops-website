@@ -5,6 +5,7 @@ import { eventsData } from '../data/content';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
 
 const EventsPage: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -123,7 +124,7 @@ const EventsPage: React.FC = () => {
               </h2>
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredEvents.map((evt, idx) => (
                  <motion.div 
                     key={idx} 
@@ -178,7 +179,7 @@ const EventsPage: React.FC = () => {
                     </div>
                  </motion.div>
               ))}
-           </div>
+           </CardSlider>
         </div>
 
         {/* On-Demand Library Section */}
@@ -198,14 +199,14 @@ const EventsPage: React.FC = () => {
                  </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-6">
                  {eventsData.recordings.map((rec, idx) => (
-                    <div key={idx} className="group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
+                    <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
                        <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
                           {/* Mock Thumbnail */}
                           <div className="absolute inset-0 bg-slate-800"></div>
                           <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />
-                          <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono font-bold">
+                          <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/70 rounded text-[10px] font-bold">
                              {rec.duration}
                           </div>
                        </div>
@@ -219,7 +220,7 @@ const EventsPage: React.FC = () => {
                        </div>
                     </div>
                  ))}
-              </div>
+              </CardSlider>
               
               <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
                  <h3 className="text-xl font-bold mb-2">Unlock Full Access</h3>

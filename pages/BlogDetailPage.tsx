@@ -108,7 +108,7 @@ const BlogDetailPage: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="bg-white dark:bg-slate-950 min-h-screen font-serif selection:bg-blue-500/30">
+    <div ref={containerRef} className="bg-white dark:bg-slate-950 min-h-screen selection:bg-blue-500/30">
       <SEO 
         title={post.title} 
         description={post.summary} 
@@ -186,7 +186,7 @@ const BlogDetailPage: React.FC = () => {
 
                   {/* Article Content */}
                   <article 
-                     className="prose prose-lg prose-slate dark:prose-invert max-w-none font-serif
+                     className="prose prose-lg prose-slate dark:prose-invert max-w-none
                      prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900 dark:prose-headings:text-white
                      prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:leading-8
                      prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline

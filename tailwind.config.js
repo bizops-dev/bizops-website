@@ -37,7 +37,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.5s ease-out',

@@ -138,7 +138,7 @@ const ProductTourPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-primary-300 text-[10px] font-bold uppercase tracking-wider mb-4 ring-1 ring-white/5">
                 <MousePointer className="w-3 h-3 animate-bounce" /> Interactive Demo
               </div>
-              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight tracking-tight font-display">
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight tracking-tight font-sans">
                 Pilih Peran,<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Rasakan Bedanya.</span>
               </h1>
@@ -272,7 +272,7 @@ const ProductTourPage: React.FC = () => {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Badge variant="outline" className="mb-6 border-primary-500/30 text-primary-300 bg-primary-500/10">Ready for the real thing?</Badge>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight font-display">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight font-sans">
             Bawa Efisiensi Ini ke <span className="text-primary-400">Bisnis Anda.</span>
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
@@ -327,7 +327,7 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]"></div>
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27c93f]"></div>
         </div>
-        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 font-mono border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap">
+        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap">
            <span className="text-slate-500 mr-1">https://</span>app.bizops.id/desk
         </div>
      </div>
@@ -423,7 +423,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="text-xs text-blue-200 font-bold uppercase tracking-wider mb-1">Sales Target (Oct)</div>
                         <div className="flex justify-between items-end">
                            <div className="text-3xl font-bold">85%</div>
-                           <div className="text-sm text-blue-100 font-mono">IDR 850jt</div>
+                           <div className="text-sm text-blue-100">IDR 850jt</div>
                         </div>
                         <div className="h-1.5 w-full bg-black/20 mt-3 rounded-full overflow-hidden backdrop-blur-sm">
                            <div className="h-full w-[85%] bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
@@ -558,7 +558,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   
                   <div className="col-span-1 bg-slate-800/50 rounded-2xl border border-slate-700/50 flex flex-col h-full min-h-[200px]">
                      <div className="p-4 md:p-5 border-b border-slate-700/50 font-bold text-white flex justify-between items-center text-sm md:text-base">
-                        Pending <span className="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-mono shadow-lg shadow-red-900/50">1</span>
+                        Pending <span className="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-lg shadow-red-900/50">1</span>
                      </div>
                      <div className="p-3 md:p-4 flex-1">
                         <div className="p-3 md:p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl cursor-pointer hover:bg-amber-500/20 transition-all shadow-sm group relative overflow-hidden" onClick={onNext}>
@@ -570,7 +570,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className="font-bold text-white text-xs md:text-sm mb-1 group-hover:text-amber-200 transition-colors">MacBook Pro Procurement</div>
                            <div className="text-[10px] md:text-xs text-slate-400">Request by: IT Dept</div>
                            <div className="mt-4 flex justify-between items-center">
-                              <div className="font-bold text-white font-mono text-xs md:text-sm">Rp 125jt</div>
+                              <div className="font-bold text-white text-xs md:text-sm">Rp 125jt</div>
                               <div className="text-[10px] md:text-xs text-amber-400 font-bold underline decoration-dashed">Review →</div>
                            </div>
                         </div>
@@ -597,7 +597,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            </div>
                            <div className="space-y-1">
                               <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Total Amount</div>
-                              <div className="font-bold text-emerald-400 text-base md:text-lg font-mono">Rp 125.000.000</div>
+                              <div className="font-bold text-emerald-400 text-base md:text-lg">Rp 125.000.000</div>
                            </div>
                         </div>
                         
@@ -655,7 +655,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                      <div className="text-right">
                         <div className="text-[10px] md:text-xs text-slate-500 font-bold uppercase">Unreconciled</div>
-                        <div className="text-lg md:text-xl font-mono font-bold text-amber-400">Rp 45.500.000</div>
+                        <div className="text-lg md:text-xl font-bold text-amber-400">Rp 45.500.000</div>
                      </div>
                   </div>
 
@@ -668,14 +668,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-slate-500">TRF 12/10</span>
-                                 <span className="text-[10px] md:text-xs font-mono text-emerald-500">+ 15.000.000</span>
+                                 <span className="text-[10px] md:text-xs text-emerald-500">+ 15.000.000</span>
                               </div>
                               <div className="text-xs md:text-sm text-slate-400">PT MAJU JAYA</div>
                            </div>
                            <div className="p-3 md:p-4 bg-blue-900/20 border border-blue-500/50 rounded-lg ring-2 ring-blue-500/20 cursor-pointer group" onClick={onNext}>
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-blue-300 font-bold">PENDING MATCH</span>
-                                 <span className="text-xs md:text-sm font-mono font-bold text-white">+ 45.500.000</span>
+                                 <span className="text-xs md:text-sm font-bold text-white">+ 45.500.000</span>
                               </div>
                               <div className="text-xs md:text-sm text-white font-medium group-hover:text-blue-300 transition-colors">TRF FRM CV SUMBER REJEKI</div>
                               <div className="mt-2 text-[10px] md:text-xs text-blue-400 flex items-center gap-1">
@@ -693,14 +693,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-slate-500">INV-2023-001</span>
-                                 <span className="text-[10px] md:text-xs font-mono text-slate-300">15.000.000</span>
+                                 <span className="text-[10px] md:text-xs text-slate-300">15.000.000</span>
                               </div>
                               <div className="text-xs md:text-sm text-slate-400">PT Maju Jaya</div>
                            </div>
                            <div className="p-3 bg-purple-900/10 border border-purple-500/30 rounded-lg border-dashed">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-purple-300 font-bold">INV-2023-005</span>
-                                 <span className="text-xs md:text-sm font-mono font-bold text-white">45.500.000</span>
+                                 <span className="text-xs md:text-sm font-bold text-white">45.500.000</span>
                               </div>
                               <div className="text-xs md:text-sm text-slate-300">CV Sumber Rejeki</div>
                               <div className="mt-2 text-[10px] md:text-xs text-slate-500">Waiting for bank match...</div>
@@ -824,14 +824,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                               <div className="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">BCA</div>
                               <div className="text-sm text-slate-300">Main Corp</div>
                            </div>
-                           <div className="font-mono font-bold text-white">1.2 M</div>
+                           <div className="font-bold text-white">1.2 M</div>
                         </div>
                         <div className="flex justify-between items-center p-3 bg-slate-800 rounded-lg">
                            <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded bg-emerald-600 flex items-center justify-center text-[10px] font-bold text-white">MN</div>
                               <div className="text-sm text-slate-300">Payroll</div>
                            </div>
-                           <div className="font-mono font-bold text-white">600 Jt</div>
+                           <div className="font-bold text-white">600 Jt</div>
                         </div>
                      </div>
                   </div>
@@ -865,7 +865,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
          <div className="h-full flex flex-col bg-slate-900 text-white">
             {/* Industrial Scanner UI */}
             <div className="p-4 bg-slate-800 border-b border-slate-700 flex justify-between items-center sticky top-0 z-10">
-               <div className="font-mono text-sm text-primary-400 flex items-center gap-2">
+               <div className="text-sm text-primary-400 flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div> SCANNER_V2
                </div>
                <div className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-[10px] font-bold border border-green-500/30">ONLINE</div>
@@ -876,7 +876,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="w-64 h-64 border-2 border-dashed border-slate-600 rounded-3xl flex items-center justify-center bg-slate-800/30 relative overflow-hidden group cursor-pointer hover:border-primary-500 transition-colors" onClick={onNext}>
                      <Scan className="w-20 h-20 text-slate-600 group-hover:text-primary-500 transition-colors" />
                      <div className="absolute top-0 left-0 w-full h-1 bg-red-500/80 shadow-[0_0_20px_rgba(239,68,68,1)] animate-[scan_2s_ease-in-out_infinite]"></div>
-                     <div className="absolute bottom-4 text-xs text-slate-500 font-mono">Tap to Scan</div>
+                     <div className="absolute bottom-4 text-xs text-slate-500">Tap to Scan</div>
                   </div>
                   <div>
                      <h3 className="text-xl font-bold mb-1">Ready to Receive</h3>
@@ -893,7 +893,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                      <div className="overflow-hidden">
                         <div className="text-[10px] text-green-400 font-bold uppercase">Code Detected</div>
-                        <div className="font-mono font-bold text-lg truncate">899-202-331-001</div>
+                        <div className="font-bold text-lg truncate">899-202-331-001</div>
                      </div>
                   </div>
 
@@ -962,7 +962,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         </div>
                         <div className="text-right">
                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">{new Date().toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' })}</div>
-                           <div className="font-bold text-pink-500 text-lg font-mono">08:45 AM</div>
+                           <div className="font-bold text-pink-500 text-lg">08:45 AM</div>
                         </div>
                      </div>
                      
@@ -1014,7 +1014,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <Check className="w-12 h-12 text-white" />
                   </div>
                   <h3 className="text-3xl font-bold text-white mb-2">Clock In Success!</h3>
-                  <p className="text-slate-400 mb-6 font-mono">Recorded: 08:46:12 AM</p>
+                  <p className="text-slate-400 mb-6">Recorded: 08:46:12 AM</p>
                   <div className="bg-slate-900 px-4 py-2 rounded-full text-xs font-bold text-slate-300 flex items-center gap-2 border border-slate-800">
                      <MapPin className="w-3 h-3 text-pink-500" /> Head Office, Jakarta
                   </div>

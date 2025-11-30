@@ -2,7 +2,7 @@ import React from 'react';
 import { whyBizOpsContent } from '../data/content';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Shield, Zap, Layers, Smartphone, Code, Leaf, Cpu, Database, Link as LinkIcon, BarChart3 } from 'lucide-react';
+import { CheckCircle, ArrowRight, Shield, Zap, Layers, Smartphone, Code, Leaf, Cpu, Database, Link as LinkIcon, BarChart3, FileCheck } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -153,7 +153,7 @@ const WhyBizOpsPage: React.FC = () => {
                         {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
                         {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
                         {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
-                        {idx === 4 && <Zap className="w-7 h-7 text-red-500" />}
+                        {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                      </div>
                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{reason.title}</h3>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">{reason.desc}</p>

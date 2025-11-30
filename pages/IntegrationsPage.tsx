@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { Plug, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import CardSlider from '../components/CardSlider'; // Import CardSlider
 
 const IntegrationsPage: React.FC = () => {
   return (
@@ -32,9 +33,9 @@ const IntegrationsPage: React.FC = () => {
                       <p className="text-slate-500 pb-1">{cat.desc}</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                      {cat.apps.map((app: any, i: number) => (
-                        <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all group cursor-default">
+                        <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all group cursor-default h-full">
                            <div className="flex items-center justify-between mb-4">
                               <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
                                  {app.name.substring(0,2).toUpperCase()}
@@ -49,7 +50,7 @@ const IntegrationsPage: React.FC = () => {
                            </p>
                         </div>
                      ))}
-                  </div>
+                  </CardSlider>
                </div>
             ))}
          </div>

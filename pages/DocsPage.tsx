@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider'; // Import CardSlider
 
 const DocsPage: React.FC = () => {
   const [version, setVersion] = useState("v2.4 (Stable)");
@@ -91,27 +92,30 @@ const DocsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20 pb-24">
         
         {/* --- USER GUIDES --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-           {docsData.categories.map((cat, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <Card className="h-full hover:border-primary-500/50 dark:hover:border-primary-500/50 group bg-white dark:bg-slate-900/80 backdrop-blur-sm" hoverEffect>
-                   <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
-                      <cat.icon className="w-6 h-6" />
-                   </div>
-                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cat.title}</h3>
-                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
-                   <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
-                      Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
-                   </div>
-                </Card>
-              </motion.div>
-           ))}
+        <div className="mb-24">
+           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {docsData.categories.map((cat, idx) => (
+                 <motion.div 
+                   key={idx}
+                   initial={{ opacity: 0, y: 20 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true }}
+                   transition={{ delay: idx * 0.1 }}
+                   className="h-full"
+                 >
+                   <Card className="h-full hover:border-primary-500/50 dark:hover:border-primary-500/50 group bg-white dark:bg-slate-900/80 backdrop-blur-sm" hoverEffect>
+                      <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
+                         <cat.icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cat.title}</h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
+                      <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
+                         Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
+                      </div>
+                   </Card>
+                 </motion.div>
+              ))}
+           </CardSlider>
         </div>
 
         {/* --- DEVELOPER PORTAL --- */}
@@ -121,7 +125,7 @@ const DocsPage: React.FC = () => {
            
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-16">
               <div className="lg:col-span-2">
-                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-900/30 border border-blue-800 text-blue-300 text-xs font-mono font-bold mb-6">
+                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-900/30 border border-blue-800 text-blue-300 text-xs font-bold mb-6">
                     <Terminal className="w-3 h-3" /> DEVELOPER HUB
                  </div>
                  
@@ -132,7 +136,7 @@ const DocsPage: React.FC = () => {
                        <select 
                           value={version}
                           onChange={(e) => setVersion(e.target.value)}
-                          className="appearance-none bg-slate-800 text-white border border-slate-700 rounded-lg pl-4 pr-10 py-2 text-sm font-mono focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer hover:bg-slate-700 transition-colors"
+                          className="appearance-none bg-slate-800 text-white border border-slate-700 rounded-lg pl-4 pr-10 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer hover:bg-slate-700 transition-colors"
                        >
                           <option>v2.4 (Stable)</option>
                           <option>v3.0 (Beta)</option>
@@ -170,14 +174,14 @@ const DocsPage: React.FC = () => {
                           <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
                        </div>
                        <div className="flex items-center gap-4">
-                          <span className="text-xs text-slate-500 font-mono">bash</span>
+                          <span className="text-xs text-slate-500">bash</span>
                           <button onClick={handleCopy} className="text-xs flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors group">
                              {copied ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3 group-hover:text-blue-400" />}
                              {copied ? <span className="text-green-400">Copied!</span> : "Copy"}
                           </button>
                        </div>
                     </div>
-                    <div className="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+                    <div className="p-6 text-sm leading-relaxed overflow-x-auto">
                        <div className="text-slate-300">
                           <span className="text-purple-400">curl</span> --request GET \<br/>
                           &nbsp;&nbsp;--url <span className="text-green-400">'https://api.bizops.id/v2/resource/Employee'</span> \<br/>
@@ -218,7 +222,7 @@ const DocsPage: React.FC = () => {
              <p className="text-slate-600 dark:text-slate-400">Our support team and community are here for you.</p>
            </div>
            
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
                     <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
@@ -257,7 +261,7 @@ const DocsPage: React.FC = () => {
                     <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
                  </Card>
               </Link>
-           </div>
+           </CardSlider>
         </div>
 
       </div>

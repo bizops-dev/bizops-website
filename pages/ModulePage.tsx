@@ -160,14 +160,16 @@ const ModulePage: React.FC = () => {
         structuredData={softwareSchema}
       />
 
-      {/* 1. Hero Section (Centered Tech Style) */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950 border-b border-slate-800">
-         {/* Abstract Tech Grid Background */}
-         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* 1. HERO SECTION (Standardized Premium Style) */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+         {/* Premium Background Effects */}
+         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
+         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
          
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            {/* Breadcrumbs */}
+            
+            {/* Breadcrumbs (Visual) */}
             <motion.div 
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -187,13 +189,15 @@ const ModulePage: React.FC = () => {
                <span className="text-primary-400">{data.title}</span>
             </motion.div>
 
+            {/* Icon - Visual Anchor */}
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="inline-flex items-center justify-center p-5 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl mb-10 shadow-2xl ring-1 ring-white/10 group hover:scale-105 transition-transform duration-500"
+              className="relative inline-flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-8 shadow-2xl group"
             >
-               <Icon className="w-16 h-16 text-primary-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.4)]" />
+               <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+               <Icon className="w-12 h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
             </motion.div>
             
             <motion.h1 
@@ -201,16 +205,18 @@ const ModulePage: React.FC = () => {
               initial="hidden"
               animate="visible"
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 tracking-tight leading-tight drop-shadow-sm font-display"
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 tracking-tight leading-tight drop-shadow-sm font-sans"
             >
-               {data.subtitle}
+               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
+                 {data.subtitle}
+               </span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-lg md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
             >
                {data.description}
             </motion.p>
@@ -222,12 +228,12 @@ const ModulePage: React.FC = () => {
               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
                <Link to="/demo">
-                  <BouncyButton className="h-16 px-10 text-lg font-bold shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.4)] transition-all bg-primary-600 hover:bg-primary-500 border-none">
+                  <BouncyButton className="h-16 px-10 text-lg font-bold shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.4)] transition-all bg-primary-600 hover:bg-primary-500 border-none text-white">
                      {data.cta?.buttonLabel || "Jadwalkan Demo Live"}
                   </BouncyButton>
                </Link>
                <Link to="/pricing-calculator">
-                  <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white">
+                  <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white bg-transparent">
                      Hitung Estimasi
                   </Button>
                </Link>
@@ -237,7 +243,7 @@ const ModulePage: React.FC = () => {
 
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
-         <section className="relative -mt-16 z-20 pb-12">
+         <section className="relative -mt-20 z-20 pb-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {data.metrics.map((metric, idx) => {
@@ -254,16 +260,24 @@ const ModulePage: React.FC = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 + idx * 0.1 }}
-                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300"
+                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
                        >
+                          {/* Top Highlight Line */}
+                          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          
+                          {/* Background Glow */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                           {isNumber ? (
-                            <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
+                            <div className="relative z-10">
+                              <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
+                            </div>
                           ) : (
-                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2">
+                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2 relative z-10">
                                {metric.value}
                             </div>
                           )}
-                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{metric.label}</div>}
+                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10">{metric.label}</div>}
                        </motion.div>
                      );
                   })}
@@ -573,7 +587,7 @@ const ModulePage: React.FC = () => {
                   const ModIcon = mod.icon || Package;
 
                   return (
-                  <Link key={idx} to={linkPath} className="group h-full">
+                  <Link key={idx} to={linkPath} className="group h-full block">
                      <Card className="h-full border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg transition-all" padding="lg">
                         <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                            <ModIcon className="w-6 h-6" />

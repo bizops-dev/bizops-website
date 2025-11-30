@@ -57,7 +57,7 @@ const RolePage: React.FC = () => {
               <span className="text-sm font-medium text-slate-200 tracking-wide uppercase">Role-Based Experience</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight font-display drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight font-sans drop-shadow-2xl">
              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
                {data.heroHeadline}
              </span>
@@ -355,7 +355,7 @@ const RolePage: React.FC = () => {
              Ready to deploy?
            </motion.div>
 
-           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-display drop-shadow-xl">
+           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-sans drop-shadow-xl">
               {data.cta?.head || "Siap Transformasi Bisnis Anda?"}
            </h2>
            

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { industriesData, rolesData } from '../data/content';
 import Button from '../components/Button';
 import Badge from '../components/Badge';
+import CardSlider from '../components/CardSlider';
 import { ArrowRight, LayoutGrid, Briefcase, Users, Check, TrendingUp, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
@@ -11,7 +12,7 @@ import Section from '../components/Section';
 import { StaggeredText } from '../components/ui/motion-text';
 import { BouncyButton } from '../components/ui/motion-button';
 import { motion } from 'framer-motion';
-import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
+import { FADE_UP_VARIANTS } from '../utils/animation';
 
 const SolutionsPage: React.FC = () => {
   const industries = Object.entries(industriesData).map(([key, val]) => ({ id: key, ...(val as any) }));
@@ -96,33 +97,32 @@ const SolutionsPage: React.FC = () => {
               </p>
            </div>
            
-           <motion.div 
-              variants={STAGGER_CONTAINER}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32"
-           >
-              {industries.map((ind) => (
-                 <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
-                    <motion.div 
-                       variants={FADE_UP_VARIANTS}
-                       className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col relative overflow-hidden"
-                    >
-                       <div className={`w-16 h-16 ${getColor(ind.id)} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/5`}>
-                          <ind.icon className="w-8 h-8" />
-                       </div>
-                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
-                       <p className="text-slate-600 dark:text-slate-400 text-base mb-8 leading-relaxed flex-grow">
-                          {ind.description}
-                       </p>
-                       <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all">
-                          Pelajari Selengkapnya <ArrowRight className="w-4 h-4 ml-2" />
-                       </div>
-                    </motion.div>
-                 </Link>
-              ))}
-           </motion.div>
+           <div className="mb-32">
+             <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {industries.map((ind) => (
+                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full block">
+                      <motion.div 
+                         variants={FADE_UP_VARIANTS}
+                         initial="hidden"
+                         whileInView="visible"
+                         viewport={{ once: true }}
+                         className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col relative overflow-hidden"
+                      >
+                         <div className={`w-16 h-16 ${getColor(ind.id)} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/5`}>
+                            <ind.icon className="w-8 h-8" />
+                         </div>
+                         <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
+                         <p className="text-slate-600 dark:text-slate-400 text-base mb-8 leading-relaxed flex-grow">
+                            {ind.description}
+                         </p>
+                         <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all">
+                            Pelajari Selengkapnya <ArrowRight className="w-4 h-4 ml-2" />
+                         </div>
+                      </motion.div>
+                   </Link>
+                ))}
+             </CardSlider>
+           </div>
 
            {/* Social Proof Interstitial */}
            <div className="mb-32 text-center">
@@ -152,17 +152,14 @@ const SolutionsPage: React.FC = () => {
                      </p>
                   </div>
 
-                  <motion.div 
-                     variants={STAGGER_CONTAINER}
-                     initial="hidden"
-                     whileInView="visible"
-                     viewport={{ once: true }}
-                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
-                  >
+                  <CardSlider desktopClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                      {roles.map((role) => (
-                        <Link key={role.id} to={`/role/${role.id}`} className="group">
+                        <Link key={role.id} to={`/role/${role.id}`} className="group h-full block">
                            <motion.div 
                               variants={FADE_UP_VARIANTS}
+                              initial="hidden"
+                              whileInView="visible"
+                              viewport={{ once: true }}
                               className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg transition-all text-center h-full flex flex-col items-center group-hover:-translate-y-1"
                            >
                               <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm">
@@ -173,7 +170,7 @@ const SolutionsPage: React.FC = () => {
                            </motion.div>
                         </Link>
                      ))}
-                  </motion.div>
+                  </CardSlider>
                </div>
            </div>
         </div>

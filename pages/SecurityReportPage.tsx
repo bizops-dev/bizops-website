@@ -46,7 +46,7 @@ mQINBF... (Truncated for display) ...
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-700/50 text-green-400 text-xs font-mono mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-700/50 text-green-400 text-xs mb-6"
           >
             <Terminal className="w-3 h-3" /> VULNERABILITY DISCLOSURE PROGRAM
           </motion.div>
@@ -106,7 +106,7 @@ mQINBF... (Truncated for display) ...
                 Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.
               </p>
               
-              <div className="relative bg-black rounded-xl p-4 border border-slate-800 font-mono text-xs text-slate-500 overflow-x-auto">
+              <div className="relative bg-black rounded-xl p-4 border border-slate-800 text-xs text-slate-500 overflow-x-auto">
                 <button 
                   onClick={handleCopy}
                   className="absolute top-4 right-4 p-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors"

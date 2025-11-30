@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import { legalContent } from '../data/content';
 import Button from '../components/Button';
-import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, History, Lock, BrainCircuit, Phone, Printer, Share2, ChevronRight, CheckCircle } from 'lucide-react';
+import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, History, Lock, BrainCircuit, Phone, Printer, Share2, ChevronRight, CheckCircle, Menu, X } from 'lucide-react';
 import SEO from '../components/SEO';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface LegalPageProps {
   forcedDocId?: string;
 }
 
+// DRY Navigation Data
+const LEGAL_LINKS = [
+  { id: 'privacy', label: 'Privacy Policy', icon: Shield },
+  { id: 'data-rights', label: 'Privacy Center (DSAR)', icon: Database },
+  { id: 'dpa', label: 'Data Processing Agmt', icon: Lock },
+  { id: 'ai-ethics', label: 'AI Ethics & Safety', icon: BrainCircuit },
+  { id: 'terms', label: 'Terms of Service', icon: FileText },
+  { id: 'sla', label: 'Service Level Agreement', icon: Scale },
+  { id: 'cookies', label: 'Cookie Preferences', icon: Cookie },
+];
+
 const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
   const { docId } = useParams<{ docId: string }>();
+  const navigate = useNavigate();
   // Default to privacy if no ID
   const activeDocId = forcedDocId || docId || 'privacy';
   const data = legalContent[activeDocId];
+
+  // Mobile Nav State
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   // State for Cookie Preferences Logic
   const [preferences, setPreferences] = useState({
@@ -60,6 +75,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
     setRequestType(null);
     setRequestStatus('idle');
     setEmail('');
+    setIsMobileNavOpen(false); // Close mobile nav on change
   }, [activeDocId]);
 
   const handleSaveCookies = () => {
@@ -129,26 +145,70 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
      );
   }
 
+  const currentDocLabel = LEGAL_LINKS.find(l => l.id === activeDocId)?.label || 'Select Document';
+
   return (
     <div className="pt-24 pb-24 bg-slate-50 min-h-screen font-sans">
        <SEO title={data.title} description={data.subtitle} />
        
        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* MOBILE NAV (Drawer/Dropdown) - Visible only on mobile */}
+          <div className="lg:hidden mb-8 relative z-30">
+             <button 
+                onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform"
+             >
+                <div className="flex items-center gap-3">
+                   <div className="bg-primary-50 p-2 rounded-lg text-primary-600">
+                      <Scale className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                      <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Current Document</div>
+                      <div className="font-bold text-slate-900">{currentDocLabel}</div>
+                   </div>
+                </div>
+                <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isMobileNavOpen ? 'rotate-90' : ''}`} />
+             </button>
+
+             <AnimatePresence>
+                {isMobileNavOpen && (
+                   <motion.div 
+                      initial={{ opacity: 0, y: -10, height: 0 }}
+                      animate={{ opacity: 1, y: 0, height: 'auto' }}
+                      exit={{ opacity: 0, y: -10, height: 0 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden"
+                   >
+                      <div className="max-h-[60vh] overflow-y-auto p-2">
+                         {LEGAL_LINKS.map((link) => (
+                            <Link 
+                               key={link.id} 
+                               to={`/legal/${link.id}`}
+                               onClick={() => setIsMobileNavOpen(false)}
+                               className={`flex items-center gap-3 px-4 py-3 rounded-lg mb-1 last:mb-0 ${activeDocId === link.id ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-600 hover:bg-slate-50'}`}
+                            >
+                               <link.icon className={`w-4 h-4 ${activeDocId === link.id ? 'text-primary-600' : 'text-slate-400'}`} />
+                               <span className="text-sm">{link.label}</span>
+                               {activeDocId === link.id && <CheckCircle className="w-4 h-4 ml-auto text-primary-600" />}
+                            </Link>
+                         ))}
+                      </div>
+                   </motion.div>
+                )}
+             </AnimatePresence>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
              
-             {/* LEFT SIDEBAR NAV (3 Cols) */}
+             {/* LEFT SIDEBAR NAV (Desktop) */}
              <div className="lg:col-span-3 hidden lg:block">
                 <div className="sticky top-28 space-y-8">
                    <div>
                       <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Legal Center</h3>
                       <nav className="space-y-1">
-                         <NavItem id="privacy" label="Privacy Policy" icon={Shield} />
-                         <NavItem id="data-rights" label="Privacy Center (DSAR)" icon={Database} />
-                         <NavItem id="dpa" label="Data Processing Agmt" icon={Lock} />
-                         <NavItem id="ai-ethics" label="AI Ethics & Safety" icon={BrainCircuit} />
-                         <NavItem id="terms" label="Terms of Service" icon={FileText} />
-                         <NavItem id="sla" label="Service Level Agreement" icon={Scale} />
-                         <NavItem id="cookies" label="Cookie Preferences" icon={Cookie} />
+                         {LEGAL_LINKS.map(link => (
+                            <NavItem key={link.id} id={link.id} label={link.label} icon={link.icon} />
+                         ))}
                       </nav>
                    </div>
 
@@ -199,8 +259,6 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {/* SPECIAL INTERACTIVE UI: DATA RIGHTS */}
                    {activeDocId === 'data-rights' && (
                       <div className="space-y-8 animate-fade-in-up mb-12">
-                         {/* ... (Existing Data Rights UI) ... */}
-                         {/* Keeping previous content logic as is, it was fine */}
                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                             <h3 className="font-bold text-blue-900 text-lg mb-2">Data Subject Access Rights (DSAR)</h3>
                             <p className="text-blue-800 text-sm leading-relaxed">
@@ -283,8 +341,6 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {/* SPECIAL INTERACTIVE UI: COOKIES */}
                    {activeDocId === 'cookies' && (
                       <div className="mb-12 bg-slate-50 rounded-2xl border border-slate-200 p-8">
-                         {/* ... (Existing Cookies UI logic) ... */}
-                         {/* Keeping previous logic as is */}
                          <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold text-slate-900">Pengaturan Preferensi</h3>
                             {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-fade-in"><CheckCircle className="w-4 h-4" /> Tersimpan</span>}

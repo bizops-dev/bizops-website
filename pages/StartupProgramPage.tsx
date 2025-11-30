@@ -187,7 +187,7 @@ const StartupProgramPage: React.FC = () => {
                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
-                        <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] font-mono text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
+                        <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
                      </div>
                      {/* Mockup Content */}
                      <div className="space-y-6">

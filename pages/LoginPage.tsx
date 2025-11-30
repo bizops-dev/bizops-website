@@ -114,7 +114,7 @@ const LoginPage: React.FC = () => {
                       placeholder="Ex: BIZOPS-ID" 
                       value={companyCode}
                       onChange={(e) => setCompanyCode(e.target.value)}
-                      className="uppercase font-mono"
+                      className="uppercase"
                    />
                 )}
 
@@ -204,7 +204,7 @@ const LoginPage: React.FC = () => {
                               <div className="text-white font-bold">John Doe</div>
                               <div className="text-slate-400 text-xs">Senior Engineer</div>
                            </div>
-                           <div className="ml-auto text-green-400 text-xs font-mono">● Active</div>
+                           <div className="ml-auto text-green-400 text-xs">● Active</div>
                         </div>
                         <div className="space-y-3">
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>

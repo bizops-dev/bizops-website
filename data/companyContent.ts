@@ -233,7 +233,7 @@ export const whyBizOpsContent = {
       { title: "Total Data Sovereignty", desc: "Opsi Self-Hosted memberikan kendali penuh atas aset data. Aman dari intipan, regulasi, dan kenaikan harga sepihak." },
       { title: "Seamless Integration", desc: "Tidak egois. Bisa berdiri sendiri sebagai ERP lengkap, atau terhubung ke SAP/Odoo/Jurnal sebagai pelengkap." },
       { title: "Build vs Buy Winner", desc: "Lebih murah & cepat 10x lipat daripada membangun tim dev sendiri, namun memberikan fleksibilitas setara custom." },
-      { title: "Partner Friendly", desc: "Membuka peluang bisnis baru melalui program Whitelabel bagi konsultan & software house." }
+      { title: "Local Compliance Ready", desc: "Sudah disesuaikan dengan regulasi bisnis Indonesia (Pajak, BPJS, Alur Kasbon) sehingga Anda bisa langsung 'Go-Live' tanpa kustomisasi rumit." }
    ]
 };
 

@@ -4,6 +4,7 @@ import { Search, MapPin, Filter, Briefcase, Award, CheckCircle, ExternalLink, Gl
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import CardSlider from '../components/CardSlider'; // Import CardSlider
 import { partnerDirectoryData, industriesList, locationsList, PartnerProfile } from '../data/partnerDirectoryContent';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -210,11 +211,13 @@ const PartnerDirectoryPage: React.FC = () => {
              </div>
 
              {filteredPartners.length > 0 ? (
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {filteredPartners.map(partner => (
-                     <PartnerCard key={partner.id} partner={partner} />
+                     <div key={partner.id} className="h-full">
+                        <PartnerCard partner={partner} />
+                     </div>
                   ))}
-               </div>
+               </CardSlider>
              ) : (
                <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800">
                   <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Moon, Sun, ChevronRight, ShieldCheck, Signal, ArrowUpRight, Lock, Bug } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
@@ -39,6 +39,27 @@ const SocialLink = ({ href, icon: Icon, label }: { href: string, icon: any, labe
     <Icon className="w-5 h-5" />
   </a>
 );
+
+// New Component for Collapsible Sections
+const FooterLinkGroup = ({ title, children }: { title: string, children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="space-y-5 border-b border-slate-800/50 pb-5 md:border-none md:pb-0">
+      <div 
+        className="flex items-center justify-between cursor-pointer md:cursor-default group select-none" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-white md:group-hover:text-slate-500 transition-colors">{title}</h3>
+        <ChevronRight className={`w-4 h-4 text-slate-500 md:hidden transition-transform duration-300 ${isOpen ? 'rotate-90 text-primary-400' : ''}`} />
+      </div>
+      
+      <div className={`space-y-2.5 overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 md:max-h-full md:opacity-100 md:mt-0'}`}>
+         {children}
+      </div>
+    </div>
+  );
+};
 
 const Footer: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -97,12 +118,12 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* LINKS COLUMNS (Middle) - Compact titles */}
-          <div className="md:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8">
+          {/* LINKS COLUMNS (Middle) - Now using FooterLinkGroup for mobile accordion */}
+          {/* Changed grid-cols-2 to grid-cols-1 for mobile stack */}
+          <div className="md:col-span-7 lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-2 md:gap-y-8">
             
             {/* Platform */}
-            <div className="space-y-5">
-              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Platform</h3>
+            <FooterLinkGroup title="Platform">
               <ul className="space-y-2.5">
                 <FooterLink to="/platform">Overview</FooterLink>
                 <FooterLink to="/platform/modules/hr">HR System</FooterLink>
@@ -112,11 +133,10 @@ const Footer: React.FC = () => {
                 <FooterLink to="/pricing">Pricing</FooterLink>
                 <FooterLink to="/roadmap">Roadmap</FooterLink>
               </ul>
-            </div>
+            </FooterLinkGroup>
 
             {/* Company */}
-            <div className="space-y-5">
-              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Company</h3>
+            <FooterLinkGroup title="Company">
               <ul className="space-y-2.5">
                 <FooterLink to="/about">About Us</FooterLink>
                 <FooterLink to="/customers">Customers</FooterLink>
@@ -126,11 +146,10 @@ const Footer: React.FC = () => {
                 <FooterLink to="/contact">Contact</FooterLink>
                 <FooterLink to="/trust" icon={ShieldCheck}>Trust Center</FooterLink>
               </ul>
-            </div>
+            </FooterLinkGroup>
 
             {/* Resources */}
-            <div className="space-y-5 col-span-2 sm:col-span-1">
-              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Resources</h3>
+            <FooterLinkGroup title="Resources">
               <ul className="space-y-2.5">
                 <FooterLink to="/blog">Blog</FooterLink>
                 <FooterLink to="/docs">Docs</FooterLink>
@@ -138,7 +157,7 @@ const Footer: React.FC = () => {
                 <FooterLink to="/tools/assessment">Assessment</FooterLink>
                 <FooterLink to="/status" icon={Signal}>Status</FooterLink>
               </ul>
-            </div>
+            </FooterLinkGroup>
 
           </div>
 

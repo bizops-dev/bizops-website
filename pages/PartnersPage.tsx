@@ -137,7 +137,7 @@ const PartnersPage: React.FC = () => {
                                <div className="text-xs text-slate-500">Project: PT Maju Jaya</div>
                             </div>
                          </div>
-                         <span className="text-emerald-400 font-mono text-sm">+ Rp 150.000.000</span>
+                         <span className="text-emerald-400 text-sm">+ Rp 150.000.000</span>
                       </div>
                       <div className="flex justify-between items-center p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
                          <div className="flex items-center gap-3">
@@ -147,7 +147,7 @@ const PartnersPage: React.FC = () => {
                                <div className="text-xs text-slate-500">Q3 2024 Payout</div>
                             </div>
                          </div>
-                         <span className="text-blue-400 font-mono text-sm">+ Rp 45.000.000</span>
+                         <span className="text-blue-400 text-sm">+ Rp 45.000.000</span>
                       </div>
                       <div className="mt-6 pt-4 border-t border-slate-700 flex justify-between items-center">
                          <span className="text-slate-400 font-medium">Total Partner Earnings</span>
@@ -280,7 +280,7 @@ const PartnersPage: React.FC = () => {
                         <input 
                            type="number" 
                            value={activeClients} onChange={(e) => setActiveClients(Number(e.target.value))}
-                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white font-mono focus:ring-2 focus:ring-primary-500 focus:outline-none"
+                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
                         />
                      </div>
                   </div>
@@ -290,7 +290,7 @@ const PartnersPage: React.FC = () => {
                         <input 
                            type="number" 
                            value={growthRate} onChange={(e) => setGrowthRate(Number(e.target.value))}
-                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white font-mono focus:ring-2 focus:ring-primary-500 focus:outline-none"
+                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
                         />
                         <span className="absolute right-3 top-2.5 text-xs text-slate-500">+ klien</span>
                      </div>
@@ -307,13 +307,13 @@ const PartnersPage: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
                         <div className="text-sm text-slate-500 mb-1">Margin Lisensi (Recurring)</div>
-                        <div className="text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">
+                        <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                            {formatCurrency(monthlyMarginPerClient)} <span className="text-xs text-slate-400 font-normal">/client/bln</span>
                         </div>
                      </div>
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
                         <div className="text-sm text-slate-500 mb-1">Total Recurring Profit (MRR)</div>
-                        <div className="text-2xl font-bold font-mono text-blue-600 dark:text-blue-400">
+                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                            {formatCurrency(currentMonthlyProfit)} <span className="text-xs text-slate-400 font-normal">/bln</span>
                         </div>
                      </div>
@@ -331,7 +331,7 @@ const PartnersPage: React.FC = () => {
                            <p className="text-xs text-slate-500">Total Profit Bersih (License Margin + Implementation Fees)</p>
                         </div>
                         <div className="text-right">
-                           <span className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">{formatCurrency(year1Profit)}</span>
+                           <span className="text-2xl font-extrabold text-slate-900 dark:text-white">{formatCurrency(year1Profit)}</span>
                         </div>
                      </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-4 overflow-hidden">
@@ -352,7 +352,7 @@ const PartnersPage: React.FC = () => {
                            <p className="text-xs text-slate-500">Dengan akumulasi klien tahun sebelumnya</p>
                         </div>
                         <div className="text-right">
-                           <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400 font-mono">{formatCurrency(year2Profit)}</span>
+                           <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">{formatCurrency(year2Profit)}</span>
                         </div>
                      </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-6 overflow-hidden">

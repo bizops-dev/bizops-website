@@ -349,7 +349,137 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 5. PROCESS SECTION (How it works) */}
+      {/* 5. PRICING COMPARISON: Why Cheaper? */}
+      <section aria-labelledby="pricing-heading" className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden border-t border-slate-100 dark:border-slate-800">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+               <h2 id="pricing-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                  Hemat Hingga 60% Biaya IT
+               </h2>
+               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                  Model harga kami dirancang untuk skalabilitas. Tanpa penalti biaya saat tim Anda bertambah besar.
+               </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 items-stretch">
+               {/* 1. Fragmented Stack */}
+               <div className="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col h-full hover:border-red-200 dark:hover:border-red-900/30 transition-colors duration-300">
+                  <div className="mb-6">
+                     <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400 mb-2">Fragmented SaaS</h3>
+                     <p className="text-xs text-slate-500 h-8">Langganan banyak aplikasi terpisah (CRM, HR, Accounting).</p>
+                  </div>
+                  
+                  <div className="space-y-4 mb-8 flex-grow">
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">Harga Dasar</span>
+                        <span className="font-bold text-slate-900 dark:text-white">Per User / App</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">CRM + Sales</span>
+                        <span className="font-mono">Rp 150rb/user</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">Accounting</span>
+                        <span className="font-mono">Rp 250rb/user</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">HRIS</span>
+                        <span className="font-mono">Rp 20rb/user</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2 text-red-500">
+                        <span>Integrasi Data</span>
+                        <span className="font-bold">Manual / Mahal</span>
+                     </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
+                     <div className="text-xs text-slate-500 mb-1 uppercase tracking-wide">Estimasi Total (50 User)</div>
+                     <div className="text-3xl font-bold text-slate-400">Rp 21 Jt<span className="text-sm font-normal">/bln</span></div>
+                  </div>
+               </div>
+
+               {/* 2. Competitor ERP (Per User) */}
+               <div className="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col h-full hover:border-amber-200 dark:hover:border-amber-900/30 transition-colors duration-300">
+                  <div className="mb-6">
+                     <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400 mb-2">Platform Sejenis</h3>
+                     <p className="text-xs text-slate-500 h-8">ERP Global atau Kompetitor Lokal dengan model lisensi user.</p>
+                  </div>
+                  
+                  <div className="space-y-4 mb-8 flex-grow">
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">Harga Dasar</span>
+                        <span className="font-bold text-slate-900 dark:text-white">Per User License</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">All Modules</span>
+                        <span className="font-mono">Rp 300rb/user</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2">
+                        <span className="text-slate-600 dark:text-slate-400">Implementation</span>
+                        <span className="font-mono">Biaya Tinggi</span>
+                     </div>
+                     <div className="flex justify-between text-sm border-b border-slate-200 dark:border-slate-800 pb-2 text-amber-600">
+                        <span>Hidden Cost</span>
+                        <span className="font-bold">Add-ons & Maintenance</span>
+                     </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
+                     <div className="text-xs text-slate-500 mb-1 uppercase tracking-wide">Estimasi Total (50 User)</div>
+                     <div className="text-3xl font-bold text-slate-500">Rp 15 Jt<span className="text-sm font-normal">/bln</span></div>
+                  </div>
+               </div>
+
+               {/* 3. BizOps (Flat) */}
+               <div className="relative p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-2xl transform md:scale-105 z-10 border border-primary-500/30 flex flex-col h-full">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+                  
+                  <div className="mb-6 relative z-10">
+                     <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        BizOps Platform
+                        <span className="text-[10px] bg-primary-500 text-white px-2 py-0.5 rounded-full animate-pulse uppercase tracking-wider">Best Value</span>
+                     </h3>
+                     <p className="text-xs text-slate-300 h-8">All-in-One ERP dengan harga paket flat yang transparan.</p>
+                  </div>
+
+                  <div className="space-y-4 mb-8 relative z-10 flex-grow">
+                     <div className="flex justify-between items-center text-sm border-b border-white/10 pb-2">
+                        <span className="text-slate-300">Metode Harga</span>
+                        <span className="font-bold text-primary-200">Flat Package Price</span>
+                     </div>
+                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
+                        <span className="text-sm font-bold">All Modules Included</span>
+                        <CheckCircle2 className="w-5 h-5 text-green-400" />
+                     </div>
+                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
+                        <span className="text-sm font-bold">Cloud Infrastructure</span>
+                        <CheckCircle2 className="w-5 h-5 text-green-400" />
+                     </div>
+                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-lg border border-white/10 backdrop-blur-sm">
+                        <span className="text-sm font-bold">Unlimited Integration</span>
+                        <CheckCircle2 className="w-5 h-5 text-green-400" />
+                     </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-white/10 relative z-10">
+                     <div className="text-xs text-primary-200 mb-1 uppercase tracking-wide">Paket Business (Up to 50 Users)</div>
+                     <div className="text-4xl font-black text-white">Rp 3 Jt<span className="text-sm font-normal text-slate-300">/bln</span></div>
+                     <div className="text-[10px] text-slate-400 mt-2">*Harga flat satu kantor, bukan per kepala.</div>
+                  </div>
+                  
+                  <div className="mt-8 relative z-10">
+                     <Link to="/pricing-calculator">
+                        <Button fullWidth variant="primary" className="h-12 text-sm shadow-lg shadow-primary-500/25">
+                           Hitung ROI Anda
+                        </Button>
+                     </Link>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      {/* 6. PROCESS SECTION (How it works) */}
       <section aria-labelledby="process-heading" className="py-24 bg-[#0B1120] overflow-hidden relative">
          {/* Background Grid */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
@@ -390,7 +520,7 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 6. INDUSTRIES & ROLES */}
+      {/* 7. INDUSTRIES & ROLES */}
       <section aria-labelledby="industry-heading" className="py-24 bg-white dark:bg-slate-950">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -440,7 +570,7 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 7. INFRASTRUCTURE & SECURITY (Replaced Tech Validation) */}
+      {/* 8. INFRASTRUCTURE & SECURITY (Replaced Tech Validation) */}
       <section aria-labelledby="security-heading" className="py-24 bg-slate-900 border-t border-slate-800/50 relative overflow-hidden">
          {/* Subtle Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -532,7 +662,7 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 8. INTEGRATIONS */}
+      {/* 9. INTEGRATIONS */}
       <section aria-labelledby="integration-heading" className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <div className="max-w-4xl mx-auto text-center mb-12 px-4">
             <h2 id="integration-heading" className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Terhubung dengan Ekosistem</h2>
@@ -559,7 +689,7 @@ const HomePage: React.FC = () => {
          </div>
       </section>
 
-      {/* 8. CTA / FOOTER PREVIEW */}
+      {/* 10. CTA / FOOTER PREVIEW */}
       <section aria-labelledby="cta-heading" className="py-24 relative overflow-hidden">
          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-slate-900 z-0"></div>
          {/* Decorative Circles */}

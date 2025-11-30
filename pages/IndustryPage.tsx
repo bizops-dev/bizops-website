@@ -118,7 +118,7 @@ const IndustryPage: React.FC = () => {
                </div>
             </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-display max-w-5xl mx-auto drop-shadow-sm">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-sans max-w-5xl mx-auto drop-shadow-sm">
                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
                  {data.subtitle}
                </span>
@@ -402,7 +402,7 @@ const IndustryPage: React.FC = () => {
              Market Leader Choice
            </motion.div>
 
-           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-display drop-shadow-xl">
+           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-sans drop-shadow-xl">
               Siap Mendominasi Pasar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-cyan-300">{data.title}</span>?
            </h2>
            

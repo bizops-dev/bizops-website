@@ -1179,7 +1179,7 @@ const PricingCalculator: React.FC = () => {
             <p className="text-slate-400 mb-8 text-base">Dokumen resmi telah dikirim ke <span className="text-white font-bold">{contactInfo.email}</span></p>
             
             {/* Visible Quotation Preview */}
-            <div className="bg-white text-slate-900 p-12 rounded-lg shadow-2xl max-w-4xl w-full mx-auto mb-8 text-left relative overflow-hidden font-serif">
+            <div className="bg-white text-slate-900 p-12 rounded-lg shadow-2xl max-w-4xl w-full mx-auto mb-8 text-left relative overflow-hidden">
                 <div className="flex justify-between items-start mb-12 border-b-2 border-slate-900 pb-8">
                     <div>
                         <h1 className="text-4xl font-bold mb-2 text-slate-900 tracking-tight">QUOTATION</h1>

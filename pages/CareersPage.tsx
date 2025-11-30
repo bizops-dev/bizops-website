@@ -1,6 +1,7 @@
 import React from 'react';
 import { careersContent } from '../data/content';
 import Button from '../components/Button';
+import CardSlider from '../components/CardSlider'; // Import CardSlider
 import { Heart, Coffee, Zap, MapPin, Clock, GitMerge, BookOpen, Monitor, Award, CheckCircle, ArrowRight, ExternalLink, Globe, Code, Smile } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
@@ -67,8 +68,8 @@ const CareersPage: React.FC = () => {
                </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group">
+            <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <GitMerge className="w-7 h-7" />
                   </div>
@@ -77,7 +78,7 @@ const CareersPage: React.FC = () => {
                      Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
                   </p>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group">
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-7 h-7" />
                   </div>
@@ -86,7 +87,7 @@ const CareersPage: React.FC = () => {
                      Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
                   </p>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group">
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <BookOpen className="w-7 h-7" />
                   </div>
@@ -95,7 +96,7 @@ const CareersPage: React.FC = () => {
                      Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
                   </p>
                </div>
-            </div>
+            </CardSlider>
          </div>
       </Section>
 
@@ -103,8 +104,8 @@ const CareersPage: React.FC = () => {
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">The Total Rewards</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+            <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
                      <Coffee className="w-6 h-6" />
                   </div>
@@ -115,7 +116,7 @@ const CareersPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                      <Monitor className="w-6 h-6" />
                   </div>
@@ -126,7 +127,7 @@ const CareersPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
                      <Heart className="w-6 h-6" />
                   </div>
@@ -137,7 +138,7 @@ const CareersPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
                      <Award className="w-6 h-6" />
                   </div>
@@ -148,7 +149,7 @@ const CareersPage: React.FC = () => {
                      </p>
                   </div>
                </div>
-            </div>
+            </CardSlider>
          </div>
       </Section>
 

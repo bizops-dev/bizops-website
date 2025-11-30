@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import CardSlider from '../components/CardSlider'; // Import CardSlider
 import { 
   Calendar, 
   ArrowRight, 
@@ -273,65 +274,64 @@ const BlogPage: React.FC = () => {
                   </div>
 
                   {gridPosts.length > 0 ? (
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <AnimatePresence mode="popLayout">
-                           {gridPosts.map((post, idx) => (
-                              <motion.div
-                                 key={post.slug}
-                                 layout
-                                 initial={{ opacity: 0, scale: 0.95 }}
-                                 animate={{ opacity: 1, scale: 1 }}
-                                 exit={{ opacity: 0, scale: 0.95 }}
-                                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                              >
-                                 <Link to={`/blog/${post.slug}`} className="h-full block">
-                                    <SpotlightCard className="h-full rounded-[2rem] flex flex-col hover:shadow-2xl transition-all duration-300 group">
-                                       <div className="aspect-[16/10] overflow-hidden border-b border-slate-100 dark:border-slate-800 relative">
-                                          <img 
-                                             src={post.image} 
-                                             alt={post.title}
-                                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                          />
-                                          <div className="absolute top-4 left-4">
-                                             <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
-                                                {post.category}
-                                             </span>
-                                          </div>
+                     <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {gridPosts.map((post, idx) => (
+                           <motion.div
+                              key={post.slug}
+                              layout
+                              initial={{ opacity: 0, scale: 0.95 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.95 }}
+                              transition={{ duration: 0.3, delay: idx * 0.05 }}
+                              className="h-full" // Ensure full height for slider consistency
+                           >
+                              <Link to={`/blog/${post.slug}`} className="h-full block">
+                                 <SpotlightCard className="h-full rounded-[2rem] flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                                    <div className="aspect-[16/10] overflow-hidden border-b border-slate-100 dark:border-slate-800 relative">
+                                       <img 
+                                          src={post.image} 
+                                          alt={post.title}
+                                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                       />
+                                       <div className="absolute top-4 left-4">
+                                          <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
+                                             {post.category}
+                                          </span>
+                                       </div>
+                                    </div>
+                                    
+                                    <div className="p-8 flex flex-col flex-1">
+                                       <div className="flex items-center gap-3 mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                          <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
+                                          <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min</span>
                                        </div>
                                        
-                                       <div className="p-8 flex flex-col flex-1">
-                                          <div className="flex items-center gap-3 mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-                                             <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
-                                             <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                                             <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min</span>
+                                       <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                                          {post.title}
+                                       </h3>
+                                       
+                                       <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                                          {post.summary}
+                                       </p>
+                                       
+                                       <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
+                                          <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                                             <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] border border-slate-200 dark:border-slate-700">
+                                                {post.author.charAt(0)}
+                                             </div>
+                                             {post.author.split(',')[0]}
                                           </div>
-                                          
-                                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                                             {post.title}
-                                          </h3>
-                                          
-                                          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
-                                             {post.summary}
-                                          </p>
-                                          
-                                          <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
-                                             <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
-                                                <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] border border-slate-200 dark:border-slate-700">
-                                                   {post.author.charAt(0)}
-                                                </div>
-                                                {post.author.split(',')[0]}
-                                             </div>
-                                             <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                                                <ArrowRight className="w-4 h-4" />
-                                             </div>
+                                          <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                             <ArrowRight className="w-4 h-4" />
                                           </div>
                                        </div>
-                                    </SpotlightCard>
-                                 </Link>
-                              </motion.div>
-                           ))}
-                        </AnimatePresence>
-                     </div>
+                                    </div>
+                                 </SpotlightCard>
+                              </Link>
+                           </motion.div>
+                        ))}
+                     </CardSlider>
                   ) : (
                      <div className="py-20 text-center bg-slate-50 dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-200 dark:border-slate-800">
                         <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
