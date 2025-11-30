@@ -156,7 +156,7 @@ const PlatformPage: React.FC = () => {
                   </Stack>
                   
                   {/* Floating Badge */}
-                  <Stack direction="horizontal" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
+                  <Stack direction="horizontal" gap={3} align="center" className="absolute -bottom-6 -right-6  bg-white dark:bg-blue-600 text-slate-900 dark: text-slate-900 dark:text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
                      <div className="bg-blue-100 dark:bg-white/20 p-2 rounded-lg"><Zap className="w-5 h-5 text-blue-600 dark:text-white" /></div>
                      <div>
                         <div className="text-xs opacity-80">Development Time</div>

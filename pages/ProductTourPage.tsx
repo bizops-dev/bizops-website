@@ -930,7 +930,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                   </Stack>
 
-                  <Button fullWidth size="lg" onClick={onNext} className="h-14 text-lg font-bold bg-white text-slate-900 hover:bg-slate-200 mt-auto">Confirm Receipt</Button>
+                  <Button fullWidth size="lg" onClick={onNext} className="h-14 text-lg font-bold bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 mt-auto">Confirm Receipt</Button>
                </Stack>
             )}
 
@@ -981,7 +981,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         </div>
                      </div>
                      
-                     <button onClick={onNext} className="w-full py-4 rounded-2xl bg-white text-slate-900 font-bold shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3 hover:bg-slate-100 group">
+                     <button onClick={onNext} className="w-full py-4 rounded-2xl bg-white text-slate-900 dark:text-slate-900 dark:text-white font-bold shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3 hover:bg-slate-100 group">
                         <div className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                            <Scan className="w-4 h-4" />
                         </div>

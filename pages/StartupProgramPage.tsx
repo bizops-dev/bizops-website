@@ -60,11 +60,11 @@ const StartupProgramPage: React.FC = () => {
              className="flex flex-col sm:flex-row justify-center gap-4"
           >
              <Link to="/partners/apply">
-                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
                    Apply for Credits <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
              </Link>
-             <Button size="lg" variant="outline" className="h-14 px-10 border-slate-700 text-white hover:bg-white/10 font-medium w-full sm:w-auto">
+             <Button size="lg" variant="outline" className="h-14 px-10 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 font-medium w-full sm:w-auto">
                 <Play className="w-4 h-4 mr-2 fill-current" /> Watch Founder Stories
              </Button>
           </motion.div>
@@ -560,11 +560,11 @@ const StartupProgramPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
             <Stack direction="vertical" gap={6} className="justify-center">
                <Link to="/partners/apply">
-                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
+                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
                      Apply Now - It's Free <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                </Link>
-               <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
+               <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
                   Talk to Founder Success
                </Button>
             </Stack>

@@ -28,17 +28,17 @@ const ThankYouPage: React.FC = () => {
         <Grid cols={3} gap={4} className="text-left">
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
               <Download className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-              <div className="font-bold text-slate-900 text-sm mb-1">Download E-Book</div>
+              <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Download E-Book</div>
               <div className="text-xs text-slate-500">Panduan Efisiensi Pajak 2024</div>
            </a>
            <Link to="/customers" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
               <Video className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-              <div className="font-bold text-slate-900 text-sm mb-1">Tonton Kisah Sukses</div>
+              <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Tonton Kisah Sukses</div>
               <div className="text-xs text-slate-500">Hemat 2 Milyar/Tahun</div>
            </Link>
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
               <Linkedin className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-              <div className="font-bold text-slate-900 text-sm mb-1">Follow LinkedIn</div>
+              <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Follow LinkedIn</div>
               <div className="text-xs text-slate-500">Update industri harian</div>
            </a>
         </Grid>

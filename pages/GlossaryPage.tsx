@@ -41,10 +41,10 @@ const GlossaryPage: React.FC = () => {
            {glossaryData.map((item, idx) => (
               <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-primary-100 transition-all group">
                  <Stack direction="horizontal" gap={4} align="center" className="mb-4">
-                    <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-white rounded-lg font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                    <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12  bg-white rounded-lg font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover: text-slate-900 dark:text-slate-900 dark:text-white transition-colors">
                        {item.char}
                     </Stack>
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.term}</Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{item.term}</Typography>
                  </Stack>
                  <Stack direction="vertical" gap={4}>
                     <div>
@@ -66,7 +66,7 @@ const GlossaryPage: React.FC = () => {
               <Typography variant="h2" as="h2">Ingin Menerapkan Konsep Ini Secara Otomatis?</Typography>
               <Typography variant="body" className="text-slate-300">BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.</Typography>
               <Link to="/demo">
-                 <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none">
+                 <Button className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 border-none">
                     Coba Gratis BizOps <ArrowRight className="ml-2 w-4 h-4" />
                  </Button>
               </Link>

@@ -175,7 +175,7 @@ const BlogPage: React.FC = () => {
                      
                      <Stack direction="vertical" gap={4} justify="end" className="relative p-8 md:p-16 lg:p-20 min-h-[500px] md:min-h-[600px]">
                         <Stack direction="horizontal" gap={4} align="center" className="mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                           <span className="bg-white/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/10">
+                           <span className="bg-white/20 backdrop-blur-md text-slate-900 dark:text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/10">
                               {featuredPost.category}
                            </span>
                         </Stack>
@@ -267,7 +267,7 @@ const BlogPage: React.FC = () => {
                         <Typography variant="h4" as="h4">Weekly Digest</Typography>
                         <Typography variant="body" className="text-slate-400">Get strategic insights delivered to your inbox every Monday.</Typography>
                         <form onSubmit={(e) => e.preventDefault()} className="relative z-10 space-y-2">
-                           <input type="email" placeholder="Email" className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
+                           <input type="email" placeholder="Email" className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-xs text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none text-xs">Subscribe</Button>
                         </form>
                      </div>
@@ -309,7 +309,7 @@ const BlogPage: React.FC = () => {
                                                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                              />
                                              <div className="absolute top-4 left-4">
-                                                <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
+                                                <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-white dark:text-white dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
                                                    {post.category}
                                                 </span>
                                              </div>

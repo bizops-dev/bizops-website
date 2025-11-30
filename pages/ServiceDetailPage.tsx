@@ -143,7 +143,7 @@ const ServiceDetailPage: React.FC = () => {
 
                  <motion.div variants={FADE_UP_VARIANTS} className="flex flex-wrap gap-4">
                     <Link to="/contact">
-                       <Button size="lg" className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 font-bold px-8 h-14 rounded-full shadow-xl shadow-primary-500/10 hover:shadow-primary-500/20">
+                       <Button size="lg" className=" bg-slate-900 dark: bg-white  text-white dark:text-white dark:text-white dark: text-white hover:bg-slate-800 dark:hover:bg-slate-100 font-bold px-8 h-14 rounded-full shadow-xl shadow-primary-500/10 hover:shadow-primary-500/20">
                           {data.cta}
                        </Button>
                     </Link>
@@ -297,7 +297,7 @@ const ServiceDetailPage: React.FC = () => {
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.</Typography>
              <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
-                  <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
+                  <Button size="lg" className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Book Free Consultation
                   </Button>
                </Link>

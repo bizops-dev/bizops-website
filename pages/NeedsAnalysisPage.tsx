@@ -723,7 +723,7 @@ const NeedsAnalysisPage = () => {
     const timelineLabel = timelines.find(t => t.id === selectedTimeline)?.label;
 
     return (
-      <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
+      <div className="min-h-screen bg-slate-950 text-slate-900 dark:text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
         <Container size="6xl">
           {/* Header */}
           <Stack direction="vertical" gap={4} align="start" justify="between" className="mb-10 border-b border-white/10 pb-8 print:border-gray-300">

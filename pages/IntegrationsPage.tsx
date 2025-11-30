@@ -27,7 +27,7 @@ const IntegrationsPage: React.FC = () => {
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
                   <Stack direction="horizontal" gap={4} align="end" className="mb-6 border-b border-slate-200 pb-4">
-                      <Typography variant="h2" as="h2" className="font-bold text-slate-900">{cat.category}</Typography>
+                      <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{cat.category}</Typography>
                       <Typography variant="body" className="text-slate-500">{cat.desc}</Typography>
                   </Stack>
                   
@@ -42,7 +42,7 @@ const IntegrationsPage: React.FC = () => {
                                  Verified
                               </div>
                            </Stack>
-                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 group-hover:text-primary-600">{app.name}</Typography>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{app.name}</Typography>
                            <Typography variant="caption" className="text-slate-600 leading-snug">{app.desc}</Typography>
                         </div>
                      ))}

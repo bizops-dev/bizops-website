@@ -573,7 +573,7 @@ const ModulePage: React.FC = () => {
                   return (
                   <Link key={idx} to={linkPath} className="group h-full block">
                      <Card className="h-full border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg transition-all" padding="lg">
-                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12  bg-white dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover: text-slate-900 dark:text-slate-900 dark:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                            <ModIcon className="w-6 h-6" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>

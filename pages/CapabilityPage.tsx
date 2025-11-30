@@ -39,7 +39,7 @@ const CapabilityPage: React.FC = () => {
             <Typography variant="h1" as="h1" className="font-bold leading-tight">{data.subtitle}</Typography>
             <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{data.description}</Typography>
             <Link to="/demo">
-               <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">Download Technical Sheet</Button>
+               <Button size="lg" className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100">Download Technical Sheet</Button>
             </Link>
          </Container>
       </section>
@@ -57,7 +57,7 @@ const CapabilityPage: React.FC = () => {
                         </Stack>
                      </Stack>
                      <div>
-                        <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.title}</Typography>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
                         <Typography variant="body" className="text-slate-600 leading-relaxed">{item.desc}</Typography>
                      </div>
                   </div>
@@ -70,7 +70,7 @@ const CapabilityPage: React.FC = () => {
       {data.extraSection && (
         <section className="py-24 bg-slate-50 border-t border-slate-200">
            <Container size="7xl">
-              <Typography variant="h2" as="h2" className="font-bold text-slate-900 leading-tight">{data.extraSection.title}</Typography>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">{data.extraSection.title}</Typography>
               
               {data.extraSection.type === 'table' && (
                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">

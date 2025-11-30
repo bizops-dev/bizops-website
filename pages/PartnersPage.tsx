@@ -107,7 +107,7 @@ const PartnersPage: React.FC = () => {
                       </Button>
                    </Link>
                    <a href="#calculator" onClick={(e) => { e.preventDefault(); document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' }); }} className="w-full sm:w-auto">
-                      <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 w-full">
+                      <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 w-full">
                          Simulasi Profit
                       </Button>
                    </a>
@@ -374,7 +374,7 @@ const PartnersPage: React.FC = () => {
             </Stack>
 
             {/* Results */}
-            <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark:text-white">
+            <div className="lg:col-span-7  bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark: text-slate-900 dark:text-slate-900 dark:text-white ">
                
                <div className="mb-8">
                   <Typography variant="h3" as="h3">Snapshot Profitabilitas</Typography>

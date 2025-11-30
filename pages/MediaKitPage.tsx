@@ -68,10 +68,10 @@ const MediaKitPage: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold shadow-xl">
+             <Button size="lg" className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold shadow-xl">
                Download All Assets (ZIP) <Download className="w-4 h-4 ml-2" />
              </Button>
-             <Button size="lg" variant="outline" className="border-slate-700 text-white hover:bg-white/10">
+             <Button size="lg" variant="outline" className="border-slate-700 text-slate-900 dark:text-white hover:bg-white/10">
                Lihat Brand Guidelines <ExternalLink className="w-4 h-4 ml-2" />
              </Button>
           </motion.div>
@@ -446,10 +446,10 @@ const MediaKitPage: React.FC = () => {
                  <Typography variant="h2" as="h2">Media Inquiries</Typography>
                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.</Typography>
                  <Stack direction="vertical" gap={4}>
-                    <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
+                    <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 dark:text-slate-900 dark:text-white rounded-xl font-bold hover:bg-slate-100 transition-colors">
                        <Mail className="w-4 h-4" /> Hubungi PR Team
                     </a>
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/20 text-white rounded-xl font-bold hover:bg-white/10 transition-colors">
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/20 text-slate-900 dark:text-white rounded-xl font-bold hover:bg-white/10 transition-colors">
                        WhatsApp
                     </a>
                  </Stack>

@@ -270,7 +270,7 @@ const UseCaseDetailPage: React.FC = () => {
     .slice(0, 3);
 
   return (
-    <div ref={containerRef} className="bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-primary-500/30 selection:text-white">
+    <div ref={containerRef} className=" bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-primary-500/30 selection: text-slate-900 dark:text-slate-900 dark:text-white ">
       <SEO 
         title={`${data.title} - ${data.industry} Success Story | BizOps`} 
         description={data.subtitle} 
@@ -299,7 +299,7 @@ const UseCaseDetailPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-wrap justify-center items-center gap-3 mb-10"
           >
-            <Link to="/use-cases" className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-400 hover:text-white transition-all text-sm font-medium backdrop-blur-sm">
+            <Link to="/use-cases" className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-400 hover:text-slate-900 dark:text-white transition-all text-sm font-medium backdrop-blur-sm">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Back to Library
             </Link>
@@ -440,7 +440,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.</Typography>
                   
                   <Link to="/contact" className="relative z-10 block">
-                    <Button className="w-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold h-12">
+                    <Button className="w-full bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold h-12">
                       Mulai Konsultasi Gratis
                     </Button>
                   </Link>

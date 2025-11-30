@@ -350,7 +350,7 @@ const ROIPage: React.FC = () => {
                        <Button 
                          variant="outline-white"
                          onClick={() => navigate('/contact')}
-                         className="w-full border-white/20 text-slate-300 hover:text-white hover:bg-white/5"
+                         className="w-full border-white/20 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5"
                        >
                           Validasi Angka Ini
                        </Button>

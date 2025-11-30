@@ -138,7 +138,7 @@ const BlogDetailPage: React.FC = () => {
          <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
                <Stack direction="horizontal" gap={3} align="center" className="mb-8">
-                  <Link to="/blog" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
+                  <Link to="/blog" className="flex items-center gap-2 text-slate-900 dark:text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
                      <ArrowLeft className="w-4 h-4" /> Back to Blog
                   </Link>
                   <span className="text-blue-300 font-bold uppercase tracking-widest text-xs px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full backdrop-blur-md">
@@ -190,7 +190,7 @@ const BlogDetailPage: React.FC = () => {
                   {/* Article Content */}
                   <article 
                      className="prose prose-lg prose-slate dark:prose-invert max-w-none
-                     prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900 dark:prose-headings:text-white
+                     prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900 dark:text-white dark:prose-headings:text-white
                      prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:leading-8
                      prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
                      prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:my-12
@@ -219,7 +219,7 @@ const BlogDetailPage: React.FC = () => {
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"><Facebook className="w-5 h-5" /></button>
-                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
+                           <button className="p-3 rounded-full bg-slate-100 dark: bg-slate-900 text-slate-500 dark:text-slate-400 hover: text-white hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
                         </Stack>
                      </Stack>
                   </Stack>
@@ -241,7 +241,7 @@ const BlogDetailPage: React.FC = () => {
                                        className={`block pl-4 py-2 text-sm transition-colors border-l-2 -ml-[2px] ${
                                           activeId === heading.id 
                                              ? 'border-blue-600 text-blue-600 font-bold' 
-                                             : 'border-transparent text-slate-500 hover:text-slate-900 hover:border-slate-300'
+                                             : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-white hover:border-slate-300'
                                        }`}
                                     >
                                        {heading.text}
@@ -277,7 +277,7 @@ const BlogDetailPage: React.FC = () => {
                            <BookOpen className="w-8 h-8 text-blue-400 mb-4" />
                            <Typography variant="h3" as="h3">Weekly Intelligence</Typography>
                            <Typography variant="caption" className="text-slate-400">Strategic insights for leaders.</Typography>
-                           <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
+                           <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-slate-900 dark:text-white placeholder-slate-500 mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none rounded-xl font-bold">Subscribe</Button>
                         </div>
                      </div>
@@ -312,7 +312,7 @@ const BlogDetailPage: React.FC = () => {
                               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                            />
                            <div className="absolute top-4 left-4">
-                              <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
+                              <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-white dark:text-white dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
                                  {rp.category}
                               </span>
                            </div>
@@ -365,12 +365,12 @@ const BlogDetailPage: React.FC = () => {
                {/* Right: Actions */}
                <Stack direction="vertical" gap={4} className="w-full lg:w-auto">
                   <Link to="/demo" className="w-full sm:w-auto">
-                     <Button size="lg" className="w-full bg-white text-slate-900 hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
+                     <Button size="lg" className="w-full bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
                         Book a Live Demo
                      </Button>
                   </Link>
                   <Link to="/contact" className="w-full sm:w-auto">
-                     <Button size="lg" variant="outline" className="w-full bg-white/5 border-white/10 text-white hover:bg-white/10 h-16 px-10 text-lg font-bold backdrop-blur-sm rounded-2xl">
+                     <Button size="lg" variant="outline" className="w-full bg-white/5 border-white/10 text-slate-900 dark:text-white hover:bg-white/10 h-16 px-10 text-lg font-bold backdrop-blur-sm rounded-2xl">
                         Talk to Expert
                      </Button>
                   </Link>

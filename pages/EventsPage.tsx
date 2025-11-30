@@ -300,7 +300,7 @@ const EventsPage: React.FC = () => {
                  <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
                  <Stack direction="vertical" gap={4} className="justify-center">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
-                    <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>
+                    <Button className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>
                  </Stack>
               </Container>
            </div>

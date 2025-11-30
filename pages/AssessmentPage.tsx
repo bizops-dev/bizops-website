@@ -535,7 +535,7 @@ const AssessmentPage = () => {
   // 4. RESULTS SCREEN
   if (viewState === 'results' && results) {
     return (
-      <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 print:bg-white print:pt-0 print:pb-0 print:text-black">
+      <div className="min-h-screen bg-slate-950 text-slate-900 dark:text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 print:bg-white print:pt-0 print:pb-0 print:text-black">
         <Container size="6xl">
           {/* --- REPORT HEADER (Formal) --- */}
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
@@ -650,7 +650,7 @@ const AssessmentPage = () => {
                             <span className="p-1.5 rounded-lg bg-slate-800 text-slate-400 print:hidden">{categoryIcons[catKey]}</span> 
                             {categoryLabels[catKey]}
                           </span>
-                          <span className="text-white font-bold bg-slate-800 px-3 py-1 rounded-lg border border-white/5 print:text-black print:bg-white print:border-gray-300">{score.toFixed(1)}</span>
+                          <span className="text-slate-900 dark:text-white font-bold bg-slate-800 px-3 py-1 rounded-lg border border-white/5 print:text-black print:bg-white print:border-gray-300">{score.toFixed(1)}</span>
                         </Stack>
                         <div className="w-full bg-slate-800 rounded-full h-4 p-1 border border-white/5 print:bg-gray-200">
                           <motion.div 
@@ -949,7 +949,7 @@ const AssessmentPage = () => {
                     variant="ghost"
                     onClick={() => currentStep > 0 && setCurrentStep(prev => prev - 1)}
                     disabled={currentStep === 0}
-                    className="text-slate-400 hover:text-white hover:bg-white/5"
+                    className="text-slate-400 hover:text-slate-900 dark:text-white hover:bg-white/5"
                   >
                     <ChevronLeft className="w-4 h-4 mr-1" /> Previous
                   </Button>
@@ -958,7 +958,7 @@ const AssessmentPage = () => {
                     <Button 
                       variant="primary"
                       onClick={() => setCurrentStep(prev => prev + 1)}
-                      className="ml-auto bg-white text-slate-900 hover:bg-slate-200 border-0"
+                      className="ml-auto bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 border-0"
                     >
                       Next Question <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>

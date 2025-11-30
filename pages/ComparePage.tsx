@@ -34,7 +34,7 @@ const ComparePage: React.FC = () => {
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
             BizOps vs {data.name}
           </div>
-          <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight">{data.verdict}</Typography>
+          <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight">{data.verdict}</Typography>
           <Typography variant="body-xl" className="text-slate-600">{data.description}</Typography>
         </Container>
 
@@ -51,7 +51,7 @@ const ComparePage: React.FC = () => {
               <div className="divide-y divide-slate-100">
                 {data.points.map((row: any, idx: number) => (
                   <div key={idx} className="grid grid-cols-1 md:grid-cols-4 p-6 items-center gap-4 hover:bg-slate-50 transition-colors">
-                    <div className="font-bold text-slate-900 md:col-span-1">{row.feature}</div>
+                    <div className="font-bold text-slate-900 dark:text-white md:col-span-1">{row.feature}</div>
                     
                     {/* Them */}
                     <Stack direction="horizontal" gap={3} align="start" className="text-slate-600">
@@ -60,7 +60,7 @@ const ComparePage: React.FC = () => {
                     </div>
 
                     {/* Us */}
-                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-900 font-medium bg-primary-50 rounded-lg p-3">
+                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-900 dark:text-white font-medium bg-primary-50 rounded-lg p-3">
                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
                        <Typography variant="caption">{row.us}</Typography>
                     </div>
@@ -110,14 +110,14 @@ const ComparePage: React.FC = () => {
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
                     <Stack direction="horizontal" gap={3} align="center" className="mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
-                       <Typography variant="h3" as="h3" className="font-bold text-slate-900">{scene.name}</Typography>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{scene.name}</Typography>
                     </Stack>
 
                     <Stack direction="vertical" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (
                           <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
                              <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
-                             <span className="font-bold text-slate-900">{m.val}</span>
+                             <span className="font-bold text-slate-900 dark:text-white">{m.val}</span>
                           </div>
                        ))}
                     </Stack>
@@ -141,7 +141,7 @@ const ComparePage: React.FC = () => {
               {[].map((feat: any, idx: number) => (
                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0">
-                       <Typography variant="h3" as="h3" className="font-bold text-slate-900">{feat.title}</Typography>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
                     </div>
                     <div className="md:col-span-1">
                        <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
@@ -150,7 +150,7 @@ const ComparePage: React.FC = () => {
                     </div>
                     <div className="md:col-span-1 bg-primary-50 -m-4 p-4 rounded-xl">
                        <div className="text-xs font-bold text-primary-600 uppercase mb-2">BizOps</div>
-                       <Stack direction="horizontal" gap={2} align="center" className="text-slate-900 font-bold mb-2">
+                       <Stack direction="horizontal" gap={2} align="center" className="text-slate-900 dark:text-white font-bold mb-2">
                        <Typography variant="caption" className="text-slate-700">{feat.usDesc}</Typography>
                     </div>
                  </div>

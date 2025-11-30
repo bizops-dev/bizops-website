@@ -156,7 +156,7 @@ const IndustryPage: React.FC = () => {
                   </div>
                </Link>
                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 w-full">
+                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5 w-full">
                      Konsultasi Ahli <ChevronRight className="w-4 h-4 ml-1" />
                   </Button>
                </Link>
@@ -392,7 +392,7 @@ const IndustryPage: React.FC = () => {
 
            <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
-                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
+                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 dark:text-slate-900 dark:text-white border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Free Trial <ArrowRight className="w-5 h-5" />
                  </BouncyButton>
               </Link>

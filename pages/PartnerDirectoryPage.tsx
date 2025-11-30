@@ -85,7 +85,7 @@ const PartnerDirectoryPage: React.FC = () => {
           
           <Stack direction="vertical" gap={4} className="justify-center">
              <Link to="/partners/apply">
-                <Button variant="outline" className="border-slate-600 text-slate-300 hover:text-white hover:bg-white/10">
+                <Button variant="outline" className="border-slate-600 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/10">
                    Become a Partner
                 </Button>
              </Link>

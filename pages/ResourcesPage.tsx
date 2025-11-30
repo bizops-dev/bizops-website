@@ -179,7 +179,7 @@ const ResourcesPage = () => {
                   </Button>
                 </Link>
                 <Link to="/tools/roi-calculator">
-                  <Button size="lg" variant="outline" className="text-white border-slate-600 hover:bg-white/10 w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="text-slate-900 dark:text-white border-slate-600 hover:bg-white/10 w-full sm:w-auto">
                     Hitung ROI Project
                   </Button>
                 </Link>

@@ -111,7 +111,7 @@ const PricingCalculatorPage: React.FC = () => {
             <div className="flex-shrink-0 px-6 h-16 border-b border-white/5 flex items-center justify-between bg-[#0B0F19]/80 backdrop-blur-md z-20">
                <button 
                  onClick={() => setIsStarted(false)} 
-                 className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5"
+                 className="flex items-center gap-2 text-slate-400 hover:text-slate-900 dark:text-white transition-colors group text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5"
                >
                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> 
                  <span className="hidden sm:inline">Back to Intro</span>

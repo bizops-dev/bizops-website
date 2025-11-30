@@ -316,7 +316,7 @@ const HomePage: React.FC = () => {
                         <uvp.icon className="w-24 h-24 opacity-20 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" aria-hidden="true" />
                      </div>
                      <div className="relative z-10">
-                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14  bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover: text-slate-900 dark:text-slate-900 dark:text-white transition-colors duration-300">
                            <uvp.icon className="w-7 h-7" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
@@ -534,7 +534,7 @@ const HomePage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
                </div>
                <Link to="/services">
-                  <Button variant="outline-white" className="border-white/20 hover:bg-white/10 text-white font-medium px-6">Pelajari Metodologi Kami</Button>
+                  <Button variant="outline-white" className="border-white/20 hover:bg-white/10 text-slate-900 dark:text-white font-medium px-6">Pelajari Metodologi Kami</Button>
                </Link>
             </Stack>
 

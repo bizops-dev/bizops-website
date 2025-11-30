@@ -268,7 +268,7 @@ const PricingPage: React.FC = () => {
             
             <Stack direction="vertical" gap={8} className="relative z-10 items-center p-8 md:p-16">
               <Stack direction="horizontal" gap={4} className="text-center lg:text-left">
-                <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
+                <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-white/10 text-slate-900 dark:text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
                   <Calculator className="w-3.5 h-3.5" />
                   SIMULASI BIAYA CUSTOM
                 </Stack>

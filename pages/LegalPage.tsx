@@ -142,7 +142,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
      const isActive = activeDocId === id;
      return (
         <Link to={`/legal/${id}`}>
-           <div className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive ? 'bg-white shadow-sm ring-1 ring-slate-200 text-primary-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}>
+           <div className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive ? 'bg-white shadow-sm ring-1 ring-slate-200 text-primary-700 font-bold' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-white'}`}>
               <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-primary-600' : 'text-slate-400 group-hover:text-slate-600'}`} />
               <Typography variant="caption">{label}</Typography>
               {isActive && <ChevronRight className="w-4 h-4 ml-auto text-primary-400" />}
@@ -172,7 +172,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    </div>
                    <div className="text-left">
                       <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Current Document</div>
-                      <div className="font-bold text-slate-900">{currentDocLabel}</div>
+                      <div className="font-bold text-slate-900 dark:text-white">{currentDocLabel}</div>
                    </div>
                 </Stack>
                 <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isMobileNavOpen ? 'rotate-90' : ''}`} />
@@ -285,7 +285,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          <span className="text-slate-300">•</span>
                          <span>Last Updated: {data.updated}</span>
                       </Stack>
-                      <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight tracking-tight">{data.title}</Typography>
+                      <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight tracking-tight">{data.title}</Typography>
                       <Typography variant="body-lg" className="text-slate-600 leading-relaxed">{data.subtitle}</Typography>
                    </div>
                    
@@ -338,7 +338,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
                                   </div>
                                )}
-                               <Typography variant="h3" as="h3" className="font-bold text-slate-900">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
+                               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
                                {requestStatus === 'success' ? (
                                   <Stack direction="horizontal" gap={4} align="center" className="text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
                                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="w-5 h-5 text-green-600" /></div>
@@ -477,7 +477,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       {headings.length > 0 ? (
                         headings.map((h) => (
                           <li key={h.id}>
-                             <a href={`#${h.id}`} className="block py-1 text-slate-500 hover:text-slate-900 hover:border-l-2 hover:border-transparent hover:border-primary-500 -ml-[17px] pl-4 transition-all line-clamp-1" title={h.text}>
+                             <a href={`#${h.id}`} className="block py-1 text-slate-500 hover:text-slate-900 dark:text-white hover:border-l-2 hover:border-transparent hover:border-primary-500 -ml-[17px] pl-4 transition-all line-clamp-1" title={h.text}>
                                 {h.text}
                              </a>
                           </li>
@@ -486,7 +486,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                         <li className="text-slate-400 italic text-xs">No sections detected</li>
                       )}
                       {activeDocId === 'data-rights' && (
-                        <li><a href="#request-form" className="block py-1 text-slate-500 hover:text-slate-900">Request Form</a></li>
+                        <li><a href="#request-form" className="block py-1 text-slate-500 hover:text-slate-900 dark:text-white">Request Form</a></li>
                       )}
                    </ul>
                 </div>

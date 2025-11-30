@@ -48,7 +48,7 @@ const PreferencesPage: React.FC = () => {
                         />
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
-                       <label htmlFor="pref_updates" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
+                       <label htmlFor="pref_updates" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
                           <Shield className="w-4 h-4 text-green-600" aria-hidden="true" /> Product Updates & Alerts
                        </label>
                        <Typography variant="body" className="text-slate-500">Info fitur baru, jadwal maintenance, dan patch keamanan. (Disarankan)</Typography>
@@ -67,7 +67,7 @@ const PreferencesPage: React.FC = () => {
                         />
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
-                       <label htmlFor="pref_digest" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
+                       <label htmlFor="pref_digest" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
                           <Mail className="w-4 h-4 text-blue-600" aria-hidden="true" /> BizOps Digest
                        </label>
                        <Typography variant="body" className="text-slate-500">Artikel blog pilihan, tips manajemen, dan regulasi terbaru (Weekly).</Typography>
@@ -85,7 +85,7 @@ const PreferencesPage: React.FC = () => {
                         />
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
-                       <label htmlFor="pref_promo" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
+                       <label htmlFor="pref_promo" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
                           <Bell className="w-4 h-4 text-amber-600" aria-hidden="true" /> Marketing Promo
                        </label>
                        <Typography variant="body" className="text-slate-500">Undangan webinar eksklusif dan penawaran diskon khusus.</Typography>
@@ -100,15 +100,15 @@ const PreferencesPage: React.FC = () => {
               <div className="flex gap-6" role="radiogroup" aria-label="Email frequency">
                  <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_daily" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
-                    <label htmlFor="freq_daily" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Harian</label>
+                    <label htmlFor="freq_daily" className="ml-3 block text-sm font-medium leading-6 text-slate-900 dark:text-white cursor-pointer">Harian</label>
                  </Stack>
                  <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_weekly" name="freq" type="radio" defaultChecked className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
-                    <label htmlFor="freq_weekly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Mingguan</label>
+                    <label htmlFor="freq_weekly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 dark:text-white cursor-pointer">Mingguan</label>
                  </Stack>
                  <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_monthly" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
-                    <label htmlFor="freq_monthly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Bulanan</label>
+                    <label htmlFor="freq_monthly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 dark:text-white cursor-pointer">Bulanan</label>
                  </Stack>
               </div>
            </div>

@@ -60,7 +60,7 @@ const TrustPage: React.FC = () => {
              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white border-none font-bold shadow-lg shadow-emerald-900/20 w-full sm:w-auto">
                Download Security Whitepaper <Download className="w-4 h-4 ml-2" />
              </Button>
-             <Button size="lg" variant="outline" className="border-slate-700 text-white hover:bg-white/10 w-full sm:w-auto">
+             <Button size="lg" variant="outline" className="border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 w-full sm:w-auto">
                Laporkan Celah Keamanan <AlertTriangle className="w-4 h-4 ml-2" />
              </Button>
           </motion.div>

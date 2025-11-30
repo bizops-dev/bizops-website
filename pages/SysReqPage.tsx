@@ -23,7 +23,7 @@ const SysReqPage: React.FC = () => {
 
         {/* Server Req */}
         <div className="mb-16">
-           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Server className="w-6 h-6 text-slate-600" /></div>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><div className="p-2 bg-slate-100 rounded-lg"><Server className="w-6 h-6 text-slate-600" /></div>
               Server Requirements (On-Premise)</Typography>
            <div className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
               <table className="w-full text-left">
@@ -36,7 +36,7 @@ const SysReqPage: React.FC = () => {
                  <tbody className="divide-y divide-slate-200">
                     {sysReqData.server.map((req, idx) => (
                        <tr key={idx} className="bg-white">
-                          <td className="px-6 py-4 font-medium text-slate-900 w-1/3">{req.item}</td>
+                          <td className="px-6 py-4 font-medium text-slate-900 dark:text-white w-1/3">{req.item}</td>
                           <td className="px-6 py-4 text-slate-600">{req.spec}</td>
                        </tr>
                     ))}
@@ -47,12 +47,12 @@ const SysReqPage: React.FC = () => {
 
         {/* Client Req */}
         <div className="mb-16">
-           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Monitor className="w-6 h-6 text-slate-600" /></div>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><div className="p-2 bg-slate-100 rounded-lg"><Monitor className="w-6 h-6 text-slate-600" /></div>
               Client Requirements (End-User)</Typography>
            <Grid cols={3} gap={6}>
               {sysReqData.client.map((req, idx) => (
                  <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{req.item}</Typography>
                     <Typography variant="caption" className="text-slate-600 leading-relaxed">{req.spec}</Typography>
                     {req.note && (
                        <Stack direction="horizontal" gap={1} align="center" className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">
@@ -66,7 +66,7 @@ const SysReqPage: React.FC = () => {
 
         {/* Network */}
         <div className="mb-16">
-           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
               Network Configuration (Firewall)</Typography>
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <Stack direction="vertical" gap={4}>
@@ -76,7 +76,7 @@ const SysReqPage: React.FC = () => {
                           {net.port}
                        </div>
                        <div>
-                          <div className="font-bold text-slate-900 text-sm mb-1">{net.dir}</div>
+                          <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">{net.dir}</div>
                           <Typography variant="caption" className="text-slate-600">{net.desc}</Typography>
                        </div>
                     </div>
