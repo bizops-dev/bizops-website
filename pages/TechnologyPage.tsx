@@ -26,7 +26,7 @@ const TechnologyPage: React.FC = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline-white" className="mb-8">Engineering & Architecture</Badge>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight leading-tight font-display">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight leading-tight">
             Arsitektur Enterprise <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary-400">Tanpa Kompromi.</span>
           </h1>
@@ -233,9 +233,9 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <span className="ml-2 text-xs text-slate-500 font-mono">sales_invoice.json (DocType)</span>
+                  <span className="ml-2 text-xs text-slate-500">sales_invoice.json (DocType)</span>
                </div>
-               <pre className="text-xs font-mono text-blue-300 overflow-x-auto">
+               <pre className="text-xs text-blue-300 overflow-x-auto">
 {`{
   "doctype": "DocType",
   "name": "Sales Invoice",
@@ -341,7 +341,7 @@ const TechnologyPage: React.FC = () => {
                   <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                      Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.
                   </p>
-                  <div className="bg-slate-100 dark:bg-slate-900 p-3 rounded font-mono text-xs text-slate-600 dark:text-slate-400">
+                  <div className="bg-slate-100 dark:bg-slate-900 p-3 rounded text-xs text-slate-600 dark:text-slate-400">
                      GET /api/resource/Invoice?filters=[["status","=","Overdue"]]
                   </div>
                </div>
@@ -519,7 +519,7 @@ const TechnologyPage: React.FC = () => {
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                      Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".
                   </p>
-                  <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500 font-mono">
+                  <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Isolated Environments</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Easy Versioning</li>
                   </ul>
@@ -533,7 +533,7 @@ const TechnologyPage: React.FC = () => {
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                      Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.
                   </p>
-                  <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500 font-mono">
+                  <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> No Vendor Lock-in</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Horizontal Scaling</li>
                   </ul>

@@ -73,11 +73,11 @@ const AutomationAIPage: React.FC = () => {
                         <div className="flex gap-1"><div className="w-2 h-2 bg-red-400 rounded-full"></div><div className="w-2 h-2 bg-yellow-400 rounded-full"></div><div className="w-2 h-2 bg-green-400 rounded-full"></div></div>
                      </div>
                      <div className="space-y-3 text-xs">
-                        <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-mono">IF Stock &lt; 10</div>
+                        <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-bold">IF Stock &lt; 10</div>
                         <div className="flex justify-center"><ArrowRight className="w-4 h-4 text-slate-400 rotate-90" /></div>
-                        <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 font-mono">THEN Create PR</div>
+                        <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 font-bold">THEN Create PR</div>
                         <div className="flex justify-center"><ArrowRight className="w-4 h-4 text-slate-400 rotate-90" /></div>
-                        <div className="p-2 bg-green-50 dark:bg-green-900/30 rounded border border-green-100 dark:border-green-800 text-green-700 dark:text-green-300 font-mono">THEN Email Vendor</div>
+                        <div className="p-2 bg-green-50 dark:bg-green-900/30 rounded border border-green-100 dark:border-green-800 text-green-700 dark:text-green-300 font-bold">THEN Email Vendor</div>
                      </div>
                   </div>
                </div>

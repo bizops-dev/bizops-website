@@ -173,7 +173,7 @@ const ServicesPage: React.FC = () => {
                            </div>
                            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1 flex flex-col md:flex-row items-center md:items-start gap-2">
                               {item.title}
-                              <span className="text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span>
+                              <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span>
                            </h4>
                            <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
                        </SpotlightCard>

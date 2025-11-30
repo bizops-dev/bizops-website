@@ -76,7 +76,7 @@ const SysReqPage: React.FC = () => {
               <div className="space-y-4">
                  {sysReqData.network.map((net, idx) => (
                     <div key={idx} className="flex items-start gap-4 pb-4 border-b border-slate-100 last:border-0 last:pb-0">
-                       <div className="font-mono bg-slate-100 px-3 py-1 rounded text-sm font-bold text-slate-700 min-w-[100px] text-center">
+                       <div className="bg-slate-100 px-3 py-1 rounded text-sm font-bold text-slate-700 min-w-[100px] text-center">
                           {net.port}
                        </div>
                        <div>
