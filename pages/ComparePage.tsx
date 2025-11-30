@@ -5,6 +5,7 @@ import { comparisonsData } from '../data/comparisonData';
 import Button from '../components/Button';
 import { X, Check, XCircle, CheckCircle, ArrowRight, Layers, Smartphone, Server } from 'lucide-react';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 const ComparePage: React.FC = () => {
   const { competitorId } = useParams<{ competitorId: string }>();
@@ -14,7 +15,7 @@ const ComparePage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
         <SEO title="Comparison Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Comparison Not Found</h1>
+        <Typography variant="h1" as="h1">Comparison Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
       </div>
     );
@@ -81,7 +82,7 @@ const ComparePage: React.FC = () => {
                      </h2>
                      <p className="text-lg text-slate-300 mb-8">{data.verdict}</p>
                      <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-6">
-                        <h3 className="font-bold text-primary-400 mb-2">Key Takeaways:</h3>
+                        <Typography variant="h3" as="h3">Key Takeaways:</Typography>
                         <ul className="space-y-2 leading-relaxed">
                           {data.limitations?.map((lim: string, i: number) => (
                             <li key={i} className="flex items-start gap-2">
@@ -158,7 +159,7 @@ const ComparePage: React.FC = () => {
 
         {/* Verdict & CTA */}
         <div className="max-w-4xl mx-auto text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
-           <h2 className="text-2xl font-bold text-slate-900 mb-4">The Verdict</h2>
+           <Typography variant="h2" as="h2">The Verdict</Typography>
            <p className="text-lg text-slate-600 mb-8 italic leading-relaxed">"{data.verdict}"</p>
            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/demo">

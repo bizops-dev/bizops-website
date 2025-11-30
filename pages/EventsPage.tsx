@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import OptimizedImage from '../components/OptimizedImage';
+import Typography from '../components/Typography';
 
 const EventsPage: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -249,7 +250,7 @@ const EventsPage: React.FC = () => {
            <div className="relative z-10">
               <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                  <div>
-                    <h2 className="text-3xl font-bold mb-4 leading-tight">On-Demand Library</h2>
+                    <Typography variant="h2" as="h2">On-Demand Library</Typography>
                     <p className="text-slate-400 max-w-xl text-lg">
                        Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.
                     </p>
@@ -308,7 +309,7 @@ const EventsPage: React.FC = () => {
               </div>
               
               <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
-                 <h3 className="text-xl font-bold mb-2">Unlock Full Access</h3>
+                 <Typography variant="h3" as="h3">Unlock Full Access</Typography>
                  <p className="text-sm text-slate-400 mb-6">Dapatkan akses ke 50+ jam materi pembelajaran premium.</p>
                  <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />

@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import OptimizedImage from '../components/OptimizedImage';
+import Typography from '../components/Typography';
 
 const teamMembers = [
   {
@@ -104,7 +105,7 @@ const AboutPage: React.FC = () => {
       <section className="py-24 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 md:mb-24">
-               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Our Origin Story</h2>
+               <Typography variant="h2" as="h2">Our Origin Story</Typography>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
                   Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.
                </p>
@@ -216,7 +217,7 @@ const AboutPage: React.FC = () => {
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" /> The Task Force
                </div>
-               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Meet the Builders</h2>
+               <Typography variant="h2" as="h2">Meet the Builders</Typography>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
                   Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.
                </p>
@@ -374,7 +375,7 @@ const AboutPage: React.FC = () => {
                         <div className="w-16 h-16 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center mb-8 border border-white/10">
                            <Target className="w-8 h-8 text-red-400" />
                         </div>
-                        <h3 className="text-3xl font-bold mb-6">Engineering First DNA</h3>
+                        <Typography variant="h3" as="h3">Engineering First DNA</Typography>
                         <p className="text-slate-300 mb-10 text-lg leading-relaxed font-light">
                            Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
                            <br/><br/>

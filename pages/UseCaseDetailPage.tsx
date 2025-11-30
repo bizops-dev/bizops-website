@@ -19,6 +19,7 @@ import {
   Users2,
   MapPin
 } from 'lucide-react';
+import Typography from '../components/Typography';
 
 // --- COLOR SYSTEM MAPPING (FIX FOR TAILWIND DYNAMIC CLASSES) ---
 const COLOR_THEMES: Record<string, {
@@ -251,7 +252,7 @@ const UseCaseDetailPage: React.FC = () => {
         <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse">
           <AlertTriangle className="w-10 h-10" />
         </div>
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Case Study Not Found</h1>
+        <Typography variant="h1" as="h1">Case Study Not Found</Typography>
         <Link to="/use-cases">
           <Button variant="outline" className="mt-8">Back to Library</Button>
         </Link>
@@ -401,7 +402,7 @@ const UseCaseDetailPage: React.FC = () => {
                       <Icon className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Custom Implementation</h3>
+                      <Typography variant="h3" as="h3">Custom Implementation</Typography>
                       <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                         {data.solution}
                       </p>
@@ -494,7 +495,7 @@ const UseCaseDetailPage: React.FC = () => {
         <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">More Success Stories</h2>
+              <Typography variant="h2" as="h2">More Success Stories</Typography>
               <Link to="/use-cases" className="text-primary-600 dark:text-primary-400 font-bold hover:underline flex items-center gap-1">
                 Lihat Semua <ArrowRight className="w-4 h-4" />
               </Link>

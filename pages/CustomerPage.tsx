@@ -6,6 +6,7 @@ import { Quote, AlertTriangle, CheckCircle2, ArrowRight, TrendingUp, Building2, 
 import SEO from '../components/SEO';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Section from '../components/Section';
+import Typography from '../components/Typography';
 
 import CardSlider from '../components/CardSlider';
 
@@ -226,7 +227,7 @@ const CustomerPage: React.FC = () => {
       {/* --- CTA SECTION --- */}
       <section className="bg-[#0B1120] py-24 relative overflow-hidden text-white">
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Join the Revolution</h2>
+            <Typography variant="h2" as="h2">Join the Revolution</Typography>
             <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
                Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.
             </p>

@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { Input } from '../components/Form';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const ComingSoonPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -69,7 +70,7 @@ const ComingSoonPage: React.FC = () => {
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400">
                    <Bell className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-slate-900 dark:text-white mb-1">Terima Kasih!</h3>
+                <Typography variant="h3" as="h3">Terima Kasih!</Typography>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Kami akan memberi tahu Anda segera setelah fitur ini siap.</p>
              </motion.div>
            ) : (

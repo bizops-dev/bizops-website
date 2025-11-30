@@ -23,6 +23,7 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { logger } from '../utils/logger';
+import Typography from '../components/Typography';
 
 // Pricing Tiers for Comparison
 const PRICING_TIERS = [
@@ -269,7 +270,7 @@ const ROIPage: React.FC = () => {
                       </div>
                       <span className="text-xs font-bold bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Soft Savings</span>
                     </div>
-                    <h3 className="text-slate-400 text-xs font-bold uppercase tracking-wide mb-1">Nilai Produktivitas</h3>
+                    <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <p className="text-xs text-slate-500 mt-2">Efisiensi {efficiencyRate}% dari {adminCount} staf.</p>
                  </div>
@@ -282,7 +283,7 @@ const ROIPage: React.FC = () => {
                       </div>
                       <span className="text-xs font-bold bg-amber-500/10 text-amber-400 px-2 py-1 rounded">Hard Savings</span>
                     </div>
-                    <h3 className="text-slate-400 text-xs font-bold uppercase tracking-wide mb-1">Penghematan Lembur</h3>
+                    <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <p className="text-xs text-slate-500 mt-2">Mengurangi 90% lembur manual.</p>
                  </div>
@@ -295,7 +296,7 @@ const ROIPage: React.FC = () => {
                       </div>
                       <span className="text-xs font-bold bg-red-500/10 text-red-400 px-2 py-1 rounded">Risk Avoidance</span>
                     </div>
-                    <h3 className="text-slate-400 text-xs font-bold uppercase tracking-wide mb-1">Loss Prevention</h3>
+                    <Typography variant="h3" as="h3">Loss Prevention</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <p className="text-xs text-slate-500 mt-2">Mengurangi 80% risiko kebocoran.</p>
                  </div>
@@ -308,7 +309,7 @@ const ROIPage: React.FC = () => {
                       </div>
                       <span className="text-xs font-bold bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Hard Savings</span>
                     </div>
-                    <h3 className="text-slate-400 text-xs font-bold uppercase tracking-wide mb-1">Tech Cost Reduction</h3>
+                    <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <p className="text-xs text-slate-500 mt-2">Biaya sistem lama yang dihapus.</p>
                  </div>
@@ -318,7 +319,7 @@ const ROIPage: React.FC = () => {
               <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden text-center md:text-left">
                  <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="flex-1">
-                       <h2 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Total Penghematan Tahunan</h2>
+                       <Typography variant="h2" as="h2">Total Penghematan Tahunan</Typography>
                        <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                           {formatCompactCurrency(annualSavings)}
                        </div>
@@ -370,7 +371,7 @@ const ROIPage: React.FC = () => {
                      <AlertTriangle className="w-4 h-4" />
                   </div>
                   <div>
-                     <h4 className="font-bold text-slate-300 text-sm">Catatan Analis</h4>
+                     <Typography variant="h4" as="h4">Catatan Analis</Typography>
                      <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                         Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.
                      </p>
@@ -401,7 +402,7 @@ const ROIPage: React.FC = () => {
                   <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <FileText className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Simpan Kalkulasi ROI</h3>
+                  <Typography variant="h3" as="h3">Simpan Kalkulasi ROI</Typography>
                   <p className="text-sm text-slate-400">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</p>
                 </div>
 

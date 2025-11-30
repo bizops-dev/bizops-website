@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { BarChart2, PieChart, FileBarChart, Calendar, Filter } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import Typography from '../components/Typography';
 
 const AnalyticsPage: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const AnalyticsPage: React.FC = () => {
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-6">
                      <PieChart className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Real-time Dashboard</h3>
+                  <Typography variant="h3" as="h3">Real-time Dashboard</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                      Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.
                   </p>
@@ -47,7 +48,7 @@ const AnalyticsPage: React.FC = () => {
                   <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center mb-6">
                      <Filter className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Drag-and-Drop Report Builder</h3>
+                  <Typography variant="h3" as="h3">Drag-and-Drop Report Builder</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                      Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.
                   </p>
@@ -57,7 +58,7 @@ const AnalyticsPage: React.FC = () => {
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center mb-6">
                      <Calendar className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Auto-Schedule Email</h3>
+                  <Typography variant="h3" as="h3">Auto-Schedule Email</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                      Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.
                   </p>

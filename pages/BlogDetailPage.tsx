@@ -20,6 +20,7 @@ import {
   Rocket
 } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
+import Typography from '../components/Typography';
 
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -79,7 +80,7 @@ const BlogDetailPage: React.FC = () => {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950">
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Article Not Found</h1>
+        <Typography variant="h1" as="h1">Article Not Found</Typography>
         <Link to="/blog"><Button variant="primary">Back to Insights</Button></Link>
       </div>
     );
@@ -254,7 +255,7 @@ const BlogDetailPage: React.FC = () => {
 
                      {/* 2. Author Profile */}
                      <div>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Author</h3>
+                        <Typography variant="h3" as="h3">Author</Typography>
                         <div className="flex items-center gap-4 mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
                               <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
@@ -277,7 +278,7 @@ const BlogDetailPage: React.FC = () => {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-[50px] group-hover:bg-blue-600/30 transition-all"></div>
                         <div className="relative z-10">
                            <BookOpen className="w-8 h-8 text-blue-400 mb-4" />
-                           <h3 className="text-lg font-bold mb-2">Weekly Intelligence</h3>
+                           <Typography variant="h3" as="h3">Weekly Intelligence</Typography>
                            <p className="text-slate-400 text-sm mb-6">Strategic insights for leaders.</p>
                            <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none rounded-xl font-bold">Subscribe</Button>
@@ -296,7 +297,7 @@ const BlogDetailPage: React.FC = () => {
             <div className="flex items-center justify-between mb-12">
                <div>
                   <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Related Articles</h2>
+                  <Typography variant="h2" as="h2">Related Articles</Typography>
                </div>
                <Link to="/blog" className="hidden md:flex items-center gap-2 text-slate-600 hover:text-blue-600 font-bold transition-colors">
                   View All <ArrowRight className="w-4 h-4" />

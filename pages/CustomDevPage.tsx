@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
+import Typography from '../components/Typography';
 
 // --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -144,7 +145,7 @@ const CustomDevPage: React.FC = () => {
                        <div className="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg">
                           <Code className="w-7 h-7" />
                        </div>
-                       <h3 className="text-xl font-bold text-slate-900 dark:text-white">Why Go Custom?</h3>
+                       <Typography variant="h3" as="h3">Why Go Custom?</Typography>
                     </div>
                     
                     <div className="space-y-6">
@@ -171,8 +172,8 @@ const CustomDevPage: React.FC = () => {
          <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                <div>
-                  <h2 className="text-sm font-bold tracking-widest text-slate-500 uppercase mb-3">Real World Impact</h2>
-                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Solved by Custom Dev</h3>
+                  <Typography variant="h2" as="h2">Real World Impact</Typography>
+                  <Typography variant="h3" as="h3">Solved by Custom Dev</Typography>
                </div>
                <Link to="/use-cases">
                  <Button variant="ghost" className="text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 gap-2">

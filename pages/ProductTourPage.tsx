@@ -16,6 +16,7 @@ import SEO from '../components/SEO';
 import Badge from '../components/Badge';
 import OptimizedImage from '../components/OptimizedImage';
 import CardSlider from '../components/CardSlider';
+import Typography from '../components/Typography';
 
 // --- TYPES ---
 type ScenarioType = 'sales' | 'manager' | 'warehouse' | 'employee' | 'finance' | 'ceo';
@@ -256,7 +257,7 @@ const ProductTourPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-slate-950/50 border-t border-slate-900 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Mengapa Kami Buat Simulasi Ini?</h2>
+            <Typography variant="h2" as="h2">Mengapa Kami Buat Simulasi Ini?</Typography>
             <p className="text-slate-400 max-w-2xl mx-auto">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</p>
           </div>
           
@@ -265,7 +266,7 @@ const ProductTourPage: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 ring-1 ring-blue-500/30">
                  <Zap className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Zero-Setup Experience</h3>
+              <Typography variant="h3" as="h3">Zero-Setup Experience</Typography>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Tidak perlu menunggu tim IT melakukan instalasi server. Cukup klik dan rasakan pengalamannya langsung di browser.
               </p>
@@ -274,7 +275,7 @@ const ProductTourPage: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5 ring-1 ring-purple-500/30">
                  <ShieldCheck className="w-6 h-6 text-purple-400" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Realistic Workflows</h3>
+              <Typography variant="h3" as="h3">Realistic Workflows</Typography>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Skenario yang Anda jalankan adalah 100% alur kerja asli yang digunakan oleh klien-klien enterprise kami setiap hari.
               </p>
@@ -283,7 +284,7 @@ const ProductTourPage: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5 ring-1 ring-emerald-500/30">
                  <Globe className="w-6 h-6 text-emerald-400" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Unified Ecosystem</h3>
+              <Typography variant="h3" as="h3">Unified Ecosystem</Typography>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Lihat bagaimana data dari Sales (Mobile) langsung terhubung ke Finance (Web) dan Gudang tanpa jeda.
               </p>
@@ -418,7 +419,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-full flex items-center justify-center mb-6 ring-1 ring-green-500/30 animate-bounce-slow">
                <Check className="w-10 h-10 md:w-12 md:h-12 text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Task Completed!</h3>
+            <Typography variant="h3" as="h3">Task Completed!</Typography>
             <p className="text-slate-400 mb-8 max-w-xs mx-auto text-sm leading-relaxed">
                Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.
             </p>
@@ -526,7 +527,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <FileText className="w-10 h-10 text-primary-500 relative z-10" />
                   </div>
                   <div>
-                     <h3 className="font-bold text-white text-xl mb-2">Quotation Created!</h3>
+                     <Typography variant="h3" as="h3">Quotation Created!</Typography>
                      <p className="text-sm text-slate-500">QT-2023-088 siap dikirim.</p>
                   </div>
                   
@@ -567,7 +568,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      
                      <div className="bg-slate-800/30 p-4 md:p-6 rounded-2xl border border-slate-700/50 h-48 md:h-64 flex flex-col relative overflow-hidden">
                         <div className="flex justify-between items-center mb-4 md:mb-6">
-                           <h4 className="font-bold text-white text-xs md:text-sm">Monthly Performance</h4>
+                           <Typography variant="h4" as="h4">Monthly Performance</Typography>
                            <div className="flex gap-2">
                               <div className="w-2 h-2 rounded-full bg-primary-500"></div>
                               <div className="w-2 h-2 rounded-full bg-slate-600"></div>
@@ -612,7 +613,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <div className="p-4 md:p-6 border-b border-slate-700 flex justify-between items-center bg-slate-800/50">
                         <div className="flex items-center gap-3">
                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500"><FileText className="w-4 h-4"/></div>
-                           <h3 className="font-bold text-base md:text-lg text-white">PO-2023-01</h3>
+                           <Typography variant="h3" as="h3">PO-2023-01</Typography>
                         </div>
                         <X className="w-5 h-5 text-slate-400 cursor-pointer hover:text-white" onClick={onReset} />
                      </div>
@@ -677,7 +678,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <div className="p-4 md:p-6 space-y-4 md:space-y-6 h-full flex flex-col">
                   <div className="flex justify-between items-end">
                      <div>
-                        <h2 className="text-xl md:text-2xl font-bold text-white mb-1">Bank Reconciliation</h2>
+                        <Typography variant="h2" as="h2">Bank Reconciliation</Typography>
                         <p className="text-slate-400 text-xs md:text-sm">Match bank statements with system vouchers.</p>
                      </div>
                      <div className="text-right">
@@ -755,7 +756,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   
                   <div className="max-w-md text-center">
-                     <h3 className="text-lg md:text-xl font-bold text-white mb-2">AI Suggestion Found</h3>
+                     <Typography variant="h3" as="h3">AI Suggestion Found</Typography>
                      <p className="text-slate-400 text-xs md:text-sm mb-6">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</p>
                      <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 shadow-lg shadow-emerald-900/50 border-none">Confirm Match</Button>
                   </div>
@@ -877,7 +878,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-4">
                      <FileCheck className="w-8 h-8 text-blue-400" />
                   </div>
-                  <h3 className="font-bold text-white text-lg">Report Downloaded</h3>
+                  <Typography variant="h3" as="h3">Report Downloaded</Typography>
                   <p className="text-sm text-slate-500 mb-6">Financial_Report_Oct.pdf saved to device.</p>
                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
@@ -906,7 +907,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <div className="absolute bottom-4 text-xs text-slate-500">Tap to Scan</div>
                   </div>
                   <div>
-                     <h3 className="text-xl font-bold mb-1">Ready to Receive</h3>
+                     <Typography variant="h3" as="h3">Ready to Receive</Typography>
                      <p className="text-slate-400 text-sm">Arahkan kamera ke barcode barang masuk.</p>
                   </div>
                </div>
@@ -951,7 +952,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                    <div className="w-24 h-24 rounded-full bg-green-500 flex items-center justify-center mb-6 shadow-[0_0_50px_rgba(34,197,94,0.5)] animate-scale-in">
                       <Check className="w-12 h-12 text-white" />
                    </div>
-                   <h3 className="text-2xl font-bold text-white">Stock Updated</h3>
+                   <Typography variant="h3" as="h3">Stock Updated</Typography>
                    <p className="text-slate-400 mt-2 mb-8">Inventory Level: 150 PCS</p>
                    <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
@@ -1029,7 +1030,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="w-full h-0.5 bg-pink-500 shadow-[0_0_10px_#ec4899] animate-[scan_1.5s_ease-in-out_infinite]"></div>
                      </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Verifying Face ID...</h3>
+                  <Typography variant="h3" as="h3">Verifying Face ID...</Typography>
                   <p className="text-sm text-slate-500">Please look at the camera</p>
                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 2000); }}></div>
                </div>
@@ -1040,7 +1041,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="w-24 h-24 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(236,72,153,0.4)] animate-scale-in">
                      <Check className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Clock In Success!</h3>
+                  <Typography variant="h3" as="h3">Clock In Success!</Typography>
                   <p className="text-slate-400 mb-6">Recorded: 08:46:12 AM</p>
                   <div className="bg-slate-900 px-4 py-2 rounded-full text-xs font-bold text-slate-300 flex items-center gap-2 border border-slate-800">
                      <MapPin className="w-3 h-3 text-pink-500" /> Head Office, Jakarta

@@ -28,6 +28,7 @@ import CardSlider from '../components/CardSlider'; // Imported CardSlider
 import { StaggeredText } from '../components/ui/motion-text';
 import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS } from '../utils/animation';
+import Typography from '../components/Typography';
 
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
@@ -122,7 +123,7 @@ const PricingPage: React.FC = () => {
              {/* Plan 1: Business */}
              <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
                <div className="mb-6">
-                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Business</h3>
+                 <Typography variant="h3" as="h3">Business</Typography>
                  <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Pondasi digital yang kuat untuk startup & bisnis berkembang.</p>
                </div>
                
@@ -174,7 +175,7 @@ const PricingPage: React.FC = () => {
                </div>
                
                <div className="mb-6 mt-2">
-                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Growth</h3>
+                 <Typography variant="h3" as="h3">Growth</Typography>
                  <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
                </div>
 
@@ -310,7 +311,7 @@ const PricingPage: React.FC = () => {
         {/* --- TRUST SIGNALS GRID --- */}
         <div className="mb-32">
            <div className="text-center mb-12">
-             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Standar Keamanan Enterprise</h2>
+             <Typography variant="h2" as="h2">Standar Keamanan Enterprise</Typography>
            </div>
            <div className="max-w-7xl mx-auto px-4">
              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -349,7 +350,7 @@ const PricingPage: React.FC = () => {
                </p>
                
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800">
-                 <h4 className="font-bold text-slate-900 dark:text-white mb-2">Masih ada pertanyaan?</h4>
+                 <Typography variant="h4" as="h4">Masih ada pertanyaan?</Typography>
                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Tim konsultan kami siap membantu Anda.</p>
                  <div className="space-y-3">
                    <a href="mailto:sales@bizops.id" className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">

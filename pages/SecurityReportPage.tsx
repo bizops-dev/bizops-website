@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import { Shield, Lock, AlertTriangle, CheckCircle, FileText, Terminal, Copy } from 'lucide-react';
 import Button from '../components/Button';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const SecurityReportPage: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -97,11 +98,11 @@ mQINBF... (Truncated for display) ...
       {/* Report Form & PGP */}
       <section className="py-12 px-4 max-w-4xl mx-auto pb-32">
         <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12">
-          <h2 className="text-2xl font-bold text-white mb-8">Cara Melaporkan</h2>
+          <Typography variant="h2" as="h2">Cara Melaporkan</Typography>
           
           <div className="space-y-8">
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Via Email Terenkripsi</h4>
+              <Typography variant="h4" as="h4">Via Email Terenkripsi</Typography>
               <p className="text-slate-400 text-sm mb-4">
                 Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.
               </p>
@@ -119,7 +120,7 @@ mQINBF... (Truncated for display) ...
             </div>
 
             <div className="border-t border-slate-800 pt-8">
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Laporan Cepat (Tanpa Enkripsi)</h4>
+              <Typography variant="h4" as="h4">Laporan Cepat (Tanpa Enkripsi)</Typography>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input type="text" placeholder="Nama / Alias Peneliti" className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none" />

@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import { blogPosts, useCasesData, eventsData } from '../data/content';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
+import Typography from '../components/Typography';
 
 const ResourcesPage = () => {
   // Data extraction
@@ -113,7 +114,7 @@ const ResourcesPage = () => {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Latest Insights</h2>
+            <Typography variant="h2" as="h2">Latest Insights</Typography>
             <p className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</p>
           </div>
           <Link to="/blog" className="hidden sm:flex items-center text-primary-600 font-bold hover:underline">
@@ -174,7 +175,7 @@ const ResourcesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Ukur Kesiapan Digital Anda</h2>
+              <Typography variant="h2" as="h2">Ukur Kesiapan Digital Anda</Typography>
               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
                 Apakah perusahaan Anda siap untuk transformasi digital? Gunakan alat asesmen gratis kami untuk mendapatkan skor maturitas dan rekomendasi personal dalam 5 menit.
               </p>
@@ -224,7 +225,7 @@ const ResourcesPage = () => {
           {/* Success Stories Preview */}
           <div>
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Customer Success</h2>
+              <Typography variant="h2" as="h2">Customer Success</Typography>
               <Link to="/use-cases" className="text-primary-600 text-sm font-bold hover:underline">View All</Link>
             </div>
             <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800">
@@ -255,7 +256,7 @@ const ResourcesPage = () => {
           {/* Upcoming Events */}
           <div>
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Upcoming Events</h2>
+              <Typography variant="h2" as="h2">Upcoming Events</Typography>
               <Link to="/events" className="text-primary-600 text-sm font-bold hover:underline">View Calendar</Link>
             </div>
             <div className="space-y-4">

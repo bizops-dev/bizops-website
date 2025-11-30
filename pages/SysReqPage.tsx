@@ -5,6 +5,7 @@ import { Server, Monitor, Globe, Check, AlertCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
+import Typography from '../components/Typography';
 
 const SysReqPage: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const SysReqPage: React.FC = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">Spesifikasi Teknis</h1>
+           <Typography variant="h1" as="h1">Spesifikasi Teknis</Typography>
            <p className="text-lg text-slate-600">
               Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.
            </p>

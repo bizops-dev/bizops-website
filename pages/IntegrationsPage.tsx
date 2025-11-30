@@ -17,7 +17,7 @@ const IntegrationsPage: React.FC = () => {
         <div className="inline-flex p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
            <Plug className="w-8 h-8 text-primary-600" />
         </div>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">Ekosistem yang Saling Terhubung.</h1>
+        <Typography variant="h1" as="h1">Ekosistem yang Saling Terhubung.</Typography>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
            Jangan buang waktu membangun integrasi dari nol. Gunakan pustaka konektor siap pakai (Plug-and-Play) kami untuk menghubungkan BizOps dengan aplikasi bisnis populer.
         </p>
@@ -56,7 +56,7 @@ const IntegrationsPage: React.FC = () => {
          </div>
          
          <div className="mt-24 text-center bg-white p-12 rounded-2xl border border-slate-200 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Butuh Integrasi Khusus?</h2>
+            <Typography variant="h2" as="h2">Butuh Integrasi Khusus?</Typography>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
                Gunakan REST API standar kami untuk menghubungkan sistem legacy atau aplikasi custom internal Anda. Dokumentasi lengkap tersedia.
             </p>

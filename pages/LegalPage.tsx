@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, History, Lock, BrainCircuit, Phone, Printer, Share2, ChevronRight, CheckCircle, Menu, X, List } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import Typography from '../components/Typography';
 
 interface LegalPageProps {
   forcedDocId?: string;
@@ -127,7 +128,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
         <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mb-4">
             <FileText className="w-8 h-8 text-slate-400" />
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Document Not Found</h1>
+        <Typography variant="h1" as="h1">Document Not Found</Typography>
         <p className="text-slate-500 mb-6">The legal document you are looking for does not exist.</p>
         <Link to="/legal/privacy"><Button>Go to Privacy Policy</Button></Link>
       </div>
@@ -222,7 +223,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       className="bg-slate-50 rounded-xl border border-slate-200 shadow-inner overflow-hidden"
                    >
                       <div className="p-4 max-h-[40vh] overflow-y-auto">
-                         <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Jump to Section</h4>
+                         <Typography variant="h4" as="h4">Jump to Section</Typography>
                          <ul className="space-y-2">
                             {headings.map((h) => (
                               <li key={h.id}>
@@ -248,7 +249,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              <div className="lg:col-span-3 hidden lg:block">
                 <div className="sticky top-28 space-y-8">
                    <div>
-                      <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Legal Center</h3>
+                      <Typography variant="h3" as="h3">Legal Center</Typography>
                       <nav className="space-y-1">
                          {LEGAL_LINKS.map(link => (
                             <NavItem key={link.id} id={link.id} label={link.label} icon={link.icon} />
@@ -304,7 +305,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {activeDocId === 'data-rights' && (
                       <div className="space-y-8 animate-fade-in-up mb-12">
                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
-                            <h3 className="font-bold text-blue-900 text-lg mb-2">Data Subject Access Rights (DSAR)</h3>
+                            <Typography variant="h3" as="h3">Data Subject Access Rights (DSAR)</Typography>
                             <p className="text-blue-800 text-sm leading-relaxed">
                                Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").
                             </p>
@@ -317,7 +318,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                   <Download className="w-6 h-6" />
                                </div>
-                               <h4 className="font-bold text-slate-900 text-lg mb-2">Export My Data</h4>
+                               <Typography variant="h4" as="h4">Export My Data</Typography>
                                <p className="text-slate-600 text-sm flex-grow leading-relaxed">
                                   Unduh salinan lengkap profil, riwayat aktivitas, dan log akses Anda dalam format JSON/CSV.
                                </p>
@@ -329,7 +330,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                   <Trash2 className="w-6 h-6" />
                                </div>
-                               <h4 className="font-bold text-slate-900 text-lg mb-2">Delete Account</h4>
+                               <Typography variant="h4" as="h4">Delete Account</Typography>
                                <p className="text-slate-600 text-sm flex-grow leading-relaxed">
                                   Hapus permanen akun dan seluruh data pribadi Anda dari server kami.
                                </p>
@@ -386,7 +387,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {activeDocId === 'cookies' && (
                       <div className="mb-12 bg-slate-50 rounded-2xl border border-slate-200 p-8">
                          <div className="flex items-center justify-between mb-6">
-                            <h3 className="text-xl font-bold text-slate-900">Pengaturan Preferensi</h3>
+                            <Typography variant="h3" as="h3">Pengaturan Preferensi</Typography>
                             {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-fade-in"><CheckCircle className="w-4 h-4" /> Tersimpan</span>}
                          </div>
                          <div className="space-y-6">
@@ -394,7 +395,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Shield className="w-5 h-5 text-green-600" /></div>
                                <div className="flex-grow">
                                   <div className="flex items-center gap-3 mb-1">
-                                     <h4 className="font-bold text-slate-900">Strictly Necessary</h4>
+                                     <Typography variant="h4" as="h4">Strictly Necessary</Typography>
                                      <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded border border-green-200">REQUIRED</span>
                                   </div>
                                   <p className="text-sm text-slate-600 leading-relaxed">Wajib agar website berfungsi (login session, keamanan, load balancing).</p>
@@ -406,7 +407,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                             <div className="flex items-start gap-4 pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Cookie className="w-5 h-5 text-blue-600" /></div>
                                <div className="flex-grow">
-                                  <h4 className="font-bold text-slate-900 mb-1">Analytics & Performance</h4>
+                                  <Typography variant="h4" as="h4">Analytics & Performance</Typography>
                                   <p className="text-sm text-slate-600 leading-relaxed">Membantu kami memahami statistik kunjungan (Google Analytics) secara anonim.</p>
                                </div>
                                <button 
@@ -419,7 +420,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                             <div className="flex items-start gap-4">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Share2 className="w-5 h-5 text-amber-600" /></div>
                                <div className="flex-grow">
-                                  <h4 className="font-bold text-slate-900 mb-1">Marketing & Targeting</h4>
+                                  <Typography variant="h4" as="h4">Marketing & Targeting</Typography>
                                   <p className="text-sm text-slate-600 leading-relaxed">Untuk personalisasi konten iklan yang relevan (Meta Pixel, LinkedIn Insight).</p>
                                </div>
                                <button 
@@ -480,7 +481,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              {/* RIGHT SIDEBAR (TOC) - Desktop Only */}
              <div className="lg:col-span-2 hidden lg:block">
                 <div className="sticky top-28">
-                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2">On this page</h4>
+                   <Typography variant="h4" as="h4">On this page</Typography>
                    <ul className="space-y-1 text-sm border-l border-slate-200 pl-4">
                       {headings.length > 0 ? (
                         headings.map((h) => (

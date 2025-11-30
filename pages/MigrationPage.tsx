@@ -33,6 +33,7 @@ import {
 import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
+import Typography from '../components/Typography';
 
 import CardSlider from '../components/CardSlider';
 
@@ -388,7 +389,7 @@ const MigrationPage: React.FC = () => {
                                    <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                                       <FileSpreadsheet className="w-10 h-10 text-slate-400" />
                                    </div>
-                                   <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Upload Excel / CSV</h3>
+                                   <Typography variant="h3" as="h3">Upload Excel / CSV</Typography>
                                    <p className="text-sm text-slate-500 mb-8">
                                       Drag file ke sini atau klik tombol di bawah
                                    </p>
@@ -404,7 +405,7 @@ const MigrationPage: React.FC = () => {
                              {checkStatus === 'checking' && (
                                 <div className="py-12">
                                    <Loader2 className="w-12 h-12 text-blue-500 animate-spin mx-auto mb-6" />
-                                   <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2 animate-pulse">Menganalisis Struktur...</h3>
+                                   <Typography variant="h3" as="h3">Menganalisis Struktur...</Typography>
                                    <p className="text-sm text-slate-500 mb-6 bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded inline-block">
                                       {fileName}
                                    </p>
@@ -423,7 +424,7 @@ const MigrationPage: React.FC = () => {
                                    <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
                                       <CheckCircle className="w-10 h-10" />
                                    </div>
-                                   <h3 className="font-bold text-slate-900 dark:text-white text-xl mb-2">Struktur File Valid!</h3>
+                                   <Typography variant="h3" as="h3">Struktur File Valid!</Typography>
                                    <p className="text-sm text-slate-500 mb-8">
                                       File Anda siap untuk diimpor. Tidak ditemukan error kritis.
                                    </p>
@@ -448,7 +449,7 @@ const MigrationPage: React.FC = () => {
         {/* 4. NEW: SAMPLE DATA STRUCTURES */}
         <div id="templates" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-32">
            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Standar Format Data Migrasi</h2>
+              <Typography variant="h2" as="h2">Standar Format Data Migrasi</Typography>
               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                  Gunakan referensi kolom di bawah ini untuk mempersiapkan data Anda sebelum migrasi. Pastikan mengikuti urutan di bawah untuk kelancaran impor.
               </p>
@@ -545,7 +546,7 @@ const MigrationPage: React.FC = () => {
         {/* 5. INFORMATIONAL STRATEGIES (Replaces Downloads) */}
         <div id="strategies" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-32">
            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Strategi Migrasi Berdasarkan Sumber Data</h2>
+              <Typography variant="h2" as="h2">Strategi Migrasi Berdasarkan Sumber Data</Typography>
               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                  Setiap sistem asal memiliki tantangannya sendiri. Berikut adalah pendekatan teknis yang kami rekomendasikan untuk memastikan transisi yang mulus.
               </p>
@@ -588,7 +589,7 @@ const MigrationPage: React.FC = () => {
                                 </div>
                              </div>
                              <div>
-                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Tantangan Utama</h4>
+                                <Typography variant="h4" as="h4">Tantangan Utama</Typography>
                                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                    {item.challenge}
                                 </p>
@@ -602,7 +603,7 @@ const MigrationPage: React.FC = () => {
                                 </div>
                              </div>
                              <div>
-                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Solusi BizOps</h4>
+                                <Typography variant="h4" as="h4">Solusi BizOps</Typography>
                                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                    {item.solution}
                                 </p>
@@ -655,7 +656,7 @@ const MigrationPage: React.FC = () => {
                              </div>
                           </div>
                           <div>
-                             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Tantangan Utama</h4>
+                             <Typography variant="h4" as="h4">Tantangan Utama</Typography>
                              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 {item.challenge}
                              </p>
@@ -669,7 +670,7 @@ const MigrationPage: React.FC = () => {
                              </div>
                           </div>
                           <div>
-                             <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Solusi BizOps</h4>
+                             <Typography variant="h4" as="h4">Solusi BizOps</Typography>
                              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 {item.solution}
                              </p>
@@ -692,7 +693,7 @@ const MigrationPage: React.FC = () => {
         {/* 6. FAQ (Compact) */}
         <div className="max-w-3xl mx-auto px-4">
            <div className="text-center mb-10">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Pertanyaan Umum</h2>
+              <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
            </div>
            <div className="space-y-3">
               {migrationFaqs.slice(0, 4).map((faq, idx) => (
@@ -738,7 +739,7 @@ const MigrationPage: React.FC = () => {
          </div>
 
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Siap untuk Berpindah?</h2>
+            <Typography variant="h2" as="h2">Siap untuk Berpindah?</Typography>
             <p className="text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
                Setiap perusahaan memiliki kompleksitas data yang unik. Pilih pendekatan migrasi yang paling sesuai dengan sumber daya tim Anda.
             </p>
@@ -749,7 +750,7 @@ const MigrationPage: React.FC = () => {
                   <div className="w-14 h-14 bg-slate-700 rounded-2xl flex items-center justify-center mb-6">
                      <FileText className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Self-Managed</h3>
+                  <Typography variant="h3" as="h3">Self-Managed</Typography>
                   <p className="text-slate-400 mb-8 text-sm leading-relaxed flex-grow">
                      Cocok untuk tim dengan kemampuan teknis/IT internal. Gunakan dokumentasi lengkap dan tools otomatis kami.
                   </p>
@@ -777,7 +778,7 @@ const MigrationPage: React.FC = () => {
                   <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
                      <Headphones className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Expert Assisted</h3>
+                  <Typography variant="h3" as="h3">Expert Assisted</Typography>
                   <p className="text-blue-100 mb-8 text-sm leading-relaxed flex-grow">
                      Tim Data Specialist kami akan menangani cleansing, mapping, dan validasi data Anda. Garansi 0% data hilang.
                   </p>

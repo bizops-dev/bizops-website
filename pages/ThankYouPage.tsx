@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { CheckCircle, Download, Video, Linkedin } from 'lucide-react';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 const ThankYouPage: React.FC = () => {
   return (
@@ -15,14 +16,14 @@ const ThankYouPage: React.FC = () => {
            <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
         
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">Terima Kasih! Langkah Pertama Transformasi Dimulai.</h1>
+        <Typography variant="h1" as="h1">Terima Kasih! Langkah Pertama Transformasi Dimulai.</Typography>
         <p className="text-lg text-slate-600 mb-8 leading-relaxed">
            Tim Solution Architect kami telah menerima data permintaan Anda. Kami sedang menganalisis profil bisnis Anda dan akan menghubungi Anda via WhatsApp atau Email dalam waktu maksimal <strong>24 Jam Kerja</strong> (Senin-Jumat) untuk menjadwalkan sesi.
         </p>
         
         <div className="h-px bg-slate-100 w-full my-8"></div>
         
-        <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Sambil Menunggu, Para Pemimpin Bisnis Biasanya:</h3>
+        <Typography variant="h3" as="h3">Sambil Menunggu, Para Pemimpin Bisnis Biasanya:</Typography>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">

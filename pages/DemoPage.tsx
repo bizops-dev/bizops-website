@@ -7,6 +7,7 @@ import { Input, Select, Checkbox } from '../components/Form';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const DemoPage: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -106,7 +107,7 @@ const DemoPage: React.FC = () => {
         >
           <CheckCircle className="w-10 h-10 text-emerald-500" aria-hidden="true" />
         </motion.div>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">Mengalihkan ke WhatsApp...</h2>
+        <Typography variant="h2" as="h2">Mengalihkan ke WhatsApp...</Typography>
         <p className="text-slate-400 max-w-md mx-auto mb-10 text-lg">
           Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.
         </p>
@@ -193,7 +194,7 @@ const DemoPage: React.FC = () => {
                   className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl"
                 >
                   <div className="mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-2">Jadwalkan Sesi</h3>
+                    <Typography variant="h3" as="h3">Jadwalkan Sesi</Typography>
                     <p className="text-slate-400 text-sm">Isi detail di bawah untuk terhubung langsung dengan expert kami.</p>
                   </div>
 

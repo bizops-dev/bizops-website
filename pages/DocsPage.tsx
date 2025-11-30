@@ -155,7 +155,7 @@ const DocsPage: React.FC = () => {
                     <Terminal className="w-3 h-3" /> DEVELOPER HUB
                  </div>
                  
-                 <h2 className="text-3xl font-bold mb-6">Build with BizOps API</h2>
+                 <Typography variant="h2" as="h2">Build with BizOps API</Typography>
                  
                  <div className="flex items-center gap-4 mb-8">
                     <div className="relative">
@@ -244,7 +244,7 @@ const DocsPage: React.FC = () => {
         {/* --- COMMUNITY & SUPPORT --- */}
         <div>
            <div className="text-center mb-12">
-             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Still need help?</h2>
+             <Typography variant="h2" as="h2">Still need help?</Typography>
              <p className="text-slate-600 dark:text-slate-400">Our support team and community are here for you.</p>
            </div>
            
@@ -255,7 +255,7 @@ const DocsPage: React.FC = () => {
                        <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                           <MessageSquare className="w-8 h-8" />
                        </div>
-                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Developer Community</h3>
+                       <Typography variant="h3" as="h3">Developer Community</Typography>
                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                           Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.
                        </p>
@@ -268,7 +268,7 @@ const DocsPage: React.FC = () => {
                        <div className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                           <Zap className="w-8 h-8" />
                        </div>
-                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Feature Requests</h3>
+                       <Typography variant="h3" as="h3">Feature Requests</Typography>
                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                           Missing a feature? Submit a request or vote on our public roadmap.
                        </p>
@@ -281,7 +281,7 @@ const DocsPage: React.FC = () => {
                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                           <Shield className="w-8 h-8" />
                        </div>
-                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Premium Support</h3>
+                       <Typography variant="h3" as="h3">Premium Support</Typography>
                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                           Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.
                        </p>
@@ -297,7 +297,7 @@ const DocsPage: React.FC = () => {
                     <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                        <MessageSquare className="w-8 h-8" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Developer Community</h3>
+                    <Typography variant="h3" as="h3">Developer Community</Typography>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                        Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.
                     </p>
@@ -310,7 +310,7 @@ const DocsPage: React.FC = () => {
                     <div className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                        <Zap className="w-8 h-8" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Feature Requests</h3>
+                    <Typography variant="h3" as="h3">Feature Requests</Typography>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                        Missing a feature? Submit a request or vote on our public roadmap.
                     </p>
@@ -323,7 +323,7 @@ const DocsPage: React.FC = () => {
                     <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                        <Shield className="w-8 h-8" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Premium Support</h3>
+                    <Typography variant="h3" as="h3">Premium Support</Typography>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
                        Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.
                     </p>

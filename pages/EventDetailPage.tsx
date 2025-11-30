@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
+import Typography from '../components/Typography';
 
 const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,7 +28,7 @@ const EventDetailPage: React.FC = () => {
   if (!event) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Event Tidak Ditemukan</h1>
+        <Typography variant="h1" as="h1">Event Tidak Ditemukan</Typography>
         <p className="text-slate-600 dark:text-slate-400 mb-8">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</p>
         <Link to="/events">
           <Button>Kembali ke Events</Button>
@@ -132,10 +133,10 @@ const EventDetailPage: React.FC = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* About Event */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Tentang Event Ini</h2>
+              <Typography variant="h2" as="h2">Tentang Event Ini</Typography>
               <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
                 <p>Bergabunglah bersama kami dalam sesi eksklusif ini untuk mendalami strategi dan praktik terbaik dalam mengoptimalkan operasional bisnis Anda. Sesi ini dirancang khusus untuk para pemimpin bisnis, manajer operasional, dan profesional yang ingin meningkatkan efisiensi melalui teknologi.</p>
-                <h3 className="font-bold text-lg mt-6 mb-3 text-slate-900 dark:text-white">Apa yang Akan Anda Pelajari:</h3>
+                <Typography variant="h3" as="h3">Apa yang Akan Anda Pelajari:</Typography>
                 <ul className="space-y-3 list-none pl-0">
                   {event.benefits?.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -149,7 +150,7 @@ const EventDetailPage: React.FC = () => {
 
             {/* Agenda */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Agenda Sesi</h2>
+              <Typography variant="h2" as="h2">Agenda Sesi</Typography>
               <div className="space-y-6">
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
@@ -170,7 +171,7 @@ const EventDetailPage: React.FC = () => {
 
             {/* Speakers */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Pembicara</h2>
+              <Typography variant="h2" as="h2">Pembicara</Typography>
               <div className="grid md:grid-cols-2 gap-6">
                 {event.speakers?.map((speaker, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
@@ -199,7 +200,7 @@ const EventDetailPage: React.FC = () => {
                 
                 {!isSuccess ? (
                   <>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Amankan Kursi Anda</h3>
+                    <Typography variant="h3" as="h3">Amankan Kursi Anda</Typography>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
                       Slot terbatas. Pendaftaran gratis untuk profesional bisnis.
                     </p>
@@ -264,7 +265,7 @@ const EventDetailPage: React.FC = () => {
                     <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
                       <CheckCircle className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Pendaftaran Berhasil!</h3>
+                    <Typography variant="h3" as="h3">Pendaftaran Berhasil!</Typography>
                     <p className="text-slate-600 dark:text-slate-400 mb-6">
                       Terima kasih, {formState.name}.<br/>
                       Tiket akses dan detail event telah dikirim ke <strong>{formState.email}</strong>.

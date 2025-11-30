@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { Building, Network, Key, FileText, RefreshCw } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import Typography from '../components/Typography';
 
 const MultiCompanyPage: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const MultiCompanyPage: React.FC = () => {
                   <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 mx-auto md:mx-0">
                      <Key className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Unified Login & Access</h3>
+                  <Typography variant="h3" as="h3">Unified Login & Access</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                      Cukup satu <em>username</em> untuk mengakses data PT A, PT B, dan CV C. Pindah antar perusahaan semudah ganti saluran TV, namun hak akses data tetap terpisah secara ketat demi keamanan dan kerahasiaan antar unit.
                   </p>
@@ -47,7 +48,7 @@ const MultiCompanyPage: React.FC = () => {
                   <div className="w-16 h-16 bg-green-50 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-green-600 dark:text-green-400 mb-6 mx-auto md:mx-0">
                      <FileText className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Financial Consolidation</h3>
+                  <Typography variant="h3" as="h3">Financial Consolidation</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                      Lupakan proses 'VLOOKUP' Excel yang memusingkan di akhir bulan. BizOps menarik data Neraca dan Laba Rugi dari seluruh anak perusahaan dan menyajikannya dalam satu Laporan Konsolidasi Grup secara <em>real-time</em>.
                   </p>
@@ -57,7 +58,7 @@ const MultiCompanyPage: React.FC = () => {
                   <div className="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 mx-auto md:mx-0">
                      <RefreshCw className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Inter-Company Transactions</h3>
+                  <Typography variant="h3" as="h3">Inter-Company Transactions</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                      Otomatisasi transaksi internal. Saat PT A menjual barang ke PT B, sistem otomatis membuat <em>Sales Invoice</em> di pembukuan PT A dan <em>Purchase Invoice</em> di pembukuan PT B secara bersamaan. Hemat waktu input dan eliminasi selisih pencatatan.
                   </p>

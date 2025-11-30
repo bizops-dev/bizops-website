@@ -7,6 +7,7 @@ import { traceAction } from '../utils/telemetry';
 import { Link, useSearchParams } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import Typography from '../components/Typography';
 
 const PartnerApplyPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -82,7 +83,7 @@ const PartnerApplyPage: React.FC = () => {
         <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 animate-bounce shadow-lg">
           <CheckCircle className="w-12 h-12" aria-hidden="true" />
         </div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Aplikasi Diterima!</h2>
+        <Typography variant="h2" as="h2">Aplikasi Diterima!</Typography>
         <p className="text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
           Terima kasih atas minat Anda bergabung dengan Ekosistem BizOps. Partner Manager kami sedang meninjau profil bisnis Anda dan akan menghubungi dalam <strong>1-2 hari kerja</strong>.
         </p>
@@ -258,7 +259,7 @@ const PartnerApplyPage: React.FC = () => {
                {/* Process Timeline */}
                <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl"></div>
-                  <h3 className="text-xl font-bold mb-8 relative z-10">Next Steps</h3>
+                  <Typography variant="h3" as="h3">Next Steps</Typography>
                   
                   <div className="space-y-8 relative z-10">
                      <div className="flex gap-4 group">
@@ -267,7 +268,7 @@ const PartnerApplyPage: React.FC = () => {
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </div>
                         <div>
-                           <h4 className="font-bold text-sm group-hover:text-primary-300 transition-colors">Review (1-2 Hari)</h4>
+                           <Typography variant="h4" as="h4">Review (1-2 Hari)</Typography>
                            <p className="text-xs text-slate-400 mt-1 leading-relaxed">Tim Channel Manager memverifikasi legalitas & profil bisnis Anda.</p>
                         </div>
                      </div>
@@ -277,7 +278,7 @@ const PartnerApplyPage: React.FC = () => {
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </div>
                         <div>
-                           <h4 className="font-bold text-sm text-slate-300 group-hover:text-white transition-colors">Discovery Call</h4>
+                           <Typography variant="h4" as="h4">Discovery Call</Typography>
                            <p className="text-xs text-slate-500 mt-1 leading-relaxed">Diskusi skema kerjasama, demo panel admin, dan strategi go-to-market.</p>
                         </div>
                      </div>
@@ -286,7 +287,7 @@ const PartnerApplyPage: React.FC = () => {
                            <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">3</div>
                         </div>
                         <div>
-                           <h4 className="font-bold text-sm text-slate-300 group-hover:text-white transition-colors">Onboarding</h4>
+                           <Typography variant="h4" as="h4">Onboarding</Typography>
                            <p className="text-xs text-slate-500 mt-1 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</p>
                         </div>
                      </div>
@@ -295,7 +296,7 @@ const PartnerApplyPage: React.FC = () => {
 
                {/* Quick Contact */}
                <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg">
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Butuh Bantuan Cepat?</h4>
+                  <Typography variant="h4" as="h4">Butuh Bantuan Cepat?</Typography>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                      Ingin diskusi informal sebelum mendaftar resmi? Hubungi tim kemitraan kami langsung.
                   </p>

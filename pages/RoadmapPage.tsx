@@ -20,6 +20,7 @@ import {
   Filter,
   X
 } from 'lucide-react';
+import Typography from '../components/Typography';
 
 const RoadmapPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -130,7 +131,7 @@ const RoadmapPage: React.FC = () => {
               <div className="hidden md:block w-64 flex-shrink-0">
                  <div className="sticky top-28 space-y-8">
                     <div>
-                       <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Filter by Category</h3>
+                       <Typography variant="h3" as="h3">Filter by Category</Typography>
                        <div className="space-y-1">
                           {allTags.map(tag => (
                              <button
@@ -154,7 +155,7 @@ const RoadmapPage: React.FC = () => {
                     <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg">
                        <div className="relative z-10">
                           <Rocket className="w-8 h-8 text-blue-400 mb-4" />
-                          <h3 className="font-bold text-lg mb-2">Punya Ide Liar?</h3>
+                          <Typography variant="h3" as="h3">Punya Ide Liar?</Typography>
                           <p className="text-slate-400 text-xs mb-4 leading-relaxed">
                              Jangan ragu sampaikan kebutuhan unik bisnis Anda.
                           </p>
@@ -181,7 +182,7 @@ const RoadmapPage: React.FC = () => {
                           onClick={e => e.stopPropagation()}
                        >
                           <div className="flex justify-between items-center mb-6">
-                             <h3 className="font-bold text-lg">Filter Categories</h3>
+                             <Typography variant="h3" as="h3">Filter Categories</Typography>
                              <button onClick={() => setMobileFilterOpen(false)}><X className="w-5 h-5" /></button>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-6">
@@ -371,7 +372,7 @@ const RoadmapPage: React.FC = () => {
                           <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
                              <CheckCircle2 className="w-8 h-8" />
                           </div>
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Request Terkirim!</h3>
+                          <Typography variant="h3" as="h3">Request Terkirim!</Typography>
                           <p className="text-sm text-slate-500 dark:text-slate-400">
                              Terima kasih atas masukan Anda. Tim produk kami akan segera mereview ide ini.
                           </p>

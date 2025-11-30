@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { Globe, ShoppingBag, Truck, Users } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import Typography from '../components/Typography';
 
 const PortalsPage: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const PortalsPage: React.FC = () => {
                <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
                   <div className="bg-blue-600 p-8 text-white">
                      <ShoppingBag className="w-10 h-10 mb-4" />
-                     <h3 className="text-2xl font-bold">B2B Customer Portal</h3>
+                     <Typography variant="h3" as="h3">B2B Customer Portal</Typography>
                   </div>
                   <div className="p-8">
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
@@ -62,7 +63,7 @@ const PortalsPage: React.FC = () => {
                <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
                   <div className="bg-amber-600 p-8 text-white">
                      <Truck className="w-10 h-10 mb-4" />
-                     <h3 className="text-2xl font-bold">Supplier / Vendor Portal</h3>
+                     <Typography variant="h3" as="h3">Supplier / Vendor Portal</Typography>
                   </div>
                   <div className="p-8">
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">

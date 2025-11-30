@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
+import Typography from '../components/Typography';
 
 const StartupProgramPage: React.FC = () => {
   return (
@@ -94,7 +95,7 @@ const StartupProgramPage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-950 relative z-20">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">More Than Just Free Credits</h2>
+               <Typography variant="h2" as="h2">More Than Just Free Credits</Typography>
                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</p>
             </div>
 
@@ -105,7 +106,7 @@ const StartupProgramPage: React.FC = () => {
                      <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                         <DollarSign className="w-7 h-7" />
                      </div>
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Up to $5,000 Credits</h3>
+                     <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                         Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
                      </p>
@@ -116,7 +117,7 @@ const StartupProgramPage: React.FC = () => {
                      <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                         <Code className="w-7 h-7" />
                      </div>
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Technical Mentorship</h3>
+                     <Typography variant="h3" as="h3">Technical Mentorship</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                         Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
                      </p>
@@ -127,7 +128,7 @@ const StartupProgramPage: React.FC = () => {
                      <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                         <Users className="w-7 h-7" />
                      </div>
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Founder Community</h3>
+                     <Typography variant="h3" as="h3">Founder Community</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                         Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
                      </p>
@@ -141,7 +142,7 @@ const StartupProgramPage: React.FC = () => {
                   <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <DollarSign className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Up to $5,000 Credits</h3>
+                  <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
                   </p>
@@ -152,7 +153,7 @@ const StartupProgramPage: React.FC = () => {
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Code className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Technical Mentorship</h3>
+                  <Typography variant="h3" as="h3">Technical Mentorship</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
                   </p>
@@ -163,7 +164,7 @@ const StartupProgramPage: React.FC = () => {
                   <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Users className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Founder Community</h3>
+                  <Typography variant="h3" as="h3">Founder Community</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
                   </p>
@@ -193,7 +194,7 @@ const StartupProgramPage: React.FC = () => {
                            <Layout className="w-6 h-6" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 dark:text-white text-xl mb-2">Investor-Ready Reports</h4>
+                           <Typography variant="h4" as="h4">Investor-Ready Reports</Typography>
                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                               Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.
                            </p>
@@ -204,7 +205,7 @@ const StartupProgramPage: React.FC = () => {
                            <ShieldCheck className="w-6 h-6" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 dark:text-white text-xl mb-2">Enterprise-Grade Compliance</h4>
+                           <Typography variant="h4" as="h4">Enterprise-Grade Compliance</Typography>
                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                               Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.
                            </p>
@@ -272,7 +273,7 @@ const StartupProgramPage: React.FC = () => {
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                   Eligibility Criteria
                </div>
-               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Choose Your Growth Track</h2>
+               <Typography variant="h2" as="h2">Choose Your Growth Track</Typography>
                <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
                   Program kami disesuaikan dengan fase pertumbuhan startup Anda. Dari ide di garasi hingga ekspansi regional.
                </p>
@@ -289,7 +290,7 @@ const StartupProgramPage: React.FC = () => {
                            <Zap className="w-8 h-8" />
                         </div>
                         <div>
-                           <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Bootstrap</h3>
+                           <Typography variant="h3" as="h3">Bootstrap</Typography>
                            <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Pre-Seed / Angel Round</p>
                         </div>
                      </div>
@@ -340,7 +341,7 @@ const StartupProgramPage: React.FC = () => {
                            <TrendingUp className="w-8 h-8" />
                         </div>
                         <div>
-                           <h3 className="text-3xl font-bold text-white">Scale-Up</h3>
+                           <Typography variant="h3" as="h3">Scale-Up</Typography>
                            <p className="text-purple-200 font-medium mt-1">Seed / Series A+</p>
                         </div>
                      </div>
@@ -393,7 +394,7 @@ const StartupProgramPage: React.FC = () => {
                         <Zap className="w-8 h-8" />
                      </div>
                      <div>
-                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Bootstrap</h3>
+                        <Typography variant="h3" as="h3">Bootstrap</Typography>
                         <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Pre-Seed / Angel Round</p>
                      </div>
                   </div>
@@ -444,7 +445,7 @@ const StartupProgramPage: React.FC = () => {
                         <TrendingUp className="w-8 h-8" />
                      </div>
                      <div>
-                        <h3 className="text-3xl font-bold text-white">Scale-Up</h3>
+                        <Typography variant="h3" as="h3">Scale-Up</Typography>
                         <p className="text-purple-200 font-medium mt-1">Seed / Series A+</p>
                      </div>
                   </div>
@@ -491,30 +492,30 @@ const StartupProgramPage: React.FC = () => {
       {/* --- APPLICATION PROCESS --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-20">Proses Aplikasi Seamless</h2>
+            <Typography variant="h2" as="h2">Proses Aplikasi Seamless</Typography>
             
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
-                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Submit Form</h3>
+                     <Typography variant="h3" as="h3">Submit Form</Typography>
                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
-                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Verification</h3>
+                     <Typography variant="h3" as="h3">Verification</Typography>
                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
-                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Approval</h3>
+                     <Typography variant="h3" as="h3">Approval</Typography>
                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                         <CheckCircle className="w-8 h-8" />
                      </div>
-                     <h3 className="font-bold text-lg mb-3 text-emerald-600 dark:text-emerald-400">Onboarding</h3>
+                     <Typography variant="h3" as="h3">Onboarding</Typography>
                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Setup akun Enterprise Anda dan mulai scaling.</p>
                   </div>
                </CardSlider>
@@ -526,24 +527,24 @@ const StartupProgramPage: React.FC = () => {
 
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
-                  <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Submit Form</h3>
+                  <Typography variant="h3" as="h3">Submit Form</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
-                  <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Verification</h3>
+                  <Typography variant="h3" as="h3">Verification</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
-                  <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Approval</h3>
+                  <Typography variant="h3" as="h3">Approval</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                      <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h3 className="font-bold text-lg mb-3 text-emerald-600 dark:text-emerald-400">Onboarding</h3>
+                  <Typography variant="h3" as="h3">Onboarding</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Setup akun Enterprise Anda dan mulai scaling.</p>
                </div>
             </div>
@@ -553,7 +554,7 @@ const StartupProgramPage: React.FC = () => {
       {/* --- FAQ (Accordion Style) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-16 text-slate-900 dark:text-white">Founder's FAQ</h2>
+            <Typography variant="h2" as="h2">Founder's FAQ</Typography>
             <div className="space-y-4">
                {[
                   { q: "Apakah ada biaya tersembunyi?", a: "Tidak ada. Diskon diberikan dimuka pada tagihan bulanan/tahunan. Setelah periode program berakhir (12 atau 24 bulan), tagihan akan kembali ke harga normal. Kami akan mengirimkan notifikasi 30 hari sebelumnya." },

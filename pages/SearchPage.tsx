@@ -5,6 +5,7 @@ import EmptyState from '../components/EmptyState';
 import { Link } from 'react-router-dom';
 import { searchMockData } from '../data/content';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 const SearchPage: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -37,7 +38,7 @@ const SearchPage: React.FC = () => {
         
         {/* Search Header */}
         <div className="mb-12 text-center">
-           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Pencarian Global</h1>
+           <Typography variant="h1" as="h1">Pencarian Global</Typography>
            <div className="relative max-w-2xl mx-auto">
               <input 
                 type="text" 

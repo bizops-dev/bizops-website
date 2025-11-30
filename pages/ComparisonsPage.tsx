@@ -20,6 +20,7 @@ import {
   TrendingUp,
   Info
 } from 'lucide-react';
+import Typography from '../components/Typography';
 
 const ComparisonsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ const ComparisonsPage: React.FC = () => {
                       <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/10">
                           <Calculator className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="font-bold text-lg mb-1">Hitung Kerugian</h3>
+                      <Typography variant="h3" as="h3">Hitung Kerugian</Typography>
                       <p className="text-xs text-blue-100 mb-6 leading-relaxed">Lihat berapa banyak biaya yang terbuang karena inefisiensi sistem lama.</p>
                       <Button 
                           size="sm" 
@@ -324,7 +325,7 @@ const ComparisonsPage: React.FC = () => {
 
                         {/* MOBILE CTA */}
                         <div className="lg:hidden mt-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white text-center shadow-xl">
-                            <h3 className="text-xl font-bold mb-2">Hitung ROI Upgrade</h3>
+                            <Typography variant="h3" as="h3">Hitung ROI Upgrade</Typography>
                             <p className="text-sm text-blue-100 mb-6">Lihat berapa banyak biaya yang bisa dihemat.</p>
                             <Button fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 hover:bg-blue-50 border-none font-bold">
                                 Buka Kalkulator ROI

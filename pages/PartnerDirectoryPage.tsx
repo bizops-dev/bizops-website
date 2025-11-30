@@ -8,6 +8,7 @@ import Pagination from '../components/Pagination';
 import OptimizedImage from '../components/OptimizedImage';
 import { partnerDirectoryData, industriesList, locationsList, PartnerProfile } from '../data/partnerDirectoryContent';
 import { motion, AnimatePresence } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -76,7 +77,7 @@ const PartnerDirectoryPage: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
             <Globe className="w-3 h-3" /> Global Partner Network
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Find Your Perfect Partner</h1>
+          <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
             Hubungkan bisnis Anda dengan konsultan implementasi, reseller, dan principal teknologi resmi yang terintegrasi dengan BizOps.
           </p>
@@ -111,7 +112,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
             {/* Partner Type */}
             <div>
-              <h3 className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-4 tracking-wider">Partner Type</h3>
+              <Typography variant="h3" as="h3">Partner Type</Typography>
               <div className="space-y-2">
                 {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                   <div key={type}>
@@ -150,7 +151,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
             {/* Industry */}
             <div>
-              <h3 className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-4 tracking-wider">Industry / Focus</h3>
+              <Typography variant="h3" as="h3">Industry / Focus</Typography>
               <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
                 {industriesList.map(industry => (
                   <label key={industry} className="flex items-center gap-3 cursor-pointer group">
@@ -175,7 +176,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
              {/* Location */}
              <div>
-              <h3 className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-4 tracking-wider">Location</h3>
+              <Typography variant="h3" as="h3">Location</Typography>
               <div className="relative">
                  <select 
                     value={selectedLocation || ""} 
@@ -255,7 +256,7 @@ const PartnerDirectoryPage: React.FC = () => {
                   <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
                      <Search className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No partners found</h3>
+                  <Typography variant="h3" as="h3">No partners found</Typography>
                   <p className="text-slate-500 dark:text-slate-400 mb-6">Try adjusting your filters or search terms.</p>
                   <Button variant="outline" onClick={clearFilters}>Clear Filters</Button>
                </div>
@@ -279,7 +280,7 @@ const PartnerDirectoryPage: React.FC = () => {
               className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-950 rounded-t-[2rem] z-50 p-6 max-h-[85vh] overflow-y-auto"
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Filters</h3>
+                <Typography variant="h3" as="h3">Filters</Typography>
                 <button onClick={() => setShowMobileFilter(false)} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500">
                   <X className="w-5 h-5" />
                 </button>
@@ -288,7 +289,7 @@ const PartnerDirectoryPage: React.FC = () => {
               <div className="space-y-8 pb-20">
                  {/* Partner Type */}
                  <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-3">Type</h4>
+                    <Typography variant="h4" as="h4">Type</Typography>
                     <div className="space-y-3">
                        {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                           <label key={type} className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
@@ -311,7 +312,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
                  {/* Industry */}
                  <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-3">Industry</h4>
+                    <Typography variant="h4" as="h4">Industry</Typography>
                     <div className="grid grid-cols-2 gap-3">
                        {industriesList.map(industry => (
                           <label key={industry} className={`p-3 rounded-xl border text-sm text-center transition-all ${selectedIndustry === industry ? 'bg-primary-50 dark:bg-primary-900/20 border-primary-500 text-primary-700 dark:text-primary-300' : 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'}`}>

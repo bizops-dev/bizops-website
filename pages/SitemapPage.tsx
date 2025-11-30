@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { Layers, Briefcase, BookOpen, Shield, Users, Wrench, Globe, HelpCircle, Code, DollarSign, FileText } from 'lucide-react';
+import Typography from '../components/Typography';
 
 const SitemapPage: React.FC = () => {
   const sitemapData = [
@@ -147,7 +148,7 @@ const SitemapPage: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Sitemap</h1>
+          <Typography variant="h1" as="h1">Sitemap</Typography>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.
           </p>

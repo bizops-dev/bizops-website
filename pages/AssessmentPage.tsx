@@ -35,6 +35,7 @@ import { assessmentQuestions, maturityLevels, recommendations } from '../data/as
 import { MethodologyReference } from '../components/MethodologyReference';
 import { useNavigate } from 'react-router-dom';
 import { logger } from '../utils/logger';
+import Typography from '../components/Typography';
 
 // --- TYPES ---
 type ViewState = 'intro' | 'lead-form' | 'assessment' | 'analyzing' | 'results';
@@ -326,7 +327,7 @@ const AssessmentPage = () => {
             {showMethodology ? (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl h-full overflow-y-auto max-h-[600px] custom-scrollbar">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-bold text-white">Framework Reference</h3>
+                  <Typography variant="h3" as="h3">Framework Reference</Typography>
                   <button onClick={() => setShowMethodology(false)} className="text-slate-500 hover:text-white">
                     Tutup
                   </button>
@@ -336,7 +337,7 @@ const AssessmentPage = () => {
             ) : (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
                 <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
-                  <h3 className="text-xl font-bold text-white">Assessment Preview</h3>
+                  <Typography variant="h3" as="h3">Assessment Preview</Typography>
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500/50" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
@@ -409,7 +410,7 @@ const AssessmentPage = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-white/5">
                 <Users className="w-8 h-8 text-primary-400" />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-2">Profil Penilai</h2>
+              <Typography variant="h2" as="h2">Profil Penilai</Typography>
               <p className="text-slate-400 text-sm">
                 Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.
               </p>
@@ -529,7 +530,7 @@ const AssessmentPage = () => {
               <Cpu className="w-8 h-8 text-primary-500" />
             </div>
           </motion.div>
-          <h2 className="text-3xl font-bold text-white mb-3">Memproses Hasil Assessment...</h2>
+          <Typography variant="h2" as="h2">Memproses Hasil Assessment...</Typography>
           <p className="text-slate-400">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</p>
         </div>
       </div>
@@ -624,7 +625,7 @@ const AssessmentPage = () => {
 
               {/* Executive Summary Text */}
               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 print:bg-white print:border-gray-300">
-                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3 print:text-black">Executive Summary</h3>
+                <Typography variant="h3" as="h3">Executive Summary</Typography>
                 <p className="text-slate-300 text-sm leading-relaxed print:text-gray-700 mb-4">
                   Perusahaan Anda berada pada tahap <strong>{results.maturityLevel.title}</strong>. {results.maturityLevel.description}
                   <br/><br/>
@@ -744,7 +745,7 @@ const AssessmentPage = () => {
                    <div className="bg-blue-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Search className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-blue-400">Solution Finder</h4>
+                   <Typography variant="h4" as="h4">Solution Finder</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.
                    </p>
@@ -761,7 +762,7 @@ const AssessmentPage = () => {
                    <div className="bg-emerald-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-emerald-400">Estimasi Investasi</h4>
+                   <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.
                    </p>
@@ -778,7 +779,7 @@ const AssessmentPage = () => {
                    <div className="bg-amber-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-amber-400">Konsultasi Ahli</h4>
+                   <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.
                    </p>
@@ -819,7 +820,7 @@ const AssessmentPage = () => {
                   Tutup
                 </button>
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-white">Referensi Metodologi</h3>
+                  <Typography variant="h3" as="h3">Referensi Metodologi</Typography>
                   <p className="text-slate-400 text-sm">Dasar penilaian skor maturity Anda.</p>
                 </div>
                 <MethodologyReference />

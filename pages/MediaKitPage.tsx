@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
 import CardSlider from '../components/CardSlider';
+import Typography from '../components/Typography';
 
 const MediaKitPage: React.FC = () => {
   const [copied, setCopied] = React.useState<string | null>(null);
@@ -83,7 +84,7 @@ const MediaKitPage: React.FC = () => {
                  <ImageIcon className="w-6 h-6" />
               </div>
               <div>
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Brand Assets (Logo)</h2>
+                 <Typography variant="h2" as="h2">Brand Assets (Logo)</Typography>
                  <p className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</p>
               </div>
            </div>
@@ -105,7 +106,7 @@ const MediaKitPage: React.FC = () => {
                  <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-6">
                     <div className="flex justify-between items-end mb-4">
                        <div>
-                          <h3 className="font-bold text-slate-900 dark:text-white text-lg">Primary Logo</h3>
+                          <Typography variant="h3" as="h3">Primary Logo</Typography>
                           <p className="text-sm text-slate-500">Gunakan pada background terang/putih.</p>
                        </div>
                        <div className="flex gap-2">
@@ -133,7 +134,7 @@ const MediaKitPage: React.FC = () => {
                  <div className="relative z-10 w-full border-t border-slate-700/50 pt-6">
                     <div className="flex justify-between items-end mb-4">
                        <div>
-                          <h3 className="font-bold text-white text-lg">Monochrome (Inverse)</h3>
+                          <Typography variant="h3" as="h3">Monochrome (Inverse)</Typography>
                           <p className="text-sm text-slate-400">Gunakan pada background gelap/foto.</p>
                        </div>
                        <div className="flex gap-2">
@@ -181,7 +182,7 @@ const MediaKitPage: React.FC = () => {
                  <Palette className="w-6 h-6" />
               </div>
               <div>
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Color System</h2>
+                 <Typography variant="h2" as="h2">Color System</Typography>
                  <p className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</p>
               </div>
            </div>
@@ -353,7 +354,7 @@ const MediaKitPage: React.FC = () => {
                     <Type className="w-6 h-6" />
                  </div>
                  <div>
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Typography</h2>
+                 <Typography variant="h2" as="h2">Typography</Typography>
                  <p className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</p>
               </div>
            </div>
@@ -386,9 +387,9 @@ const MediaKitPage: React.FC = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-[2rem] blur-xl opacity-70"></div>
               <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl">
                  <div className="space-y-4">
-                    <h1 className="text-4xl font-bold text-slate-900 dark:text-white">The Quick Brown Fox</h1>
-                    <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">Jumps Over The Lazy Dog</h2>
-                    <h3 className="text-2xl font-medium text-slate-900 dark:text-white">1234567890</h3>
+                    <Typography variant="h1" as="h1">The Quick Brown Fox</Typography>
+                    <Typography variant="h2" as="h2">Jumps Over The Lazy Dog</Typography>
+                    <Typography variant="h3" as="h3">1234567890</Typography>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                        BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.
                     </p>
@@ -404,7 +405,7 @@ const MediaKitPage: React.FC = () => {
                  <FileText className="w-6 h-6" />
               </div>
               <div>
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Company Boilerplate</h2>
+                 <Typography variant="h2" as="h2">Company Boilerplate</Typography>
                  <p className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</p>
               </div>
            </div>
@@ -447,7 +448,7 @@ const MediaKitPage: React.FC = () => {
            
            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
-                 <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">Media Inquiries</h2>
+                 <Typography variant="h2" as="h2">Media Inquiries</Typography>
                  <p className="text-slate-300 text-lg leading-relaxed mb-8">
                     Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.
                  </p>

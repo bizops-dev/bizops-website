@@ -6,6 +6,7 @@ import CardSlider from '../components/CardSlider';
 import { Heart, Coffee, Zap, MapPin, Clock, GitMerge, BookOpen, Monitor, Award, CheckCircle, ArrowRight, ExternalLink, Globe, Code, Smile } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import Typography from '../components/Typography';
 
 const CareersPage: React.FC = () => {
   return (
@@ -63,7 +64,7 @@ const CareersPage: React.FC = () => {
       <Section className="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Engineering First Culture</h2>
+               <Typography variant="h2" as="h2">Engineering First Culture</Typography>
                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                   Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.
                </p>
@@ -75,7 +76,7 @@ const CareersPage: React.FC = () => {
                      <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <GitMerge className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Open Source DNA</h3>
+                     <Typography variant="h3" as="h3">Open Source DNA</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                         Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
                      </p>
@@ -84,7 +85,7 @@ const CareersPage: React.FC = () => {
                      <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Zap className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Autonomy & Speed</h3>
+                     <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                         Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
                      </p>
@@ -93,7 +94,7 @@ const CareersPage: React.FC = () => {
                      <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <BookOpen className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Continuous Learning</h3>
+                     <Typography variant="h3" as="h3">Continuous Learning</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                         Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
                      </p>
@@ -106,7 +107,7 @@ const CareersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <GitMerge className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Open Source DNA</h3>
+                  <Typography variant="h3" as="h3">Open Source DNA</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                      Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
                   </p>
@@ -115,7 +116,7 @@ const CareersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Autonomy & Speed</h3>
+                  <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                      Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
                   </p>
@@ -124,7 +125,7 @@ const CareersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <BookOpen className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Continuous Learning</h3>
+                  <Typography variant="h3" as="h3">Continuous Learning</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                      Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
                   </p>
@@ -136,7 +137,7 @@ const CareersPage: React.FC = () => {
       {/* --- BENEFITS / PERKS --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">The Total Rewards</h2>
+            <Typography variant="h2" as="h2">The Total Rewards</Typography>
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -144,7 +145,7 @@ const CareersPage: React.FC = () => {
                         <Coffee className="w-6 h-6" />
                      </div>
                      <div>
-                        <h3 className="font-bold text-slate-900 dark:text-white text-lg">Remote-First & Flexible</h3>
+                        <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                            Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.
                         </p>
@@ -155,7 +156,7 @@ const CareersPage: React.FC = () => {
                         <Monitor className="w-6 h-6" />
                      </div>
                      <div>
-                        <h3 className="font-bold text-slate-900 dark:text-white text-lg">Top-Tier Gear</h3>
+                        <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                            MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.
                         </p>
@@ -166,7 +167,7 @@ const CareersPage: React.FC = () => {
                         <Heart className="w-6 h-6" />
                      </div>
                      <div>
-                        <h3 className="font-bold text-slate-900 dark:text-white text-lg">Comprehensive Health</h3>
+                        <Typography variant="h3" as="h3">Comprehensive Health</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                            Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.
                         </p>
@@ -177,7 +178,7 @@ const CareersPage: React.FC = () => {
                         <Award className="w-6 h-6" />
                      </div>
                      <div>
-                        <h3 className="font-bold text-slate-900 dark:text-white text-lg">Performance Bonus</h3>
+                        <Typography variant="h3" as="h3">Performance Bonus</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                            Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.
                         </p>
@@ -192,7 +193,7 @@ const CareersPage: React.FC = () => {
                      <Coffee className="w-6 h-6" />
                   </div>
                   <div>
-                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Remote-First & Flexible</h3>
+                     <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                         Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.
                      </p>
@@ -203,7 +204,7 @@ const CareersPage: React.FC = () => {
                      <Monitor className="w-6 h-6" />
                   </div>
                   <div>
-                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Top-Tier Gear</h3>
+                     <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                         MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.
                      </p>
@@ -214,7 +215,7 @@ const CareersPage: React.FC = () => {
                      <Heart className="w-6 h-6" />
                   </div>
                   <div>
-                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Comprehensive Health</h3>
+                     <Typography variant="h3" as="h3">Comprehensive Health</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                         Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.
                      </p>
@@ -225,7 +226,7 @@ const CareersPage: React.FC = () => {
                      <Award className="w-6 h-6" />
                   </div>
                   <div>
-                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Performance Bonus</h3>
+                     <Typography variant="h3" as="h3">Performance Bonus</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                         Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.
                      </p>
@@ -242,7 +243,7 @@ const CareersPage: React.FC = () => {
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none"></div>
 
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Join Us?</h2>
+            <Typography variant="h2" as="h2">Ready to Join Us?</Typography>
             <p className="text-xl text-slate-300 mb-12 leading-relaxed font-light">
                Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.
             </p>

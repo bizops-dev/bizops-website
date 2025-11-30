@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { Input, Checkbox } from '../components/Form';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import Typography from '../components/Typography';
 
 type LoginType = 'employee' | 'admin' | 'partner';
 
@@ -61,7 +62,7 @@ const LoginPage: React.FC = () => {
           </Link>
 
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Welcome back</h1>
+            <Typography variant="h1" as="h1">Welcome back</Typography>
             <p className="text-slate-500 dark:text-slate-400">
               Please select your login type to continue.
             </p>
@@ -227,7 +228,7 @@ const LoginPage: React.FC = () => {
                   )}
                   {loginType === 'partner' && (
                      <div className="bg-gradient-to-br from-indigo-900 to-purple-900 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl text-white">
-                        <h3 className="text-2xl font-bold mb-2">Partner Growth</h3>
+                        <Typography variant="h3" as="h3">Partner Growth</Typography>
                         <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-6">
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>

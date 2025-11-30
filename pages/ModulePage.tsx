@@ -17,6 +17,7 @@ import {
   GitMerge, History, EyeOff, Hourglass, Mail, WifiOff, Building, UserPlus, Headphones, Radio, Terminal, Key, User, Plus, Link as LinkIcon, Quote // Governance & Tech icons
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 // Motion Components
 import { CounterUp } from '../components/ui/motion-scroll';
@@ -118,7 +119,7 @@ const ModulePage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Content Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Content Not Found</h1>
+        <Typography variant="h1" as="h1">Content Not Found</Typography>
         <p className="text-slate-600 dark:text-slate-400 mb-4">The requested page could not be found.</p>
         <Link to="/platform"><Button>Back to Platform</Button></Link>
       </div>
@@ -329,7 +330,7 @@ const ModulePage: React.FC = () => {
                     className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 relative"
                   >
                      <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-100 dark:bg-primary-900/50 rounded-full blur-2xl"></div>
-                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 relative z-10">Solusi BizOps</h3>
+                     <Typography variant="h3" as="h3">Solusi BizOps</Typography>
                      <ul className="space-y-4 relative z-10">
                         {data.features.slice(0, 4).map((feat, i) => (
                            <li key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
@@ -348,7 +349,7 @@ const ModulePage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Fitur Unggulan</h2>
+            <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
             <p className="text-lg text-slate-600 dark:text-slate-400">
               Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.
             </p>
@@ -466,7 +467,7 @@ const ModulePage: React.FC = () => {
                         <Handshake className="w-6 h-6" />
                      </div>
                      <div>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">Assisted Integration Required</h3>
+                        <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
                         <p className="text-slate-600 dark:text-slate-400 text-sm">
                            Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.
                         </p>
@@ -557,7 +558,7 @@ const ModulePage: React.FC = () => {
          <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h2>
+                  <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-6">
                   {data.faqs.map((faq, i) => (
@@ -572,7 +573,7 @@ const ModulePage: React.FC = () => {
       <section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Eksplorasi Modul Lainnya</h2>
+               <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
                <p className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</p>
             </div>
             

@@ -12,6 +12,7 @@ import { StaggeredText } from '../components/ui/motion-text';
 import { BouncyButton } from '../components/ui/motion-button';
 import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
+import Typography from '../components/Typography';
 
 const RolePage: React.FC = () => {
   const { roleId } = useParams<{ roleId: string }>();
@@ -26,7 +27,7 @@ const RolePage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Role Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Role Not Found</h1>
+        <Typography variant="h1" as="h1">Role Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
       </div>
     );

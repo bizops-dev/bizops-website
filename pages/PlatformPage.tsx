@@ -12,6 +12,7 @@ import Badge from '../components/Badge';
 import Card from '../components/Card';
 import CardSlider from '../components/CardSlider';
 import { modulesData, capabilitiesData, integrationsData } from '../data/content';
+import Typography from '../components/Typography';
 
 const PlatformPage: React.FC = () => {
   
@@ -78,7 +79,7 @@ const PlatformPage: React.FC = () => {
       {/* 2. CORE CAPABILITIES (Why Platform?) */}
       <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Fondasi Teknologi Modern</h2>
+            <Typography variant="h2" as="h2">Fondasi Teknologi Modern</Typography>
             <p className="text-lg text-slate-600 dark:text-slate-400">
                Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.
             </p>
@@ -186,7 +187,7 @@ const PlatformPage: React.FC = () => {
                         <Layout className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                      </div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Visual Form Builder</h4>
+                        <Typography variant="h4" as="h4">Visual Form Builder</Typography>
                         <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
                            Desain form input data kompleks dengan validasi logic, perhitungan otomatis, dan relasi antar data tanpa menulis satu baris kode pun.
                         </p>
@@ -197,7 +198,7 @@ const PlatformPage: React.FC = () => {
                         <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                      </div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Workflow Automation</h4>
+                        <Typography variant="h4" as="h4">Workflow Automation</Typography>
                         <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
                            Atur alur persetujuan (approval) bertingkat, notifikasi email/WA otomatis, dan trigger aksi berdasarkan perubahan status dokumen.
                         </p>
@@ -208,7 +209,7 @@ const PlatformPage: React.FC = () => {
                         <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                      </div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Instant Mobile App</h4>
+                        <Typography variant="h4" as="h4">Instant Mobile App</Typography>
                         <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
                            Setiap aplikasi yang Anda buat otomatis tersedia di mobile app (iOS/Android) dengan dukungan offline mode untuk pekerja lapangan.
                         </p>
@@ -223,7 +224,7 @@ const PlatformPage: React.FC = () => {
       <Section>
         <div className="text-center max-w-3xl mx-auto mb-12">
            <Badge variant="outline" className="mb-4">Comprehensive Suite</Badge>
-           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Modul yang Saling Terhubung</h2>
+           <Typography variant="h2" as="h2">Modul yang Saling Terhubung</Typography>
            <p className="text-lg text-slate-600 dark:text-slate-400">
              Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.
            </p>
@@ -314,7 +315,7 @@ const PlatformPage: React.FC = () => {
 
          <div className="max-w-5xl mx-auto text-center relative z-10">
             <Badge variant="outline" className="mb-6 bg-white dark:bg-slate-900">Engineering Excellence</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Dibangun dengan Teknologi Enterprise-Grade</h2>
+            <Typography variant="h2" as="h2">Dibangun dengan Teknologi Enterprise-Grade</Typography>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12">
                Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.
             </p>

@@ -8,6 +8,7 @@ import OptimizedImage from '../components/OptimizedImage'; // Imported Optimized
 import { HelpCircle, ChevronRight, Check, Quote, ArrowRight, AlertTriangle, PlayCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import Typography from '../components/Typography';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -51,7 +52,7 @@ const IndustryPage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Industry Solution Not Found</h1>
+        <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
         <p className="text-slate-600 dark:text-slate-400 mb-6">The solution you are looking for does not exist or has been moved.</p>
         <Link to="/solutions"><Button>Back to Solutions</Button></Link>
       </div>
@@ -370,7 +371,7 @@ const IndustryPage: React.FC = () => {
          <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Pertanyaan Umum</h2>
+                  <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
                   <p className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</p>
                </div>
                <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-8">

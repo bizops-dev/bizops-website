@@ -3,6 +3,7 @@ import { Eye, Keyboard, Volume2, ZoomIn, MessageSquare, CheckCircle, Accessibili
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import Typography from '../components/Typography';
 
 const AccessibilityPage: React.FC = () => {
   const features = [
@@ -66,7 +67,7 @@ const AccessibilityPage: React.FC = () => {
         <div className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-xl">
            <div className="md:w-1/2">
               <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">WCAG 2.1 Level AA</h2>
+              <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>
               <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                  Kami secara aktif mengaudit dan memperbarui antarmuka kami agar sesuai dengan pedoman Web Content Accessibility Guidelines (WCAG) yang diakui secara global.
               </p>

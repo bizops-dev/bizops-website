@@ -4,6 +4,7 @@ import { Hammer, Clock, Twitter, Linkedin, Mail } from 'lucide-react';
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const MaintenancePage: React.FC = () => {
   return (
@@ -59,7 +60,7 @@ const MaintenancePage: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 max-w-md mx-auto"
         >
-           <h3 className="font-bold text-white mb-6">Need urgent help?</h3>
+           <Typography variant="h3" as="h3">Need urgent help?</Typography>
            <div className="flex justify-center gap-4">
               <a href="mailto:support@bizops.id" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-all">

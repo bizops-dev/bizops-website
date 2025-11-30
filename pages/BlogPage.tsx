@@ -15,6 +15,7 @@ import {
   Clock, 
   Layers
 } from 'lucide-react';
+import Typography from '../components/Typography';
 
 // --- Spotlight Card Component ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(59, 130, 246, 0.1)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -266,7 +267,7 @@ const BlogPage: React.FC = () => {
                      {/* Subscribe Mini Widget */}
                      <div className="bg-[#0B1120] rounded-2xl p-6 text-white relative overflow-hidden group border border-slate-800 hidden lg:block">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition-all"></div>
-                        <h4 className="font-bold mb-2 relative z-10">Weekly Digest</h4>
+                        <Typography variant="h4" as="h4">Weekly Digest</Typography>
                         <p className="text-slate-400 text-xs mb-4 relative z-10">Get strategic insights delivered to your inbox every Monday.</p>
                         <form onSubmit={(e) => e.preventDefault()} className="relative z-10 space-y-2">
                            <input type="email" placeholder="Email" className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
@@ -365,7 +366,7 @@ const BlogPage: React.FC = () => {
                         <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
                            <Search className="w-8 h-8 text-slate-400" />
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">No articles found</h3>
+                        <Typography variant="h3" as="h3">No articles found</Typography>
                         <p className="text-slate-500 dark:text-slate-400 text-sm">
                            Try adjusting your search or category filter.
                         </p>
@@ -380,7 +381,7 @@ const BlogPage: React.FC = () => {
 
                   {/* Mobile Newsletter (Visible only on small screens where sidebar widget is hidden) */}
                   <div className="mt-16 lg:hidden bg-[#0B1120] rounded-2xl p-8 text-white text-center border border-slate-800">
-                     <h3 className="font-bold text-xl mb-2">Weekly Digest</h3>
+                     <Typography variant="h3" as="h3">Weekly Digest</Typography>
                      <p className="text-slate-400 text-sm mb-6">Get strategic insights delivered to your inbox.</p>
                      <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-500 border-none font-bold">Subscribe Free</Button>
                   </div>

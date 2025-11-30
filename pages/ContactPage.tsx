@@ -7,6 +7,7 @@ import { traceAction } from '../utils/telemetry';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const ContactPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -129,7 +130,7 @@ const ContactPage: React.FC = () => {
                      <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-colors"></div>
                      
                      <div className="relative z-10">
-                        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Direct Channels</h2>
+                        <Typography variant="h2" as="h2">Direct Channels</Typography>
                         
                         <div className="space-y-8">
                            <a href="mailto:hello@bizops.id" className="flex items-start gap-5 group/item">
@@ -175,7 +176,7 @@ const ContactPage: React.FC = () => {
                         
                         <div className="space-y-6">
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">
-                              <h3 className="font-bold text-white text-lg">Jakarta HQ</h3>
+                              <Typography variant="h3" as="h3">Jakarta HQ</Typography>
                               <p className="text-slate-400 text-sm mt-1 leading-relaxed">
                                  Eco-S Sahid Sudirman Residence<br />
                                  Jl. Jenderal Sudirman No.86, Karet Tengsin<br />
@@ -183,7 +184,7 @@ const ContactPage: React.FC = () => {
                               </p>
                            </div>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-purple-500 transition-colors">
-                              <h3 className="font-bold text-white text-lg">Yogyakarta R&D</h3>
+                              <Typography variant="h3" as="h3">Yogyakarta R&D</Typography>
                               <p className="text-slate-400 text-sm mt-1 leading-relaxed">
                                  Jl. Ampel No.23, Demangan Baru<br />
                                  Caturtunggal, Kec. Depok, Sleman<br />
@@ -211,7 +212,7 @@ const ContactPage: React.FC = () => {
                   >
                      <div className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full flex items-center justify-between gap-4">
                         <div>
-                           <h3 className="font-bold text-slate-900 dark:text-white text-sm">Join Developer Community</h3>
+                           <Typography variant="h3" as="h3">Join Developer Community</Typography>
                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Chat with 500+ peers on Discord.</p>
                         </div>
                         <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer">
@@ -240,7 +241,7 @@ const ContactPage: React.FC = () => {
                           >
                              <CheckCircle className="w-12 h-12" />
                           </motion.div>
-                          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Pesan Diterima!</h2>
+                          <Typography variant="h2" as="h2">Pesan Diterima!</Typography>
                           <p className="text-slate-600 dark:text-slate-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
                              Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.
                           </p>
@@ -249,7 +250,7 @@ const ContactPage: React.FC = () => {
                      ) : (
                        <>
                          <div className="mb-10">
-                            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">Send a Message</h2>
+                            <Typography variant="h2" as="h2">Send a Message</Typography>
                             <p className="text-slate-500 dark:text-slate-400 text-lg">
                                Isi formulir di bawah ini dan kami akan menghubungkan Anda dengan expert yang tepat.
                             </p>

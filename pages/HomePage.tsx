@@ -14,6 +14,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import CardSlider from '../components/CardSlider';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
+import Typography from '../components/Typography';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -287,7 +288,7 @@ const HomePage: React.FC = () => {
 
                         <div className="grid md:grid-cols-2 gap-8">
                            <div>
-                              <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Fitur Utama</h4>
+                              <Typography variant="h4" as="h4">Fitur Utama</Typography>
                               <ul className="space-y-4">
                                  {activeSolution.modules.map((mod, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
@@ -301,7 +302,7 @@ const HomePage: React.FC = () => {
                               <div className="mb-4 p-4 rounded-full bg-slate-800 ring-1 ring-slate-700">
                                  <PlayCircle className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
                               </div>
-                              <h5 className="text-white font-bold mb-2">Lihat Demo Modul Ini</h5>
+                              <Typography variant="h5" as="h5">Lihat Demo Modul Ini</Typography>
                               <p className="text-xs text-slate-400 mb-4">Video singkat 2 menit penjelasan fitur.</p>
                               <Link to={`/platform`}>
                                  <Button size="sm" variant="outline-white">Tonton Video</Button>
@@ -388,7 +389,7 @@ const HomePage: React.FC = () => {
                      <div className="mb-4">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #1</span>
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Fragmented Stack</h3>
+                     <Typography variant="h3" as="h3">Fragmented Stack</Typography>
                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
                         Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span>
                      </p>
@@ -434,7 +435,7 @@ const HomePage: React.FC = () => {
                      <div className="mb-4">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #2</span>
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Legacy / Global ERP</h3>
+                     <Typography variant="h3" as="h3">Legacy / Global ERP</Typography>
                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
                         Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span>
                      </p>
@@ -525,14 +526,14 @@ const HomePage: React.FC = () => {
                                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
                                    <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
-                                       <h4 className="text-white font-bold text-sm">Local Compliance</h4>
+                                       <Typography variant="h4" as="h4">Local Compliance</Typography>
                                        <p className="text-[10px] text-slate-400 mt-0.5">Pajak, BPJS, Kasbon Ready.</p>
                                    </div>
                                </div>
                                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
                                    <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
-                                       <h4 className="text-white font-bold text-sm">Managed Infrastructure</h4>
+                                       <Typography variant="h4" as="h4">Managed Infrastructure</Typography>
                                        <p className="text-[10px] text-slate-400 mt-0.5">Server & Security Included.</p>
                                    </div>
                                </div>
@@ -623,7 +624,7 @@ const HomePage: React.FC = () => {
             </CardSlider>
 
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Didesain untuk Peran Anda</h2>
+               <Typography variant="h2" as="h2">Didesain untuk Peran Anda</Typography>
                <p className="text-slate-600 dark:text-slate-400">Dashboard yang relevan untuk setiap pemangku kepentingan.</p>
             </div>
 

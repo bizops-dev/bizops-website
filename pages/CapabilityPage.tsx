@@ -5,6 +5,7 @@ import { capabilitiesData } from '../data/content';
 import Button from '../components/Button';
 import { Check, Server, Smartphone, Share2, MessageSquare, Layers, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 const CapabilityPage: React.FC = () => {
   const { capabilityId } = useParams<{ capabilityId: string }>();
@@ -14,7 +15,7 @@ const CapabilityPage: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
         <SEO title="Page Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Capability Not Found</h1>
+        <Typography variant="h1" as="h1">Capability Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
       </div>
     );
@@ -43,7 +44,7 @@ const CapabilityPage: React.FC = () => {
       {/* Technical Features */}
       <section className="py-24 bg-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-16 leading-tight">Technical Specifications</h2>
+            <Typography variant="h2" as="h2">Technical Specifications</Typography>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                {data.features.map((item: any, idx: number) => (
                   <div key={idx} className="flex gap-6 p-8 border border-slate-200 rounded-2xl bg-white hover:border-primary-200 hover:shadow-lg transition-all">
@@ -99,7 +100,7 @@ const CapabilityPage: React.FC = () => {
       {/* Specific CTA */}
       <section className="py-20 bg-white border-t border-slate-100 text-center">
          <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Need Deeper Technical Review?</h2>
+            <Typography variant="h2" as="h2">Need Deeper Technical Review?</Typography>
             <p className="text-slate-600 mb-8">
                Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.
             </p>

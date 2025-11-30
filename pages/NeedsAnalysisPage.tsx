@@ -51,6 +51,7 @@ import {
 } from '../data/needsAnalysisData';
 import { useNavigate } from 'react-router-dom';
 import { logger } from '../utils/logger';
+import Typography from '../components/Typography';
 
 type StepType = 'intro' | 'context' | 'tech-stack' | 'operational-context' | 'pain-points' | 'goals' | 'expectations' | 'analyzing' | 'result';
 
@@ -289,7 +290,7 @@ const NeedsAnalysisPage = () => {
                     <Layers className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Holistic Diagnosis</h3>
+                    <Typography variant="h3" as="h3">Holistic Diagnosis</Typography>
                     <p className="text-slate-400 text-sm leading-relaxed">
                       Kami tidak hanya melihat software, tapi juga kesiapan tim (People) dan alur kerja (Process).
                     </p>
@@ -302,7 +303,7 @@ const NeedsAnalysisPage = () => {
                     <Calendar className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Actionable Roadmap</h3>
+                    <Typography variant="h3" as="h3">Actionable Roadmap</Typography>
                     <p className="text-slate-400 text-sm leading-relaxed">
                       Dapatkan timeline implementasi langkah demi langkah, dari Quick Win hingga Optimization.
                     </p>
@@ -315,7 +316,7 @@ const NeedsAnalysisPage = () => {
                     <Lightbulb className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Practical Solution</h3>
+                    <Typography variant="h3" as="h3">Practical Solution</Typography>
                     <p className="text-slate-400 text-sm leading-relaxed">
                       Berbeda dengan Maturity Assessment yang hanya memberi skor, kami memberi resep solusi.
                     </p>
@@ -721,7 +722,7 @@ const NeedsAnalysisPage = () => {
           >
             <div className="w-20 h-20 rounded-full border-4 border-slate-800 border-t-blue-500" />
           </motion.div>
-          <h2 className="text-2xl font-bold text-white mb-2">Mengkurasi Solusi...</h2>
+          <Typography variant="h2" as="h2">Mengkurasi Solusi...</Typography>
           <p className="text-slate-400">Menghubungkan {selectedPainPoints.length} tantangan bisnis dengan solusi PPT kami.</p>
       </div>
     );
@@ -741,7 +742,7 @@ const NeedsAnalysisPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-start mb-10 border-b border-white/10 pb-8 print:border-gray-300">
              <div>
                 <div className="text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">Confidential Report</div>
-                <h1 className="text-3xl font-bold mb-2">Holistic Solution Blueprint</h1>
+                <Typography variant="h1" as="h1">Holistic Solution Blueprint</Typography>
                 <p className="text-slate-400 print:text-gray-600">Rekomendasi strategis untuk {contextData.company}.</p>
              </div>
              <div className="mt-4 md:mt-0 flex gap-3 print:hidden">
@@ -911,7 +912,7 @@ const NeedsAnalysisPage = () => {
                    <div className="bg-blue-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-blue-400">Hitung Potensi ROI</h4>
+                   <Typography variant="h4" as="h4">Hitung Potensi ROI</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.
                    </p>
@@ -928,7 +929,7 @@ const NeedsAnalysisPage = () => {
                    <div className="bg-emerald-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <PieChart className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-emerald-400">Maturity Assessment</h4>
+                   <Typography variant="h4" as="h4">Maturity Assessment</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).
                    </p>
@@ -945,7 +946,7 @@ const NeedsAnalysisPage = () => {
                    <div className="bg-amber-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </div>
-                   <h4 className="font-bold text-white mb-2 group-hover:text-amber-400">Konsultasi Ahli</h4>
+                   <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <p className="text-sm text-slate-400 leading-relaxed">
                      Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.
                    </p>

@@ -11,6 +11,7 @@ import { ArrowRight, Compass, Settings, Users, Activity, Sparkles, MoveRight, La
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
+import Typography from '../components/Typography';
 
 // --- COMPONENT: SPOTLIGHT CARD ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -138,8 +139,8 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
               <div>
-                <h2 className="text-sm font-bold tracking-widest text-primary-600 dark:text-primary-400 uppercase mb-2">How We Work</h2>
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white">The Transformation Arc</h3>
+                <Typography variant="h2" as="h2">How We Work</Typography>
+                <Typography variant="h3" as="h3">The Transformation Arc</Typography>
               </div>
               <p className="text-slate-500 dark:text-slate-400 max-w-md text-right md:text-left text-sm leading-relaxed">
                  Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.
@@ -185,7 +186,7 @@ const ServicesPage: React.FC = () => {
       <Section className="bg-slate-50 dark:bg-slate-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Capability Matrix</h2>
+             <Typography variant="h2" as="h2">Capability Matrix</Typography>
              <div className="h-1 w-20 bg-primary-500 rounded-full"></div>
           </div>
 
@@ -288,7 +289,7 @@ const ServicesPage: React.FC = () => {
                             
                             {/* Decorative List for Featured - Hidden on mobile small screens if needed, but better visible */}
                             <div className="flex-1 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hidden md:block">
-                               <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">What we analyze</h4>
+                               <Typography variant="h4" as="h4">What we analyze</Typography>
                                <ul className="space-y-4">
                                   {service.methodology.map((item, i) => (
                                      <li key={i} className="flex items-start gap-3 text-slate-200">

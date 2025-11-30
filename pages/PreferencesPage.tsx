@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Button from '../components/Button';
 import { Mail, Shield, Bell, XCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import Typography from '../components/Typography';
 
 const PreferencesPage: React.FC = () => {
   const [saved, setSaved] = useState(false);
@@ -22,7 +23,7 @@ const PreferencesPage: React.FC = () => {
            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
            </div>
-           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">Kendalikan Isi Inbox Anda</h1>
+           <Typography variant="h1" as="h1">Kendalikan Isi Inbox Anda</Typography>
            <p className="text-slate-600">
               Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.
            </p>
@@ -31,7 +32,7 @@ const PreferencesPage: React.FC = () => {
         <form onSubmit={handleSave} className="space-y-8">
            
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">Jenis Email</h3>
+              <Typography variant="h3" as="h3">Jenis Email</Typography>
               <div className="space-y-6">
                  
                  {/* Explicit accessible checkbox structure */}
@@ -95,7 +96,7 @@ const PreferencesPage: React.FC = () => {
            </div>
 
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">Frekuensi Maksimal</h3>
+              <Typography variant="h3" as="h3">Frekuensi Maksimal</Typography>
               <div className="flex gap-6" role="radiogroup" aria-label="Email frequency">
                  <div className="flex items-center">
                     <input id="freq_daily" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />

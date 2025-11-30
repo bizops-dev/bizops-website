@@ -7,6 +7,7 @@ import {
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
+import Typography from '../components/Typography';
 
 const DownloadPage: React.FC = () => {
   return (
@@ -101,7 +102,7 @@ const DownloadPage: React.FC = () => {
                               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500"></div>
                               <Bell className="w-5 h-5 text-slate-300" />
                            </div>
-                           <h2 className="text-2xl font-bold mb-1">Good Morning,</h2>
+                           <Typography variant="h2" as="h2">Good Morning,</Typography>
                            <p className="text-slate-400">Site Manager - Jakarta</p>
                         </div>
 
@@ -110,7 +111,7 @@ const DownloadPage: React.FC = () => {
                            {/* Stats Card */}
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
                               <div className="flex justify-between items-center mb-4">
-                                 <h3 className="font-bold text-slate-900 dark:text-white text-sm">Today's Approval</h3>
+                                 <Typography variant="h3" as="h3">Today's Approval</Typography>
                                  <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">3 Pending</span>
                               </div>
                               <div className="flex gap-3 overflow-x-auto pb-2">
@@ -154,7 +155,7 @@ const DownloadPage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Built for the Field Workforce</h2>
+               <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
                <p className="text-slate-600 dark:text-slate-400">
                   Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.
                </p>
@@ -168,7 +169,7 @@ const DownloadPage: React.FC = () => {
                      <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
                         <WifiOff className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Offline-First Mode</h3>
+                     <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                         Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
                      </p>
@@ -177,7 +178,7 @@ const DownloadPage: React.FC = () => {
                      <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                         <Fingerprint className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Biometric Security</h3>
+                     <Typography variant="h3" as="h3">Biometric Security</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                         Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
                      </p>
@@ -186,7 +187,7 @@ const DownloadPage: React.FC = () => {
                      <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
                         <Bell className="w-7 h-7" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Instant Push Notif</h3>
+                     <Typography variant="h3" as="h3">Instant Push Notif</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                         Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.
                      </p>
@@ -199,7 +200,7 @@ const DownloadPage: React.FC = () => {
                   <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
                      <WifiOff className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Offline-First Mode</h3>
+                  <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                      Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
                   </p>
@@ -208,7 +209,7 @@ const DownloadPage: React.FC = () => {
                   <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                      <Fingerprint className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Biometric Security</h3>
+                  <Typography variant="h3" as="h3">Biometric Security</Typography>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                      Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
                   </p>
@@ -217,7 +218,7 @@ const DownloadPage: React.FC = () => {
                   <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
                      <Bell className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Instant Push Notif</h3>
+                  <Typography variant="h3" as="h3">Instant Push Notif</Typography>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                      Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.
                   </p>
@@ -230,7 +231,7 @@ const DownloadPage: React.FC = () => {
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl font-bold mb-6">Enterprise Deployment?</h2>
+            <Typography variant="h2" as="h2">Enterprise Deployment?</Typography>
             <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
                Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.
             </p>

@@ -6,6 +6,7 @@ import { partnerContent } from '../data/content';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
+import Typography from '../components/Typography';
 
 const PartnersPage: React.FC = () => {
   // Calculator State
@@ -163,7 +164,7 @@ const PartnersPage: React.FC = () => {
       {/* --- PARTNER TYPES (Modified: Removed Whitelabel) --- */}
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Pilih Model Kemitraan Anda</h2>
+            <Typography variant="h2" as="h2">Pilih Model Kemitraan Anda</Typography>
             <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami menawarkan fleksibilitas sesuai dengan model bisnis Anda.</p>
          </div>
 
@@ -174,7 +175,7 @@ const PartnersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Gift className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Referral Partner</h3>
+                  <Typography variant="h3" as="h3">Referral Partner</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
@@ -192,7 +193,7 @@ const PartnersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
                      <Code className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Implementation Partner</h3>
+                  <Typography variant="h3" as="h3">Implementation Partner</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
@@ -209,7 +210,7 @@ const PartnersPage: React.FC = () => {
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Briefcase className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Services Partner</h3>
+                  <Typography variant="h3" as="h3">Managed Services Partner</Typography>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
@@ -229,7 +230,7 @@ const PartnersPage: React.FC = () => {
                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Gift className="w-7 h-7" />
                </div>
-               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Referral Partner</h3>
+               <Typography variant="h3" as="h3">Referral Partner</Typography>
                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
@@ -247,7 +248,7 @@ const PartnersPage: React.FC = () => {
                <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
                   <Code className="w-7 h-7" />
                </div>
-               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Implementation Partner</h3>
+               <Typography variant="h3" as="h3">Implementation Partner</Typography>
                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
@@ -264,7 +265,7 @@ const PartnersPage: React.FC = () => {
                <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Briefcase className="w-7 h-7" />
                </div>
-               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Services Partner</h3>
+               <Typography variant="h3" as="h3">Managed Services Partner</Typography>
                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
@@ -284,7 +285,7 @@ const PartnersPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center mb-16">
-             <h2 className="text-3xl font-bold mb-4">Simulasi Potensi Bisnis</h2>
+             <Typography variant="h2" as="h2">Simulasi Potensi Bisnis</Typography>
              <p className="text-slate-300 max-w-2xl mx-auto">
                 Hitung potensi pendapatan Anda sebagai Implementation Partner. Gabungkan margin penjualan lisensi dan pendapatan jasa implementasi.
              </p>
@@ -375,7 +376,7 @@ const PartnersPage: React.FC = () => {
             <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark:text-white">
                
                <div className="mb-8">
-                  <h3 className="text-lg font-bold text-slate-500 mb-4 uppercase tracking-widest text-xs">Snapshot Profitabilitas</h3>
+                  <Typography variant="h3" as="h3">Snapshot Profitabilitas</Typography>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
                         <div className="text-sm text-slate-500 mb-1">Margin Lisensi (Recurring)</div>
@@ -393,7 +394,7 @@ const PartnersPage: React.FC = () => {
                </div>
 
                <div>
-                  <h3 className="text-lg font-bold text-slate-500 mb-6 uppercase tracking-widest text-xs">Total Earnings Projection</h3>
+                  <Typography variant="h3" as="h3">Total Earnings Projection</Typography>
                   
                   {/* Year 1 Bar */}
                   <div className="mb-6">

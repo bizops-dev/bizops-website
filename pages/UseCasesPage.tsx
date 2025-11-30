@@ -10,6 +10,7 @@ import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'fram
 import { ArrowRight, BookOpen, Filter, Search, X, Briefcase, Layers } from 'lucide-react';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
+import Typography from '../components/Typography';
 
 // --- Reusing SpotlightCard Concept ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -242,7 +243,7 @@ const UseCasesPage: React.FC = () => {
                      {/* CTA Mini Sidebar */}
                      <div className="bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 rounded-3xl p-6 text-white text-center shadow-xl border border-slate-700/50 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-500/20 transition-all duration-500"></div>
-                        <h4 className="font-bold text-lg mb-2 relative z-10">Custom Solution?</h4>
+                        <Typography variant="h4" as="h4">Custom Solution?</Typography>
                         <p className="text-slate-400 text-sm mb-6 relative z-10">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</p>
                         <Link to="/contact" className="relative z-10">
                            <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">
@@ -341,7 +342,7 @@ const UseCasesPage: React.FC = () => {
                         <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
                            <Search className="w-10 h-10" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No Results Found</h3>
+                        <Typography variant="h3" as="h3">No Results Found</Typography>
                         <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto mb-8">
                            We couldn't find any case studies matching your current filters. Try adjusting your search criteria.
                         </p>

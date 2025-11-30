@@ -11,6 +11,7 @@ import {
   Workflow, Network, Lock, HardDrive, Gauge, Key, Check,
   FileJson, Settings, Puzzle, Share2, Activity, Users, BookOpen, Headphones
 } from 'lucide-react';
+import Typography from '../components/Typography';
 
 const TechnologyPage: React.FC = () => {
   return (
@@ -41,7 +42,7 @@ const TechnologyPage: React.FC = () => {
       <Section className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">The Full Stack View</h2>
+               <Typography variant="h2" as="h2">The Full Stack View</Typography>
                <p className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</p>
             </div>
 
@@ -50,7 +51,7 @@ const TechnologyPage: React.FC = () => {
                <div className="grid md:grid-cols-12 gap-6 items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-2">Presentation Layer</Badge>
-                     <h3 className="font-bold text-slate-900 dark:text-white">Client Apps</h3>
+                     <Typography variant="h3" as="h3">Client Apps</Typography>
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
@@ -70,7 +71,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="absolute left-0 top-0 w-1 h-full bg-emerald-500"></div>
                   <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 mb-2">Business Applications</Badge>
-                     <h3 className="font-bold text-slate-900 dark:text-white">Integrated Modules</h3>
+                     <Typography variant="h3" as="h3">Integrated Modules</Typography>
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
                      {/* ERPNext */}
@@ -129,7 +130,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="absolute left-0 top-0 w-1 h-full bg-primary-500"></div>
                   <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mb-2">Application Core</Badge>
-                     <h3 className="font-bold text-slate-900 dark:text-white">Frappe Framework</h3>
+                     <Typography variant="h3" as="h3">Frappe Framework</Typography>
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
@@ -160,7 +161,7 @@ const TechnologyPage: React.FC = () => {
                <div className="grid md:grid-cols-12 gap-6 items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-2">Infrastructure Services</Badge>
-                     <h3 className="font-bold text-slate-900 dark:text-white">Data & Processing</h3>
+                     <Typography variant="h3" as="h3">Data & Processing</Typography>
                   </div>
                   <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-4 gap-4">
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
@@ -203,7 +204,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="flex gap-4">
                      <div className="mt-1"><FileJson className="w-5 h-5 text-primary-500" /></div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white">Metadata Driven (DocTypes)</h4>
+                        <Typography variant="h4" as="h4">Metadata Driven (DocTypes)</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                            Struktur database, tampilan form, dan permission didefinisikan dalam JSON (DocTypes). Perubahan skema database terjadi otomatis tanpa migrasi manual yang rumit.
                         </p>
@@ -212,7 +213,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="flex gap-4">
                      <div className="mt-1"><Settings className="w-5 h-5 text-primary-500" /></div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white">Low-Code Customization</h4>
+                        <Typography variant="h4" as="h4">Low-Code Customization</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                            Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.
                         </p>
@@ -221,7 +222,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="flex gap-4">
                      <div className="mt-1"><Lock className="w-5 h-5 text-primary-500" /></div>
                      <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white">Granular Permission System</h4>
+                        <Typography variant="h4" as="h4">Granular Permission System</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                            Sistem Role-Based Access Control (RBAC) yang mendalam hingga level field. Mendukung User Permissions untuk pembatasan data berbasis wilayah atau departemen.
                         </p>
@@ -306,14 +307,14 @@ const TechnologyPage: React.FC = () => {
                      <li className="flex items-start gap-3">
                         <Check className="w-6 h-6 text-green-500 mt-0.5" />
                         <div>
-                           <h4 className="text-white font-bold">Unified Data Model</h4>
+                           <Typography variant="h4" as="h4">Unified Data Model</Typography>
                            <p className="text-sm text-slate-400">Satu sumber kebenaran. Data pelanggan di CRM adalah data yang sama di Akuntansi dan Pengiriman.</p>
                         </div>
                      </li>
                      <li className="flex items-start gap-3">
                         <Check className="w-6 h-6 text-green-500 mt-0.5" />
                         <div>
-                           <h4 className="text-white font-bold">Global Compliance</h4>
+                           <Typography variant="h4" as="h4">Global Compliance</Typography>
                            <p className="text-sm text-slate-400">Mendukung standar akuntansi dan perpajakan untuk berbagai negara.</p>
                         </div>
                      </li>
@@ -327,7 +328,7 @@ const TechnologyPage: React.FC = () => {
       <Section className="bg-slate-50 dark:bg-slate-900/50">
          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Integration Architecture</h2>
+               <Typography variant="h2" as="h2">Integration Architecture</Typography>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                   BizOps didesain dengan filosofi <b>API-First</b>. Setiap fitur yang Anda lihat di UI tersedia juga melalui API untuk integrasi pihak ketiga.
                </p>
@@ -338,7 +339,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
                      <Share2 className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">REST API Generik</h3>
+                  <Typography variant="h3" as="h3">REST API Generik</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                      Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.
                   </p>
@@ -351,7 +352,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400">
                      <Workflow className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Webhooks & Events</h3>
+                  <Typography variant="h3" as="h3">Webhooks & Events</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm">
                      Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.
                   </p>
@@ -361,7 +362,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
                      <Puzzle className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Virtual DocType</h3>
+                  <Typography variant="h3" as="h3">Virtual DocType</Typography>
                   <p className="text-slate-600 dark:text-slate-400 text-sm">
                      Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.
                   </p>
@@ -387,21 +388,21 @@ const TechnologyPage: React.FC = () => {
                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">1</div>
                         <div>
-                           <h4 className="text-white font-bold mb-1">Background Workers</h4>
+                           <Typography variant="h4" as="h4">Background Workers</Typography>
                            <p className="text-sm text-slate-400">Tugas berat seperti generate laporan PDF, email bulk, dan posting akuntansi diproses di background (via Redis Queue/BullMQ) agar UI tetap responsif.</p>
                         </div>
                      </div>
                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">2</div>
                         <div>
-                           <h4 className="text-white font-bold mb-1">Intelligent Caching</h4>
+                           <Typography variant="h4" as="h4">Intelligent Caching</Typography>
                            <p className="text-sm text-slate-400">Konfigurasi sistem, permission, dan metadata disimpan di Redis Cache untuk akses super cepat (sub-millisecond).</p>
                         </div>
                      </div>
                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">3</div>
                         <div>
-                           <h4 className="text-white font-bold mb-1">Socket.io Realtime</h4>
+                           <Typography variant="h4" as="h4">Socket.io Realtime</Typography>
                            <p className="text-sm text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</p>
                         </div>
                      </div>
@@ -463,7 +464,7 @@ const TechnologyPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
                <Badge variant="outline" className="mb-4 border-blue-500/30 text-blue-300 bg-blue-500/10">Scalability First</Badge>
-               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Siap untuk Teknologi Masa Depan</h2>
+               <Typography variant="h2" as="h2">Siap untuk Teknologi Masa Depan</Typography>
                <p className="text-slate-400 text-lg max-w-2xl mx-auto">
                   Arsitektur modular kami memungkinkan penambahan kemampuan baru tanpa mengganggu operasional inti.
                </p>
@@ -475,7 +476,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-6 h-6 text-purple-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">AI & ML Integration</h3>
+                  <Typography variant="h3" as="h3">AI & ML Integration</Typography>
                   <p className="text-slate-400 text-sm leading-relaxed">
                      Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.
                   </p>
@@ -486,7 +487,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Network className="w-6 h-6 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">IoT Gateway Ready</h3>
+                  <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
                   <p className="text-slate-400 text-sm leading-relaxed">
                      Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.
                   </p>
@@ -497,7 +498,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Lock className="w-6 h-6 text-emerald-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">Enterprise Security</h3>
+                  <Typography variant="h3" as="h3">Enterprise Security</Typography>
                   <p className="text-slate-400 text-sm leading-relaxed">
                      Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.
                   </p>
@@ -509,13 +510,13 @@ const TechnologyPage: React.FC = () => {
       {/* 7. DEVOPS & INFRASTRUCTURE (RESTORED) */}
       <Section>
          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">Deployment Flexibility</h2>
+            <Typography variant="h2" as="h2">Deployment Flexibility</Typography>
             
             <div className="grid md:grid-cols-2 gap-8 text-left">
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
                   <div className="flex items-center gap-4 mb-6">
                      <Box className="w-10 h-10 text-primary-600" />
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">Containerized (Docker)</h3>
+                     <Typography variant="h3" as="h3">Containerized (Docker)</Typography>
                   </div>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                      Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".
@@ -529,7 +530,7 @@ const TechnologyPage: React.FC = () => {
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
                   <div className="flex items-center gap-4 mb-6">
                      <HardDrive className="w-10 h-10 text-primary-600" />
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">Platform Agnostic</h3>
+                     <Typography variant="h3" as="h3">Platform Agnostic</Typography>
                   </div>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                      Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.
