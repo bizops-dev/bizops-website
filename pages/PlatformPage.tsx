@@ -37,7 +37,7 @@ const PlatformPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
+    <div className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title="BizOps Platform | Modul Lengkap ERP Terintegrasi" 
         description="Eksplorasi modul lengkap BizOps: HRIS, Akuntansi, CRM, Inventory, dan Project Management dalam satu platform terintegrasi." 
@@ -353,7 +353,7 @@ const PlatformPage: React.FC = () => {
             </Stack>
          </Container>
       </Section>
-    </Stack>
+    </div>
   );
 };
 
