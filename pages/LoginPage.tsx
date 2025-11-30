@@ -162,13 +162,13 @@ const LoginPage: React.FC = () => {
           </motion.div>
 
           {loginType === 'partner' ? (
-             <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 text-center block">
                Want to become a partner? <Link to="/partners/apply" className="font-bold text-primary-600 hover:text-primary-700 hover:underline">Apply Now</Link>
-             </p>
+             </Typography>
           ) : (
-             <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 text-center block">
                Don't have an account? <Link to="/contact" className="font-bold text-primary-600 hover:text-primary-700 hover:underline">Contact Sales</Link>
-             </p>
+             </Typography>
           )}
           
           <div className="mt-12 flex items-center justify-center gap-4 text-xs text-slate-400">

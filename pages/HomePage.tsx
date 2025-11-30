@@ -185,9 +185,9 @@ const HomePage: React.FC = () => {
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${prob.bg} ring-1 ring-inset ring-black/5 dark:ring-white/10`}>
                          <prob.icon className={`w-7 h-7 ${prob.color}`} aria-hidden="true" />
                       </div>
-                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
-                      <p className="text-xs font-bold text-red-500 dark:text-red-400 mb-4 uppercase tracking-wide">{prob.subtitle}</p>
-                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
+                     <Typography variant="caption" className="font-bold text-red-500 dark:text-red-400 uppercase tracking-wide">{prob.subtitle}</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
                    </Card>
                 ))}
              </CardSlider>

@@ -93,7 +93,7 @@ const StepLayout = ({
       <div className="mb-8">
          <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">Step {displayStep} of {totalSteps}</div>
          <Typography variant="h2" as="h2" className="font-bold">{title}</Typography>
-         <p className="text-slate-400">{desc}</p>
+         <Typography variant="body" className="text-slate-400">{desc}</Typography>
       </div>
 
       <motion.div 
