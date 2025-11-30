@@ -102,12 +102,12 @@ const PartnersPage: React.FC = () => {
                    className="flex flex-col sm:flex-row gap-4"
                 >
                    <Link to="/partners/apply">
-                      <Button size="lg" className="h-14 px-8 bg-blue-600 hover:bg-blue-700 text-white border-none font-bold shadow-lg shadow-blue-600/20 w-full sm:w-auto">
+                      <Button size="lg" className="px-8 bg-blue-600 hover:bg-blue-700 text-white border-none font-bold shadow-lg shadow-blue-600/20 w-full sm:w-auto">
                          Gabung Partner Network
                       </Button>
                    </Link>
                    <a href="#calculator" onClick={(e) => { e.preventDefault(); document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' }); }} className="w-full sm:w-auto">
-                      <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 w-full">
+                      <Button size="lg" variant="outline" className="px-8 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 w-full">
                          Simulasi Profit
                       </Button>
                    </a>
@@ -186,7 +186,7 @@ const PartnersPage: React.FC = () => {
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 dark:text-blue-400 dark:text-blue-300 shrink-0" /> Cocok untuk Freelancer & Influencer B2B</li>
                   </ul>
                   <Link to="/partners/apply?program=referral" className="mt-auto">
-                     <Button fullWidth variant="outline" className="border-blue-200 text-blue-600 dark:text-slate-300 hover:bg-blue-50">Daftar Referral</Button>
+                     <Button size="md" fullWidth variant="outline" className="border-blue-200 text-blue-600 dark:text-slate-300 hover:bg-blue-50">Daftar Referral</Button>
                   </Link>
                </div>
 
@@ -204,7 +204,7 @@ const PartnersPage: React.FC = () => {
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Dedicated Partner Manager & Tech Support</li>
                   </ul>
                   <Link to="/partners/apply?program=implementation" className="mt-auto">
-                     <Button fullWidth variant="primary">Apply Partner</Button>
+                     <Button size="md" fullWidth variant="primary">Apply Partner</Button>
                   </Link>
                </div>
 
@@ -221,7 +221,7 @@ const PartnersPage: React.FC = () => {
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 dark:text-purple-400 dark:text-purple-300 shrink-0" /> Akses ke Tools & Dashboard Khusus Partner</li>
                   </ul>
                   <Link to="/partners/apply?program=managed-services" className="mt-auto">
-                     <Button fullWidth variant="outline" className="border-purple-200 text-purple-600 dark:text-slate-300 hover:bg-purple-50">Daftar Managed Services</Button>
+                     <Button size="md" fullWidth variant="outline" className="border-purple-200 text-purple-600 dark:text-slate-300 hover:bg-purple-50">Daftar Managed Services</Button>
                   </Link>
                </div>
             </CardSlider>
@@ -241,7 +241,7 @@ const PartnersPage: React.FC = () => {
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 dark:text-blue-400 dark:text-blue-300 shrink-0" /> Cocok untuk Freelancer & Influencer B2B</li>
                </ul>
                <Link to="/partners/apply?program=referral" className="mt-auto">
-                  <Button fullWidth variant="outline" className="border-blue-200 text-blue-600 dark:text-slate-300 hover:bg-blue-50">Daftar Referral</Button>
+                  <Button size="md" fullWidth variant="outline" className="border-blue-200 text-blue-600 dark:text-slate-300 hover:bg-blue-50">Daftar Referral</Button>
                </Link>
             </div>
 
@@ -259,7 +259,7 @@ const PartnersPage: React.FC = () => {
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Dedicated Partner Manager & Tech Support</li>
                </ul>
                <Link to="/partners/apply?program=implementation" className="mt-auto">
-                  <Button fullWidth variant="primary">Apply Partner</Button>
+                  <Button size="md" fullWidth variant="primary">Apply Partner</Button>
                </Link>
             </div>
 
@@ -276,7 +276,7 @@ const PartnersPage: React.FC = () => {
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 dark:text-purple-400 dark:text-purple-300 shrink-0" /> Akses ke Tools & Dashboard Khusus Partner</li>
                </ul>
                <Link to="/partners/apply?program=managed-services" className="mt-auto">
-                  <Button fullWidth variant="outline" className="border-purple-200 text-purple-600 dark:text-slate-300 hover:bg-purple-50">Daftar Managed Services</Button>
+                  <Button size="md" fullWidth variant="outline" className="border-purple-200 text-purple-600 dark:text-slate-300 hover:bg-purple-50">Daftar Managed Services</Button>
                </Link>
             </div>
          </Container>

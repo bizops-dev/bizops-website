@@ -95,7 +95,7 @@ const AccessibilityPage: React.FC = () => {
                     rows={3}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:ring-2 focus:ring-primary-500 outline-none resize-none"
                  ></textarea>
-                 <Button fullWidth>Kirim Laporan</Button>
+                 <Button size="md" fullWidth>Kirim Laporan</Button>
               </form>
            </div>
         </Stack>

@@ -213,7 +213,7 @@ const ServicesPage: React.FC = () => {
                               <Typography variant="caption" className="text-slate-300 leading-relaxed">{service.description}</Typography>
                               <div className="mt-auto">
                                 <Link to={`/services/${service.id}`} className="block w-full">
-                                  <Button className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold px-8 w-full">
+                                  <Button size="md" className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold px-8 w-full">
                                       Explore
                                   </Button>
                                 </Link>
@@ -273,7 +273,7 @@ const ServicesPage: React.FC = () => {
 
                                <div className="mt-auto">
                                   <Link to={`/services/${service.id}`} className="block w-full md:w-auto">
-                                    <Button className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold px-8 w-full md:w-auto">
+                                    <Button size="md" className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold px-8 w-full md:w-auto">
                                        Explore Strategy
                                     </Button>
                                   </Link>
@@ -342,7 +342,7 @@ const ServicesPage: React.FC = () => {
              <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
              <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
-                  <Button size="lg" className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
+                  <Button size="lg" className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 font-bold px-10 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Start Transformation
                   </Button>
                </Link>

@@ -45,7 +45,7 @@ const ThankYouPage: React.FC = () => {
 
         <div className="mt-10">
            <Link to="/">
-              <Button variant="ghost">Kembali ke Beranda</Button>
+              <Button size="md" variant="ghost">Kembali ke Beranda</Button>
            </Link>
         </div>
       </div>

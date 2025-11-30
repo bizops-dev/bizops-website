@@ -362,10 +362,10 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                         />
                                      </div>
                                      <Stack direction="horizontal" gap={3} className="pt-2">
-                                        <Button type="submit" className={requestType === 'delete' ? 'bg-red-600 hover:bg-red-700 shadow-red-500/20' : ''}>
+                                        <Button size="md" type="submit" className={requestType === 'delete' ? 'bg-red-600 hover:bg-red-700 shadow-red-500/20' : ''}>
                                            {requestType === 'delete' ? 'Kirim Permintaan Hapus' : 'Kirim Permintaan Export'}
                                         </Button>
-                                        <Button type="button" variant="ghost" onClick={() => setRequestType(null)}>Batal</Button>
+                                        <Button size="md" type="button" variant="ghost" onClick={() => setRequestType(null)}>Batal</Button>
                                      </Stack>
                                   </form>
                                )}

@@ -226,7 +226,7 @@ const CustomerPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">
                <Link to="/demo">
-                  <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 dark:text-white hover:bg-blue-50 font-bold shadow-xl">
+                  <Button size="lg" className="px-8 rounded-xl bg-white text-slate-900 dark:text-white hover:bg-blue-50 font-bold shadow-xl">
                      Start Transformation
                   </Button>
                </Link>

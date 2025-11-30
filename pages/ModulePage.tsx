@@ -237,7 +237,7 @@ const ModulePage: React.FC = () => {
                   </BouncyButton>
                </Link>
                <Link to="/pricing-calculator" className="w-full sm:w-auto">
-                  <Button variant="outline-white" size="lg" className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white bg-transparent w-full sm:w-auto">
+                  <Button variant="outline-white" size="lg" className="md:px-8 md:px-10 text-base md:text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white bg-transparent w-full sm:w-auto">
                      Hitung Estimasi
                   </Button>
                </Link>
@@ -393,7 +393,7 @@ const ModulePage: React.FC = () => {
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
                         <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
                         <Stack direction="vertical" gap={4}>
-                           <Button variant="white" className="gap-2">
+                           <Button size="md" variant="white" className="gap-2">
                               Download App <ArrowRight className="w-4 h-4" />
                            </Button>
                         </Stack>
@@ -601,7 +601,7 @@ const ModulePage: React.FC = () => {
                   </BouncyButton>
                </Link>
                <Link to="/contact">
-                  <Button variant="outline-white" size="lg" className="h-16 px-10 text-xl">Hubungi Sales</Button>
+                  <Button variant="outline-white" size="lg" className="px-10 text-xl">Hubungi Sales</Button>
                </Link>
             </Stack>
          </Container>

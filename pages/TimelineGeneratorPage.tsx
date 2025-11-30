@@ -365,14 +365,14 @@ const TimelineGeneratorPage: React.FC = () => {
 
                {/* Action Buttons */}
                <Stack direction="vertical" gap={4} className="justify-center pt-4">
-                  <Button 
+                  <Button size="md" 
                      variant="outline"
                      onClick={() => setStep('input')}
                      className="gap-2"
                   >
                      <RefreshCw className="w-4 h-4" /> Ubah Parameter
                   </Button>
-                  <Button 
+                  <Button size="md" 
                      onClick={() => window.print()} 
                      className="gap-2 shadow-lg shadow-primary-500/20"
                   >

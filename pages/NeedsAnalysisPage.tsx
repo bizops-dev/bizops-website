@@ -112,7 +112,7 @@ const StepLayout = ({
          <button onClick={() => setStep(prevStep)} className="text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white flex items-center gap-2">
            <ArrowLeft className="w-4 h-4" /> Kembali
          </button>
-         <Button 
+         <Button size="md" 
            onClick={typeof nextStep === 'string' ? () => setStep(nextStep) : nextStep} 
            disabled={disableNext}
            className={disableNext ? 'opacity-50' : (nextStep === handleFinish ? 'bg-emerald-600 hover:bg-emerald-500' : '')}
@@ -259,7 +259,7 @@ const NeedsAnalysisPage = () => {
               <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.</Typography>
               
               <Stack direction="vertical" gap={4}>
-                <Button onClick={() => setStep('context')} size="lg" className="h-14 px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
+                <Button onClick={() => setStep('context')} size="lg" className="px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
                   Mulai Diagnosa Gratis <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Stack>
@@ -733,10 +733,10 @@ const NeedsAnalysisPage = () => {
                 <Typography variant="body" className="text-slate-400 dark:text-slate-300">Rekomendasi strategis untuk {contextData.company}.</Typography>
              </div>
              <Stack direction="horizontal" gap={3} className="mt-4 md:mt-0 print:hidden">
-                <Button variant="outline-white" onClick={() => window.print()} className="gap-2">
+                <Button size="md" variant="outline-white" onClick={() => window.print()} className="gap-2">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
-                <Button onClick={() => navigate('/contact')} className="gap-2">
+                <Button size="md" onClick={() => navigate('/contact')} className="gap-2">
                    Diskusi Proposal <ArrowRight className="w-4 h-4" />
                 </Button>
              </Stack>

@@ -123,7 +123,7 @@ const ComparisonsPage: React.FC = () => {
                       </div>
                       <Typography variant="h3" as="h3">Hitung Kerugian</Typography>
                       <Typography variant="body" className="leading-relaxed">Lihat berapa banyak biaya yang terbuang karena inefisiensi sistem lama.</Typography>
-                      <Button 
+                      <Button size="md" 
                           size="sm" 
                           fullWidth 
                           onClick={() => navigate('/tools/roi-calculator')}
@@ -278,7 +278,7 @@ const ComparisonsPage: React.FC = () => {
                                 <div>
                                    <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500 dark:text-amber-400 dark:text-amber-300" /> Why Upgrade Now?</Typography>
                                    <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
-                                   <Button 
+                                   <Button size="md" 
                                       onClick={() => navigate('/tools/roi-calculator')}
                                       className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"
                                       size="lg"
@@ -308,7 +308,7 @@ const ComparisonsPage: React.FC = () => {
                         <div className="lg:hidden mt-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white text-center shadow-xl">
                             <Typography variant="h3" as="h3">Hitung ROI Upgrade</Typography>
                             <Typography variant="caption">Lihat berapa banyak biaya yang bisa dihemat.</Typography>
-                            <Button fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50 border-none font-bold">
+                            <Button size="md" fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50 border-none font-bold">
                                 Buka Kalkulator ROI
                             </Button>
                         </div>

@@ -87,7 +87,7 @@ const SysReqPage: React.FC = () => {
 
         <div className="text-center">
            <Link to="/contact">
-              <Button variant="outline">Hubungi IT Support</Button>
+              <Button size="md" variant="outline">Hubungi IT Support</Button>
            </Link>
         </div>
 

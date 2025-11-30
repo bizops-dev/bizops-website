@@ -362,7 +362,7 @@ const RolePage: React.FC = () => {
                  </BouncyButton>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto">
-                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
+                 <Button variant="outline-white" size="lg" className="px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
                     Hubungi Sales
                  </Button>
               </Link>

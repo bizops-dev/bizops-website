@@ -354,7 +354,7 @@ const TrustPage: React.FC = () => {
         <section className="text-center py-16 md:py-24">
            <Typography variant="h2" as="h2">Butuh Dokumen Audit?</Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Akses laporan audit keamanan lengkap kami (Penetration Test Result & Compliance Certifications) melalui portal khusus klien Enterprise.</Typography>
-           <Button size="lg" className="h-14 px-8 font-bold">
+           <Button size="lg" className="px-8 font-bold">
               Request Access to Trust Portal <ChevronRight className="w-4 h-4 ml-2" />
            </Button>
         </section>

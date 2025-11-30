@@ -31,7 +31,7 @@ const CareersPage: React.FC = () => {
           <Typography variant="body-xl" className="text-slate-300">BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.</Typography>
           <div className="flex justify-center gap-4">
              <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
+                <Button size="lg" className="px-10 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
                    View Open Roles <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
              </a>
@@ -217,7 +217,7 @@ const CareersPage: React.FC = () => {
             
             <Stack direction="vertical" gap={6} className="justify-center">
                <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all rounded-2xl w-full sm:w-auto">
+                  <Button size="lg" className="px-12 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all rounded-2xl w-full sm:w-auto">
                      Explore Careers at Divistant <ExternalLink className="ml-2 w-5 h-5" />
                   </Button>
                </a>

@@ -253,14 +253,14 @@ const MigrationPage: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col sm:flex-row justify-center gap-5"
               >
-                 <Button 
+                 <Button size="md" 
                    size="lg" 
                    onClick={() => document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })} 
                    className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/30 text-base px-8 py-4 h-auto rounded-xl"
                  >
                     <Upload className="w-5 h-5 mr-2" /> Cek File Excel Anda
                  </Button>
-                 <Button 
+                 <Button size="md" 
                    size="lg" 
                    variant="outline" 
                    onClick={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })}
@@ -388,7 +388,7 @@ const MigrationPage: React.FC = () => {
                                    </div>
                                    <Typography variant="h3" as="h3">Upload Excel / CSV</Typography>
                                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Drag file ke sini atau klik tombol di bawah</Typography>
-                                   <Button onClick={handleFileSimulate} className="shadow-lg shadow-primary-500/20">
+                                   <Button size="md" onClick={handleFileSimulate} className="shadow-lg shadow-primary-500/20">
                                       <Upload className="w-4 h-4 mr-2" /> Pilih File dari Komputer
                                    </Button>
                                    <Typography variant="body" className="text-slate-400 dark:text-slate-300"><ShieldCheck className="w-3 h-3" /> Privasi Dijamin: Proses berjalan di browser Anda</Typography>
@@ -418,10 +418,10 @@ const MigrationPage: React.FC = () => {
                                    <Typography variant="h3" as="h3">Struktur File Valid!</Typography>
                                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">File Anda siap untuk diimpor. Tidak ditemukan error kritis.</Typography>
                                    <div className="flex gap-3 justify-center">
-                                      <Button onClick={() => navigate('/contact')} className="bg-emerald-600 hover:bg-emerald-500 border-none shadow-lg shadow-emerald-500/20">
+                                      <Button size="md" onClick={() => navigate('/contact')} className="bg-emerald-600 hover:bg-emerald-500 border-none shadow-lg shadow-emerald-500/20">
                                          Konsultasi Migrasi
                                       </Button>
-                                      <Button variant="outline" onClick={() => {setCheckStatus('idle'); setFileName(null)}} className="bg-white dark:bg-transparent">
+                                      <Button size="md" variant="outline" onClick={() => {setCheckStatus('idle'); setFileName(null)}} className="bg-white dark:bg-transparent">
                                          <RefreshCw className="w-4 h-4" />
                                       </Button>
                                    </div>
@@ -473,7 +473,7 @@ const MigrationPage: React.FC = () => {
                           {activeSample.label}</Typography>
                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{activeSample.desc}</Typography>
                     </div>
-                    <Button variant="outline" onClick={handleDownloadTemplate} className="gap-2 border-slate-300 dark:border-slate-700">
+                    <Button size="md" variant="outline" onClick={handleDownloadTemplate} className="gap-2 border-slate-300 dark:border-slate-700">
                        <Download className="w-4 h-4" /> Download Template
                     </Button>
                  </Stack>
@@ -725,7 +725,7 @@ const MigrationPage: React.FC = () => {
                         <CheckCircle className="w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" /> Unlimited Sandbox Reset
                      </li>
                   </ul>
-                  <Button 
+                  <Button size="md" 
                      onClick={() => navigate('/tools/project-planner')} 
                      variant="outline" 
                      className="w-full border-slate-600 text-white hover:bg-slate-700 hover:text-white justify-between group"
@@ -751,7 +751,7 @@ const MigrationPage: React.FC = () => {
                         <CheckCircle className="w-5 h-5 text-blue-400 dark:text-blue-300" /> Garansi Integritas Data
                      </li>
                   </ul>
-                  <Button 
+                  <Button size="md" 
                      onClick={() => navigate('/contact')} 
                      className="w-full bg-blue-500 hover:bg-blue-400 text-white border-none shadow-lg shadow-blue-500/25 justify-between group"
                   >

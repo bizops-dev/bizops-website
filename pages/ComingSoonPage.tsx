@@ -87,7 +87,7 @@ const ComingSoonPage: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     className="text-center"
                   />
-                  <Button fullWidth type="submit" className="shadow-lg shadow-primary-500/20">
+                  <Button size="md" fullWidth type="submit" className="shadow-lg shadow-primary-500/20">
                      Notify Me
                   </Button>
                </form>
@@ -102,12 +102,12 @@ const ComingSoonPage: React.FC = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link to="/">
-            <Button variant="outline" className="h-12 px-6 rounded-xl border-slate-300 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 w-full sm:w-auto">
+            <Button size="md" variant="outline" className="h-12 px-6 rounded-xl border-slate-300 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 w-full sm:w-auto">
               <ArrowLeft className="w-4 h-4 mr-2" /> Kembali ke Beranda
             </Button>
           </Link>
           <Link to="/contact">
-            <Button variant="ghost" className="h-12 px-6 rounded-xl text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/10 w-full sm:w-auto">
+            <Button size="md" variant="ghost" className="h-12 px-6 rounded-xl text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/10 w-full sm:w-auto">
               Hubungi Sales <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>

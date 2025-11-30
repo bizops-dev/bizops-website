@@ -156,7 +156,7 @@ const IndustryPage: React.FC = () => {
                   </div>
                </Link>
                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5 w-full">
+                  <Button variant="ghost" size="lg" className="px-8 text-lg font-medium text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5 w-full">
                      Konsultasi Ahli <ChevronRight className="w-4 h-4 ml-1" />
                   </Button>
                </Link>
@@ -290,7 +290,7 @@ const IndustryPage: React.FC = () => {
          
          <div className="mt-16 text-center relative z-10">
             <Link to="/platform">
-               <Button variant="outline" size="lg" className="border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 h-14 text-lg w-full sm:w-auto">Lihat Semua Modul Platform</Button>
+               <Button variant="outline" size="lg" className="border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 text-lg w-full sm:w-auto">Lihat Semua Modul Platform</Button>
             </Link>
          </div>
       </Section>
@@ -307,7 +307,7 @@ const IndustryPage: React.FC = () => {
                <Typography variant="body-lg" className="text-slate-300 leading-relaxed">"{data.caseStudy}"</Typography>
                <Stack direction="vertical" gap={4}>
                   <Link to="/customers">
-                     <Button variant="white" className="group">
+                     <Button size="md" variant="white" className="group">
                         Baca Studi Kasus Lengkap <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                      </Button>
                   </Link>
@@ -397,7 +397,7 @@ const IndustryPage: React.FC = () => {
                  </BouncyButton>
               </Link>
               <Link to="/contact" className="w-full sm:w-auto">
-                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
+                 <Button variant="outline-white" size="lg" className="px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
                     Hubungi Sales
                  </Button>
               </Link>

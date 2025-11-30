@@ -66,12 +66,12 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
           transition={{ delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
         >
-          <Button onClick={handleReload} size="lg" className="shadow-lg shadow-red-500/20 bg-red-600 hover:bg-red-700 border-none text-white h-14 px-8 rounded-2xl">
+          <Button onClick={handleReload} size="lg" className="shadow-lg shadow-red-500/20 bg-red-600 hover:bg-red-700 border-none text-white px-8 rounded-2xl">
              <RefreshCw className="w-4 h-4 mr-2" /> Try Again
           </Button>
           
           <Link to="/">
-            <Button variant="outline" size="lg" className="h-14 px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">
+            <Button variant="outline" size="lg" className="px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">
               <Home className="w-4 h-4 mr-2" /> Return Home
             </Button>
           </Link>

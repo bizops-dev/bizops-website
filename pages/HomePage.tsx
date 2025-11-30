@@ -124,7 +124,7 @@ const HomePage: React.FC = () => {
                 </BouncyButton>
               </Link>
               <Link to="/pricing-calculator" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800">
+                <Button variant="outline" size="lg" className="px-8 text-lg w-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800">
                   <Calculator className="mr-2 w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" /> Simulasi Harga
                 </Button>
               </Link>
@@ -211,7 +211,7 @@ const HomePage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Modul yang saling berbicara satu sama lain. Input di satu tempat, terupdate di mana-mana.</Typography>
                </div>
                <Link to="/platform">
-                  <Button variant="white" className="group">
+                  <Button size="md" variant="white" className="group">
                      Lihat Semua Modul <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                </Link>
@@ -509,7 +509,7 @@ const HomePage: React.FC = () => {
 
                         <div className="mt-10 relative z-10">
                            <Link to="/pricing-calculator">
-                              <Button fullWidth variant="primary" className="h-14 text-base font-bold shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 border-none bg-gradient-to-r from-blue-600 to-primary-600 hover:from-blue-500 hover:to-primary-500 transition-all transform hover:scale-[1.01]">
+                              <Button size="md" fullWidth variant="primary" className="h-14 text-base font-bold shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 border-none bg-gradient-to-r from-blue-600 to-primary-600 hover:from-blue-500 hover:to-primary-500 transition-all transform hover:scale-[1.01]">
                                  Hitung Penghematan Anda
                               </Button>
                            </Link>
@@ -534,7 +534,7 @@ const HomePage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
                </div>
                <Link to="/services">
-                  <Button variant="outline-white" className="border-white/20 hover:bg-white/10 text-slate-900 dark:text-white font-medium px-6">Pelajari Metodologi Kami</Button>
+                  <Button size="md" variant="outline-white" className="border-white/20 hover:bg-white/10 text-slate-900 dark:text-white font-medium px-6">Pelajari Metodologi Kami</Button>
                </Link>
             </Stack>
 
@@ -735,7 +735,7 @@ const HomePage: React.FC = () => {
                   </BouncyButton>
                </Link>
                <Link to="/pricing-calculator">
-                  <Button variant="outline-white" size="lg" className="h-16 px-10 text-xl w-full sm:w-auto hover:bg-white/10 transition-colors">
+                  <Button variant="outline-white" size="lg" className="px-10 text-xl w-full sm:w-auto hover:bg-white/10 transition-colors">
                      Lihat Harga
                   </Button>
                </Link>

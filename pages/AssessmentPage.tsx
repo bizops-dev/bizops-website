@@ -304,7 +304,7 @@ const AssessmentPage = () => {
               ))}
             </Grid>
 
-            <Button onClick={handleStartIntro} size="lg" className="h-14 px-8 text-lg bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-500 hover:to-indigo-500 shadow-lg shadow-primary-900/20">
+            <Button onClick={handleStartIntro} size="lg" className="px-8 text-lg bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-500 hover:to-indigo-500 shadow-lg shadow-primary-900/20">
               Mulai Assessment Sekarang <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             
@@ -774,10 +774,10 @@ const AssessmentPage = () => {
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>
               <Stack direction="horizontal" gap={3} className="w-full sm:w-auto">
-                <Button onClick={handlePrint} variant="outline-white" className="flex-1 sm:flex-none items-center gap-2 h-10">
+                <Button size="md" onClick={handlePrint} variant="outline-white" className="flex-1 sm:flex-none items-center gap-2 h-10">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
-                <Button onClick={handleConsultationClick} variant="primary" className="flex-1 sm:flex-none items-center gap-2 h-10 bg-gradient-to-r from-primary-600 to-indigo-600 border-0 shadow-lg shadow-primary-900/20">
+                <Button size="md" onClick={handleConsultationClick} variant="primary" className="flex-1 sm:flex-none items-center gap-2 h-10 bg-gradient-to-r from-primary-600 to-indigo-600 border-0 shadow-lg shadow-primary-900/20">
                    Consultation <ArrowRight className="w-4 h-4" />
                 </Button>
               </Stack>
@@ -945,7 +945,7 @@ const AssessmentPage = () => {
                 </Stack>
 
                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-10 pt-8 border-t border-white/10 relative z-10">
-                  <Button 
+                  <Button size="md" 
                     variant="ghost"
                     onClick={() => currentStep > 0 && setCurrentStep(prev => prev - 1)}
                     disabled={currentStep === 0}
@@ -955,7 +955,7 @@ const AssessmentPage = () => {
                   </Button>
                   
                   {currentStep < totalQuestions - 1 ? (
-                    <Button 
+                    <Button size="md" 
                       variant="primary"
                       onClick={() => setCurrentStep(prev => prev + 1)}
                       className="ml-auto bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-0"
@@ -963,7 +963,7 @@ const AssessmentPage = () => {
                       Next Question <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
                   ) : (
-                    <Button 
+                    <Button size="md" 
                       variant="primary"
                       onClick={finishAssessment}
                       disabled={Object.keys(answers).length < totalQuestions}

@@ -52,7 +52,7 @@ const PortalsPage: React.FC = () => {
                            Download ulang Invoice PDF & lacak status pengiriman.
                         </li>
                      </ul>
-                     <Button variant="outline" fullWidth>Lihat Demo Customer Portal</Button>
+                     <Button size="md" variant="outline" fullWidth>Lihat Demo Customer Portal</Button>
                   </div>
                </div>
 
@@ -78,7 +78,7 @@ const PortalsPage: React.FC = () => {
                            Cek status pembayaran tagihan tanpa menelepon Finance.
                         </li>
                      </ul>
-                     <Button variant="outline" fullWidth>Lihat Demo Vendor Portal</Button>
+                     <Button size="md" variant="outline" fullWidth>Lihat Demo Vendor Portal</Button>
                   </div>
                </div>
 

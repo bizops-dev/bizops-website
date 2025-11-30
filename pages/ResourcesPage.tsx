@@ -237,7 +237,7 @@ const ResourcesPage = () => {
                 </Stack>
               </div>
               <Link to={`/use-cases/${featuredUseCase.id}`}>
-                <Button variant="outline" fullWidth>Baca Studi Kasus</Button>
+                <Button size="md" variant="outline" fullWidth>Baca Studi Kasus</Button>
               </Link>
             </div>
           </div>

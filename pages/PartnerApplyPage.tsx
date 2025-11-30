@@ -235,7 +235,7 @@ const PartnerApplyPage: React.FC = () => {
                      </div>
 
                      <div className="pt-4">
-                        <Button type="submit" fullWidth size="lg" isLoading={formState === 'submitting'} className="h-14 text-lg shadow-xl shadow-primary-500/20 rounded-xl font-bold">
+                        <Button type="submit" fullWidth size="lg" isLoading={formState === 'submitting'} className="text-lg shadow-xl shadow-primary-500/20 rounded-xl font-bold">
                           {formState === 'submitting' ? 'Mengirim Data...' : 'Kirim Aplikasi'}
                         </Button>
                         <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300"><Shield className="w-3 h-3" /> Data Anda dienkripsi end-to-end. Kami tidak membagikan data partner.</Typography>

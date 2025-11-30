@@ -66,7 +66,7 @@ const GlossaryPage: React.FC = () => {
               <Typography variant="h2" as="h2">Ingin Menerapkan Konsep Ini Secara Otomatis?</Typography>
               <Typography variant="body" className="text-slate-300">BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.</Typography>
               <Link to="/demo">
-                 <Button className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none">
+                 <Button size="md" className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none">
                     Coba Gratis BizOps <ArrowRight className="ml-2 w-4 h-4" />
                  </Button>
               </Link>

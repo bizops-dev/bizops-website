@@ -85,7 +85,7 @@ const PartnerDirectoryPage: React.FC = () => {
           
           <Stack direction="vertical" gap={4} className="justify-center">
              <Link to="/partners/apply">
-                <Button variant="outline" className="border-slate-600 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/10">
+                <Button size="md" variant="outline" className="border-slate-600 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/10">
                    Become a Partner
                 </Button>
              </Link>
@@ -218,7 +218,7 @@ const PartnerDirectoryPage: React.FC = () => {
                    className="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm shadow-sm"
                  />
              </div>
-             <Button 
+             <Button size="md" 
                variant="outline" 
                fullWidth 
                onClick={() => setShowMobileFilter(true)}
@@ -257,7 +257,7 @@ const PartnerDirectoryPage: React.FC = () => {
                   </div>
                   <Typography variant="h3" as="h3">No partners found</Typography>
                   <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Try adjusting your filters or search terms.</Typography>
-                  <Button variant="outline" onClick={clearFilters}>Clear Filters</Button>
+                  <Button size="md" variant="outline" onClick={clearFilters}>Clear Filters</Button>
                </div>
              )}
           </div>
@@ -324,8 +324,8 @@ const PartnerDirectoryPage: React.FC = () => {
               </Stack>
 
               <div className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex gap-4">
-                 <Button variant="outline" fullWidth onClick={clearFilters}>Reset</Button>
-                 <Button fullWidth onClick={() => setShowMobileFilter(false)}>Show Results</Button>
+                 <Button size="md" variant="outline" fullWidth onClick={clearFilters}>Reset</Button>
+                 <Button size="md" fullWidth onClick={() => setShowMobileFilter(false)}>Show Results</Button>
               </div>
             </motion.div>
           </>

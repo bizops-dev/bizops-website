@@ -219,10 +219,10 @@ const DownloadPage: React.FC = () => {
             <Typography variant="h2" as="h2">Enterprise Deployment?</Typography>
             <Typography variant="body" className="text-slate-400 dark:text-slate-300">Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
-               <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
+               <Button size="md" variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
                   <FileCode className="w-4 h-4" /> Download APK (v4.2.1)
                </Button>
-               <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
+               <Button size="md" variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
                   <ShieldCheck className="w-4 h-4" /> MDM Config Guide
                </Button>
             </Stack>

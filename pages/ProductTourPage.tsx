@@ -297,12 +297,12 @@ const ProductTourPage: React.FC = () => {
           <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
           <Stack direction="vertical" gap={4} className="justify-center">
             <Link to="/demo">
-              <Button size="lg" className="h-14 px-10 text-lg font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-[0_0_40px_rgba(14,165,233,0.3)] w-full sm:w-auto group">
+              <Button size="lg" className="px-10 text-lg font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-[0_0_40px_rgba(14,165,233,0.3)] w-full sm:w-auto group">
                 Mulai Trial Gratis <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/pricing-calculator">
-               <Button variant="outline" size="lg" className="h-14 px-10 text-lg border-slate-700 hover:bg-slate-800 text-white w-full sm:w-auto">
+               <Button variant="outline" size="lg" className="px-10 text-lg border-slate-700 hover:bg-slate-800 text-white w-full sm:w-auto">
                   Cek Estimasi Harga
                </Button>
             </Link>
@@ -412,7 +412,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
             <Stack direction="vertical" gap={3} className="w-full max-w-xs">
                <Link to="/demo" className="w-full">
-                  <Button fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
+                  <Button size="md" fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
                </Link>
                <button onClick={onReset} className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 py-2 group">
                   <RefreshCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" /> Ulangi Simulasi
@@ -459,7 +459,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   ))}
                   
                   <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-[300px] px-4">
-                     <Button onClick={onNext} className="w-full rounded-xl h-12 shadow-xl shadow-primary-500/30 animate-pulse bg-primary-600 hover:bg-primary-500 text-white font-bold border-none">
+                     <Button size="md" onClick={onNext} className="w-full rounded-xl h-12 shadow-xl shadow-primary-500/30 animate-pulse bg-primary-600 hover:bg-primary-500 text-white font-bold border-none">
                         + Buat Penawaran Baru
                      </Button>
                   </div>
@@ -502,7 +502,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                            <span className="text-emerald-400 dark:text-emerald-300">Rp 138.750.000</span>
                         </div>
                      </div>
-                     <Button fullWidth onClick={onNext} className="h-12 text-base font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-lg shadow-primary-900/50">Simpan & Kirim</Button>
+                     <Button size="md" fullWidth onClick={onNext} className="h-12 text-base font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-lg shadow-primary-900/50">Simpan & Kirim</Button>
                   </div>
                </Stack>
             )}
@@ -630,8 +630,8 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         </Stack>
                      </Stack>
                      <div className="p-4 md:p-6 bg-slate-900 border-t border-slate-700 flex gap-3 md:gap-4">
-                        <Button variant="outline" fullWidth onClick={onReset} className="border-slate-600 text-slate-300 hover:bg-slate-800">Reject</Button>
-                        <Button fullWidth onClick={onNext} className="bg-green-600 hover:bg-green-500 border-none text-white font-bold shadow-lg shadow-green-900/50">Approve Request</Button>
+                        <Button size="md" variant="outline" fullWidth onClick={onReset} className="border-slate-600 text-slate-300 hover:bg-slate-800">Reject</Button>
+                        <Button size="md" fullWidth onClick={onNext} className="bg-green-600 hover:bg-green-500 border-none text-white font-bold shadow-lg shadow-green-900/50">Approve Request</Button>
                      </div>
                   </div>
                </div>
@@ -745,7 +745,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="max-w-md text-center">
                      <Typography variant="h3" as="h3">AI Suggestion Found</Typography>
                      <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</Typography>
-                     <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 shadow-lg shadow-emerald-900/50 border-none">Confirm Match</Button>
+                     <Button size="md" onClick={onNext} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 shadow-lg shadow-emerald-900/50 border-none">Confirm Match</Button>
                   </div>
                </Stack>
             )}
@@ -856,7 +856,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">More detailed analysis available on Desktop.</div>
                      </div>
                   </div>
-                  <Button fullWidth onClick={onNext}>Download PDF Report</Button>
+                  <Button size="md" fullWidth onClick={onNext}>Download PDF Report</Button>
                </Stack>
             )}
 
@@ -930,7 +930,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                   </Stack>
 
-                  <Button fullWidth size="lg" onClick={onNext} className="h-14 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-200 mt-auto">Confirm Receipt</Button>
+                  <Button fullWidth size="lg" onClick={onNext} className="text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-200 mt-auto">Confirm Receipt</Button>
                </Stack>
             )}
 

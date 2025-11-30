@@ -240,7 +240,7 @@ const ContactPage: React.FC = () => {
                           </motion.div>
                           <Typography variant="h2" as="h2">Pesan Diterima!</Typography>
                           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.</Typography>
-                          <Button variant="outline" onClick={() => setIsSent(false)}>Kirim Pesan Lain</Button>
+                          <Button size="md" variant="outline" onClick={() => setIsSent(false)}>Kirim Pesan Lain</Button>
                        </Stack>
                      ) : (
                        <>
@@ -302,7 +302,7 @@ const ContactPage: React.FC = () => {
 
                             <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-4">
                                <Typography variant="body" className="text-slate-400 dark:text-slate-300">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
-                               <Button size="lg" type="submit" isLoading={isLoading} className="h-14 px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
+                               <Button size="lg" type="submit" isLoading={isLoading} className="px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
                                   {isLoading ? 'Mengirim...' : 'Kirim Pesan'} <Send className="w-4 h-4 ml-2" />
                                </Button>
                             </Stack>

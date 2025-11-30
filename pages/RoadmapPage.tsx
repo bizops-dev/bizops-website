@@ -113,7 +113,7 @@ const RoadmapPage: React.FC = () => {
                     <Filter className="w-4 h-4" /> Filter
                  </button>
 
-                 <Button 
+                 <Button size="md" 
                    onClick={() => setShowRequestForm(true)} 
                    className="flex-1 md:flex-none shadow-lg shadow-primary-500/20 whitespace-nowrap gap-4"
                  >
@@ -336,7 +336,7 @@ const RoadmapPage: React.FC = () => {
                              />
                           </div>
                           <div className="pt-2">
-                             <Button 
+                             <Button size="md" 
                                 fullWidth 
                                 type="submit" 
                                 disabled={isSubmitting}

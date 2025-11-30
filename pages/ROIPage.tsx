@@ -340,14 +340,14 @@ const ROIPage: React.FC = () => {
                     </Stack>
 
                     <Stack direction="vertical" gap={3} className="w-full md:w-auto min-w-[200px]">
-                       <Button 
+                       <Button size="md" 
                          onClick={() => setShowLeadForm(true)} 
                          size="lg"
                          className="w-full bg-white text-slate-950 hover:bg-slate-200 border-none font-bold shadow-xl shadow-white/10"
                        >
                           <Download className="w-4 h-4 mr-2" /> Unduh Proposal
                        </Button>
-                       <Button 
+                       <Button size="md" 
                          variant="outline-white"
                          onClick={() => navigate('/contact')}
                          className="w-full border-white/20 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5"
@@ -458,7 +458,7 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <Button type="submit" fullWidth className="bg-emerald-600 hover:bg-emerald-500 mt-2">
+                  <Button size="md" type="submit" fullWidth className="bg-emerald-600 hover:bg-emerald-500 mt-2">
                     Unduh PDF Sekarang
                   </Button>
                 </form>

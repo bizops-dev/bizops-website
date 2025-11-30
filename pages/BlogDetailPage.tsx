@@ -84,7 +84,7 @@ const BlogDetailPage: React.FC = () => {
     return (
       <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950">
         <Typography variant="h1" as="h1">Article Not Found</Typography>
-        <Link to="/blog"><Button variant="primary">Back to Insights</Button></Link>
+        <Link to="/blog"><Button size="md" variant="primary">Back to Insights</Button></Link>
       </Stack>
     );
   }
@@ -359,12 +359,12 @@ const BlogDetailPage: React.FC = () => {
                {/* Right: Actions */}
                <Stack direction="vertical" gap={4} className="w-full lg:w-auto">
                   <Link to="/demo" className="w-full sm:w-auto">
-                     <Button size="lg" className="w-full bg-white text-slate-900 dark:text-white hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
+                     <Button size="lg" className="w-full bg-white text-slate-900 dark:text-white hover:bg-blue-50 border-none px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
                         Book a Live Demo
                      </Button>
                   </Link>
                   <Link to="/contact" className="w-full sm:w-auto">
-                     <Button size="lg" variant="outline" className="w-full bg-white/5 border-white/10 text-slate-900 dark:text-white hover:bg-white/10 h-16 px-10 text-lg font-bold backdrop-blur-sm rounded-2xl">
+                     <Button size="lg" variant="outline" className="w-full bg-white/5 border-white/10 text-slate-900 dark:text-white hover:bg-white/10 px-10 text-lg font-bold backdrop-blur-sm rounded-2xl">
                         Talk to Expert
                      </Button>
                   </Link>

@@ -48,11 +48,11 @@ const NotFoundPage: React.FC = () => {
 
             <Stack direction="vertical" gap={4} className="justify-center mb-16">
                <Link to="/">
-                  <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg hover:shadow-primary-500/20 shadow-primary-500/10 text-lg">
+                  <Button size="lg" className="px-8 rounded-2xl shadow-lg hover:shadow-primary-500/20 shadow-primary-500/10 text-lg">
                      Kembali ke Dashboard
                   </Button>
                </Link>
-               <Button size="lg" variant="outline" onClick={() => window.history.back()} className="h-14 px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+               <Button size="lg" variant="outline" onClick={() => window.history.back()} className="px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
                   Kembali Sebelumnya
                </Button>
             </Stack>

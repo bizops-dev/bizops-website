@@ -58,12 +58,12 @@ const AccessDeniedPage: React.FC = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link to="/login">
-            <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg">
+            <Button size="lg" className="px-8 rounded-2xl shadow-lg">
                Login with Different Account
             </Button>
           </Link>
           <Link to="/">
-            <Button variant="outline" size="lg" className="h-14 px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">
+            <Button variant="outline" size="lg" className="px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800">
               <ArrowLeft className="w-4 h-4 mr-2" /> Go Back Home
             </Button>
           </Link>

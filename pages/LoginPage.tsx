@@ -157,7 +157,7 @@ const LoginPage: React.FC = () => {
                   </Link>
                 </Stack>
 
-                <Button fullWidth size="lg" type="submit" isLoading={isLoading} className="h-12 text-base shadow-lg shadow-primary-500/20">
+                <Button fullWidth size="md" type="submit" isLoading={isLoading} className="text-base shadow-lg shadow-primary-500/20">
                    {isLoading ? 'Signing in...' : `Sign in as ${loginType === 'admin' ? 'Administrator' : loginType === 'employee' ? 'Employee' : 'Partner'}`}
                 </Button>
              </form>

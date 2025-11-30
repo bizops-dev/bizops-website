@@ -60,11 +60,11 @@ const StartupProgramPage: React.FC = () => {
              className="flex flex-col sm:flex-row justify-center gap-4"
           >
              <Link to="/partners/apply">
-                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+                <Button size="lg" className="px-10 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
                    Apply for Credits <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
              </Link>
-             <Button size="lg" variant="outline" className="h-14 px-10 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 font-medium w-full sm:w-auto">
+             <Button size="lg" variant="outline" className="px-10 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 font-medium w-full sm:w-auto">
                 <Play className="w-4 h-4 mr-2 fill-current" /> Watch Founder Stories
              </Button>
           </motion.div>
@@ -306,7 +306,7 @@ const StartupProgramPage: React.FC = () => {
                      </Stack>
                      
                      <Link to="/partners/apply?track=bootstrap" className="mt-auto">
-                        <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
+                        <Button size="md" fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
                            Apply Bootstrap Track
                         </Button>
                      </Link>
@@ -357,7 +357,7 @@ const StartupProgramPage: React.FC = () => {
                      </Stack>
                      
                      <Link to="/partners/apply?track=scaleup" className="mt-auto">
-                        <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
+                        <Button size="md" fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
                            Apply Scale-Up Track
                         </Button>
                      </Link>
@@ -410,7 +410,7 @@ const StartupProgramPage: React.FC = () => {
                   </Stack>
                   
                   <Link to="/partners/apply?track=bootstrap" className="mt-auto">
-                     <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
+                     <Button size="md" fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
                         Apply Bootstrap Track
                      </Button>
                   </Link>
@@ -461,7 +461,7 @@ const StartupProgramPage: React.FC = () => {
                   </Stack>
                   
                   <Link to="/partners/apply?track=scaleup" className="mt-auto">
-                     <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
+                     <Button size="md" fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
                         Apply Scale-Up Track
                      </Button>
                   </Link>
@@ -560,11 +560,11 @@ const StartupProgramPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
             <Stack direction="vertical" gap={6} className="justify-center">
                <Link to="/partners/apply">
-                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
+                  <Button size="lg" className="px-12 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
                      Apply Now - It's Free <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                </Link>
-               <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
+               <Button size="lg" variant="outline" className="px-10 text-lg border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
                   Talk to Founder Success
                </Button>
             </Stack>

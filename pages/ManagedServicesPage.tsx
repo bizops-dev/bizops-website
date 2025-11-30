@@ -61,10 +61,10 @@ const ManagedServicesPage: React.FC = () => {
                   </motion.p>
                   
                   <motion.div variants={FADE_UP_VARIANTS} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                     <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg shadow-primary-500/20">
+                     <Button size="lg" className="px-8 rounded-2xl shadow-lg shadow-primary-500/20">
                         Konsultasi Gratis
                      </Button>
-                     <Button variant="outline" size="lg" className="h-14 px-8 rounded-2xl">
+                     <Button variant="outline" size="lg" className="px-8 rounded-2xl">
                         Lihat Partner Kami
                      </Button>
                   </motion.div>
@@ -179,7 +179,7 @@ const ManagedServicesPage: React.FC = () => {
                      ))}
                   </ul>
                   
-                  <Button className="bg-slate-900 dark: bg-white text-slate-900 dark:text-white text-white hover:bg-slate-800 dark:hover:bg-slate-100 rounded-xl px-8 h-12">
+                  <Button size="md" className="bg-slate-900 dark: bg-white text-slate-900 dark:text-white text-white hover:bg-slate-800 dark:hover:bg-slate-100 rounded-xl px-8 h-12">
                      Pelajari Standar Kualitas Kami
                   </Button>
                </div>
@@ -222,12 +222,12 @@ const ManagedServicesPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
-                  <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">
+                  <Button size="lg" className="w-full sm:w-auto px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">
                      Hubungi Kami
                   </Button>
                </Link>
                <Link to="/pricing">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl bg-white dark:bg-slate-900">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto px-10 text-lg rounded-2xl bg-white dark:bg-slate-900">
                      Lihat Estimasi Biaya
                   </Button>
                </Link>

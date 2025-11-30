@@ -112,7 +112,7 @@ const DemoPage: React.FC = () => {
         </motion.div>
         <Typography variant="h2" as="h2">Mengalihkan ke WhatsApp...</Typography>
         <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.</Typography>
-        <Button variant="primary" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
+        <Button size="md" variant="primary" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
       </Stack>
     );
   }
@@ -305,7 +305,7 @@ const DemoPage: React.FC = () => {
                       )}
                     </div>
 
-                    <Button 
+                    <Button size="md" 
                       type="submit" 
                       fullWidth 
                       variant="primary"

@@ -56,10 +56,10 @@ const PlatformPage: React.FC = () => {
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.</Typography>
           <Stack direction="vertical" gap={4} className="justify-center">
              <Link to="/demo" className="w-full sm:w-auto">
-                <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
+                <Button size="lg" className="px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
              </Link>
              <Link to="/docs" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/50 backdrop-blur-sm w-full">Baca Dokumentasi Teknis</Button>
+                <Button variant="outline" size="lg" className="px-8 text-lg bg-white/50 backdrop-blur-sm w-full">Baca Dokumentasi Teknis</Button>
              </Link>
           </Stack>
 
@@ -329,7 +329,7 @@ const PlatformPage: React.FC = () => {
 
             <Stack direction="horizontal" gap={4} justify="center">
                <Link to="/platform/technologies/architecture">
-                  <Button variant="outline" className="border-slate-300 text-slate-600 hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-400 dark:text-slate-300 dark:hover:text-white">
+                  <Button size="md" variant="outline" className="border-slate-300 text-slate-600 hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-400 dark:text-slate-300 dark:hover:text-white">
                      Pelajari Tech Stack Lengkap
                   </Button>
                </Link>
@@ -345,10 +345,10 @@ const PlatformPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/demo">
-                  <Button size="lg" className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
+                  <Button size="lg" className="px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
                </Link>
                <Link to="/contact">
-                  <Button variant="outline" size="lg" className="h-16 px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
+                  <Button variant="outline" size="lg" className="px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
                </Link>
             </Stack>
          </Container>

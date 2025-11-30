@@ -340,7 +340,7 @@ const UseCasesPage: React.FC = () => {
                         </div>
                         <Typography variant="h3" as="h3">No Results Found</Typography>
                         <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">We couldn't find any case studies matching your current filters. Try adjusting your search criteria.</Typography>
-                        <Button variant="outline" onClick={clearFilters}>
+                        <Button size="md" variant="outline" onClick={clearFilters}>
                            Clear Filters
                         </Button>
                      </div>

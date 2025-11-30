@@ -246,7 +246,7 @@ const EventDetailPage: React.FC = () => {
                         />
                       </div>
                       
-                      <Button 
+                      <Button size="md" 
                         type="submit" 
                         className="w-full h-12 text-lg shadow-lg shadow-primary-500/20"
                         disabled={isSubmitting}
@@ -273,7 +273,7 @@ const EventDetailPage: React.FC = () => {
                         <li>Siapkan pertanyaan untuk sesi Q&A</li>
                       </ul>
                     </div>
-                    <Button variant="outline" onClick={() => setIsSuccess(false)} className="w-full">
+                    <Button size="md" variant="outline" onClick={() => setIsSuccess(false)} className="w-full">
                       Daftar Event Lain
                     </Button>
                   </div>

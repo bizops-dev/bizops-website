@@ -78,7 +78,7 @@ const SolutionsPage: React.FC = () => {
                   </BouncyButton>
                </Link>
                <Link to="/demo">
-                  <Button variant="outline-white" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto">
+                  <Button variant="outline-white" size="lg" className="px-8 text-lg w-full sm:w-auto">
                      Lihat Demo Industri
                   </Button>
                </Link>

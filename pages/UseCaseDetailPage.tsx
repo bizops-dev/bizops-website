@@ -255,7 +255,7 @@ const UseCaseDetailPage: React.FC = () => {
         </div>
         <Typography variant="h1" as="h1">Case Study Not Found</Typography>
         <Link to="/use-cases">
-          <Button variant="outline" className="mt-8">Back to Library</Button>
+          <Button size="md" variant="outline" className="mt-8">Back to Library</Button>
         </Link>
       </Section>
     );
@@ -440,7 +440,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.</Typography>
                   
                   <Link to="/contact" className="relative z-10 block">
-                    <Button className="w-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold h-12">
+                    <Button size="md" className="w-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold h-12">
                       Mulai Konsultasi Gratis
                     </Button>
                   </Link>

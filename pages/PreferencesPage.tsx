@@ -117,7 +117,7 @@ const PreferencesPage: React.FC = () => {
               <button type="button" className="text-sm text-red-500 hover:text-red-700 dark:text-slate-200 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1">
                  <XCircle className="w-4 h-4" /> Unsubscribe All
               </button>
-              <Button type="submit" disabled={saved}>
+              <Button size="md" type="submit" disabled={saved}>
                  {saved ? 'Tersimpan!' : 'Simpan Preferensi'}
               </Button>
            </Stack>

@@ -143,7 +143,7 @@ const PricingPage: React.FC = () => {
 
                <div className="mb-8">
                  <Link to="/demo?plan=business" className="w-full block">
-                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white font-bold transition-all hover:shadow-md w-full">
+                    <Button size="md" fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white font-bold transition-all hover:shadow-md w-full">
                       Mulai Trial Gratis
                     </Button>
                  </Link>
@@ -192,7 +192,7 @@ const PricingPage: React.FC = () => {
 
                <div className="mb-8">
                  <Link to="/demo?plan=growth" className="w-full block">
-                   <Button fullWidth variant="primary" size="lg" className="h-14 text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 w-full">
+                   <Button fullWidth variant="primary" size="lg" className="text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 w-full">
                      Pilih Paket Growth
                    </Button>
                  </Link>
@@ -238,7 +238,7 @@ const PricingPage: React.FC = () => {
 
                <div className="mb-8 relative z-10">
                  <Link to="/contact" className="w-full block">
-                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:text-slate-200 dark:hover:text-amber-400 dark:text-amber-300 font-bold transition-all w-full">
+                    <Button size="md" fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:text-slate-200 dark:hover:text-amber-400 dark:text-amber-300 font-bold transition-all w-full">
                       Hubungi Sales Team
                     </Button>
                  </Link>
@@ -276,7 +276,7 @@ const PricingPage: React.FC = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span></Typography>
                 <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.</Typography>
                 <Link to="/pricing-calculator" className="w-full md:w-auto block">
-                  <Button variant="white" size="lg" className="h-14 px-8 text-lg font-bold shadow-xl shadow-blue-900/50 hover:shadow-blue-900/70 hover:scale-105 transition-all duration-300 w-full md:w-auto">
+                  <Button variant="white" size="lg" className="px-8 text-lg font-bold shadow-xl shadow-blue-900/50 hover:shadow-blue-900/70 hover:scale-105 transition-all duration-300 w-full md:w-auto">
                     Buka Pricing Calculator <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>

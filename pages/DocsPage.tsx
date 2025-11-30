@@ -178,7 +178,7 @@ const DocsPage: React.FC = () => {
                  
                  <Stack direction="vertical" gap={3}>
                     <Link to="/docs/api">
-                       <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 border-none font-bold">
+                       <Button size="md" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 border-none font-bold">
                           Read API Docs
                        </Button>
                     </Link>

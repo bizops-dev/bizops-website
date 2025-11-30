@@ -120,7 +120,7 @@ mQINBF... (Truncated for display) ...
                   <input type="email" placeholder="Email Kontak" className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none" />
                 </Grid>
                 <textarea rows={4} placeholder="Deskripsi Kerentanan Singkat..." className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none"></textarea>
-                <Button className="bg-green-600 hover:bg-green-700 text-white border-none w-full md:w-auto">
+                <Button size="md" className="bg-green-600 hover:bg-green-700 text-white border-none w-full md:w-auto">
                   Submit Report
                 </Button>
               </form>
