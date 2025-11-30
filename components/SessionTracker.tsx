@@ -43,7 +43,7 @@ const SessionTracker: React.FC = () => {
   if (!showToast || !resumePath) return null;
 
   return (
-    <div className="fixed bottom-24 left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-8 md:bottom-20 z-40 animate-fade-in-up">
+    <div className="fixed bottom-32 left-4 md:left-8 md:bottom-24 z-40 animate-fade-in-up max-w-[calc(100vw-2rem)] md:max-w-sm">
       <div className="bg-slate-900 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-4 ring-4 ring-white/20 backdrop-blur-sm pr-2">
         <div className="flex items-center gap-2 text-sm">
           <History className="w-4 h-4 text-primary-400" />
