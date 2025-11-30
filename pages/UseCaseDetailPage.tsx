@@ -36,7 +36,7 @@ const COLOR_THEMES: Record<string, {
   iconBg: string;
 }> = {
   blue: {
-    primary: 'text-blue-600 dark:text-blue-400',
+    primary: 'text-blue-600 dark:text-blue-400 dark:text-blue-300',
     bgLight: 'bg-blue-50',
     bgDark: 'dark:bg-blue-900/20',
     gradientFrom: 'from-blue-500',
@@ -46,7 +46,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-blue-100 dark:bg-blue-900/30'
   },
   indigo: {
-    primary: 'text-indigo-600 dark:text-indigo-400',
+    primary: 'text-indigo-600 dark:text-indigo-400 dark:text-indigo-300',
     bgLight: 'bg-indigo-50',
     bgDark: 'dark:bg-indigo-900/20',
     gradientFrom: 'from-indigo-500',
@@ -56,7 +56,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-indigo-100 dark:bg-indigo-900/30'
   },
   violet: {
-    primary: 'text-violet-600 dark:text-violet-400',
+    primary: 'text-violet-600 dark:text-violet-400 dark:text-violet-300',
     bgLight: 'bg-violet-50',
     bgDark: 'dark:bg-violet-900/20',
     gradientFrom: 'from-violet-500',
@@ -66,7 +66,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-violet-100 dark:bg-violet-900/30'
   },
   purple: {
-    primary: 'text-purple-600 dark:text-purple-400',
+    primary: 'text-purple-600 dark:text-purple-400 dark:text-purple-300',
     bgLight: 'bg-purple-50',
     bgDark: 'dark:bg-purple-900/20',
     gradientFrom: 'from-purple-500',
@@ -76,7 +76,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-purple-100 dark:bg-purple-900/30'
   },
   pink: {
-    primary: 'text-pink-600 dark:text-pink-400',
+    primary: 'text-pink-600 dark:text-pink-400 dark:text-pink-300',
     bgLight: 'bg-pink-50',
     bgDark: 'dark:bg-pink-900/20',
     gradientFrom: 'from-pink-500',
@@ -86,7 +86,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-pink-100 dark:bg-pink-900/30'
   },
   rose: {
-    primary: 'text-rose-600 dark:text-rose-400',
+    primary: 'text-rose-600 dark:text-rose-400 dark:text-rose-300',
     bgLight: 'bg-rose-50',
     bgDark: 'dark:bg-rose-900/20',
     gradientFrom: 'from-rose-500',
@@ -96,7 +96,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-rose-100 dark:bg-rose-900/30'
   },
   red: {
-    primary: 'text-red-600 dark:text-red-400',
+    primary: 'text-red-600 dark:text-red-400 dark:text-red-300',
     bgLight: 'bg-red-50',
     bgDark: 'dark:bg-red-900/20',
     gradientFrom: 'from-red-500',
@@ -106,7 +106,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-red-100 dark:bg-red-900/30'
   },
   orange: {
-    primary: 'text-orange-600 dark:text-orange-400',
+    primary: 'text-orange-600 dark:text-orange-400 dark:text-orange-300',
     bgLight: 'bg-orange-50',
     bgDark: 'dark:bg-orange-900/20',
     gradientFrom: 'from-orange-500',
@@ -116,7 +116,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-orange-100 dark:bg-orange-900/30'
   },
   amber: {
-    primary: 'text-amber-600 dark:text-amber-400',
+    primary: 'text-amber-600 dark:text-amber-400 dark:text-amber-300',
     bgLight: 'bg-amber-50',
     bgDark: 'dark:bg-amber-900/20',
     gradientFrom: 'from-amber-500',
@@ -126,7 +126,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-amber-100 dark:bg-amber-900/30'
   },
   yellow: {
-    primary: 'text-yellow-600 dark:text-yellow-400',
+    primary: 'text-yellow-600 dark:text-yellow-400 dark:text-yellow-300',
     bgLight: 'bg-yellow-50',
     bgDark: 'dark:bg-yellow-900/20',
     gradientFrom: 'from-yellow-500',
@@ -136,7 +136,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-yellow-100 dark:bg-yellow-900/30'
   },
   lime: {
-    primary: 'text-lime-600 dark:text-lime-400',
+    primary: 'text-lime-600 dark:text-lime-400 dark:text-lime-300',
     bgLight: 'bg-lime-50',
     bgDark: 'dark:bg-lime-900/20',
     gradientFrom: 'from-lime-500',
@@ -146,7 +146,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-lime-100 dark:bg-lime-900/30'
   },
   green: {
-    primary: 'text-green-600 dark:text-green-400',
+    primary: 'text-green-600 dark:text-green-400 dark:text-green-300',
     bgLight: 'bg-green-50',
     bgDark: 'dark:bg-green-900/20',
     gradientFrom: 'from-green-500',
@@ -156,7 +156,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-green-100 dark:bg-green-900/30'
   },
   emerald: {
-    primary: 'text-emerald-600 dark:text-emerald-400',
+    primary: 'text-emerald-600 dark:text-emerald-400 dark:text-emerald-300',
     bgLight: 'bg-emerald-50',
     bgDark: 'dark:bg-emerald-900/20',
     gradientFrom: 'from-emerald-500',
@@ -166,7 +166,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-emerald-100 dark:bg-emerald-900/30'
   },
   teal: {
-    primary: 'text-teal-600 dark:text-teal-400',
+    primary: 'text-teal-600 dark:text-teal-400 dark:text-teal-300',
     bgLight: 'bg-teal-50',
     bgDark: 'dark:bg-teal-900/20',
     gradientFrom: 'from-teal-500',
@@ -176,7 +176,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-teal-100 dark:bg-teal-900/30'
   },
   cyan: {
-    primary: 'text-cyan-600 dark:text-cyan-400',
+    primary: 'text-cyan-600 dark:text-cyan-400 dark:text-cyan-300',
     bgLight: 'bg-cyan-50',
     bgDark: 'dark:bg-cyan-900/20',
     gradientFrom: 'from-cyan-500',
@@ -186,7 +186,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-cyan-100 dark:bg-cyan-900/30'
   },
   sky: {
-    primary: 'text-sky-600 dark:text-sky-400',
+    primary: 'text-sky-600 dark:text-sky-400 dark:text-sky-300',
     bgLight: 'bg-sky-50',
     bgDark: 'dark:bg-sky-900/20',
     gradientFrom: 'from-sky-500',
@@ -196,7 +196,7 @@ const COLOR_THEMES: Record<string, {
     iconBg: 'bg-sky-100 dark:bg-sky-900/30'
   },
   slate: {
-    primary: 'text-slate-600 dark:text-slate-400',
+    primary: 'text-slate-600 dark:text-slate-400 dark:text-slate-300',
     bgLight: 'bg-slate-50',
     bgDark: 'dark:bg-slate-800',
     gradientFrom: 'from-slate-500',
@@ -222,7 +222,7 @@ const MetricCard = ({ text, index, theme }: { text: string; index: number; theme
     >
       <div className="relative z-10">
         {number ? (
-          <div className={`text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientFrom} ${theme.gradientTo} mb-3 tracking-tight`}>
+          <div className={`text-5xl leading-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${theme.gradientFrom} ${theme.gradientTo} mb-3 tracking-tight`}>
             {number}
           </div>
         ) : (
@@ -248,9 +248,9 @@ const UseCaseDetailPage: React.FC = () => {
 
   if (!data) {
     return (
-      <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950 gap-4">
+      <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950 gap-4 py-16 md:py-24">
         <SEO title="Use Case Not Found" noindex={true} />
-        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse gap-4">
+        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 dark:text-red-400 dark:text-red-300 rounded-full flex items-center justify-center mb-6 animate-pulse gap-4">
           <AlertTriangle className="w-10 h-10" />
         </div>
         <Typography variant="h1" as="h1">Case Study Not Found</Typography>
@@ -324,7 +324,7 @@ const UseCaseDetailPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed mb-12"
+            className="text-xl md:text-2xl text-slate-400 dark:text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-12"
           >
             {data.subtitle}
           </motion.p>
@@ -337,15 +337,15 @@ const UseCaseDetailPage: React.FC = () => {
              className="flex justify-center gap-8 md:gap-16 border-t border-white/10 pt-8 max-w-2xl mx-auto"
           >
              <div className="text-center">
-                <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Location</div>
+                <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-xs uppercase tracking-widest mb-2">Location</div>
                 <div className="text-white font-medium flex items-center justify-center gap-2"><MapPin className="w-4 h-4" /> Indonesia</div>
              </div>
              <div className="text-center">
-                <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Company Size</div>
+                <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-xs uppercase tracking-widest mb-2">Company Size</div>
                 <div className="text-white font-medium flex items-center justify-center gap-2"><Users2 className="w-4 h-4" /> Enterprise</div>
              </div>
              <div className="text-center">
-                <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Industry</div>
+                <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-xs uppercase tracking-widest mb-2">Industry</div>
                 <div className="text-white font-medium flex items-center justify-center gap-2"><Building2 className="w-4 h-4" /> {data.industry}</div>
              </div>
           </motion.div>
@@ -368,13 +368,13 @@ const UseCaseDetailPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="flex items-center gap-3 mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
+                <div className="flex items-center gap-3 mb-6 text-red-500 dark:text-red-400 dark:text-red-300 font-bold uppercase tracking-widest text-sm">
                   <span className="w-8 h-px bg-red-500"></span> The Challenge
                 </div>
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Problem Statement</Typography>
                 <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300">
                   <Typography variant="body-xl" className="leading-relaxed">{data.challenge}</Typography>
-                  <Typography variant="body" className="text-slate-500">Hambatan ini berdampak signifikan pada efisiensi operasional dan potensi pertumbuhan pendapatan perusahaan dalam jangka panjang, sehingga membutuhkan intervensi strategis segera.</Typography>
+                  <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Hambatan ini berdampak signifikan pada efisiensi operasional dan potensi pertumbuhan pendapatan perusahaan dalam jangka panjang, sehingga membutuhkan intervensi strategis segera.</Typography>
                 </div>
               </motion.div>
 
@@ -414,7 +414,7 @@ const UseCaseDetailPage: React.FC = () => {
                 
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
-                  <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Code2 className="w-4 h-4" /> Tech Stack Used</Typography>
+                  <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400 dark:text-slate-300"><Code2 className="w-4 h-4" /> Tech Stack Used</Typography>
                   <div className="flex flex-wrap gap-2">
                     {data.techStack.map((tech, i) => (
                       <span key={i} className="px-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-slate-300 transition-colors cursor-default">
@@ -424,7 +424,7 @@ const UseCaseDetailPage: React.FC = () => {
                   </div>
                   <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
                     <div className="flex items-center justify-between gap-4">
-                       <Typography variant="caption" className="text-slate-500">Module Category</Typography>
+                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Module Category</Typography>
                        <span className={`px-3 py-1 rounded-lg ${theme.bgLight} ${theme.bgDark} text-xs font-bold ${theme.primary} uppercase border ${theme.border}`}>
                           {data.category}
                        </span>
@@ -437,7 +437,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary-500 to-indigo-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   
                   <Typography variant="h3" as="h3" className="font-bold">Hadapi Tantangan Serupa?</Typography>
-                  <Typography variant="caption" className="text-slate-400 leading-relaxed">Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.</Typography>
+                  <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.</Typography>
                   
                   <Link to="/contact" className="relative z-10 block">
                     <Button className="w-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold h-12">
@@ -458,7 +458,7 @@ const UseCaseDetailPage: React.FC = () => {
                  Key Outcomes
               </span>
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Impact</Typography>
-              <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Hasil nyata yang terukur setelah implementasi sistem BizOps.</Typography>
+              <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Hasil nyata yang terukur setelah implementasi sistem BizOps.</Typography>
             </Container>
 
             <Grid cols={3} gap={6}>
@@ -495,13 +495,13 @@ const UseCaseDetailPage: React.FC = () => {
                          </div>
                       </div>
                       <div className="absolute bottom-4 left-4">
-                         <span className="text-xs font-bold bg-white dark:bg-slate-900 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500">
+                         <span className="text-xs font-bold bg-white dark:bg-slate-900 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 dark:text-slate-300">
                             {item.industry}
                          </span>
                       </div>
                     </div>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{item.title}</Typography>
-                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.subtitle}</Typography>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{item.subtitle}</Typography>
                   </Link>
                 );
               })}

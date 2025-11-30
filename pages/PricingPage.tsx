@@ -86,7 +86,7 @@ const PricingPage: React.FC = () => {
               Pertumbuhan Bisnis.
             </motion.span></Typography>
           
-          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
+          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
           
           {/* Enhanced Toggle */}
           <Stack direction="horizontal" gap={4} align="center" justify="center" className="animate-in fade-in zoom-in duration-700 delay-300">
@@ -96,13 +96,13 @@ const PricingPage: React.FC = () => {
               />
               <button 
                 onClick={() => setAnnual(false)}
-                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex justify-center ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
+                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex justify-center ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200'}`}
               >
                 Bulanan
               </button>
               <button 
                 onClick={() => setAnnual(true)}
-                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex items-center justify-center gap-2 ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
+                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex items-center justify-center gap-2 ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200'}`}
               >
                 Tahunan
                 <span className="bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-300 text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-extrabold border border-green-200 dark:border-green-500/30">
@@ -114,7 +114,7 @@ const PricingPage: React.FC = () => {
         </Container>
       </div>
 
-      <Section className="-mt-12 pt-0 relative z-20">
+      <Section className="-mt-12 pt-0 relative z-20 py-16 md:py-24">
         {/* --- PRICING CARDS --- */}
         <div className="mb-24">
            <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12 shadow-lg hover:shadow-xl transition-shadow">
@@ -123,22 +123,22 @@ const PricingPage: React.FC = () => {
              <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
                <div className="mb-6">
                  <Typography variant="h3" as="h3">Business</Typography>
-                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Pondasi digital yang kuat untuk startup & bisnis berkembang.</Typography>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Pondasi digital yang kuat untuk startup & bisnis berkembang.</Typography>
                </div>
                
                <div className="mb-8">
                  <Stack direction="horizontal" gap={1} align="baseline">
-                   <span className="text-sm font-semibold text-slate-500 mb-auto mt-2">IDR</span>
-                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-auto mt-2">IDR</span>
+                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                      {annual ? '2.5' : '3'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                  </Stack>
                  <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
-                   <span className="text-slate-500">/ bulan</span>
-                   {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
+                   <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">/ bulan</span>
+                   {annual && <span className="text-green-600 dark:text-green-400 dark:text-green-300 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
                  </Stack>
-                 <Typography variant="body" className="text-slate-400">{annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}</Typography>
+                 <Typography variant="body" className="text-slate-400 dark:text-slate-300">{annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}</Typography>
                </div>
 
                <div className="mb-8">
@@ -150,11 +150,11 @@ const PricingPage: React.FC = () => {
                </div>
 
                <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 gap-4">
-                 <Typography variant="body" className="text-slate-400 tracking-wider">Fitur Utama:</Typography>
+                 <Typography variant="body" className="text-slate-400 dark:text-slate-300 tracking-wider">Fitur Utama:</Typography>
                  {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
-                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white dark:group-hover:text-white transition-colors">
                      <div className="mt-0.5 min-w-[18px]">
-                       <Check className="w-4.5 h-4.5 text-slate-400 group-hover:text-primary-600 transition-colors" />
+                       <Check className="w-4.5 h-4.5 text-slate-400 dark:text-slate-300 group-hover:text-primary-600 transition-colors" />
                      </div>
                      <span>{f}</span>
                    </div>
@@ -173,19 +173,19 @@ const PricingPage: React.FC = () => {
                
                <div className="mb-6 mt-2">
                  <Typography variant="h3" as="h3">Growth</Typography>
-                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Solusi All-in-One untuk scaling tanpa batasan fitur.</Typography>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Solusi All-in-One untuk scaling tanpa batasan fitur.</Typography>
                </div>
 
                <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
                  <Stack direction="horizontal" gap={1} align="baseline">
-                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
-                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-auto mt-2">IDR</span>
+                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                      {annual ? '7.5' : '9'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                  </Stack>
                  <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
-                   <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
+                   <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">/ bulan</span>
                    {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
                  </Stack>
                </div>
@@ -220,36 +220,36 @@ const PricingPage: React.FC = () => {
 
                <div className="mb-6 relative z-10">
                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Enterprise
-                   <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span></Typography>
-                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Infrastruktur dedicated & kontrol penuh untuk korporasi.</Typography>
+                   <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 dark:text-amber-300 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span></Typography>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Infrastruktur dedicated & kontrol penuh untuk korporasi.</Typography>
                </div>
                
                <div className="mb-8 relative z-10">
                  <Stack direction="horizontal" gap={1} align="baseline">
-                   <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                   <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                      Custom
                    </span>
                  </Stack>
                  <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
-                    <span className="text-slate-500">Sesuai Kebutuhan</span>
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Sesuai Kebutuhan</span>
                  </Stack>
-                 <Typography variant="body" className="text-slate-400">Negosiasi kontrak tahunan & SLA</Typography>
+                 <Typography variant="body" className="text-slate-400 dark:text-slate-300">Negosiasi kontrak tahunan & SLA</Typography>
                </div>
 
                <div className="mb-8 relative z-10">
                  <Link to="/contact" className="w-full block">
-                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 font-bold transition-all w-full">
+                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:text-slate-200 dark:hover:text-amber-400 dark:text-amber-300 font-bold transition-all w-full">
                       Hubungi Sales Team
                     </Button>
                  </Link>
                </div>
 
                <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10 gap-4">
-                 <Typography variant="body" className="dark:text-amber-500 tracking-wider">Enterprise Exclusive:</Typography>
+                 <Typography variant="body" className="dark:text-amber-500 dark:text-amber-400 dark:text-amber-300 tracking-wider">Enterprise Exclusive:</Typography>
                  {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
-                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white dark:group-hover:text-white transition-colors">
                      <div className="mt-0.5 min-w-[18px]">
-                       <Check className="w-4.5 h-4.5 text-amber-500" />
+                       <Check className="w-4.5 h-4.5 text-amber-500 dark:text-amber-400 dark:text-amber-300" />
                      </div>
                      <span>{f}</span>
                    </div>
@@ -305,17 +305,17 @@ const PricingPage: React.FC = () => {
            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
              <Grid cols={4} gap={6}>
                {[
-                 { icon: Shield, title: "Secure Payment", desc: "Midtrans & Xendit Gateway", color: "text-green-500" },
-                 { icon: Lock, title: "Data Encryption", desc: "AES-256 & TLS 1.3 Standards", color: "text-blue-500" },
-                 { icon: Server, title: "99.9% Uptime SLA", desc: "Redundant Cloud Infrastructure", color: "text-purple-500" },
-                 { icon: RefreshCw, title: "14-Day Guarantee", desc: "Money Back Policy", color: "text-amber-500" },
+                 { icon: Shield, title: "Secure Payment", desc: "Midtrans & Xendit Gateway", color: "text-green-500 dark:text-green-400 dark:text-green-300" },
+                 { icon: Lock, title: "Data Encryption", desc: "AES-256 & TLS 1.3 Standards", color: "text-blue-500 dark:text-blue-400 dark:text-blue-300" },
+                 { icon: Server, title: "99.9% Uptime SLA", desc: "Redundant Cloud Infrastructure", color: "text-purple-500 dark:text-purple-400 dark:text-purple-300" },
+                 { icon: RefreshCw, title: "14-Day Guarantee", desc: "Money Back Policy", color: "text-amber-500 dark:text-amber-400 dark:text-amber-300" },
                ].map((item, i) => (
                  <div key={i} className="flex flex-col items-center text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors gap-4">
                    <div className={`p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm mb-4 ${item.color}`}>
                      <item.icon className="w-8 h-8" />
                    </div>
                    <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
-                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
+                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{item.desc}</Typography>
                  </div>
                ))}
              </Grid>
@@ -332,11 +332,11 @@ const PricingPage: React.FC = () => {
           <div className="lg:col-span-5">
              <div className="sticky top-24">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Frequently Asked Questions</Typography>
-               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Jawaban untuk pertanyaan umum seputar lisensi, pembayaran, dan teknis implementasi.</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jawaban untuk pertanyaan umum seputar lisensi, pembayaran, dan teknis implementasi.</Typography>
                
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800">
                  <Typography variant="h4" as="h4">Masih ada pertanyaan?</Typography>
-                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim konsultan kami siap membantu Anda.</Typography>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Tim konsultan kami siap membantu Anda.</Typography>
                  <Stack direction="vertical" gap={3}>
                    <a href="mailto:sales@bizops.id" className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                      <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm"><MessageSquare className="w-5 h-5" /></div>

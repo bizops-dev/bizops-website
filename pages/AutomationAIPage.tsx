@@ -37,29 +37,29 @@ const AutomationAIPage: React.FC = () => {
                   <Stack direction="vertical" gap={8}>
                      <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg h-fit">
-                           <GitMerge className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                           <GitMerge className="w-6 h-6 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Visual Builder</Typography>
-                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Antarmuka <em>drag-and-drop</em> intuitif untuk membuat aturan logika "Jika X maka Y" tanpa perlu menulis satu baris kode pun.</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Antarmuka <em>drag-and-drop</em> intuitif untuk membuat aturan logika "Jika X maka Y" tanpa perlu menulis satu baris kode pun.</Typography>
                         </div>
                      </Stack>
                      <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-purple-50 dark:bg-purple-900/30 rounded-lg h-fit">
-                           <ArrowRight className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                           <ArrowRight className="w-6 h-6 text-purple-600 dark:text-purple-400 dark:text-purple-300" />
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Scenario Example</Typography>
-                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">"Jika Stok Barang &lt; 10 unit, otomatis buat <em>Purchase Request</em> ke Vendor A, kirim email PO PDF ke vendor, dan kirim notifikasi WhatsApp ke Manajer Gudang."</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">"Jika Stok Barang &lt; 10 unit, otomatis buat <em>Purchase Request</em> ke Vendor A, kirim email PO PDF ke vendor, dan kirim notifikasi WhatsApp ke Manajer Gudang."</Typography>
                         </div>
                      </Stack>
                      <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-green-50 dark:bg-green-900/30 rounded-lg h-fit">
-                           <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
+                           <Zap className="w-6 h-6 text-green-600 dark:text-green-400 dark:text-green-300" />
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Auto-Assignment</Typography>
-                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Distribusi tugas otomatis berdasarkan aturan. Misal: "Setiap Lead baru yang berasal dari wilayah Jakarta Selatan otomatis di-<em>assign</em> ke Salesman Budi."</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Distribusi tugas otomatis berdasarkan aturan. Misal: "Setiap Lead baru yang berasal dari wilayah Jakarta Selatan otomatis di-<em>assign</em> ke Salesman Budi."</Typography>
                         </div>
                      </Stack>
                   </Stack>
@@ -69,7 +69,7 @@ const AutomationAIPage: React.FC = () => {
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
                   <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg max-w-xs w-full relative z-10">
                      <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">
-                        <Typography variant="caption" className="text-slate-500">Logic Flow</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Logic Flow</Typography>
                         <Stack direction="horizontal" gap={1}>
                      </div>
                      <Stack direction="vertical" gap={3} className="text-xs">
@@ -91,19 +91,19 @@ const AutomationAIPage: React.FC = () => {
             <Typography variant="h2" as="h2">Applied AI Capabilities</Typography>
             <Grid cols={3} gap={8}>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
-                  <BrainCircuit className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-6" />
+                  <BrainCircuit className="w-12 h-12 text-purple-600 dark:text-purple-400 dark:text-purple-300 mb-6" />
                   <Typography variant="h3" as="h3">Smart Forecasting</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Algoritma prediktif yang menganalisis data penjualan historis 2 tahun terakhir dan tren musiman untuk merekomendasikan jumlah <em>restock</em> yang optimal bulan depan. Mencegah <em>Overstock</em> (uang mati) dan <em>Stockout</em> (hilang omzet).</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Algoritma prediktif yang menganalisis data penjualan historis 2 tahun terakhir dan tren musiman untuk merekomendasikan jumlah <em>restock</em> yang optimal bulan depan. Mencegah <em>Overstock</em> (uang mati) dan <em>Stockout</em> (hilang omzet).</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
-                  <ScanLine className="w-12 h-12 text-blue-600 dark:text-blue-400 mb-6" />
+                  <ScanLine className="w-12 h-12 text-blue-600 dark:text-blue-400 dark:text-blue-300 mb-6" />
                   <Typography variant="h3" as="h3">OCR Expense Scanner</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Karyawan cukup memfoto struk makan siang atau bensin. AI kami secara otomatis membaca dan mengekstrak nominal, tanggal, dan nama merchant untuk mengisi form Reimbursement. Akurasi pembacaan di atas 95%.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Karyawan cukup memfoto struk makan siang atau bensin. AI kami secara otomatis membaca dan mengekstrak nominal, tanggal, dan nama merchant untuk mengisi form Reimbursement. Akurasi pembacaan di atas 95%.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
-                  <ShieldAlert className="w-12 h-12 text-amber-600 dark:text-amber-400 mb-6" />
+                  <ShieldAlert className="w-12 h-12 text-amber-600 dark:text-amber-400 dark:text-amber-300 mb-6" />
                   <Typography variant="h3" as="h3">Anomaly Detection</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sistem "satpam digital" yang mendeteksi pola transaksi mencurigakan secara dini, misal: pemberian diskon manual di luar kewajaran atau transaksi pembelian di jam yang tidak wajar.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Sistem "satpam digital" yang mendeteksi pola transaksi mencurigakan secara dini, misal: pemberian diskon manual di luar kewajaran atau transaksi pembelian di jam yang tidak wajar.</Typography>
                </div>
             </Grid>
          </Container>

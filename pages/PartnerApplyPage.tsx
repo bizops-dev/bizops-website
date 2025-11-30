@@ -83,11 +83,11 @@ const PartnerApplyPage: React.FC = () => {
   if (formState === 'success') {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center p-4 text-center bg-slate-50 dark:bg-slate-900 gap-4" role="alert">
-        <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 animate-bounce shadow-lg gap-4">
+        <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 dark:text-green-300 rounded-full flex items-center justify-center mb-8 animate-bounce shadow-lg gap-4">
           <CheckCircle className="w-12 h-12" aria-hidden="true" />
         </div>
         <Typography variant="h2" as="h2">Aplikasi Diterima!</Typography>
-        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Terima kasih atas minat Anda bergabung dengan Ekosistem BizOps. Partner Manager kami sedang meninjau profil bisnis Anda dan akan menghubungi dalam <strong>1-2 hari kerja</strong>.</Typography>
+        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Terima kasih atas minat Anda bergabung dengan Ekosistem BizOps. Partner Manager kami sedang meninjau profil bisnis Anda dan akan menghubungi dalam <strong>1-2 hari kerja</strong>.</Typography>
         <Button size="lg" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
       </div>
     );
@@ -114,7 +114,7 @@ const PartnerApplyPage: React.FC = () => {
 
          <Container size="4xl" className="relative z-10">
             <Typography variant="h1" as="h1" className="font-bold tracking-tight">{getPageTitle()}</Typography>
-            <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{trackParam 
+            <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">{trackParam 
                   ? "Bergabung dengan ratusan founder lain yang telah mengakselerasi pertumbuhan mereka dengan BizOps." 
                   : "Bergabung dengan ekosistem partner kami untuk memperluas portofolio layanan dan meningkatkan revenue bisnis Anda."}</Typography>
          </Container>
@@ -129,10 +129,10 @@ const PartnerApplyPage: React.FC = () => {
                   
                   {trackParam && (
                      <div className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl flex items-start gap-3">
-                        <Info className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                        <Info className="w-5 h-5 text-purple-600 dark:text-slate-300 mt-0.5 shrink-0" />
                         <div>
                            <Typography variant="h4" as="h4" className="font-bold dark:text-purple-300">Anda mendaftar untuk {trackParam === 'bootstrap' ? 'Bootstrap' : 'Scale-Up'} Track</Typography>
-                           <Typography variant="body" className="dark:text-purple-400">Kami akan memprioritaskan aplikasi Anda sesuai kriteria program startup.</Typography>
+                           <Typography variant="body" className="dark:text-purple-400 dark:text-purple-300">Kami akan memprioritaskan aplikasi Anda sesuai kriteria program startup.</Typography>
                         </div>
                      </div>
                   )}
@@ -194,7 +194,7 @@ const PartnerApplyPage: React.FC = () => {
                                  />
                                  <div>
                                     <span className="block font-bold text-slate-900 dark:text-white text-sm">Referral Partner</span>
-                                    <span className="block text-xs text-slate-500 mt-1">Komisi per deal. Tanpa teknis.</span>
+                                    <span className="block text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mt-1">Komisi per deal. Tanpa teknis.</span>
                                  </div>
                               </label>
                               <label className={`flex items-start gap-3 p-4 border rounded-xl cursor-pointer transition-all ${selectedProgram === 'implementation' ? 'bg-primary-50 border-primary-500 ring-1 ring-primary-500 dark:bg-primary-900/20' : 'border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
@@ -206,7 +206,7 @@ const PartnerApplyPage: React.FC = () => {
                                  />
                                  <div>
                                     <span className="block font-bold text-slate-900 dark:text-white text-sm">Implementation Partner</span>
-                                    <span className="block text-xs text-slate-500 mt-1">Margin besar + Jasa Setup & Training.</span>
+                                    <span className="block text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mt-1">Margin besar + Jasa Setup & Training.</span>
                                  </div>
                               </label>
                            </Grid>
@@ -223,7 +223,7 @@ const PartnerApplyPage: React.FC = () => {
                         <Checkbox 
                            name="consent"
                            label={
-                              <span className="text-sm text-slate-600 dark:text-slate-400">
+                              <span className="text-sm text-slate-600 dark:text-slate-400 dark:text-slate-300">
                                  Saya menyetujui NDA & <Link to="/legal/privacy" className="text-primary-600 hover:underline font-medium" target="_blank">Kebijakan Privasi</Link>. Saya mengerti bahwa tim BizOps akan melakukan verifikasi latar belakang bisnis.
                               </span>
                            }
@@ -238,7 +238,7 @@ const PartnerApplyPage: React.FC = () => {
                         <Button type="submit" fullWidth size="lg" isLoading={formState === 'submitting'} className="h-14 text-lg shadow-xl shadow-primary-500/20 rounded-xl font-bold">
                           {formState === 'submitting' ? 'Mengirim Data...' : 'Kirim Aplikasi'}
                         </Button>
-                        <Typography variant="body" className="text-slate-500"><Shield className="w-3 h-3" /> Data Anda dienkripsi end-to-end. Kami tidak membagikan data partner.</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300"><Shield className="w-3 h-3" /> Data Anda dienkripsi end-to-end. Kami tidak membagikan data partner.</Typography>
                      </div>
                   </form>
                </div>
@@ -260,26 +260,26 @@ const PartnerApplyPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Review (1-2 Hari)</Typography>
-                           <Typography variant="body" className="text-slate-400 leading-relaxed">Tim Channel Manager memverifikasi legalitas & profil bisnis Anda.</Typography>
+                           <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">Tim Channel Manager memverifikasi legalitas & profil bisnis Anda.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">2</div>
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">2</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Discovery Call</Typography>
-                           <Typography variant="body" className="text-slate-500 leading-relaxed">Diskusi skema kerjasama, demo panel admin, dan strategi go-to-market.</Typography>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Diskusi skema kerjasama, demo panel admin, dan strategi go-to-market.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">3</div>
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">3</div>
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Onboarding</Typography>
-                           <Typography variant="body" className="text-slate-500 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</Typography>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</Typography>
                         </div>
                      </div>
                   </Stack>
@@ -288,7 +288,7 @@ const PartnerApplyPage: React.FC = () => {
                {/* Quick Contact */}
                <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg">
                   <Typography variant="h4" as="h4">Butuh Bantuan Cepat?</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Ingin diskusi informal sebelum mendaftar resmi? Hubungi tim kemitraan kami langsung.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Ingin diskusi informal sebelum mendaftar resmi? Hubungi tim kemitraan kami langsung.</Typography>
                   <Button variant="outline" size="sm" className="w-full justify-start gap-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">
                      <Mail className="w-4 h-4" /> partners@bizops.id
                   </Button>

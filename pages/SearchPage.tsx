@@ -21,14 +21,14 @@ const SearchPage: React.FC = () => {
 
   const getIcon = (cat: string) => {
     switch (cat) {
-      case 'product': return <Box className="w-4 h-4 text-blue-500" />;
-      case 'solution': return <Layers className="w-4 h-4 text-indigo-500" />;
-      case 'tool': return <Wrench className="w-4 h-4 text-amber-500" />;
-      case 'docs': return <FileText className="w-4 h-4 text-orange-500" />;
-      case 'blog': return <BookOpen className="w-4 h-4 text-green-500" />;
-      case 'partner': return <User className="w-4 h-4 text-purple-500" />;
-      case 'company': return <Building className="w-4 h-4 text-slate-500" />;
-      default: return <HelpCircle className="w-4 h-4 text-slate-400" />;
+      case 'product': return <Box className="w-4 h-4 text-blue-500 dark:text-blue-400 dark:text-blue-300" />;
+      case 'solution': return <Layers className="w-4 h-4 text-indigo-500 dark:text-indigo-400 dark:text-indigo-300" />;
+      case 'tool': return <Wrench className="w-4 h-4 text-amber-500 dark:text-amber-400 dark:text-amber-300" />;
+      case 'docs': return <FileText className="w-4 h-4 text-orange-500 dark:text-orange-400 dark:text-orange-300" />;
+      case 'blog': return <BookOpen className="w-4 h-4 text-green-500 dark:text-green-400 dark:text-green-300" />;
+      case 'partner': return <User className="w-4 h-4 text-purple-500 dark:text-purple-400 dark:text-purple-300" />;
+      case 'company': return <Building className="w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />;
+      default: return <HelpCircle className="w-4 h-4 text-slate-400 dark:text-slate-300" />;
     }
   };
 
@@ -51,7 +51,7 @@ const SearchPage: React.FC = () => {
                 autoFocus
                 aria-label="Search query"
               />
-              <Search className="absolute left-5 top-5 text-slate-400 w-6 h-6" aria-hidden="true" />
+              <Search className="absolute left-5 top-5 text-slate-400 dark:text-slate-300 w-6 h-6" aria-hidden="true" />
            </Container>
         </div>
 
@@ -63,8 +63,8 @@ const SearchPage: React.FC = () => {
                 onClick={() => setFilter(f)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${
                   filter === f 
-                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-slate-900 dark:border-white' 
-                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 dark:text-white border-slate-900 dark:border-white' 
+                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
                 aria-pressed={filter === f}
               >
@@ -98,14 +98,14 @@ const SearchPage: React.FC = () => {
                     to={res.path} // Now using direct path from data
                     className="block bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all group cursor-pointer"
                  >
-                    <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider font-bold">
+                    <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-2 uppercase tracking-wider font-bold">
                        {getIcon(res.category)}
                        <span>{res.category}</span>
-                       <span className="text-slate-300 dark:text-slate-700">•</span>
+                       <span className="text-slate-300 dark:text-slate-700 dark:text-slate-200">•</span>
                        <span>{res.tag}</span>
                     </Stack>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{res.title}</Typography>
-                    <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{res.snippet}</Typography>
+                    <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{res.snippet}</Typography>
                  </Link>
               ))
            )}

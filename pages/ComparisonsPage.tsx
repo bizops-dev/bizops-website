@@ -34,10 +34,10 @@ const ComparisonsPage: React.FC = () => {
 
   // Helper for dynamic colors
   const getScoreColor = (score: number) => {
-    if (score <= 20) return 'text-emerald-500'; // Optimal
-    if (score > 70) return 'text-red-500';
-    if (score > 50) return 'text-amber-500';
-    return 'text-blue-500';
+    if (score <= 20) return 'text-emerald-500 dark:text-emerald-400 dark:text-emerald-300'; // Optimal
+    if (score > 70) return 'text-red-500 dark:text-red-400 dark:text-red-300';
+    if (score > 50) return 'text-amber-500 dark:text-amber-400 dark:text-amber-300';
+    return 'text-blue-500 dark:text-blue-400 dark:text-blue-300';
   };
   
   const getScoreBg = (score: number) => {
@@ -67,7 +67,7 @@ const ComparisonsPage: React.FC = () => {
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-6 border border-slate-300/50 dark:border-slate-700/50 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 dark:text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 border border-slate-300/50 dark:border-slate-700/50 backdrop-blur-sm"
             >
                 <LayoutGrid className="w-4 h-4" /> System Architecture Comparison
             </motion.div>
@@ -80,7 +80,7 @@ const ComparisonsPage: React.FC = () => {
             {/* SIDEBAR SELECTION */}
             <Stack direction="vertical" gap={6} className="lg:col-span-3 lg:sticky lg:top-28">
                 <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-200/60 dark:border-slate-800/60 p-3 shadow-xl shadow-slate-200/20 dark:shadow-black/20">
-                    <div className="px-4 py-3 text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                    <div className="px-4 py-3 text-xs font-bold text-slate-400 dark:text-slate-300 uppercase tracking-widest mb-1">
                         Select System
                     </div>
                     <Stack direction="vertical" gap={2} className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide">
@@ -90,12 +90,12 @@ const ComparisonsPage: React.FC = () => {
                                 onClick={() => setSelectedId(item.id)}
                                 className={`group flex items-center gap-4 w-full p-4 rounded-2xl transition-all duration-300 text-left min-w-[240px] lg:min-w-0 relative overflow-hidden ${
                                     selectedId === item.id 
-                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg scale-[1.02]' 
-                                    : 'hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-600 dark:text-slate-400'
+                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 dark:text-white shadow-lg scale-[1.02]' 
+                                    : 'hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-600 dark:text-slate-400 dark:text-slate-300'
                                 }`}
                             >
                                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                                    selectedId === item.id ? 'bg-white/20 text-white dark:bg-slate-900/10 dark:text-slate-900' : 'bg-slate-200/50 dark:bg-slate-800 text-slate-500'
+                                    selectedId === item.id ? 'bg-white/20 text-white dark:bg-slate-900/10 dark:text-slate-900 dark:text-white' : 'bg-slate-200/50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300'
                                 }`}>
                                     <item.icon className="w-5 h-5" />
                                 </div>
@@ -127,7 +127,7 @@ const ComparisonsPage: React.FC = () => {
                           size="sm" 
                           fullWidth 
                           onClick={() => navigate('/tools/roi-calculator')}
-                          className="bg-white text-blue-700 hover:bg-blue-50 border-none font-bold"
+                          className="bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50 border-none font-bold"
                       >
                           Buka Kalkulator ROI
                       </Button>
@@ -157,23 +157,23 @@ const ComparisonsPage: React.FC = () => {
                                         <div className="flex items-center gap-3 mb-6">
                                             <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border backdrop-blur-sm ${
                                                 selectedData.bottleneckScore <= 20
-                                                ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400'
+                                                ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400 dark:text-emerald-300'
                                                 : selectedData.bottleneckScore > 70 
-                                                ? 'bg-red-500/10 text-red-600 border-red-500/20 dark:text-red-400' 
-                                                : 'bg-amber-500/10 text-amber-600 border-amber-500/20 dark:text-amber-400'
+                                                ? 'bg-red-500/10 text-red-600 border-red-500/20 dark:text-red-400 dark:text-red-300' 
+                                                : 'bg-amber-500/10 text-amber-600 border-amber-500/20 dark:text-amber-400 dark:text-amber-300'
                                             }`}>
                                                 {selectedData.bottleneckLabel}
                                             </span>
                                         </div>
                                         <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">"{selectedData.verdict}"</Typography>
-                                        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">{selectedData.description}</Typography>
+                                        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{selectedData.description}</Typography>
                                     </div>
 
                                     {/* Score Meter */}
                                     <div className="flex-shrink-0 mx-auto md:mx-0 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 backdrop-blur-sm gap-4">
                                         <div className="relative w-40 h-40 flex items-center justify-center gap-4">
                                             <svg className="w-full h-full transform -rotate-90 drop-shadow-lg">
-                                                <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-200 dark:text-slate-700/50" />
+                                                <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-200 dark:text-slate-700 dark:text-slate-200/50" />
                                                 <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="12" fill="transparent" 
                                                     className={`${getScoreColor(selectedData.bottleneckScore)} transition-all duration-1000 ease-out`}
                                                     strokeDasharray={440}
@@ -182,8 +182,8 @@ const ComparisonsPage: React.FC = () => {
                                                 />
                                             </svg>
                                             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                                                <div className="text-4xl font-extrabold text-slate-900 dark:text-white">{selectedData.bottleneckScore}</div>
-                                                <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">Bottleneck</div>
+                                                <div className="text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">{selectedData.bottleneckScore}</div>
+                                                <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 tracking-wider mt-1">Bottleneck</div>
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +199,7 @@ const ComparisonsPage: React.FC = () => {
                                       { icon: Lock, label: "Security", value: selectedData.securityLevel },
                                     ].map((metric, idx) => (
                                       <div key={idx} className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:bg-white dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700 group">
-                                          <div className="text-xs font-bold text-slate-400 uppercase mb-2 flex items-center gap-2 group-hover:text-primary-500 transition-colors">
+                                          <div className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase mb-2 flex items-center gap-2 group-hover:text-primary-500 transition-colors">
                                             <metric.icon className="w-3.5 h-3.5" /> {metric.label}
                                           </div>
                                           <div className="font-bold text-slate-900 dark:text-white text-sm">{metric.value}</div>
@@ -222,14 +222,14 @@ const ComparisonsPage: React.FC = () => {
                                         {/* Col 1: Feature & Limit */}
                                         <Stack direction="vertical" gap={4} className="md:col-span-4">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold text-sm gap-4">
+                                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold text-sm gap-4">
                                                    {idx + 1}
                                                 </div>
                                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{point.feature}</Typography>
                                             </div>
                                             
                                             <div className={`p-4 rounded-xl border ${isBizOps ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-100 dark:border-blue-900/20' : 'bg-red-50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20'}`}>
-                                                <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5 ${isBizOps ? 'text-blue-500' : 'text-red-500'}`}>
+                                                <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5 ${isBizOps ? 'text-blue-500' : 'text-red-500 dark:text-red-400 dark:text-red-300'}`}>
                                                     {isBizOps ? <Info className="w-3 h-3" /> : <XCircle className="w-3 h-3" />} 
                                                     {isBizOps ? 'Standard Capability' : 'Current Limit'}
                                                 </div>
@@ -239,13 +239,13 @@ const ComparisonsPage: React.FC = () => {
 
                                         {/* Arrow */}
                                         <div className="hidden md:flex md:col-span-1 justify-center gap-4">
-                                            <ArrowRight className="w-6 h-6 text-slate-300 dark:text-slate-700" />
+                                            <ArrowRight className="w-6 h-6 text-slate-300 dark:text-slate-700 dark:text-slate-200" />
                                         </div>
 
                                         {/* Col 2: BizOps Solution */}
                                         <Grid cols={2} gap={6} className="md:col-span-7">
                                             <div className="bg-emerald-50 dark:bg-emerald-900/10 p-5 rounded-xl border border-emerald-100 dark:border-emerald-900/20 relative">
-                                                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 dark:text-emerald-300 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                                                     <CheckCircle2 className="w-3 h-3" /> {isBizOps ? 'BizOps Advantage' : 'BizOps Solution'}
                                                 </div>
                                                 <Typography variant="body" className="text-slate-900 dark:text-white leading-relaxed">{point.us}</Typography>
@@ -254,11 +254,11 @@ const ComparisonsPage: React.FC = () => {
                                             <div className="flex flex-col justify-center pl-4 border-l border-slate-100 dark:border-slate-800 gap-4">
                                                 <div className="flex gap-2 items-start">
                                                    <div className="mt-0.5">
-                                                     <TrendingUp className="w-4 h-4 text-blue-500" />
+                                                     <TrendingUp className="w-4 h-4 text-blue-500 dark:text-blue-400 dark:text-blue-300" />
                                                    </div>
                                                    <div>
-                                                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Business Impact</div>
-                                                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">"{point.impact}"</Typography>
+                                                       <div className="text-[10px] font-bold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-1">Business Impact</div>
+                                                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">"{point.impact}"</Typography>
                                                    </div>
                                                 </div>
                                             </div>
@@ -276,8 +276,8 @@ const ComparisonsPage: React.FC = () => {
                              
                              <Grid cols={2} gap={12} className="relative z-10 items-center">
                                 <div>
-                                   <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500" /> Why Upgrade Now?</Typography>
-                                   <Typography variant="body" className="text-slate-400 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
+                                   <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500 dark:text-amber-400 dark:text-amber-300" /> Why Upgrade Now?</Typography>
+                                   <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
                                    <Button 
                                       onClick={() => navigate('/tools/roi-calculator')}
                                       className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"
@@ -288,12 +288,12 @@ const ComparisonsPage: React.FC = () => {
                                 </div>
                                 
                                 <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                   <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">Identified Bottlenecks</div>
+                                   <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest mb-6">Identified Bottlenecks</div>
                                    <ul className="space-y-4">
                                       {selectedData.limitations.map((lim, idx) => (
                                           <li key={idx} className="flex gap-4 text-sm text-slate-200 items-start">
                                               <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 gap-4">
-                                                <XCircle className="w-4 h-4 text-red-400" />
+                                                <XCircle className="w-4 h-4 text-red-400 dark:text-red-300" />
                                               </div>
                                               <span className="leading-relaxed font-medium">{lim}</span>
                                           </li>
@@ -308,7 +308,7 @@ const ComparisonsPage: React.FC = () => {
                         <div className="lg:hidden mt-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white text-center shadow-xl">
                             <Typography variant="h3" as="h3">Hitung ROI Upgrade</Typography>
                             <Typography variant="caption">Lihat berapa banyak biaya yang bisa dihemat.</Typography>
-                            <Button fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 hover:bg-blue-50 border-none font-bold">
+                            <Button fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50 border-none font-bold">
                                 Buka Kalkulator ROI
                             </Button>
                         </div>

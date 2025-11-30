@@ -23,7 +23,7 @@ const GlossaryPage: React.FC = () => {
               <BookOpen className="w-8 h-8" />
            </Stack>
            <Typography variant="h1" as="h1">Pahami Bahasa Bisnis & Teknologi.</Typography>
-           <Typography variant="body-xl" className="text-slate-600">Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.</Typography>
+           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-300">Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.</Typography>
            
            {/* Search Bar */}
            <Container className="mt-8 relative">
@@ -32,7 +32,7 @@ const GlossaryPage: React.FC = () => {
                  placeholder="Cari istilah (e.g. 'TER', 'Lead Time')..." 
                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-primary-500 outline-none"
               />
-              <Search className="absolute left-4 top-3.5 text-slate-400 w-5 h-5" />
+              <Search className="absolute left-4 top-3.5 text-slate-400 dark:text-slate-300 w-5 h-5" />
            </Container>
         </Container>
 
@@ -48,12 +48,12 @@ const GlossaryPage: React.FC = () => {
                  </Stack>
                  <Stack direction="vertical" gap={4}>
                     <div>
-                       <Typography variant="caption" className="text-slate-400">Definisi</Typography>
-                       <Typography variant="caption" className="text-slate-700 leading-relaxed">{item.def}</Typography>
+                       <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Definisi</Typography>
+                       <Typography variant="caption" className="text-slate-700 dark:text-slate-200 leading-relaxed">{item.def}</Typography>
                     </div>
                     <div className="pt-4 border-t border-slate-200">
-                       <Typography variant="caption" className="text-slate-400">Why It Matters</Typography>
-                       <Typography variant="caption" className="text-slate-600 leading-relaxed">"{item.context}"</Typography>
+                       <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Why It Matters</Typography>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-300 leading-relaxed">"{item.context}"</Typography>
                     </div>
                  </Stack>
               </div>

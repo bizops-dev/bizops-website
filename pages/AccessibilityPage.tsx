@@ -56,34 +56,34 @@ const AccessibilityPage: React.FC = () => {
                 <feat.icon className="w-7 h-7" />
               </div>
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
-              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feat.desc}</Typography>
+              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{feat.desc}</Typography>
             </div>
           ))}
         </Grid>
 
         <Stack direction="vertical" gap={12} className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 items-center shadow-xl">
            <div className="md:w-1/2">
-              <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
+              <span className="text-green-600 dark:text-slate-300 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
               <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>
               <Typography variant="body" className="text-slate-600 dark:text-slate-300 leading-relaxed">Kami secara aktif mengaudit dan memperbarui antarmuka kami agar sesuai dengan pedoman Web Content Accessibility Guidelines (WCAG) yang diakui secara global.</Typography>
               <div className="flex flex-wrap gap-4">
                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                    <CheckCircle className="w-5 h-5 text-green-500" /> Perceivable
+                    <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300" /> Perceivable
                  </div>
                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                    <CheckCircle className="w-5 h-5 text-green-500" /> Operable
+                    <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300" /> Operable
                  </div>
                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                    <CheckCircle className="w-5 h-5 text-green-500" /> Understandable
+                    <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300" /> Understandable
                  </div>
                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                    <CheckCircle className="w-5 h-5 text-green-500" /> Robust
+                    <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300" /> Robust
                  </div>
               </div>
            </div>
            <div className="md:w-1/2 bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl w-full">
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><MessageSquare className="w-5 h-5" /> Laporkan Masalah</Typography>
-              <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Menemukan bug aksesibilitas? Tim engineering kami memprioritaskan perbaikan isu ini.</Typography>
+              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Menemukan bug aksesibilitas? Tim engineering kami memprioritaskan perbaikan isu ini.</Typography>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                  <input 
                     type="email" 

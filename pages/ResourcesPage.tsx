@@ -33,35 +33,35 @@ const ResourcesPage = () => {
       desc: "Panduan teknis, tren industri, dan update regulasi terbaru.",
       icon: BookOpen,
       link: "/blog",
-      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400"
+      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 dark:text-blue-300"
     },
     {
       title: "Success Stories",
       desc: "Pelajari bagaimana perusahaan lain bertransformasi dengan BizOps.",
       icon: Users,
       link: "/use-cases",
-      color: "bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400"
+      color: "bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400 dark:text-green-300"
     },
     {
       title: "Events & Webinars",
       desc: "Ikuti sesi live demo dan masterclass dari para ahli.",
       icon: Calendar,
       link: "/events",
-      color: "bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400"
+      color: "bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 dark:text-purple-300"
     },
     {
       title: "Interactive Tools",
       desc: "Kalkulator ROI, Assessment, dan alat perencanaan gratis.",
       icon: Wrench,
       link: "/tools/assessment",
-      color: "bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400"
+      color: "bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 dark:text-amber-300"
     },
     {
       title: "Documentation",
       desc: "Manual teknis, API reference, dan panduan integrasi.",
       icon: Code,
       link: "/docs",
-      color: "bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
+      color: "bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-400 dark:text-slate-300"
     }
   ];
 
@@ -75,7 +75,7 @@ const ResourcesPage = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
+            className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight"
           >
             Resource <span className="text-primary-600">Center</span>
           </motion.h1>
@@ -83,7 +83,7 @@ const ResourcesPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12"
+            className="text-lg text-slate-600 dark:text-slate-400 dark:text-slate-300 max-w-2xl mx-auto mb-12"
           >
             Kumpulan wawasan, panduan, dan alat bantu untuk membantu Anda mengoptimalkan operasional dan memaksimalkan nilai investasi teknologi Anda.
           </motion.p>
@@ -105,7 +105,7 @@ const ResourcesPage = () => {
                     <cat.icon className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cat.title}</Typography>
-                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">{cat.desc}</Typography>
+                  <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{cat.desc}</Typography>
                 </Link>
               </motion.div>
             ))}
@@ -118,7 +118,7 @@ const ResourcesPage = () => {
         <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-10">
           <div>
             <Typography variant="h2" as="h2">Latest Insights</Typography>
-            <Typography variant="body" className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</Typography>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Artikel dan panduan terbaru dari tim ahli kami.</Typography>
           </div>
           <Link to="/blog" className="hidden sm:flex items-center text-primary-600 font-bold hover:underline gap-4">
             View All Articles <ArrowRight className="w-4 h-4 ml-2" />
@@ -154,8 +154,8 @@ const ResourcesPage = () => {
               <div key={idx} className="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:border-primary-300 transition-colors gap-4">
                 <Typography variant="caption" className="text-primary-600">{post.category}</Typography>
                 <Typography variant="h3" as="h3" className="text-lg font-bold text-slate-900 dark:text-white hover:text-primary-600"><Link to={`/blog/${post.slug}`}>{post.title}</Link></Typography>
-                <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{post.summary}</Typography>
-                <div className="text-xs text-slate-500 mt-auto">
+                <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{post.summary}</Typography>
+                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mt-auto">
                   {post.date} • 5 min read
                 </div>
               </div>
@@ -188,10 +188,10 @@ const ResourcesPage = () => {
             <div className="relative mt-8 md:mt-0">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 md:transform md:rotate-2 md:hover:rotate-0 transition-transform duration-500">
                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8">
-                  <div className="text-sm font-bold text-slate-400">YOUR SCORE</div>
-                  <div className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">EXCELLENT</div>
+                  <div className="text-sm font-bold text-slate-400 dark:text-slate-300">YOUR SCORE</div>
+                  <div className="px-3 py-1 bg-green-500/20 text-green-400 dark:text-green-300 rounded-full text-xs font-bold">EXCELLENT</div>
                 </Stack>
-                <div className="text-5xl font-bold mb-2">85<span className="text-2xl text-slate-400">/100</span></div>
+                <div className="text-5xl font-bold mb-2 leading-tight">85<span className="text-2xl text-slate-400 dark:text-slate-300">/100</span></div>
                 <div className="w-full bg-slate-700 h-2 rounded-full mb-6">
                   <div className="bg-green-500 w-[85%] h-2 rounded-full"></div>
                 </div>
@@ -227,11 +227,11 @@ const ResourcesPage = () => {
                   <featuredUseCase.icon className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{featuredUseCase.title}</Typography>
-                <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{featuredUseCase.subtitle} - {featuredUseCase.industry}</Typography>
+                <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{featuredUseCase.subtitle} - {featuredUseCase.industry}</Typography>
                 <Stack direction="vertical" gap={2} className="mb-6">
                   {featuredUseCase.results.slice(0, 2).map((res, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-                      <span className="text-green-500 mt-1">✓</span> {res}
+                      <span className="text-green-500 dark:text-green-400 dark:text-green-300 mt-1">✓</span> {res}
                     </div>
                   ))}
                 </Stack>
@@ -252,15 +252,15 @@ const ResourcesPage = () => {
               {upcomingEvents.map((event, idx) => (
                 <div key={idx} className="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow">
                   <div className="flex-shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg flex flex-col items-center justify-center text-center gap-4">
-                    <Typography variant="caption" className="text-slate-500">{event.date.split(' ')[1]}</Typography>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{event.date.split(' ')[1]}</Typography>
                     <Typography variant="body-xl" className="text-slate-900 dark:text-white">{event.date.split(' ')[0]}</Typography>
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-purple-600 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded-full mb-1 inline-block">
+                    <span className="text-xs font-bold text-purple-600 dark:text-slate-300 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded-full mb-1 inline-block">
                       {event.type}
                     </span>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white text-sm hover:text-primary-600"><Link to={`/events/${event.slug}`}>{event.title}</Link></Typography>
-                    <Typography variant="body" className="text-slate-500">{event.time} • {event.location}</Typography>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{event.time} • {event.location}</Typography>
                   </div>
                 </div>
               ))}

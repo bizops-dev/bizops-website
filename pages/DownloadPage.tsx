@@ -24,14 +24,14 @@ const DownloadPage: React.FC = () => {
             
             {/* Left Content */}
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 dark:text-blue-300 text-xs font-bold uppercase tracking-wider mb-6">
                  <Smartphone className="w-3 h-3" /> BizOps Mobile v4.2
               </div>
               
               <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Your entire business, <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">in your pocket.</span></Typography>
               
-              <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jangan biarkan meja kerja membatasi produktivitas. Approve PO, cek stok gudang, dan pantau sales—kapan saja, di mana saja.</Typography>
+              <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jangan biarkan meja kerja membatasi produktivitas. Approve PO, cek stok gudang, dan pantau sales—kapan saja, di mana saja.</Typography>
               
               {/* Store Buttons */}
               <Stack direction="vertical" gap={4} className="mb-10">
@@ -62,10 +62,10 @@ const DownloadPage: React.FC = () => {
                  <div className="h-12 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
                  <div>
                     <div className="flex items-center gap-1 mb-1">
-                       {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
+                       {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-amber-400 dark:text-amber-300 fill-amber-400" />)}
                        <span className="text-sm font-bold text-slate-900 dark:text-white ml-2">4.8</span>
                     </div>
-                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Based on 1,200+ reviews from verified users.</Typography>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Based on 1,200+ reviews from verified users.</Typography>
                  </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ const DownloadPage: React.FC = () => {
                               <Bell className="w-5 h-5 text-slate-300" />
                            </div>
                            <Typography variant="h2" as="h2">Good Morning,</Typography>
-                           <Typography variant="body" className="text-slate-400">Site Manager - Jakarta</Typography>
+                           <Typography variant="body" className="text-slate-400 dark:text-slate-300">Site Manager - Jakarta</Typography>
                         </div>
 
                         {/* App Body */}
@@ -111,7 +111,7 @@ const DownloadPage: React.FC = () => {
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
                               <div className="flex justify-between items-center mb-4 gap-4">
                                  <Typography variant="h3" as="h3">Today's Approval</Typography>
-                                 <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">3 Pending</span>
+                                 <span className="bg-red-100 text-red-600 dark:text-slate-300 text-xs font-bold px-2 py-1 rounded-full">3 Pending</span>
                               </div>
                               <div className="flex gap-3 overflow-x-auto pb-2">
                                  {[1,2,3].map(i => (
@@ -123,10 +123,10 @@ const DownloadPage: React.FC = () => {
                            {/* Menu Grid */}
                            <Grid cols={2} gap={4}>
                               {[
-                                 { icon: Layers, label: "Stock", color: "bg-blue-100 text-blue-600" },
-                                 { icon: Zap, label: "Sales", color: "bg-amber-100 text-amber-600" },
-                                 { icon: FileCode, label: "Report", color: "bg-purple-100 text-purple-600" },
-                                 { icon: ShieldCheck, label: "Audit", color: "bg-green-100 text-green-600" }
+                                 { icon: Layers, label: "Stock", color: "bg-blue-100 text-blue-600 dark:text-slate-300" },
+                                 { icon: Zap, label: "Sales", color: "bg-amber-100 text-amber-600 dark:text-slate-300" },
+                                 { icon: FileCode, label: "Report", color: "bg-purple-100 text-purple-600 dark:text-slate-300" },
+                                 { icon: ShieldCheck, label: "Audit", color: "bg-green-100 text-green-600 dark:text-slate-300" }
                               ].map((item, i) => (
                                  <div key={i} className="bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 aspect-square hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color}`}>
@@ -155,7 +155,7 @@ const DownloadPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Container size="3xl" className="text-center mb-16">
                <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
             </Container>
 
             <div className="md:hidden">
@@ -163,50 +163,50 @@ const DownloadPage: React.FC = () => {
                   mobileItemWidth="w-[85vw] sm:w-[350px]"
                >
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6 gap-4">
+                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-slate-300 mb-6 gap-4">
                         <WifiOff className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Offline-First Mode</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6 gap-4">
+                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-slate-300 mb-6 gap-4">
                         <Fingerprint className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Biometric Security</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6 gap-4">
+                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-slate-300 mb-6 gap-4">
                         <Bell className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Instant Push Notif</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
                   </div>
                </CardSlider>
             </div>
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6 gap-4">
+                  <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-slate-300 mb-6 gap-4">
                      <WifiOff className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Offline-First Mode</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6 gap-4">
+                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-slate-300 mb-6 gap-4">
                      <Fingerprint className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Biometric Security</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6 gap-4">
+                  <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-slate-300 mb-6 gap-4">
                      <Bell className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Instant Push Notif</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
                </div>
             </Grid>
          </Container>
@@ -217,7 +217,7 @@ const DownloadPage: React.FC = () => {
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Enterprise Deployment?</Typography>
-            <Typography variant="body" className="text-slate-400">Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.</Typography>
+            <Typography variant="body" className="text-slate-400 dark:text-slate-300">Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
                   <FileCode className="w-4 h-4" /> Download APK (v4.2.1)

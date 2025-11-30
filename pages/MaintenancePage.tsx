@@ -25,7 +25,7 @@ const MaintenancePage: React.FC = () => {
           transition={{ duration: 0.6, type: "spring" }}
           className="w-28 h-28 bg-white/10 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center mb-10 mx-auto shadow-2xl border border-white/10 gap-4"
         >
-          <Hammer className="w-12 h-12 text-blue-400" />
+          <Hammer className="w-12 h-12 text-blue-400 dark:text-blue-300" />
         </motion.div>
         
         <motion.div
@@ -50,7 +50,7 @@ const MaintenancePage: React.FC = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed font-light"
+          className="text-lg md:text-xl text-slate-400 dark:text-slate-300 max-w-xl mx-auto mb-12 leading-relaxed font-light"
         >
           Sistem sedang melakukan pembaruan infrastruktur terjadwal untuk meningkatkan performa dan keamanan. Estimasi waktu selesai: <strong>2 Jam</strong>.
         </motion.p>
@@ -67,19 +67,19 @@ const MaintenancePage: React.FC = () => {
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Mail className="w-5 h-5" />
                  </div>
-                 <Typography variant="caption" className="text-slate-400">Email</Typography>
+                 <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Email</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#1DA1F2] group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Twitter className="w-5 h-5" />
                  </div>
-                 <Typography variant="caption" className="text-slate-400">Twitter</Typography>
+                 <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Twitter</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Linkedin className="w-5 h-5" />
                  </div>
-                 <Typography variant="caption" className="text-slate-400">LinkedIn</Typography>
+                 <Typography variant="caption" className="text-slate-400 dark:text-slate-300">LinkedIn</Typography>
               </a>
            </div>
         </motion.div>

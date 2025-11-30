@@ -125,7 +125,7 @@ const BlogPage: React.FC = () => {
                transition={{ duration: 0.6 }}
                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-md"
             >
-               <TrendingUp className="w-4 h-4 text-blue-400" />
+               <TrendingUp className="w-4 h-4 text-blue-400 dark:text-blue-300" />
                <Typography variant="caption" className="text-blue-300">Executive Insights</Typography>
             </motion.div>
             
@@ -145,7 +145,7 @@ const BlogPage: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6, delay: 0.2 }}
-               className="text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto font-light"
+               className="text-xl text-slate-400 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto font-light"
             >
                Analisis mendalam, strategi transformasi, dan panduan teknis untuk mengakselerasi pertumbuhan bisnis Anda di era digital.
             </motion.p>
@@ -161,7 +161,7 @@ const BlogPage: React.FC = () => {
                <div className="mb-24">
                   <Stack direction="horizontal" gap={2} align="center" className="mb-6">
                      <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
-                     <Typography variant="caption" className="text-slate-500">Editor's Choice</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Editor's Choice</Typography>
                   </Stack>
                   <Link to={`/blog/${featuredPost.slug}`} className="group relative block w-full rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform hover:-translate-y-1 duration-500">
                      <div className="absolute inset-0 bg-slate-900">
@@ -192,13 +192,13 @@ const BlogPage: React.FC = () => {
                               <span className="text-white">{featuredPost.author.split(',')[0]}</span>
                            </Stack>
                            <Stack direction="horizontal" gap={2} align="center">
-                              <Calendar className="w-4 h-4 text-blue-400" /> {featuredPost.date}
+                              <Calendar className="w-4 h-4 text-blue-400 dark:text-blue-300" /> {featuredPost.date}
                            </Stack>
                            <Stack direction="horizontal" gap={2} align="center">
-                              <Clock className="w-4 h-4 text-blue-400" /> 12 Min Read
+                              <Clock className="w-4 h-4 text-blue-400 dark:text-blue-300" /> 12 Min Read
                            </Stack>
                            <Stack direction="horizontal" gap={2} align="center" className="ml-auto text-white font-bold group-hover:translate-x-2 transition-transform">
-                              Read Article <ArrowRight className="w-5 h-5 text-blue-500" />
+                              Read Article <ArrowRight className="w-5 h-5 text-blue-500 dark:text-blue-400 dark:text-blue-300" />
                            </Stack>
                         </Stack>
                      </Stack>
@@ -216,7 +216,7 @@ const BlogPage: React.FC = () => {
                      <div className="relative group">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
                         <Stack direction="horizontal" gap={4} align="center" className="relative bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
-                           <Search className="absolute left-4 w-4 h-4 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
+                           <Search className="absolute left-4 w-4 h-4 text-slate-400 dark:text-slate-300 group-focus-within:text-blue-500 dark:text-blue-400 dark:text-blue-300 transition-colors" />
                            <input 
                               type="text" 
                               placeholder="Search articles..." 
@@ -225,7 +225,7 @@ const BlogPage: React.FC = () => {
                               className="w-full pl-10 pr-4 py-3 rounded-xl bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-sm font-medium"
                            />
                            {searchQuery && (
-                              <button onClick={() => setSearchQuery('')} className="absolute right-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+                              <button onClick={() => setSearchQuery('')} className="absolute right-3 text-slate-400 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-300">
                                  <X className="w-3.5 h-3.5" />
                               </button>
                            )}
@@ -234,7 +234,7 @@ const BlogPage: React.FC = () => {
 
                      {/* Categories */}
                      <div>
-                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Topics</Typography>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 tracking-wider"><Layers className="w-3.5 h-3.5" /> Topics</Typography>
                         <Stack direction="vertical" gap={1}>
                            {categories.map((cat) => (
                               <button
@@ -243,8 +243,8 @@ const BlogPage: React.FC = () => {
                                  className={`
                                     w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex justify-between items-center group
                                     ${selectedCategory === cat 
-                                       ? 'bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-md ring-1 ring-slate-200 dark:ring-slate-800' 
-                                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
+                                       ? 'bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 dark:text-blue-300 shadow-md ring-1 ring-slate-200 dark:ring-slate-800' 
+                                       : 'text-slate-600 dark:text-slate-400 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
                                  `}
                               >
                                  <span className="truncate pr-2">{cat}</span>
@@ -252,7 +252,7 @@ const BlogPage: React.FC = () => {
                                     text-[10px] px-2 py-0.5 rounded-md flex-shrink-0 transition-colors font-bold
                                     ${selectedCategory === cat 
                                        ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' 
-                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
+                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
                                  `}>
                                     {getCategoryCount(cat)}
                                  </span>
@@ -265,7 +265,7 @@ const BlogPage: React.FC = () => {
                      <div className="bg-[#0B1120] rounded-2xl p-6 text-white relative overflow-hidden group border border-slate-800 hidden lg:block">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition-all"></div>
                         <Typography variant="h4" as="h4">Weekly Digest</Typography>
-                        <Typography variant="body" className="text-slate-400">Get strategic insights delivered to your inbox every Monday.</Typography>
+                        <Typography variant="body" className="text-slate-400 dark:text-slate-300">Get strategic insights delivered to your inbox every Monday.</Typography>
                         <form onSubmit={(e) => e.preventDefault()} className="relative z-10 space-y-2">
                            <input type="email" placeholder="Email" className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-xs text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none text-xs">Subscribe</Button>
@@ -281,7 +281,7 @@ const BlogPage: React.FC = () => {
                   {/* Results Header */}
                   <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
                      <Typography variant="h2" as="h2" className="text-2xl font-bold text-slate-900 dark:text-white">{searchQuery ? `Search Results: "${searchQuery}"` : (selectedCategory === 'All' ? 'Latest Articles' : selectedCategory)}</Typography>
-                     <span className="text-sm font-medium text-slate-500">
+                     <span className="text-sm font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
                         Showing {paginatedPosts.length} of {gridPosts.length}
                      </span>
                   </Stack>
@@ -316,7 +316,7 @@ const BlogPage: React.FC = () => {
                                           </div>
                                           
                                           <Stack direction="vertical" gap={4} className="p-8">
-                                             <Stack direction="horizontal" gap={3} align="center" className="mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                             <Stack direction="horizontal" gap={3} align="center" className="mb-4 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
                                                 <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
                                                 <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
                                                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min</span>
@@ -324,7 +324,7 @@ const BlogPage: React.FC = () => {
                                              
                                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{post.title}</Typography>
                                              
-                                             <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{post.summary}</Typography>
+                                             <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{post.summary}</Typography>
                                              
                                              <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
                                                 <Stack direction="horizontal" gap={2} align="center" className="text-xs font-bold text-slate-900 dark:text-white">
@@ -333,7 +333,7 @@ const BlogPage: React.FC = () => {
                                                    </Stack>
                                                    {post.author.split(',')[0]}
                                                 </Stack>
-                                                <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                                <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                                    <ArrowRight className="w-4 h-4" />
                                                 </Stack>
                                              </Stack>
@@ -355,13 +355,13 @@ const BlogPage: React.FC = () => {
                   ) : (
                      <div className="py-20 text-center bg-slate-50 dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-200 dark:border-slate-800">
                         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-4">
-                           <Search className="w-8 h-8 text-slate-400" />
+                           <Search className="w-8 h-8 text-slate-400 dark:text-slate-300" />
                         </Stack>
                         <Typography variant="h3" as="h3">No articles found</Typography>
-                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Try adjusting your search or category filter.</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Try adjusting your search or category filter.</Typography>
                         <button 
                            onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-                           className="mt-4 text-blue-600 text-sm font-bold hover:underline"
+                           className="mt-4 text-blue-600 dark:text-slate-300 text-sm font-bold hover:underline"
                         >
                            Clear all filters
                         </button>
@@ -371,7 +371,7 @@ const BlogPage: React.FC = () => {
                   {/* Mobile Newsletter (Visible only on small screens where sidebar widget is hidden) */}
                   <div className="mt-16 lg:hidden bg-[#0B1120] rounded-2xl p-8 text-white text-center border border-slate-800">
                      <Typography variant="h3" as="h3">Weekly Digest</Typography>
-                     <Typography variant="caption" className="text-slate-400">Get strategic insights delivered to your inbox.</Typography>
+                     <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Get strategic insights delivered to your inbox.</Typography>
                      <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-500 border-none font-bold">Subscribe Free</Button>
                   </div>
                </Stack>

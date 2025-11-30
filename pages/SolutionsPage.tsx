@@ -24,14 +24,14 @@ const SolutionsPage: React.FC = () => {
   // Color mapping for industries to make them distinct
   const getColor = (id: string) => {
     const map: Record<string, string> = {
-      'construction': 'bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400',
-      'retail': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400',
-      'outsourcing': 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400',
-      'consulting': 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400',
-      'manufacturing': 'bg-rose-50 text-rose-600 dark:bg-rose-900/20 dark:text-rose-400',
+      'construction': 'bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 dark:text-amber-300',
+      'retail': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 dark:text-emerald-300',
+      'outsourcing': 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 dark:text-blue-300',
+      'consulting': 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 dark:text-purple-300',
+      'manufacturing': 'bg-rose-50 text-rose-600 dark:bg-rose-900/20 dark:text-rose-400 dark:text-rose-300',
       'enterprise': 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
     };
-    return map[id] || 'bg-slate-50 text-slate-600';
+    return map[id] || 'bg-slate-50 text-slate-600 dark:text-slate-300';
   };
 
   return (
@@ -61,7 +61,7 @@ const SolutionsPage: React.FC = () => {
                initial="hidden"
                animate="visible"
                transition={{ delay: 0.3 }}
-               className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+               className="text-lg md:text-xl text-slate-400 dark:text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
             >
                Software ritel tidak akan bertahan sehari di proyek konstruksi. Kebanyakan ERP memaksa Anda mengubah cara kerja demi keterbatasan sistem. BizOps berbeda—kami berbicara bahasa industri Anda sejak hari pertama.
             </motion.p>
@@ -91,7 +91,7 @@ const SolutionsPage: React.FC = () => {
            {/* Industry Section */}
            <Container size="3xl" className="text-center mb-12 md:mb-20">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Solusi Spesifik Industri</Typography>
-              <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.</Typography>
+              <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.</Typography>
            </Container>
            
            <div className="mb-16 md:mb-32">
@@ -110,7 +110,7 @@ const SolutionsPage: React.FC = () => {
                          </div>
                          <div className="flex-grow flex flex-col gap-4">
                             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
-                            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
+                            <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{ind.description}</Typography>
                          </div>
                          <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all pt-4 shrink-0">
                             Pelajari Selengkapnya <ArrowRight className="w-4 h-4 ml-2" />
@@ -123,7 +123,7 @@ const SolutionsPage: React.FC = () => {
 
            {/* Social Proof Interstitial */}
            <div className="mb-16 md:mb-32 text-center">
-              <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dipercaya Pemimpin Industri</Typography>
+              <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Dipercaya Pemimpin Industri</Typography>
               <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
                  {['HEXAGON', 'KARYA BETON', 'TRANS LOGISTIC', 'MEGA FINANCE', 'AGRO CORP'].map(brand => (
                     <span key={brand} className="text-xl font-black text-slate-800 dark:text-slate-200 tracking-tighter">{brand}</span>
@@ -140,7 +140,7 @@ const SolutionsPage: React.FC = () => {
                   <Container size="3xl" className="text-center mb-12 md:mb-16">
                      <Badge variant="outline" className="mb-4 bg-white dark:bg-slate-800">Role-Based Experience</Badge>
                      <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Satu Platform, Beda Perspektif.</Typography>
-                     <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.</Typography>
+                     <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.</Typography>
                   </Container>
 
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[250px]">
@@ -153,12 +153,12 @@ const SolutionsPage: React.FC = () => {
                               viewport={{ once: true }}
                               className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg transition-all text-center h-full flex flex-col items-center group-hover:-translate-y-1 gap-4"
                            >
-                              <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm shrink-0 gap-4">
+                              <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm shrink-0 gap-4">
                                  <role.icon className="w-7 h-7" />
                               </div>
                               <div className="flex-grow flex flex-col justify-center w-full gap-4">
                                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{role.title}</Typography>
-                                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">{role.subtitle}</Typography>
+                                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{role.subtitle}</Typography>
                               </div>
                            </motion.div>
                         </Link>
@@ -174,7 +174,7 @@ const SolutionsPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-20"></div>
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">Bisnis Anda Unik? <br/>Konsultan Kami Paham.</Typography>
-            <Typography variant="body-xl" className="text-slate-400">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
+            <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 dark:text-white border-none transition-all hover:scale-105">

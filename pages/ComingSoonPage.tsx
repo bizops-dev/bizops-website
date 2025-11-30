@@ -55,7 +55,7 @@ const ComingSoonPage: React.FC = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 max-w-lg mx-auto mb-12 leading-relaxed"
         >
           Tim engineering kami sedang bekerja keras merakit fitur ini. Kami ingin memastikan semuanya sempurna sebelum diluncurkan untuk Anda.
         </motion.p>
@@ -68,16 +68,16 @@ const ComingSoonPage: React.FC = () => {
         >
            {subscribed ? (
              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-4">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400 gap-4">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400 dark:text-green-300 gap-4">
                    <Bell className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3">Terima Kasih!</Typography>
-                <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Kami akan memberi tahu Anda segera setelah fitur ini siap.</Typography>
+                <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Kami akan memberi tahu Anda segera setelah fitur ini siap.</Typography>
              </motion.div>
            ) : (
              <>
                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Mail className="w-4 h-4 text-primary-500" /> Beritahu saya saat siap</Typography>
-               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dapatkan notifikasi prioritas saat fitur ini live.</Typography>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Dapatkan notifikasi prioritas saat fitur ini live.</Typography>
                <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
                   <Input 
                     placeholder="email@perusahaan.com" 

@@ -11,7 +11,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Main",
       icon: Globe,
-      color: "text-indigo-600 bg-indigo-50",
+      color: "text-indigo-600 dark:text-slate-300 bg-indigo-50",
       links: [
         { label: "Home", to: "/" },
         { label: "Product Tour", to: "/tour" },
@@ -24,7 +24,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Platform",
       icon: Layers,
-      color: "text-blue-600 bg-blue-50",
+      color: "text-blue-600 dark:text-slate-300 bg-blue-50",
       links: [
         { label: "Platform Overview", to: "/platform" },
         { label: "Human Capital Module", to: "/platform/modules/hr" },
@@ -40,7 +40,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Solutions",
       icon: Briefcase,
-      color: "text-purple-600 bg-purple-50",
+      color: "text-purple-600 dark:text-slate-300 bg-purple-50",
       links: [
         { label: "All Industries", to: "/solutions" },
         { label: "Manufacturing ERP", to: "/solutions/manufacturing" },
@@ -60,7 +60,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Services",
       icon: HelpCircle,
-      color: "text-teal-600 bg-teal-50",
+      color: "text-teal-600 dark:text-slate-300 bg-teal-50",
       links: [
         { label: "Professional Services Overview", to: "/services" },
         { label: "Strategic Consulting", to: "/services/consulting" },
@@ -73,7 +73,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Interactive Tools",
       icon: Wrench,
-      color: "text-amber-600 bg-amber-50",
+      color: "text-amber-600 dark:text-slate-300 bg-amber-50",
       links: [
         { label: "Digital Maturity Assessment", to: "/tools/assessment" },
         { label: "Needs Analysis Tool", to: "/tools/needs-analysis" },
@@ -87,7 +87,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Resources",
       icon: BookOpen,
-      color: "text-orange-600 bg-orange-50",
+      color: "text-orange-600 dark:text-slate-300 bg-orange-50",
       links: [
         { label: "Resource Center", to: "/resources" },
         { label: "Blog & Insights", to: "/blog" },
@@ -101,7 +101,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Developers & Docs",
       icon: Code,
-      color: "text-slate-600 bg-slate-100",
+      color: "text-slate-600 dark:text-slate-300 bg-slate-100",
       links: [
         { label: "Documentation Hub", to: "/docs" },
         { label: "API Reference", to: "/docs/api" },
@@ -112,7 +112,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Company",
       icon: Users,
-      color: "text-green-600 bg-green-50",
+      color: "text-green-600 dark:text-slate-300 bg-green-50",
       links: [
         { label: "About Us", to: "/about" },
         { label: "Why BizOps", to: "/why-bizops" },
@@ -128,7 +128,7 @@ const SitemapPage: React.FC = () => {
     {
       title: "Legal & Trust",
       icon: Shield,
-      color: "text-red-600 bg-red-50",
+      color: "text-red-600 dark:text-slate-300 bg-red-50",
       links: [
         { label: "Trust Center", to: "/trust" },
         { label: "Privacy Policy", to: "/legal/privacy" },
@@ -151,7 +151,7 @@ const SitemapPage: React.FC = () => {
       <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         <div className="text-center mb-16">
           <Typography variant="h1" as="h1">Sitemap</Typography>
-          <Typography variant="body" className="text-slate-600 dark:text-slate-400">Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.</Typography>
+          <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.</Typography>
         </div>
 
         <Grid cols={3} gap={8}>
@@ -164,7 +164,7 @@ const SitemapPage: React.FC = () => {
               <ul className="space-y-2.5">
                 {section.links.map((link, lIdx) => (
                   <li key={lIdx}>
-                    <Link to={link.to} className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors flex items-center gap-2 group">
+                    <Link to={link.to} className="text-sm text-slate-600 dark:text-slate-400 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors flex items-center gap-2 group">
                       <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-primary-500 transition-colors"></span>
                       {link.label}
                     </Link>

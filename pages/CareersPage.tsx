@@ -64,56 +64,56 @@ const CareersPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Engineering First Culture</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.</Typography>
             </div>
 
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <GitMerge className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Open Source DNA</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <Zap className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                     <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <BookOpen className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Continuous Learning</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                   </div>
                </CardSlider>
             </div>
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <GitMerge className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Open Source DNA</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <Zap className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
+                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <BookOpen className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Continuous Learning</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                </div>
             </Grid>
          </Container>
@@ -126,39 +126,39 @@ const CareersPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0 gap-4">
+                     <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 dark:text-amber-400 dark:text-amber-300 flex-shrink-0 gap-4">
                         <Coffee className="w-6 h-6" />
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0 gap-4">
+                     <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 dark:text-blue-400 dark:text-blue-300 flex-shrink-0 gap-4">
                         <Monitor className="w-6 h-6" />
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0 gap-4">
+                     <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 dark:text-red-400 dark:text-red-300 flex-shrink-0 gap-4">
                         <Heart className="w-6 h-6" />
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Comprehensive Health</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0 gap-4">
+                     <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4">
                         <Award className="w-6 h-6" />
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Performance Bonus</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                      </div>
                   </div>
                </CardSlider>
@@ -166,39 +166,39 @@ const CareersPage: React.FC = () => {
 
             <Grid cols={2} gap={6} className="hidden">
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0 gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 dark:text-amber-400 dark:text-amber-300 flex-shrink-0 gap-4">
                      <Coffee className="w-6 h-6" />
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0 gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 dark:text-blue-400 dark:text-blue-300 flex-shrink-0 gap-4">
                      <Monitor className="w-6 h-6" />
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0 gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 dark:text-red-400 dark:text-red-300 flex-shrink-0 gap-4">
                      <Heart className="w-6 h-6" />
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Comprehensive Health</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0 gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4">
                      <Award className="w-6 h-6" />
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Performance Bonus</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                   </div>
                </div>
             </Grid>
@@ -223,7 +223,7 @@ const CareersPage: React.FC = () => {
                </a>
             </Stack>
             
-            <div className="mt-12 pt-8 border-t border-slate-800 flex justify-center items-center gap-2 text-slate-500 text-sm">
+            <div className="mt-12 pt-8 border-t border-slate-800 flex justify-center items-center gap-2 text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">
                <CheckCircle className="w-4 h-4" /> 
                <span>Kami membalas setiap lamaran dalam 3-5 hari kerja.</span>
             </div>

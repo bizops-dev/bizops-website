@@ -15,11 +15,11 @@ const ThankYouPage: React.FC = () => {
       
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-200 max-w-2xl w-full text-center">
         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-8 animate-bounce">
-           <CheckCircle className="w-10 h-10 text-green-600" />
+           <CheckCircle className="w-10 h-10 text-green-600 dark:text-slate-300" />
         </div>
         
         <Typography variant="h1" as="h1">Terima Kasih! Langkah Pertama Transformasi Dimulai.</Typography>
-        <Typography variant="body-lg" className="text-slate-600 leading-relaxed">Tim Solution Architect kami telah menerima data permintaan Anda. Kami sedang menganalisis profil bisnis Anda dan akan menghubungi Anda via WhatsApp atau Email dalam waktu maksimal <strong>24 Jam Kerja</strong> (Senin-Jumat) untuk menjadwalkan sesi.</Typography>
+        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">Tim Solution Architect kami telah menerima data permintaan Anda. Kami sedang menganalisis profil bisnis Anda dan akan menghubungi Anda via WhatsApp atau Email dalam waktu maksimal <strong>24 Jam Kerja</strong> (Senin-Jumat) untuk menjadwalkan sesi.</Typography>
         
         <div className="h-px bg-slate-100 w-full my-8"></div>
         
@@ -27,19 +27,19 @@ const ThankYouPage: React.FC = () => {
         
         <Grid cols={3} gap={4} className="text-left">
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
-              <Download className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
+              <Download className="w-5 h-5 text-slate-400 dark:text-slate-300 mb-2 group-hover:text-primary-600" />
               <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Download E-Book</div>
-              <div className="text-xs text-slate-500">Panduan Efisiensi Pajak 2024</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Panduan Efisiensi Pajak 2024</div>
            </a>
            <Link to="/customers" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
-              <Video className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
+              <Video className="w-5 h-5 text-slate-400 dark:text-slate-300 mb-2 group-hover:text-primary-600" />
               <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Tonton Kisah Sukses</div>
-              <div className="text-xs text-slate-500">Hemat 2 Milyar/Tahun</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Hemat 2 Milyar/Tahun</div>
            </Link>
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
-              <Linkedin className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
+              <Linkedin className="w-5 h-5 text-slate-400 dark:text-slate-300 mb-2 group-hover:text-primary-600" />
               <div className="font-bold text-slate-900 dark:text-white text-sm mb-1">Follow LinkedIn</div>
-              <div className="text-xs text-slate-500">Update industri harian</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Update industri harian</div>
            </a>
         </Grid>
 

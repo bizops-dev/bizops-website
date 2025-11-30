@@ -181,7 +181,7 @@ const BlogDetailPage: React.FC = () => {
                {/* LEFT: MAIN ARTICLE (8 cols) */}
                <div className="lg:col-span-8">
                   {/* Summary Lead (Drop Cap) */}
-                  <div className="font-sans text-xl md:text-2xl leading-relaxed text-slate-700 dark:text-slate-200 mb-12 font-light first-letter:float-left first-letter:text-7xl first-letter:pr-4 first-letter:font-bold first-letter:text-slate-900 dark:first-letter:text-white first-letter:leading-[0.8]">
+                  <div className="font-sans text-xl md:text-2xl leading-relaxed text-slate-700 dark:text-slate-200 mb-12 font-light first-letter:float-left first-letter:text-7xl first-letter:pr-4 first-letter:font-bold first-letter:text-slate-900 dark:text-white dark:first-letter:text-white first-letter:leading-[0.8]">
                      {post.summary}
                   </div>
 
@@ -189,13 +189,7 @@ const BlogDetailPage: React.FC = () => {
 
                   {/* Article Content */}
                   <article 
-                     className="prose prose-lg prose-slate dark:prose-invert max-w-none
-                     prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900 dark:text-white dark:prose-headings:text-white
-                     prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:leading-8
-                     prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-                     prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:my-12
-                     prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-slate-50 dark:prose-blockquote:bg-slate-900/50 prose-blockquote:py-8 prose-blockquote:px-8 prose-blockquote:rounded-r-2xl prose-blockquote:not-italic prose-blockquote:font-sans prose-blockquote:text-xl prose-blockquote:font-medium prose-blockquote:text-slate-800 dark:prose-blockquote:text-slate-200
-                     prose-li:text-slate-600 dark:prose-li:text-slate-300"
+                     className="prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900 dark:text-white dark:prose-headings:text-white prose-p:text-slate-600 dark:text-slate-300 dark:prose-p:text-slate-300 prose-p:leading-8 prose-a:text-blue-600 dark:prose-a:text-blue-400 dark:text-blue-300 prose-a:no-underline hover:prose-a:underline prose-img:rounded-[2rem] prose-img:shadow-2xl prose-img:my-12 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-slate-50 dark:prose-blockquote:bg-slate-900/50 prose-blockquote:py-8 prose-blockquote:px-8 prose-blockquote:rounded-r-2xl prose-blockquote:not-italic prose-blockquote:font-sans prose-blockquote:text-xl prose-blockquote:font-medium prose-blockquote:text-slate-800 dark:text-slate-100 dark:prose-blockquote:text-slate-200 prose-li:text-slate-600 dark:prose-li:text-slate-300"
                      dangerouslySetInnerHTML={{ 
                         __html: DOMPurify.sanitize(post.content, {
                            ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'h2', 'h3', 'blockquote', 'img', 'figure', 'figcaption', 'div'],
@@ -208,18 +202,18 @@ const BlogDetailPage: React.FC = () => {
                   <Stack direction="vertical" gap={8} className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 justify-between items-center font-sans">
                      <Stack direction="horizontal" gap={2}>
                         {['Strategy', 'Enterprise', 'Management'].map(tag => (
-                           <span key={tag} className="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-default">
+                           <span key={tag} className="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-default">
                               <Tag className="w-3 h-3" /> {tag}
                            </span>
                         ))}
                      </Stack>
                      <Stack direction="horizontal" gap={4} align="center">
-                        <Typography variant="caption" className="text-slate-500">Share</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Share</Typography>
                         <Stack direction="horizontal" gap={2}>
-                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
-                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
-                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"><Facebook className="w-5 h-5" /></button>
-                           <button className="p-3 rounded-full bg-slate-100 dark: bg-slate-900 text-slate-500 dark:text-slate-400 hover: text-white hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
+                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
+                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-sky-500 dark:text-sky-400 dark:text-sky-300 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
+                           <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"><Facebook className="w-5 h-5" /></button>
+                           <button className="p-3 rounded-full bg-slate-100 dark: bg-slate-900 text-slate-500 dark:text-slate-400 dark:text-slate-300 hover: text-white hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
                         </Stack>
                      </Stack>
                   </Stack>
@@ -232,7 +226,7 @@ const BlogDetailPage: React.FC = () => {
                      {/* 1. Table of Contents */}
                      {headings.length > 0 && (
                         <div>
-                           <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Menu className="w-4 h-4" /> On this page</Typography>
+                           <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400 dark:text-slate-300"><Menu className="w-4 h-4" /> On this page</Typography>
                            <ul className="space-y-1 border-l border-slate-200 dark:border-slate-800">
                               {headings.map((heading) => (
                                  <li key={heading.id}>
@@ -240,7 +234,7 @@ const BlogDetailPage: React.FC = () => {
                                        href={`#${heading.id}`}
                                        className={`block pl-4 py-2 text-sm transition-colors border-l-2 -ml-[2px] ${
                                           activeId === heading.id 
-                                             ? 'border-blue-600 text-blue-600 font-bold' 
+                                             ? 'border-blue-600 text-blue-600 dark:text-slate-300 font-bold' 
                                              : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-white hover:border-slate-300'
                                        }`}
                                     >
@@ -258,25 +252,25 @@ const BlogDetailPage: React.FC = () => {
                         <Stack direction="horizontal" gap={4} align="center" className="mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
                               <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-full h-full rounded-full bg-white dark:bg-slate-900">
-                                 <Typography variant="body-xl" className="text-blue-600">{post.author.charAt(0)}</Typography>
+                                 <Typography variant="body-xl" className="text-blue-600 dark:text-slate-300">{post.author.charAt(0)}</Typography>
                               </Stack>
                            </div>
                            <div>
                               <div className="font-bold text-slate-900 dark:text-white">{post.author.split(',')[0]}</div>
-                              <div className="text-xs text-blue-600 font-bold uppercase tracking-wide">{post.author.split(',')[1] || 'Contributor'}</div>
+                              <div className="text-xs text-blue-600 dark:text-slate-300 font-bold uppercase tracking-wide">{post.author.split(',')[1] || 'Contributor'}</div>
                            </div>
                         </Stack>
-                        <Typography variant="caption" className="text-slate-500">Experienced consultant specializing in ERP implementation and business process re-engineering.</Typography>
-                        <button className="text-sm font-bold text-blue-600 hover:underline">View Profile</button>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Experienced consultant specializing in ERP implementation and business process re-engineering.</Typography>
+                        <button className="text-sm font-bold text-blue-600 dark:text-slate-300 hover:underline">View Profile</button>
                      </div>
 
                      {/* 3. Newsletter Widget */}
                      <div className="p-8 rounded-[2rem] bg-[#0B1120] text-white relative overflow-hidden border border-slate-800 group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-[50px] group-hover:bg-blue-600/30 transition-all"></div>
                         <div className="relative z-10">
-                           <BookOpen className="w-8 h-8 text-blue-400 mb-4" />
+                           <BookOpen className="w-8 h-8 text-blue-400 dark:text-blue-300 mb-4" />
                            <Typography variant="h3" as="h3">Weekly Intelligence</Typography>
-                           <Typography variant="caption" className="text-slate-400">Strategic insights for leaders.</Typography>
+                           <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Strategic insights for leaders.</Typography>
                            <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-slate-900 dark:text-white placeholder-slate-500 mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none rounded-xl font-bold">Subscribe</Button>
                         </div>
@@ -293,10 +287,10 @@ const BlogDetailPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-12">
                <div>
-                  <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
+                  <span className="text-blue-600 dark:text-slate-300 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
                   <Typography variant="h2" as="h2">Related Articles</Typography>
                </div>
-               <Link to="/blog" className="hidden md:flex items-center gap-2 text-slate-600 hover:text-blue-600 font-bold transition-colors">
+               <Link to="/blog" className="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 font-bold transition-colors">
                   View All <ArrowRight className="w-4 h-4" />
                </Link>
             </Stack>
@@ -319,8 +313,8 @@ const BlogDetailPage: React.FC = () => {
                         </div>
                         <Stack direction="vertical" gap={4} className="p-8">
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
-                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{rp.summary}</Typography>
-                           <Stack direction="horizontal" gap={4} align="center" className="text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{rp.summary}</Typography>
+                           <Stack direction="horizontal" gap={4} align="center" className="text-sm font-bold text-blue-600 dark:text-slate-300 group-hover:translate-x-2 transition-transform mt-auto">
                               Read Article <ArrowRight className="w-4 h-4 ml-2" />
                            </Stack>
                         </Stack>
@@ -344,15 +338,15 @@ const BlogDetailPage: React.FC = () => {
                {/* Left: Copy */}
                <div className="max-w-2xl">
                   <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
-                     <Rocket className="w-4 h-4 text-blue-400" />
+                     <Rocket className="w-4 h-4 text-blue-400 dark:text-blue-300" />
                      <Typography variant="caption" className="text-blue-300">Start Your Journey</Typography>
                   </Stack>
                   <Typography variant="h2" as="h2" className="font-bold tracking-tight leading-[1.1] text-white">Turn Insights into <br/>
                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Actionable Growth.</span></Typography>
-                  <Typography variant="body-xl" className="text-slate-400">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>
+                  <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>
                   
                   {/* Trust Signals */}
-                  <Stack direction="horizontal" gap={4} align="center" className="text-sm font-medium text-slate-500">
+                  <Stack direction="horizontal" gap={4} align="center" className="text-sm font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
                      <Stack direction="horizontal" gap={4} className="-space-x-3">
                         {[1,2,3,4].map(i => (
                            <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0B1120] bg-slate-700"></div>

@@ -45,7 +45,7 @@ const scenarios: ScenarioDef[] = [
     device: 'mobile',
     title: 'Closing Deal di Lapangan',
     desc: 'Buat penawaran harga (Quotation) saat meeting dengan klien hanya dalam 3 ketukan.',
-    color: 'text-blue-400'
+    color: 'text-blue-400 dark:text-blue-300'
   },
   { 
     id: 'manager', 
@@ -55,7 +55,7 @@ const scenarios: ScenarioDef[] = [
     device: 'desktop',
     title: 'Approval Jarak Jauh',
     desc: 'Review dan setujui permintaan pembelian (PO) yang masuk dari tim procurement.',
-    color: 'text-purple-400'
+    color: 'text-purple-400 dark:text-purple-300'
   },
   { 
     id: 'warehouse', 
@@ -65,7 +65,7 @@ const scenarios: ScenarioDef[] = [
     device: 'mobile',
     title: 'Terima Barang Masuk',
     desc: 'Scan barcode barang yang datang dari supplier untuk update stok otomatis.',
-    color: 'text-amber-400'
+    color: 'text-amber-400 dark:text-amber-300'
   },
   { 
     id: 'employee', 
@@ -75,7 +75,7 @@ const scenarios: ScenarioDef[] = [
     device: 'mobile',
     title: 'Absensi & Cuti',
     desc: 'Clock-in kehadiran dengan Face ID dan ajukan cuti sakit mendadak.',
-    color: 'text-pink-400'
+    color: 'text-pink-400 dark:text-pink-300'
   },
   { 
     id: 'finance', 
@@ -85,7 +85,7 @@ const scenarios: ScenarioDef[] = [
     device: 'desktop',
     title: 'Auto-Reconciliation',
     desc: 'Cocokkan mutasi bank dengan invoice penjualan secara otomatis tanpa input manual.',
-    color: 'text-emerald-400'
+    color: 'text-emerald-400 dark:text-emerald-300'
   },
   { 
     id: 'ceo', 
@@ -95,7 +95,7 @@ const scenarios: ScenarioDef[] = [
     device: 'mobile',
     title: 'Executive Dashboard',
     desc: 'Pantau profitabilitas, cashflow, dan performa tim sales real-time dari genggaman.',
-    color: 'text-indigo-400'
+    color: 'text-indigo-400 dark:text-indigo-300'
   }
 ];
 
@@ -146,7 +146,7 @@ const ProductTourPage: React.FC = () => {
               </div>
               <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight font-sans">Pilih Peran,<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Rasakan Bedanya.</span></Typography>
-              <Typography variant="caption" className="text-slate-400 leading-relaxed">Simulasi hands-on bagaimana BizOps mempermudah pekerjaan setiap departemen.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Simulasi hands-on bagaimana BizOps mempermudah pekerjaan setiap departemen.</Typography>
             </div>
 
             {/* Mobile Scenario Selector (Horizontal Scroll) */}
@@ -159,15 +159,15 @@ const ProductTourPage: React.FC = () => {
                    className={`group relative px-4 py-3 rounded-xl border flex items-center gap-3 transition-all duration-300 text-left min-w-[200px] ${
                      activeId === sc.id 
                        ? 'bg-white/10 border-primary-500/50 shadow-lg shadow-primary-900/20 ring-1 ring-primary-500/50' 
-                       : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-400 hover:text-white'
+                       : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-400 dark:text-slate-300 hover:text-white'
                    }`}
                  >
-                   <div className={`p-2 rounded-lg transition-colors shrink-0 ${activeId === sc.id ? 'bg-primary-500 text-white shadow-md' : 'bg-slate-800 text-slate-400 group-hover:text-white'}`}>
+                   <div className={`p-2 rounded-lg transition-colors shrink-0 ${activeId === sc.id ? 'bg-primary-500 text-white shadow-md' : 'bg-slate-800 text-slate-400 dark:text-slate-300 group-hover:text-white'}`}>
                      <sc.icon className="w-5 h-5" />
                    </div>
                    <div className="flex-1 min-w-0 gap-4">
                      <div className={`text-sm font-bold truncate ${activeId === sc.id ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{sc.label}</div>
-                     <div className="text-[10px] text-slate-500 group-hover:text-slate-400 truncate">{sc.role}</div>
+                     <div className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:text-slate-400 truncate">{sc.role}</div>
                    </div>
                  </button>
                 ))}
@@ -176,7 +176,7 @@ const ProductTourPage: React.FC = () => {
 
             {/* Desktop Vertical Scenario Menu */}
             <Stack direction="vertical" gap={2} className="hidden animate-fade-in-up delay-100">
-              <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 px-2">Select Scenario</Typography>
+              <Typography variant="caption" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-1 px-2">Select Scenario</Typography>
               {scenarios.map((sc) => (
                 <button
                   key={sc.id}
@@ -184,15 +184,15 @@ const ProductTourPage: React.FC = () => {
                   className={`group relative px-4 py-3 rounded-xl border flex items-center gap-4 transition-all duration-300 text-left ${
                     activeId === sc.id 
                       ? 'bg-white/10 border-primary-500/50 shadow-lg shadow-primary-900/20 ring-1 ring-primary-500/50 translate-x-2' 
-                      : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-400 hover:text-white hover:translate-x-1'
+                      : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-400 dark:text-slate-300 hover:text-white hover:translate-x-1'
                   }`}
                 >
-                  <div className={`p-2 rounded-lg transition-colors ${activeId === sc.id ? 'bg-primary-500 text-white shadow-md' : 'bg-slate-800 text-slate-400 group-hover:text-white'}`}>
+                  <div className={`p-2 rounded-lg transition-colors ${activeId === sc.id ? 'bg-primary-500 text-white shadow-md' : 'bg-slate-800 text-slate-400 dark:text-slate-300 group-hover:text-white'}`}>
                     <sc.icon className="w-5 h-5" />
                   </div>
                   <div className="flex-1 gap-4">
                     <div className={`text-sm font-bold ${activeId === sc.id ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{sc.label}</div>
-                    <div className="text-[10px] text-slate-500 group-hover:text-slate-400">{sc.role}</div>
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:text-slate-400">{sc.role}</div>
                   </div>
                   {activeId === sc.id && <ChevronRight className="w-4 h-4 text-primary-400 animate-pulse" />}
                 </button>
@@ -206,7 +206,7 @@ const ProductTourPage: React.FC = () => {
                  Current Mission
                </div>
                <Typography variant="h3" as="h3" className="font-bold text-white">{currentScenario.title}</Typography>
-               <Typography variant="caption" className="text-slate-400 leading-relaxed">{currentScenario.desc}</Typography>
+               <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">{currentScenario.desc}</Typography>
             </div>
 
           </Stack>
@@ -217,7 +217,7 @@ const ProductTourPage: React.FC = () => {
              {/* Mobile Info (Visible only on small screens) */}
              <div className="block lg:hidden mb-4 text-center w-full px-4 relative z-20">
                 <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentScenario.title}</Typography>
-                <Typography variant="caption" className="text-slate-400 leading-snug">{currentScenario.desc}</Typography>
+                <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-snug">{currentScenario.desc}</Typography>
              </div>
 
              {/* Loading Overlay */}
@@ -257,30 +257,30 @@ const ProductTourPage: React.FC = () => {
         <Container size="7xl" className="relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <Typography variant="h2" as="h2">Mengapa Kami Buat Simulasi Ini?</Typography>
-            <Typography variant="body" className="text-slate-400">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</Typography>
+            <Typography variant="body" className="text-slate-400 dark:text-slate-300">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</Typography>
           </div>
           
           <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-primary-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 ring-1 ring-blue-500/30 gap-4">
-                 <Zap className="w-6 h-6 text-blue-400" />
+                 <Zap className="w-6 h-6 text-blue-400 dark:text-blue-300" />
               </div>
               <Typography variant="h3" as="h3">Zero-Setup Experience</Typography>
-              <Typography variant="caption" className="text-slate-400">Tidak perlu menunggu tim IT melakukan instalasi server. Cukup klik dan rasakan pengalamannya langsung di browser.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Tidak perlu menunggu tim IT melakukan instalasi server. Cukup klik dan rasakan pengalamannya langsung di browser.</Typography>
             </div>
             <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5 ring-1 ring-purple-500/30 gap-4">
-                 <ShieldCheck className="w-6 h-6 text-purple-400" />
+                 <ShieldCheck className="w-6 h-6 text-purple-400 dark:text-purple-300" />
               </div>
               <Typography variant="h3" as="h3">Realistic Workflows</Typography>
-              <Typography variant="caption" className="text-slate-400">Skenario yang Anda jalankan adalah 100% alur kerja asli yang digunakan oleh klien-klien enterprise kami setiap hari.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Skenario yang Anda jalankan adalah 100% alur kerja asli yang digunakan oleh klien-klien enterprise kami setiap hari.</Typography>
             </div>
             <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5 ring-1 ring-emerald-500/30 gap-4">
-                 <Globe className="w-6 h-6 text-emerald-400" />
+                 <Globe className="w-6 h-6 text-emerald-400 dark:text-emerald-300" />
               </div>
               <Typography variant="h3" as="h3">Unified Ecosystem</Typography>
-              <Typography variant="caption" className="text-slate-400">Lihat bagaimana data dari Sales (Mobile) langsung terhubung ke Finance (Web) dan Gudang tanpa jeda.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Lihat bagaimana data dari Sales (Mobile) langsung terhubung ke Finance (Web) dan Gudang tanpa jeda.</Typography>
             </div>
           </CardSlider>
         </Container>
@@ -294,7 +294,7 @@ const ProductTourPage: React.FC = () => {
         <Container size="7xl" className="text-center relative z-10">
           <Badge variant="outline" className="mb-6 border-primary-500/30 text-primary-300 bg-primary-500/10">Ready for the real thing?</Badge>
           <Typography variant="h2" as="h2" className="font-extrabold text-white tracking-tight font-sans">Bawa Efisiensi Ini ke <span className="text-primary-400">Bisnis Anda.</span></Typography>
-          <Typography variant="body-xl" className="text-slate-400">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
+          <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
           <Stack direction="vertical" gap={4} className="justify-center">
             <Link to="/demo">
               <Button size="lg" className="h-14 px-10 text-lg font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-[0_0_40px_rgba(14,165,233,0.3)] w-full sm:w-auto group">
@@ -344,8 +344,8 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]"></div>
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27c93f]"></div>
         </div>
-        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap gap-4">
-           <span className="text-slate-500 mr-1">https://</span>app.bizops.id/desk
+        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 dark:text-slate-300 border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap gap-4">
+           <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 mr-1">https://</span>app.bizops.id/desk
         </div>
      </div>
      <div className="flex-1 flex overflow-hidden bg-slate-50 dark:bg-[#0B1120] text-slate-900 dark:text-white gap-4">
@@ -358,13 +358,13 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
               <div className="px-3 py-2 md:py-2.5 bg-primary-600/10 text-primary-400 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 border border-primary-500/10">
                  <LayoutDashboard className="w-3.5 h-3.5 md:w-4 md:h-4" /> Dashboard
               </div>
-              <div className="px-3 py-2 md:py-2.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
+              <div className="px-3 py-2 md:py-2.5 text-slate-400 dark:text-slate-300 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
                  <Bell className="w-3.5 h-3.5 md:w-4 md:h-4" /> Inbox <span className="ml-auto bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-md font-bold shadow-md shadow-red-500/20">3</span>
               </div>
-              <div className="px-3 py-2 md:py-2.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
+              <div className="px-3 py-2 md:py-2.5 text-slate-400 dark:text-slate-300 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
                  <FileText className="w-3.5 h-3.5 md:w-4 md:h-4" /> Reports
               </div>
-              <div className="px-3 py-2 md:py-2.5 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
+              <div className="px-3 py-2 md:py-2.5 text-slate-400 dark:text-slate-300 hover:bg-slate-800 hover:text-slate-200 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 transition-colors cursor-pointer">
                  <Settings className="w-3.5 h-3.5 md:w-4 md:h-4" /> Settings
               </div>
            </Stack>
@@ -374,7 +374,7 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
               </div>
               <div className="flex-1 overflow-hidden gap-4">
                  <div className="text-xs font-bold text-white truncate">{role}</div>
-                 <div className="text-[10px] text-emerald-400 flex items-center gap-1">
+                 <div className="text-[10px] text-emerald-400 dark:text-emerald-300 flex items-center gap-1">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div> Online
                  </div>
               </div>
@@ -382,10 +382,10 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
         </div>
         <div className="flex-1 flex flex-col relative overflow-hidden bg-slate-900 gap-4">
            <div className="h-12 md:h-16 border-b border-slate-800 flex items-center justify-between px-4 md:px-6 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 z-10 gap-4">
-              <div className="text-xs md:text-sm font-medium text-slate-400 flex items-center gap-2">
-                 <span className="text-slate-500">Workspace</span> <ChevronRight className="w-3 h-3"/> <span className="text-white">Desk</span>
+              <div className="text-xs md:text-sm font-medium text-slate-400 dark:text-slate-300 flex items-center gap-2">
+                 <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Workspace</span> <ChevronRight className="w-3 h-3"/> <span className="text-white">Desk</span>
               </div>
-              <div className="flex items-center gap-4 text-slate-400">
+              <div className="flex items-center gap-4 text-slate-400 dark:text-slate-300">
                  <div className="relative hidden sm:block">
                     <Search className="w-3.5 h-3.5 md:w-4 md:h-4 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input type="text" placeholder="Search..." className="bg-slate-800 border-none rounded-full h-8 md:h-9 pl-9 pr-4 text-xs w-48 md:w-64 focus:ring-1 focus:ring-primary-500 transition-all" />
@@ -406,15 +406,15 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
       return (
          <div className="h-full w-full flex flex-col items-center justify-center text-center p-6 animate-fade-in-up gap-4">
             <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-full flex items-center justify-center mb-6 ring-1 ring-green-500/30 animate-bounce-slow gap-4">
-               <Check className="w-10 h-10 md:w-12 md:h-12 text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
+               <Check className="w-10 h-10 md:w-12 md:h-12 text-green-400 dark:text-green-300 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
             </div>
             <Typography variant="h3" as="h3">Task Completed!</Typography>
-            <Typography variant="caption" className="text-slate-400 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
+            <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
             <Stack direction="vertical" gap={3} className="w-full max-w-xs">
                <Link to="/demo" className="w-full">
                   <Button fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
                </Link>
-               <button onClick={onReset} className="text-sm text-slate-500 hover:text-white transition-colors flex items-center justify-center gap-2 py-2 group">
+               <button onClick={onReset} className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2 py-2 group">
                   <RefreshCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" /> Ulangi Simulasi
                </button>
             </Stack>
@@ -447,14 +447,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/10 rounded-full -mr-8 -mb-8 blur-xl"></div>
                   </div>
 
-                  <div className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider px-1">Recent Drafts</div>
+                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-2 uppercase tracking-wider px-1">Recent Drafts</div>
                   {[1, 2].map((i) => (
                      <div key={i} className="p-4 rounded-2xl border border-slate-800 bg-slate-900/50 flex justify-between items-center hover:bg-slate-800 transition-colors cursor-default gap-4">
                         <div>
                            <div className="font-bold text-slate-200">PT Sumber Makmur</div>
-                           <div className="text-xs text-slate-500 mt-1">QT-2023-00{i} • IDR 25.000.000</div>
+                           <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mt-1">QT-2023-00{i} • IDR 25.000.000</div>
                         </div>
-                        <Badge variant="outline" size="sm" className="border-slate-700 text-slate-400">Draft</Badge>
+                        <Badge variant="outline" size="sm" className="border-slate-700 text-slate-400 dark:text-slate-300">Draft</Badge>
                      </div>
                   ))}
                   
@@ -469,37 +469,37 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             {step === 1 && (
                <Stack direction="vertical" gap={5} className="flex-1 p-4 gap-4">
                   <Stack direction="vertical" gap={2}>
-                     <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase">Customer</Typography>
+                     <Typography variant="caption" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">Customer</Typography>
                      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white flex justify-between items-center shadow-sm gap-4">
                         PT Mitra Abadi Teknik
-                        <div className="w-5 h-5 bg-green-500/20 rounded-full flex items-center justify-center gap-4"><Check className="w-3 h-3 text-green-500" /></div>
+                        <div className="w-5 h-5 bg-green-500/20 rounded-full flex items-center justify-center gap-4"><Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /></div>
                      </div>
                   </Stack>
                   <Stack direction="vertical" gap={2}>
-                     <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase">Items</Typography>
+                     <Typography variant="caption" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">Items</Typography>
                      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
                         <div className="flex justify-between text-sm mb-1 text-white font-medium gap-4">
                            <span>MacBook Pro M3</span>
                            <span>x 5</span>
                         </div>
-                        <div className="text-xs text-slate-500">Rp 25.000.000 / unit</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Rp 25.000.000 / unit</div>
                      </div>
                   </Stack>
                   
                   <div className="mt-auto">
                      <div className="p-5 bg-slate-800/50 rounded-xl border border-slate-800 mb-4">
-                        <div className="flex justify-between text-sm text-slate-400 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
                            <span>Subtotal</span>
                            <span>Rp 125.000.000</span>
                         </div>
-                        <div className="flex justify-between text-sm text-slate-400 mb-4 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-4 gap-4">
                            <span>Tax (11%)</span>
                            <span>Rp 13.750.000</span>
                         </div>
                         <div className="h-px bg-slate-700 my-3"></div>
                         <div className="flex justify-between text-lg font-bold text-white gap-4">
                            <span>Total</span>
-                           <span className="text-emerald-400">Rp 138.750.000</span>
+                           <span className="text-emerald-400 dark:text-emerald-300">Rp 138.750.000</span>
                         </div>
                      </div>
                      <Button fullWidth onClick={onNext} className="h-12 text-base font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-lg shadow-primary-900/50">Simpan & Kirim</Button>
@@ -515,7 +515,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Quotation Created!</Typography>
-                     <Typography variant="caption" className="text-slate-500">QT-2023-088 siap dikirim.</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">QT-2023-088 siap dikirim.</Typography>
                   </div>
                   
                   <Stack direction="vertical" gap={3} className="w-full">
@@ -542,11 +542,11 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <Grid cols={3} gap={3}>
                         {['Revenue', 'Expenses', 'Net Profit'].map((l, i) => (
                            <div key={i} className="bg-slate-800/50 p-3 md:p-5 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors group">
-                              <div className="text-[10px] md:text-xs text-slate-500 uppercase font-bold tracking-wider mb-1 md:mb-2">{l}</div>
+                              <div className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase font-bold tracking-wider mb-1 md:mb-2">{l}</div>
                               <div className="text-lg md:text-2xl font-bold text-white group-hover:text-primary-400 transition-colors">
                                  {i===0 ? '2.4M' : i===1 ? '1.1M' : '1.3M'}
                               </div>
-                              <div className="flex items-center gap-1 mt-1 md:mt-2 text-[10px] md:text-xs text-emerald-400">
+                              <div className="flex items-center gap-1 mt-1 md:mt-2 text-[10px] md:text-xs text-emerald-400 dark:text-emerald-300">
                                  <TrendingUp className="w-3 h-3" /> +{12-i*2}%
                               </div>
                            </div>
@@ -579,14 +579,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="p-3 md:p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl cursor-pointer hover:bg-amber-500/20 transition-all shadow-sm group relative overflow-hidden" onClick={onNext}>
                            <div className="absolute left-0 top-0 w-1 h-full bg-amber-500"></div>
                            <div className="flex justify-between items-start mb-3 gap-4">
-                              <Badge variant="warning" size="sm" className="bg-amber-500/20 text-amber-400 border-none text-[10px]">PO Request</Badge>
-                              <span className="text-[10px] text-slate-400">Just now</span>
+                              <Badge variant="warning" size="sm" className="bg-amber-500/20 text-amber-400 dark:text-amber-300 border-none text-[10px]">PO Request</Badge>
+                              <span className="text-[10px] text-slate-400 dark:text-slate-300">Just now</span>
                            </div>
                            <div className="font-bold text-white text-xs md:text-sm mb-1 group-hover:text-amber-200 transition-colors">MacBook Pro Procurement</div>
-                           <div className="text-[10px] md:text-xs text-slate-400">Request by: IT Dept</div>
+                           <div className="text-[10px] md:text-xs text-slate-400 dark:text-slate-300">Request by: IT Dept</div>
                            <div className="mt-4 flex justify-between items-center gap-4">
                               <div className="font-bold text-white text-xs md:text-sm">Rp 125jt</div>
-                              <div className="text-[10px] md:text-xs text-amber-400 font-bold underline decoration-dashed">Review →</div>
+                              <div className="text-[10px] md:text-xs text-amber-400 dark:text-amber-300 font-bold underline decoration-dashed">Review →</div>
                            </div>
                         </div>
                      </div>
@@ -599,31 +599,31 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="bg-slate-800 w-full max-w-lg rounded-2xl shadow-2xl border border-slate-700 overflow-hidden animate-scale-in">
                      <div className="p-4 md:p-6 border-b border-slate-700 flex justify-between items-center bg-slate-800/50 gap-4">
                         <div className="flex items-center gap-3">
-                           <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 gap-4"><FileText className="w-4 h-4"/></div>
+                           <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 dark:text-amber-400 dark:text-amber-300 gap-4"><FileText className="w-4 h-4"/></div>
                            <Typography variant="h3" as="h3">PO-2023-01</Typography>
                         </div>
-                        <X className="w-5 h-5 text-slate-400 cursor-pointer hover:text-white" onClick={onReset} />
+                        <X className="w-5 h-5 text-slate-400 dark:text-slate-300 cursor-pointer hover:text-white" onClick={onReset} />
                      </div>
                      <Stack direction="vertical" gap={4} className="p-4 md:p-6">
                         <Grid cols={2} gap={4}>
                            <Stack direction="vertical" gap={1}>
-                              <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Supplier</div>
+                              <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">Supplier</div>
                               <div className="font-medium text-white text-base md:text-lg">iBox Official Store</div>
                            </Stack>
                            <Stack direction="vertical" gap={1}>
-                              <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Total Amount</div>
-                              <div className="font-bold text-emerald-400 text-base md:text-lg">Rp 125.000.000</div>
+                              <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">Total Amount</div>
+                              <div className="font-bold text-emerald-400 dark:text-emerald-300 text-base md:text-lg">Rp 125.000.000</div>
                            </Stack>
                         </Grid>
                         
                         <Stack direction="vertical" gap={2}>
-                           <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Items</div>
+                           <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">Items</div>
                            <div className="bg-slate-900 rounded-xl border border-slate-700 overflow-hidden">
                               <div className="p-3 border-b border-slate-700 flex justify-between text-xs md:text-sm text-slate-300 gap-4">
                                  <span>MacBook Pro M3 14"</span>
                                  <span>x 5</span>
                               </div>
-                              <div className="p-3 bg-slate-800/50 text-[10px] md:text-xs text-slate-400">
+                              <div className="p-3 bg-slate-800/50 text-[10px] md:text-xs text-slate-400 dark:text-slate-300">
                                  Notes: Pengadaan untuk tim design baru. Budget ID: IT-HW-Q4.
                               </div>
                            </div>
@@ -642,11 +642,11 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="absolute inset-0 flex items-center justify-center gap-4">
                      <div className="bg-slate-800 text-white px-6 md:px-8 py-4 rounded-2xl shadow-2xl border border-green-500/30 flex items-center gap-4 animate-fade-in-up z-30">
                         <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center gap-4">
-                           <Check className="w-5 h-5 text-green-400" />
+                           <Check className="w-5 h-5 text-green-400 dark:text-green-300" />
                         </div>
                         <div>
                            <div className="font-bold text-white text-sm md:text-base">Approved Successfully</div>
-                           <div className="text-[10px] md:text-xs text-slate-400">Notification sent to Procurement team.</div>
+                           <div className="text-[10px] md:text-xs text-slate-400 dark:text-slate-300">Notification sent to Procurement team.</div>
                         </div>
                      </div>
                   </div>
@@ -666,11 +666,11 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="flex justify-between items-end gap-4">
                      <div>
                         <Typography variant="h2" as="h2">Bank Reconciliation</Typography>
-                        <Typography variant="caption" className="text-slate-400">Match bank statements with system vouchers.</Typography>
+                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Match bank statements with system vouchers.</Typography>
                      </div>
                      <div className="text-right">
-                        <div className="text-[10px] md:text-xs text-slate-500 font-bold uppercase">Unreconciled</div>
-                        <div className="text-lg md:text-xl font-bold text-amber-400">Rp 45.500.000</div>
+                        <div className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold uppercase">Unreconciled</div>
+                        <div className="text-lg md:text-xl font-bold text-amber-400 dark:text-amber-300">Rp 45.500.000</div>
                      </div>
                   </div>
 
@@ -682,10 +682,10 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <Stack direction="vertical" gap={3} className="p-3 md:p-4 overflow-y-auto">
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1 gap-4">
-                                 <span className="text-[10px] md:text-xs text-slate-500">TRF 12/10</span>
-                                 <span className="text-[10px] md:text-xs text-emerald-500">+ 15.000.000</span>
+                                 <span className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">TRF 12/10</span>
+                                 <span className="text-[10px] md:text-xs text-emerald-500 dark:text-emerald-400 dark:text-emerald-300">+ 15.000.000</span>
                               </div>
-                              <div className="text-xs md:text-sm text-slate-400">PT MAJU JAYA</div>
+                              <div className="text-xs md:text-sm text-slate-400 dark:text-slate-300">PT MAJU JAYA</div>
                            </div>
                            <div className="p-3 md:p-4 bg-blue-900/20 border border-blue-500/50 rounded-lg ring-2 ring-blue-500/20 cursor-pointer group" onClick={onNext}>
                               <div className="flex justify-between mb-1 gap-4">
@@ -693,7 +693,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                                  <Typography variant="caption" className="text-white">+ 45.500.000</Typography>
                               </div>
                               <div className="text-xs md:text-sm text-white font-medium group-hover:text-blue-300 transition-colors">TRF FRM CV SUMBER REJEKI</div>
-                              <div className="mt-2 text-[10px] md:text-xs text-blue-400 flex items-center gap-1">
+                              <div className="mt-2 text-[10px] md:text-xs text-blue-400 dark:text-blue-300 flex items-center gap-1">
                                  <MousePointer className="w-3 h-3 animate-bounce-x" /> Click to match
                               </div>
                            </div>
@@ -707,10 +707,10 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <Stack direction="vertical" gap={3} className="p-3 md:p-4 overflow-y-auto">
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1 gap-4">
-                                 <span className="text-[10px] md:text-xs text-slate-500">INV-2023-001</span>
+                                 <span className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">INV-2023-001</span>
                                  <span className="text-[10px] md:text-xs text-slate-300">15.000.000</span>
                               </div>
-                              <div className="text-xs md:text-sm text-slate-400">PT Maju Jaya</div>
+                              <div className="text-xs md:text-sm text-slate-400 dark:text-slate-300">PT Maju Jaya</div>
                            </div>
                            <div className="p-3 bg-purple-900/10 border border-purple-500/30 rounded-lg border-dashed">
                               <div className="flex justify-between mb-1 gap-4">
@@ -718,7 +718,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                                  <Typography variant="caption" className="text-white">45.500.000</Typography>
                               </div>
                               <div className="text-xs md:text-sm text-slate-300">CV Sumber Rejeki</div>
-                              <div className="mt-2 text-[10px] md:text-xs text-slate-500">Waiting for bank match...</div>
+                              <div className="mt-2 text-[10px] md:text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Waiting for bank match...</div>
                            </div>
                         </Stack>
                      </div>
@@ -730,21 +730,21 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <Stack direction="vertical" gap={6} className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 gap-4">
                   <Stack direction="vertical" gap={4} className="items-center">
                      <div className="p-4 md:p-6 bg-blue-900/20 border border-blue-500/50 rounded-2xl text-center w-full sm:w-48">
-                        <div className="text-[10px] md:text-xs text-blue-400 mb-2 font-bold">BANK TRF</div>
+                        <div className="text-[10px] md:text-xs text-blue-400 dark:text-blue-300 mb-2 font-bold">BANK TRF</div>
                         <div className="text-lg md:text-xl font-bold text-white">45.500.000</div>
                      </div>
                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center rotate-90 sm:rotate-0 gap-4">
-                        <RefreshCw className="w-5 h-5 md:w-6 md:h-6 text-slate-400 animate-spin" />
+                        <RefreshCw className="w-5 h-5 md:w-6 md:h-6 text-slate-400 dark:text-slate-300 animate-spin" />
                      </div>
                      <div className="p-4 md:p-6 bg-purple-900/20 border border-purple-500/50 rounded-2xl text-center w-full sm:w-48">
-                        <div className="text-[10px] md:text-xs text-purple-400 mb-2 font-bold">INVOICE #005</div>
+                        <div className="text-[10px] md:text-xs text-purple-400 dark:text-purple-300 mb-2 font-bold">INVOICE #005</div>
                         <div className="text-lg md:text-xl font-bold text-white">45.500.000</div>
                      </div>
                   </Stack>
                   
                   <div className="max-w-md text-center">
                      <Typography variant="h3" as="h3">AI Suggestion Found</Typography>
-                     <Typography variant="caption" className="text-slate-400">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</Typography>
+                     <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</Typography>
                      <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 shadow-lg shadow-emerald-900/50 border-none">Confirm Match</Button>
                   </div>
                </Stack>
@@ -770,7 +770,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
          <div className="h-full flex flex-col bg-slate-950 gap-4">
             <div className="p-4 md:p-5 border-b border-slate-800 bg-slate-900 sticky top-0 z-10 flex justify-between items-center gap-4">
                <div>
-                  <div className="text-[10px] md:text-xs text-slate-400 uppercase">Executive Summary</div>
+                  <div className="text-[10px] md:text-xs text-slate-400 dark:text-slate-300 uppercase">Executive Summary</div>
                   <div className="font-bold text-base md:text-lg text-white">Dashboard</div>
                </div>
                <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-600">
@@ -794,13 +794,13 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   {/* Drill Down Cards */}
                   <Grid cols={2} gap={3}>
                      <div className="p-4 bg-slate-900 border border-slate-800 rounded-xl" onClick={onNext}>
-                        <Wallet className="w-6 h-6 text-emerald-500 mb-3" />
-                        <div className="text-slate-400 text-xs mb-1">Cash on Hand</div>
+                        <Wallet className="w-6 h-6 text-emerald-500 dark:text-emerald-400 dark:text-emerald-300 mb-3" />
+                        <div className="text-slate-400 dark:text-slate-300 text-xs mb-1">Cash on Hand</div>
                         <div className="text-lg font-bold text-white">1.8 M</div>
                      </div>
                      <div className="p-4 bg-slate-900 border border-slate-800 rounded-xl">
-                        <ShoppingCart className="w-6 h-6 text-blue-500 mb-3" />
-                        <div className="text-slate-400 text-xs mb-1">Sales Oct</div>
+                        <ShoppingCart className="w-6 h-6 text-blue-500 dark:text-blue-400 dark:text-blue-300 mb-3" />
+                        <div className="text-slate-400 dark:text-slate-300 text-xs mb-1">Sales Oct</div>
                         <div className="text-lg font-bold text-white">850 Jt</div>
                      </div>
                   </Grid>
@@ -827,11 +827,11 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
 
             {step === 1 && (
                <Stack direction="vertical" gap={4} className="flex-1 p-4 gap-4">
-                  <div className="text-xs font-bold text-slate-500 uppercase mb-2">Drill Down: Cash Flow</div>
+                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase mb-2">Drill Down: Cash Flow</div>
                   <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
                      <div className="flex justify-between items-center mb-4 gap-4">
                         <div className="text-sm text-white font-bold">Bank Accounts</div>
-                        <div className="text-xs text-emerald-400 font-medium">Updated 5m ago</div>
+                        <div className="text-xs text-emerald-400 dark:text-emerald-300 font-medium">Updated 5m ago</div>
                      </div>
                      <Stack direction="vertical" gap={3}>
                         <div className="flex justify-between items-center p-3 bg-slate-800 rounded-lg gap-4">
@@ -852,8 +852,8 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   <div className="bg-slate-900 p-4 rounded-xl border border-slate-800 h-48 flex items-center justify-center text-center gap-4">
                      <div>
-                        <PieChart className="w-12 h-12 text-slate-700 mx-auto mb-2" />
-                        <div className="text-slate-500 text-sm">More detailed analysis available on Desktop.</div>
+                        <PieChart className="w-12 h-12 text-slate-700 dark:text-slate-200 mx-auto mb-2" />
+                        <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">More detailed analysis available on Desktop.</div>
                      </div>
                   </div>
                   <Button fullWidth onClick={onNext}>Download PDF Report</Button>
@@ -863,10 +863,10 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             {step === 2 && (
                <div className="flex-1 flex flex-col items-center justify-center text-center p-6 gap-4">
                   <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mb-4 gap-4">
-                     <FileCheck className="w-8 h-8 text-blue-400" />
+                     <FileCheck className="w-8 h-8 text-blue-400 dark:text-blue-300" />
                   </div>
                   <Typography variant="h3" as="h3">Report Downloaded</Typography>
-                  <Typography variant="caption" className="text-slate-500">Financial_Report_Oct.pdf saved to device.</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Financial_Report_Oct.pdf saved to device.</Typography>
                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
@@ -883,19 +883,19 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <div className="text-sm text-primary-400 flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div> SCANNER_V2
                </div>
-               <div className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-[10px] font-bold border border-green-500/30">ONLINE</div>
+               <div className="bg-green-500/20 text-green-400 dark:text-green-300 px-2 py-0.5 rounded text-[10px] font-bold border border-green-500/30">ONLINE</div>
             </div>
 
             {step === 0 && (
                <Stack direction="vertical" gap={8} className="flex-1 flex flex-col items-center justify-center p-6 text-center gap-4">
                   <div className="w-64 h-64 border-2 border-dashed border-slate-600 rounded-3xl flex items-center justify-center bg-slate-800/30 relative overflow-hidden group cursor-pointer hover:border-primary-500 transition-colors gap-4" onClick={onNext}>
-                     <Scan className="w-20 h-20 text-slate-600 group-hover:text-primary-500 transition-colors" />
+                     <Scan className="w-20 h-20 text-slate-600 dark:text-slate-300 group-hover:text-primary-500 transition-colors" />
                      <div className="absolute top-0 left-0 w-full h-1 bg-red-500/80 shadow-[0_0_20px_rgba(239,68,68,1)] animate-[scan_2s_ease-in-out_infinite]"></div>
-                     <div className="absolute bottom-4 text-xs text-slate-500">Tap to Scan</div>
+                     <div className="absolute bottom-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Tap to Scan</div>
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Ready to Receive</Typography>
-                     <Typography variant="caption" className="text-slate-400">Arahkan kamera ke barcode barang masuk.</Typography>
+                     <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Arahkan kamera ke barcode barang masuk.</Typography>
                   </div>
                </Stack>
             )}
@@ -904,28 +904,28 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <Stack direction="vertical" gap={6} className="flex-1 p-4 gap-4">
                   <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-xl flex items-center gap-4 animate-slide-up">
                      <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 gap-4">
-                        <Check className="w-5 h-5 text-green-400" />
+                        <Check className="w-5 h-5 text-green-400 dark:text-green-300" />
                      </div>
                      <div className="overflow-hidden">
-                        <div className="text-[10px] text-green-400 font-bold uppercase">Code Detected</div>
+                        <div className="text-[10px] text-green-400 dark:text-green-300 font-bold uppercase">Code Detected</div>
                         <div className="font-bold text-lg truncate">899-202-331-001</div>
                      </div>
                   </div>
 
                   <Stack direction="vertical" gap={3} className="animate-slide-up delay-100">
                      <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                        <div className="text-xs text-slate-500 mb-1 uppercase font-bold">Product Name</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-1 uppercase font-bold">Product Name</div>
                         <div className="text-lg font-bold">Kursi Ergonomis Type-X</div>
                      </div>
                      <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                        <div className="text-xs text-slate-500 mb-1 uppercase font-bold">PO Reference</div>
-                        <div className="text-lg font-bold text-blue-400">PO-2023-088</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-1 uppercase font-bold">PO Reference</div>
+                        <div className="text-lg font-bold text-blue-400 dark:text-blue-300">PO-2023-088</div>
                      </div>
                      <div className="bg-slate-800 p-4 rounded-xl border-2 border-primary-500 relative">
                         <div className="absolute -top-2.5 left-4 bg-slate-800 px-2 text-xs text-primary-400 font-bold">QTY RECEIVED</div>
                         <div className="flex justify-between items-center mt-1 gap-4">
-                           <div className="text-4xl font-bold text-white">50</div>
-                           <div className="text-sm text-slate-500 font-bold">PCS</div>
+                           <div className="text-4xl font-bold text-white leading-tight">50</div>
+                           <div className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold">PCS</div>
                         </div>
                      </div>
                   </Stack>
@@ -940,7 +940,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                       <Check className="w-12 h-12 text-white" />
                    </div>
                    <Typography variant="h3" as="h3">Stock Updated</Typography>
-                   <Typography variant="body" className="text-slate-400">Inventory Level: 150 PCS</Typography>
+                   <Typography variant="body" className="text-slate-400 dark:text-slate-300">Inventory Level: 150 PCS</Typography>
                    <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
@@ -972,12 +972,12 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="bg-slate-800 rounded-3xl shadow-xl p-6 mb-6 border border-slate-800">
                      <div className="flex justify-between items-center mb-6 gap-4">
                         <div>
-                           <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">Today's Shift</div>
+                           <div className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold uppercase tracking-wider mb-1">Today's Shift</div>
                            <div className="font-bold text-white text-lg">09:00 - 18:00</div>
                         </div>
                         <div className="text-right">
-                           <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">{new Date().toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' })}</div>
-                           <div className="font-bold text-pink-500 text-lg">08:45 AM</div>
+                           <div className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold uppercase tracking-wider mb-1">{new Date().toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' })}</div>
+                           <div className="font-bold text-pink-500 dark:text-pink-400 dark:text-pink-300 text-lg">08:45 AM</div>
                         </div>
                      </div>
                      
@@ -992,10 +992,10 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   {/* Menu Grid */}
                   <Grid cols={2} gap={4}>
                      {[
-                        {n: 'Leave', i: Calendar, c: 'text-orange-400'}, 
-                        {n: 'Payslip', i: DollarSign, c: 'text-green-400'}, 
-                        {n: 'Claims', i: FileText, c: 'text-blue-400'}, 
-                        {n: 'Team', i: Users, c: 'text-purple-400'}
+                        {n: 'Leave', i: Calendar, c: 'text-orange-400 dark:text-orange-300'}, 
+                        {n: 'Payslip', i: DollarSign, c: 'text-green-400 dark:text-green-300'}, 
+                        {n: 'Claims', i: FileText, c: 'text-blue-400 dark:text-blue-300'}, 
+                        {n: 'Team', i: Users, c: 'text-purple-400 dark:text-purple-300'}
                      ].map((m, i) => (
                         <div key={i} className="bg-slate-900/50 p-4 rounded-2xl border border-slate-800 flex items-center gap-4 hover:bg-slate-800 transition-colors cursor-pointer">
                            <div className={`w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center ${m.c}`}>
@@ -1018,7 +1018,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                   </div>
                   <Typography variant="h3" as="h3">Verifying Face ID...</Typography>
-                  <Typography variant="caption" className="text-slate-500">Please look at the camera</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Please look at the camera</Typography>
                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 2000); }}></div>
                </div>
             )}
@@ -1029,9 +1029,9 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <Check className="w-12 h-12 text-white" />
                   </div>
                   <Typography variant="h3" as="h3">Clock In Success!</Typography>
-                  <Typography variant="body" className="text-slate-400">Recorded: 08:46:12 AM</Typography>
+                  <Typography variant="body" className="text-slate-400 dark:text-slate-300">Recorded: 08:46:12 AM</Typography>
                   <div className="bg-slate-900 px-4 py-2 rounded-full text-xs font-bold text-slate-300 flex items-center gap-2 border border-slate-800">
-                     <MapPin className="w-3 h-3 text-pink-500" /> Head Office, Jakarta
+                     <MapPin className="w-3 h-3 text-pink-500 dark:text-pink-400 dark:text-pink-300" /> Head Office, Jakarta
                   </div>
                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>

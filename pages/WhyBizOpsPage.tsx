@@ -60,7 +60,7 @@ const WhyBizOpsPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">The "Sweet Spot"</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.</Typography>
             </div>
             
             <Stack direction="vertical" gap={16} className="items-center">
@@ -71,20 +71,20 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="absolute left-8 right-8 top-1/2 h-px bg-slate-300 dark:bg-slate-600 transform -translate-y-1/2 border-t border-dashed border-slate-400 dark:border-slate-500"></div>
                   
                   {/* Labels */}
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2">High Flexibility</div>
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2">Low Flexibility</div>
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2 origin-center">Hard to Use</div>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2 origin-center">Easy to Use</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2">High Flexibility</div>
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2">Low Flexibility</div>
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2 origin-center">Hard to Use</div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90 text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-2 origin-center">Easy to Use</div>
 
                   {/* Competitors */}
                   <div className="absolute top-[25%] left-[25%] transform -translate-x-1/2 -translate-y-1/2 text-center opacity-70 group cursor-help">
                      <div className="w-4 h-4 bg-slate-400 rounded-full mx-auto mb-2 group-hover:scale-125 transition-transform"></div>
-                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Legacy ERP<br/>(SAP/Oracle)</span>
+                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400 dark:text-slate-300">Legacy ERP<br/>(SAP/Oracle)</span>
                   </div>
                   
                   <div className="absolute bottom-[25%] right-[25%] transform -translate-x-1/2 -translate-y-1/2 text-center opacity-70 group cursor-help">
                      <div className="w-4 h-4 bg-slate-400 rounded-full mx-auto mb-2 group-hover:scale-125 transition-transform"></div>
-                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400">SaaS Lokal<br/>(Accounting App)</span>
+                     <span className="text-xs font-bold text-slate-600 dark:text-slate-400 dark:text-slate-300">SaaS Lokal<br/>(Accounting App)</span>
                   </div>
 
                   {/* BizOps Winner */}
@@ -105,20 +105,20 @@ const WhyBizOpsPage: React.FC = () => {
                      <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                         <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
                            <div className="flex gap-4">
-                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0 gap-4">1</div>
+                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold flex-shrink-0 gap-4">1</div>
                               <div>
                                  <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
-                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
+                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
                               </div>
                            </div>
                         </div>
                         
                         <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
                            <div className="flex gap-4">
-                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0 gap-4">2</div>
+                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold flex-shrink-0 gap-4">2</div>
                               <div>
                                  <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
-                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
+                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
                               </div>
                            </div>
                         </div>
@@ -138,20 +138,20 @@ const WhyBizOpsPage: React.FC = () => {
                   <Stack direction="vertical" gap={6} className="hidden lg:block">
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <div className="flex gap-4">
-                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0 gap-4">1</div>
+                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold flex-shrink-0 gap-4">1</div>
                            <div>
                               <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
-                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
                            </div>
                         </div>
                      </div>
                      
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <div className="flex gap-4">
-                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0 gap-4">2</div>
+                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold flex-shrink-0 gap-4">2</div>
                            <div>
                               <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
-                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
                            </div>
                         </div>
                      </div>
@@ -181,14 +181,14 @@ const WhyBizOpsPage: React.FC = () => {
                   {whyBizOpsContent.reasons.map((reason, idx) => (
                      <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col shadow-lg hover:shadow-xl transition-shadow gap-4">
                         <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors gap-4">
-                           {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
-                           {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
-                           {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
-                           {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
-                           {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
+                           {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500 dark:text-blue-400 dark:text-blue-300" />}
+                           {idx === 1 && <Shield className="w-7 h-7 text-green-500 dark:text-green-400 dark:text-green-300" />}
+                           {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500 dark:text-amber-400 dark:text-amber-300" />}
+                           {idx === 3 && <Code className="w-7 h-7 text-purple-500 dark:text-purple-400 dark:text-purple-300" />}
+                           {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500 dark:text-teal-400 dark:text-teal-300" />}
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason.desc}</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{reason.desc}</Typography>
                      </Card>
                   ))}
                   
@@ -208,14 +208,14 @@ const WhyBizOpsPage: React.FC = () => {
                {whyBizOpsContent.reasons.map((reason, idx) => (
                   <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col shadow-lg hover:shadow-xl transition-shadow gap-4">
                      <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors gap-4">
-                        {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
-                        {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
-                        {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
-                        {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
-                        {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
+                        {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500 dark:text-blue-400 dark:text-blue-300" />}
+                        {idx === 1 && <Shield className="w-7 h-7 text-green-500 dark:text-green-400 dark:text-green-300" />}
+                        {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500 dark:text-amber-400 dark:text-amber-300" />}
+                        {idx === 3 && <Code className="w-7 h-7 text-purple-500 dark:text-purple-400 dark:text-purple-300" />}
+                        {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500 dark:text-teal-400 dark:text-teal-300" />}
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason.desc}</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{reason.desc}</Typography>
                   </Card>
                ))}
                
@@ -240,29 +240,29 @@ const WhyBizOpsPage: React.FC = () => {
          <Container size="7xl" className="relative z-10">
             <Grid cols={2} gap={16} className="items-center">
                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 dark:text-green-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency
                   </div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
-                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.</Typography>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.</Typography>
                   
                   <Stack direction="vertical" gap={6}>
                      <div className="flex gap-4 items-start">
-                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0 gap-4">
+                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 dark:text-slate-300 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0 gap-4">
                            <Database className="w-5 h-5" />
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Lower TCO (Total Cost of Ownership)</Typography>
-                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jalankan di server 4GB RAM untuk 50 user. Hemat biaya cloud hosting hingga 40% per tahun.</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jalankan di server 4GB RAM untuk 50 user. Hemat biaya cloud hosting hingga 40% per tahun.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4 items-start">
-                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0 gap-4">
+                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 dark:text-slate-300 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0 gap-4">
                            <Leaf className="w-5 h-5" />
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Green Computing</Typography>
-                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Optimasi query database dan lazy-loading assets mengurangi konsumsi energi data center secara signifikan.</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Optimasi query database dan lazy-loading assets mengurangi konsumsi energi data center secara signifikan.</Typography>
                         </div>
                      </div>
                   </Stack>
@@ -273,16 +273,16 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="flex justify-between items-end border-b border-slate-100 dark:border-slate-800 pb-6 mb-8 gap-4">
                      <div>
                         <Typography variant="h4" as="h4">Server Resource Usage</Typography>
-                        <Typography variant="body" className="text-slate-500">Benchmark: 50 Concurrent Users</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Benchmark: 50 Concurrent Users</Typography>
                      </div>
-                     <Typography variant="caption" className="text-green-700">-75% Usage</Typography>
+                     <Typography variant="caption" className="text-green-700 dark:text-slate-200">-75% Usage</Typography>
                   </div>
                   
                   <Stack direction="vertical" gap={8}>
                      <div className="relative">
                         <div className="flex justify-between text-sm mb-2 font-semibold gap-4">
                            <span className="text-slate-900 dark:text-white flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"></div> BizOps ERP</span>
-                           <span className="text-slate-500">2GB RAM</span>
+                           <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">2GB RAM</span>
                         </div>
                         <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                            <motion.div 
@@ -296,8 +296,8 @@ const WhyBizOpsPage: React.FC = () => {
                      
                      <div className="relative opacity-60">
                         <div className="flex justify-between text-sm mb-2 font-semibold gap-4">
-                           <span className="text-slate-500 dark:text-slate-400 flex items-center gap-2"><div className="w-2 h-2 bg-slate-400 rounded-full"></div> Legacy Java ERP</span>
-                           <span className="text-slate-500">8GB RAM</span>
+                           <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 flex items-center gap-2"><div className="w-2 h-2 bg-slate-400 rounded-full"></div> Legacy Java ERP</span>
+                           <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">8GB RAM</span>
                         </div>
                         <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                            <motion.div 
@@ -310,12 +310,12 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                   </Stack>
                   
-                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-4 text-xs text-slate-500">
+                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">
                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" /> Docker Ready
+                        <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 dark:text-green-300" /> Docker Ready
                      </div>
                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" /> Kubernetes Friendly
+                        <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 dark:text-green-300" /> Kubernetes Friendly
                      </div>
                   </div>
                </div>

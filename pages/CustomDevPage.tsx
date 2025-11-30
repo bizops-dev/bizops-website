@@ -98,7 +98,7 @@ const CustomDevPage: React.FC = () => {
       <SEO title="Custom ERP Development | BizOps" description="Layanan pengembangan modul kustom di atas BizOps. Solusi tailor-made untuk kebutuhan bisnis unik." />
 
       {/* --- HERO SECTION --- */}
-      <Section className="relative pt-20 pb-32 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+      <Section className="relative pt-20 pb-32 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-16 md:py-24">
         {/* Abstract Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
@@ -113,16 +113,16 @@ const CustomDevPage: React.FC = () => {
               {/* Left Column */}
               <motion.div initial="hidden" animate="visible" variants={STAGGER_CONTAINER}>
                  <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
-                    <Code className="w-3 h-3 text-blue-500" />
+                    <Code className="w-3 h-3 text-blue-500 dark:text-blue-400 dark:text-blue-300" />
                     <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Tailor-Made Solutions</Typography>
                  </motion.div>
 
                  <motion.h1 variants={FADE_UP_VARIANTS} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
-                   <span className="text-blue-600 dark:text-blue-400">{pageData.title}</span><br />
-                   <span className="text-slate-400 dark:text-slate-500 text-3xl md:text-4xl font-medium block mt-2">{pageData.subtitle}</span>
+                   <span className="text-blue-600 dark:text-blue-400 dark:text-blue-300">{pageData.title}</span><br />
+                   <span className="text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 text-3xl md:text-4xl font-medium block mt-2 leading-tight">{pageData.subtitle}</span>
                  </motion.h1>
 
-                 <motion.p variants={FADE_UP_VARIANTS} className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 border-l-4 border-blue-500 pl-6">
+                 <motion.p variants={FADE_UP_VARIANTS} className="text-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed mb-10 border-l-4 border-blue-500 pl-6">
                    {pageData.description}
                  </motion.p>
 
@@ -154,12 +154,12 @@ const CustomDevPage: React.FC = () => {
                     <Stack direction="vertical" gap={6}>
                        {pageData.benefits.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
-                             <Stack direction="horizontal" gap={4} align="center" justify="center" className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shrink-0 border border-blue-200 dark:border-blue-800/50">
+                             <Stack direction="horizontal" gap={4} align="center" justify="center" className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 dark:text-blue-300 shrink-0 border border-blue-200 dark:border-blue-800/50">
                                 <Check className="w-3.5 h-3.5" />
                              </div>
                              <div>
                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
-                                <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
+                                <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{benefit.desc}</Typography>
                              </div>
                           </div>
                        ))}
@@ -171,7 +171,7 @@ const CustomDevPage: React.FC = () => {
       </Section>
 
       {/* --- USE CASES (Timeline Style) --- */}
-      <Section className="bg-white dark:bg-slate-950 relative z-20">
+      <Section className="bg-white dark:bg-slate-950 relative z-20 py-16 md:py-24">
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="vertical" gap={6} className="md:items-end justify-between mb-16">
                <div>
@@ -179,7 +179,7 @@ const CustomDevPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Solved by Custom Dev</Typography>
                </div>
                <Link to="/use-cases">
-                 <Button variant="ghost" className="text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 gap-2">
+                 <Button variant="ghost" className="text-blue-600 dark:text-blue-400 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 gap-2">
                     See All Case Studies <ArrowRight className="w-4 h-4" />
                  </Button>
                </Link>
@@ -205,10 +205,10 @@ const CustomDevPage: React.FC = () => {
                            <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
                               <Link to={`/use-cases/${item.id}`} className="block group">
                                 <SpotlightCard className="p-8 rounded-2xl hover:border-blue-200 dark:hover:border-blue-800 transition-colors">
-                                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-blue-500 mr-2 md:hidden">Case {idx + 1}:</span>
+                                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-blue-500 dark:text-blue-400 dark:text-blue-300 mr-2 md:hidden">Case {idx + 1}:</span>
                                       {item.title}</Typography>
-                                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
-                                  <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 justify-end md:justify-start">
+                                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{item.desc}</Typography>
+                                  <span className="text-sm font-bold text-blue-600 dark:text-blue-400 dark:text-blue-300 flex items-center gap-1 justify-end md:justify-start">
                                      Read Full Story <ArrowRight className="w-4 h-4" />
                                   </span>
                                 </SpotlightCard>
@@ -217,7 +217,7 @@ const CustomDevPage: React.FC = () => {
 
                            {/* Center Marker */}
                            <Stack direction="horizontal" gap={4} align="center" justify="center" className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 z-10 hidden">
-                              <item.icon className="w-6 h-6 text-slate-400" />
+                              <item.icon className="w-6 h-6 text-slate-400 dark:text-slate-300" />
                            </div>
 
                            {/* Empty Side for Balance */}
@@ -231,11 +231,11 @@ const CustomDevPage: React.FC = () => {
       </Section>
 
       {/* --- DELIVERABLES (Previously Tech Stack) --- */}
-      <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
+      <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50 py-16 md:py-24">
            <Container className="px-4 md:px-6 lg:px-8" size="5xl">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Key Deliverables</Typography>
-                 <Typography variant="body" className="text-slate-600 dark:text-slate-400">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>
+                 <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>
               </div>
               
               <Grid cols={2} gap={6}>
@@ -248,12 +248,12 @@ const CustomDevPage: React.FC = () => {
                       transition={{ delay: idx * 0.05 }}
                       className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-300 group"
                     >
-                       <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors mt-1">
+                       <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 dark:text-blue-300 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors mt-1">
                           <item.icon className="w-6 h-6" />
                        </div>
                        <div>
                           <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
-                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{item.desc}</Typography>
                        </div>
                     </motion.div>
                  ))}
@@ -274,8 +274,8 @@ const CustomDevPage: React.FC = () => {
            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
            
            <Container size="3xl" className="relative z-10">
-             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to Build <span className="text-blue-400">Unique Features?</span></Typography>
-             <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.</Typography>
+             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to Build <span className="text-blue-400 dark:text-blue-300">Unique Features?</span></Typography>
+             <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.</Typography>
              <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">

@@ -50,12 +50,12 @@ mQINBF... (Truncated for display) ...
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-700/50 text-green-400 text-xs mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-700/50 text-green-400 dark:text-green-300 text-xs mb-6"
           >
             <Terminal className="w-3 h-3" /> VULNERABILITY DISCLOSURE PROGRAM
           </motion.div>
-          <Typography variant="h1" as="h1" className="font-bold text-white tracking-tight">See Something, <span className="text-green-500">Say Something.</span></Typography>
-          <Typography variant="body-xl" className="text-slate-400">Keamanan adalah prioritas #1 kami. Kami mengundang peneliti keamanan untuk membantu melindungi ekosistem BizOps melalui pengungkapan yang bertanggung jawab.</Typography>
+          <Typography variant="h1" as="h1" className="font-bold text-white tracking-tight">See Something, <span className="text-green-500 dark:text-green-400 dark:text-green-300">Say Something.</span></Typography>
+          <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Keamanan adalah prioritas #1 kami. Kami mengundang peneliti keamanan untuk membantu melindungi ekosistem BizOps melalui pengungkapan yang bertanggung jawab.</Typography>
         </Container>
       </section>
 
@@ -64,12 +64,12 @@ mQINBF... (Truncated for display) ...
         <Grid cols={2} gap={12}>
           {/* In Scope */}
           <div className="bg-slate-900/50 border border-green-900/30 rounded-2xl p-8 hover:border-green-700/50 transition-colors">
-            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-green-900/30 rounded-lg text-green-400"><CheckCircle className="w-5 h-5" /></div>
+            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-green-900/30 rounded-lg text-green-400 dark:text-green-300"><CheckCircle className="w-5 h-5" /></div>
               In Scope</Typography>
             <ul className="space-y-4">
               {scopeIn.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm">
-                  <span className="text-green-500 mt-1">▹</span> {item}
+                  <span className="text-green-500 dark:text-green-400 dark:text-green-300 mt-1">▹</span> {item}
                 </li>
               ))}
             </ul>
@@ -77,12 +77,12 @@ mQINBF... (Truncated for display) ...
 
           {/* Out of Scope */}
           <div className="bg-slate-900/50 border border-red-900/30 rounded-2xl p-8 hover:border-red-700/50 transition-colors">
-            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-red-900/30 rounded-lg text-red-400"><AlertTriangle className="w-5 h-5" /></div>
+            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-red-900/30 rounded-lg text-red-400 dark:text-red-300"><AlertTriangle className="w-5 h-5" /></div>
               Out of Scope</Typography>
             <ul className="space-y-4">
               {scopeOut.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-slate-400 text-sm">
-                  <span className="text-red-500 mt-1">×</span> {item}
+                <li key={idx} className="flex items-start gap-3 text-slate-400 dark:text-slate-300 text-sm">
+                  <span className="text-red-500 dark:text-red-400 dark:text-red-300 mt-1">×</span> {item}
                 </li>
               ))}
             </ul>
@@ -98,15 +98,15 @@ mQINBF... (Truncated for display) ...
           <Stack direction="vertical" gap={8}>
             <div>
               <Typography variant="h4" as="h4">Via Email Terenkripsi</Typography>
-              <Typography variant="caption" className="text-slate-400">Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 dark:text-green-300 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.</Typography>
               
-              <div className="relative bg-black rounded-xl p-4 border border-slate-800 text-xs text-slate-500 overflow-x-auto">
+              <div className="relative bg-black rounded-xl p-4 border border-slate-800 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 overflow-x-auto">
                 <button 
                   onClick={handleCopy}
                   className="absolute top-4 right-4 p-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors"
                   title="Copy PGP Key"
                 >
-                  {copied ? <CheckCircle className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <CheckCircle className="w-4 h-4 text-green-400 dark:text-green-300" /> : <Copy className="w-4 h-4" />}
                 </button>
                 <pre>{pgpKey}</pre>
               </div>

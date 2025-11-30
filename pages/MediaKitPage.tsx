@@ -83,12 +83,12 @@ const MediaKitPage: React.FC = () => {
         {/* --- LOGO PACK --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 gap-4">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 dark:text-indigo-300 gap-4">
                  <ImageIcon className="w-6 h-6" />
               </div>
               <div>
                  <Typography variant="h2" as="h2">Brand Assets (Logo)</Typography>
-                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</Typography>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Gunakan logo sesuai konteks background.</Typography>
               </div>
            </div>
 
@@ -110,7 +110,7 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-end mb-4 gap-4">
                        <div>
                           <Typography variant="h3" as="h3">Primary Logo</Typography>
-                          <Typography variant="caption" className="text-slate-500">Gunakan pada background terang/putih.</Typography>
+                          <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Gunakan pada background terang/putih.</Typography>
                        </div>
                        <div className="flex gap-2">
                           <Button size="sm" variant="outline" className="text-xs h-8">SVG</Button>
@@ -138,7 +138,7 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-end mb-4 gap-4">
                        <div>
                           <Typography variant="h3" as="h3">Monochrome (Inverse)</Typography>
-                          <Typography variant="caption" className="text-slate-400">Gunakan pada background gelap/foto.</Typography>
+                          <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Gunakan pada background gelap/foto.</Typography>
                        </div>
                        <div className="flex gap-2">
                           <Button size="sm" variant="outline-white" className="text-xs h-8 border-slate-600 hover:bg-slate-800">SVG</Button>
@@ -152,28 +152,28 @@ const MediaKitPage: React.FC = () => {
            {/* Do's and Don'ts */}
            <Grid cols={4} gap={6} className="mt-8">
                <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/30 flex flex-col items-center text-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4 gap-4">
+                  <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-slate-300 flex items-center justify-center mb-4 gap-4">
                      <Check className="w-4 h-4" />
                   </div>
-                  <Typography variant="body" className="dark:text-green-400">Gunakan Space yang Cukup</Typography>
+                  <Typography variant="body" className="dark:text-green-400 dark:text-green-300">Gunakan Space yang Cukup</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-slate-300 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <Typography variant="body" className="dark:text-red-400">Jangan Mengubah Proporsi</Typography>
+                  <Typography variant="body" className="dark:text-red-400 dark:text-red-300">Jangan Mengubah Proporsi</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-slate-300 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <Typography variant="body" className="dark:text-red-400">Jangan Mengganti Warna</Typography>
+                  <Typography variant="body" className="dark:text-red-400 dark:text-red-300">Jangan Mengganti Warna</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-slate-300 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <Typography variant="body" className="dark:text-red-400">Jangan Menambah Efek</Typography>
+                  <Typography variant="body" className="dark:text-red-400 dark:text-red-300">Jangan Menambah Efek</Typography>
                </div>
            </Grid>
         </section>
@@ -181,12 +181,12 @@ const MediaKitPage: React.FC = () => {
         {/* --- COLOR PALETTE --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 gap-4">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 dark:text-blue-300 gap-4">
                  <Palette className="w-6 h-6" />
               </div>
               <div>
                  <Typography variant="h2" as="h2">Color System</Typography>
-                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</Typography>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Klik HEX code untuk menyalin.</Typography>
               </div>
            </div>
            
@@ -199,13 +199,13 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
-                          <div className="text-xs text-slate-500">Brand Primary</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Brand Primary</div>
                        </div>
                        <button 
                          onClick={() => copyToClipboard('#2563EB', 'c1')} 
                          className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                        >
-                          {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
+                          {copied === 'c1' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#2563EB'}
                           {copied !== 'c1' && <Copy className="w-3 h-3" />}
                        </button>
                     </div>
@@ -218,13 +218,13 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
-                          <div className="text-xs text-slate-500">Backgrounds / Text</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Backgrounds / Text</div>
                        </div>
                        <button 
                          onClick={() => copyToClipboard('#0F172A', 'c2')} 
                          className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                        >
-                          {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
+                          {copied === 'c2' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#0F172A'}
                           {copied !== 'c2' && <Copy className="w-3 h-3" />}
                        </button>
                     </div>
@@ -237,13 +237,13 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
-                          <div className="text-xs text-slate-500">Positive Actions</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Positive Actions</div>
                        </div>
                        <button 
                          onClick={() => copyToClipboard('#10B981', 'c3')} 
                          className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                        >
-                          {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
+                          {copied === 'c3' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#10B981'}
                           {copied !== 'c3' && <Copy className="w-3 h-3" />}
                        </button>
                     </div>
@@ -256,13 +256,13 @@ const MediaKitPage: React.FC = () => {
                     <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
-                          <div className="text-xs text-slate-500">Alerts / Attention</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Alerts / Attention</div>
                        </div>
                        <button 
                          onClick={() => copyToClipboard('#F59E0B', 'c4')} 
                          className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                        >
-                          {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
+                          {copied === 'c4' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#F59E0B'}
                           {copied !== 'c4' && <Copy className="w-3 h-3" />}
                        </button>
                     </div>
@@ -278,13 +278,13 @@ const MediaKitPage: React.FC = () => {
                  <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
-                       <div className="text-xs text-slate-500">Brand Primary</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Brand Primary</div>
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#2563EB', 'c1')} 
                       className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
-                       {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
+                       {copied === 'c1' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#2563EB'}
                        {copied !== 'c1' && <Copy className="w-3 h-3" />}
                     </button>
                  </div>
@@ -297,13 +297,13 @@ const MediaKitPage: React.FC = () => {
                  <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
-                       <div className="text-xs text-slate-500">Backgrounds / Text</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Backgrounds / Text</div>
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#0F172A', 'c2')} 
                       className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
-                       {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
+                       {copied === 'c2' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#0F172A'}
                        {copied !== 'c2' && <Copy className="w-3 h-3" />}
                     </button>
                  </div>
@@ -316,13 +316,13 @@ const MediaKitPage: React.FC = () => {
                  <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
-                       <div className="text-xs text-slate-500">Positive Actions</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Positive Actions</div>
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#10B981', 'c3')} 
                       className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
-                       {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
+                       {copied === 'c3' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#10B981'}
                        {copied !== 'c3' && <Copy className="w-3 h-3" />}
                     </button>
                  </div>
@@ -335,13 +335,13 @@ const MediaKitPage: React.FC = () => {
                  <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
-                       <div className="text-xs text-slate-500">Alerts / Attention</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Alerts / Attention</div>
                     </div>
                     <button 
                       onClick={() => copyToClipboard('#F59E0B', 'c4')} 
                       className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
                     >
-                       {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
+                       {copied === 'c4' ? <Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> : '#F59E0B'}
                        {copied !== 'c4' && <Copy className="w-3 h-3" />}
                     </button>
                  </div>
@@ -353,32 +353,32 @@ const MediaKitPage: React.FC = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16 md:py-24">
            <div>
               <div className="flex items-center gap-4 mb-8">
-                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 gap-4">
+                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 dark:text-purple-300 gap-4">
                     <Type className="w-6 h-6" />
                  </div>
                  <div>
                  <Typography variant="h2" as="h2">Typography</Typography>
-                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</Typography>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</Typography>
               </div>
            </div>
-           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
+           <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
               <Stack direction="vertical" gap={6}>
                  <div>
-                    <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
-                    <span className="text-6xl font-normal text-slate-900 dark:text-white ml-4">Aa</span>
+                    <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">Aa</span>
+                    <span className="text-6xl font-normal text-slate-900 dark:text-white ml-4 leading-tight">Aa</span>
                  </div>
                  <Grid cols={3} gap={4}>
                     <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                        <div className="text-2xl font-bold mb-1">Bold</div>
-                       <div className="text-xs text-slate-500">Headings</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Headings</div>
                     </div>
                     <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                        <div className="text-2xl font-medium mb-1">Medium</div>
-                       <div className="text-xs text-slate-500">Buttons / UI</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Buttons / UI</div>
                     </div>
                     <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                        <div className="text-2xl font-normal mb-1">Regular</div>
-                       <div className="text-xs text-slate-500">Body Text</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">Body Text</div>
                     </div>
                  </Grid>
               </Stack>
@@ -391,7 +391,7 @@ const MediaKitPage: React.FC = () => {
                     <Typography variant="h1" as="h1">The Quick Brown Fox</Typography>
                     <Typography variant="h2" as="h2">Jumps Over The Lazy Dog</Typography>
                     <Typography variant="h3" as="h3">1234567890</Typography>
-                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.</Typography>
+                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.</Typography>
                  </Stack>
               </div>
            </div>
@@ -400,19 +400,19 @@ const MediaKitPage: React.FC = () => {
         {/* --- BOILERPLATE --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 gap-4">
+              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 dark:text-amber-300 gap-4">
                  <FileText className="w-6 h-6" />
               </div>
               <div>
                  <Typography variant="h2" as="h2">Company Boilerplate</Typography>
-                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</Typography>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Deskripsi perusahaan standar untuk press release.</Typography>
               </div>
            </div>
 
            <Grid cols={2} gap={8}>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6 gap-4">
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500">~50 Words</Typography></Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">~50 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
@@ -424,7 +424,7 @@ const MediaKitPage: React.FC = () => {
 
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6 gap-4">
-                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <Typography variant="caption" className="text-slate-500">~100 Words</Typography></Typography>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">~100 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
@@ -465,10 +465,10 @@ const MediaKitPage: React.FC = () => {
                  </div>
                  <Stack direction="vertical" gap={3} className="text-sm text-slate-300">
                     <div className="flex items-center gap-3">
-                       <Mail className="w-4 h-4 text-slate-400" /> pr@divistant.com
+                       <Mail className="w-4 h-4 text-slate-400 dark:text-slate-300" /> pr@divistant.com
                     </div>
                     <div className="flex items-center gap-3">
-                       <Globe className="w-4 h-4 text-slate-400" /> Jakarta, Indonesia
+                       <Globe className="w-4 h-4 text-slate-400 dark:text-slate-300" /> Jakarta, Indonesia
                     </div>
                  </Stack>
               </div>

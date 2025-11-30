@@ -101,7 +101,7 @@ const PartnerDirectoryPage: React.FC = () => {
             
             {/* Search */}
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-300" />
               <input 
                 type="text" 
                 placeholder="Search partners..." 
@@ -135,13 +135,13 @@ const PartnerDirectoryPage: React.FC = () => {
                      </label>
                      {/* Info Text for Managed Service */}
                      {type === 'managed-service' && (
-                        <div className="ml-7 mt-1 text-[10px] text-slate-400 leading-tight">
+                        <div className="ml-7 mt-1 text-[10px] text-slate-400 dark:text-slate-300 leading-tight">
                            Mitra operasional outsourcing (Finance, HR, dll)
                         </div>
                      )}
                      {/* Info Text for Technology Partner */}
                      {type === 'technology' && (
-                        <div className="ml-7 mt-1 text-[10px] text-slate-400 leading-tight">
+                        <div className="ml-7 mt-1 text-[10px] text-slate-400 dark:text-slate-300 leading-tight">
                            Principal & Platform resmi (e.g. Frappe, Cloud Provider)
                         </div>
                      )}
@@ -189,7 +189,7 @@ const PartnerDirectoryPage: React.FC = () => {
                        <option key={loc} value={loc}>{loc}</option>
                     ))}
                  </select>
-                 <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+                 <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500 dark:text-slate-400 dark:text-slate-300">
                     <MapPin className="w-4 h-4" />
                  </div>
               </div>
@@ -198,7 +198,7 @@ const PartnerDirectoryPage: React.FC = () => {
             {hasActiveFilters && (
                <button 
                   onClick={clearFilters}
-                  className="text-xs text-red-500 hover:text-red-600 font-medium flex items-center gap-1 transition-colors"
+                  className="text-xs text-red-500 hover:text-red-600 dark:text-slate-300 font-medium flex items-center gap-1 transition-colors"
                >
                   <X className="w-3 h-3" /> Clear All Filters
                </button>
@@ -209,7 +209,7 @@ const PartnerDirectoryPage: React.FC = () => {
           {/* --- MOBILE FILTER BUTTON --- */}
           <div className="lg:hidden col-span-1 mb-6">
              <div className="relative mb-4">
-                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-300" />
                  <input 
                    type="text" 
                    placeholder="Search partners..." 
@@ -252,11 +252,11 @@ const PartnerDirectoryPage: React.FC = () => {
                </div>
              ) : (
                <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800">
-                  <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400 gap-4">
+                  <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400 dark:text-slate-300 gap-4">
                      <Search className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">No partners found</Typography>
-                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Try adjusting your filters or search terms.</Typography>
+                  <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Try adjusting your filters or search terms.</Typography>
                   <Button variant="outline" onClick={clearFilters}>Clear Filters</Button>
                </div>
              )}
@@ -280,7 +280,7 @@ const PartnerDirectoryPage: React.FC = () => {
             >
               <div className="flex justify-between items-center mb-6 gap-4">
                 <Typography variant="h3" as="h3">Filters</Typography>
-                <button onClick={() => setShowMobileFilter(false)} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500">
+                <button onClick={() => setShowMobileFilter(false)} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400 dark:text-slate-300">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -294,7 +294,7 @@ const PartnerDirectoryPage: React.FC = () => {
                           <label key={type} className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 gap-4">
                              <div>
                                 <span className="capitalize text-slate-700 dark:text-slate-300 block">{type.replace('-', ' ')}</span>
-                                {type === 'technology' && <span className="text-[10px] text-slate-400">Principal & Official Tech</span>}
+                                {type === 'technology' && <span className="text-[10px] text-slate-400 dark:text-slate-300">Principal & Official Tech</span>}
                              </div>
                              <input 
                                 type="radio" 
@@ -314,7 +314,7 @@ const PartnerDirectoryPage: React.FC = () => {
                     <Typography variant="h4" as="h4">Industry</Typography>
                     <Grid cols={2} gap={3}>
                        {industriesList.map(industry => (
-                          <label key={industry} className={`p-3 rounded-xl border text-sm text-center transition-all ${selectedIndustry === industry ? 'bg-primary-50 dark:bg-primary-900/20 border-primary-500 text-primary-700 dark:text-primary-300' : 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'}`}>
+                          <label key={industry} className={`p-3 rounded-xl border text-sm text-center transition-all ${selectedIndustry === industry ? 'bg-primary-50 dark:bg-primary-900/20 border-primary-500 text-primary-700 dark:text-primary-300' : 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300'}`}>
                              <input type="radio" name="mobileIndustry" className="hidden" checked={selectedIndustry === industry} onChange={() => setSelectedIndustry(industry)} onClick={() => setSelectedIndustry(selectedIndustry === industry ? null : industry)} />
                              {industry}
                           </label>
@@ -343,18 +343,18 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
          case 'referral': return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300';
          case 'technology': return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
          case 'managed-service': return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
-         default: return 'bg-slate-100 text-slate-700';
+         default: return 'bg-slate-100 text-slate-700 dark:text-slate-200';
       }
    };
 
    const getTierColor = (tier: string) => {
       switch(tier) {
          case 'platinum': return 'text-slate-900 dark:text-white bg-gradient-to-r from-slate-200 to-slate-400';
-         case 'gold': return 'text-amber-700 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400';
-         case 'silver': return 'text-slate-600 bg-slate-100 dark:bg-slate-800 dark:text-slate-400';
-         case 'official': return 'text-blue-700 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-400 border border-blue-200 dark:border-blue-800'; // Special for Tech
-         case 'applying': return 'text-slate-500 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 border-dashed border border-slate-300';
-         default: return 'text-slate-500';
+         case 'gold': return 'text-amber-700 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:text-amber-300';
+         case 'silver': return 'text-slate-600 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 dark:text-slate-300';
+         case 'official': return 'text-blue-700 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-400 dark:text-blue-300 border border-blue-200 dark:border-blue-800'; // Special for Tech
+         case 'applying': return 'text-slate-500 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 dark:text-slate-300 border-dashed border border-slate-300';
+         default: return 'text-slate-500 dark:text-slate-400 dark:text-slate-300';
       }
    };
 
@@ -381,7 +381,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                         {partner.type}
                      </span>
                      {partner.certified && partner.type !== 'technology' && (
-                        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-0.5">
+                        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 dark:text-emerald-300 flex items-center gap-0.5">
                            <CheckCircle className="w-3 h-3" /> Certified
                         </span>
                      )}
@@ -395,20 +395,20 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
             </div>
          </div>
 
-         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
+         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{partner.description}</Typography>
 
          <Stack direction="vertical" gap={3} className="mb-6">
-            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
+            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300">
                <MapPin className="w-3.5 h-3.5" /> {partner.location}
             </div>
             <div className="flex flex-wrap gap-2">
                {partner.industries.slice(0, 3).map(ind => (
-                  <span key={ind} className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700">
+                  <span key={ind} className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-600 dark:text-slate-400 dark:text-slate-300 border border-slate-100 dark:border-slate-700">
                      {ind}
                   </span>
                ))}
                {partner.industries.length > 3 && (
-                  <span className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-500 border border-slate-100 dark:border-slate-700">
+                  <span className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 border border-slate-100 dark:border-slate-700">
                      +{partner.industries.length - 3}
                   </span>
                )}

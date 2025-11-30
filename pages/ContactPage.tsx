@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.2, duration: 0.8 }}
-               className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light"
+               className="text-xl text-slate-400 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-light"
             >
                Apakah Anda startup yang sedang berkembang atau enterprise yang mapan, tim kami siap membantu merancang solusi operasional terbaik.
             </motion.p>
@@ -137,24 +137,24 @@ const ContactPage: React.FC = () => {
                         
                         <Stack direction="vertical" gap={8}>
                            <a href="mailto:hello@bizops.id" className="flex items-start gap-5 group/item">
-                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400 dark:text-indigo-300 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
                                  <Mail className="w-6 h-6" />
                               </Stack>
                               <div>
-                                 <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Email Sales & Support</div>
-                                 <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-indigo-600 dark:group-hover/item:text-indigo-400 transition-colors">hello@bizops.id</div>
-                                 <div className="text-xs text-slate-400 mt-1">Avg. response time: 2 hours</div>
+                                 <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-1">Email Sales & Support</div>
+                                 <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-indigo-600 dark:text-slate-300 dark:group-hover/item:text-indigo-400 dark:text-indigo-300 transition-colors">hello@bizops.id</div>
+                                 <div className="text-xs text-slate-400 dark:text-slate-300 mt-1">Avg. response time: 2 hours</div>
                               </div>
                            </a>
 
                            <a href="tel:+622139702834" className="flex items-start gap-5 group/item">
-                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl text-emerald-600 dark:text-emerald-400 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl text-emerald-600 dark:text-emerald-400 dark:text-emerald-300 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
                                  <Phone className="w-6 h-6" />
                               </Stack>
                               <div>
-                                 <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Call Center</div>
-                                 <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-emerald-600 dark:group-hover/item:text-emerald-400 transition-colors">+62 21 3970 2834</div>
-                                 <Stack direction="horizontal" gap={1} align="center" className="text-xs text-slate-400 mt-1">
+                                 <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-1">Call Center</div>
+                                 <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-emerald-600 dark:text-slate-300 dark:group-hover/item:text-emerald-400 dark:text-emerald-300 transition-colors">+62 21 3970 2834</div>
+                                 <Stack direction="horizontal" gap={1} align="center" className="text-xs text-slate-400 dark:text-slate-300 mt-1">
                                     <Clock className="w-3 h-3" /> Mon-Fri, 09:00 - 17:00 WIB
                                  </Stack>
                               </div>
@@ -173,18 +173,18 @@ const ContactPage: React.FC = () => {
                   >
                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
                      <div className="relative z-10">
-                        <Typography variant="h2" as="h2" className="font-bold"><Globe className="w-5 h-5 text-blue-400" /> Our Offices</Typography>
+                        <Typography variant="h2" as="h2" className="font-bold"><Globe className="w-5 h-5 text-blue-400 dark:text-blue-300" /> Our Offices</Typography>
                         
                         <Stack direction="vertical" gap={6}>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">
                               <Typography variant="h3" as="h3">Jakarta HQ</Typography>
-                              <Typography variant="caption" className="text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br />
+                              <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Eco-S Sahid Sudirman Residence<br />
                                  Jl. Jenderal Sudirman No.86, Karet Tengsin<br />
                                  Tanah Abang, Jakarta 10250</Typography>
                            </div>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-purple-500 transition-colors">
                               <Typography variant="h3" as="h3">Yogyakarta R&D</Typography>
-                              <Typography variant="caption" className="text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru<br />
+                              <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">Jl. Ampel No.23, Demangan Baru<br />
                                  Caturtunggal, Kec. Depok, Sleman<br />
                                  DI Yogyakarta 55281</Typography>
                            </div>
@@ -210,7 +210,7 @@ const ContactPage: React.FC = () => {
                      <Stack direction="horizontal" gap={4} align="center" justify="between" className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full">
                         <div>
                            <Typography variant="h3" as="h3">Join Developer Community</Typography>
-                           <Typography variant="body" className="text-slate-500 dark:text-slate-400">Chat with 500+ peers on Discord.</Typography>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Chat with 500+ peers on Discord.</Typography>
                         </div>
                         <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer">
                            <Button size="sm" variant="secondary" className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-xl">
@@ -234,19 +234,19 @@ const ContactPage: React.FC = () => {
                        <Stack direction="vertical" gap={4} align="center" justify="center" className="text-center py-12">
                           <motion.div 
                              initial={{ scale: 0 }} animate={{ scale: 1 }}
-                             className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 shadow-lg gap-4"
+                             className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 dark:text-green-300 rounded-full flex items-center justify-center mb-8 shadow-lg gap-4"
                           >
                              <CheckCircle className="w-12 h-12" />
                           </motion.div>
                           <Typography variant="h2" as="h2">Pesan Diterima!</Typography>
-                          <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.</Typography>
+                          <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.</Typography>
                           <Button variant="outline" onClick={() => setIsSent(false)}>Kirim Pesan Lain</Button>
                        </Stack>
                      ) : (
                        <>
                          <div className="mb-10">
                             <Typography variant="h2" as="h2">Send a Message</Typography>
-                            <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Isi formulir di bawah ini dan kami akan menghubungkan Anda dengan expert yang tepat.</Typography>
+                            <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Isi formulir di bawah ini dan kami akan menghubungkan Anda dengan expert yang tepat.</Typography>
                          </div>
                          
                          <form className="space-y-8" onSubmit={handleSubmit} noValidate>
@@ -292,7 +292,7 @@ const ContactPage: React.FC = () => {
                             <div className="p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-100 dark:border-slate-800/50">
                                <Checkbox 
                                   name="consent" 
-                                  label={<span className="text-sm text-slate-600 dark:text-slate-400">Saya menyetujui pemrosesan data pribadi sesuai <Link to="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium" target="_blank" rel="noopener noreferrer">Kebijakan Privasi</Link>.</span>}
+                                  label={<span className="text-sm text-slate-600 dark:text-slate-400">Saya menyetujui pemrosesan data pribadi sesuai <Link to="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 dark:text-indigo-300 hover:underline font-medium" target="_blank" rel="noopener noreferrer">Kebijakan Privasi</Link>.</span>}
                                   required
                                />
                                {errors.consent && (
@@ -301,7 +301,7 @@ const ContactPage: React.FC = () => {
                             </div>
 
                             <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-4">
-                               <Typography variant="body" className="text-slate-400">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
+                               <Typography variant="body" className="text-slate-400 dark:text-slate-300">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
                                <Button size="lg" type="submit" isLoading={isLoading} className="h-14 px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
                                   {isLoading ? 'Mengirim...' : 'Kirim Pesan'} <Send className="w-4 h-4 ml-2" />
                                </Button>

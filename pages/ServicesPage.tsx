@@ -68,7 +68,7 @@ const ServicesPage: React.FC = () => {
       />
       
       {/* --- HERO SECTION --- */}
-      <Section className="relative pt-20 pb-20 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+      <Section className="relative pt-20 pb-20 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-16 md:py-24">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
@@ -94,7 +94,7 @@ const ServicesPage: React.FC = () => {
               <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Accepting New Enterprise Partners</Typography>
            </motion.div>
 
-           <Typography variant="h1" as="h1" className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><span className="block text-slate-400 dark:text-slate-500 text-2xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
+           <Typography variant="h1" as="h1" className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><span className="block text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 text-2xl md:text-4xl font-medium mb-2 tracking-normal leading-tight">Engineering Business Success</span>
              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-primary-800 to-slate-900 dark:from-white dark:via-primary-200 dark:to-white">
                <StaggeredText text="Beyond Software." />
              </span></Typography>
@@ -104,7 +104,7 @@ const ServicesPage: React.FC = () => {
              initial="hidden"
              animate="visible"
              transition={{ delay: 0.2 }}
-             className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12"
+             className="text-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mb-12"
            >
               Kami bukan sekadar implementator. Kami adalah arsitek proses bisnis yang memastikan teknologi bekerja untuk profitabilitas Anda.
            </motion.p>
@@ -128,7 +128,7 @@ const ServicesPage: React.FC = () => {
                       <stat.icon className="w-5 h-5 text-primary-500" />
                       {stat.val}
                    </Stack>
-                   <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">{stat.label}</div>
+                   <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
            </motion.div>
@@ -136,14 +136,14 @@ const ServicesPage: React.FC = () => {
       </Section>
 
       {/* --- ENGAGEMENT MODEL (JOURNEY) --- */}
-      <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20">
+      <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20 py-16 md:py-24">
         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
            <Stack direction="vertical" gap={6} className="justify-between items-end mb-16">
               <div>
                 <Typography variant="h2" as="h2">How We Work</Typography>
                 <Typography variant="h3" as="h3">The Transformation Arc</Typography>
               </div>
-              <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.</Typography>
+              <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.</Typography>
            </Stack>
 
            <div className="relative">
@@ -152,10 +152,10 @@ const ServicesPage: React.FC = () => {
               
               <CardSlider desktopClassName="md:grid md:grid-cols-4 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                  {[
-                    { step: '01', title: 'Consult', desc: 'Audit & Roadmap', icon: Compass, color: 'text-blue-500' },
-                    { step: '02', title: 'Build', desc: 'Deploy & Config', icon: Layers, color: 'text-indigo-500' },
-                    { step: '03', title: 'Enable', desc: 'Train & Adopt', icon: Users, color: 'text-purple-500' },
-                    { step: '04', title: 'Sustain', desc: 'Support & Scale', icon: Activity, color: 'text-emerald-500' },
+                    { step: '01', title: 'Consult', desc: 'Audit & Roadmap', icon: Compass, color: 'text-blue-500 dark:text-blue-400 dark:text-blue-300' },
+                    { step: '02', title: 'Build', desc: 'Deploy & Config', icon: Layers, color: 'text-indigo-500 dark:text-indigo-400 dark:text-indigo-300' },
+                    { step: '03', title: 'Enable', desc: 'Train & Adopt', icon: Users, color: 'text-purple-500 dark:text-purple-400 dark:text-purple-300' },
+                    { step: '04', title: 'Sustain', desc: 'Support & Scale', icon: Activity, color: 'text-emerald-500 dark:text-emerald-400 dark:text-emerald-300' },
                  ].map((item, idx) => (
                     <motion.div 
                       key={idx}
@@ -168,8 +168,8 @@ const ServicesPage: React.FC = () => {
                            </div>
                            <Stack direction="horizontal" gap={4}>
                               <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}
-                                 <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
-                              <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
+                                 <span className="text-[10px] text-slate-400 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
+                              <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{item.desc}</Typography>
                            </Stack>
                        </SpotlightCard>
                     </motion.div>
@@ -180,7 +180,7 @@ const ServicesPage: React.FC = () => {
       </Section>
 
       {/* --- SERVICES BENTO GRID --- */}
-      <Section className="bg-slate-50 dark:bg-slate-900/50">
+      <Section className="bg-slate-50 dark:bg-slate-900/50 py-16 md:py-24">
         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <div className="mb-12">
              <Typography variant="h2" as="h2">Capability Matrix</Typography>
@@ -225,11 +225,11 @@ const ServicesPage: React.FC = () => {
                   return (
                     <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
                         <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col gap-4">
-                          <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
+                          <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                               <service.icon className="w-6 h-6" />
                           </Stack>
                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{service.description}</Typography>
                           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                               <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
                                 View Service <MoveRight className="w-4 h-4" />
@@ -291,7 +291,7 @@ const ServicesPage: React.FC = () => {
                                         </Stack>
                                         <div>
                                            <span className="font-bold block text-sm">{item.title}</span>
-                                           <Typography variant="caption" className="text-slate-400">{item.desc}</Typography>
+                                           <Typography variant="caption" className="text-slate-400 dark:text-slate-300">{item.desc}</Typography>
                                         </div>
                                      </li>
                                   ))}
@@ -306,12 +306,12 @@ const ServicesPage: React.FC = () => {
                 return (
                   <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
                      <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300 gap-4">
-                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                            <service.icon className="w-6 h-6" />
                         </Stack>
 
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{service.description}</Typography>
 
                         <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                            <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
@@ -339,7 +339,7 @@ const ServicesPage: React.FC = () => {
            
            <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span></Typography>
-             <Typography variant="body-xl" className="text-slate-400">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
+             <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
              <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">

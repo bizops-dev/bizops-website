@@ -283,7 +283,7 @@ const AssessmentPage = () => {
             <Typography variant="h1" as="h1" className="font-bold text-white leading-tight tracking-tight">Unlock Your <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Digital Potential</span></Typography>
             
-            <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.</Typography>
+            <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.</Typography>
             
             <Grid cols={1} gap={4} className="mb-10">
               {[
@@ -298,7 +298,7 @@ const AssessmentPage = () => {
                   </Stack>
                   <div>
                     <div className="font-semibold text-white">{item.text}</div>
-                    <div className="text-xs text-slate-500">{item.desc}</div>
+                    <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -310,7 +310,7 @@ const AssessmentPage = () => {
             
             <button 
               onClick={() => setShowMethodology(!showMethodology)}
-              className="mt-6 flex items-center gap-2 text-sm text-slate-500 hover:text-primary-400 transition-colors mx-auto lg:mx-0"
+              className="mt-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-primary-400 transition-colors mx-auto lg:mx-0"
             >
               <Info className="w-4 h-4" /> Pelajari Metodologi & Leveling
             </button>
@@ -327,7 +327,7 @@ const AssessmentPage = () => {
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl h-full overflow-y-auto max-h-[600px] custom-scrollbar">
                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                   <Typography variant="h3" as="h3">Framework Reference</Typography>
-                  <button onClick={() => setShowMethodology(false)} className="text-slate-500 hover:text-white">
+                  <button onClick={() => setShowMethodology(false)} className="text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white">
                     Tutup
                   </button>
                 </Stack>
@@ -347,11 +347,11 @@ const AssessmentPage = () => {
                   {Object.entries(categoryLabels).map(([key, label], idx) => (
                     <div key={key} className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary-500/30 transition-all">
                       <div className={`p-3 rounded-lg bg-slate-950 shadow-inner ${
-                        idx === 0 ? 'text-amber-400' :
-                        idx === 1 ? 'text-red-400' :
-                        idx === 2 ? 'text-blue-400' :
-                        idx === 3 ? 'text-purple-400' :
-                        'text-green-400'
+                        idx === 0 ? 'text-amber-400 dark:text-amber-300' :
+                        idx === 1 ? 'text-red-400 dark:text-red-300' :
+                        idx === 2 ? 'text-blue-400 dark:text-blue-300' :
+                        idx === 3 ? 'text-purple-400 dark:text-purple-300' :
+                        'text-green-400 dark:text-green-300'
                       }`}>
                         {categoryIcons[key as CategoryKey]}
                       </div>
@@ -379,7 +379,7 @@ const AssessmentPage = () => {
             <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-lg relative">
               <button 
                 onClick={() => setShowMethodology(false)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-white"
+                className="absolute top-4 right-4 text-slate-400 dark:text-slate-300 hover:text-white"
               >
                 Tutup
               </button>
@@ -410,13 +410,13 @@ const AssessmentPage = () => {
                 <Users className="w-8 h-8 text-primary-400" />
               </Stack>
               <Typography variant="h2" as="h2">Profil Penilai</Typography>
-              <Typography variant="caption" className="text-slate-400">Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.</Typography>
+              <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.</Typography>
             </div>
 
             <form onSubmit={handleLeadSubmit} className="space-y-6">
               <Grid cols={2} gap={5}>
                 <div>
-                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</Typography>
+                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</Typography>
                   <input 
                     type="text" 
                     required
@@ -428,7 +428,7 @@ const AssessmentPage = () => {
                   />
                 </div>
                 <div>
-                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Perusahaan</Typography>
+                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Perusahaan</Typography>
                   <input 
                     type="text" 
                     required
@@ -442,7 +442,7 @@ const AssessmentPage = () => {
 
               <Grid cols={2} gap={5}>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
+                  <label className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
                     <Mail className="w-3 h-3" /> Email Bisnis
                   </label>
                   <input 
@@ -463,7 +463,7 @@ const AssessmentPage = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
+                  <label className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
                     <Phone className="w-3 h-3" /> WhatsApp (Opsional)
                   </label>
                   <input 
@@ -477,7 +477,7 @@ const AssessmentPage = () => {
               </Grid>
 
               <div>
-                <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</Typography>
+                <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</Typography>
                 <input 
                   type="text" 
                   className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
@@ -494,7 +494,7 @@ const AssessmentPage = () => {
                 <button 
                   type="button" 
                   onClick={() => setViewState('intro')}
-                  className="mt-4 w-full text-center text-sm text-slate-500 hover:text-white transition-colors"
+                  className="mt-4 w-full text-center text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white transition-colors"
                 >
                   Kembali ke Intro
                 </button>
@@ -526,7 +526,7 @@ const AssessmentPage = () => {
             </Stack>
           </motion.div>
           <Typography variant="h2" as="h2">Memproses Hasil Assessment...</Typography>
-          <Typography variant="body" className="text-slate-400">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</Typography>
+          <Typography variant="body" className="text-slate-400 dark:text-slate-300">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</Typography>
         </div>
       </Stack>
     );
@@ -542,13 +542,13 @@ const AssessmentPage = () => {
             <Stack direction="vertical" gap={6} className="justify-between items-start md:items-center">
               <div>
                 <Stack direction="horizontal" gap={3} align="center" className="mb-3">
-                  <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
+                  <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 dark:text-green-300 text-xs font-bold uppercase tracking-wider print:hidden">
                     <CheckCircle className="w-3 h-3" /> Assessment Completed
                   </Stack>
                   {/* Reset Button Moved Here */}
                   <button 
                     onClick={handleReset}
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-red-400 transition-colors print:hidden group"
+                    className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-red-400 dark:text-red-300 transition-colors print:hidden group"
                     title="Hapus data dan mulai dari awal"
                   >
                     <RefreshCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" /> 
@@ -557,25 +557,25 @@ const AssessmentPage = () => {
                 </Stack>
 
                 <Typography variant="h1" as="h1" className="font-bold text-white">Laporan Digital Maturity</Typography>
-                <Typography variant="caption" className="text-slate-400">ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}</Typography>
+                <Typography variant="caption" className="text-slate-400 dark:text-slate-300">ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}</Typography>
               </div>
               
               {/* User Details Grid */}
-              <Grid cols={2} gap={6} className="text-sm text-slate-300 print:text-gray-800 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
+              <Grid cols={2} gap={6} className="text-sm text-slate-300 print:text-gray-800 dark:text-slate-100 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
                 <Stack direction="horizontal" gap={2} align="center">
-                  <Building2 className="w-4 h-4 text-primary-400 print:text-gray-600" />
+                  <Building2 className="w-4 h-4 text-primary-400 print:text-gray-600 dark:text-slate-300" />
                   <span className="font-semibold">{leadForm.company}</span>
                 </Stack>
                 <Stack direction="horizontal" gap={2} align="center">
-                  <Users className="w-4 h-4 text-primary-400 print:text-gray-600" />
+                  <Users className="w-4 h-4 text-primary-400 print:text-gray-600 dark:text-slate-300" />
                   <span>{leadForm.name}</span>
                 </Stack>
                 <Stack direction="horizontal" gap={2} align="center">
-                  <Briefcase className="w-4 h-4 text-primary-400 print:text-gray-600" />
+                  <Briefcase className="w-4 h-4 text-primary-400 print:text-gray-600 dark:text-slate-300" />
                   <span>{leadForm.role || 'N/A'}</span>
                 </Stack>
                  <Stack direction="horizontal" gap={2} align="center">
-                  <Calendar className="w-4 h-4 text-primary-400 print:text-gray-600" />
+                  <Calendar className="w-4 h-4 text-primary-400 print:text-gray-600 dark:text-slate-300" />
                   <span>{assessmentDate}</span>
                 </Stack>
               </Grid>
@@ -590,7 +590,7 @@ const AssessmentPage = () => {
                 <Stack direction="vertical" gap={4} align="center" className="bg-slate-900/80 rounded-[22px] p-8 text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
                    <Stack direction="horizontal" gap={4} align="center" justify="center" className="relative w-40 h-40 mb-6">
                      <svg className="w-full h-full transform -rotate-90">
-                       <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="10" className="text-slate-800 print:text-gray-200" />
+                       <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="10" className="text-slate-800 dark:text-slate-100 print:text-gray-200" />
                        <circle 
                           cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="10" 
                           strokeDasharray={452} 
@@ -600,10 +600,10 @@ const AssessmentPage = () => {
                        />
                      </svg>
                      <Stack direction="vertical" gap={4} align="center" justify="center" className="absolute inset-0">
-                        <span className={`text-5xl font-bold ${results.maturityLevel.color.replace('bg-', 'text-')}`}>
+                        <span className={`text-5xl leading-tight font-bold ${results.maturityLevel.color.replace('bg-', 'text-')}`}>
                           {results.avgScore.toFixed(1)}
                         </span>
-                        <Typography variant="caption" className="text-slate-500">/ 5.0</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">/ 5.0</Typography>
                      </Stack>
                   </Stack>
                   
@@ -647,7 +647,7 @@ const AssessmentPage = () => {
                       <div key={cat} className="print:break-inside-avoid">
                         <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-2">
                           <span className="text-slate-300 font-medium flex items-center gap-3 print:text-black">
-                            <span className="p-1.5 rounded-lg bg-slate-800 text-slate-400 print:hidden">{categoryIcons[catKey]}</span> 
+                            <span className="p-1.5 rounded-lg bg-slate-800 text-slate-400 dark:text-slate-300 print:hidden">{categoryIcons[catKey]}</span> 
                             {categoryLabels[catKey]}
                           </span>
                           <span className="text-slate-900 dark:text-white font-bold bg-slate-800 px-3 py-1 rounded-lg border border-white/5 print:text-black print:bg-white print:border-gray-300">{score.toFixed(1)}</span>
@@ -689,17 +689,17 @@ const AssessmentPage = () => {
                     return (
                       <div key={cat} className="group bg-slate-800/50 p-6 rounded-2xl border border-white/5 hover:bg-slate-800 hover:border-primary-500/30 transition-all print:bg-gray-50 print:border-gray-200 print:break-inside-avoid">
                         <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-4">
-                          <Typography variant="h4" as="h4" className="text-white font-semibold tracking-wider text-slate-400 group-hover:text-primary-400">{categoryLabels[catKey]}</Typography>
+                          <Typography variant="h4" as="h4" className="text-white font-semibold tracking-wider text-slate-400 dark:text-slate-300 group-hover:text-primary-400">{categoryLabels[catKey]}</Typography>
                           <span className={`text-[10px] font-bold px-2 py-1 rounded border uppercase ${
                             score < 3 
-                              ? 'bg-red-500/10 text-red-400 border-red-500/20 print:text-red-600 print:border-red-600' 
-                              : 'bg-green-500/10 text-green-400 border-green-500/20 print:text-green-600 print:border-green-600'
+                              ? 'bg-red-500/10 text-red-400 border-red-500/20 print:text-red-600 dark:text-slate-300 print:border-red-600' 
+                              : 'bg-green-500/10 text-green-400 border-green-500/20 print:text-green-600 dark:text-slate-300 print:border-green-600'
                           }`}>
                             {score < 3 ? 'Priority' : 'On Track'}
                           </span>
                         </Stack>
                         <Typography variant="body-lg">{rec.title}</Typography>
-                        <Typography variant="caption" className="text-slate-400 leading-relaxed">{rec.advice}</Typography>
+                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">{rec.advice}</Typography>
                         <Stack direction="horizontal" gap={2}>
                           {rec.modules.map((m: string) => (
                             <span key={m} className="text-[10px] font-medium bg-slate-950 text-slate-300 px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-white/20 print:bg-white print:text-black print:border-gray-400">
@@ -717,7 +717,7 @@ const AssessmentPage = () => {
           
           {/* NEXT STEPS / CROSS-SELL SECTION (New) */}
           <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page pb-24">
-              <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400" /> Rekomendasi Tindak Lanjut</Typography>
+              <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400 dark:text-amber-300" /> Rekomendasi Tindak Lanjut</Typography>
               
               <Grid cols={3} gap={5}>
                 {/* Solution Finder */}
@@ -725,12 +725,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/needs-analysis')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 dark:text-blue-300 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Search className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Solution Finder</Typography>
-                   <Typography variant="caption" className="text-slate-400">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
-                   <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
+                   <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
+                   <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500 dark:text-blue-400 dark:text-blue-300">
                      Cari Solusi <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -740,12 +740,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/pricing-calculator')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 dark:text-emerald-300 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
-                   <Typography variant="caption" className="text-slate-400">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
-                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
+                   <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500 dark:text-emerald-400 dark:text-emerald-300">
                      Hitung Biaya <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -755,12 +755,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 dark:text-amber-300 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
-                   <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
-                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
+                   <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500 dark:text-amber-400 dark:text-amber-300">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -770,7 +770,7 @@ const AssessmentPage = () => {
           {/* FLOATING ACTION BAR (Fixed Bottom) - Hidden when printing */}
           <div className="fixed bottom-0 left-0 right-0 p-4 bg-slate-950/80 backdrop-blur-lg border-t border-white/10 print:hidden z-40">
             <Container size="6xl" className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <div className="text-sm text-slate-400 hidden sm:block">
+              <div className="text-sm text-slate-400 dark:text-slate-300 hidden sm:block">
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>
               <Stack direction="horizontal" gap={3} className="w-full sm:w-auto">
@@ -792,13 +792,13 @@ const AssessmentPage = () => {
               <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-2xl relative shadow-2xl">
                 <button 
                   onClick={() => setShowMethodology(false)}
-                  className="absolute top-4 right-4 text-slate-400 hover:text-white"
+                  className="absolute top-4 right-4 text-slate-400 dark:text-slate-300 hover:text-white"
                 >
                   Tutup
                 </button>
                 <div className="mb-6">
                   <Typography variant="h3" as="h3">Referensi Metodologi</Typography>
-                  <Typography variant="caption" className="text-slate-400">Dasar penilaian skor maturity Anda.</Typography>
+                  <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Dasar penilaian skor maturity Anda.</Typography>
                 </div>
                 <MethodologyReference />
               </div>
@@ -816,7 +816,7 @@ const AssessmentPage = () => {
         
         {/* Mobile Nav Toggle / Progress */}
         <div className="lg:hidden mb-8 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-md p-4 -mx-4 border-b border-white/10">
-           <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+           <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase tracking-widest mb-3">
              <span>Progress</span>
              <span>{Math.round(progress)}%</span>
            </Stack>
@@ -861,7 +861,7 @@ const AssessmentPage = () => {
                                   ? 'bg-primary-600 text-white shadow-lg shadow-primary-900/50 scale-110 z-20 ring-2 ring-primary-400 ring-offset-2 ring-offset-slate-900' 
                                   : isAnswered 
                                     ? 'bg-primary-900/20 text-primary-400 border border-primary-500/30' 
-                                    : 'bg-slate-800/50 text-slate-600 hover:bg-slate-800'
+                                    : 'bg-slate-800/50 text-slate-600 dark:text-slate-300 hover:bg-slate-800'
                                 }
                               `}
                               title={`Question ${q.index + 1}`}
@@ -876,7 +876,7 @@ const AssessmentPage = () => {
                 </Stack>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <Stack direction="horizontal" gap={4} justify="between" className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
+                  <Stack direction="horizontal" gap={4} justify="between" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-2 uppercase tracking-widest">
                     <span>Completion</span>
                     <span>{Math.round(progress)}%</span>
                   </Stack>
@@ -907,7 +907,7 @@ const AssessmentPage = () => {
                       {categoryIcons[currentCategory]}
                       {categoryLabels[currentCategory]}
                     </span>
-                    <span className="text-slate-500 text-sm">
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">
                       {currentStep + 1} / {totalQuestions}
                     </span>
                   </Stack>

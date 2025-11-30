@@ -58,7 +58,7 @@ const CapabilityPage: React.FC = () => {
                      </Stack>
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
-                        <Typography variant="body" className="text-slate-600 leading-relaxed">{item.desc}</Typography>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -87,7 +87,7 @@ const CapabilityPage: React.FC = () => {
                              {data.extraSection.rows.map((row: string[], i: number) => (
                                 <tr key={i} className="hover:bg-slate-50">
                                    {row.map((cell, j) => (
-                                      <td key={j} className="px-6 py-4 text-slate-700 whitespace-nowrap">{cell}</td>
+                                      <td key={j} className="px-6 py-4 text-slate-700 dark:text-slate-200 whitespace-nowrap">{cell}</td>
                                    ))}
                                 </tr>
                              ))}
@@ -104,7 +104,7 @@ const CapabilityPage: React.FC = () => {
       <section className="py-20 bg-white border-t border-slate-100 text-center">
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Typography variant="h2" as="h2">Need Deeper Technical Review?</Typography>
-            <Typography variant="body" className="text-slate-600">Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.</Typography>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-300">Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.</Typography>
             <Link to="/contact">
                <Button variant="outline" size="lg">Hubungi Tim Engineering <ArrowRight className="ml-2 w-4 h-4" /></Button>
             </Link>

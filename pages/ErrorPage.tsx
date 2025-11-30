@@ -39,7 +39,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
           transition={{ duration: 0.5 }}
           className="w-24 h-24 bg-red-100 dark:bg-red-900/30 rounded-[2rem] flex items-center justify-center mb-8 mx-auto shadow-xl border border-red-200 dark:border-red-900/50 gap-4"
         >
-          <AlertTriangle className="w-10 h-10 text-red-600 dark:text-red-400" />
+          <AlertTriangle className="w-10 h-10 text-red-600 dark:text-red-400 dark:text-red-300" />
         </motion.div>
         
         <motion.h1 
@@ -55,7 +55,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-10 leading-relaxed"
+          className="text-lg text-slate-600 dark:text-slate-400 dark:text-slate-300 max-w-lg mx-auto mb-10 leading-relaxed"
         >
           Kami mendeteksi kesalahan teknis yang tidak terduga. Sistem kami telah mencatat kejadian ini untuk segera diperbaiki.
         </motion.p>
@@ -86,10 +86,10 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
              className="max-w-xl mx-auto"
            >
               <details className="text-left bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-pointer group">
-                 <summary className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-2 group-hover:text-red-500 transition-colors">
+                 <summary className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider flex items-center gap-2 group-hover:text-red-500 dark:text-red-400 dark:text-red-300 transition-colors">
                     Technical Error Details
                  </summary>
-                 <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-950 rounded-lg font-mono text-xs text-red-600 dark:text-red-400 overflow-x-auto whitespace-pre-wrap">
+                 <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-950 rounded-lg font-mono text-xs text-red-600 dark:text-red-400 dark:text-red-300 overflow-x-auto whitespace-pre-wrap">
                     {error?.toString() || "Error: Simulated crash for UI testing purposes."}
                     {error?.stack && `\n\n${error.stack}`}
                  </div>

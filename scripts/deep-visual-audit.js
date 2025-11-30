@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Deep Visual Audit
- * Identifies specific color, structure, and layout issues
+ * DEEP Visual Audit - Granular Check
+ * Checks spacing, colors, typography in detail
  */
 
 import { readdirSync, readFileSync } from 'fs';
@@ -12,15 +12,14 @@ const pagesDir = 'pages';
 const files = readdirSync(pagesDir).filter(f => f.endsWith('.tsx'));
 
 const issues = {
-  conflictingColors: [],
-  poorContrast: [],
-  inconsistentGradients: [],
-  wrongDarkMode: [],
-  structuralIssues: [],
-  layoutProblems: [],
+  spacing: [],
+  colors: [],
+  typography: [],
+  buttons: [],
+  inconsistent: [],
 };
 
-console.log('🔍 Deep Visual Audit - Analyzing...\n');
+console.log('🔍 DEEP VISUAL AUDIT - Starting...\n');
 
 files.forEach(file => {
   const filePath = join(pagesDir, file);
@@ -30,60 +29,102 @@ files.forEach(file => {
   lines.forEach((line, idx) => {
     const lineNum = idx + 1;
     
-    // Check for conflicting color combinations
-    if (line.includes('text-white') && line.includes('bg-white')) {
-      issues.conflictingColors.push(`${file}:${lineNum} - White text on white background`);
+    // 1. CHECK SPACING ISSUES
+    
+    // Missing gap in flex/grid
+    if ((line.includes('flex ') || line.includes('flex-')) && !line.includes('gap-')) {
+      issues.spacing.push(`${file}:${lineNum} - flex without gap`);
     }
-    if (line.includes('text-slate-900') && line.includes('bg-slate-900')) {
-      issues.conflictingColors.push(`${file}:${lineNum} - Dark text on dark background`);
+    if (line.includes('grid grid-cols') && !line.includes('gap-')) {
+      issues.spacing.push(`${file}:${lineNum} - grid without gap`);
     }
     
-    // Check for gradients without proper stops
-    if (line.match(/bg-gradient-to-/) && !line.includes('from-') && !line.includes('to-')) {
-      issues.inconsistentGradients.push(`${file}:${lineNum} - Gradient without from/to colors`);
+    // Inconsistent section padding
+    if (line.includes('<section') || line.includes('<Section')) {
+      if (!line.includes('py-') && !line.includes('padding')) {
+        issues.spacing.push(`${file}:${lineNum} - section without py padding`);
+      }
     }
     
-    // Check for dark mode issues
-    if (line.includes('dark:text-white') && line.includes('dark:bg-white')) {
-      issues.wrongDarkMode.push(`${file}:${lineNum} - Dark mode white text on white bg`);
-    }
-    if (line.includes('text-slate-900') && !line.includes('dark:text-')) {
-      issues.wrongDarkMode.push(`${file}:${lineNum} - Missing dark mode text color`);
+    // 2. CHECK COLOR/CONTRAST ISSUES
+    
+    // Text without dark mode variant
+    if (line.match(/text-(slate|gray|zinc|neutral|stone)-\d00/) && !line.includes('dark:text-')) {
+      issues.colors.push(`${file}:${lineNum} - missing dark mode text color`);
     }
     
-    // Check for structural issues
-    if (line.match(/<div[^>]*className="[^"]*flex[^"]*"[^>]*>\s*<div[^>]*className="[^"]*flex[^"]*"/)) {
-      issues.structuralIssues.push(`${file}:${lineNum} - Nested flex containers (potential issue)`);
+    // Hardcoded opacity values
+    if (line.match(/opacity-\d+/) && !line.includes('group-hover')) {
+      issues.colors.push(`${file}:${lineNum} - hardcoded opacity (consider using color/opacity tokens)`);
     }
     
-    // Check for layout problems
-    if (line.includes('w-full') && line.includes('max-w-') && line.includes('mx-auto') && !line.includes('Container')) {
-      issues.layoutProblems.push(`${file}:${lineNum} - Manual container pattern (use Container component)`);
+    // 3. CHECK TYPOGRAPHY ISSUES
+    
+    // Inconsistent heading sizes
+    if (line.includes('<h1') && !line.includes('text-')) {
+      issues.typography.push(`${file}:${lineNum} - h1 without text size`);
+    }
+    if (line.includes('<h2') && !line.includes('text-')) {
+      issues.typography.push(`${file}:${lineNum} - h2 without text size`);
+    }
+    
+    // Line height not set
+    if (line.includes('text-4xl') && !line.includes('leading-')) {
+      issues.typography.push(`${file}:${lineNum} - large text without leading (line-height)`);
+    }
+    
+    // 4. CHECK BUTTON CONSISTENCY
+    
+    // Button without proper size
+    if (line.includes('<Button') && !line.includes('size=')) {
+      issues.buttons.push(`${file}:${lineNum} - Button without size prop`);
+    }
+    
+    // Inconsistent button heights
+    if (line.includes('h-12') && line.includes('Button')) {
+      // Should use size prop instead
+      issues.buttons.push(`${file}:${lineNum} - Button using h-12 (use size="md" instead)`);
+    }
+    
+    // 5. CHECK GENERAL INCONSISTENCIES
+    
+    // Mixed spacing units (mb-4 and mt-8 should be consistent)
+    const spacingMatch = line.match(/(m[tblrxy]?|p[tblrxy]?)-(\d+)/g);
+    if (spacingMatch && spacingMatch.length > 1) {
+      const values = spacingMatch.map(m => parseInt(m.split('-')[1]));
+      const unique = [...new Set(values)];
+      if (unique.length > 2) {
+        issues.inconsistent.push(`${file}:${lineNum} - inconsistent spacing values: ${spacingMatch.join(', ')}`);
+      }
     }
   });
 });
 
-// Print detailed report
-console.log('🎨 VISUAL ISSUES FOUND:\n');
+// PRINT RESULTS
+console.log('📊 DEEP AUDIT RESULTS:\n');
+
+let totalIssues = 0;
 
 Object.entries(issues).forEach(([category, items]) => {
   if (items.length > 0) {
-    console.log(`\n${category.toUpperCase().replace(/([A-Z])/g, ' $1').trim()} (${items.length}):`);
-    items.slice(0, 15).forEach(issue => console.log(`  🔴 ${issue}`));
-    if (items.length > 15) {
-      console.log(`  ... and ${items.length - 15} more`);
+    console.log(`\n${category.toUpperCase()} (${items.length} issues):`);
+    items.slice(0, 20).forEach(issue => console.log(`  ⚠️  ${issue}`));
+    if (items.length > 20) {
+      console.log(`  ... and ${items.length - 20} more`);
     }
+    totalIssues += items.length;
   }
 });
 
-const totalIssues = Object.values(issues).reduce((sum, arr) => sum + arr.length, 0);
-console.log(`\n\n🎯 Total Visual Issues: ${totalIssues}\n`);
+console.log(`\n\n🎯 Total Issues Found: ${totalIssues}\n`);
 
 if (totalIssues > 0) {
-  console.log('💡 Critical Issues to Fix:');
-  console.log('  1. Conflicting color combinations');
-  console.log('  2. Missing dark mode variants');
-  console.log('  3. Incomplete gradients');
-  console.log('  4. Layout structure problems');
+  console.log('💡 Recommendations:');
+  console.log('  1. Add gap to all flex/grid containers');
+  console.log('  2. Add dark mode variants to all text colors');
+  console.log('  3. Add line-height to large text');
+  console.log('  4. Use Button size prop instead of h- classes');
+  console.log('  5. Standardize spacing values');
 }
 
+process.exit(totalIssues > 0 ? 1 : 0);

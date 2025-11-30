@@ -22,11 +22,11 @@ const PreferencesPage: React.FC = () => {
       
       <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         <div className="text-center mb-12">
-           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600">
+           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600 dark:text-slate-300">
               <Mail className="w-8 h-8" />
            </div>
            <Typography variant="h1" as="h1">Kendalikan Isi Inbox Anda</Typography>
-           <Typography variant="body" className="text-slate-600">Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.</Typography>
+           <Typography variant="body" className="text-slate-600 dark:text-slate-300">Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.</Typography>
         </div>
 
         <form onSubmit={handleSave} className="space-y-8">
@@ -49,9 +49,9 @@ const PreferencesPage: React.FC = () => {
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_updates" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
-                          <Shield className="w-4 h-4 text-green-600" aria-hidden="true" /> Product Updates & Alerts
+                          <Shield className="w-4 h-4 text-green-600 dark:text-slate-300" aria-hidden="true" /> Product Updates & Alerts
                        </label>
-                       <Typography variant="body" className="text-slate-500">Info fitur baru, jadwal maintenance, dan patch keamanan. (Disarankan)</Typography>
+                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Info fitur baru, jadwal maintenance, dan patch keamanan. (Disarankan)</Typography>
                     </div>
                  </div>
                  
@@ -68,9 +68,9 @@ const PreferencesPage: React.FC = () => {
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_digest" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
-                          <Mail className="w-4 h-4 text-blue-600" aria-hidden="true" /> BizOps Digest
+                          <Mail className="w-4 h-4 text-blue-600 dark:text-slate-300" aria-hidden="true" /> BizOps Digest
                        </label>
-                       <Typography variant="body" className="text-slate-500">Artikel blog pilihan, tips manajemen, dan regulasi terbaru (Weekly).</Typography>
+                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Artikel blog pilihan, tips manajemen, dan regulasi terbaru (Weekly).</Typography>
                     </div>
                  </div>
 
@@ -86,9 +86,9 @@ const PreferencesPage: React.FC = () => {
                     </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_promo" className="font-bold text-slate-900 dark:text-white flex items-center gap-2 cursor-pointer">
-                          <Bell className="w-4 h-4 text-amber-600" aria-hidden="true" /> Marketing Promo
+                          <Bell className="w-4 h-4 text-amber-600 dark:text-slate-300" aria-hidden="true" /> Marketing Promo
                        </label>
-                       <Typography variant="body" className="text-slate-500">Undangan webinar eksklusif dan penawaran diskon khusus.</Typography>
+                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Undangan webinar eksklusif dan penawaran diskon khusus.</Typography>
                     </div>
                  </div>
 
@@ -114,7 +114,7 @@ const PreferencesPage: React.FC = () => {
            </div>
 
            <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-4">
-              <button type="button" className="text-sm text-red-500 hover:text-red-700 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1">
+              <button type="button" className="text-sm text-red-500 hover:text-red-700 dark:text-slate-200 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1">
                  <XCircle className="w-4 h-4" /> Unsubscribe All
               </button>
               <Button type="submit" disabled={saved}>

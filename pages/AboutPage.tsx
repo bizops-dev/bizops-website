@@ -109,7 +109,7 @@ const AboutPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16 md:mb-24">
                <Typography variant="h2" as="h2">Our Origin Story</Typography>
-               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
             </div>
             
             <Stack direction="vertical" gap={16} className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8">
@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => {
                     
                     <Grid cols={5} gap={16}>
                        <div className="md:col-span-1 mb-4 md:mb-0 pt-1">
-                          <span className={`text-sm font-bold uppercase tracking-widest transition-colors ${idx === 1 ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300'}`}>{item.year}</span>
+                          <span className={`text-sm font-bold uppercase tracking-widest transition-colors ${idx === 1 ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:text-slate-300 dark:group-hover:text-slate-300'}`}>{item.year}</span>
                        </div>
                        <div className={`md:col-span-4 p-8 md:p-10 rounded-3xl border transition-all duration-500 hover:shadow-2xl ${idx === 1 ? 'bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900/10 dark:to-slate-900 border-indigo-100 dark:border-indigo-900 shadow-lg' : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'}`}>
                           <Typography variant="h3" as="h3">{item.title}</Typography>
@@ -150,7 +150,7 @@ const AboutPage: React.FC = () => {
          <Container size="7xl" className="relative z-10">
             <div className="text-center mb-16 md:mb-20">
                <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span></Typography>
-               <Typography variant="body-lg" className="text-slate-400">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</Typography>
+               <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</Typography>
             </div>
             
             {/* Mobile View: Slider */}
@@ -163,14 +163,14 @@ const AboutPage: React.FC = () => {
                       className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col gap-4"
                     >
                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
-                          {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
-                          {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
-                          {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
+                          {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 dark:text-blue-300 group-hover:text-blue-300 transition-colors" />}
+                          {idx === 1 && <Search className="w-8 h-8 text-emerald-400 dark:text-emerald-300 group-hover:text-emerald-300 transition-colors" />}
+                          {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 dark:text-amber-300 group-hover:text-amber-300 transition-colors" />}
                        </Stack>
                        <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
-                       <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
+                       <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">{val.manifesto}</Typography>
                        <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
-                          <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
+                          <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400 dark:text-amber-300'}`}>Bukti Nyata</span>
                           <Typography variant="caption" className="text-slate-300">{val.proof}</Typography>
                        </div>
                     </motion.div>
@@ -187,14 +187,14 @@ const AboutPage: React.FC = () => {
                    className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col gap-4"
                  >
                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
-                       {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
-                       {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
-                       {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
+                       {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 dark:text-blue-300 group-hover:text-blue-300 transition-colors" />}
+                       {idx === 1 && <Search className="w-8 h-8 text-emerald-400 dark:text-emerald-300 group-hover:text-emerald-300 transition-colors" />}
+                       {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 dark:text-amber-300 group-hover:text-amber-300 transition-colors" />}
                     </Stack>
                     <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
-                    <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
+                    <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">{val.manifesto}</Typography>
                     <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
-                       <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
+                       <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400 dark:text-amber-300'}`}>Bukti Nyata</span>
                        <Typography variant="caption" className="text-slate-300">{val.proof}</Typography>
                     </div>
                  </motion.div>
@@ -211,7 +211,7 @@ const AboutPage: React.FC = () => {
                   <Sparkles className="w-3 h-3" /> The Task Force
                </Stack>
                <Typography variant="h2" as="h2">Meet the Builders</Typography>
-               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.</Typography>
             </div>
 
             {/* Mobile View: Slider */}
@@ -293,21 +293,21 @@ const AboutPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={2} gap={16} className="items-stretch">
                <div>
-                  <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
+                  <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400 dark:text-slate-300" /> Office & Legal Entity</Typography>
                   <Stack direction="vertical" gap={10} className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
                      <Stack direction="horizontal" gap={6} align="start">
                         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
                            <FileCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
                         </Stack>
                         <div>
-                           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Legal Identity</div>
+                           <div className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2">Legal Identity</div>
                            <div className="font-bold text-slate-900 dark:text-white text-xl mb-1">{aboutContent.entity.name}</div>
-                           <Stack direction="vertical" gap={1} className="text-sm text-slate-600 dark:text-slate-400">
-                              <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1 group">
-                                 <CheckCircle2 className="w-3 h-3 text-green-500" /> NIB: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                           <Stack direction="vertical" gap={1} className="text-sm text-slate-600 dark:text-slate-400 dark:text-slate-300">
+                              <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 dark:text-indigo-300 transition-colors flex items-center gap-1 group">
+                                 <CheckCircle2 className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> NIB: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </a>
-                              <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1 group">
-                                 <CheckCircle2 className="w-3 h-3 text-green-500" /> SK Kemenkumham: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 dark:text-indigo-300 transition-colors flex items-center gap-1 group">
+                                 <CheckCircle2 className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /> SK Kemenkumham: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </a>
                            </Stack>
                         </div>
@@ -318,8 +318,8 @@ const AboutPage: React.FC = () => {
                            <ShieldCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
                         </Stack>
                         <div>
-                           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Compliance</div>
-                           <div className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">{aboutContent.entity.compliance}</div>
+                           <div className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2">Compliance</div>
+                           <div className="text-sm text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed mb-3">{aboutContent.entity.compliance}</div>
                            <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-bold hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-all group">
                               Lihat Dokumen Legal <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </a>
@@ -329,18 +329,18 @@ const AboutPage: React.FC = () => {
                      <Grid cols={1} gap={8} className="pt-8 border-t border-slate-200 dark:border-slate-700/50">
                         <div>
                            <Stack direction="horizontal" gap={2} align="center" className="mb-3 text-slate-900 dark:text-white font-bold">
-                              <MapPin className="w-5 h-5 text-indigo-500" /> HQ (Jakarta)
+                              <MapPin className="w-5 h-5 text-indigo-500 dark:text-indigo-400 dark:text-indigo-300" /> HQ (Jakarta)
                            </Stack>
-                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br/>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Eco-S Sahid Sudirman Residence<br/>
                               Jl. Jenderal Sudirman No.86,<br/>
                               Karet Tengsin, Tanah Abang,<br/>
                               Jakarta 10250.</Typography>
                         </div>
                         <div>
                            <Stack direction="horizontal" gap={2} align="center" className="mb-3 text-slate-900 dark:text-white font-bold">
-                              <Code className="w-5 h-5 text-purple-500" /> R&D (Yogyakarta)
+                              <Code className="w-5 h-5 text-purple-500 dark:text-purple-400 dark:text-purple-300" /> R&D (Yogyakarta)
                            </Stack>
-                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru,<br/>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Jl. Ampel No.23, Demangan Baru,<br/>
                               Sleman, DIY 55281.</Typography>
                         </div>
                      </Grid>
@@ -354,7 +354,7 @@ const AboutPage: React.FC = () => {
                      
                      <div className="relative z-10">
                         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-white/10 backdrop-blur rounded-2xl mb-8 border border-white/10">
-                           <Target className="w-8 h-8 text-red-400" />
+                           <Target className="w-8 h-8 text-red-400 dark:text-red-300" />
                         </Stack>
                         <Typography variant="h3" as="h3">Engineering First DNA</Typography>
                         <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
@@ -364,11 +364,11 @@ const AboutPage: React.FC = () => {
                            <Stack direction="horizontal" gap={4} className="-space-x-4">
                               {[1,2,3,4].map(i => (
                                  <div key={i} className="w-12 h-12 rounded-full bg-slate-700 border-4 border-slate-800 flex items-center justify-center text-[10px] font-bold shadow-lg gap-4">
-                                    <User className="w-5 h-5 text-slate-400" />
+                                    <User className="w-5 h-5 text-slate-400 dark:text-slate-300" />
                                  </div>
                               ))}
                            </Stack>
-                           <Link to="/careers" className="text-base font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2 group">
+                           <Link to="/careers" className="text-base font-bold text-indigo-400 dark:text-indigo-300 hover:text-indigo-300 transition-colors flex items-center gap-2 group">
                               Join our growing team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </Link>
                         </Stack>

@@ -32,7 +32,7 @@ const EventDetailPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center gap-4">
         <Typography variant="h1" as="h1">Event Tidak Ditemukan</Typography>
-        <Typography variant="body" className="text-slate-600 dark:text-slate-400">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</Typography>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</Typography>
         <Link to="/events">
           <Button>Kembali ke Events</Button>
         </Link>
@@ -73,7 +73,7 @@ const EventDetailPage: React.FC = () => {
             <Breadcrumbs items={[
               { label: 'Events', path: '/events' },
               { label: event.title, path: `/events/${event.slug}` }
-            ]} className="text-slate-400" />
+            ]} className="text-slate-400 dark:text-slate-300" />
           </div>
 
           <Grid cols={2} gap={12} className="items-end">
@@ -143,7 +143,7 @@ const EventDetailPage: React.FC = () => {
                 <ul className="space-y-3 list-none pl-0">
                   {event.benefits?.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5 gap-4" />
+                      <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 mt-0.5 gap-4" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -158,7 +158,7 @@ const EventDetailPage: React.FC = () => {
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
                     <div className="w-16 flex-shrink-0 pt-1 gap-4">
-                      <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors">
+                      <span className="text-sm font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:text-primary-500 transition-colors">
                         {item.time}
                       </span>
                     </div>
@@ -185,7 +185,7 @@ const EventDetailPage: React.FC = () => {
                     />
                     <div>
                       <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{speaker.name}</Typography>
-                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{speaker.role}</Typography>
+                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{speaker.role}</Typography>
                     </div>
                   </div>
                 ))}
@@ -202,7 +202,7 @@ const EventDetailPage: React.FC = () => {
                 {!isSuccess ? (
                   <>
                     <Typography variant="h3" as="h3">Amankan Kursi Anda</Typography>
-                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Slot terbatas. Pendaftaran gratis untuk profesional bisnis.</Typography>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Slot terbatas. Pendaftaran gratis untuk profesional bisnis.</Typography>
 
                     <form onSubmit={handleRegister} className="space-y-4">
                       <div>
@@ -254,20 +254,20 @@ const EventDetailPage: React.FC = () => {
                         {isSubmitting ? 'Memproses...' : 'Daftar Sekarang - Gratis'}
                       </Button>
                       
-                      <Typography variant="body" className="text-slate-400">Dengan mendaftar, Anda menyetujui Kebijakan Privasi kami.</Typography>
+                      <Typography variant="body" className="text-slate-400 dark:text-slate-300">Dengan mendaftar, Anda menyetujui Kebijakan Privasi kami.</Typography>
                     </form>
                   </>
                 ) : (
                   <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce gap-4">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 dark:text-green-300 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce gap-4">
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Pendaftaran Berhasil!</Typography>
-                    <Typography variant="body" className="text-slate-600 dark:text-slate-400">Terima kasih, {formState.name}.<br/>
+                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Terima kasih, {formState.name}.<br/>
                       Tiket akses dan detail event telah dikirim ke <strong>{formState.email}</strong>.</Typography>
                     <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6 text-sm text-left">
                       <Typography variant="body" className="text-slate-900 dark:text-white">Selanjutnya:</Typography>
-                      <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
+                      <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 dark:text-slate-300 space-y-1">
                         <li>Cek inbox/spam folder Anda</li>
                         <li>Tambahkan ke kalender Anda</li>
                         <li>Siapkan pertanyaan untuk sesi Q&A</li>
@@ -281,7 +281,7 @@ const EventDetailPage: React.FC = () => {
               </div>
 
               <div className="bg-slate-100 dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
-                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bagikan Event Ini</Typography>
+                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Bagikan Event Ini</Typography>
                  <div className="flex justify-center gap-2">
                     {['LinkedIn', 'Twitter', 'WhatsApp', 'Email'].map((social) => (
                        <button key={social} className="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-500 hover:border-primary-500 transition-all">

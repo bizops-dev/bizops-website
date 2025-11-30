@@ -40,12 +40,12 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         className="w-full flex items-center justify-between py-6 text-left focus:outline-none group gap-4"
       >
         <Typography variant="body-lg" className="text-slate-900 dark:text-white group-hover:text-primary-600">{question}</Typography>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300'}`}>
            <ChevronRight className="w-5 h-5" />
         </div>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{answer}</Typography>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{answer}</Typography>
       </div>
     </div>
   );
@@ -121,7 +121,7 @@ const ModulePage: React.FC = () => {
       <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Content Not Found" />
         <Typography variant="h1" as="h1">Content Not Found</Typography>
-        <Typography variant="body" className="text-slate-600 dark:text-slate-400">The requested page could not be found.</Typography>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">The requested page could not be found.</Typography>
         <Link to="/platform"><Button>Back to Platform</Button></Link>
       </Stack>
     );
@@ -181,15 +181,15 @@ const ModulePage: React.FC = () => {
               className="flex items-center justify-start md:justify-center gap-2 text-xs md:text-sm font-medium tracking-wide uppercase mb-8 md:mb-10 text-slate-300 overflow-x-auto whitespace-nowrap pb-2 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
             >
                <Link to="/" className="hover:text-white transition-colors flex-shrink-0 gap-4">Home</Link>
-               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+               <ChevronRight className="w-3 h-3 text-slate-500 dark:text-slate-400 dark:text-slate-300 flex-shrink-0 gap-4" />
                <Link to="/platform" className="hover:text-white transition-colors flex-shrink-0 gap-4">Platform</Link>
                {categoryLabel !== 'Platform' && (
                   <>
-                     <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+                     <ChevronRight className="w-3 h-3 text-slate-500 dark:text-slate-400 dark:text-slate-300 flex-shrink-0 gap-4" />
                      <Link to={categoryPath} className="hover:text-white transition-colors flex-shrink-0 gap-4">{categoryLabel}</Link>
                   </>
                )}
-               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+               <ChevronRight className="w-3 h-3 text-slate-500 dark:text-slate-400 dark:text-slate-300 flex-shrink-0 gap-4" />
                <span className="text-primary-400 flex-shrink-0 gap-4">{data.title}</span>
             </motion.div>
 
@@ -220,7 +220,7 @@ const ModulePage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-base md:text-2xl text-slate-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-base md:text-2xl text-slate-400 dark:text-slate-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light"
             >
                {data.description}
             </motion.p>
@@ -277,11 +277,11 @@ const ModulePage: React.FC = () => {
                               <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
                             </div>
                           ) : (
-                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2 relative z-10">
+                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2 relative z-10 leading-tight">
                                {metric.value}
                             </div>
                           )}
-                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10">{metric.label}</div>}
+                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider relative z-10">{metric.label}</div>}
                        </motion.div>
                      );
                   })}
@@ -311,11 +311,11 @@ const ModulePage: React.FC = () => {
                                 className="flex gap-4"
                               >
                                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20">
-                                    <ProbIcon className="w-6 h-6 text-red-500" />
+                                    <ProbIcon className="w-6 h-6 text-red-500 dark:text-red-400 dark:text-red-300" />
                                  </Stack>
                                  <div>
                                     <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
-                                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
+                                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{prob.desc}</Typography>
                                  </div>
                               </motion.div>
                            );
@@ -333,7 +333,7 @@ const ModulePage: React.FC = () => {
                      <ul className="space-y-4 relative z-10">
                         {data.features.slice(0, 4).map((feat, i) => (
                            <li key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
-                              <Check className="w-5 h-5 text-green-500 flex-shrink-0 gap-4" />
+                              <Check className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4" />
                               <span className="font-medium text-slate-700 dark:text-slate-300">{feat.title}</span>
                            </li>
                         ))}
@@ -349,7 +349,7 @@ const ModulePage: React.FC = () => {
         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <Container size="3xl" className="text-center mb-16">
             <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
           </Container>
 
           <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -369,7 +369,7 @@ const ModulePage: React.FC = () => {
                         <FeatureIcon className="w-6 h-6" />
                      </Stack>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feature.desc}</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{feature.desc}</Typography>
                   </motion.div>
                );
             })}
@@ -391,7 +391,7 @@ const ModulePage: React.FC = () => {
                            <Smartphone className="w-4 h-4" /> Mobile Native
                         </Stack>
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
-                        <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
+                        <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
                         <Stack direction="vertical" gap={4}>
                            <Button variant="white" className="gap-2">
                               Download App <ArrowRight className="w-4 h-4" />
@@ -441,7 +441,7 @@ const ModulePage: React.FC = () => {
             <div className="text-center mb-16">
                <Badge variant="outline" className="mb-4">Ecosystem</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">{moduleId === 'integration' 
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{moduleId === 'integration' 
                      ? 'Jelajahi berbagai aplikasi dan layanan yang sudah terhubung dengan ekosistem BizOps.'
                      : 'Data mengalir otomatis antar modul. Hilangkan duplikasi input dan rekonsiliasi manual.'}</Typography>
             </div>
@@ -455,7 +455,7 @@ const ModulePage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
                      </div>
                   </Stack>
                   
@@ -471,7 +471,7 @@ const ModulePage: React.FC = () => {
                                        <span className="font-bold text-slate-700 dark:text-slate-300">{app.name}</span>
                                        <Badge size="sm" variant="outline" className="text-[10px] py-0 h-5">Managed</Badge>
                                     </Stack>
-                                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">{app.desc}</Typography>
+                                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{app.desc}</Typography>
                                  </li>
                               ))}
                            </ul>
@@ -495,13 +495,13 @@ const ModulePage: React.FC = () => {
                            transition={{ delay: idx * 0.1 }}
                            className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 relative group hover:-translate-y-1 transition-transform"
                         >
-                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400">
+                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400 dark:text-slate-300">
                               <LinkIcon className="w-4 h-4" />
                            </Stack>
                            <div className="mt-6 text-center">
                               <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
                               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
-                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{conn.desc}</Typography>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{conn.desc}</Typography>
                            </div>
                         </motion.div>
                      ))}
@@ -526,7 +526,7 @@ const ModulePage: React.FC = () => {
                />
                <div className="text-left">
                   <div className="font-bold text-slate-900 dark:text-white">{testimonial.author}</div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">{testimonial.role}</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300">{testimonial.role}</div>
                </div>
             </Stack>
          </Container>
@@ -553,7 +553,7 @@ const ModulePage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-12">
                <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
-               <Typography variant="body" className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
+               <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
             </div>
             
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -577,7 +577,7 @@ const ModulePage: React.FC = () => {
                            <ModIcon className="w-6 h-6" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
-                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{mod.description}</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{mod.description}</Typography>
                         <Stack direction="horizontal" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Lihat Detail <ArrowRight className="w-4 h-4 ml-1" />
                         </Stack>

@@ -34,27 +34,27 @@ const MultiCompanyPage: React.FC = () => {
             <Grid cols={3} gap={12}>
                
                <div className="text-center md:text-left">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 dark:text-blue-300 mb-6 mx-auto md:mx-0">
                      <Key className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Unified Login & Access</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Cukup satu <em>username</em> untuk mengakses data PT A, PT B, dan CV C. Pindah antar perusahaan semudah ganti saluran TV, namun hak akses data tetap terpisah secara ketat demi keamanan dan kerahasiaan antar unit.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Cukup satu <em>username</em> untuk mengakses data PT A, PT B, dan CV C. Pindah antar perusahaan semudah ganti saluran TV, namun hak akses data tetap terpisah secara ketat demi keamanan dan kerahasiaan antar unit.</Typography>
                </div>
 
                <div className="text-center md:text-left">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-green-50 dark:bg-green-900/30 rounded-2xl text-green-600 dark:text-green-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-green-50 dark:bg-green-900/30 rounded-2xl text-green-600 dark:text-green-400 dark:text-green-300 mb-6 mx-auto md:mx-0">
                      <FileText className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Financial Consolidation</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Lupakan proses 'VLOOKUP' Excel yang memusingkan di akhir bulan. BizOps menarik data Neraca dan Laba Rugi dari seluruh anak perusahaan dan menyajikannya dalam satu Laporan Konsolidasi Grup secara <em>real-time</em>.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Lupakan proses 'VLOOKUP' Excel yang memusingkan di akhir bulan. BizOps menarik data Neraca dan Laba Rugi dari seluruh anak perusahaan dan menyajikannya dalam satu Laporan Konsolidasi Grup secara <em>real-time</em>.</Typography>
                </div>
 
                <div className="text-center md:text-left">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 dark:text-purple-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 dark:text-purple-400 dark:text-purple-300 mb-6 mx-auto md:mx-0">
                      <RefreshCw className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Inter-Company Transactions</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Otomatisasi transaksi internal. Saat PT A menjual barang ke PT B, sistem otomatis membuat <em>Sales Invoice</em> di pembukuan PT A dan <em>Purchase Invoice</em> di pembukuan PT B secara bersamaan. Hemat waktu input dan eliminasi selisih pencatatan.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Otomatisasi transaksi internal. Saat PT A menjual barang ke PT B, sistem otomatis membuat <em>Sales Invoice</em> di pembukuan PT A dan <em>Purchase Invoice</em> di pembukuan PT B secara bersamaan. Hemat waktu input dan eliminasi selisih pencatatan.</Typography>
                </div>
 
             </Grid>

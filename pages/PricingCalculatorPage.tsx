@@ -59,7 +59,7 @@ const PricingCalculatorPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+                className="text-lg md:text-xl text-slate-400 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
               >
                 Dapatkan estimasi investasi akurat untuk implementasi BizOps ERP. Sesuaikan skala pengguna, modul, dan infrastruktur tanpa biaya tersembunyi.
               </motion.p>
@@ -82,16 +82,16 @@ const PricingCalculatorPage: React.FC = () => {
 
                 {/* Trust Indicators */}
                 <div className="flex items-center gap-8 pt-4 border-t border-white/5">
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                    <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
+                    <ShieldCheck className="w-4 h-4 text-emerald-500 dark:text-emerald-400 dark:text-emerald-300" />
                     <span>ISO 27001 Certified</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                    <Lock className="w-4 h-4 text-blue-500" />
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
+                    <Lock className="w-4 h-4 text-blue-500 dark:text-blue-400 dark:text-blue-300" />
                     <span>Data Encrypted</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                    <Award className="w-4 h-4 text-amber-500" />
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-300">
+                    <Award className="w-4 h-4 text-amber-500 dark:text-amber-400 dark:text-amber-300" />
                     <span>Industry Leader</span>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const PricingCalculatorPage: React.FC = () => {
                </button>
                
                <div className="flex items-center gap-4">
-                 <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+                 <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
                     Live Estimation
                  </div>

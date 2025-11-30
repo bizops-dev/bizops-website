@@ -108,10 +108,10 @@ const DemoPage: React.FC = () => {
           initial={{ scale: 0 }} animate={{ scale: 1 }}
           className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-8 ring-1 ring-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.3)] gap-4"
         >
-          <CheckCircle className="w-10 h-10 text-emerald-500" aria-hidden="true" />
+          <CheckCircle className="w-10 h-10 text-emerald-500 dark:text-emerald-400 dark:text-emerald-300" aria-hidden="true" />
         </motion.div>
         <Typography variant="h2" as="h2">Mengalihkan ke WhatsApp...</Typography>
-        <Typography variant="body-lg" className="text-slate-400">Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.</Typography>
+        <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.</Typography>
         <Button variant="primary" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
       </Stack>
     );
@@ -145,7 +145,7 @@ const DemoPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h1" as="h1" className="font-extrabold text-white leading-tight tracking-tight">Lihat BizOps <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">In Action.</span></Typography>
-                  <Typography variant="body-lg" className="text-slate-400">Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.</Typography>
+                  <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.</Typography>
 
                   <Stack direction="vertical" gap={8} className="mb-12">
                     {[
@@ -159,7 +159,7 @@ const DemoPage: React.FC = () => {
                         </Stack>
                         <div>
                           <Typography variant="h4" as="h4" className="font-bold text-white">{item.title}</Typography>
-                          <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>
+                          <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">{item.desc}</Typography>
                         </div>
                       </div>
                     ))}
@@ -167,16 +167,16 @@ const DemoPage: React.FC = () => {
 
                   <Grid cols={3} gap={4} className="border-t border-white/10 pt-8">
                     <Stack direction="vertical" gap={2}>
-                       <Shield className="w-5 h-5 text-slate-500" />
-                       <span className="text-xs font-bold text-slate-400 uppercase">ISO 27001<br/>Ready</span>
+                       <Shield className="w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
+                       <span className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase">ISO 27001<br/>Ready</span>
                     </Stack>
                     <Stack direction="vertical" gap={2}>
-                       <Lock className="w-5 h-5 text-slate-500" />
-                       <span className="text-xs font-bold text-slate-400 uppercase">TLS 1.3<br/>Encrypted</span>
+                       <Lock className="w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
+                       <span className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase">TLS 1.3<br/>Encrypted</span>
                     </Stack>
                     <Stack direction="vertical" gap={2}>
-                       <FileCheck className="w-5 h-5 text-slate-500" />
-                       <span className="text-xs font-bold text-slate-400 uppercase">NDA<br/>Available</span>
+                       <FileCheck className="w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
+                       <span className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase">NDA<br/>Available</span>
                     </Stack>
                   </Grid>
                 </motion.div>
@@ -192,7 +192,7 @@ const DemoPage: React.FC = () => {
                 >
                   <div className="mb-8">
                     <Typography variant="h3" as="h3">Jadwalkan Sesi</Typography>
-                    <Typography variant="caption" className="text-slate-400">Isi detail di bawah untuk terhubung langsung dengan expert kami.</Typography>
+                    <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Isi detail di bawah untuk terhubung langsung dengan expert kami.</Typography>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
@@ -204,7 +204,7 @@ const DemoPage: React.FC = () => {
                         label="Nama Lengkap" 
                         placeholder="John Doe" 
                         error={errors.fullName}
-                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 dark:text-slate-300 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         labelClassName="text-slate-300"
                       />
                       <Input 
@@ -216,7 +216,7 @@ const DemoPage: React.FC = () => {
                         placeholder="john@company.com" 
                         helperText="Gunakan email korporat untuk prioritas."
                         error={errors.workEmail}
-                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 dark:text-slate-300 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         labelClassName="text-slate-300"
                       />
                     </Grid>
@@ -241,7 +241,7 @@ const DemoPage: React.FC = () => {
                         placeholder="+62..." 
                         helperText="Kami akan mengirimkan konfirmasi jadwal via WA."
                         error={errors.whatsapp}
-                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 dark:text-slate-300 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         labelClassName="text-slate-300"
                       />
                       <Select 
@@ -278,7 +278,7 @@ const DemoPage: React.FC = () => {
                     />
 
                     <div className="p-5 bg-white/5 rounded-xl border border-white/10">
-                       <span className="block text-sm font-bold text-white mb-4 flex items-center gap-2"><Zap className="w-4 h-4 text-amber-400" /> Kebutuhan Utama</span>
+                       <span className="block text-sm font-bold text-white mb-4 flex items-center gap-2"><Zap className="w-4 h-4 text-amber-400 dark:text-amber-300" /> Kebutuhan Utama</span>
                        <Grid cols={1} gap={3}>
                           <Checkbox label="Integrasi HR & Payroll" name="feature_hr" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Kontrol Proyek & Biaya" name="feature_project" labelClassName="text-slate-300 group-hover:text-white" />
@@ -294,7 +294,7 @@ const DemoPage: React.FC = () => {
                       <Checkbox 
                         name="consent" 
                         label={
-                          <span className="text-sm text-slate-400">
+                          <span className="text-sm text-slate-400 dark:text-slate-300">
                             Saya menyetujui <Link to="/legal/privacy" className="text-primary-400 hover:text-primary-300 font-medium" target="_blank">Kebijakan Privasi</Link> dan mengizinkan BizOps menghubungi saya.
                           </span>
                         }

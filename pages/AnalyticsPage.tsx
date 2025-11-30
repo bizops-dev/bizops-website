@@ -34,27 +34,27 @@ const AnalyticsPage: React.FC = () => {
             <Grid cols={3} gap={8}>
                
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 dark:text-blue-300 rounded-xl mb-6">
                      <PieChart className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Real-time Dashboard</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.</Typography>
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 dark:text-amber-300 rounded-xl mb-6">
                      <Filter className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Drag-and-Drop Report Builder</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.</Typography>
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 dark:text-green-300 rounded-xl mb-6">
                      <Calendar className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Auto-Schedule Email</Typography>
-                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.</Typography>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.</Typography>
                </div>
 
             </Grid>

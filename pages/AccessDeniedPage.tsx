@@ -26,7 +26,7 @@ const AccessDeniedPage: React.FC = () => {
         >
            <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-[2rem] transform rotate-6"></div>
            <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-[2rem] flex items-center justify-center shadow-xl border border-slate-200 dark:border-slate-800 gap-4">
-              <Lock className="w-10 h-10 text-slate-400 dark:text-slate-500" />
+              <Lock className="w-10 h-10 text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300" />
            </div>
            <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white border-2 border-white dark:border-slate-950 shadow-lg gap-4">
               <span className="font-bold text-xs">403</span>
@@ -46,7 +46,7 @@ const AccessDeniedPage: React.FC = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-lg text-slate-600 dark:text-slate-400 max-w-md mx-auto mb-10 leading-relaxed"
+          className="text-lg text-slate-600 dark:text-slate-400 dark:text-slate-300 max-w-md mx-auto mb-10 leading-relaxed"
         >
           Anda tidak memiliki izin untuk mengakses halaman ini. Ini mungkin area terbatas untuk Administrator atau Partner level tertentu.
         </motion.p>

@@ -60,13 +60,13 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
-               <Typography variant="body" className="text-slate-400 tracking-wider">{story.industry}</Typography>
+               <Typography variant="body" className="text-slate-400 dark:text-slate-300 tracking-wider">{story.industry}</Typography>
                
                <Stack direction="vertical" gap={6} className="pt-8 border-t border-white/10">
                   {story.metrics.map((m: any, i: number) => (
                      <div key={i}>
-                        <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-1">{m.value}</div>
-                        <div className="text-sm text-slate-400 font-medium">{m.label}</div>
+                        <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-1 leading-tight">{m.value}</div>
+                        <div className="text-sm text-slate-400 dark:text-slate-300 font-medium">{m.label}</div>
                      </div>
                   ))}
                </Stack>
@@ -79,7 +79,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
                <div className="flex gap-4 mb-8">
-                  <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0 gap-4" />
+                  <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 dark:text-white flex-shrink-0 gap-4" />
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">{story.desc}</Typography>
                </div>
             </div>
@@ -87,13 +87,13 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             {/* Transformation Grid */}
             <Grid cols={2} gap={6} className="mt-auto">
                <div className="bg-red-50 dark:bg-red-900/10 p-5 rounded-xl border border-red-100 dark:border-red-900/20">
-                  <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
+                  <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 dark:text-red-300 font-bold text-xs uppercase tracking-wider">
                      <AlertTriangle className="w-4 h-4" /> Before BizOps
                   </div>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.chaos}</Typography>
                </div>
                <div className="bg-green-50 dark:bg-green-900/10 p-5 rounded-xl border border-green-100 dark:border-green-900/20">
-                  <div className="flex items-center gap-2 mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
+                  <div className="flex items-center gap-2 mb-2 text-green-700 dark:text-green-400 dark:text-green-300 font-bold text-xs uppercase tracking-wider">
                      <CheckCircle2 className="w-4 h-4" /> After BizOps
                   </div>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.solution}</Typography>
@@ -127,7 +127,7 @@ const CustomerPage: React.FC = () => {
                transition={{ duration: 0.6 }}
                className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 backdrop-blur-md"
             >
-               <ShieldCheck className="w-4 h-4 text-green-400" />
+               <ShieldCheck className="w-4 h-4 text-green-400 dark:text-green-300" />
                <Typography variant="caption" className="text-white">Trusted by Leaders</Typography>
             </motion.div>
 
@@ -135,7 +135,7 @@ const CustomerPage: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6, delay: 0.1 }}
-               className="text-5xl md:text-7xl font-bold tracking-tight mb-8"
+               className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight"
             >
                Powering the Engines of <br/>
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Modern Business.</span>
@@ -154,8 +154,8 @@ const CustomerPage: React.FC = () => {
                   { val: "24/7", label: "Expert Support" }
                ].map((stat, i) => (
                   <div key={i} className="text-center">
-                     <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.val}</div>
-                     <div className="text-xs md:text-sm text-slate-400 uppercase tracking-wider font-medium">{stat.label}</div>
+                     <div className="text-3xl md:text-4xl font-bold text-white mb-1 leading-tight">{stat.val}</div>
+                     <div className="text-xs md:text-sm text-slate-400 dark:text-slate-300 uppercase tracking-wider font-medium">{stat.label}</div>
                   </div>
                ))}
             </motion.div>
@@ -188,7 +188,7 @@ const CustomerPage: React.FC = () => {
       {/* --- INFINITE LOGO LOOP --- */}
       <div className="py-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden">
          <Container size="7xl" className="text-center mb-12">
-            <Typography variant="caption" className="text-slate-500">Trusted by Industry Leaders</Typography>
+            <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Trusted by Industry Leaders</Typography>
          </Container>
          
          {/* Marquee Container */}
@@ -223,7 +223,7 @@ const CustomerPage: React.FC = () => {
       <section className="bg-[#0B1120] py-24 relative overflow-hidden text-white">
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
-            <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
+            <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 dark:text-white hover:bg-blue-50 font-bold shadow-xl">

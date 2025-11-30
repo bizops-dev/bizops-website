@@ -31,11 +31,11 @@ const ComparePage: React.FC = () => {
       <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         {/* Hero */}
         <Container size="4xl" className="text-center mb-16">
-          <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
+          <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 dark:text-slate-300 mb-6 shadow-sm">
             BizOps vs {data.name}
           </div>
           <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight">{data.verdict}</Typography>
-          <Typography variant="body-xl" className="text-slate-600">{data.description}</Typography>
+          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-300">{data.description}</Typography>
         </Container>
 
         {/* LAYOUT 1: MATRIX (For Odoo) */}
@@ -44,7 +44,7 @@ const ComparePage: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-16">
               <Grid cols={3} gap={6} className="bg-slate-900 text-white font-bold text-lg">
                 <div className="p-6 md:col-span-1 hidden md:block">Aspek</div>
-                <div className="p-6 text-slate-400 bg-slate-800/50">{data.name}</div>
+                <div className="p-6 text-slate-400 dark:text-slate-300 bg-slate-800/50">{data.name}</div>
                 <div className="p-6 text-primary-400 bg-primary-900/20">BizOps</div>
               </Grid>
               
@@ -54,19 +54,19 @@ const ComparePage: React.FC = () => {
                     <div className="font-bold text-slate-900 dark:text-white md:col-span-1">{row.feature}</div>
                     
                     {/* Them */}
-                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-600">
-                       <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1 gap-4" />
+                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-600 dark:text-slate-300">
+                       <X className="w-5 h-5 text-red-400 dark:text-red-300 flex-shrink-0 mt-1 gap-4" />
                        <Typography variant="caption">{row.them}</Typography>
                     </div>
 
                     {/* Us */}
                     <Stack direction="horizontal" gap={3} align="start" className="text-slate-900 dark:text-white font-medium bg-primary-50 rounded-lg p-3">
-                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 gap-4" />
+                       <Check className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 mt-1 gap-4" />
                        <Typography variant="caption">{row.us}</Typography>
                     </div>
 
                     {/* Impact */}
-                    <div className="text-slate-500 text-sm italic border-l-2 border-slate-200 pl-4 md:border-none md:pl-0">
+                    <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm italic border-l-2 border-slate-200 pl-4 md:border-none md:pl-0">
                        <span className="md:hidden font-bold not-italic mr-2">Impact:</span>
                        {row.impact}
                     </div>
@@ -116,7 +116,7 @@ const ComparePage: React.FC = () => {
                     <Stack direction="vertical" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (
                           <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0 gap-4">
-                             <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
+                             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{m.label}</Typography>
                              <span className="font-bold text-slate-900 dark:text-white">{m.val}</span>
                           </div>
                        ))}
@@ -124,7 +124,7 @@ const ComparePage: React.FC = () => {
 
                     <ul className="space-y-3">
                        {scene.points.map((pt: string, i: number) => (
-                          <li key={i} className="flex gap-3 text-sm text-slate-700">
+                          <li key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-200">
                              <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${scene.iconColor.replace('text-', 'bg-')}`}></div>
                              {pt}
                           </li>
@@ -144,14 +144,14 @@ const ComparePage: React.FC = () => {
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
                     </div>
                     <div className="md:col-span-1">
-                       <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
-                       <Stack direction="horizontal" gap={2} align="center" className="text-red-500 font-bold mb-2">
-                       <Typography variant="caption" className="text-slate-600">{feat.themDesc}</Typography>
+                       <div className="text-xs font-bold text-slate-400 dark:text-slate-300 uppercase mb-2">{data?.name || 'Competitor'}</div>
+                       <Stack direction="horizontal" gap={2} align="center" className="text-red-500 dark:text-red-400 dark:text-red-300 font-bold mb-2">
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-300">{feat.themDesc}</Typography>
                     </div>
                     <div className="md:col-span-1 bg-primary-50 -m-4 p-4 rounded-xl">
                        <div className="text-xs font-bold text-primary-600 uppercase mb-2">BizOps</div>
                        <Stack direction="horizontal" gap={2} align="center" className="text-slate-900 dark:text-white font-bold mb-2">
-                       <Typography variant="caption" className="text-slate-700">{feat.usDesc}</Typography>
+                       <Typography variant="caption" className="text-slate-700 dark:text-slate-200">{feat.usDesc}</Typography>
                     </div>
                  </div>
               ))}
@@ -161,7 +161,7 @@ const ComparePage: React.FC = () => {
         {/* Verdict & CTA */}
         <Container size="4xl" className="text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
-           <Typography variant="body-lg" className="text-slate-600 leading-relaxed">"{data.verdict}"</Typography>
+           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">"{data.verdict}"</Typography>
            <Stack direction="vertical" gap={4} className="justify-center">
               <Link to="/demo">
                  <Button size="lg" className="shadow-lg">Jadwalkan Demo & Migrasi</Button>

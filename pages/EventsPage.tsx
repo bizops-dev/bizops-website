@@ -71,7 +71,7 @@ const EventsPage: React.FC = () => {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.1 }}
-               className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8"
+               className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight"
             >
                BizOps <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Academy</span>
             </motion.h1>
@@ -93,7 +93,7 @@ const EventsPage: React.FC = () => {
                className="max-w-2xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-2xl flex flex-col sm:flex-row items-center gap-2 shadow-2xl"
             >
                <div className="relative flex-1 w-full gap-4">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 dark:text-slate-300" />
                   <input 
                      type="text" 
                      placeholder="Cari topik webinar..." 
@@ -155,17 +155,17 @@ const EventsPage: React.FC = () => {
                           
                           <Typography variant="h3" as="h3" className="text-xl font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400"><Link to={`/events/${evt.slug}`}>{evt.title}</Link></Typography>
                           
-                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{evt.desc}</Typography>
 
                           <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
                              <div className="flex -space-x-2 gap-4">
                                 {/* Dummy avatars for participants */}
                                 {[1,2,3].map(i => (
-                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 gap-4">
+                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
                                       {String.fromCharCode(64 + i)}
                                    </div>
                                 ))}
-                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 gap-4">
+                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
                                    +40
                                 </div>
                              </div>
@@ -209,17 +209,17 @@ const EventsPage: React.FC = () => {
                        
                        <Typography variant="h3" as="h3" className="text-xl font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400"><Link to={`/events/${evt.slug}`}>{evt.title}</Link></Typography>
                        
-                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{evt.desc}</Typography>
 
                        <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
                           <div className="flex -space-x-2 gap-4">
                              {/* Dummy avatars for participants */}
                              {[1,2,3].map(i => (
-                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 gap-4">
+                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
                                    {String.fromCharCode(64 + i)}
                                 </div>
                              ))}
-                             <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 gap-4">
+                             <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
                                 +40
                              </div>
                           </div>
@@ -244,7 +244,7 @@ const EventsPage: React.FC = () => {
               <Stack direction="vertical" gap={6} className="justify-between items-end mb-12">
                  <div>
                     <Typography variant="h2" as="h2">On-Demand Library</Typography>
-                    <Typography variant="body-lg" className="text-slate-400">Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.</Typography>
+                    <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.</Typography>
                  </div>
                  <div className="flex items-center gap-2 text-sm text-primary-300 bg-primary-900/30 border border-primary-500/30 px-4 py-2 rounded-full font-medium">
                     <Users className="w-4 h-4" /> Exclusive for Members
@@ -264,7 +264,7 @@ const EventsPage: React.FC = () => {
                              </div>
                           </div>
                           <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
-                          <div className="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                          <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
                              <span>{rec.views} views</span>
                              <span>•</span>
                              <span>Webinar Recording</span>
@@ -286,7 +286,7 @@ const EventsPage: React.FC = () => {
                           </div>
                        </div>
                        <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
-                       <div className="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                       <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
                           <span>{rec.views} views</span>
                           <span>•</span>
                           <span>Webinar Recording</span>
@@ -297,7 +297,7 @@ const EventsPage: React.FC = () => {
               
               <Container size="3xl" className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
-                 <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
+                 <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
                  <Stack direction="vertical" gap={4} className="justify-center">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
                     <Button className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>

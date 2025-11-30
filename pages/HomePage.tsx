@@ -89,7 +89,7 @@ const HomePage: React.FC = () => {
                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
                  New: AI-Powered Inventory Forecasting
                </span>
-               <ArrowRight className="w-3 h-3 text-slate-400" />
+               <ArrowRight className="w-3 h-3 text-slate-400 dark:text-slate-300" />
             </motion.div>
             
             {/* Main Headline with Staggered Animation */}
@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
               initial="hidden"
               animate="visible"
               transition={{ delay: 0.5 }}
-              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto"
             >
               Tinggalkan spreadsheet yang terpisah-pisah. BizOps menyatukan HR, Finance, dan Supply Chain dalam satu platform yang aman, cepat, dan siap scale-up.
             </motion.p>
@@ -125,7 +125,7 @@ const HomePage: React.FC = () => {
               </Link>
               <Link to="/pricing-calculator" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800">
-                  <Calculator className="mr-2 w-5 h-5 text-slate-500" /> Simulasi Harga
+                  <Calculator className="mr-2 w-5 h-5 text-slate-500 dark:text-slate-400 dark:text-slate-300" /> Simulasi Harga
                 </Button>
               </Link>
             </motion.div>
@@ -152,14 +152,14 @@ const HomePage: React.FC = () => {
                   
                   {/* Overlay UI Badge - retained for context */}
                   <Stack direction="horizontal" gap={2} align="center" className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 shadow-lg">
-                    <Lock className="w-3 h-3 text-green-400" /> bizops.id/dashboard
+                    <Lock className="w-3 h-3 text-green-400 dark:text-green-300" /> bizops.id/dashboard
                   </Stack>
                </div>
             </motion.div>
 
             {/* Social Proof Logos - Updated to match Customer Stories */}
             <div className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 overflow-hidden">
-               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dipercaya oleh Pemimpin Industri</Typography>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Dipercaya oleh Pemimpin Industri</Typography>
                <InfiniteScrollLoop speed={30} className="opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
                   {['Divistant', 'Dikstra', 'Arena Rasa Nusantara', 'Aero Travel Indonesia', 'TechCorp', 'BuildCo'].map(brand => (
                      <span key={brand} className="text-xl md:text-2xl font-black text-slate-800 dark:text-slate-200 tracking-tighter whitespace-nowrap mx-4 cursor-default">{brand}</span>
@@ -178,8 +178,8 @@ const HomePage: React.FC = () => {
 
          <Container size="7xl" className="relative z-10">
             <Container size="3xl" className="text-center mb-16">
-                <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span></Typography>
-                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
+                <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">Mengapa Bisnis Anda <span className="text-red-500 dark:text-red-400 dark:text-red-300">Stuck?</span></Typography>
+                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
             </Container>
              
              <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -189,8 +189,8 @@ const HomePage: React.FC = () => {
                          <prob.icon className={`w-7 h-7 ${prob.color}`} aria-hidden="true" />
                       </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
-                     <Typography variant="caption" className="font-bold text-red-500 dark:text-red-400 uppercase tracking-wide">{prob.subtitle}</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
+                     <Typography variant="caption" className="font-bold text-red-500 dark:text-red-400 dark:text-red-300 uppercase tracking-wide">{prob.subtitle}</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{prob.desc}</Typography>
                    </Card>
                 ))}
              </CardSlider>
@@ -206,9 +206,9 @@ const HomePage: React.FC = () => {
             <Stack direction="vertical" gap={8} className="items-end justify-between mb-16">
                <div className="max-w-2xl">
                   <Badge variant="outline-white" className="mb-4">BizOps Platform</Badge>
-                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Satu Solusi, <br />
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">Satu Solusi, <br />
                      <span className="text-primary-400">Tak Terbatas Kemungkinan.</span></Typography>
-                  <Typography variant="body-lg" className="text-slate-400">Modul yang saling berbicara satu sama lain. Input di satu tempat, terupdate di mana-mana.</Typography>
+                  <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Modul yang saling berbicara satu sama lain. Input di satu tempat, terupdate di mana-mana.</Typography>
                </div>
                <Link to="/platform">
                   <Button variant="white" className="group">
@@ -231,18 +231,18 @@ const HomePage: React.FC = () => {
                         className={`w-full text-left px-6 py-5 rounded-xl transition-all duration-300 flex items-center justify-between group ${
                            activeTab === sol.id 
                            ? 'bg-gradient-to-r from-slate-800 to-slate-800/50 border border-slate-700 shadow-lg translate-x-2' 
-                           : 'hover:bg-slate-800/30 border border-transparent text-slate-400'
+                           : 'hover:bg-slate-800/30 border border-transparent text-slate-400 dark:text-slate-300'
                         }`}
                      >
                         <Stack direction="horizontal" gap={4} align="center">
                            <div className={`p-2 rounded-lg transition-colors ${activeTab === sol.id ? sol.bg : 'bg-slate-800 group-hover:bg-slate-700'}`}>
-                              <sol.icon className={`w-5 h-5 ${activeTab === sol.id ? sol.color : 'text-slate-500'}`} aria-hidden="true" />
+                              <sol.icon className={`w-5 h-5 ${activeTab === sol.id ? sol.color : 'text-slate-500 dark:text-slate-400 dark:text-slate-300'}`} aria-hidden="true" />
                            </div>
                            <div>
                               <div className={`font-bold text-base ${activeTab === sol.id ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>
                                  {sol.label}
                               </div>
-                              <div className="text-xs text-slate-500 uppercase tracking-wider font-medium mt-0.5">
+                              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider font-medium mt-0.5">
                                  {sol.category}
                               </div>
                            </div>
@@ -288,7 +288,7 @@ const HomePage: React.FC = () => {
                                  <PlayCircle className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
                               </div>
                               <Typography variant="h5" as="h5">Lihat Demo Modul Ini</Typography>
-                              <Typography variant="body" className="text-slate-400">Video singkat 2 menit penjelasan fitur.</Typography>
+                              <Typography variant="body" className="text-slate-400 dark:text-slate-300">Video singkat 2 menit penjelasan fitur.</Typography>
                               <Link to={`/platform`}>
                                  <Button size="sm" variant="outline-white">Tonton Video</Button>
                               </Link>
@@ -304,15 +304,15 @@ const HomePage: React.FC = () => {
       {/* 4. VALUE PROPOSITION (UVP) */}
       <section aria-labelledby="uvp-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
          <Container size="3xl" className="text-center mb-16">
-            <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Bukan Sekadar ERP Biasa</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
+            <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">Bukan Sekadar ERP Biasa</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
          </Container>
 
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeUVP.map((uvp, idx) => (
                   <div key={idx} className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                     <div className="absolute top-8 right-8 text-slate-200 dark:text-slate-800 group-hover:text-primary-100 dark:group-hover:text-primary-900/20 transition-colors">
+                     <div className="absolute top-8 right-8 text-slate-200 dark:text-slate-800 dark:text-slate-100 group-hover:text-primary-100 dark:group-hover:text-primary-900/20 transition-colors">
                         <uvp.icon className="w-24 h-24 opacity-20 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" aria-hidden="true" />
                      </div>
                      <div className="relative z-10">
@@ -321,7 +321,7 @@ const HomePage: React.FC = () => {
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
                         <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wide">{uvp.subtitle}</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{uvp.desc}</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{uvp.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -336,7 +336,7 @@ const HomePage: React.FC = () => {
 
          <Container size="7xl" className="relative z-10">
             <div className="text-center mb-20">
-               <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight"><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
+               <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight"><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                      Bandingkan Nilai Investasi Anda
                   </span></Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps bukan hanya soal "lebih murah". Ini soal <span className="font-semibold text-slate-900 dark:text-white">efisiensi total</span>. Bandingkan kompleksitas, waktu implementasi, dan hidden cost.</Typography>
@@ -357,27 +357,27 @@ const HomePage: React.FC = () => {
                   {/* Card 1: Fragmented Stack */}
                   <Stack direction="horizontal" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
-                         <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500">
+                         <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500 dark:text-red-400 dark:text-red-300">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                          </div>
                      </div>
                      <div className="mb-4">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #1</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #1</span>
                      </div>
                      <Typography variant="h3" as="h3">Fragmented Stack</Typography>
-                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span></Typography>
+                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500 dark:text-red-400 dark:text-red-300">Data Silo & Vendor Fatigue.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
                      <Stack direction="vertical" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>CRM License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 150rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>Accounting App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 250rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>HRIS App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 20rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
@@ -385,15 +385,15 @@ const HomePage: React.FC = () => {
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-1">
-                           <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
-                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Total Cost (50 Users)</Typography>
+                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400 dark:text-slate-300">/bln</span></span>
                         </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-red-400 h-full w-[90%]"></div>
                         </div>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400 dark:text-slate-300">
                             <span>Integration Time:</span>
-                            <span className="text-red-500 font-bold">3-6 Bulan</span>
+                            <span className="text-red-500 dark:text-red-400 dark:text-red-300 font-bold">3-6 Bulan</span>
                         </Stack>
                      </div>
                   </Stack>
@@ -401,27 +401,27 @@ const HomePage: React.FC = () => {
                   {/* Card 2: Legacy ERP */}
                   <Stack direction="horizontal" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
-                         <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500">
+                         <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500 dark:text-amber-400 dark:text-amber-300">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                          </div>
                      </div>
                      <div className="mb-4">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #2</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #2</span>
                      </div>
                      <Typography variant="h3" as="h3">Legacy / Global ERP</Typography>
-                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span></Typography>
+                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500 dark:text-amber-400 dark:text-amber-300">Growth Penalty & Mahal.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
                      <Stack direction="vertical" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>Standard License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~Rp 210rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>Implementation</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">$$$ (Extra)</span>
                         </Stack>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>Maintenance</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~20% / year</span>
                         </Stack>
@@ -429,15 +429,15 @@ const HomePage: React.FC = () => {
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-1">
-                           <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
-                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Total Cost (50 Users)</Typography>
+                           <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400 dark:text-slate-300">/bln</span></span>
                         </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-amber-400 h-full w-[60%]"></div>
                         </div>
-                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400 dark:text-slate-300">
                            <span>Implementation Time:</span>
-                           <span className="text-amber-500 font-bold">6-12 Bulan</span>
+                           <span className="text-amber-500 dark:text-amber-400 dark:text-amber-300 font-bold">6-12 Bulan</span>
                         </Stack>
                      </div>
                   </Stack>
@@ -475,15 +475,15 @@ const HomePage: React.FC = () => {
                                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-green-400 to-emerald-600 rounded-l-3xl"></div>
                                <Grid cols={2} gap={8}>
                                    <div>
-                                       <Typography variant="body" className="text-slate-400 tracking-wider">Flat Monthly Cost</Typography>
-                                       <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
-                                       <Typography variant="body" className="text-slate-500">Paket Business (50 User)</Typography>
+                                       <Typography variant="body" className="text-slate-400 dark:text-slate-300 tracking-wider">Flat Monthly Cost</Typography>
+                                       <p className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight">Rp 3 Jt</p>
+                                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Paket Business (50 User)</Typography>
                                    </div>
                                    <Stack direction="vertical" gap={4} align="end" justify="center" className="text-right">
-                                       <div className="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
+                                       <div className="bg-green-500/20 text-green-400 dark:text-green-300 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
                                            HEMAT 85%
                                        </div>
-                                       <Typography variant="body" className="text-slate-400">vs Fragmented Stack</Typography>
+                                       <Typography variant="body" className="text-slate-400 dark:text-slate-300">vs Fragmented Stack</Typography>
                                    </Stack>
                                </Grid>
                            </div>
@@ -491,17 +491,17 @@ const HomePage: React.FC = () => {
                            {/* Features Grid */}
                            <Grid cols={2} gap={4}>
                                <Stack direction="horizontal" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
-                                   <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
+                                   <div className="mt-1 text-green-400 dark:text-green-300"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Local Compliance</Typography>
-                                       <Typography variant="body" className="text-slate-400">Pajak, BPJS, Kasbon Ready.</Typography>
+                                       <Typography variant="body" className="text-slate-400 dark:text-slate-300">Pajak, BPJS, Kasbon Ready.</Typography>
                                    </div>
                                </Stack>
                                <Stack direction="horizontal" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
-                                   <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
+                                   <div className="mt-1 text-blue-400 dark:text-blue-300"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Managed Infrastructure</Typography>
-                                       <Typography variant="body" className="text-slate-400">Server & Security Included.</Typography>
+                                       <Typography variant="body" className="text-slate-400 dark:text-slate-300">Server & Security Included.</Typography>
                                    </div>
                                </Stack>
                            </Grid>
@@ -530,7 +530,7 @@ const HomePage: React.FC = () => {
          <Container size="7xl" className="relative z-10">
             <Stack direction="vertical" gap={6} className="justify-between items-end mb-16">
                <div className="max-w-2xl">
-                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
                </div>
                <Link to="/services">
@@ -549,9 +549,9 @@ const HomePage: React.FC = () => {
                      )}
                      
                      <div className="relative z-10 bg-slate-900/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700/50 h-full hover:bg-slate-800 hover:border-primary-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-900/20 group-hover:-translate-y-1">
-                        <div className="text-5xl font-black text-slate-800 group-hover:text-primary-500/20 transition-colors duration-500 mb-6">{step.step}</div>
+                        <div className="text-5xl font-black text-slate-800 dark:text-slate-100 group-hover:text-primary-500/20 transition-colors duration-500 mb-6 leading-tight">{step.step}</div>
                         <Typography variant="h3" as="h3" className="font-bold text-white group-hover:text-primary-400">{step.title}</Typography>
-                        <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{step.desc}</Typography>
+                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed group-hover:text-slate-300">{step.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -564,18 +564,18 @@ const HomePage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Solusi Spesifik Industri</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
             </div>
             
             <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]" className="mb-16 shadow-lg hover:shadow-xl transition-shadow">
                {industries.map((ind) => (
                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
                      <Card className="h-full border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" padding="lg">
-                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <ind.icon className="w-6 h-6" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{ind.description}</Typography>
                         <Stack direction="horizontal" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Explore <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
                         </Stack>
@@ -586,18 +586,18 @@ const HomePage: React.FC = () => {
 
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Didesain untuk Peran Anda</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Dashboard yang relevan untuk setiap pemangku kepentingan.</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Dashboard yang relevan untuk setiap pemangku kepentingan.</Typography>
             </div>
 
             <CardSlider desktopClassName="md:grid md:grid-cols-3 lg:grid-cols-5 gap-4" mobileItemWidth="w-[85vw] sm:w-[250px]">
                {roles.map((role) => (
                   <Link key={role.id} to={`/role/${role.id}`} className="group h-full">
                      <Card className="h-full text-center border border-slate-100 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-300" padding="md">
-                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400 dark:text-blue-300 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                            <role.icon className="w-5 h-5" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{role.title}</Typography>
-                        <Typography variant="body" className="text-slate-600 dark:text-slate-400">{role.subtitle}</Typography>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{role.subtitle}</Typography>
                      </Card>
                   </Link>
                ))}
@@ -614,7 +614,7 @@ const HomePage: React.FC = () => {
             <Grid cols={2} gap={16} className="items-center mb-16">
                <div>
                   <Badge variant="outline-white" className="mb-4">Reliability & Security</Badge>
-                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight">Tenang, Data Anda Aman.</Typography>
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">Tenang, Data Anda Aman.</Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Fokuslah mengembangkan bisnis, biarkan kami menjaga infrastruktur Anda. BizOps menjamin keamanan data setara standar perbankan.</Typography>
                   
                   <Stack direction="vertical" gap={6}>
@@ -625,11 +625,11 @@ const HomePage: React.FC = () => {
                      ].map((item, idx) => (
                         <div key={idx} className="flex gap-4">
                            <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-slate-800/50 ring-1 ring-white/10">
-                              <item.icon className="w-6 h-6 text-blue-400" aria-hidden="true" />
+                              <item.icon className="w-6 h-6 text-blue-400 dark:text-blue-300" aria-hidden="true" />
                            </Stack>
                            <div>
                               <Typography variant="h3" as="h3" className="text-white font-bold">{item.title}</Typography>
-                              <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>
+                              <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed">{item.desc}</Typography>
                            </div>
                         </div>
                      ))}
@@ -642,7 +642,7 @@ const HomePage: React.FC = () => {
                   <div className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 relative overflow-hidden">
                      <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8 border-b border-white/10 pb-6">
                         <div>
-                           <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">System Status</div>
+                           <div className="text-sm text-slate-400 dark:text-slate-300 uppercase tracking-wider font-bold mb-1">System Status</div>
                            <Stack direction="horizontal" gap={2} align="center">
                               <span className="relative flex h-3 w-3 gap-4">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 gap-4"></span>
@@ -652,14 +652,14 @@ const HomePage: React.FC = () => {
                            </Stack>
                         </div>
                         <div className="text-right">
-                           <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">Uptime (30 Hari)</div>
+                           <div className="text-sm text-slate-400 dark:text-slate-300 uppercase tracking-wider font-bold mb-1">Uptime (30 Hari)</div>
                            <div className="text-white font-bold">99.98%</div>
                         </div>
                      </Stack>
                      
                      {/* Mock Activity Graph */}
                      <Stack direction="vertical" gap={4}>
-                        <Stack direction="horizontal" gap={4} justify="between" className="text-xs text-slate-500">
+                        <Stack direction="horizontal" gap={4} justify="between" className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">
                            <span>00:00</span>
                            <span>06:00</span>
                            <span>12:00</span>
@@ -682,8 +682,8 @@ const HomePage: React.FC = () => {
                               )
                            })}
                         </Stack>
-                        <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-400 mt-4 bg-slate-800/50 p-3 rounded-lg">
-                           <CheckCircle2 className="w-4 h-4 text-green-500" aria-hidden="true" />
+                        <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-400 dark:text-slate-300 mt-4 bg-slate-800/50 p-3 rounded-lg">
+                           <CheckCircle2 className="w-4 h-4 text-green-500 dark:text-green-400 dark:text-green-300" aria-hidden="true" />
                            <span>Backup terakhir berhasil: Hari ini, 03:00 WIB</span>
                         </Stack>
                      </Stack>
@@ -697,14 +697,14 @@ const HomePage: React.FC = () => {
       <section aria-labelledby="integration-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <Container size="4xl" className="text-center mb-12">
             <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Terhubung dengan Ekosistem</Typography>
-            <Typography variant="body" className="text-slate-600 dark:text-slate-400">Open API kami memudahkan integrasi dengan bank, pajak, dan marketplace.</Typography>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Open API kami memudahkan integrasi dengan bank, pajak, dan marketplace.</Typography>
          </Container>
          
          <div className="max-w-full overflow-hidden">
             <InfiniteScrollLoop speed={40} direction="right">
                {homeIntegrations.map((int, idx) => (
                   <div key={idx} className="flex items-center gap-3 bg-white dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-300 cursor-default whitespace-nowrap">
-                     <div className="font-bold text-xs text-slate-400 uppercase tracking-wider" aria-hidden="true">{int.icon}</div>
+                     <div className="font-bold text-xs text-slate-400 dark:text-slate-300 uppercase tracking-wider" aria-hidden="true">{int.icon}</div>
                      <div className="font-semibold text-slate-900 dark:text-white text-sm">{int.name}</div>
                   </div>
                ))}
@@ -730,7 +730,7 @@ const HomePage: React.FC = () => {
             <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
-                  <BouncyButton className="h-16 px-10 text-xl font-bold w-full sm:w-auto shadow-2xl shadow-blue-900/20 bg-white text-blue-700 hover:bg-blue-50">
+                  <BouncyButton className="h-16 px-10 text-xl font-bold w-full sm:w-auto shadow-2xl shadow-blue-900/20 bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50">
                      Hubungi Sales
                   </BouncyButton>
                </Link>

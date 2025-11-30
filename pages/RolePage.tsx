@@ -71,7 +71,7 @@ const RolePage: React.FC = () => {
              initial="hidden"
              animate="visible"
              transition={{ delay: 0.4 }}
-             className="text-lg md:text-3xl text-slate-400 mb-12 leading-relaxed max-w-3xl mx-auto font-light"
+             className="text-lg md:text-3xl text-slate-400 dark:text-slate-300 mb-12 leading-relaxed max-w-3xl mx-auto font-light"
           >
              "{data.heroSub}"
           </motion.p>
@@ -125,8 +125,8 @@ const RolePage: React.FC = () => {
                               }`}
                            >
                                {isActive && <div className="absolute inset-0 bg-primary-500/5 animate-pulse"></div>}
-                               <Activity className={`w-6 h-6 mb-2 transition-colors ${isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300'}`} />
-                               <span className={`font-semibold text-xs leading-tight transition-colors ${isActive ? 'text-primary-700 dark:text-primary-300' : 'text-slate-600 dark:text-slate-400'}`}>{feat}</span>
+                               <Activity className={`w-6 h-6 mb-2 transition-colors ${isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:text-slate-300 dark:group-hover:text-slate-300'}`} />
+                               <span className={`font-semibold text-xs leading-tight transition-colors ${isActive ? 'text-primary-700 dark:text-primary-300' : 'text-slate-600 dark:text-slate-400 dark:text-slate-300'}`}>{feat}</span>
                            </motion.button>
                         );
                       })}
@@ -154,8 +154,8 @@ const RolePage: React.FC = () => {
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] shadow-sm"></div>
                      </Stack>
-                     <Stack direction="horizontal" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-slate-900/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 overflow-hidden shadow-inner transition-all duration-300">
-                        <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500 gap-4" /> 
+                     <Stack direction="horizontal" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-slate-900/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 dark:text-slate-300 overflow-hidden shadow-inner transition-all duration-300">
+                        <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500 dark:text-emerald-400 dark:text-emerald-300 gap-4" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
                      </Stack>
                   </Stack>
@@ -186,7 +186,7 @@ const RolePage: React.FC = () => {
                                           activeFeature === i-1 ? 'bg-white animate-pulse' : 'bg-slate-600'
                                        }`}></div>
                                     </Stack>
-                                    <div className={`text-xs font-bold ${i===1 ? 'text-emerald-400' : 'text-slate-500'}`}>
+                                    <div className={`text-xs font-bold ${i===1 ? 'text-emerald-400' : 'text-slate-500 dark:text-slate-400 dark:text-slate-300'}`}>
                                        {i===1 ? '+12.5%' : ''}
                                     </div>
                                  </Stack>
@@ -269,7 +269,7 @@ const RolePage: React.FC = () => {
                   <RefreshCw className="w-3 h-3" /> Transformation
                </Stack>
                <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-bold text-white leading-tight">From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span></Typography>
-               <Typography variant="body-lg" className="text-slate-400">Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.</Typography>
+               <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.</Typography>
             </div>
             
             <CardSlider desktopClassName="md:block md:space-y-6" mobileItemWidth="w-[85vw] sm:w-[400px]">
@@ -281,7 +281,7 @@ const RolePage: React.FC = () => {
                   >
                      {/* Connector Arrow (Desktop) */}
                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-slate-900 border-4 border-slate-950 rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
-                        <ArrowRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+                        <ArrowRight className="w-6 h-6 text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:text-emerald-400 dark:text-emerald-300 transition-colors" />
                      </Stack>
 
                      {/* Pain Side (Left) - Darker, Red-tinted Chaos */}
@@ -293,9 +293,9 @@ const RolePage: React.FC = () => {
                         <Stack direction="horizontal" gap={4} className="relative z-10">
                            <Stack direction="horizontal" gap={3} align="center" className="mb-6">
                               <div className="p-2 bg-red-500/10 border border-red-500/20 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.1)]">
-                                 <AlertTriangle className="w-5 h-5 text-red-500" />
+                                 <AlertTriangle className="w-5 h-5 text-red-500 dark:text-red-400 dark:text-red-300" />
                               </div>
-                              <span className="text-red-500/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
+                              <span className="text-red-500 dark:text-red-400 dark:text-red-300/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
                            </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold leading-snug group-hover:text-white">"{item.pain}"</Typography>
                            <Typography variant="caption" className="leading-relaxed">{item.context}</Typography>
@@ -310,9 +310,9 @@ const RolePage: React.FC = () => {
 
                         <Stack direction="horizontal" gap={4} className="relative z-10">
                            <Stack direction="horizontal" gap={3} align="center" justify="end" className="mb-6">
-                              <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">After BizOps</span>
+                              <span className="text-emerald-400 dark:text-emerald-300 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">After BizOps</span>
                               <div className="p-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg order-1 md:order-2 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-                                 <CheckCircle className="w-5 h-5 text-emerald-400" />
+                                 <CheckCircle className="w-5 h-5 text-emerald-400 dark:text-emerald-300" />
                               </div>
                            </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold text-white">{item.gain}</Typography>
@@ -353,7 +353,7 @@ const RolePage: React.FC = () => {
 
            <Typography variant="h2" as="h2" className="font-bold text-white leading-tight tracking-tight font-sans">{data.cta?.head || "Siap Transformasi Bisnis Anda?"}</Typography>
            
-           <Typography variant="body-xl" className="text-slate-400">Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.</Typography>
+           <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.</Typography>
 
            <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
@@ -368,7 +368,7 @@ const RolePage: React.FC = () => {
               </Link>
            </Stack>
            
-           <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
+           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
         </Container>
       </section>
     </Stack>

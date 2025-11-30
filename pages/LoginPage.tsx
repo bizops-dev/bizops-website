@@ -65,26 +65,26 @@ const LoginPage: React.FC = () => {
 
           <div className="mb-8">
             <Typography variant="h1" as="h1">Welcome back</Typography>
-            <Typography variant="body" className="text-slate-500 dark:text-slate-400">Please select your login type to continue.</Typography>
+            <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Please select your login type to continue.</Typography>
           </div>
 
           {/* Login Type Switcher */}
           <Stack direction="horizontal" gap={4} className="p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">
              <button 
                 onClick={() => setLoginType('employee')}
-                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'employee' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'employee' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:text-slate-300 dark:hover:text-slate-200'}`}
              >
                 <Users className="w-4 h-4" /> Employee
              </button>
              <button 
                 onClick={() => setLoginType('admin')}
-                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'admin' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'admin' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:text-slate-300 dark:hover:text-slate-200'}`}
              >
                 <Briefcase className="w-4 h-4" /> Admin
              </button>
              <button 
                 onClick={() => setLoginType('partner')}
-                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'partner' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'partner' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:text-slate-300 dark:hover:text-slate-200'}`}
              >
                 <Handshake className="w-4 h-4" /> Partner
              </button>
@@ -104,7 +104,7 @@ const LoginPage: React.FC = () => {
                 </div>
                 <div>
                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{getLoginTitle()}</Typography>
-                   <Typography variant="body" className="text-slate-500 dark:text-slate-400">{getLoginDesc()}</Typography>
+                   <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{getLoginDesc()}</Typography>
                 </div>
              </Stack>
 
@@ -144,7 +144,7 @@ const LoginPage: React.FC = () => {
                    <button 
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-[34px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors focus:outline-none"
+                      className="absolute right-3 top-[34px] text-slate-400 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-300 transition-colors focus:outline-none"
                    >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                    </button>
@@ -164,16 +164,16 @@ const LoginPage: React.FC = () => {
           </motion.div>
 
           {loginType === 'partner' ? (
-             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 text-center block">
+             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-center block">
                Want to become a partner? <Link to="/partners/apply" className="font-bold text-primary-600 hover:text-primary-700 hover:underline">Apply Now</Link>
              </Typography>
           ) : (
-             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 text-center block">
+             <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-center block">
                Don't have an account? <Link to="/contact" className="font-bold text-primary-600 hover:text-primary-700 hover:underline">Contact Sales</Link>
              </Typography>
           )}
           
-          <Stack direction="horizontal" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400">
+          <Stack direction="horizontal" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400 dark:text-slate-300">
              <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> SOC2 Compliant</span>
              <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> 256-bit SSL</span>
           </Stack>
@@ -205,9 +205,9 @@ const LoginPage: React.FC = () => {
                            <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold gap-4">JD</div>
                            <div>
                               <div className="text-white font-bold">John Doe</div>
-                              <div className="text-slate-400 text-xs">Senior Engineer</div>
+                              <div className="text-slate-400 dark:text-slate-300 text-xs">Senior Engineer</div>
                            </div>
-                           <div className="ml-auto text-green-400 text-xs">● Active</div>
+                           <div className="ml-auto text-green-400 dark:text-green-300 text-xs">● Active</div>
                         </div>
                         <div className="space-y-3">
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>
@@ -229,7 +229,7 @@ const LoginPage: React.FC = () => {
                   {loginType === 'partner' && (
                      <div className="bg-gradient-to-br from-indigo-900 to-purple-900 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl text-white">
                         <Typography variant="h3" as="h3">Partner Growth</Typography>
-                        <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-6">
+                        <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-6 leading-tight">
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
                         <div className="space-y-2">
@@ -272,14 +272,14 @@ const LoginPage: React.FC = () => {
                </div>
                <div className="text-left">
                   <div className="text-white font-bold text-sm">Budi Santoso</div>
-                  <div className="text-slate-400 text-xs">
+                  <div className="text-slate-400 dark:text-slate-300 text-xs">
                      {loginType === 'employee' ? 'Staff, PT Maju Jaya' : loginType === 'admin' ? 'CFO, Nusantara Group' : 'CEO, Solusi Tekno'}
                   </div>
                </div>
             </motion.div>
          </div>
          
-         <div className="absolute bottom-8 left-8 text-slate-500 text-xs">
+         <div className="absolute bottom-8 left-8 text-slate-500 dark:text-slate-400 dark:text-slate-300 text-xs">
             © 2024 BizOps Indonesia. All rights reserved.
          </div>
       </Stack>

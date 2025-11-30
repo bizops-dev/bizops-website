@@ -121,12 +121,12 @@ const ROIPage: React.FC = () => {
         
         {/* Header */}
         <Container size="3xl" className="text-center mb-16">
-           <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+           <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 dark:text-blue-300 text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" /> ROI Calculator
            </Stack>
            <Typography variant="h1" as="h1" className="font-bold text-white leading-tight">Hitung Nilai Investasi <br/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Transformasi Digital</span></Typography>
-           <Typography variant="body-lg" className="text-slate-400">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
+           <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
         </Container>
 
         <Grid cols={12} gap={8} className="items-start">
@@ -134,14 +134,14 @@ const ROIPage: React.FC = () => {
            {/* LEFT: INPUTS */}
            <div className="lg:col-span-5 bg-slate-900/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
               <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8">
-                <Typography variant="h2" as="h2" className="font-bold text-white"><Settings className="w-5 h-5 text-blue-400" />
+                <Typography variant="h2" as="h2" className="font-bold text-white"><Settings className="w-5 h-5 text-blue-400 dark:text-blue-300" />
                    Parameter Operasional</Typography>
                 {/* Reset Button */}
                 <button 
                   onClick={() => {
                     setAdminCount(3); setSalary(6000000); setOvertime(20); setLosses(50000000);
                   }}
-                  className="text-xs text-slate-500 hover:text-white transition-colors"
+                  className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white transition-colors"
                 >
                   Reset Default
                 </button>
@@ -152,7 +152,7 @@ const ROIPage: React.FC = () => {
                  <div>
                     <Stack direction="horizontal" gap={4} justify="between" className="mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Jumlah Staf Admin</Typography>
-                       <Typography variant="caption" className="text-blue-400">{adminCount} Orang</Typography>
+                       <Typography variant="caption" className="text-blue-400 dark:text-blue-300">{adminCount} Orang</Typography>
                     </Stack>
                     <input 
                       type="range" min="1" max="50" value={adminCount} 
@@ -166,7 +166,7 @@ const ROIPage: React.FC = () => {
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Gaji Rata-rata</Typography>
                         <div className="relative group">
-                          <span className="absolute left-3 top-3 text-slate-500 text-xs">Rp</span>
+                          <span className="absolute left-3 top-3 text-slate-500 dark:text-slate-400 dark:text-slate-300 text-xs">Rp</span>
                           <input 
                             type="number" value={salary} 
                             onChange={(e) => setSalary(parseInt(e.target.value))}
@@ -182,9 +182,9 @@ const ROIPage: React.FC = () => {
                             onChange={(e) => setEfficiencyRate(parseInt(e.target.value))}
                             className="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500 gap-4"
                           />
-                          <Typography variant="caption" className="text-emerald-400">{efficiencyRate}%</Typography>
+                          <Typography variant="caption" className="text-emerald-400 dark:text-emerald-300">{efficiencyRate}%</Typography>
                         </Stack>
-                        <Typography variant="body" className="text-slate-500">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
                     </div>
                  </Grid>
 
@@ -192,7 +192,7 @@ const ROIPage: React.FC = () => {
                  <div>
                     <Stack direction="horizontal" gap={4} justify="between" className="mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Lembur (Jam/Orang/Bulan)</Typography>
-                       <Typography variant="caption" className="text-amber-400">{overtime} Jam</Typography>
+                       <Typography variant="caption" className="text-amber-400 dark:text-amber-300">{overtime} Jam</Typography>
                     </Stack>
                     <input 
                       type="range" min="0" max="100" value={overtime} 
@@ -206,7 +206,7 @@ const ROIPage: React.FC = () => {
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Estimasi Kebocoran (IDR/Tahun)</Typography>
                         <div className="relative">
-                          <span className="absolute left-4 top-3.5 text-slate-500 text-sm">Rp</span>
+                          <span className="absolute left-4 top-3.5 text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">Rp</span>
                           <input 
                             type="number" value={losses} 
                             onChange={(e) => setLosses(parseInt(e.target.value))}
@@ -218,14 +218,14 @@ const ROIPage: React.FC = () => {
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Biaya Aplikasi/Server Lama (IDR/Bulan)</Typography>
                         <div className="relative">
-                          <span className="absolute left-4 top-3.5 text-slate-500 text-sm">Rp</span>
+                          <span className="absolute left-4 top-3.5 text-slate-500 dark:text-slate-400 dark:text-slate-300 text-sm">Rp</span>
                           <input 
                             type="number" value={existingTechCost} 
                             onChange={(e) => setExistingTechCost(parseInt(e.target.value))}
                             className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                           />
                         </div>
-                        <Typography variant="body" className="text-slate-500">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</Typography>
                     </div>
                  </Stack>
 
@@ -242,14 +242,14 @@ const ROIPage: React.FC = () => {
                           className={`px-3 py-2 rounded-lg text-xs font-medium border transition-all ${
                             selectedPlanId === plan.id
                               ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-900/20'
-                              : 'bg-slate-950 border-white/10 text-slate-400 hover:bg-slate-900'
+                              : 'bg-slate-950 border-white/10 text-slate-400 dark:text-slate-300 hover:bg-slate-900'
                           }`}
                         >
                           {plan.name}
                         </button>
                       ))}
                     </Grid>
-                    <Typography variant="body" className="text-slate-500">Biaya: {formatCurrency(subscriptionCost)}/bulan</Typography>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Biaya: {formatCurrency(subscriptionCost)}/bulan</Typography>
                  </div>
               </Stack>
            </div>
@@ -262,53 +262,53 @@ const ROIPage: React.FC = () => {
                  {/* Efficiency */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-2">
-                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg group-hover:scale-110 transition-transform">
+                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-blue-500/10 text-blue-400 dark:text-blue-300 rounded-lg group-hover:scale-110 transition-transform">
                          <TrendingUp className="w-5 h-5" />
                       </Stack>
-                      <Typography variant="caption" className="text-blue-400">Soft Savings</Typography>
+                      <Typography variant="caption" className="text-blue-400 dark:text-blue-300">Soft Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
-                    <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <Typography variant="body" className="text-slate-500">Efisiensi {efficiencyRate}% dari {adminCount} staf.</Typography>
+                    <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-normal">/bln</span></div>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Efisiensi {efficiencyRate}% dari {adminCount} staf.</Typography>
                  </div>
                  
                  {/* Overtime */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-2">
-                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg group-hover:scale-110 transition-transform">
+                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-amber-500/10 text-amber-400 dark:text-amber-300 rounded-lg group-hover:scale-110 transition-transform">
                          <Clock className="w-5 h-5" />
                       </Stack>
-                      <Typography variant="caption" className="text-amber-400">Hard Savings</Typography>
+                      <Typography variant="caption" className="text-amber-400 dark:text-amber-300">Hard Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
-                    <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <Typography variant="body" className="text-slate-500">Mengurangi 90% lembur manual.</Typography>
+                    <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-normal">/bln</span></div>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Mengurangi 90% lembur manual.</Typography>
                  </div>
 
                  {/* Fraud */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-2">
-                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg group-hover:scale-110 transition-transform">
+                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-red-500/10 text-red-400 dark:text-red-300 rounded-lg group-hover:scale-110 transition-transform">
                          <AlertTriangle className="w-5 h-5" />
                       </Stack>
-                      <Typography variant="caption" className="text-red-400">Risk Avoidance</Typography>
+                      <Typography variant="caption" className="text-red-400 dark:text-red-300">Risk Avoidance</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Loss Prevention</Typography>
-                    <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <Typography variant="body" className="text-slate-500">Mengurangi 80% risiko kebocoran.</Typography>
+                    <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-normal">/bln</span></div>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Mengurangi 80% risiko kebocoran.</Typography>
                  </div>
 
                  {/* Tech Cost Savings (New) */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-2">
-                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg group-hover:scale-110 transition-transform">
+                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-purple-500/10 text-purple-400 dark:text-purple-300 rounded-lg group-hover:scale-110 transition-transform">
                          <Database className="w-5 h-5" />
                       </Stack>
-                      <Typography variant="caption" className="text-purple-400">Hard Savings</Typography>
+                      <Typography variant="caption" className="text-purple-400 dark:text-purple-300">Hard Savings</Typography>
                     </Stack>
                     <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
-                    <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <Typography variant="body" className="text-slate-500">Biaya sistem lama yang dihapus.</Typography>
+                    <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-normal">/bln</span></div>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Biaya sistem lama yang dihapus.</Typography>
                  </div>
               </Grid>
 
@@ -317,7 +317,7 @@ const ROIPage: React.FC = () => {
                  <Stack direction="vertical" gap={8} className="relative z-10 justify-between items-center">
                     <Stack direction="horizontal" gap={4}>
                        <Typography variant="h2" as="h2">Total Penghematan Tahunan</Typography>
-                       <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                       <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
                           {formatCompactCurrency(annualSavings)}
                        </div>
                        
@@ -326,14 +326,14 @@ const ROIPage: React.FC = () => {
                              <div className="p-1 bg-emerald-500 rounded-full text-black"><TrendingUp className="w-3 h-3" /></div>
                              <div className="text-left">
                                <div className="text-xs text-emerald-300 font-medium">ROI Year 1</div>
-                               <div className="text-lg font-bold text-emerald-400">{roiPercentage.toFixed(0)}%</div>
+                               <div className="text-lg font-bold text-emerald-400 dark:text-emerald-300">{roiPercentage.toFixed(0)}%</div>
                              </div>
                           </Stack>
                           <Stack direction="horizontal" gap={3} align="center" className="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl">
                              <div className="p-1 bg-blue-500 rounded-full text-white"><Clock className="w-3 h-3" /></div>
                              <div className="text-left">
                                <div className="text-xs text-blue-300 font-medium">Break Even</div>
-                               <div className="text-lg font-bold text-blue-400">{paybackMonths < 1 ? "< 1 Bulan" : `${paybackMonths.toFixed(1)} Bulan`}</div>
+                               <div className="text-lg font-bold text-blue-400 dark:text-blue-300">{paybackMonths < 1 ? "< 1 Bulan" : `${paybackMonths.toFixed(1)} Bulan`}</div>
                              </div>
                           </Stack>
                        </Stack>
@@ -364,12 +364,12 @@ const ROIPage: React.FC = () => {
 
               {/* Disclaimer */}
               <Stack direction="horizontal" gap={4} align="start" className="bg-slate-900/30 p-6 rounded-2xl border border-white/5">
-                  <div className="mt-1 p-2 bg-slate-800 rounded-lg text-slate-400">
+                  <div className="mt-1 p-2 bg-slate-800 rounded-lg text-slate-400 dark:text-slate-300">
                      <AlertTriangle className="w-4 h-4" />
                   </div>
                   <div>
                      <Typography variant="h4" as="h4">Catatan Analis</Typography>
-                     <Typography variant="caption" className="text-slate-500 leading-relaxed">Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.</Typography>
                   </div>
               </Stack>
 
@@ -388,24 +388,24 @@ const ROIPage: React.FC = () => {
               >
                 <button 
                   onClick={() => setShowLeadForm(false)}
-                  className="absolute top-4 right-4 text-slate-500 hover:text-white"
+                  className="absolute top-4 right-4 text-slate-500 dark:text-slate-400 dark:text-slate-300 hover:text-white"
                 >
                   ✕
                 </button>
                 
                 <div className="text-center mb-6">
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl mx-auto mb-4">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/10 text-emerald-400 dark:text-emerald-300 rounded-xl mx-auto mb-4">
                     <FileText className="w-6 h-6" />
                   </Stack>
                   <Typography variant="h3" as="h3">Simpan Kalkulasi ROI</Typography>
-                  <Typography variant="caption" className="text-slate-400">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</Typography>
+                  <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</Typography>
                 </div>
 
                 <form onSubmit={handleLeadSubmit} className="space-y-4">
                   <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Nama Lengkap</Typography>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Nama Lengkap</Typography>
                     <div className="relative">
-                      <User className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                      <User className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
                       <input 
                         required
                         type="text" 
@@ -417,9 +417,9 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Perusahaan</Typography>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Perusahaan</Typography>
                     <div className="relative">
-                      <Building2 className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                      <Building2 className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
                       <input 
                         required
                         type="text" 
@@ -431,9 +431,9 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Email Bisnis</Typography>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Email Bisnis</Typography>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                      <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
                       <input 
                         required
                         type="email" 
@@ -445,9 +445,9 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">WhatsApp</Typography>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">WhatsApp</Typography>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                      <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
                       <input 
                         type="tel" 
                         value={leadData.phone}

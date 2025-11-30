@@ -26,7 +26,7 @@ const ManagedServicesPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <Section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-white dark:bg-slate-900">
+      <Section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-white dark:bg-slate-900 py-16 md:py-24">
          {/* Background Elements */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[100px] animate-pulse-slow"></div>
@@ -56,7 +56,7 @@ const ManagedServicesPage: React.FC = () => {
                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">Head Office.</span>
                   </motion.h1>
                   
-                  <motion.p variants={FADE_UP_VARIANTS} className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  <motion.p variants={FADE_UP_VARIANTS} className="text-lg md:text-xl text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                      Fokus pada inti bisnis Anda. Biarkan jaringan ahli kami menangani operasional pendukung—Finance, HR, Legal, hingga IT—dengan standar kelas dunia.
                   </motion.p>
                   
@@ -85,10 +85,10 @@ const ManagedServicesPage: React.FC = () => {
                      
                      {/* Orbiting Services */}
                      {[
-                        { icon: DollarSign, bg: 'bg-green-100 dark:bg-green-900/30', text: 'Finance', color: 'text-green-600 dark:text-green-400', pos: 'top-0 left-1/2 -translate-x-1/2' },
-                        { icon: Users, bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'HR & Talent', color: 'text-blue-600 dark:text-blue-400', pos: 'top-1/2 right-0 -translate-y-1/2' },
-                        { icon: ShieldCheck, bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'Legal', color: 'text-purple-600 dark:text-purple-400', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
-                        { icon: Laptop, bg: 'bg-orange-100 dark:bg-orange-900/30', text: 'IT Managed', color: 'text-orange-600 dark:text-orange-400', pos: 'top-1/2 left-0 -translate-y-1/2' },
+                        { icon: DollarSign, bg: 'bg-green-100 dark:bg-green-900/30', text: 'Finance', color: 'text-green-600 dark:text-green-400 dark:text-green-300', pos: 'top-0 left-1/2 -translate-x-1/2' },
+                        { icon: Users, bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'HR & Talent', color: 'text-blue-600 dark:text-blue-400 dark:text-blue-300', pos: 'top-1/2 right-0 -translate-y-1/2' },
+                        { icon: ShieldCheck, bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'Legal', color: 'text-purple-600 dark:text-purple-400 dark:text-purple-300', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
+                        { icon: Laptop, bg: 'bg-orange-100 dark:bg-orange-900/30', text: 'IT Managed', color: 'text-orange-600 dark:text-orange-400 dark:text-orange-300', pos: 'top-1/2 left-0 -translate-y-1/2' },
                      ].map((item, idx) => (
                         <div key={idx} className={`absolute ${item.pos} w-24 h-24 flex flex-col items-center justify-center gap-2 animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
                            <div className={`w-14 h-14 ${item.bg} rounded-2xl flex items-center justify-center shadow-lg`}>
@@ -112,17 +112,17 @@ const ManagedServicesPage: React.FC = () => {
       <Section className="bg-slate-50 dark:bg-slate-950 py-20">
          <Container size="4xl" className="text-center mb-16">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Operations is Distracting.</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO seharusnya fokus pada Strategi, Inovasi, dan Pertumbuhan. Bukan terjebak mengurus laporan pajak bulanan, rekrutmen staff admin, atau maintenance server.</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">CEO seharusnya fokus pada Strategi, Inovasi, dan Pertumbuhan. Bukan terjebak mengurus laporan pajak bulanan, rekrutmen staff admin, atau maintenance server.</Typography>
          </Container>
 
          {/* Mobile Slider (< md) */}
          <div className="md:hidden">
             <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                {[
-                  { title: "Finance & Tax", desc: "Virtual CFO, Bookkeeping, Tax Planning & Reporting.", icon: DollarSign, color: "text-green-500" },
-                  { title: "HR & Payroll", desc: "Talent Acquisition, Payroll Processing, Compliance.", icon: Users, color: "text-blue-500" },
-                  { title: "Legal & Corporate", desc: "Legal Drafting, Licensing, Corporate Secretary.", icon: ShieldCheck, color: "text-purple-500" },
-                  { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500" },
+                  { title: "Finance & Tax", desc: "Virtual CFO, Bookkeeping, Tax Planning & Reporting.", icon: DollarSign, color: "text-green-500 dark:text-green-400 dark:text-green-300" },
+                  { title: "HR & Payroll", desc: "Talent Acquisition, Payroll Processing, Compliance.", icon: Users, color: "text-blue-500 dark:text-blue-400 dark:text-blue-300" },
+                  { title: "Legal & Corporate", desc: "Legal Drafting, Licensing, Corporate Secretary.", icon: ShieldCheck, color: "text-purple-500 dark:text-purple-400 dark:text-purple-300" },
+                  { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500 dark:text-orange-400 dark:text-orange-300" },
                ].map((service, idx) => (
                   <div key={idx} className="h-full">
                      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 h-full flex flex-col gap-4">
@@ -130,7 +130,7 @@ const ManagedServicesPage: React.FC = () => {
                            <service.icon className="w-7 h-7" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.desc}</Typography>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{service.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -140,17 +140,17 @@ const ManagedServicesPage: React.FC = () => {
          {/* Desktop Grid (>= md) */}
          <Container size="7xl" className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 md:px-6">
             {[
-               { title: "Finance & Tax", desc: "Virtual CFO, Bookkeeping, Tax Planning & Reporting.", icon: DollarSign, color: "text-green-500" },
-               { title: "HR & Payroll", desc: "Talent Acquisition, Payroll Processing, Compliance.", icon: Users, color: "text-blue-500" },
-               { title: "Legal & Corporate", desc: "Legal Drafting, Licensing, Corporate Secretary.", icon: ShieldCheck, color: "text-purple-500" },
-               { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500" },
+               { title: "Finance & Tax", desc: "Virtual CFO, Bookkeeping, Tax Planning & Reporting.", icon: DollarSign, color: "text-green-500 dark:text-green-400 dark:text-green-300" },
+               { title: "HR & Payroll", desc: "Talent Acquisition, Payroll Processing, Compliance.", icon: Users, color: "text-blue-500 dark:text-blue-400 dark:text-blue-300" },
+               { title: "Legal & Corporate", desc: "Legal Drafting, Licensing, Corporate Secretary.", icon: ShieldCheck, color: "text-purple-500 dark:text-purple-400 dark:text-purple-300" },
+               { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500 dark:text-orange-400 dark:text-orange-300" },
             ].map((service, idx) => (
                <div key={idx} className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                   <div className={`w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 ${service.color}`}>
                      <service.icon className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.desc}</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{service.desc}</Typography>
                </div>
             ))}
          </Container>
@@ -163,7 +163,7 @@ const ManagedServicesPage: React.FC = () => {
                <div>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Powered by <br/>
                      <span className="text-primary-600">Vetted Expert Network</span></Typography>
-                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami tidak bekerja sendirian. BizOps bermitra dengan firma konsultan top-tier yang telah melalui proses kurasi ketat. Anda mendapatkan kualitas Big 4 dengan fleksibilitas startup.</Typography>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami tidak bekerja sendirian. BizOps bermitra dengan firma konsultan top-tier yang telah melalui proses kurasi ketat. Anda mendapatkan kualitas Big 4 dengan fleksibilitas startup.</Typography>
                   
                   <ul className="space-y-4 mb-10">
                      {[
@@ -173,7 +173,7 @@ const ManagedServicesPage: React.FC = () => {
                         "Certified Ethical Hackers & DevOps"
                      ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3">
-                           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 gap-4" />
+                           <CheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4" />
                            <span className="text-slate-700 dark:text-slate-300 font-medium">{item}</span>
                         </li>
                      ))}
@@ -195,16 +195,16 @@ const ManagedServicesPage: React.FC = () => {
                             { name: "Legal Corp", type: "Legal Partner", logo: "Briefcase" },
                          ].map((partner, idx) => (
                             <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm text-center border border-slate-100 dark:border-slate-800">
-                               <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 gap-4">
+                               <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 dark:text-slate-300 gap-4">
                                   <Handshake className="w-6 h-6" />
                                </div>
                                <div className="font-bold text-slate-900 dark:text-white text-sm">{partner.name}</div>
-                               <div className="text-xs text-slate-500">{partner.type}</div>
+                               <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">{partner.type}</div>
                             </div>
                          ))}
                       </Grid>
                       <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
-                         <Typography variant="caption" className="text-slate-500">Ingin bergabung sebagai partner ahli?</Typography>
+                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Ingin bergabung sebagai partner ahli?</Typography>
                          <Link to="/partners" className="text-primary-600 font-bold hover:underline">
                             Daftar Partner Network →
                          </Link>
@@ -219,7 +219,7 @@ const ManagedServicesPage: React.FC = () => {
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
          <Container size="7xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Siap Meng-upgrade Operasional Anda?</Typography>
-            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">

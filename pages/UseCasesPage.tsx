@@ -142,7 +142,7 @@ const UseCasesPage: React.FC = () => {
              transition={{ duration: 0.6 }}
              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm mx-auto"
            >
-              <BookOpen className="w-3.5 h-3.5 text-blue-400" />
+              <BookOpen className="w-3.5 h-3.5 text-blue-400 dark:text-blue-300" />
               <Typography variant="caption" className="text-blue-300">Case Studies Library</Typography>
            </motion.div>
            
@@ -162,7 +162,7 @@ const UseCasesPage: React.FC = () => {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.6, delay: 0.2 }}
-             className="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto font-light"
+             className="text-xl text-slate-400 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-light"
            >
               Jelajahi koleksi implementasi strategis BizOps di berbagai industri. Temukan solusi yang relevan untuk tantangan bisnis Anda.
            </motion.p>
@@ -170,7 +170,7 @@ const UseCasesPage: React.FC = () => {
       </div>
 
       {/* Main Content with Sidebar Layout */}
-      <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32" id="case-grid">
+      <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32 py-16 md:py-24" id="case-grid">
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="vertical" gap={12}>
                
@@ -180,7 +180,7 @@ const UseCasesPage: React.FC = () => {
                      
                      {/* Filter by Category/Function */}
                      <div>
-                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Solution Type</Typography>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 tracking-wider"><Layers className="w-3.5 h-3.5" /> Solution Type</Typography>
                         <Stack direction="vertical" gap={1}>
                            {categories.map((cat) => (
                               <button
@@ -190,7 +190,7 @@ const UseCasesPage: React.FC = () => {
                                     w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex justify-between items-center group
                                     ${selectedCategory === cat 
                                        ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-md ring-1 ring-slate-200 dark:ring-slate-700' 
-                                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
+                                       : 'text-slate-600 dark:text-slate-400 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
                                  `}
                               >
                                  <span>{cat}</span>
@@ -198,7 +198,7 @@ const UseCasesPage: React.FC = () => {
                                     text-xs px-2 py-0.5 rounded-md transition-colors
                                     ${selectedCategory === cat 
                                        ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300' 
-                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
+                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
                                  `}>
                                     {getCategoryCount(cat)}
                                  </span>
@@ -211,7 +211,7 @@ const UseCasesPage: React.FC = () => {
 
                      {/* Filter by Industry */}
                      <div>
-                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Briefcase className="w-3.5 h-3.5" /> Industry</Typography>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 tracking-wider"><Briefcase className="w-3.5 h-3.5" /> Industry</Typography>
                         <Stack direction="vertical" gap={1} className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
                            {industries.map((ind) => (
                               <button
@@ -221,7 +221,7 @@ const UseCasesPage: React.FC = () => {
                                     w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex justify-between items-center group
                                     ${selectedIndustry === ind 
                                        ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-md ring-1 ring-slate-200 dark:ring-slate-700' 
-                                       : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
+                                       : 'text-slate-600 dark:text-slate-400 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'}
                                  `}
                               >
                                  <span className="truncate pr-2">{ind}</span>
@@ -229,7 +229,7 @@ const UseCasesPage: React.FC = () => {
                                     text-xs px-2 py-0.5 rounded-md flex-shrink-0 transition-colors
                                     ${selectedIndustry === ind 
                                        ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300' 
-                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
+                                       : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:bg-slate-200 dark:group-hover:bg-slate-700'}
                                  `}>
                                     {getIndustryCount(ind)}
                                  </span>
@@ -242,7 +242,7 @@ const UseCasesPage: React.FC = () => {
                      <div className="bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 rounded-3xl p-6 text-white text-center shadow-xl border border-slate-700/50 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-500/20 transition-all duration-500"></div>
                         <Typography variant="h4" as="h4">Custom Solution?</Typography>
-                        <Typography variant="caption" className="text-slate-400">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</Typography>
+                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</Typography>
                         <Link to="/contact" className="relative z-10">
                            <Button size="sm" className="w-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">
                               Konsultasi Gratis
@@ -265,7 +265,7 @@ const UseCasesPage: React.FC = () => {
                                  px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border
                                  ${selectedCategory === cat 
                                     ? 'bg-primary-600 text-white border-primary-600 shadow-md' 
-                                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700'}
+                                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 border-slate-200 dark:border-slate-700'}
                               `}
                            >
                               {cat}
@@ -283,8 +283,8 @@ const UseCasesPage: React.FC = () => {
                               className={`
                                  px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border
                                  ${selectedIndustry === ind 
-                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 border-slate-900 dark:border-white shadow-md' 
-                                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700'}
+                                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 dark:text-white border-slate-900 dark:border-white shadow-md' 
+                                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 border-slate-200 dark:border-slate-700'}
                            `}
                            >
                               {ind}
@@ -302,7 +302,7 @@ const UseCasesPage: React.FC = () => {
                      <div className="relative group max-w-lg">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
                         <div className="relative bg-white dark:bg-slate-900 rounded-xl flex items-center border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors gap-4">
-                           <Search className="absolute left-4 w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
+                           <Search className="absolute left-4 w-5 h-5 text-slate-400 dark:text-slate-300 group-focus-within:text-blue-500 dark:text-blue-400 dark:text-blue-300 transition-colors" />
                            <input 
                               type="text" 
                               placeholder="Cari solusi atau masalah (e.g. Inventory)..." 
@@ -311,7 +311,7 @@ const UseCasesPage: React.FC = () => {
                               className="w-full pl-12 pr-4 py-3 rounded-xl bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-sm font-medium"
                            />
                            {searchQuery && (
-                              <button onClick={() => setSearchQuery('')} className="absolute right-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+                              <button onClick={() => setSearchQuery('')} className="absolute right-3 text-slate-400 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-300">
                                  <X className="w-4 h-4" />
                               </button>
                            )}
@@ -325,7 +325,7 @@ const UseCasesPage: React.FC = () => {
                         {(searchQuery || selectedIndustry !== 'All' || selectedCategory !== 'All') && (
                            <button 
                               onClick={clearFilters}
-                              className="text-xs font-bold text-red-500 hover:text-red-600 flex items-center gap-1.5 bg-red-50 dark:bg-red-900/20 px-3 py-1.5 rounded-lg transition-colors hover:bg-red-100 dark:hover:bg-red-900/30"
+                              className="text-xs font-bold text-red-500 hover:text-red-600 dark:text-slate-300 flex items-center gap-1.5 bg-red-50 dark:bg-red-900/20 px-3 py-1.5 rounded-lg transition-colors hover:bg-red-100 dark:hover:bg-red-900/30"
                            >
                               <X className="w-3.5 h-3.5" /> Clear All Filters
                            </button>
@@ -335,11 +335,11 @@ const UseCasesPage: React.FC = () => {
 
                   {filteredCases.length === 0 ? (
                      <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-300 dark:border-slate-700">
-                        <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400 gap-4">
+                        <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400 dark:text-slate-300 gap-4">
                            <Search className="w-10 h-10" />
                         </div>
                         <Typography variant="h3" as="h3">No Results Found</Typography>
-                        <Typography variant="body" className="text-slate-500 dark:text-slate-400">We couldn't find any case studies matching your current filters. Try adjusting your search criteria.</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">We couldn't find any case studies matching your current filters. Try adjusting your search criteria.</Typography>
                         <Button variant="outline" onClick={clearFilters}>
                            Clear Filters
                         </Button>
@@ -367,7 +367,7 @@ const UseCasesPage: React.FC = () => {
                                                 <item.icon className="w-7 h-7" />
                                              </div>
                                              <Stack direction="vertical" gap={2} className="items-end">
-                                                <span className="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider border border-slate-200 dark:border-slate-700">
+                                                <span className="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider border border-slate-200 dark:border-slate-700">
                                                    {item.industry}
                                                 </span>
                                                 <span className="text-[10px] font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2.5 py-0.5 rounded-full border border-primary-100 dark:border-primary-900/30">
@@ -377,9 +377,9 @@ const UseCasesPage: React.FC = () => {
                                           </div>
                                           
                                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 leading-tight">{item.title}</Typography>
-                                          <Typography variant="body" className="text-slate-400 dark:text-slate-500 tracking-wide">{item.subtitle}</Typography>
+                                          <Typography variant="body" className="text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-300 tracking-wide">{item.subtitle}</Typography>
                                           <div className="h-px w-10 bg-slate-200 dark:bg-slate-700 mb-4"></div>
-                                          <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
+                                          <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{item.challenge}</Typography>
 
                                           <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800 gap-4">
                                              Read Full Story <ArrowRight className="w-4 h-4 ml-2 text-primary-500" />

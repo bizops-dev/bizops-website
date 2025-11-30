@@ -73,7 +73,7 @@ const StartupProgramPage: React.FC = () => {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ delay: 0.5 }}
-            className="mt-8 text-sm text-slate-500 font-medium"
+            className="mt-8 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium"
           >
             Trusted by 500+ High-Growth Startups in Indonesia
           </motion.p>
@@ -99,36 +99,36 @@ const StartupProgramPage: React.FC = () => {
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">More Than Just Free Credits</Typography>
-               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</Typography>
             </div>
 
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {/* Card 1 */}
                   <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col gap-4">
-                     <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                     <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                         <DollarSign className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
-                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
                   </div>
 
                   {/* Card 2 */}
                   <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col gap-4">
-                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                         <Code className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Technical Mentorship</Typography>
-                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
                   </div>
 
                   {/* Card 3 */}
                   <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col gap-4">
-                     <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                     <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                         <Users className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Founder Community</Typography>
-                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -136,29 +136,29 @@ const StartupProgramPage: React.FC = () => {
             <Grid cols={3} gap={8} className="hidden">
                {/* Card 1 */}
                <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col gap-4">
-                  <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                  <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                      <DollarSign className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
                </div>
 
                {/* Card 2 */}
                <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col gap-4">
-                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                      <Code className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Technical Mentorship</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
                </div>
 
                {/* Card 3 */}
                <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col gap-4">
-                  <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
+                  <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-slate-300 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 gap-4">
                      <Users className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Founder Community</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                </div>
             </Grid>
          </Container>
@@ -173,7 +173,7 @@ const StartupProgramPage: React.FC = () => {
                      The Scaling Trap
                   </div>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.</Typography>
-                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
                   
                   <Stack direction="vertical" gap={8}>
                      <div className="flex gap-5">
@@ -182,7 +182,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Investor-Ready Reports</Typography>
-                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.</Typography>
+                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-5">
@@ -191,7 +191,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Enterprise-Grade Compliance</Typography>
-                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.</Typography>
+                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.</Typography>
                         </div>
                      </div>
                   </Stack>
@@ -209,27 +209,27 @@ const StartupProgramPage: React.FC = () => {
                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
-                        <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
+                        <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-300">dashboard.bizops.id</div>
                      </div>
                      {/* Mockup Content */}
                      <Stack direction="vertical" gap={6}>
                         <Grid cols={2} gap={4}>
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                              <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Runway</div>
+                              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-2 uppercase tracking-wider font-bold">Runway</div>
                               <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">18 Mo</div>
-                              <div className="text-xs text-green-500 font-bold flex items-center gap-1"><TrendingUp className="w-3 h-3" /> Healthy</div>
+                              <div className="text-xs text-green-500 dark:text-green-400 dark:text-green-300 font-bold flex items-center gap-1"><TrendingUp className="w-3 h-3" /> Healthy</div>
                            </div>
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                              <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Monthly Burn</div>
+                              <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 mb-2 uppercase tracking-wider font-bold">Monthly Burn</div>
                               <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">$12k</div>
-                              <div className="text-xs text-green-500 font-bold bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full w-fit">-5% vs Last Mo</div>
+                              <div className="text-xs text-green-500 dark:text-green-400 dark:text-green-300 font-bold bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full w-fit">-5% vs Last Mo</div>
                            </div>
                         </Grid>
                         
                         <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                            <div className="flex justify-between items-end mb-4 gap-4">
                               <div className="text-sm font-bold text-slate-700 dark:text-slate-300">Revenue Growth (MRR)</div>
-                              <div className="text-xs text-slate-400">Last 6 Months</div>
+                              <div className="text-xs text-slate-400 dark:text-slate-300">Last 6 Months</div>
                            </div>
                            <div className="h-32 flex items-end justify-between gap-3">
                               {[30, 45, 40, 60, 55, 85, 70, 95].map((h, i) => (
@@ -257,7 +257,7 @@ const StartupProgramPage: React.FC = () => {
                   Eligibility Criteria
                </div>
                <Typography variant="h2" as="h2">Choose Your Growth Track</Typography>
-               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Program kami disesuaikan dengan fase pertumbuhan startup Anda. Dari ide di garasi hingga ekspansi regional.</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Program kami disesuaikan dengan fase pertumbuhan startup Anda. Dari ide di garasi hingga ekspansi regional.</Typography>
             </div>
             
             <div className="md:hidden">
@@ -267,19 +267,19 @@ const StartupProgramPage: React.FC = () => {
                      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                      
                      <div className="flex items-center gap-5 mb-10">
-                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner gap-4">
+                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 dark:text-blue-300 shadow-inner gap-4">
                            <Zap className="w-8 h-8" />
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Bootstrap</Typography>
-                           <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Pre-Seed / Angel Round</Typography>
                         </div>
                      </div>
                      
                      <div className="mb-10 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
                         <div className="flex items-baseline gap-2 mb-2">
-                           <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
-                           <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
+                           <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">90%</span>
+                           <span className="text-xl font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">OFF</span>
                         </div>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                      </div>
@@ -287,26 +287,26 @@ const StartupProgramPage: React.FC = () => {
                      <Stack direction="vertical" gap={5} className="mb-12 flex-grow gap-4">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
                         </div>
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
                         </div>
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
                         </div>
                      </Stack>
                      
                      <Link to="/partners/apply?track=bootstrap" className="mt-auto">
-                        <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
+                        <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
                            Apply Bootstrap Track
                         </Button>
                      </Link>
@@ -329,8 +329,8 @@ const StartupProgramPage: React.FC = () => {
                      
                      <div className="mb-10 p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
                         <div className="flex items-baseline gap-2 mb-2">
-                           <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
-                           <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
+                           <span className="text-5xl font-extrabold text-white tracking-tight leading-tight">50%</span>
+                           <span className="text-xl font-bold text-slate-400 dark:text-slate-300 uppercase">OFF</span>
                         </div>
                         <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                      </div>
@@ -338,19 +338,19 @@ const StartupProgramPage: React.FC = () => {
                      <Stack direction="vertical" gap={5} className="mb-12 flex-grow gap-4">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                              <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                            </div>
                            <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
                         </div>
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                              <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                            </div>
                            <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
                         </div>
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                              <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                            </div>
                            <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
                         </div>
@@ -371,19 +371,19 @@ const StartupProgramPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                   
                   <div className="flex items-center gap-5 mb-10">
-                     <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner gap-4">
+                     <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 dark:text-blue-300 shadow-inner gap-4">
                         <Zap className="w-8 h-8" />
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Bootstrap</Typography>
-                        <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Pre-Seed / Angel Round</Typography>
                      </div>
                   </div>
                   
                   <div className="mb-10 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
                      <div className="flex items-baseline gap-2 mb-2">
-                        <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
-                        <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
+                        <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">90%</span>
+                        <span className="text-xl font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">OFF</span>
                      </div>
                      <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                   </div>
@@ -391,26 +391,26 @@ const StartupProgramPage: React.FC = () => {
                   <Stack direction="vertical" gap={5} className="mb-12 flex-grow gap-4">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
                      </div>
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
                      </div>
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400 dark:text-blue-300" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
                      </div>
                   </Stack>
                   
                   <Link to="/partners/apply?track=bootstrap" className="mt-auto">
-                     <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
+                     <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 dark:text-slate-300 transition-all">
                         Apply Bootstrap Track
                      </Button>
                   </Link>
@@ -433,8 +433,8 @@ const StartupProgramPage: React.FC = () => {
                   
                   <div className="mb-10 p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
                      <div className="flex items-baseline gap-2 mb-2">
-                        <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
-                        <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
+                        <span className="text-5xl font-extrabold text-white tracking-tight leading-tight">50%</span>
+                        <span className="text-xl font-bold text-slate-400 dark:text-slate-300 uppercase">OFF</span>
                      </div>
                      <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                   </div>
@@ -442,19 +442,19 @@ const StartupProgramPage: React.FC = () => {
                   <Stack direction="vertical" gap={5} className="mb-12 flex-grow gap-4">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-purple-400" />
+                           <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                         </div>
                         <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
                      </div>
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-purple-400" />
+                           <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                         </div>
                         <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
                      </div>
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 gap-4">
-                           <CheckCircle className="w-4 h-4 text-purple-400" />
+                           <CheckCircle className="w-4 h-4 text-purple-400 dark:text-purple-300" />
                         </div>
                         <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
                      </div>
@@ -478,26 +478,26 @@ const StartupProgramPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
                   <div className="flex flex-col items-center group h-full gap-4">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10 gap-4">1</div>
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 z-10 gap-4">1</div>
                      <Typography variant="h3" as="h3">Submit Form</Typography>
-                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full gap-4">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10 gap-4">2</div>
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 delay-100 z-10 gap-4">2</div>
                      <Typography variant="h3" as="h3">Verification</Typography>
-                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full gap-4">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10 gap-4">3</div>
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 delay-200 z-10 gap-4">3</div>
                      <Typography variant="h3" as="h3">Approval</Typography>
-                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full gap-4">
-                     <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10 gap-4">
+                     <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 dark:text-emerald-300 shadow-lg shadow-emerald-500/20 z-10 gap-4">
                         <CheckCircle className="w-8 h-8" />
                      </div>
                      <Typography variant="h3" as="h3">Onboarding</Typography>
-                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -507,26 +507,26 @@ const StartupProgramPage: React.FC = () => {
                <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
 
                <div className="flex flex-col items-center group h-full gap-4">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10 gap-4">1</div>
+                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 z-10 gap-4">1</div>
                   <Typography variant="h3" as="h3">Submit Form</Typography>
-                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                </div>
                <div className="flex flex-col items-center group h-full gap-4">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10 gap-4">2</div>
+                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 delay-100 z-10 gap-4">2</div>
                   <Typography variant="h3" as="h3">Verification</Typography>
-                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                </div>
                <div className="flex flex-col items-center group h-full gap-4">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10 gap-4">3</div>
+                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 dark:text-slate-300 group-hover:border-purple-500 group-hover:text-purple-500 dark:text-purple-400 dark:text-purple-300 transition-colors duration-500 delay-200 z-10 gap-4">3</div>
                   <Typography variant="h3" as="h3">Approval</Typography>
-                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                </div>
                <div className="flex flex-col items-center group h-full gap-4">
-                  <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10 gap-4">
+                  <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 dark:text-emerald-300 shadow-lg shadow-emerald-500/20 z-10 gap-4">
                      <CheckCircle className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Onboarding</Typography>
-                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                </div>
             </Grid>
          </Container>
@@ -585,7 +585,7 @@ const FAQAccordion: React.FC<{ question: string; answer: string }> = ({ question
             className="w-full px-6 py-5 flex justify-between items-center text-left gap-4"
          >
             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{question}</Typography>
-            <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
+            <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300'}`}>
                {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
             </div>
          </button>
@@ -598,7 +598,7 @@ const FAQAccordion: React.FC<{ question: string; answer: string }> = ({ question
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                >
-                  <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
+                  <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
                      {answer}
                   </div>
                </motion.div>

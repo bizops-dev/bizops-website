@@ -30,12 +30,12 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         className="w-full flex items-center justify-between py-6 text-left focus:outline-none group gap-4"
       >
         <Typography variant="body-lg" className="text-slate-900 dark:text-white group-hover:text-primary-600">{question}</Typography>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30'}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30'}`}>
            <ChevronRight className="w-5 h-5" />
         </div>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{answer}</Typography>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{answer}</Typography>
       </div>
     </div>
   );
@@ -54,7 +54,7 @@ const IndustryPage: React.FC = () => {
       <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
         <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
-        <Typography variant="body" className="text-slate-600 dark:text-slate-400">The solution you are looking for does not exist or has been moved.</Typography>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">The solution you are looking for does not exist or has been moved.</Typography>
         <Link to="/solutions"><Button>Back to Solutions</Button></Link>
       </Stack>
     );
@@ -117,7 +117,7 @@ const IndustryPage: React.FC = () => {
                <Stack direction="horizontal" gap={2} align="center" justify="center" className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
                   <span>Industry Solution</span>
-                  <span className="text-slate-500 mx-1">/</span>
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 mx-1">/</span>
                   <span className="text-white">{data.title}</span>
                </Stack>
             </motion.div>
@@ -131,7 +131,7 @@ const IndustryPage: React.FC = () => {
                initial="hidden"
                animate="visible"
                transition={{ delay: 0.4 }}
-               className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+               className="text-lg md:text-2xl text-slate-400 dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
             >
                {data.description}
             </motion.p>
@@ -196,11 +196,11 @@ const IndustryPage: React.FC = () => {
                                  <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
                                </div>
                              ) : (
-                               <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-2 group-hover:scale-110 transition-transform duration-300">
+                               <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-2 group-hover:scale-110 transition-transform duration-300 leading-tight">
                                   {metric.value}
                                </div>
                              )}
-                             {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-2">{metric.label}</div>}
+                             {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider mt-2">{metric.label}</div>}
                           </Stack>
                        </motion.div>
                      );
@@ -218,11 +218,11 @@ const IndustryPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
          
          <Container size="3xl" className="text-center mb-16 relative z-10">
-            <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
+            <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 dark:text-red-300 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
-            <Typography variant="body-lg" className="text-slate-400">Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.</Typography>
+            <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300">Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.</Typography>
          </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -236,13 +236,13 @@ const IndustryPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>
                   <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600/5 rounded-full blur-[50px] -ml-10 -mb-10 group-hover:bg-orange-600/10 transition-colors duration-500 pointer-events-none"></div>
                   
-                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 dark:text-red-300 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
                      <span className="font-bold text-xl">0{idx + 1}</span>
                   </Stack>
                   
                   <Stack direction="vertical" gap={4} className="relative z-10">
                      <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
-                     <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
+                     <Typography variant="caption" className="text-slate-400 dark:text-slate-300 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
                   </Stack>
                </motion.div>
             ))}
@@ -259,7 +259,7 @@ const IndustryPage: React.FC = () => {
               <Check className="w-3 h-3" /> The Solution
             </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.</Typography>
          </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -275,13 +275,13 @@ const IndustryPage: React.FC = () => {
                      <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 via-primary-500/0 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      
-                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 dark:text-slate-300 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
                         <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
                      </Stack>
                      
                      <Stack direction="vertical" gap={4}>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
-                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{sol.desc}</Typography>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{sol.desc}</Typography>
                      </Stack>
                   </motion.div>
                );
@@ -296,7 +296,7 @@ const IndustryPage: React.FC = () => {
       </Section>
 
       {/* 5. CASE STUDY */}
-      <Section dark className="relative overflow-hidden">
+      <Section dark className="relative overflow-hidden py-16 md:py-24">
          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-primary-900/20 to-transparent pointer-events-none"></div>
          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
          
@@ -345,11 +345,11 @@ const IndustryPage: React.FC = () => {
 
       {/* 6. FAQ */}
       {data.faqs && (
-         <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+         <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-16 md:py-24">
             <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
-                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</Typography>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-8">
                   {data.faqs.map((faq, i) => (
@@ -388,7 +388,7 @@ const IndustryPage: React.FC = () => {
 
            <Typography variant="h2" as="h2" className="font-bold text-white leading-tight tracking-tight font-sans">Siap Mendominasi Pasar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-cyan-300">{data.title}</span>?</Typography>
            
-           <Typography variant="body-xl" className="text-slate-400">Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.</Typography>
+           <Typography variant="body-xl" className="text-slate-400 dark:text-slate-300">Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.</Typography>
 
            <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
@@ -403,7 +403,7 @@ const IndustryPage: React.FC = () => {
               </Link>
            </Stack>
            
-           <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Full akses ke semua modul.</Typography>
+           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">*Free trial 14 hari. Full akses ke semua modul.</Typography>
         </Container>
       </section>
     </Stack>
