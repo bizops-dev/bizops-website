@@ -7,6 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { initMonitoring } from './utils/monitoring';
 import { reportWebVitals, logToConsole } from './utils/analytics';
 import { validateEnv, isDev } from './utils/env';
+import { initAllIntegrations } from './utils/integrations';
 
 // Validate environment variables (warns in dev, throws in prod)
 try {
@@ -22,6 +23,10 @@ try {
 
 // Initialize Sentry / Monitoring
 initMonitoring();
+
+// Initialize all third-party integrations (Analytics, Marketing, Chat, etc.)
+// Only initializes if environment variables are configured
+initAllIntegrations();
 
 // Initialize Performance Auditing (Logs to console in Dev)
 if (isDev()) {
