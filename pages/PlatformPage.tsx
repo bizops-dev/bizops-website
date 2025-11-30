@@ -353,7 +353,7 @@ const PlatformPage: React.FC = () => {
             </Stack>
          </Container>
       </Section>
-    </div>
+    </Stack>
   );
 };
 
