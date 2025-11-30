@@ -591,7 +591,7 @@ const AssessmentPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 print:gap-8 print:mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12 print:mb-6">
             
             {/* LEFT: Executive Summary & Score */}
             <div className="lg:col-span-4 space-y-6">
@@ -848,7 +848,7 @@ const AssessmentPage = () => {
            </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           
           {/* LEFT: NAVIGATION SIDEBAR */}
           <div className="hidden lg:block lg:col-span-4 xl:col-span-3">

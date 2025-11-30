@@ -356,7 +356,7 @@ const UseCaseDetailPage: React.FC = () => {
       <div className="relative z-20 bg-white dark:bg-slate-950 rounded-t-[3rem] -mt-20 shadow-[0_-20px_60px_rgba(0,0,0,0.3)] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             
             {/* LEFT CONTENT (Story) */}
             <div className="lg:col-span-7 space-y-20">

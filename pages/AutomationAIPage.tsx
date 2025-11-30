@@ -32,7 +32,7 @@ const AutomationAIPage: React.FC = () => {
       {/* Workflow Automation */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
                <div>
                   <Typography variant="h2" as="h2">Workflow Automation (No-Code Logic)</Typography>
                   <div className="space-y-8">

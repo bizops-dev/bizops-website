@@ -154,7 +154,7 @@ const SitemapPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sitemapData.map((section, idx) => (
             <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 bg-white dark:bg-slate-900">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${section.color}`}>

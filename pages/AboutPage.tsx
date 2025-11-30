@@ -103,7 +103,7 @@ const AboutPage: React.FC = () => {
 
       {/* --- ORIGIN STORY TIMELINE (Refined) --- */}
       <section className="py-24 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 md:mb-24">
                <Typography variant="h2" as="h2">Our Origin Story</Typography>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
@@ -304,7 +304,7 @@ const AboutPage: React.FC = () => {
       {/* --- COMPANY INFO (Split Layout) --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-stretch">
                <div>
                   <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-10 flex items-center gap-4">
                      <Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity

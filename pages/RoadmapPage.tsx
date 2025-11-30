@@ -207,7 +207,7 @@ const RoadmapPage: React.FC = () => {
 
               {/* MAIN CONTENT - KANBAN */}
               <div className="flex-1 min-w-0">
-                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {roadmapData.map((column, idx) => (
                        <div key={idx} className="flex flex-col h-full bg-slate-100/50 dark:bg-slate-900/30 rounded-2xl p-2 border border-slate-200/50 dark:border-slate-800/50">
                           {/* Column Header */}

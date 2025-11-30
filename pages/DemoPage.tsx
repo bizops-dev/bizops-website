@@ -130,7 +130,7 @@ const DemoPage: React.FC = () => {
          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
               
               {/* Left: Value Proposition */}
               <div className="lg:col-span-5 flex flex-col justify-center">

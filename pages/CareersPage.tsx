@@ -19,7 +19,7 @@ const CareersPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="max-w-5xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
              <Globe className="w-3 h-3" /> Part of Divistant Ecosystem
           </div>
@@ -42,7 +42,7 @@ const CareersPage: React.FC = () => {
 
       {/* --- PHOTO GRID (CULTURE SNAPSHOT) --- */}
       <div className="bg-[#0F172A] pb-24 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
                <div className="bg-slate-800 rounded-3xl overflow-hidden relative group">
                   <OptimizedImage src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
@@ -136,7 +136,7 @@ const CareersPage: React.FC = () => {
 
       {/* --- BENEFITS / PERKS --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Typography variant="h2" as="h2">The Total Rewards</Typography>
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">

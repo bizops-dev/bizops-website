@@ -1,0 +1,142 @@
+[36m[34m🚀 Complete Refactoring - All Patterns[0m
+
+[36mProcessing 65 pages...[0m
+
+[32m✓ AboutPage.tsx[0m
+  - 4 containers
+  - 1 grids
+[33m○ AccessDeniedPage.tsx[0m
+[32m✓ AccessibilityPage.tsx[0m
+  - 1 grids
+[32m✓ AnalyticsPage.tsx[0m
+  - 1 containers
+[32m✓ AssessmentPage.tsx[0m
+  - 2 grids
+[32m✓ AutomationAIPage.tsx[0m
+  - 2 containers
+  - 1 grids
+[32m✓ BlogDetailPage.tsx[0m
+  - 3 containers
+  - 1 grids
+[32m✓ BlogPage.tsx[0m
+  - 1 containers
+[32m✓ CapabilityPage.tsx[0m
+  - 2 containers
+[32m✓ CareersPage.tsx[0m
+  - 4 containers
+[33m○ ComingSoonPage.tsx[0m
+[32m✓ ComparePage.tsx[0m
+  - 1 containers
+[32m✓ ComparisonsPage.tsx[0m
+  - 1 containers
+[32m✓ ContactPage.tsx[0m
+  - 1 grids
+[33m○ CustomDevPage.tsx[0m
+[32m✓ CustomerPage.tsx[0m
+  - 2 containers
+[32m✓ DemoPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ DocsPage.tsx[0m
+  - 1 containers
+[32m✓ DownloadPage.tsx[0m
+  - 2 containers
+  - 1 grids
+[33m○ ErrorPage.tsx[0m
+[32m✓ EventDetailPage.tsx[0m
+  - 1 containers
+[32m✓ EventsPage.tsx[0m
+  - 1 containers
+[32m✓ GlossaryPage.tsx[0m
+  - 1 containers
+[32m✓ HomePage.tsx[0m
+  - 5 containers
+  - 1 grids
+[32m✓ IndustryPage.tsx[0m
+  - 1 containers
+[32m✓ IntegrationsPage.tsx[0m
+  - 2 containers
+[32m✓ LegalPage.tsx[0m
+  - 1 grids
+[33m○ LoginPage.tsx[0m
+[33m○ MaintenancePage.tsx[0m
+[32m✓ ManagedServicesPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ MediaKitPage.tsx[0m
+  - 1 containers
+  - 2 grids
+[32m✓ MigrationPage.tsx[0m
+  - 2 containers
+[32m✓ ModulePage.tsx[0m
+  - 6 containers
+[32m✓ MultiCompanyPage.tsx[0m
+  - 1 containers
+[33m○ NeedsAnalysisPage.tsx[0m
+[33m○ NotFoundPage.tsx[0m
+[32m✓ PartnerApplyPage.tsx[0m
+  - 1 grids
+[32m✓ PartnerDirectoryPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ PartnersPage.tsx[0m
+  - 2 containers
+  - 2 grids
+[33m○ PlatformPage.tsx[0m
+[32m✓ PortalsPage.tsx[0m
+  - 1 containers
+[33m○ PreferencesPage.tsx[0m
+[33m○ PricingCalculatorPage.tsx[0m
+[32m✓ PricingPage.tsx[0m
+  - 1 containers
+[32m✓ ProductTourPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ ROIPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ ResourcesPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ RoadmapPage.tsx[0m
+  - 2 containers
+  - 1 grids
+[32m✓ RolePage.tsx[0m
+  - 2 containers
+[33m○ SearchPage.tsx[0m
+[33m○ SecurityReportPage.tsx[0m
+[33m○ ServiceDetailPage.tsx[0m
+[33m○ ServicesPage.tsx[0m
+[32m✓ SitemapPage.tsx[0m
+  - 1 containers
+  - 1 grids
+[32m✓ SolutionsPage.tsx[0m
+  - 1 containers
+[32m✓ StartupProgramPage.tsx[0m
+  - 6 containers
+  - 1 grids
+[32m✓ StatusPage.tsx[0m
+  - 1 containers
+[33m○ SysReqPage.tsx[0m
+[32m✓ TechnologyPage.tsx[0m
+  - 2 containers
+[33m○ ThankYouPage.tsx[0m
+[32m✓ TimelineGeneratorPage.tsx[0m
+  - 1 containers
+[32m✓ TrustPage.tsx[0m
+  - 1 containers
+[32m✓ UseCaseDetailPage.tsx[0m
+  - 2 containers
+  - 1 grids
+[32m✓ UseCasesPage.tsx[0m
+  - 1 containers
+[32m✓ WhyBizOpsPage.tsx[0m
+  - 3 containers
+  - 1 grids
+
+[32m✨ Complete![0m
+[36mFiles changed: 48/65[0m
+[36mTotal changes: 104[0m
+  - Headings: 0
+  - Containers: 78
+  - Grids: 26

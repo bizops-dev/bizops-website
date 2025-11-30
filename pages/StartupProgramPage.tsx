@@ -21,7 +21,7 @@ const StartupProgramPage: React.FC = () => {
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-5xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ const StartupProgramPage: React.FC = () => {
 
       {/* --- LOGO WALL (Social Proof) --- */}
       <section className="bg-[#0F172A] border-b border-slate-800 pb-16">
-         <div className="max-w-7xl mx-auto px-4 overflow-hidden">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500 flex-wrap">
                {/* Placeholder Logos */}
                <div className="text-xl font-bold text-white">ACME Corp</div>
@@ -176,7 +176,7 @@ const StartupProgramPage: React.FC = () => {
       {/* --- WHY IT MATTERS (Split Layout) --- */}
       <section className="py-32 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 overflow-hidden">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 items-center">
                <div className="order-2 lg:order-1">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      The Scaling Trap

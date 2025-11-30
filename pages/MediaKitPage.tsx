@@ -89,7 +89,7 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {/* Primary Logo */}
               <motion.div 
                  whileHover={{ y: -5 }}
@@ -410,7 +410,7 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6">
                     <h3 className="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">

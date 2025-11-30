@@ -28,7 +28,7 @@ const PortalsPage: React.FC = () => {
 
       {/* Portal Types */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                
                {/* Customer Portal */}

@@ -169,7 +169,7 @@ const UseCasesPage: React.FC = () => {
 
       {/* Main Content with Sidebar Layout */}
       <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32" id="case-grid">
-         <div className="max-w-7xl mx-auto px-4">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-12">
                
                {/* Sidebar Filter (Desktop) */}

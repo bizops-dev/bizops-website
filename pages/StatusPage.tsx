@@ -25,7 +25,7 @@ const StatusPage: React.FC = () => {
 
       {/* --- HERO HEADER --- */}
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 pt-32 pb-16">
-         <div className="max-w-5xl mx-auto px-4 text-center">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

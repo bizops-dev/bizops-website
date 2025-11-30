@@ -93,7 +93,7 @@ const PartnerDirectoryPage: React.FC = () => {
       </div>
 
       <Section className="py-12 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* --- SIDEBAR FILTERS (Desktop) --- */}
           <div className="hidden lg:block lg:col-span-1 space-y-8 sticky top-24 h-fit">

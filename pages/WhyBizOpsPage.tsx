@@ -251,7 +251,7 @@ const WhyBizOpsPage: React.FC = () => {
          <div className="absolute top-0 left-0 w-full h-full bg-green-50/50 dark:bg-green-900/5 pointer-events-none"></div>
          
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
                <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency

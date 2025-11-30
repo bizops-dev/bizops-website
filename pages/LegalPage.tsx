@@ -243,7 +243,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              </AnimatePresence>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
              
              {/* LEFT SIDEBAR NAV (Desktop) */}
              <div className="lg:col-span-3 hidden lg:block">

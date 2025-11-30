@@ -192,7 +192,7 @@ const CustomerPage: React.FC = () => {
       
       {/* --- INFINITE LOGO LOOP --- */}
       <div className="py-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
             <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Trusted by Industry Leaders</p>
          </div>
          
