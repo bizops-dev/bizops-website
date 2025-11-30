@@ -157,8 +157,8 @@ const RolePage: React.FC = () => {
                      <Stack direction="row" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 overflow-hidden shadow-inner transition-all duration-300">
                         <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
-                     </div>
-                  </div>
+                     </Stack>
+                  </Stack>
 
                   {/* Dashboard Content Mockup */}
                   <Grid cols={12} gap={4} className="p-6 pt-16 h-full bg-[#0F172A] relative">
@@ -185,7 +185,7 @@ const RolePage: React.FC = () => {
                                        <div className={`w-4 h-4 rounded transition-colors duration-500 ${
                                           activeFeature === i-1 ? 'bg-white animate-pulse' : 'bg-slate-600'
                                        }`}></div>
-                                    </div>
+                                    </Stack>
                                     <div className={`text-xs font-bold ${i===1 ? 'text-emerald-400' : 'text-slate-500'}`}>
                                        {i===1 ? '+12.5%' : ''}
                                     </div>
@@ -267,7 +267,7 @@ const RolePage: React.FC = () => {
             <div className="text-center mb-12 md:mb-20">
                <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
                   <RefreshCw className="w-3 h-3" /> Transformation
-               </div>
+               </Stack>
                <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-bold text-white leading-tight">From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span></Typography>
                <Typography variant="body-lg" className="text-slate-400">Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.</Typography>
             </div>
@@ -282,7 +282,7 @@ const RolePage: React.FC = () => {
                      {/* Connector Arrow (Desktop) */}
                      <Stack direction="row" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#0F172A] border-4 border-[#020617] rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
                         <ArrowRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
-                     </div>
+                     </Stack>
 
                      {/* Pain Side (Left) - Darker, Red-tinted Chaos */}
                      <Stack direction="col" gap={4} className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/5 bg-gradient-to-br from-[#1a0505] via-[#0f0303] to-[#050101] relative overflow-hidden group-hover:from-[#2b0a0a] transition-colors duration-500 h-full">
@@ -299,8 +299,8 @@ const RolePage: React.FC = () => {
                            </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold leading-snug group-hover:text-white">"{item.pain}"</Typography>
                            <Typography variant="caption" className="leading-relaxed">{item.context}</Typography>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
 
                      {/* Gain Side (Right) - Bright, Emerald-tinted Clarity */}
                      <Stack direction="col" gap={4} className="p-8 md:p-12 bg-gradient-to-bl from-[#022c22] via-[#011c16] to-[#050101] relative overflow-hidden group-hover:from-[#033d2e] transition-colors duration-500 h-full">
@@ -317,8 +317,8 @@ const RolePage: React.FC = () => {
                            </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold text-white">{item.gain}</Typography>
                            <Typography variant="caption" className="leading-relaxed">{item.gainDesc}</Typography>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                   </motion.div>
                ))}
             </CardSlider>

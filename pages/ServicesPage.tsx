@@ -170,7 +170,7 @@ const ServicesPage: React.FC = () => {
                               <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}
                                  <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
                               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
-                           </div>
+                           </Stack>
                        </SpotlightCard>
                     </motion.div>
                  ))}
@@ -204,7 +204,7 @@ const ServicesPage: React.FC = () => {
                               <Stack direction="row" gap={3} align="center" className="mb-6">
                                 <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
                                     <service.icon className="w-6 h-6 text-white" />
-                                </div>
+                                </Stack>
                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
                                     <Sparkles className="w-3 h-3" /> Top Pick
                                 </span>
@@ -218,7 +218,7 @@ const ServicesPage: React.FC = () => {
                                   </Button>
                                 </Link>
                               </div>
-                          </div>
+                          </Stack>
                         </motion.div>
                     );
                   }
@@ -227,7 +227,7 @@ const ServicesPage: React.FC = () => {
                         <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col">
                           <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                               <service.icon className="w-6 h-6" />
-                          </div>
+                          </Stack>
                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>
                           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
@@ -262,7 +262,7 @@ const ServicesPage: React.FC = () => {
                                <Stack direction="row" gap={3} align="center" className="mb-6">
                                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
                                      <service.icon className="w-6 h-6 text-white" />
-                                  </div>
+                                  </Stack>
                                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
                                      <Sparkles className="w-3 h-3" /> Recommended Start
                                   </span>
@@ -278,7 +278,7 @@ const ServicesPage: React.FC = () => {
                                     </Button>
                                   </Link>
                                </div>
-                            </div>
+                            </Stack>
                             
                             {/* Decorative List for Featured - Hidden on mobile small screens if needed, but better visible */}
                             <Stack direction="row" gap={4} className="bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hidden md:block">
@@ -288,7 +288,7 @@ const ServicesPage: React.FC = () => {
                                      <li key={i} className="flex items-start gap-3 text-slate-200">
                                         <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-primary-500/20 mt-0.5">
                                            <div className="w-2 h-2 rounded-full bg-primary-400"></div>
-                                        </div>
+                                        </Stack>
                                         <div>
                                            <span className="font-bold block text-sm">{item.title}</span>
                                            <Typography variant="caption" className="text-slate-400">{item.desc}</Typography>
@@ -296,7 +296,7 @@ const ServicesPage: React.FC = () => {
                                      </li>
                                   ))}
                                </ul>
-                            </div>
+                            </Stack>
                          </Stack>
                       </motion.div>
                    );
@@ -308,7 +308,7 @@ const ServicesPage: React.FC = () => {
                      <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                            <service.icon className="w-6 h-6" />
-                        </div>
+                        </Stack>
 
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>

@@ -60,7 +60,7 @@ const ServiceDetailPage: React.FC = () => {
     return (
       <Section className="min-h-[60vh] flex flex-col items-center justify-center text-center">
         <SEO title="Service Not Found" noindex={true} />
-        <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-red-100 text-red-500 rounded-full mb-6">
+        <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-6">
           <AlertCircle className="w-8 h-8" />
         </div>
         <Typography variant="h1" as="h1">Service Not Found</Typography>
@@ -167,17 +167,17 @@ const ServiceDetailPage: React.FC = () => {
               >
                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
                  <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
-                    <Stack direction="row" gap={4} align="center" className="mb-8">
-                       <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 rounded-2xl bg-primary-500 text-white shadow-lg shadow-primary-500/30">
+                    <div className="flex items-center gap-4 mb-8">
+                       <div className="w-14 h-14 rounded-2xl bg-primary-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30">
                           <Icon className="w-7 h-7" />
                        </div>
                        <Typography variant="h3" as="h3">Why BizOps?</Typography>
-                    </Stack>
+                    </div>
                     
                     <Stack direction="col" gap={6}>
                        {data.benefits?.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
-                             <Stack direction="row" gap={4} align="center" justify="center" className="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 shrink-0 border border-green-200 dark:border-green-800/50">
+                             <div className="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center shrink-0 border border-green-200 dark:border-green-800/50">
                                 <Check className="w-3.5 h-3.5" />
                              </div>
                              <div>
@@ -188,7 +188,7 @@ const ServiceDetailPage: React.FC = () => {
                        ))}
                     </Stack>
 
-                    <Stack direction="row" gap={2} align="center" className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700/50 text-sm text-slate-400 font-medium">
+                    <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700/50 flex items-center gap-2 text-sm text-slate-400 font-medium">
                        <ShieldCheck className="w-4 h-4 text-primary-500" />
                        Guaranteed Results & SLA
                     </div>
@@ -235,12 +235,12 @@ const ServiceDetailPage: React.FC = () => {
                            </div>
 
                            {/* Center Marker */}
-                           <Stack direction="row" gap={4} align="center" justify="center" className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 z-10 hidden">
+                           <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 flex items-center justify-center z-10 hidden md:flex">
                               <Typography variant="body-lg" className="text-slate-400">{idx + 1}</Typography>
                            </div>
 
                            {/* Empty Side for Balance */}
-                           <Stack direction="row" gap={4} className="hidden md:block">
+                           <div className="flex-1 hidden md:block"></div>
                         </motion.div>
                      );
                   })}
@@ -268,7 +268,7 @@ const ServiceDetailPage: React.FC = () => {
                       transition={{ delay: idx * 0.05 }}
                       className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300 group h-full"
                     >
-                       <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                       <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                           <FileText className="w-6 h-6" />
                        </div>
                        <span className="font-bold text-slate-900 dark:text-white text-lg">{item}</span>

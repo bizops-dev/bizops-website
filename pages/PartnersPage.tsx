@@ -126,7 +126,7 @@ const PartnersPage: React.FC = () => {
                    <Stack direction="row" gap={4} align="center" className="mb-8 border-b border-slate-700 pb-6">
                       <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-white rounded-lg shadow-lg">
                          <TrendingUp className="w-6 h-6 text-blue-600" />
-                      </div>
+                      </Stack>
                       <div>
                          <div className="text-sm text-slate-400">Partner Dashboard</div>
                          <div className="font-bold text-white text-xl">Revenue Overview</div>
