@@ -24,10 +24,33 @@ const ContactPage: React.FC = () => {
     const consent = formData.get('consent');
 
     const newErrors: Record<string, string> = {};
-    if (!name || name.length < 2) newErrors.name = "Nama wajib diisi.";
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Email tidak valid.";
-    if (!message || message.length < 10) newErrors.message = "Pesan minimal 10 karakter.";
-    if (!consent) newErrors.consent = "Wajib menyetujui kebijakan privasi.";
+    
+    // Enhanced validation with better error messages
+    if (!name) {
+      newErrors.name = "Nama wajib diisi.";
+    } else if (name.length < 2) {
+      newErrors.name = "Nama minimal 2 karakter.";
+    } else if (name.length > 100) {
+      newErrors.name = "Nama maksimal 100 karakter.";
+    }
+    
+    if (!email) {
+      newErrors.email = "Email wajib diisi.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Format email tidak valid (contoh: nama@perusahaan.com).";
+    }
+    
+    if (!message) {
+      newErrors.message = "Pesan wajib diisi.";
+    } else if (message.length < 10) {
+      newErrors.message = `Pesan minimal 10 karakter (saat ini: ${message.length} karakter).`;
+    } else if (message.length > 1000) {
+      newErrors.message = "Pesan maksimal 1000 karakter.";
+    }
+    
+    if (!consent) {
+      newErrors.consent = "Anda harus menyetujui kebijakan privasi untuk melanjutkan.";
+    }
 
     setErrors(newErrors);
 

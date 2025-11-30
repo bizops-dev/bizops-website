@@ -20,28 +20,46 @@ const DemoPage: React.FC = () => {
     const whatsapp = formData.get('whatsapp') as string;
     const consent = formData.get('consent') as string;
 
-    if (!fullName || fullName.length < 3) {
+    // Enhanced validation with better error messages
+    if (!fullName) {
+      newErrors.fullName = "Nama lengkap wajib diisi.";
+    } else if (fullName.length < 3) {
       newErrors.fullName = "Nama lengkap minimal 3 karakter.";
+    } else if (fullName.length > 100) {
+      newErrors.fullName = "Nama lengkap maksimal 100 karakter.";
+    } else if (!/^[a-zA-Z\s.]+$/.test(fullName)) {
+      newErrors.fullName = "Nama hanya boleh berisi huruf dan spasi.";
     }
 
-    // Strict Email Regex
+    // Strict Email Regex with better error message
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!email || !emailRegex.test(email)) {
-      newErrors.workEmail = "Masukkan alamat email yang valid.";
+    if (!email) {
+      newErrors.workEmail = "Email bisnis wajib diisi.";
+    } else if (!emailRegex.test(email)) {
+      newErrors.workEmail = "Format email tidak valid (contoh: nama@perusahaan.com).";
+    } else if (email.includes('gmail.com') || email.includes('yahoo.com') || email.includes('hotmail.com')) {
+      newErrors.workEmail = "Gunakan email bisnis/perusahaan (bukan email pribadi).";
     }
 
-    if (!company || company.length < 3) {
+    if (!company) {
+      newErrors.companyName = "Nama perusahaan wajib diisi.";
+    } else if (company.length < 3) {
       newErrors.companyName = "Nama perusahaan minimal 3 karakter.";
+    } else if (company.length > 100) {
+      newErrors.companyName = "Nama perusahaan maksimal 100 karakter.";
     }
 
-    // Phone Regex (Allows +62 or 08, min 9 digits)
+    // Phone Regex (Allows +62 or 08, min 9 digits) with better validation
     const phoneRegex = /^(\+62|62|0)[0-9]{9,15}$/;
-    if (!whatsapp || !phoneRegex.test(whatsapp)) {
-      newErrors.whatsapp = "Nomor WhatsApp tidak valid (Min 10 digit).";
+    const cleanPhone = whatsapp?.replace(/[\s-]/g, ''); // Remove spaces and dashes
+    if (!whatsapp) {
+      newErrors.whatsapp = "Nomor WhatsApp wajib diisi.";
+    } else if (!phoneRegex.test(cleanPhone)) {
+      newErrors.whatsapp = "Nomor WhatsApp tidak valid (contoh: 08123456789 atau +6281234567890).";
     }
 
     if (!consent) {
-      newErrors.consent = "Anda wajib menyetujui Kebijakan Privasi.";
+      newErrors.consent = "Anda harus menyetujui Kebijakan Privasi untuk melanjutkan.";
     }
 
     setErrors(newErrors);

@@ -28,14 +28,44 @@ const PartnerApplyPage: React.FC = () => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+    
+    // Enhanced validation
+    const fullName = formData.get('fullName') as string;
+    const email = formData.get('email') as string;
+    const companyName = formData.get('companyName') as string;
+    const phone = formData.get('phone') as string;
     const consent = formData.get('consent');
 
-    if (!consent) {
-      setConsentError("Wajib menyetujui NDA & Kebijakan Privasi.");
+    // Basic validation
+    if (!fullName || fullName.length < 3) {
+      setConsentError("Nama lengkap minimal 3 karakter.");
       return;
     }
-    setConsentError(null);
 
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!email || !emailRegex.test(email)) {
+      setConsentError("Format email tidak valid.");
+      return;
+    }
+
+    if (!companyName || companyName.length < 3) {
+      setConsentError("Nama perusahaan minimal 3 karakter.");
+      return;
+    }
+
+    const phoneRegex = /^(\+62|62|0)[0-9]{9,15}$/;
+    const cleanPhone = phone?.replace(/[\s-]/g, '');
+    if (!phone || !phoneRegex.test(cleanPhone)) {
+      setConsentError("Nomor telepon tidak valid (contoh: 08123456789).");
+      return;
+    }
+
+    if (!consent) {
+      setConsentError("Anda harus menyetujui NDA & Kebijakan Privasi untuk melanjutkan.");
+      return;
+    }
+    
+    setConsentError(null);
     setFormState('submitting');
     
     // Simulate API call
