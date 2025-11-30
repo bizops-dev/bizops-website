@@ -22,7 +22,7 @@ const PreferencesPage: React.FC = () => {
       
       <Container size="7xl">
         <div className="text-center mb-12">
-           <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-600">
+           <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
            </div>
            <Typography variant="h1" as="h1">Kendalikan Isi Inbox Anda</Typography>
@@ -36,7 +36,7 @@ const PreferencesPage: React.FC = () => {
               <Stack direction="col" gap={6}>
                  
                  {/* Explicit accessible checkbox structure */}
-                 <div className="relative flex items-start">
+                 <Stack direction="row" gap={4} align="start" className="relative">
                     <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_updates" 
@@ -55,7 +55,7 @@ const PreferencesPage: React.FC = () => {
                     </div>
                  </div>
                  
-                 <div className="relative flex items-start">
+                 <Stack direction="row" gap={4} align="start" className="relative">
                     <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_digest" 
@@ -74,7 +74,7 @@ const PreferencesPage: React.FC = () => {
                     </div>
                  </div>
 
-                 <div className="relative flex items-start">
+                 <Stack direction="row" gap={4} align="start" className="relative">
                     <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_promo" 

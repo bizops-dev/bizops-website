@@ -83,7 +83,7 @@ const PartnerApplyPage: React.FC = () => {
   if (formState === 'success') {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center p-4 text-center bg-slate-50 dark:bg-slate-900" role="alert">
-        <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 animate-bounce shadow-lg">
+        <Stack direction="row" gap={4} align="center" justify="center" className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full mb-8 animate-bounce shadow-lg">
           <CheckCircle className="w-12 h-12" aria-hidden="true" />
         </div>
         <Typography variant="h2" as="h2">Aplikasi Diterima!</Typography>
@@ -128,7 +128,7 @@ const PartnerApplyPage: React.FC = () => {
                <div className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
                   
                   {trackParam && (
-                     <div className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl flex items-start gap-3">
+                     <Stack direction="row" gap={3} align="start" className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl">
                         <Info className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                         <div>
                            <Typography variant="h4" as="h4" className="font-bold dark:text-purple-300">Anda mendaftar untuk {trackParam === 'bootstrap' ? 'Bootstrap' : 'Scale-Up'} Track</Typography>
@@ -255,7 +255,7 @@ const PartnerApplyPage: React.FC = () => {
                   <Stack direction="col" gap={8} className="relative z-10">
                      <Stack direction="row" gap={4} className="group">
                         <Stack direction="col" gap={4} align="center">
-                           <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">1</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-primary-500 font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </Stack>
                         <div>
@@ -265,7 +265,7 @@ const PartnerApplyPage: React.FC = () => {
                      </Stack>
                      <Stack direction="row" gap={4} className="group">
                         <Stack direction="col" gap={4} align="center">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">2</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </Stack>
                         <div>
@@ -275,7 +275,7 @@ const PartnerApplyPage: React.FC = () => {
                      </Stack>
                      <Stack direction="row" gap={4} className="group">
                         <Stack direction="col" gap={4} align="center">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">3</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">
                         </Stack>
                         <div>
                            <Typography variant="h4" as="h4">Onboarding</Typography>
@@ -303,7 +303,7 @@ const PartnerApplyPage: React.FC = () => {
                      </Stack>
                      <Typography variant="caption">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</Typography>
                      <Stack direction="row" gap={3} align="center">
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs">RS</div>
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 bg-white/20 rounded-full font-bold text-xs">
                         <div>
                            <div className="font-bold text-xs">Rudi Setiawan</div>
                            <div className="text-[10px] opacity-75">CTO, Mitra Solusi Digital</div>

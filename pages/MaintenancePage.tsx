@@ -10,7 +10,7 @@ import Stack from '../components/Stack';
 
 const MaintenancePage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#0B1120] text-white relative overflow-hidden font-sans">
+    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-[#0B1120] text-white relative overflow-hidden font-sans">
       <SEO title="Maintenance | System Update" />
       
       {/* Background Effects */}
@@ -65,19 +65,19 @@ const MaintenancePage: React.FC = () => {
            <Typography variant="h3" as="h3">Need urgent help?</Typography>
            <Stack direction="row" gap={4} justify="center">
               <a href="mailto:support@bizops.id" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-all">
+                 <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-white group-hover:text-slate-900 transition-all">
                     <Mail className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">Email</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#1DA1F2] group-hover:text-white transition-all">
+                 <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-[#1DA1F2] group-hover:text-white transition-all">
                     <Twitter className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">Twitter</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-white transition-all">
+                 <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-[#0077b5] group-hover:text-white transition-all">
                     <Linkedin className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">LinkedIn</Typography>

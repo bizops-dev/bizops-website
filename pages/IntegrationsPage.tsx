@@ -14,7 +14,7 @@ const IntegrationsPage: React.FC = () => {
       
       {/* Hero */}
       <Container size="7xl" className="mb-20 text-center">
-        <div className="inline-flex p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
+        <Stack direction="row" gap={4} className="p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
            <Plug className="w-8 h-8 text-primary-600" />
         </div>
         <Typography variant="h1" as="h1">Ekosistem yang Saling Terhubung.</Typography>
@@ -35,7 +35,7 @@ const IntegrationsPage: React.FC = () => {
                      {cat.apps.map((app: any, i: number) => (
                         <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all group cursor-default h-full">
                            <Stack direction="row" gap={4} align="center" justify="between" className="mb-4">
-                              <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-50 rounded-lg text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
                                  {app.name.substring(0,2).toUpperCase()}
                               </div>
                               <div className="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold uppercase rounded-full border border-green-100">

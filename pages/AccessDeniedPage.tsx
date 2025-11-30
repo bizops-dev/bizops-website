@@ -5,10 +5,11 @@ import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const AccessDeniedPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
       <SEO title="403 Access Denied | Forbidden" />
       
       {/* Background Effects */}
@@ -25,10 +26,10 @@ const AccessDeniedPage: React.FC = () => {
           className="relative w-24 h-24 mx-auto mb-8"
         >
            <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-[2rem] transform rotate-6"></div>
-           <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-[2rem] flex items-center justify-center shadow-xl border border-slate-200 dark:border-slate-800">
+           <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0 bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl border border-slate-200 dark:border-slate-800">
               <Lock className="w-10 h-10 text-slate-400 dark:text-slate-500" />
            </div>
-           <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white border-2 border-white dark:border-slate-950 shadow-lg">
+           <Stack direction="row" gap={4} align="center" justify="center" className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full text-white border-2 border-white dark:border-slate-950 shadow-lg">
               <span className="font-bold text-xs">403</span>
            </div>
         </motion.div>

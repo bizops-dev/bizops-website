@@ -151,9 +151,9 @@ const HomePage: React.FC = () => {
                   />
                   
                   {/* Overlay UI Badge - retained for context */}
-                  <div className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 flex items-center gap-2 shadow-lg">
+                  <Stack direction="row" gap={2} align="center" className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 shadow-lg">
                     <Lock className="w-3 h-3 text-green-400" /> bizops.id/dashboard
-                  </div>
+                  </Stack>
                </div>
             </motion.div>
 
@@ -283,7 +283,7 @@ const HomePage: React.FC = () => {
                                  ))}
                               </ul>
                            </div>
-                           <div className="bg-slate-900/50 rounded-2xl p-6 border border-slate-700/50 flex flex-col justify-center items-center text-center">
+                           <Stack direction="col" gap={4} align="center" justify="center" className="bg-slate-900/50 rounded-2xl p-6 border border-slate-700/50 text-center">
                               <div className="mb-4 p-4 rounded-full bg-slate-800 ring-1 ring-slate-700">
                                  <PlayCircle className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
                               </div>
@@ -292,7 +292,7 @@ const HomePage: React.FC = () => {
                               <Link to={`/platform`}>
                                  <Button size="sm" variant="outline-white">Tonton Video</Button>
                               </Link>
-                           </div>
+                           </Stack>
                         </Grid>
                      </div>
                   </div>
@@ -316,9 +316,9 @@ const HomePage: React.FC = () => {
                         <uvp.icon className="w-24 h-24 opacity-20 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" aria-hidden="true" />
                      </div>
                      <div className="relative z-10">
-                        <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <uvp.icon className="w-7 h-7" aria-hidden="true" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
                         <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wide">{uvp.subtitle}</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{uvp.desc}</Typography>
@@ -355,7 +355,7 @@ const HomePage: React.FC = () => {
                >
                   
                   {/* Card 1: Fragmented Stack */}
-                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 flex-1 h-full">
+                  <Stack direction="row" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
@@ -396,10 +396,10 @@ const HomePage: React.FC = () => {
                             <span className="text-red-500 font-bold">3-6 Bulan</span>
                         </Stack>
                      </div>
-                  </div>
+                  </Stack>
 
                   {/* Card 2: Legacy ERP */}
-                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 flex-1 h-full">
+                  <Stack direction="row" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
@@ -440,7 +440,7 @@ const HomePage: React.FC = () => {
                            <span className="text-amber-500 font-bold">6-12 Bulan</span>
                         </Stack>
                      </div>
-                  </div>
+                  </Stack>
 
                </CardSlider>
 
@@ -450,7 +450,7 @@ const HomePage: React.FC = () => {
                      {/* Glowing Border Animation */}
                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-primary-500 to-blue-600 rounded-[2.5rem] p-[2px] opacity-100 animate-border-pulse pointer-events-none"></div>
                      
-                     <div className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full flex flex-col justify-between overflow-hidden">
+                     <Stack direction="col" gap={4} justify="between" className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full overflow-hidden">
                         {/* Abstract Background */}
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -458,9 +458,9 @@ const HomePage: React.FC = () => {
 
                         <div className="relative z-10">
                            <Stack direction="col" gap={4} className="md:items-center justify-between mb-8">
-                              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
+                              <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
                                  <CheckCircle2 className="w-3.5 h-3.5" /> The BizOps Way
-                              </div>
+                              </Stack>
                               <div className="text-left md:text-right">
                                  <Typography variant="body" className="tracking-widest">Best Value Choice</Typography>
                               </div>
@@ -490,20 +490,20 @@ const HomePage: React.FC = () => {
 
                            {/* Features Grid */}
                            <Grid cols={2} gap={4}>
-                               <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
+                               <Stack direction="row" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
                                    <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Local Compliance</Typography>
                                        <Typography variant="body" className="text-slate-400">Pajak, BPJS, Kasbon Ready.</Typography>
                                    </div>
-                               </div>
-                               <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
+                               </Stack>
+                               <Stack direction="row" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
                                    <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Managed Infrastructure</Typography>
                                        <Typography variant="body" className="text-slate-400">Server & Security Included.</Typography>
                                    </div>
-                               </div>
+                               </Stack>
                            </Grid>
                         </div>
 
@@ -514,7 +514,7 @@ const HomePage: React.FC = () => {
                               </Button>
                            </Link>
                         </div>
-                     </div>
+                     </Stack>
                   </div>
                </div>
 
@@ -571,9 +571,9 @@ const HomePage: React.FC = () => {
                {industries.map((ind) => (
                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
                      <Card className="h-full border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" padding="lg">
-                        <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <ind.icon className="w-6 h-6" aria-hidden="true" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
                         <Stack direction="row" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
@@ -593,9 +593,9 @@ const HomePage: React.FC = () => {
                {roles.map((role) => (
                   <Link key={role.id} to={`/role/${role.id}`} className="group h-full">
                      <Card className="h-full text-center border border-slate-100 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-300" padding="md">
-                        <div className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                            <role.icon className="w-5 h-5" aria-hidden="true" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{role.title}</Typography>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-400">{role.subtitle}</Typography>
                      </Card>
@@ -624,9 +624,9 @@ const HomePage: React.FC = () => {
                         { title: "Backup Otomatis Harian", desc: "Data di-backup setiap hari ke lokasi terpisah. Restore data kapan saja dalam hitungan menit.", icon: PlayCircle } 
                      ].map((item, idx) => (
                         <div key={idx} className="flex gap-4">
-                           <div className="w-12 h-12 rounded-xl bg-slate-800/50 ring-1 ring-white/10 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-slate-800/50 ring-1 ring-white/10">
                               <item.icon className="w-6 h-6 text-blue-400" aria-hidden="true" />
-                           </div>
+                           </Stack>
                            <div>
                               <Typography variant="h3" as="h3" className="text-white font-bold">{item.title}</Typography>
                               <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>

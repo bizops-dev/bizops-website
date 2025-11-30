@@ -262,7 +262,7 @@ const AssessmentPage = () => {
   // 1. INTRO SCREEN
   if (viewState === 'intro') {
     return (
-      <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden flex items-center">
+      <Stack direction="row" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
         {/* Ambient Background - Optimized for Mobile */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[60%] md:w-[40%] h-[40%] bg-primary-900/20 rounded-full blur-[80px] md:blur-[120px]" />
@@ -275,7 +275,7 @@ const AssessmentPage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/50 border border-white/10 text-primary-400 text-sm font-medium mb-8 backdrop-blur-md">
+            <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-slate-900/50 border border-white/10 text-primary-400 text-sm font-medium mb-8 backdrop-blur-md">
               <LayoutDashboard className="w-4 h-4" /> 
               <span>Executive Assessment Tool</span>
             </div>
@@ -293,7 +293,7 @@ const AssessmentPage = () => {
                 { icon: ShieldCheck, text: "Data Aman", desc: "Enkripsi Enterprise" },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-primary-400 shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-lg bg-slate-900 text-primary-400 shrink-0">
                     <item.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -355,7 +355,7 @@ const AssessmentPage = () => {
                       }`}>
                         {categoryIcons[key as CategoryKey]}
                       </div>
-                      <div className="flex-1">
+                      <Stack direction="row" gap={4}>
                         <div className="font-medium text-slate-200">{label}</div>
                         <div className="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
                           <div className="bg-slate-600 h-full w-2/3 opacity-30 group-hover:bg-primary-500 group-hover:opacity-100 transition-all duration-500" />
@@ -375,7 +375,7 @@ const AssessmentPage = () => {
         
         {/* Mobile Methodology Modal (if needed) */}
         {showMethodology && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center">
+          <Stack direction="row" gap={4} align="center" justify="center" className="lg:hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto">
             <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-lg relative">
               <button 
                 onClick={() => setShowMethodology(false)}
@@ -394,7 +394,7 @@ const AssessmentPage = () => {
   // 2. LEAD FORM
   if (viewState === 'lead-form') {
     return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-4 relative overflow-hidden">
+      <Stack direction="row" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-white p-4 relative overflow-hidden">
         {/* Background Mesh */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
         <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-primary-900/10 rounded-full blur-[100px]" />
@@ -406,7 +406,7 @@ const AssessmentPage = () => {
             className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl"
           >
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-white/5">
+              <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mx-auto mb-6 shadow-inner border border-white/5">
                 <Users className="w-8 h-8 text-primary-400" />
               </div>
               <Typography variant="h2" as="h2">Profil Penilai</Typography>
@@ -509,7 +509,7 @@ const AssessmentPage = () => {
   // 3. ANALYZING / LOADING
   if (viewState === 'analyzing') {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-center relative overflow-hidden">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-slate-950">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-900/20 rounded-full blur-[100px] animate-pulse" />
         </div>
@@ -521,7 +521,7 @@ const AssessmentPage = () => {
             className="mb-8 relative"
           >
             <div className="w-24 h-24 rounded-full border-4 border-slate-800 border-t-primary-500" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0">
               <Cpu className="w-8 h-8 text-primary-500" />
             </div>
           </motion.div>
@@ -542,7 +542,7 @@ const AssessmentPage = () => {
             <Stack direction="col" gap={6} className="justify-between items-start md:items-center">
               <div>
                 <Stack direction="row" gap={3} align="center" className="mb-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
+                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
                     <CheckCircle className="w-3 h-3" /> Assessment Completed
                   </div>
                   {/* Reset Button Moved Here */}
@@ -587,8 +587,8 @@ const AssessmentPage = () => {
             {/* LEFT: Executive Summary & Score */}
             <Stack direction="col" gap={6} className="lg:col-span-4">
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-1 border border-white/10 shadow-2xl print:bg-white print:border-gray-300 print:text-black h-fit">
-                <div className="bg-slate-900/80 rounded-[22px] p-8 flex flex-col items-center text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
-                   <div className="relative w-40 h-40 mb-6 flex items-center justify-center">
+                <Stack direction="col" gap={4} align="center" className="bg-slate-900/80 rounded-[22px] p-8 text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="relative w-40 h-40 mb-6">
                      <svg className="w-full h-full transform -rotate-90">
                        <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="10" className="text-slate-800 print:text-gray-200" />
                        <circle 
@@ -599,7 +599,7 @@ const AssessmentPage = () => {
                           strokeLinecap="round"
                        />
                      </svg>
-                     <div className="absolute inset-0 flex flex-col items-center justify-center">
+                     <Stack direction="col" gap={4} align="center" justify="center" className="absolute inset-0">
                         <span className={`text-5xl font-bold ${results.maturityLevel.color.replace('bg-', 'text-')}`}>
                           {results.avgScore.toFixed(1)}
                         </span>
@@ -725,12 +725,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/needs-analysis')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-blue-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Search className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Solution Finder</Typography>
                    <Typography variant="caption" className="text-slate-400">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
-                   <div className="mt-4 flex items-center text-xs font-bold text-blue-500">
+                   <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Cari Solusi <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
@@ -740,12 +740,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/pricing-calculator')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-emerald-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
-                    <div className="mt-4 flex items-center text-xs font-bold text-emerald-500">
+                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Hitung Biaya <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
@@ -755,12 +755,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-amber-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
-                    <div className="mt-4 flex items-center text-xs font-bold text-amber-500">
+                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
@@ -788,7 +788,7 @@ const AssessmentPage = () => {
 
           {/* Methodology Modal for Results Page */}
           {showMethodology && (
-            <div className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center print:hidden">
+            <Stack direction="row" gap={4} align="center" justify="center" className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto print:hidden">
               <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-2xl relative shadow-2xl">
                 <button 
                   onClick={() => setShowMethodology(false)}
@@ -944,7 +944,7 @@ const AssessmentPage = () => {
                   })}
                 </Stack>
 
-                <div className="mt-10 flex justify-between items-center pt-8 border-t border-white/10 relative z-10">
+                <Stack direction="row" gap={4} align="center" justify="between" className="mt-10 pt-8 border-t border-white/10 relative z-10">
                   <Button 
                     variant="ghost"
                     onClick={() => currentStep > 0 && setCurrentStep(prev => prev - 1)}

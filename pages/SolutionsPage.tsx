@@ -108,7 +108,7 @@ const SolutionsPage: React.FC = () => {
                          <div className={`w-16 h-16 ${getColor(ind.id)} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/5 shrink-0`}>
                             <ind.icon className="w-8 h-8" />
                          </div>
-                         <div className="flex-grow flex flex-col">
+                         <Stack direction="col" gap={4}>
                             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                             <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
                          </div>
@@ -153,10 +153,10 @@ const SolutionsPage: React.FC = () => {
                               viewport={{ once: true }}
                               className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg transition-all text-center h-full flex flex-col items-center group-hover:-translate-y-1"
                            >
-                              <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm shrink-0">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm shrink-0">
                                  <role.icon className="w-7 h-7" />
                               </div>
-                              <div className="flex-grow flex flex-col justify-center w-full">
+                              <Stack direction="col" gap={4} justify="center" className="w-full">
                                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{role.title}</Typography>
                                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">{role.subtitle}</Typography>
                               </div>

@@ -173,7 +173,7 @@ const BlogPage: React.FC = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                      </div>
                      
-                     <div className="relative p-8 md:p-16 lg:p-20 flex flex-col justify-end min-h-[500px] md:min-h-[600px]">
+                     <Stack direction="col" gap={4} justify="end" className="relative p-8 md:p-16 lg:p-20 min-h-[500px] md:min-h-[600px]">
                         <Stack direction="row" gap={4} align="center" className="mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                            <span className="bg-white/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/10">
                               {featuredPost.category}
@@ -186,9 +186,9 @@ const BlogPage: React.FC = () => {
                         
                         <Stack direction="row" gap={8} align="center" className="text-sm text-slate-300 font-medium border-t border-white/10 pt-8">
                            <Stack direction="row" gap={3} align="center">
-                              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-600 text-white font-bold">
                                  {featuredPost.author.charAt(0)}
-                              </div>
+                              </Stack>
                               <span className="text-white">{featuredPost.author.split(',')[0]}</span>
                            </Stack>
                            <Stack direction="row" gap={2} align="center">
@@ -197,11 +197,11 @@ const BlogPage: React.FC = () => {
                            <Stack direction="row" gap={2} align="center">
                               <Clock className="w-4 h-4 text-blue-400" /> 12 Min Read
                            </Stack>
-                           <div className="ml-auto flex items-center gap-2 text-white font-bold group-hover:translate-x-2 transition-transform">
+                           <Stack direction="row" gap={2} align="center" className="ml-auto text-white font-bold group-hover:translate-x-2 transition-transform">
                               Read Article <ArrowRight className="w-5 h-5 text-blue-500" />
-                           </div>
+                           </Stack>
                         </Stack>
-                     </div>
+                     </Stack>
                   </Link>
                </div>
             )}
@@ -209,13 +209,13 @@ const BlogPage: React.FC = () => {
             <Stack direction="col" gap={16}>
                
                {/* --- LEFT SIDEBAR (Filter & Search) --- */}
-               <div className="lg:w-72 flex-shrink-0">
+               <Stack direction="row" gap={4} className="lg:w-72">
                   <Stack direction="col" gap={8} className="sticky top-28">
                      
                      {/* Search */}
                      <div className="relative group">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
-                        <div className="relative bg-white dark:bg-slate-900 rounded-xl flex items-center border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
+                        <Stack direction="row" gap={4} align="center" className="relative bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
                            <Search className="absolute left-4 w-4 h-4 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
                            <input 
                               type="text" 
@@ -229,7 +229,7 @@ const BlogPage: React.FC = () => {
                                  <X className="w-3.5 h-3.5" />
                               </button>
                            )}
-                        </div>
+                        </Stack>
                      </div>
 
                      {/* Categories */}
@@ -273,10 +273,10 @@ const BlogPage: React.FC = () => {
                      </div>
 
                   </Stack>
-               </div>
+               </Stack>
 
                {/* --- RIGHT CONTENT (Grid) --- */}
-               <div className="flex-1">
+               <Stack direction="row" gap={4}>
                   
                   {/* Results Header */}
                   <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
@@ -315,7 +315,7 @@ const BlogPage: React.FC = () => {
                                              </div>
                                           </div>
                                           
-                                          <div className="p-8 flex flex-col flex-1">
+                                          <Stack direction="col" gap={4} className="p-8">
                                              <Stack direction="row" gap={3} align="center" className="mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
                                                 <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
                                                 <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
@@ -328,16 +328,16 @@ const BlogPage: React.FC = () => {
                                              
                                              <Stack direction="row" gap={4} align="center" justify="between" className="pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
                                                 <Stack direction="row" gap={2} align="center" className="text-xs font-bold text-slate-900 dark:text-white">
-                                                   <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] border border-slate-200 dark:border-slate-700">
+                                                   <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] border border-slate-200 dark:border-slate-700">
                                                       {post.author.charAt(0)}
-                                                   </div>
+                                                   </Stack>
                                                    {post.author.split(',')[0]}
                                                 </Stack>
-                                                <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                                <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                                    <ArrowRight className="w-4 h-4" />
-                                                </div>
+                                                </Stack>
                                              </Stack>
-                                          </div>
+                                          </Stack>
                                        </SpotlightCard>
                                     </Link>
                                  </motion.div>
@@ -354,9 +354,9 @@ const BlogPage: React.FC = () => {
                      </>
                   ) : (
                      <div className="py-20 text-center bg-slate-50 dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-200 dark:border-slate-800">
-                        <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-4">
                            <Search className="w-8 h-8 text-slate-400" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3">No articles found</Typography>
                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Try adjusting your search or category filter.</Typography>
                         <button 
@@ -374,7 +374,7 @@ const BlogPage: React.FC = () => {
                      <Typography variant="caption" className="text-slate-400">Get strategic insights delivered to your inbox.</Typography>
                      <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-500 border-none font-bold">Subscribe Free</Button>
                   </div>
-               </div>
+               </Stack>
 
             </Stack>
          </Container>

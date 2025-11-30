@@ -55,7 +55,7 @@ const SysReqPage: React.FC = () => {
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
                     <Typography variant="caption" className="text-slate-600 leading-relaxed">{req.spec}</Typography>
                     {req.note && (
-                       <div className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded inline-flex items-center gap-1">
+                       <Stack direction="row" gap={1} align="center" className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">
                           <AlertCircle className="w-3 h-3" /> {req.note}
                        </div>
                     )}

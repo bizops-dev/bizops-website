@@ -200,7 +200,7 @@ const MigrationPage: React.FC = () => {
   const activeSample = sampleStructures.find(s => s.id === activeSampleTab) || sampleStructures[0];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 font-sans selection:bg-primary-500/30 flex flex-col">
+    <Stack direction="col" gap={4} className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 font-sans selection:bg-primary-500/30">
       <SEO title="Migration Center" description="Pusat migrasi data enterprise BizOps. Panduan, tools validasi, dan layanan konsultasi migrasi." />
 
       {/* Dynamic Background */}
@@ -211,7 +211,7 @@ const MigrationPage: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 dark:brightness-50 mix-blend-overlay"></div>
       </div>
 
-      <div className="relative z-10 pt-32 pb-16 flex-grow">
+      <Stack direction="row" gap={4} className="relative z-10 pt-32 pb-16">
         
         {/* 1. HERO SECTION */}
         <Container size="7xl" className="mb-24">
@@ -340,8 +340,8 @@ const MigrationPage: React.FC = () => {
                  <Grid cols={2} gap={6}>
                     
                     {/* Left: Content */}
-                    <div className="p-10 md:p-14 flex flex-col justify-center bg-slate-50 dark:bg-slate-900/50">
-                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
+                    <Stack direction="col" gap={4} justify="center" className="p-10 md:p-14 bg-slate-50 dark:bg-slate-900/50">
+                       <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
                           <CheckCircle className="w-3 h-3" /> Free Validation Tool
                        </div>
                        <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Cek Kesehatan Data Anda</Typography>
@@ -355,7 +355,7 @@ const MigrationPage: React.FC = () => {
                             "Analisis Konsistensi Tipe Data"
                           ].map((feat, i) => (
                             <div key={i} className="flex items-center gap-3">
-                               <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center flex-shrink-0">
+                               <Stack direction="row" gap={4} align="center" justify="center" className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500">
                                   <Check className="w-3 h-3" strokeWidth={3} />
                                </div>
                                <span className="text-slate-700 dark:text-slate-300 font-medium">{feat}</span>
@@ -363,7 +363,7 @@ const MigrationPage: React.FC = () => {
                           ))}
                        </Stack>
 
-                       <div className="p-4 bg-amber-50 dark:bg-amber-900/10 rounded-xl border border-amber-200 dark:border-amber-800/30 flex gap-3">
+                       <Stack direction="row" gap={3} className="p-4 bg-amber-50 dark:bg-amber-900/10 rounded-xl border border-amber-200 dark:border-amber-800/30">
                           <Info className="w-5 h-5 text-amber-600 dark:text-amber-500 flex-shrink-0 mt-0.5" />
                           <div className="text-sm text-amber-800 dark:text-amber-200">
                              Belum punya formatnya? <button onClick={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })} className="underline font-bold hover:text-amber-600">Lihat contoh format di bawah.</button>
@@ -372,7 +372,7 @@ const MigrationPage: React.FC = () => {
                     </div>
 
                     {/* Right: Interactive Area */}
-                    <div className="p-10 md:p-14 bg-slate-100 dark:bg-slate-950 flex flex-col items-center justify-center border-l border-slate-200 dark:border-slate-800">
+                    <Stack direction="col" gap={4} align="center" justify="center" className="p-10 md:p-14 bg-slate-100 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800">
                        <div className="w-full max-w-md">
                           <div className={`
                              relative border-2 border-dashed rounded-3xl p-8 transition-all duration-300 text-center
@@ -383,7 +383,7 @@ const MigrationPage: React.FC = () => {
                              
                              {checkStatus === 'idle' && (
                                 <div className="py-6">
-                                   <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                   <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full mx-auto mb-6 shadow-lg">
                                       <FileSpreadsheet className="w-10 h-10 text-slate-400" />
                                    </div>
                                    <Typography variant="h3" as="h3">Upload Excel / CSV</Typography>
@@ -412,7 +412,7 @@ const MigrationPage: React.FC = () => {
 
                              {checkStatus === 'ready' && (
                                 <div className="py-6 animate-in fade-in zoom-in duration-300">
-                                   <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                                   <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full mx-auto mb-6">
                                       <CheckCircle className="w-10 h-10" />
                                    </div>
                                    <Typography variant="h3" as="h3">Struktur File Valid!</Typography>
@@ -442,7 +442,7 @@ const MigrationPage: React.FC = () => {
               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Gunakan referensi kolom di bawah ini untuk mempersiapkan data Anda sebelum migrasi. Pastikan mengikuti urutan di bawah untuk kelancaran impor.</Typography>
            </div>
 
-           <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[500px]">
+           <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden min-h-[500px]">
               {/* Sidebar Tabs */}
               <div className="w-full md:w-1/4 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 p-2 md:p-4">
                  <Stack direction="col" gap={1}>
@@ -464,7 +464,7 @@ const MigrationPage: React.FC = () => {
               </div>
 
               {/* Content Area */}
-              <div className="flex-1 p-6 md:p-10 flex flex-col">
+              <Stack direction="col" gap={4} className="p-6 md:p-10">
                  <Stack direction="col" gap={4} className="justify-between items-start sm:items-center mb-8">
                     <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
@@ -479,7 +479,7 @@ const MigrationPage: React.FC = () => {
                  </Stack>
 
                  {/* Visual Table */}
-                 <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/50 flex-grow">
+                 <Stack direction="row" gap={4} className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/50">
                     <div className="overflow-x-auto">
                        <table className="w-full text-sm text-left">
                           <thead className="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 text-xs uppercase text-slate-500 dark:text-slate-400 font-bold">
@@ -516,7 +516,7 @@ const MigrationPage: React.FC = () => {
                     </div>
                  </div>
                  
-                 <div className="mt-6 flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl border border-blue-100 dark:border-blue-900/20 text-sm text-blue-700 dark:text-blue-300">
+                 <Stack direction="row" gap={3} align="start" className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl border border-blue-100 dark:border-blue-900/20 text-sm text-blue-700 dark:text-blue-300">
                     <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <Typography variant="body">Tips: Data dengan tanda 'REQUIRED' harus diisi. Jika kosong, sistem akan menolak baris data tersebut saat impor.</Typography>
                  </div>
@@ -549,7 +549,7 @@ const MigrationPage: React.FC = () => {
                        {/* Header */}
                        <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
                           <Stack direction="row" gap={4} align="center" className="mb-4">
-                             <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm">
+                             <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm">
                                 <item.icon className="w-6 h-6" />
                              </div>
                              <div>
@@ -562,8 +562,8 @@ const MigrationPage: React.FC = () => {
                        {/* Content */}
                        <Stack direction="col" gap={6} className="p-8 flex-grow">
                           <Stack direction="row" gap={4}>
-                             <div className="flex-shrink-0 mt-1">
-                                <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
+                             <Stack direction="row" gap={4} className="mt-1">
+                                <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500">
                                    <Info className="w-3.5 h-3.5" />
                                 </div>
                              </div>
@@ -574,8 +574,8 @@ const MigrationPage: React.FC = () => {
                           </Stack>
 
                           <Stack direction="row" gap={4}>
-                             <div className="flex-shrink-0 mt-1">
-                                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center">
+                             <Stack direction="row" gap={4} className="mt-1">
+                                <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500">
                                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
                                 </div>
                              </div>
@@ -610,7 +610,7 @@ const MigrationPage: React.FC = () => {
                     {/* Header */}
                     <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
                        <Stack direction="row" gap={4} align="center" className="mb-4">
-                          <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm">
+                          <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm">
                              <item.icon className="w-6 h-6" />
                           </div>
                           <div>
@@ -623,8 +623,8 @@ const MigrationPage: React.FC = () => {
                     {/* Content */}
                     <Stack direction="col" gap={6} className="p-8 flex-grow">
                        <Stack direction="row" gap={4}>
-                          <div className="flex-shrink-0 mt-1">
-                             <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
+                          <Stack direction="row" gap={4} className="mt-1">
+                             <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500">
                                 <Info className="w-3.5 h-3.5" />
                              </div>
                           </div>
@@ -635,8 +635,8 @@ const MigrationPage: React.FC = () => {
                        </Stack>
 
                        <Stack direction="row" gap={4}>
-                          <div className="flex-shrink-0 mt-1">
-                             <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center">
+                          <Stack direction="row" gap={4} className="mt-1">
+                             <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500">
                                 <Check className="w-3.5 h-3.5" strokeWidth={3} />
                              </div>
                           </div>
@@ -711,8 +711,8 @@ const MigrationPage: React.FC = () => {
 
             <Grid cols={2} gap={8} className="max-w-4xl mx-auto">
                {/* Self-Managed Option */}
-               <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-colors text-left flex flex-col">
-                  <div className="w-14 h-14 bg-slate-700 rounded-2xl flex items-center justify-center mb-6">
+               <Stack direction="col" gap={4} className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-colors text-left">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-slate-700 rounded-2xl mb-6">
                      <FileText className="w-7 h-7 text-white" />
                   </div>
                   <Typography variant="h3" as="h3">Self-Managed</Typography>
@@ -735,10 +735,10 @@ const MigrationPage: React.FC = () => {
                </div>
 
                {/* Expert Assisted Option (Highlighted) */}
-               <div className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 backdrop-blur-sm rounded-3xl p-8 border border-blue-500/50 hover:border-blue-400 transition-colors text-left flex flex-col relative overflow-hidden">
+               <Stack direction="col" gap={4} className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 backdrop-blur-sm rounded-3xl p-8 border border-blue-500/50 hover:border-blue-400 transition-colors text-left relative overflow-hidden">
                   <div className="absolute top-0 right-0 px-4 py-1 bg-blue-600 text-white text-xs font-bold rounded-bl-xl uppercase tracking-wider">Recommended</div>
                   
-                  <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-600 rounded-2xl mb-6 shadow-lg shadow-blue-500/30">
                      <Headphones className="w-7 h-7 text-white" />
                   </div>
                   <Typography variant="h3" as="h3">Expert Assisted</Typography>

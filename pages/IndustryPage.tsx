@@ -51,7 +51,7 @@ const IndustryPage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
         <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">The solution you are looking for does not exist or has been moved.</Typography>
@@ -114,7 +114,7 @@ const IndustryPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="flex items-center justify-center mb-8"
             >
-               <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
+               <Stack direction="row" gap={2} align="center" justify="center" className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
                   <span>Industry Solution</span>
                   <span className="text-slate-500 mx-1">/</span>
@@ -190,7 +190,7 @@ const IndustryPage: React.FC = () => {
                           {/* Background Glow */}
                           <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           
-                          <div className="flex-grow flex flex-col items-center justify-center w-full relative z-10">
+                          <Stack direction="col" gap={4} align="center" justify="center" className="w-full relative z-10">
                              {isNumber ? (
                                <div>
                                  <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
@@ -218,7 +218,7 @@ const IndustryPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
          
          <Container size="3xl" className="text-center mb-16 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
+            <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </div>
             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
@@ -236,11 +236,11 @@ const IndustryPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>
                   <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600/5 rounded-full blur-[50px] -ml-10 -mb-10 group-hover:bg-orange-600/10 transition-colors duration-500 pointer-events-none"></div>
                   
-                  <div className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl flex items-center justify-center mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
                      <span className="font-bold text-xl">0{idx + 1}</span>
                   </div>
                   
-                  <div className="flex-grow relative z-10 flex flex-col">
+                  <Stack direction="col" gap={4} className="relative z-10">
                      <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
                      <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
                   </div>
@@ -255,7 +255,7 @@ const IndustryPage: React.FC = () => {
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
          <Container size="3xl" className="text-center mb-16 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+            <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <Check className="w-3 h-3" /> The Solution
             </div>
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
@@ -275,11 +275,11 @@ const IndustryPage: React.FC = () => {
                      <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 via-primary-500/0 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      
-                     <div className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
                         <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
                      </div>
                      
-                     <div className="flex-grow flex flex-col">
+                     <Stack direction="col" gap={4}>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{sol.desc}</Typography>
                      </div>

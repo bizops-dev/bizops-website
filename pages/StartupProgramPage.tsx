@@ -105,8 +105,8 @@ const StartupProgramPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {/* Card 1 */}
-                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
-                     <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                         <DollarSign className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
@@ -114,8 +114,8 @@ const StartupProgramPage: React.FC = () => {
                   </div>
 
                   {/* Card 2 */}
-                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col">
-                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                         <Code className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Technical Mentorship</Typography>
@@ -123,8 +123,8 @@ const StartupProgramPage: React.FC = () => {
                   </div>
 
                   {/* Card 3 */}
-                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
-                     <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                         <Users className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Founder Community</Typography>
@@ -135,8 +135,8 @@ const StartupProgramPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                {/* Card 1 */}
-               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
-                  <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                      <DollarSign className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
@@ -144,8 +144,8 @@ const StartupProgramPage: React.FC = () => {
                </div>
 
                {/* Card 2 */}
-               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col">
-                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Code className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Technical Mentorship</Typography>
@@ -153,8 +153,8 @@ const StartupProgramPage: React.FC = () => {
                </div>
 
                {/* Card 3 */}
-               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
-                  <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Users className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Founder Community</Typography>
@@ -169,7 +169,7 @@ const StartupProgramPage: React.FC = () => {
          <Container size="7xl">
             <Grid cols={2} gap={20} className="items-center">
                <div className="order-2 lg:order-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      The Scaling Trap
                   </div>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.</Typography>
@@ -177,7 +177,7 @@ const StartupProgramPage: React.FC = () => {
                   
                   <Stack direction="col" gap={8}>
                      <Stack direction="row" gap={5}>
-                        <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                            <Layout className="w-6 h-6" />
                         </div>
                         <div>
@@ -186,7 +186,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                      </Stack>
                      <Stack direction="row" gap={5}>
-                        <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                            <ShieldCheck className="w-6 h-6" />
                         </div>
                         <div>
@@ -217,7 +217,7 @@ const StartupProgramPage: React.FC = () => {
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                               <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Runway</div>
                               <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">18 Mo</div>
-                              <div className="text-xs text-green-500 font-bold flex items-center gap-1"><TrendingUp className="w-3 h-3" /> Healthy</div>
+                              <Stack direction="row" gap={1} align="center" className="text-xs text-green-500 font-bold">
                            </div>
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                               <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Monthly Burn</div>
@@ -231,7 +231,7 @@ const StartupProgramPage: React.FC = () => {
                               <div className="text-sm font-bold text-slate-700 dark:text-slate-300">Revenue Growth (MRR)</div>
                               <div className="text-xs text-slate-400">Last 6 Months</div>
                            </Stack>
-                           <div className="h-32 flex items-end justify-between gap-3">
+                           <Stack direction="row" gap={3} align="end" justify="between" className="h-32">
                               {[30, 45, 40, 60, 55, 85, 70, 95].map((h, i) => (
                                  <div key={i} className="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group overflow-hidden">
                                     <div 
@@ -253,7 +253,7 @@ const StartupProgramPage: React.FC = () => {
       <section className="py-32 bg-slate-50 dark:bg-slate-950">
          <Container size="7xl">
             <div className="text-center mb-20">
-               <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+               <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                   Eligibility Criteria
                </div>
                <Typography variant="h2" as="h2">Choose Your Growth Track</Typography>
@@ -263,11 +263,11 @@ const StartupProgramPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                   {/* Bootstrap Track */}
-                  <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
+                  <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden">
                      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                      
                      <Stack direction="row" gap={5} align="center" className="mb-10">
-                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 shadow-inner">
                            <Zap className="w-8 h-8" />
                         </div>
                         <div>
@@ -286,19 +286,19 @@ const StartupProgramPage: React.FC = () => {
                      
                      <Stack direction="col" gap={5} className="mb-12 flex-grow">
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
                         </Stack>
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
                         </Stack>
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
@@ -313,12 +313,12 @@ const StartupProgramPage: React.FC = () => {
                   </div>
 
                   {/* Scale-Up Track */}
-                  <div className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden flex flex-col text-white transform md:-translate-y-4">
+                  <Stack direction="col" gap={4} className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden text-white transform md:-translate-y-4">
                      <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
                      <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
                      
                      <Stack direction="row" gap={5} align="center" className="mb-10 mt-4">
-                        <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-300 shadow-inner border border-purple-500/30">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-500/20 rounded-2xl text-purple-300 shadow-inner border border-purple-500/30">
                            <TrendingUp className="w-8 h-8" />
                         </div>
                         <div>
@@ -337,19 +337,19 @@ const StartupProgramPage: React.FC = () => {
                      
                      <Stack direction="col" gap={5} className="mb-12 flex-grow">
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
                         </Stack>
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
                         </Stack>
                         <Stack direction="row" gap={4} align="center">
-                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
@@ -367,11 +367,11 @@ const StartupProgramPage: React.FC = () => {
 
             <Container size="5xl" className="hidden md:grid md:grid-cols-2 gap-10">
                {/* Bootstrap Track */}
-               <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
+               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                   
                   <Stack direction="row" gap={5} align="center" className="mb-10">
-                     <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 shadow-inner">
                         <Zap className="w-8 h-8" />
                      </div>
                      <div>
@@ -390,19 +390,19 @@ const StartupProgramPage: React.FC = () => {
                   
                   <Stack direction="col" gap={5} className="mb-12 flex-grow">
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
                      </Stack>
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
                      </Stack>
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
@@ -417,12 +417,12 @@ const StartupProgramPage: React.FC = () => {
                </div>
 
                {/* Scale-Up Track */}
-               <div className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden flex flex-col text-white transform md:-translate-y-4">
+               <Stack direction="col" gap={4} className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden text-white transform md:-translate-y-4">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
                   <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
                   
                   <Stack direction="row" gap={5} align="center" className="mb-10 mt-4">
-                     <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-300 shadow-inner border border-purple-500/30">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-500/20 rounded-2xl text-purple-300 shadow-inner border border-purple-500/30">
                         <TrendingUp className="w-8 h-8" />
                      </div>
                      <div>
@@ -441,19 +441,19 @@ const StartupProgramPage: React.FC = () => {
                   
                   <Stack direction="col" gap={5} className="mb-12 flex-grow">
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
                      </Stack>
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
                      </Stack>
                      <Stack direction="row" gap={4} align="center">
-                        <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-purple-500/20">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
@@ -478,22 +478,22 @@ const StartupProgramPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
                   <Stack direction="col" gap={4} align="center" className="group h-full">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">
                      <Typography variant="h3" as="h3">Submit Form</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                   </Stack>
                   <Stack direction="col" gap={4} align="center" className="group h-full">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">
                      <Typography variant="h3" as="h3">Verification</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                   </Stack>
                   <Stack direction="col" gap={4} align="center" className="group h-full">
-                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">
                      <Typography variant="h3" as="h3">Approval</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                   </Stack>
                   <Stack direction="col" gap={4} align="center" className="group h-full">
-                     <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                         <CheckCircle className="w-8 h-8" />
                      </div>
                      <Typography variant="h3" as="h3">Onboarding</Typography>
@@ -507,22 +507,22 @@ const StartupProgramPage: React.FC = () => {
                <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
 
                <Stack direction="col" gap={4} align="center" className="group h-full">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">
                   <Typography variant="h3" as="h3">Submit Form</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                </Stack>
                <Stack direction="col" gap={4} align="center" className="group h-full">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">
                   <Typography variant="h3" as="h3">Verification</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                </Stack>
                <Stack direction="col" gap={4} align="center" className="group h-full">
-                  <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">
                   <Typography variant="h3" as="h3">Approval</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                </Stack>
                <Stack direction="col" gap={4} align="center" className="group h-full">
-                  <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                      <CheckCircle className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Onboarding</Typography>

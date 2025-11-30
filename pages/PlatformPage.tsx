@@ -136,12 +136,12 @@ const PlatformPage: React.FC = () => {
                      {/* Form Builder Simulation */}
                      <Stack direction="row" gap={4}>
                         <Stack direction="col" gap={3} className="w-1/3">
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Input Text</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Dropdown</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Date Picker</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Signature</div>
+                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
+                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
+                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
+                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
                         </Stack>
-                        <div className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 flex flex-col justify-center items-center text-center">
+                        <Stack direction="col" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
                               <div className="text-[10px] text-blue-400 mb-1">Field Label</div>
                               <div className="h-6 bg-slate-800 rounded w-full"></div>
@@ -156,7 +156,7 @@ const PlatformPage: React.FC = () => {
                   </Stack>
                   
                   {/* Floating Badge */}
-                  <div className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
+                  <Stack direction="row" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
                      <div className="bg-blue-100 dark:bg-white/20 p-2 rounded-lg"><Zap className="w-5 h-5 text-blue-600 dark:text-white" /></div>
                      <div>
                         <div className="text-xs opacity-80">Development Time</div>
@@ -174,7 +174,7 @@ const PlatformPage: React.FC = () => {
                
                <ul className="space-y-6">
                   <li className="flex items-start gap-4">
-                     <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 mt-1">
                         <Layout className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                      </div>
                      <div>
@@ -183,7 +183,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
-                     <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 mt-1">
                         <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                      </div>
                      <div>
@@ -192,7 +192,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
-                     <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 mt-1">
                         <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                      </div>
                      <div>
@@ -305,7 +305,7 @@ const PlatformPage: React.FC = () => {
                   { name: 'Flutter', icon: 'FL', desc: 'Native Mobile' }
                ].map((tech) => (
                   <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32">
-                     <div className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
                         {tech.icon}
                      </div>
                      <div>
@@ -317,8 +317,8 @@ const PlatformPage: React.FC = () => {
             </Stack>
 
             {/* Frappe Partner Badge */}
-            <div className="inline-flex items-center gap-4 p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
-               <div className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
+            <Stack direction="row" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
+               <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
                   <Check className="w-5 h-5 text-primary-600" />
                </div>
                <div className="text-left">

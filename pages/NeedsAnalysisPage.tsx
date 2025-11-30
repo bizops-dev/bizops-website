@@ -233,7 +233,7 @@ const NeedsAnalysisPage = () => {
 
   if (step === 'intro') {
     return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center relative overflow-hidden">
+      <Stack direction="row" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
@@ -249,7 +249,7 @@ const NeedsAnalysisPage = () => {
               transition={{ duration: 0.6 }}
               className="text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
+              <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
                 <Crosshair className="w-4 h-4" /> Solution Finder 2.0
               </div>
               
@@ -264,7 +264,7 @@ const NeedsAnalysisPage = () => {
                 </Button>
               </Stack>
 
-              <div className="mt-8 flex items-center gap-6 text-sm text-slate-500">
+              <Stack direction="row" gap={6} align="center" className="mt-8 text-sm text-slate-500">
                 <Stack direction="row" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> Free Analysis
                 </Stack>
@@ -282,9 +282,9 @@ const NeedsAnalysisPage = () => {
               className="relative hidden lg:block"
             >
               {/* Floating Cards */}
-              <div className="relative z-10 grid gap-5">
+              <Grid cols={3} gap={5} className="relative z-10">
                 {/* Card 1: Holistic */}
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
                   <div className="p-3 bg-blue-500/20 rounded-xl text-blue-400">
                     <Layers className="w-6 h-6" />
                   </div>
@@ -295,7 +295,7 @@ const NeedsAnalysisPage = () => {
                 </div>
 
                 {/* Card 2: Roadmap */}
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
                    <div className="p-3 bg-emerald-500/20 rounded-xl text-emerald-400">
                     <Calendar className="w-6 h-6" />
                   </div>
@@ -306,7 +306,7 @@ const NeedsAnalysisPage = () => {
                 </div>
 
                 {/* Card 3: Difference */}
-                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
                    <div className="p-3 bg-amber-500/20 rounded-xl text-amber-400">
                     <Lightbulb className="w-6 h-6" />
                   </div>
@@ -701,7 +701,7 @@ const NeedsAnalysisPage = () => {
 
   if (step === 'analyzing') {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-center relative overflow-hidden">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
          <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -732,7 +732,7 @@ const NeedsAnalysisPage = () => {
                 <Typography variant="h1" as="h1">Holistic Solution Blueprint</Typography>
                 <Typography variant="body" className="text-slate-400">Rekomendasi strategis untuk {contextData.company}.</Typography>
              </div>
-             <div className="mt-4 md:mt-0 flex gap-3 print:hidden">
+             <Stack direction="row" gap={3} className="mt-4 md:mt-0 print:hidden">
                 <Button variant="outline-white" onClick={() => window.print()} className="gap-2">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
@@ -886,12 +886,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/tools/roi-calculator')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-blue-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Hitung Potensi ROI</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.</Typography>
-                   <div className="mt-4 flex items-center text-xs font-bold text-blue-500">
+                   <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Buka Kalkulator ROI <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
@@ -901,12 +901,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/tools/assessment')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-emerald-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <PieChart className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Maturity Assessment</Typography>
                    <Typography variant="caption" className="text-slate-400">Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).</Typography>
-                    <div className="mt-4 flex items-center text-xs font-bold text-emerald-500">
+                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Mulai Audit <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
@@ -916,12 +916,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
                 >
-                   <div className="bg-amber-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.</Typography>
-                    <div className="mt-4 flex items-center text-xs font-bold text-amber-500">
+                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>

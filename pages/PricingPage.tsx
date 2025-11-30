@@ -67,13 +67,13 @@ const PricingPage: React.FC = () => {
         </div>
 
         <Container size="7xl" className="relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
              <span className="relative flex h-2 w-2">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
              </span>
              <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</Typography>
-          </div>
+          </Stack>
 
           <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />
             <motion.span 
@@ -120,7 +120,7 @@ const PricingPage: React.FC = () => {
            <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12">
              
              {/* Plan 1: Business */}
-             <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
                <div className="mb-6">
                  <Typography variant="h3" as="h3">Business</Typography>
                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Pondasi digital yang kuat untuk startup & bisnis berkembang.</Typography>
@@ -160,16 +160,16 @@ const PricingPage: React.FC = () => {
                    </div>
                  ))}
                </Stack>
-             </div>
+             </Stack>
 
              {/* Plan 2: Growth (Popular) */}
-             <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 flex flex-col h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
-               <div className="absolute -top-5 left-0 right-0 flex justify-center">
-                 <div className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 tracking-wide uppercase">
+             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl p-8 h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
+               <Stack direction="row" gap={4} justify="center" className="absolute -top-5 left-0 right-0">
+                 <Stack direction="row" gap={1} align="center" className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg tracking-wide uppercase">
                    <Zap className="w-3.5 h-3.5 fill-current" />
                    Most Popular
-                 </div>
-               </div>
+                 </Stack>
+               </Stack>
                
                <div className="mb-6 mt-2">
                  <Typography variant="h3" as="h3">Growth</Typography>
@@ -211,10 +211,10 @@ const PricingPage: React.FC = () => {
                    </div>
                  ))}
                </Stack>
-             </div>
+             </Stack>
 
              {/* Plan 3: Enterprise */}
-             <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
+             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
                {/* Subtle Texture */}
                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
 
@@ -255,7 +255,7 @@ const PricingPage: React.FC = () => {
                    </div>
                  ))}
                </Stack>
-             </div>
+             </Stack>
            </CardSlider>
         </div>
 
@@ -267,11 +267,11 @@ const PricingPage: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
             
             <Stack direction="col" gap={8} className="relative z-10 items-center p-8 md:p-16">
-              <div className="flex-1 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
+              <Stack direction="row" gap={4} className="text-center lg:text-left">
+                <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
                   <Calculator className="w-3.5 h-3.5" />
                   SIMULASI BIAYA CUSTOM
-                </div>
+                </Stack>
                 <Typography variant="h3" as="h3" className="font-extrabold text-white leading-tight">Butuh Spesifikasi Khusus? <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span></Typography>
                 <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.</Typography>
@@ -280,22 +280,22 @@ const PricingPage: React.FC = () => {
                     Buka Pricing Calculator <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-              </div>
+              </Stack>
               
               {/* Illustration Placeholder / Abstract Graphic */}
-              <div className="flex-shrink-0 w-full lg:w-1/3">
+              <Stack direction="row" gap={4} className="w-full lg:w-1/3">
                  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                     <Stack direction="col" gap={4} className="opacity-80">
                        <div className="h-4 bg-white/20 rounded w-3/4"></div>
                        <div className="h-4 bg-white/10 rounded w-full"></div>
                        <div className="h-4 bg-white/10 rounded w-5/6"></div>
-                       <div className="h-12 bg-blue-500/80 rounded-lg mt-4 w-full flex items-center justify-center text-white font-bold">Total: Rp 15.000.000</div>
+                       <Stack direction="row" gap={4} align="center" justify="center" className="h-12 bg-blue-500/80 rounded-lg mt-4 w-full text-white font-bold">
                     </Stack>
-                 </div>
+                 </Stack>
               </div>
             </Stack>
-          </div>
-        </Container>
+          </Stack>
+        </div>
 
         {/* --- TRUST SIGNALS GRID --- */}
         <div className="mb-32">
@@ -355,7 +355,8 @@ const PricingPage: React.FC = () => {
           </div>
         </Grid>
 
-      </Section>
+      </Container>
+    </Section>
     </Stack>
   );
 };

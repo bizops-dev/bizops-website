@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 interface ErrorPageProps {
   error?: Error;
@@ -22,7 +23,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
       <SEO title="Error | Something Went Wrong" />
       
       {/* Background Effects */}

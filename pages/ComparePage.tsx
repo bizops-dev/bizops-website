@@ -16,7 +16,7 @@ const ComparePage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4">
         <SEO title="Comparison Not Found" />
         <Typography variant="h1" as="h1">Comparison Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
@@ -54,13 +54,13 @@ const ComparePage: React.FC = () => {
                     <div className="font-bold text-slate-900 md:col-span-1">{row.feature}</div>
                     
                     {/* Them */}
-                    <div className="text-slate-600 flex items-start gap-3">
+                    <Stack direction="row" gap={3} align="start" className="text-slate-600">
                        <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
                        <Typography variant="caption">{row.them}</Typography>
                     </div>
 
                     {/* Us */}
-                    <div className="text-slate-900 font-medium flex items-start gap-3 bg-primary-50 rounded-lg p-3">
+                    <Stack direction="row" gap={3} align="start" className="text-slate-900 font-medium bg-primary-50 rounded-lg p-3">
                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
                        <Typography variant="caption">{row.us}</Typography>
                     </div>
@@ -145,12 +145,12 @@ const ComparePage: React.FC = () => {
                     </div>
                     <div className="md:col-span-1">
                        <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
-                       <div className="text-red-500 font-bold mb-2 flex items-center gap-2"><XCircle className="w-4 h-4" /> {feat.them}</div>
+                       <Stack direction="row" gap={2} align="center" className="text-red-500 font-bold mb-2">
                        <Typography variant="caption" className="text-slate-600">{feat.themDesc}</Typography>
                     </div>
                     <div className="md:col-span-1 bg-primary-50 -m-4 p-4 rounded-xl">
                        <div className="text-xs font-bold text-primary-600 uppercase mb-2">BizOps</div>
-                       <div className="text-slate-900 font-bold mb-2 flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> {feat.us}</div>
+                       <Stack direction="row" gap={2} align="center" className="text-slate-900 font-bold mb-2">
                        <Typography variant="caption" className="text-slate-700">{feat.usDesc}</Typography>
                     </div>
                  </div>

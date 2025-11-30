@@ -145,7 +145,7 @@ const CustomDevPage: React.FC = () => {
                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
                  <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
                     <Stack direction="row" gap={4} align="center" className="mb-8">
-                       <div className="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 rounded-2xl bg-blue-500 text-white shadow-lg">
                           <Code className="w-7 h-7" />
                        </div>
                        <Typography variant="h3" as="h3">Why Go Custom?</Typography>
@@ -154,7 +154,7 @@ const CustomDevPage: React.FC = () => {
                     <Stack direction="col" gap={6}>
                        {pageData.benefits.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
-                             <div className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-200 dark:border-blue-800/50">
+                             <Stack direction="row" gap={4} align="center" justify="center" className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shrink-0 border border-blue-200 dark:border-blue-800/50">
                                 <Check className="w-3.5 h-3.5" />
                              </div>
                              <div>
@@ -216,12 +216,12 @@ const CustomDevPage: React.FC = () => {
                            </div>
 
                            {/* Center Marker */}
-                           <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 flex items-center justify-center z-10 hidden md:flex">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 z-10 hidden">
                               <item.icon className="w-6 h-6 text-slate-400" />
                            </div>
 
                            {/* Empty Side for Balance */}
-                           <div className="flex-1 hidden md:block"></div>
+                           <Stack direction="row" gap={4} className="hidden md:block">
                         </motion.div>
                      );
                   })}
@@ -248,7 +248,7 @@ const CustomDevPage: React.FC = () => {
                       transition={{ delay: idx * 0.05 }}
                       className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-300 group"
                     >
-                       <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors mt-1">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors mt-1">
                           <item.icon className="w-6 h-6" />
                        </div>
                        <div>

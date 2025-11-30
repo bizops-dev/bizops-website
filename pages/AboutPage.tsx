@@ -162,11 +162,11 @@ const AboutPage: React.FC = () => {
                       whileHover={{ y: -10 }}
                       className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
                     >
-                       <div className="w-16 h-16 bg-slate-800/80 rounded-2xl flex items-center justify-center mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
                           {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
                           {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
                           {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
-                       </div>
+                       </Stack>
                        <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
                        <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                        <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
@@ -186,11 +186,11 @@ const AboutPage: React.FC = () => {
                    whileHover={{ y: -10 }}
                    className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
                  >
-                    <div className="w-16 h-16 bg-slate-800/80 rounded-2xl flex items-center justify-center mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
                        {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
                        {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
                        {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
                     <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                     <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
@@ -207,9 +207,9 @@ const AboutPage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
          <Container size="7xl">
             <div className="text-center mb-16 md:mb-20">
-               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
+               <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" /> The Task Force
-               </div>
+               </Stack>
                <Typography variant="h2" as="h2">Meet the Builders</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.</Typography>
             </div>
@@ -296,9 +296,9 @@ const AboutPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
                   <Stack direction="col" gap={10} className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
                      <Stack direction="row" gap={6} align="start">
-                        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
                            <FileCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
-                        </div>
+                        </Stack>
                         <div>
                            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Legal Identity</div>
                            <div className="font-bold text-slate-900 dark:text-white text-xl mb-1">{aboutContent.entity.name}</div>
@@ -314,9 +314,9 @@ const AboutPage: React.FC = () => {
                      </Stack>
                      
                      <Stack direction="row" gap={6} align="start">
-                        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
                            <ShieldCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
-                        </div>
+                        </Stack>
                         <div>
                            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Compliance</div>
                            <div className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">{aboutContent.entity.compliance}</div>
@@ -348,14 +348,14 @@ const AboutPage: React.FC = () => {
                </div>
 
                <Stack direction="col" gap={4} justify="center" className="h-full">
-                  <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl h-full flex flex-col justify-center">
+                  <Stack direction="col" gap={4} justify="center" className="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl h-full">
                      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px]"></div>
                      <div className="absolute bottom-0 left-0 w-60 h-60 bg-indigo-500/20 rounded-full blur-[80px]"></div>
                      
                      <div className="relative z-10">
-                        <div className="w-16 h-16 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center mb-8 border border-white/10">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-white/10 backdrop-blur rounded-2xl mb-8 border border-white/10">
                            <Target className="w-8 h-8 text-red-400" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3">Engineering First DNA</Typography>
                         <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
                            <br/><br/>
@@ -373,7 +373,7 @@ const AboutPage: React.FC = () => {
                            </Link>
                         </Stack>
                      </div>
-                  </div>
+                  </Stack>
                </Stack>
             </Grid>
          </Container>

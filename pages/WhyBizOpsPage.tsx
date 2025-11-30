@@ -91,7 +91,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="absolute top-[15%] right-[15%] transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
                      <div className="relative">
                         <div className="absolute inset-0 bg-primary-500 rounded-full animate-ping opacity-20"></div>
-                        <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-xl shadow-primary-500/30 mx-auto mb-3 text-2xl border-4 border-white dark:border-slate-800">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-full text-white font-bold shadow-xl shadow-primary-500/30 mx-auto mb-3 text-2xl border-4 border-white dark:border-slate-800">
                            B
                         </div>
                      </div>
@@ -105,7 +105,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                         <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
                            <Stack direction="row" gap={4}>
-                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-500 font-bold">
                               <div>
                                  <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
                                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
@@ -115,7 +115,7 @@ const WhyBizOpsPage: React.FC = () => {
                         
                         <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
                            <Stack direction="row" gap={4}>
-                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-500 font-bold">
                               <div>
                                  <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
                                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
@@ -125,7 +125,7 @@ const WhyBizOpsPage: React.FC = () => {
 
                         <div className="relative p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-slate-900 rounded-3xl border border-primary-100 dark:border-primary-800 shadow-lg h-full">
                            <Stack direction="row" gap={5}>
-                              <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-600 rounded-xl text-white font-bold text-xl shadow-lg shadow-primary-500/30">
                               <div>
                                  <Typography variant="h3" as="h3">The BizOps Way (Kanan Atas)</Typography>
                                  <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.</Typography>
@@ -138,7 +138,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <Stack direction="col" gap={6} className="hidden lg:block">
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <Stack direction="row" gap={4}>
-                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-500 font-bold">
                            <div>
                               <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
                               <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
@@ -148,7 +148,7 @@ const WhyBizOpsPage: React.FC = () => {
                      
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <Stack direction="row" gap={4}>
-                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-500 font-bold">
                            <div>
                               <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
                               <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
@@ -158,7 +158,7 @@ const WhyBizOpsPage: React.FC = () => {
 
                      <div className="relative p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-slate-900 rounded-3xl border border-primary-100 dark:border-primary-800 shadow-lg">
                         <Stack direction="row" gap={5}>
-                           <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-600 rounded-xl text-white font-bold text-xl shadow-lg shadow-primary-500/30">
                            <div>
                               <Typography variant="h3" as="h3">The BizOps Way (Kanan Atas)</Typography>
                               <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.</Typography>
@@ -180,7 +180,7 @@ const WhyBizOpsPage: React.FC = () => {
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {whyBizOpsContent.reasons.map((reason, idx) => (
                      <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
-                        <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
                            {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
                            {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
                            {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
@@ -193,7 +193,7 @@ const WhyBizOpsPage: React.FC = () => {
                   ))}
                   
                   {/* CTA Card */}
-                  <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
+                  <Stack direction="col" gap={4} align="center" justify="center" className="bg-slate-900 text-white p-8 rounded-2xl text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                      <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
                      <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
@@ -207,7 +207,7 @@ const WhyBizOpsPage: React.FC = () => {
             <Grid cols={3} gap={8} className="hidden">
                {whyBizOpsContent.reasons.map((reason, idx) => (
                   <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
-                     <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
                         {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
                         {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
                         {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
@@ -220,7 +220,7 @@ const WhyBizOpsPage: React.FC = () => {
                ))}
                
                {/* CTA Card */}
-               <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
+               <Stack direction="col" gap={4} align="center" justify="center" className="bg-slate-900 text-white p-8 rounded-2xl text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
                   <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
@@ -240,7 +240,7 @@ const WhyBizOpsPage: React.FC = () => {
          <Container size="7xl" className="relative z-10">
             <Grid cols={2} gap={16} className="items-center">
                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency
                   </div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
@@ -248,7 +248,7 @@ const WhyBizOpsPage: React.FC = () => {
                   
                   <Stack direction="col" gap={6}>
                      <Stack direction="row" gap={4} align="start">
-                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
                            <Database className="w-5 h-5" />
                         </div>
                         <div>
@@ -257,7 +257,7 @@ const WhyBizOpsPage: React.FC = () => {
                         </div>
                      </Stack>
                      <Stack direction="row" gap={4} align="start">
-                        <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
                            <Leaf className="w-5 h-5" />
                         </div>
                         <div>
@@ -310,7 +310,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                   </Stack>
                   
-                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-4 text-xs text-slate-500">
+                  <Stack direction="row" gap={4} className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500">
                      <Stack direction="row" gap={2} align="center">
                         <CheckCircle className="w-4 h-4 text-green-500" /> Docker Ready
                      </Stack>

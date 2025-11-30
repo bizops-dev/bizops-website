@@ -17,7 +17,7 @@ const AutomationAIPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Biarkan Sistem yang Bekerja,<br/>Bukan Anda.</Typography>
@@ -65,7 +65,7 @@ const AutomationAIPage: React.FC = () => {
                   </Stack>
                </div>
                {/* Visual Placeholder */}
-               <div className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square flex items-center justify-center relative shadow-inner">
+               <Stack direction="row" gap={4} align="center" justify="center" className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square relative shadow-inner">
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
                   <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg max-w-xs w-full relative z-10">
                      <Stack direction="row" gap={4} align="center" justify="between" className="mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">

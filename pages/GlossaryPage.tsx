@@ -19,9 +19,9 @@ const GlossaryPage: React.FC = () => {
         
         {/* Hero */}
         <Container size="3xl" className="text-center mb-16">
-           <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-xl mb-6 text-primary-600">
+           <Stack direction="row" gap={4} align="center" justify="center" className="p-3 bg-primary-50 rounded-xl mb-6 text-primary-600">
               <BookOpen className="w-8 h-8" />
-           </div>
+           </Stack>
            <Typography variant="h1" as="h1">Pahami Bahasa Bisnis & Teknologi.</Typography>
            <Typography variant="body-xl" className="text-slate-600">Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.</Typography>
            
@@ -41,9 +41,9 @@ const GlossaryPage: React.FC = () => {
            {glossaryData.map((item, idx) => (
               <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-primary-100 transition-all group">
                  <Stack direction="row" gap={4} align="center" className="mb-4">
-                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-white rounded-lg font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
                        {item.char}
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.term}</Typography>
                  </Stack>
                  <Stack direction="col" gap={4}>

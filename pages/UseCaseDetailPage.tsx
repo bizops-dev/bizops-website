@@ -250,7 +250,7 @@ const UseCaseDetailPage: React.FC = () => {
     return (
       <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950">
         <SEO title="Use Case Not Found" noindex={true} />
-        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse">
+        <Stack direction="row" gap={4} align="center" justify="center" className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full mb-6 animate-pulse">
           <AlertTriangle className="w-10 h-10" />
         </div>
         <Typography variant="h1" as="h1">Case Study Not Found</Typography>
@@ -277,7 +277,7 @@ const UseCaseDetailPage: React.FC = () => {
       />
 
       {/* --- 1. HERO SECTION --- */}
-      <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120]">
+      <Stack direction="row" gap={4} align="center" justify="center" className="relative min-h-[90vh] overflow-hidden bg-[#0B1120]">
         {/* Animated Background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
@@ -338,15 +338,15 @@ const UseCaseDetailPage: React.FC = () => {
           >
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Location</div>
-                <div className="text-white font-medium flex items-center justify-center gap-2"><MapPin className="w-4 h-4" /> Indonesia</div>
+                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
              </div>
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Company Size</div>
-                <div className="text-white font-medium flex items-center justify-center gap-2"><Users2 className="w-4 h-4" /> Enterprise</div>
+                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
              </div>
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Industry</div>
-                <div className="text-white font-medium flex items-center justify-center gap-2"><Building2 className="w-4 h-4" /> {data.industry}</div>
+                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
              </div>
           </motion.div>
 
@@ -489,7 +489,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <Link key={item.id} to={`/use-cases/${item.id}`} className="group block">
                     <div className="aspect-[4/3] rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden relative mb-4 shadow-sm group-hover:shadow-md transition-all">
                       <div className={`absolute inset-0 bg-gradient-to-br ${itemTheme.gradientFrom} to-transparent opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0">
                          <div className={`p-4 rounded-2xl ${itemTheme.bgLight} ${itemTheme.bgDark} ${itemTheme.primary} group-hover:scale-110 transition-transform duration-300`}>
                             <item.icon className="w-8 h-8" />
                          </div>

@@ -12,7 +12,7 @@ import Container from '../components/Container';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
       <SEO title="404 Not Found" description="Halaman tidak ditemukan." />
       
       {/* Abstract Background */}
@@ -38,7 +38,7 @@ const NotFoundPage: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="relative -mt-16 md:-mt-24"
          >
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border-4 border-slate-50 dark:border-slate-800 mb-8 relative z-10">
+            <Stack direction="row" gap={4} align="center" justify="center" className="w-24 h-24 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border-4 border-slate-50 dark:border-slate-800 mb-8 relative z-10">
                 <span className="text-5xl animate-bounce">🤔</span>
             </div>
             
@@ -59,38 +59,38 @@ const NotFoundPage: React.FC = () => {
 
             <Grid cols={4} gap={4} className="text-left max-w-4xl mx-auto">
                <Link to="/platform" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-primary-50 dark:hover:bg-primary-900/10 border border-slate-200 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-800 transition-all group shadow-sm hover:shadow-md">
-                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl mb-4 group-hover:scale-110 transition-transform">
                      <Home className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white mb-1">Produk</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                  <Stack direction="row" gap={4} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                      Lihat solusi <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                </Link>
                <Link to="/blog" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-purple-50 dark:hover:bg-purple-900/10 border border-slate-200 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition-all group shadow-sm hover:shadow-md">
-                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl mb-4 group-hover:scale-110 transition-transform">
                      <FileText className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white mb-1">Blog</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                  <Stack direction="row" gap={4} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                      Baca wawasan <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                </Link>
                <Link to="/contact" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-900/10 border border-slate-200 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition-all group shadow-sm hover:shadow-md">
-                  <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl mb-4 group-hover:scale-110 transition-transform">
                      <HelpCircle className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white mb-1">Support</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                  <Stack direction="row" gap={4} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                      Hubungi kami <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                </Link>
                <Link to="/login" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-orange-50 dark:hover:bg-orange-900/10 border border-slate-200 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition-all group shadow-sm hover:shadow-md">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl mb-4 group-hover:scale-110 transition-transform">
                      <LogIn className="w-5 h-5" />
                   </div>
                   <div className="font-bold text-slate-900 dark:text-white mb-1">Login</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                  <Stack direction="row" gap={4} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                      Masuk akun <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                </Link>

@@ -72,7 +72,7 @@ const TimelineGeneratorPage: React.FC = () => {
         
         {/* Header */}
         <Container size="3xl" className="text-center mb-12">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200 dark:border-blue-800">
+           <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200 dark:border-blue-800">
               <Calendar className="w-4 h-4" /> Project Planner
            </div>
            <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight">Estimasi Waktu Implementasi <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Secara Realistis</span></Typography>
@@ -190,7 +190,7 @@ const TimelineGeneratorPage: React.FC = () => {
                   </Stack>
                </Grid>
 
-               <div className="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+               <Stack direction="row" gap={4} justify="end" className="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800">
                   <Button onClick={handleGenerate} size="lg" className="gap-2 shadow-lg shadow-primary-500/20">
                      Generate Timeline Project <ArrowRight className="w-4 h-4" />
                   </Button>
@@ -254,7 +254,7 @@ const TimelineGeneratorPage: React.FC = () => {
                         {/* Weeks Header */}
                         <Stack direction="row" gap={4} className="border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">
                            <div className="w-1/4 font-bold text-xs text-slate-400 uppercase">Phase & Detail</div>
-                           <div className="w-3/4 flex relative">
+                           <Stack direction="row" gap={4} className="w-3/4 relative">
                               {Array.from({ length: result.totalWeeks + 2 }).map((_, i) => (
                                  <div key={i} className="flex-1 text-center text-[10px] text-slate-400 border-l border-dashed border-slate-100 dark:border-slate-800">
                                     W{i+1}

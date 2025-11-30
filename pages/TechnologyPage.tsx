@@ -45,21 +45,21 @@ const TechnologyPage: React.FC = () => {
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</Typography>
             </div>
 
-            <div className="grid gap-6 relative z-10">
+            <Grid cols={3} gap={6} className="relative z-10">
                {/* Layer: Client */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="md:col-span-3 flex flex-col items-start">
+                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-2">Presentation Layer</Badge>
                      <Typography variant="h3" as="h3">Client Apps</Typography>
                   </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">SPA Desk (Vue/React)</Typography>
                      </div>
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Smartphone className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Mobile App (Flutter)</Typography>
                      </div>
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Public Portal (Jinja)</Typography>
                      </div>
                   </Grid>
@@ -68,13 +68,13 @@ const TechnologyPage: React.FC = () => {
                {/* Layer: Business Applications (NEW) */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden">
                   <div className="absolute left-0 top-0 w-1 h-full bg-emerald-500"></div>
-                  <div className="md:col-span-3 flex flex-col items-start">
+                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 mb-2">Business Applications</Badge>
                      <Typography variant="h3" as="h3">Integrated Modules</Typography>
                   </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      {/* ERPNext */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Box className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">ERPNext</div>
@@ -82,7 +82,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      {/* Frappe HR */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Users className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Frappe HR</div>
@@ -90,7 +90,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      {/* Frappe CRM */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Share2 className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Frappe CRM</div>
@@ -98,7 +98,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      {/* Frappe Insights */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Activity className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Insights</div>
@@ -106,7 +106,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      {/* LMS / Learning */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <BookOpen className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">LMS</div>
@@ -114,7 +114,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      {/* Helpdesk */}
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Headphones className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Helpdesk</div>
@@ -127,26 +127,26 @@ const TechnologyPage: React.FC = () => {
                {/* Layer: Application Logic (Frappe) */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden">
                   <div className="absolute left-0 top-0 w-1 h-full bg-primary-500"></div>
-                  <div className="md:col-span-3 flex flex-col items-start">
+                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mb-2">Application Core</Badge>
                      <Typography variant="h3" as="h3">Frappe Framework</Typography>
                   </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Code className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Python Backend</div>
                            <div className="text-xs text-slate-500">Business Logic & Controller</div>
                         </div>
                      </div>
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <FileJson className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Metadata Engine</div>
                            <div className="text-xs text-slate-500">DocType & Data Modeling</div>
                         </div>
                      </div>
-                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Network className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">REST & RPC API</div>
@@ -158,26 +158,26 @@ const TechnologyPage: React.FC = () => {
 
                {/* Layer: Services */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="md:col-span-3 flex flex-col items-start">
+                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
                      <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-2">Infrastructure Services</Badge>
                      <Typography variant="h3" as="h3">Data & Processing</Typography>
                   </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Database</Typography>
-                        <div className="flex items-center gap-2 font-bold dark:text-white"><Database className="w-4 h-4 text-purple-500"/> MariaDB</div>
+                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
                      </div>
-                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Caching</Typography>
-                        <div className="flex items-center gap-2 font-bold dark:text-white"><Zap className="w-4 h-4 text-purple-500"/> Redis</div>
+                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
                      </div>
-                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Queue</Typography>
-                        <div className="flex items-center gap-2 font-bold dark:text-white"><Layers className="w-4 h-4 text-purple-500"/> BullMQ / RQ</div>
+                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
                      </div>
-                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Realtime</Typography>
-                        <div className="flex items-center gap-2 font-bold dark:text-white"><Activity className="w-4 h-4 text-purple-500"/> Node.js / Socket.io</div>
+                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
                      </div>
                   </Grid>
                </Grid>
@@ -189,28 +189,28 @@ const TechnologyPage: React.FC = () => {
       <Section>
          <Grid cols={2} gap={16} className="items-center">
             <div>
-               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-6">
+               <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl mb-6">
                   <Cpu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                </div>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
                <Stack direction="col" gap={6}>
-                  <div className="flex gap-4">
+                  <Stack direction="row" gap={4}>
                      <div className="mt-1"><FileJson className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Metadata Driven (DocTypes)</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Struktur database, tampilan form, dan permission didefinisikan dalam JSON (DocTypes). Perubahan skema database terjadi otomatis tanpa migrasi manual yang rumit.</Typography>
                      </div>
                   </div>
-                  <div className="flex gap-4">
+                  <Stack direction="row" gap={4}>
                      <div className="mt-1"><Settings className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Low-Code Customization</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.</Typography>
                      </div>
                   </div>
-                  <div className="flex gap-4">
+                  <Stack direction="row" gap={4}>
                      <div className="mt-1"><Lock className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Granular Permission System</Typography>
@@ -220,7 +220,7 @@ const TechnologyPage: React.FC = () => {
                </Stack>
             </div>
             <div className="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
-               <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-4">
+               <Stack direction="row" gap={2} align="center" className="mb-4 border-b border-slate-800 pb-4">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -319,7 +319,7 @@ const TechnologyPage: React.FC = () => {
 
             <Grid cols={3} gap={8}>
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl mb-6 text-blue-600 dark:text-blue-400">
                      <Share2 className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">REST API Generik</Typography>
@@ -330,7 +330,7 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl mb-6 text-purple-600 dark:text-purple-400">
                      <Workflow className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Webhooks & Events</Typography>
@@ -338,7 +338,7 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl mb-6 text-emerald-600 dark:text-emerald-400">
                      <Puzzle className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Virtual DocType</Typography>
@@ -358,22 +358,22 @@ const TechnologyPage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-400">Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.</Typography>
                   
                   <Stack direction="col" gap={6}>
-                     <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">1</div>
+                     <Stack direction="row" gap={4}>
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Background Workers</Typography>
                            <Typography variant="caption" className="text-slate-400">Tugas berat seperti generate laporan PDF, email bulk, dan posting akuntansi diproses di background (via Redis Queue/BullMQ) agar UI tetap responsif.</Typography>
                         </div>
                      </div>
-                     <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">2</div>
+                     <Stack direction="row" gap={4}>
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Intelligent Caching</Typography>
                            <Typography variant="caption" className="text-slate-400">Konfigurasi sistem, permission, dan metadata disimpan di Redis Cache untuk akses super cepat (sub-millisecond).</Typography>
                         </div>
                      </div>
-                     <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">3</div>
+                     <Stack direction="row" gap={4}>
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Socket.io Realtime</Typography>
                            <Typography variant="caption" className="text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</Typography>
@@ -384,14 +384,14 @@ const TechnologyPage: React.FC = () => {
                
                <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative">
                   <div className="absolute top-0 right-0 p-4">
-                     <div className="flex gap-2">
+                     <Stack direction="row" gap={2}>
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse"></div>
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse delay-75"></div>
                      </div>
                   </div>
                   <Stack direction="col" gap={8}>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 mb-2">
+                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
                            <span className="text-green-400">Active</span>
                         </div>
@@ -400,7 +400,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 mb-2">
+                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Background Workers (Default/Short/Long)</span>
                            <span className="text-green-400">Processing</span>
                         </div>
@@ -409,7 +409,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 mb-2">
+                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Socket.io Service</span>
                            <span className="text-green-400">Connected: 1,240</span>
                         </div>
@@ -418,7 +418,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 mb-2">
+                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
                            <span>Redis Cache Hit Rate</span>
                            <span className="text-green-400">98.5%</span>
                         </div>
@@ -444,7 +444,7 @@ const TechnologyPage: React.FC = () => {
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {/* AI Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500 transition-colors group h-full">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-6 h-6 text-purple-400" />
                   </div>
                   <Typography variant="h3" as="h3">AI & ML Integration</Typography>
@@ -453,7 +453,7 @@ const TechnologyPage: React.FC = () => {
 
                {/* IoT Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group h-full">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Network className="w-6 h-6 text-blue-400" />
                   </div>
                   <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
@@ -462,7 +462,7 @@ const TechnologyPage: React.FC = () => {
 
                {/* High Security */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group h-full">
-                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
                      <Lock className="w-6 h-6 text-emerald-400" />
                   </div>
                   <Typography variant="h3" as="h3">Enterprise Security</Typography>
@@ -479,7 +479,7 @@ const TechnologyPage: React.FC = () => {
             
             <Grid cols={2} gap={8} className="text-left">
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center gap-4 mb-6">
+                  <Stack direction="row" gap={4} align="center" className="mb-6">
                      <Box className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Containerized (Docker)</Typography>
                   </div>
@@ -491,7 +491,7 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center gap-4 mb-6">
+                  <Stack direction="row" gap={4} align="center" className="mb-6">
                      <HardDrive className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Platform Agnostic</Typography>
                   </div>

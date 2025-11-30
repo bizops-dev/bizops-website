@@ -103,7 +103,7 @@ const DemoPage: React.FC = () => {
 
   if (formState === 'success') {
     return (
-      <div className="min-h-screen bg-[#0B0F19] flex flex-col items-center justify-center text-center px-4">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-[#0B0F19] text-center px-4">
         <motion.div 
           initial={{ scale: 0 }} animate={{ scale: 1 }}
           className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-8 ring-1 ring-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.3)]"
@@ -134,13 +134,13 @@ const DemoPage: React.FC = () => {
             <Grid cols={12} gap={12}>
               
               {/* Left: Value Proposition */}
-              <div className="lg:col-span-5 flex flex-col justify-center">
+              <Stack direction="col" gap={4} justify="center" className="lg:col-span-5">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-wider mb-6">
+                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-wider mb-6">
                     <Video className="w-3 h-3" /> Live Walkthrough
                   </div>
                   <Typography variant="h1" as="h1" className="font-extrabold text-white leading-tight tracking-tight">Lihat BizOps <br/>
@@ -154,7 +154,7 @@ const DemoPage: React.FC = () => {
                       { icon: FileCheck, title: 'Architecture & Quote', desc: 'Rekomendasi topologi infrastruktur & estimasi investasi.' }
                     ].map((item, idx) => (
                       <div key={idx} className="flex gap-5">
-                        <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 shadow-inner">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 shadow-inner">
                           <item.icon className="w-6 h-6 text-primary-400" />
                         </div>
                         <div>

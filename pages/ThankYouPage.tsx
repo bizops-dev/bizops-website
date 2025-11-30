@@ -6,14 +6,15 @@ import { CheckCircle, Download, Video, Linkedin } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ThankYouPage: React.FC = () => {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center py-16 px-4 bg-slate-50">
+    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[80vh] py-16 px-4 bg-slate-50">
       <SEO title="Terima Kasih | Permintaan Diterima" description="Konfirmasi pengiriman formulir BizOps." />
       
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-200 max-w-2xl w-full text-center">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 animate-bounce">
+        <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-8 animate-bounce">
            <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
         

@@ -10,7 +10,7 @@ const PricingCalculatorPage: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden flex flex-col font-sans">
+    <Stack direction="col" gap={4} className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden font-sans">
       <SEO
         title="Enterprise Pricing Estimator | BizOps"
         description="Kalkulasi investasi sistem ERP BizOps secara presisi. Sesuaikan modul, user, dan infrastruktur dengan kebutuhan enterprise Anda."
@@ -109,7 +109,7 @@ const PricingCalculatorPage: React.FC = () => {
             className="flex flex-col h-screen overflow-hidden bg-[#0B0F19]"
           >
             {/* Minimal Header */}
-            <div className="flex-shrink-0 px-6 h-16 border-b border-white/5 flex items-center justify-between bg-[#0B0F19]/80 backdrop-blur-md z-20">
+            <Stack direction="row" gap={4} align="center" justify="between" className="px-6 h-16 border-b border-white/5 bg-[#0B0F19]/80 backdrop-blur-md z-20">
                <button 
                  onClick={() => setIsStarted(false)} 
                  className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5"
@@ -119,7 +119,7 @@ const PricingCalculatorPage: React.FC = () => {
                </button>
                
                <Stack direction="row" gap={4} align="center">
-                 <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+                 <Stack direction="row" gap={2} align="center" className="hidden text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
                     Live Estimation
                  </div>
@@ -127,7 +127,7 @@ const PricingCalculatorPage: React.FC = () => {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-grow overflow-hidden relative">
+            <Stack direction="row" gap={4} className="overflow-hidden relative">
               <PricingCalculator />
             </div>
           </motion.div>

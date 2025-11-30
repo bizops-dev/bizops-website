@@ -137,9 +137,9 @@ const ContactPage: React.FC = () => {
                         
                         <Stack direction="col" gap={8}>
                            <a href="mailto:hello@bizops.id" className="flex items-start gap-5 group/item">
-                              <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
                                  <Mail className="w-6 h-6" />
-                              </div>
+                              </Stack>
                               <div>
                                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Email Sales & Support</div>
                                  <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-indigo-600 dark:group-hover/item:text-indigo-400 transition-colors">hello@bizops.id</div>
@@ -148,15 +148,15 @@ const ContactPage: React.FC = () => {
                            </a>
 
                            <a href="tel:+622139702834" className="flex items-start gap-5 group/item">
-                              <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl text-emerald-600 dark:text-emerald-400 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
                                  <Phone className="w-6 h-6" />
-                              </div>
+                              </Stack>
                               <div>
                                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Call Center</div>
                                  <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-emerald-600 dark:group-hover/item:text-emerald-400 transition-colors">+62 21 3970 2834</div>
-                                 <div className="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                                 <Stack direction="row" gap={1} align="center" className="text-xs text-slate-400 mt-1">
                                     <Clock className="w-3 h-3" /> Mon-Fri, 09:00 - 17:00 WIB
-                                 </div>
+                                 </Stack>
                               </div>
                            </a>
                         </Stack>
@@ -207,7 +207,7 @@ const ContactPage: React.FC = () => {
                      transition={{ delay: 0.2 }}
                      className="bg-gradient-to-r from-indigo-600 to-violet-600 p-1 rounded-3xl shadow-xl"
                   >
-                     <div className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full flex items-center justify-between gap-4">
+                     <Stack direction="row" gap={4} align="center" justify="between" className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full">
                         <div>
                            <Typography variant="h3" as="h3">Join Developer Community</Typography>
                            <Typography variant="body" className="text-slate-500 dark:text-slate-400">Chat with 500+ peers on Discord.</Typography>
@@ -217,7 +217,7 @@ const ContactPage: React.FC = () => {
                               Join Now <MessageSquare className="w-3 h-3 ml-2" />
                            </Button>
                         </a>
-                     </div>
+                     </Stack>
                   </motion.div>
 
                </Stack>
@@ -300,12 +300,12 @@ const ContactPage: React.FC = () => {
                                )}
                             </div>
 
-                            <div className="pt-4 flex items-center justify-between gap-4 flex-wrap">
+                            <Stack direction="row" gap={4} align="center" justify="between" className="pt-4">
                                <Typography variant="body" className="text-slate-400">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
                                <Button size="lg" type="submit" isLoading={isLoading} className="h-14 px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
                                   {isLoading ? 'Mengirim...' : 'Kirim Pesan'} <Send className="w-4 h-4 ml-2" />
                                </Button>
-                            </div>
+                            </Stack>
                          </form>
                        </>
                      )}

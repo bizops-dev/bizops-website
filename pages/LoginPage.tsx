@@ -48,16 +48,16 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-white dark:bg-slate-950 font-sans">
+    <Stack direction="row" gap={4} className="min-h-screen bg-white dark:bg-slate-950 font-sans">
       <SEO title="Login to BizOps | Enterprise ERP" description="Secure access to your BizOps workspace." />
 
       {/* LEFT: FORM SECTION */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-24 py-12 relative z-10">
+      <Stack direction="col" gap={4} justify="center" className="w-full lg:w-1/2 px-8 sm:px-12 lg:px-24 py-12 relative z-10">
         <Container className="w-full">
           
           {/* Logo Mobile Only */}
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 w-fit">
-             <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
+             <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 bg-slate-900 rounded-lg">
                 <div className="w-4 h-4 bg-white rounded-sm transform rotate-45"></div>
              </div>
              <span className="font-bold text-xl text-slate-900 dark:text-white">BizOps</span>
@@ -96,7 +96,7 @@ const LoginPage: React.FC = () => {
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.3 }}
           >
-             <div className="mb-6 flex items-center gap-3 p-4 bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/30 rounded-xl">
+             <Stack direction="row" gap={3} align="center" className="mb-6 p-4 bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/30 rounded-xl">
                 <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm text-primary-600">
                    {loginType === 'employee' && <Users className="w-5 h-5" />}
                    {loginType === 'admin' && <Briefcase className="w-5 h-5" />}
@@ -173,7 +173,7 @@ const LoginPage: React.FC = () => {
              </Typography>
           )}
           
-          <div className="mt-12 flex items-center justify-center gap-4 text-xs text-slate-400">
+          <Stack direction="row" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400">
              <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> SOC2 Compliant</span>
              <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> 256-bit SSL</span>
           </div>
@@ -182,7 +182,7 @@ const LoginPage: React.FC = () => {
       </div>
 
       {/* RIGHT: VISUAL SECTION (Desktop Only) */}
-      <div className="hidden lg:flex w-1/2 bg-[#0F172A] relative items-center justify-center overflow-hidden">
+      <Stack direction="row" gap={4} align="center" justify="center" className="hidden w-1/2 bg-[#0F172A] relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
          
          {/* Animated Background Shapes */}
@@ -202,7 +202,7 @@ const LoginPage: React.FC = () => {
                   {loginType === 'employee' && (
                      <div className="bg-slate-800/50 backdrop-blur-md p-6 rounded-2xl border border-slate-700 shadow-2xl text-left transform rotate-[-2deg]">
                         <Stack direction="row" gap={4} align="center" className="mb-4 border-b border-slate-700 pb-4">
-                           <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">JD</div>
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-500 text-white font-bold">
                            <div>
                               <div className="text-white font-bold">John Doe</div>
                               <div className="text-slate-400 text-xs">Senior Engineer</div>
@@ -212,7 +212,7 @@ const LoginPage: React.FC = () => {
                         <Stack direction="col" gap={3}>
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>
                            <div className="h-2 w-1/2 bg-slate-700 rounded-full"></div>
-                           <div className="mt-4 flex gap-2">
+                           <Stack direction="row" gap={2} className="mt-4">
                               <span className="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">Payroll Ready</span>
                               <span className="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">Payslip Generated</span>
                            </div>

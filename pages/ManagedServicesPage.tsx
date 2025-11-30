@@ -79,7 +79,7 @@ const ManagedServicesPage: React.FC = () => {
                >
                   <Container className="relative w-full aspect-square">
                     {/* Central Hub */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden">
                         <OptimizedImage src="/logo-icon.svg" alt="BizOps" className="w-16 h-16 opacity-80" onError={() => {}} />
                     </div>
                      
@@ -125,7 +125,7 @@ const ManagedServicesPage: React.FC = () => {
                   { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500" },
                ].map((service, idx) => (
                   <div key={idx} className="h-full">
-                     <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 h-full flex flex-col">
+                     <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 h-full">
                         <div className={`w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 ${service.color}`}>
                            <service.icon className="w-7 h-7" />
                         </div>
@@ -195,7 +195,7 @@ const ManagedServicesPage: React.FC = () => {
                             { name: "Legal Corp", type: "Legal Partner", logo: "Briefcase" },
                          ].map((partner, idx) => (
                             <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm text-center border border-slate-100 dark:border-slate-800">
-                               <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400">
+                               <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 text-slate-400">
                                   <Handshake className="w-6 h-6" />
                                </div>
                                <div className="font-bold text-slate-900 dark:text-white text-sm">{partner.name}</div>

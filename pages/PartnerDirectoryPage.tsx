@@ -77,7 +77,7 @@ const PartnerDirectoryPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         
         <Container size="7xl" className="relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
+          <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
             <Globe className="w-3 h-3" /> Global Partner Network
           </div>
           <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
@@ -231,7 +231,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
           {/* --- PARTNER GRID --- */}
           <div className="col-span-1 lg:col-span-3">
-             <div className="mb-6 flex justify-between items-center">
+             <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                 <Typography variant="h2" as="h2" className="text-slate-900 dark:text-white font-bold">Showing {filteredPartners.length} Partners</Typography>
              </div>
 
@@ -252,7 +252,7 @@ const PartnerDirectoryPage: React.FC = () => {
                </div>
              ) : (
                <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800">
-                  <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-6 text-slate-400">
                      <Search className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">No partners found</Typography>
@@ -323,7 +323,7 @@ const PartnerDirectoryPage: React.FC = () => {
                  </div>
               </Stack>
 
-              <div className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex gap-4">
+              <Stack direction="row" gap={4} className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
                  <Button variant="outline" fullWidth onClick={clearFilters}>Reset</Button>
                  <Button fullWidth onClick={() => setShowMobileFilter(false)}>Show Results</Button>
               </div>
@@ -368,10 +368,10 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
    };
 
    return (
-      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-xl transition-all hover:border-primary-500/30 group flex flex-col h-full">
+      <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-xl transition-all hover:border-primary-500/30 group h-full">
          <Stack direction="row" gap={4} align="start" justify="between" className="mb-6">
             <Stack direction="row" gap={4} align="center">
-               <div className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 flex items-center justify-center shadow-sm">
+               <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 shadow-sm">
                    <OptimizedImage src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
                </div>
                <div>
@@ -415,7 +415,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
             </Stack>
          </Stack>
 
-         <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-3">
+         <Stack direction="row" gap={3} className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
             <a href={partner.website} target="_blank" rel="noopener noreferrer" className="w-full">
                <Button size="sm" variant="outline" fullWidth className="rounded-xl border-slate-200 dark:border-slate-700">
                   <Globe className="w-4 h-4 mr-2" /> Visit Website

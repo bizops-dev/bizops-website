@@ -121,9 +121,9 @@ const ROIPage: React.FC = () => {
         
         {/* Header */}
         <Container size="3xl" className="text-center mb-16">
-           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+           <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" /> ROI Calculator
-           </div>
+           </Stack>
            <Typography variant="h1" as="h1" className="font-bold text-white leading-tight">Hitung Nilai Investasi <br/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Transformasi Digital</span></Typography>
            <Typography variant="body-lg" className="text-slate-400">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
@@ -262,7 +262,7 @@ const ROIPage: React.FC = () => {
                  {/* Efficiency */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
-                      <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg group-hover:scale-110 transition-transform">
                          <TrendingUp className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-blue-400">Soft Savings</Typography>
@@ -275,7 +275,7 @@ const ROIPage: React.FC = () => {
                  {/* Overtime */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
-                      <div className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg group-hover:scale-110 transition-transform">
                          <Clock className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-amber-400">Hard Savings</Typography>
@@ -288,7 +288,7 @@ const ROIPage: React.FC = () => {
                  {/* Fraud */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
-                      <div className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg group-hover:scale-110 transition-transform">
                          <AlertTriangle className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-red-400">Risk Avoidance</Typography>
@@ -301,7 +301,7 @@ const ROIPage: React.FC = () => {
                  {/* Tech Cost Savings (New) */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
-                      <div className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg group-hover:scale-110 transition-transform">
                          <Database className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-purple-400">Hard Savings</Typography>
@@ -315,21 +315,21 @@ const ROIPage: React.FC = () => {
               {/* MAIN HERO RESULT */}
               <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden text-center md:text-left">
                  <Stack direction="col" gap={8} className="relative z-10 justify-between items-center">
-                    <div className="flex-1">
+                    <Stack direction="row" gap={4}>
                        <Typography variant="h2" as="h2">Total Penghematan Tahunan</Typography>
                        <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                           {formatCompactCurrency(annualSavings)}
                        </div>
                        
                        <Stack direction="row" gap={4} justify="center">
-                          <div className="bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl flex items-center gap-3">
+                          <Stack direction="row" gap={3} align="center" className="bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl">
                              <div className="p-1 bg-emerald-500 rounded-full text-black"><TrendingUp className="w-3 h-3" /></div>
                              <div className="text-left">
                                <div className="text-xs text-emerald-300 font-medium">ROI Year 1</div>
                                <div className="text-lg font-bold text-emerald-400">{roiPercentage.toFixed(0)}%</div>
                              </div>
                           </div>
-                          <div className="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl flex items-center gap-3">
+                          <Stack direction="row" gap={3} align="center" className="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl">
                              <div className="p-1 bg-blue-500 rounded-full text-white"><Clock className="w-3 h-3" /></div>
                              <div className="text-left">
                                <div className="text-xs text-blue-300 font-medium">Break Even</div>
@@ -363,7 +363,7 @@ const ROIPage: React.FC = () => {
               </div>
 
               {/* Disclaimer */}
-              <div className="bg-slate-900/30 p-6 rounded-2xl border border-white/5 flex gap-4 items-start">
+              <Stack direction="row" gap={4} align="start" className="bg-slate-900/30 p-6 rounded-2xl border border-white/5">
                   <div className="mt-1 p-2 bg-slate-800 rounded-lg text-slate-400">
                      <AlertTriangle className="w-4 h-4" />
                   </div>
@@ -379,7 +379,7 @@ const ROIPage: React.FC = () => {
         {/* --- LEAD FORM MODAL --- */}
         <AnimatePresence>
           {showLeadForm && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+            <Stack direction="row" gap={4} align="center" justify="center" className="fixed inset-0 z-50 p-4 bg-slate-950/80 backdrop-blur-sm">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -394,7 +394,7 @@ const ROIPage: React.FC = () => {
                 </button>
                 
                 <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl mx-auto mb-4">
                     <FileText className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Simpan Kalkulasi ROI</Typography>

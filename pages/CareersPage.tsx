@@ -23,7 +23,7 @@ const CareersPage: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <Container size="7xl" className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
+          <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
              <Globe className="w-3 h-3" /> Part of Divistant Ecosystem
           </div>
           <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight">Build Software that <br/>
@@ -70,21 +70,21 @@ const CareersPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                         <GitMerge className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Open Source DNA</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                         <Zap className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                         <BookOpen className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Continuous Learning</Typography>
@@ -95,21 +95,21 @@ const CareersPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                      <GitMerge className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Open Source DNA</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                      <BookOpen className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Continuous Learning</Typography>
@@ -126,7 +126,7 @@ const CareersPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                   <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 text-amber-600 dark:text-amber-500">
                         <Coffee className="w-6 h-6" />
                      </div>
                      <div>
@@ -135,7 +135,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </Stack>
                   <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-500">
                         <Monitor className="w-6 h-6" />
                      </div>
                      <div>
@@ -144,7 +144,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </Stack>
                   <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-500">
                         <Heart className="w-6 h-6" />
                      </div>
                      <div>
@@ -153,7 +153,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </Stack>
                   <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-500">
                         <Award className="w-6 h-6" />
                      </div>
                      <div>
@@ -166,7 +166,7 @@ const CareersPage: React.FC = () => {
 
             <Grid cols={2} gap={6} className="hidden">
                <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 text-amber-600 dark:text-amber-500">
                      <Coffee className="w-6 h-6" />
                   </div>
                   <div>
@@ -175,7 +175,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </Stack>
                <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-500">
                      <Monitor className="w-6 h-6" />
                   </div>
                   <div>
@@ -184,7 +184,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </Stack>
                <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-500">
                      <Heart className="w-6 h-6" />
                   </div>
                   <div>
@@ -193,7 +193,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </Stack>
                <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-500">
                      <Award className="w-6 h-6" />
                   </div>
                   <div>
@@ -223,7 +223,7 @@ const CareersPage: React.FC = () => {
                </a>
             </Stack>
             
-            <div className="mt-12 pt-8 border-t border-slate-800 flex justify-center items-center gap-2 text-slate-500 text-sm">
+            <Stack direction="row" gap={2} align="center" justify="center" className="mt-12 pt-8 border-t border-slate-800 text-slate-500 text-sm">
                <CheckCircle className="w-4 h-4" /> 
                <span>Kami membalas setiap lamaran dalam 3-5 hari kerja.</span>
             </div>

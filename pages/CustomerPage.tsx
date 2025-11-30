@@ -46,9 +46,9 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
         }}
       />
       
-      <div className="relative h-full flex flex-col lg:flex-row">
+      <Stack direction="col" gap={4} className="relative h-full">
          {/* LEFT: Impact & Metrics (Dark Side) */}
-         <div className="lg:w-[400px] bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
+         <Stack direction="col" gap={4} justify="between" className="lg:w-[400px] bg-slate-900 text-white p-10 relative overflow-hidden">
             {/* Abstract Background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
                <div className="absolute -top-20 -left-20 w-60 h-60 bg-blue-500 rounded-full blur-[80px]"></div>
@@ -56,7 +56,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             </div>
 
             <div className="relative z-10">
-               <div className="w-16 h-16 bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
+               <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-white text-slate-900 rounded-2xl font-bold text-xl shadow-lg mb-8">
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
@@ -74,7 +74,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
          </div>
 
          {/* RIGHT: The Story (Light Side) */}
-         <div className="flex-1 p-10 lg:p-14 flex flex-col">
+         <Stack direction="col" gap={4} className="p-10 lg:p-14">
             <div className="mb-8">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
@@ -192,7 +192,7 @@ const CustomerPage: React.FC = () => {
          </Container>
          
          {/* Marquee Container */}
-         <div className="relative flex overflow-x-hidden w-full group">
+         <Stack direction="row" gap={4} className="relative overflow-x-hidden w-full group">
             {/* Gradient Fade Edges */}
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>

@@ -16,7 +16,7 @@ const CapabilityPage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4">
         <SEO title="Page Not Found" />
         <Typography variant="h1" as="h1">Capability Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
@@ -33,7 +33,7 @@ const CapabilityPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white">
          <Container size="7xl" className="text-center">
-            <div className="inline-flex p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
+            <Stack direction="row" gap={4} className="p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />
             </div>
             <Typography variant="h1" as="h1" className="font-bold leading-tight">{data.subtitle}</Typography>
@@ -51,8 +51,8 @@ const CapabilityPage: React.FC = () => {
             <Grid cols={2} gap={8}>
                {data.features.map((item: any, idx: number) => (
                   <div key={idx} className="flex gap-6 p-8 border border-slate-200 rounded-2xl bg-white hover:border-primary-200 hover:shadow-lg transition-all">
-                     <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center border border-primary-100">
+                     <Stack direction="row" gap={4} className="mt-1">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 text-primary-600 rounded-xl border border-primary-100">
                            <Check className="w-6 h-6" />
                         </div>
                      </div>

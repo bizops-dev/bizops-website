@@ -59,7 +59,7 @@ const DocsPage: React.FC = () => {
             className={`relative max-w-2xl mx-auto group transition-all duration-300 ${searchFocused ? 'scale-105' : ''}`}
           >
              <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl group-hover:bg-primary-500/30 transition-colors"></div>
-             <div className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex items-center overflow-hidden">
+             <Stack direction="row" gap={4} align="center" className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                 <Search className="w-6 h-6 text-slate-400 ml-5 flex-shrink-0" />
                 <input 
                   type="text" 
@@ -68,7 +68,7 @@ const DocsPage: React.FC = () => {
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
                 />
-                <div className="hidden sm:flex items-center gap-1 pr-5 text-xs font-medium text-slate-400 bg-transparent">
+                <Stack direction="row" gap={1} align="center" className="hidden pr-5 text-xs font-medium text-slate-400 bg-transparent">
                    <span className="bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded border border-slate-200 dark:border-slate-700">⌘ K</span>
                 </div>
              </div>
@@ -105,12 +105,12 @@ const DocsPage: React.FC = () => {
                       className="h-full w-[85vw] sm:w-[350px]"
                     >
                       <Card className="h-full hover:border-primary-500/50 dark:hover:border-primary-500/50 group bg-white dark:bg-slate-900/80 backdrop-blur-sm" hoverEffect>
-                         <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
+                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
                             <cat.icon className="w-6 h-6" />
                          </div>
                          <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                          <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{cat.desc}</Typography>
-                         <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
+                         <Stack direction="row" gap={4} align="center" className="mt-auto text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                             Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                          </div>
                       </Card>
@@ -130,12 +130,12 @@ const DocsPage: React.FC = () => {
                    className="h-full"
                  >
                    <Card className="h-full hover:border-primary-500/50 dark:hover:border-primary-500/50 group bg-white dark:bg-slate-900/80 backdrop-blur-sm" hoverEffect>
-                      <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
+                      <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
                          <cat.icon className="w-6 h-6" />
                       </div>
                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{cat.desc}</Typography>
-                      <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
+                      <Stack direction="row" gap={4} align="center" className="mt-auto text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                          Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                       </div>
                    </Card>
@@ -151,7 +151,7 @@ const DocsPage: React.FC = () => {
            
            <Grid cols={5} gap={16} className="relative z-10">
               <div className="lg:col-span-2">
-                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-900/30 border border-blue-800 text-blue-300 text-xs font-bold mb-6">
+                 <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-lg bg-blue-900/30 border border-blue-800 text-blue-300 text-xs font-bold mb-6">
                     <Terminal className="w-3 h-3" /> DEVELOPER HUB
                  </div>
                  
@@ -250,7 +250,7 @@ const DocsPage: React.FC = () => {
               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                  <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
                     <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
-                       <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl mb-6 shadow-sm">
                           <MessageSquare className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Developer Community</Typography>
@@ -261,7 +261,7 @@ const DocsPage: React.FC = () => {
                  
                  <Link to="/roadmap" className="block h-full">
                     <Card className="h-full flex flex-col items-center text-center hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-300" hoverEffect>
-                       <div className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl mb-6 shadow-sm">
                           <Zap className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Feature Requests</Typography>
@@ -272,7 +272,7 @@ const DocsPage: React.FC = () => {
                  
                  <Link to="/contact" className="block h-full">
                     <Card className="h-full flex flex-col items-center text-center hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300" hoverEffect>
-                       <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl mb-6 shadow-sm">
                           <Shield className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Premium Support</Typography>
@@ -286,7 +286,7 @@ const DocsPage: React.FC = () => {
            <Grid cols={3} gap={6} className="hidden">
               <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
-                    <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl mb-6 shadow-sm">
                        <MessageSquare className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Developer Community</Typography>
@@ -297,7 +297,7 @@ const DocsPage: React.FC = () => {
               
               <Link to="/roadmap" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-300" hoverEffect>
-                    <div className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl mb-6 shadow-sm">
                        <Zap className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Feature Requests</Typography>
@@ -308,7 +308,7 @@ const DocsPage: React.FC = () => {
               
               <Link to="/contact" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300" hoverEffect>
-                    <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl mb-6 shadow-sm">
                        <Shield className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Premium Support</Typography>

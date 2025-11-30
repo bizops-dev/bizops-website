@@ -24,7 +24,7 @@ const DownloadPage: React.FC = () => {
             
             {/* Left Content */}
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+              <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
                  <Smartphone className="w-3 h-3" /> BizOps Mobile v4.2
               </div>
               
@@ -55,7 +55,7 @@ const DownloadPage: React.FC = () => {
               <Stack direction="row" gap={6} align="center">
                  <div className="hidden sm:block p-2 bg-white rounded-xl shadow-md border border-slate-100">
                     {/* Mock QR Code */}
-                    <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] p-1 text-center leading-tight">
+                    <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-slate-900 text-white text-[8px] p-1 text-center leading-tight">
                        SCAN TO<br/>DOWNLOAD
                     </div>
                  </div>
@@ -87,7 +87,7 @@ const DownloadPage: React.FC = () => {
                      {/* Screen */}
                      <div className="bg-white dark:bg-slate-950 rounded-[2.5rem] overflow-hidden h-[600px] relative">
                         {/* Status Bar */}
-                        <div className="h-8 bg-slate-900 flex justify-between items-center px-6">
+                        <Stack direction="row" gap={4} align="center" justify="between" className="h-8 bg-slate-900 px-6">
                            <span className="text-[10px] text-white font-bold">9:41</span>
                            <Stack direction="row" gap={1}>
                               <div className="w-3 h-3 bg-white rounded-full opacity-20"></div>
@@ -139,7 +139,7 @@ const DownloadPage: React.FC = () => {
                         </Stack>
 
                         {/* Floating Action */}
-                        <div className="absolute bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="absolute bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 text-white hover:scale-110 transition-transform">
                            <Download className="w-6 h-6" />
                         </div>
                      </div>
@@ -163,21 +163,21 @@ const DownloadPage: React.FC = () => {
                   mobileItemWidth="w-[85vw] sm:w-[350px]"
                >
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl text-amber-600 mb-6">
                         <WifiOff className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 mb-6">
                         <Fingerprint className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Biometric Security</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 mb-6">
                         <Bell className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Instant Push Notif</Typography>
@@ -188,21 +188,21 @@ const DownloadPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl text-amber-600 mb-6">
                      <WifiOff className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 mb-6">
                      <Fingerprint className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Biometric Security</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 mb-6">
                      <Bell className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Instant Push Notif</Typography>

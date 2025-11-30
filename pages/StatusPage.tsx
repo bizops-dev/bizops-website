@@ -40,7 +40,7 @@ const StatusPage: React.FC = () => {
             <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white">{statusData.currentStatus}</Typography>
             <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">All systems are running smoothly. No incidents reported today.</Typography>
 
-            <div className="inline-flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
+            <Stack direction="row" gap={6} align="center" className="text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
                <span className="flex items-center gap-2">
                   <RefreshCw className="w-4 h-4" /> Updated: {statusData.lastUpdated}
                </span>
@@ -87,7 +87,7 @@ const StatusPage: React.FC = () => {
            
            {/* Core Services */}
            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+              <Stack direction="row" gap={4} align="center" justify="between" className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><Server className="w-4 h-4 text-slate-500" /> Platform Services</Typography>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">

@@ -124,7 +124,7 @@ const UseCasesPage: React.FC = () => {
       />
 
       {/* Hero Section - Full Height & No Search Bar */}
-      <div className="relative min-h-[60vh] flex items-center justify-center bg-[#0B1120] overflow-hidden border-b border-white/5 pt-20">
+      <Stack direction="row" gap={4} align="center" justify="center" className="relative min-h-[60vh] bg-[#0B1120] overflow-hidden border-b border-white/5 pt-20">
         {/* Abstract Background Mesh */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         
@@ -175,7 +175,7 @@ const UseCasesPage: React.FC = () => {
             <Stack direction="col" gap={12}>
                
                {/* Sidebar Filter (Desktop) */}
-               <div className="hidden lg:block w-72 flex-shrink-0">
+               <Stack direction="row" gap={4} className="hidden lg:block w-72">
                   <Stack direction="col" gap={10} className="sticky top-28">
                      
                      {/* Filter by Category/Function */}
@@ -295,13 +295,13 @@ const UseCasesPage: React.FC = () => {
                </Stack>
 
                {/* Grid Content */}
-               <div className="flex-1 min-h-[600px]">
+               <Stack direction="row" gap={4} className="min-h-[600px]">
                   {/* Search Bar & Result Info Moved Here */}
                   <Stack direction="col" gap={6} className="mb-8">
                      {/* Search Bar */}
                      <div className="relative group max-w-lg">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
-                        <div className="relative bg-white dark:bg-slate-900 rounded-xl flex items-center border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
+                        <Stack direction="row" gap={4} align="center" className="relative bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
                            <Search className="absolute left-4 w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
                            <input 
                               type="text" 
@@ -335,7 +335,7 @@ const UseCasesPage: React.FC = () => {
 
                   {filteredCases.length === 0 ? (
                      <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-300 dark:border-slate-700">
-                        <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full mx-auto mb-6 text-slate-400">
                            <Search className="w-10 h-10" />
                         </div>
                         <Typography variant="h3" as="h3">No Results Found</Typography>

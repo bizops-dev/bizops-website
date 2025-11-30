@@ -118,12 +118,12 @@ const ModulePage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Content Not Found" />
         <Typography variant="h1" as="h1">Content Not Found</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">The requested page could not be found.</Typography>
         <Link to="/platform"><Button>Back to Platform</Button></Link>
-      </div>
+      </Stack>
     );
   }
 
@@ -310,9 +310,9 @@ const ModulePage: React.FC = () => {
                                 transition={{ delay: idx * 0.1 }}
                                 className="flex gap-4"
                               >
-                                 <div className="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center flex-shrink-0">
+                                 <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20">
                                     <ProbIcon className="w-6 h-6 text-red-500" />
-                                 </div>
+                                 </Stack>
                                  <div>
                                     <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
                                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
@@ -365,9 +365,9 @@ const ModulePage: React.FC = () => {
                     whileHover={{ y: -5 }}
                     className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group h-full"
                   >
-                     <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
                         <FeatureIcon className="w-6 h-6" />
-                     </div>
+                     </Stack>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feature.desc}</Typography>
                   </motion.div>
@@ -387,9 +387,9 @@ const ModulePage: React.FC = () => {
                   
                   <Grid cols={2} gap={12} className="items-center p-8 lg:p-16 relative z-10">
                      <div>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
+                        <Stack direction="row" gap={2} align="center" className="px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
                            <Smartphone className="w-4 h-4" /> Mobile Native
-                        </div>
+                        </Stack>
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
                         <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
                         <Stack direction="col" gap={4}>
@@ -410,11 +410,11 @@ const ModulePage: React.FC = () => {
                            {/* Notch */}
                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-xl z-20"></div>
                            {/* Screen Content */}
-                           <div className="w-full h-full bg-slate-900 flex flex-col">
+                           <Stack direction="col" gap={4} className="w-full h-full bg-slate-900">
                               {/* Header */}
-                              <div className="bg-slate-800 h-20 p-6 flex items-end">
+                              <Stack direction="row" gap={4} align="end" className="bg-slate-800 h-20 p-6">
                                  <div className="text-white font-bold text-lg">{data.mobileAdvantage.title}</div>
-                              </div>
+                              </Stack>
                               {/* Body */}
                               <Stack direction="col" gap={4} className="p-4">
                                  <div className="h-32 bg-slate-800 rounded-xl animate-pulse"></div>
@@ -423,10 +423,10 @@ const ModulePage: React.FC = () => {
                                  <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-150"></div>
                               </Stack>
                               {/* FAB */}
-                              <div className="absolute bottom-6 right-6 w-14 h-14 bg-primary-600 rounded-full shadow-lg flex items-center justify-center">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="absolute bottom-6 right-6 w-14 h-14 bg-primary-600 rounded-full shadow-lg">
                                  <Plus className="w-6 h-6 text-white" />
-                              </div>
-                           </div>
+                              </Stack>
+                           </Stack>
                         </div>
                      </motion.div>
                   </Grid>
@@ -449,7 +449,7 @@ const ModulePage: React.FC = () => {
             {moduleId === 'integration' ? (
                // MARKETPLACE GRID VIEW
                <Stack direction="col" gap={12}>
-                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-2xl flex items-start gap-4 mb-12">
+                  <Stack direction="row" gap={4} align="start" className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-2xl mb-12">
                      <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-lg text-blue-600 dark:text-blue-300">
                         <Handshake className="w-6 h-6" />
                      </div>
@@ -457,7 +457,7 @@ const ModulePage: React.FC = () => {
                         <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                      {integrationsData.map((cat, idx) => (
@@ -495,9 +495,9 @@ const ModulePage: React.FC = () => {
                            transition={{ delay: idx * 0.1 }}
                            className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 relative group hover:-translate-y-1 transition-transform"
                         >
-                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400">
+                           <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400">
                               <LinkIcon className="w-4 h-4" />
-                           </div>
+                           </Stack>
                            <div className="mt-6 text-center">
                               <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
                               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
@@ -573,9 +573,9 @@ const ModulePage: React.FC = () => {
                   return (
                   <Link key={idx} to={linkPath} className="group h-full block">
                      <Card className="h-full border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg transition-all" padding="lg">
-                        <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                            <ModIcon className="w-6 h-6" />
-                        </div>
+                        </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{mod.description}</Typography>
                         <Stack direction="row" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">

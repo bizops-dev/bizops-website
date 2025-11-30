@@ -82,10 +82,10 @@ const BlogDetailPage: React.FC = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950">
+      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950">
         <Typography variant="h1" as="h1">Article Not Found</Typography>
         <Link to="/blog"><Button variant="primary">Back to Insights</Button></Link>
-      </div>
+      </Stack>
     );
   }
 
@@ -150,9 +150,9 @@ const BlogDetailPage: React.FC = () => {
 
                <Stack direction="row" gap={8} align="center" className="text-white/90 text-sm font-sans font-medium">
                   <Stack direction="row" gap={3} align="center">
-                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-lg border border-white/20">
+                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-sm shadow-lg border border-white/20">
                         {post.author.charAt(0)}
-                     </div>
+                     </Stack>
                      <div>
                         <span className="block text-white font-bold">{post.author.split(',')[0]}</span>
                         <span className="text-white/60 text-xs">Author</span>
@@ -257,9 +257,9 @@ const BlogDetailPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Author</Typography>
                         <Stack direction="row" gap={4} align="center" className="mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
-                              <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
+                              <Stack direction="row" gap={4} align="center" justify="center" className="w-full h-full rounded-full bg-white dark:bg-slate-900">
                                  <Typography variant="body-xl" className="text-blue-600">{post.author.charAt(0)}</Typography>
-                              </div>
+                              </Stack>
                            </div>
                            <div>
                               <div className="font-bold text-slate-900 dark:text-white">{post.author.split(',')[0]}</div>
@@ -304,7 +304,7 @@ const BlogDetailPage: React.FC = () => {
             <Grid cols={3} gap={8}>
                {relatedPosts.map((rp, idx) => (
                   <Link key={idx} to={`/blog/${rp.slug}`} className="group block h-full">
-                     <div className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                     <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full">
                         <div className="aspect-[16/10] overflow-hidden relative">
                            <OptimizedImage 
                               src={rp.image} 
@@ -317,14 +317,14 @@ const BlogDetailPage: React.FC = () => {
                               </span>
                            </div>
                         </div>
-                        <div className="p-8 flex flex-col flex-1">
+                        <Stack direction="col" gap={4} className="p-8">
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{rp.summary}</Typography>
                            <Stack direction="row" gap={4} align="center" className="text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
                               Read Article <ArrowRight className="w-4 h-4 ml-2" />
                            </Stack>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                   </Link>
                ))}
             </Grid>
@@ -343,10 +343,10 @@ const BlogDetailPage: React.FC = () => {
                
                {/* Left: Copy */}
                <div className="max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
+                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
                      <Rocket className="w-4 h-4 text-blue-400" />
                      <Typography variant="caption" className="text-blue-300">Start Your Journey</Typography>
-                  </div>
+                  </Stack>
                   <Typography variant="h2" as="h2" className="font-bold tracking-tight leading-[1.1] text-white">Turn Insights into <br/>
                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Actionable Growth.</span></Typography>
                   <Typography variant="body-xl" className="text-slate-400">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>

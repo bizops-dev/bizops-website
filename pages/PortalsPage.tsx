@@ -17,7 +17,7 @@ const PortalsPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Berhenti Menjadi Admin<br/>untuk Klien Anda.</Typography>

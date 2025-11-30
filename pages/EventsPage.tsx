@@ -92,7 +92,7 @@ const EventsPage: React.FC = () => {
                transition={{ delay: 0.3 }}
                className="max-w-2xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-2xl flex flex-col sm:flex-row items-center gap-2 shadow-2xl"
             >
-               <div className="relative flex-1 w-full">
+               <Stack direction="row" gap={4} className="relative w-full">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <input 
                      type="text" 
@@ -141,14 +141,14 @@ const EventsPage: React.FC = () => {
                        {/* Image Header */}
                        <div className="relative h-48 overflow-hidden">
                           <OptimizedImage src={evt.image} alt={evt.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
+                          <Stack direction="row" gap={2} align="center" className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
                              <evt.icon className="w-3 h-3" /> {evt.type}
                           </div>
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-60"></div>
                        </div>
 
                        {/* Content */}
-                       <div className="p-6 flex-1 flex flex-col">
+                       <Stack direction="col" gap={4} className="p-6">
                           <Stack direction="row" gap={2} align="center" className="text-sm text-primary-600 dark:text-primary-400 font-bold mb-3">
                              <Calendar className="w-4 h-4" /> {evt.formattedDate}
                           </Stack>
@@ -157,7 +157,7 @@ const EventsPage: React.FC = () => {
                           
                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
-                          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                          <Stack direction="row" gap={4} align="center" justify="between" className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
                              <Stack direction="row" gap={4} className="-space-x-2">
                                 {/* Dummy avatars for participants */}
                                 {[1,2,3].map(i => (
@@ -165,7 +165,7 @@ const EventsPage: React.FC = () => {
                                       {String.fromCharCode(64 + i)}
                                    </div>
                                 ))}
-                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500">
                                    +40
                                 </div>
                              </Stack>
@@ -195,14 +195,14 @@ const EventsPage: React.FC = () => {
                     {/* Image Header */}
                     <div className="relative h-48 overflow-hidden">
                        <OptimizedImage src={evt.image} alt={evt.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                       <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
+                       <Stack direction="row" gap={2} align="center" className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
                           <evt.icon className="w-3 h-3" /> {evt.type}
                        </div>
                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-60"></div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col">
+                    <Stack direction="col" gap={4} className="p-6">
                        <Stack direction="row" gap={2} align="center" className="text-sm text-primary-600 dark:text-primary-400 font-bold mb-3">
                           <Calendar className="w-4 h-4" /> {evt.formattedDate}
                        </Stack>
@@ -211,7 +211,7 @@ const EventsPage: React.FC = () => {
                        
                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
-                       <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                       <Stack direction="row" gap={4} align="center" justify="between" className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
                           <Stack direction="row" gap={4} className="-space-x-2">
                              {/* Dummy avatars for participants */}
                              {[1,2,3].map(i => (
@@ -219,7 +219,7 @@ const EventsPage: React.FC = () => {
                                    {String.fromCharCode(64 + i)}
                                 </div>
                              ))}
-                             <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                             <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500">
                                 +40
                              </div>
                           </Stack>
@@ -255,7 +255,7 @@ const EventsPage: React.FC = () => {
                  <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                     {eventsData.recordings.map((rec, idx) => (
                        <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
-                          <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
+                          <Stack direction="row" gap={4} align="center" justify="center" className="aspect-video bg-slate-900 rounded-xl mb-4 relative overflow-hidden group-hover:shadow-lg transition-shadow">
                              {/* Mock Thumbnail */}
                              <div className="absolute inset-0 bg-slate-800"></div>
                              <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />
@@ -277,7 +277,7 @@ const EventsPage: React.FC = () => {
               <Grid cols={3} gap={6} className="hidden">
                  {eventsData.recordings.map((rec, idx) => (
                     <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
-                       <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
+                       <Stack direction="row" gap={4} align="center" justify="center" className="aspect-video bg-slate-900 rounded-xl mb-4 relative overflow-hidden group-hover:shadow-lg transition-shadow">
                           {/* Mock Thumbnail */}
                           <div className="absolute inset-0 bg-slate-800"></div>
                           <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />
