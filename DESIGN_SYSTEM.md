@@ -200,6 +200,105 @@ Semua design tokens terpusat di `design-tokens.ts` untuk maintainability dan con
 - Hover states: `shadow-lg` or `shadow-xl`
 - Modals: `shadow-xl` or `shadow-2xl`
 
+## 🎬 Animation System
+
+### Motion Components
+
+**Available Components:**
+- `StaggeredText` - Animated text reveal
+- `BouncyButton` - Button with bounce effect
+- `InfiniteScrollLoop` - Infinite scrolling content
+- `CounterUp` - Animated number counter
+- `FadeInUp` - Fade in from bottom
+
+**Animation Utilities:**
+- `FADE_UP_VARIANTS` - Standard fade up animation
+- `useReducedMotion()` - Hook to detect reduced motion preference
+
+### Animation Guidelines
+
+**Duration:**
+- **Fast** (150ms): Micro-interactions (hover, focus)
+- **Normal** (200-300ms): Buttons, cards, transitions
+- **Slow** (500ms): Page transitions, modals
+- **Slower** (800ms+): Hero animations, special effects
+
+**Easing:**
+- **ease-out**: For elements entering (default)
+- **ease-in**: For elements exiting
+- **ease-in-out**: For elements that both enter and exit
+
+**Best Practices:**
+1. Only animate `transform` and `opacity` (GPU-accelerated)
+2. Avoid animating `width`, `height`, `padding`, `margin` (causes layout thrashing)
+3. Use `will-change` sparingly (only for complex animations)
+4. Always respect `prefers-reduced-motion`
+5. Keep animations subtle (don't distract from content)
+
+**Reduced Motion Support:**
+```tsx
+import { useReducedMotion } from '../hooks';
+
+const prefersReducedMotion = useReducedMotion();
+
+<motion.div
+  initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+>
+  Content
+</motion.div>
+
+// Or with Tailwind:
+<div className="transition-transform duration-300 motion-reduce:duration-0">
+```
+
+### Framer Motion Variants
+
+**Standard Variants:**
+```tsx
+export const FADE_UP_VARIANTS = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+// Usage:
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={FADE_UP_VARIANTS}
+>
+  Content
+</motion.div>
+```
+
+**Stagger Children:**
+```tsx
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+<motion.div variants={container} initial="hidden" animate="visible">
+  <motion.div variants={item}>Item 1</motion.div>
+  <motion.div variants={item}>Item 2</motion.div>
+  <motion.div variants={item}>Item 3</motion.div>
+</motion.div>
+```
+
+---
+
 ## 📚 Best Practices
 
 1. **Consistency**: Always use design tokens instead of magic numbers
@@ -207,4 +306,7 @@ Semua design tokens terpusat di `design-tokens.ts` untuk maintainability dan con
 3. **Responsive**: Test on multiple screen sizes
 4. **Performance**: Use `will-change` sparingly for animations
 5. **Semantic HTML**: Use proper heading hierarchy and semantic elements
+6. **Reduced Motion**: Always respect user preferences
+7. **Component Usage**: Use provided components instead of custom elements
+8. **ARIA Labels**: Add accessibility attributes to all interactive elements
 

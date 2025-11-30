@@ -25,6 +25,14 @@ type CardProps = {
   onClick?: () => void;
   /** Padding size */
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  /** ARIA label for accessibility */
+  'aria-label'?: string;
+  /** ARIA labelledby */
+  'aria-labelledby'?: string;
+  /** Role attribute */
+  role?: string;
+  /** HTML element to render */
+  as?: 'div' | 'article' | 'section' | 'aside';
 };
 
 const Card: React.FC<CardProps> = memo(({ 
@@ -33,7 +41,11 @@ const Card: React.FC<CardProps> = memo(({
   hoverEffect = false,
   variant = 'default',
   onClick,
-  padding = 'md'
+  padding = 'md',
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
+  role,
+  as: Component = 'div',
 }) => {
   
   const baseStyles = "rounded-2xl transition-all duration-300 relative overflow-hidden group";
@@ -55,12 +67,22 @@ const Card: React.FC<CardProps> = memo(({
   const hoverStyles = hoverEffect ? "hover:shadow-xl hover:-translate-y-2 hover:border-primary-300 dark:hover:border-primary-700 hover:ring-2 hover:ring-primary-500/10 cursor-pointer transition-shadow duration-300" : "";
 
   return (
-    <div 
+    <Component 
       className={`${baseStyles} ${variants[variant]} ${paddings[padding]} ${hoverStyles} ${className}`}
       onClick={onClick}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      role={role || (onClick ? 'button' : undefined)}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={onClick ? (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      } : undefined}
     >
       {children}
-    </div>
+    </Component>
   );
 });
 

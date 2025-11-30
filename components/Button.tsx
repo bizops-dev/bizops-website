@@ -39,6 +39,16 @@ type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** Button type */
   type?: 'button' | 'submit' | 'reset';
+  /** ARIA label for accessibility (required for icon-only buttons) */
+  'aria-label'?: string;
+  /** ARIA described by */
+  'aria-describedby'?: string;
+  /** ARIA expanded (for dropdowns) */
+  'aria-expanded'?: boolean;
+  /** ARIA controls (for dropdowns/modals) */
+  'aria-controls'?: string;
+  /** ARIA pressed (for toggle buttons) */
+  'aria-pressed'?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = memo(({ 
@@ -50,7 +60,12 @@ const Button: React.FC<ButtonProps> = memo(({
   className = '',
   disabled,
   onClick,
-  type = 'button'
+  type = 'button',
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
+  'aria-pressed': ariaPressed,
 }: ButtonProps) => {
   
   const baseStyles = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed rounded-lg active:scale-[0.98]";
@@ -80,8 +95,14 @@ const Button: React.FC<ButtonProps> = memo(({
       className={twMerge(baseStyles, variants[variant], sizes[size], widthClass, className)}
       disabled={disabled || isLoading}
       onClick={onClick}
+      aria-label={ariaLabel}
+      aria-describedby={ariaDescribedby}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      aria-pressed={ariaPressed}
+      aria-busy={isLoading}
     >
-      {isLoading && <Loader2 className="w-5 h-5 mr-2 animate-spin" />}
+      {isLoading && <Loader2 className="w-5 h-5 mr-2 animate-spin" aria-hidden="true" />}
       {children}
     </button>
   );
