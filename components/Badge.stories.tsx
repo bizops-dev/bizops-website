@@ -11,11 +11,11 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'success', 'warning', 'danger', 'info'],
+      options: ['neutral', 'primary', 'success', 'warning', 'danger', 'outline', 'dark', 'outline-white'],
     },
     size: {
       control: 'select',
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md'],
     },
   },
 } satisfies Meta<typeof Badge>;
@@ -57,10 +57,10 @@ export const Danger: Story = {
   },
 };
 
-export const Info: Story = {
+export const Neutral: Story = {
   args: {
-    variant: 'info',
-    children: 'Info',
+    variant: 'neutral',
+    children: 'Neutral',
   },
 };
 
@@ -78,12 +78,6 @@ export const Medium: Story = {
   },
 };
 
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    children: 'Large',
-  },
-};
 
 export const WithIcon: Story = {
   args: {
@@ -98,4 +92,5 @@ export const WithIcon: Story = {
     ),
   },
 };
+
 

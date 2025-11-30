@@ -1,0 +1,974 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import {
+  CheckCircle,
+  ArrowRight,
+  Settings,
+  Crosshair,
+  ChevronRight,
+  RefreshCw,
+  Download,
+  Briefcase,
+  Layers,
+  Lightbulb,
+  ArrowLeft,
+  Building,
+  Users,
+  Server,
+  Factory,
+  ShoppingCart,
+  HardHat,
+  Coffee,
+  Activity,
+  GraduationCap,
+  Globe,
+  Search,
+  Clock,
+  Wallet,
+  Puzzle,
+  Network,
+  GitMerge,
+  FileWarning,
+  BarChart,
+  Calendar,
+  Calculator,
+  PieChart,
+  TrendingUp,
+  Mail,
+  Phone
+} from 'lucide-react';
+import Button from '../components/Button';
+import { 
+  painPoints, 
+  goals, 
+  modules, 
+  techStackOptions, 
+  industries, 
+  holisticIssues,
+  timelines,
+  budgets,
+  serviceSolutions
+} from '../data/needsAnalysisData';
+import { useNavigate } from 'react-router-dom';
+
+type StepType = 'intro' | 'context' | 'tech-stack' | 'operational-context' | 'pain-points' | 'goals' | 'expectations' | 'analyzing' | 'result';
+
+const STEPS_ORDER: StepType[] = ['intro', 'context', 'tech-stack', 'operational-context', 'pain-points', 'goals', 'expectations', 'result'];
+
+// --- ISOLATED COMPONENTS (Prevents Re-render Issues) ---
+
+const ProgressBar = ({ step, displayStep, totalSteps }: { step: StepType, displayStep: number, totalSteps: number }) => {
+  if (step === 'intro' || step === 'analyzing' || step === 'result') return null;
+  const progress = (displayStep / totalSteps) * 100;
+  
+  return (
+    <div className="fixed top-20 left-0 w-full h-1 bg-slate-900 z-50">
+      <motion.div 
+        className="h-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+        initial={{ width: 0 }}
+        animate={{ width: `${progress}%` }}
+        transition={{ duration: 0.5 }}
+      />
+    </div>
+  );
+};
+
+const StepLayout = ({ 
+  title, 
+  desc, 
+  children, 
+  prevStep, 
+  nextStep, 
+  disableNext, 
+  setStep, 
+  displayStep, 
+  totalSteps,
+  handleFinish
+}: any) => (
+  <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4">
+    <ProgressBar step="context" displayStep={displayStep} totalSteps={totalSteps} />
+    <div className="max-w-4xl mx-auto">
+      <div className="mb-8">
+         <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">Step {displayStep} of {totalSteps}</div>
+         <h2 className="text-3xl font-bold mb-2">{title}</h2>
+         <p className="text-slate-400">{desc}</p>
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="mb-8 min-h-[400px]"
+      >
+        {children}
+      </motion.div>
+
+      <div className="flex justify-between border-t border-white/10 pt-6">
+         <button onClick={() => setStep(prevStep)} className="text-slate-500 hover:text-white flex items-center gap-2">
+           <ArrowLeft className="w-4 h-4" /> Kembali
+         </button>
+         <Button 
+           onClick={typeof nextStep === 'string' ? () => setStep(nextStep) : nextStep} 
+           disabled={disableNext}
+           className={disableNext ? 'opacity-50' : (nextStep === handleFinish ? 'bg-emerald-600 hover:bg-emerald-500' : '')}
+         >
+           {nextStep === handleFinish ? 'Lihat Hasil Analisis' : 'Lanjut'} 
+           {nextStep !== handleFinish && <ChevronRight className="w-4 h-4 ml-2" />}
+           {nextStep === handleFinish && <Search className="w-4 h-4 ml-2" />}
+         </Button>
+      </div>
+    </div>
+  </div>
+);
+
+// --- MAIN PAGE COMPONENT ---
+
+const NeedsAnalysisPage = () => {
+  const navigate = useNavigate();
+  const [step, setStep] = useState<StepType>('intro');
+  
+  // Selections
+  const [selectedPainPoints, setSelectedPainPoints] = useState<string[]>([]);
+  const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
+  const [selectedHolisticIssues, setSelectedHolisticIssues] = useState<string[]>([]);
+  const [selectedTimeline, setSelectedTimeline] = useState<string>('');
+  const [selectedBudget, setSelectedBudget] = useState<string>('');
+
+  const [contextData, setContextData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    role: '',
+    teamSize: '',
+    industry: '',
+    techStack: ''
+  });
+
+  // --- LOGIC ---
+  const toggleSelection = (list: string[], item: string, setList: (l: string[]) => void, max: number = 10) => {
+    if (list.includes(item)) {
+      setList(list.filter(i => i !== item));
+    } else {
+      if (list.length < max) {
+        setList([...list, item]);
+      }
+    }
+  };
+
+  const currentStepIndex = STEPS_ORDER.indexOf(step);
+  const totalSteps = STEPS_ORDER.length - 2; 
+  const displayStep = currentStepIndex; 
+
+  const getRecommendedModules = () => {
+    const allTags = [
+      ...selectedPainPoints, 
+      ...selectedGoals, 
+      ...selectedHolisticIssues, 
+      contextData.techStack, 
+      contextData.industry
+    ];
+    
+    return modules.map(mod => {
+      const matchCount = mod.relevance.filter(tag => allTags.includes(tag)).length;
+      const industryBonus = mod.relevance.includes(contextData.industry) ? 3 : 0;
+      const holisticBonus = mod.relevance.some(r => selectedHolisticIssues.includes(r)) ? 2 : 0;
+      return { ...mod, matchScore: matchCount + industryBonus + holisticBonus };
+    })
+    .filter(mod => mod.matchScore > 0)
+    .sort((a, b) => b.matchScore - a.matchScore)
+    .slice(0, 3);
+  };
+
+  const getRecommendedServices = () => {
+    const allTags = [
+      ...selectedPainPoints,
+      ...selectedHolisticIssues,
+      contextData.techStack
+    ];
+
+    return serviceSolutions.map(svc => {
+       const matchCount = svc.relevance.filter(tag => allTags.includes(tag)).length;
+       return { ...svc, matchScore: matchCount };
+    })
+    .filter(svc => svc.matchScore > 0)
+    .sort((a, b) => b.matchScore - a.matchScore)
+    .slice(0, 2); 
+  };
+
+  const handleFinish = () => {
+    // Here you would typically send data to backend/CRM
+    console.log("Lead Data:", contextData); 
+    setStep('analyzing');
+    setTimeout(() => {
+      setStep('result');
+    }, 2500);
+  };
+
+  const handleReset = () => {
+    setStep('intro');
+    setSelectedPainPoints([]);
+    setSelectedGoals([]);
+    setSelectedHolisticIssues([]);
+    setSelectedTimeline('');
+    setSelectedBudget('');
+    setContextData({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      role: '',
+      teamSize: '',
+      industry: '',
+      techStack: ''
+    });
+  };
+
+  // --- RENDERERS ---
+
+  if (step === 'intro') {
+    return (
+      <div className="min-h-screen bg-slate-950 text-white flex items-center relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20 pb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Column: Headline & CTA */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
+                <Crosshair className="w-4 h-4" /> Solution Finder 2.0
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                Temukan Solusi BizOps <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Yang Paling Tepat.</span>
+              </h1>
+              
+              <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
+                Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={() => setStep('context')} size="lg" className="h-14 px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
+                  Mulai Diagnosa Gratis <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+
+              <div className="mt-8 flex items-center gap-6 text-sm text-slate-500">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-emerald-500" /> Free Analysis
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-emerald-500" /> No Sign-up Required
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Feature Visuals */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              {/* Floating Cards */}
+              <div className="relative z-10 grid gap-5">
+                {/* Card 1: Holistic */}
+                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform hover:-translate-y-1 transition-transform duration-300">
+                  <div className="p-3 bg-blue-500/20 rounded-xl text-blue-400">
+                    <Layers className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-1">Holistic Diagnosis</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Kami tidak hanya melihat software, tapi juga kesiapan tim (People) dan alur kerja (Process).
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 2: Roadmap */}
+                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
+                   <div className="p-3 bg-emerald-500/20 rounded-xl text-emerald-400">
+                    <Calendar className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-1">Actionable Roadmap</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Dapatkan timeline implementasi langkah demi langkah, dari Quick Win hingga Optimization.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 3: Difference */}
+                <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex items-start gap-4 transform hover:-translate-y-1 transition-transform duration-300">
+                   <div className="p-3 bg-amber-500/20 rounded-xl text-amber-400">
+                    <Lightbulb className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-1">Practical Solution</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Berbeda dengan Maturity Assessment yang hanya memberi skor, kami memberi resep solusi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Circle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-blue-500/20 rounded-full -z-10 animate-[spin_60s_linear_infinite]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-emerald-500/20 rounded-full -z-10 animate-[spin_40s_linear_infinite_reverse]" />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (step === 'context') {
+    return (
+      <StepLayout
+        title="Profil & Kontak"
+        desc="Data ini digunakan untuk personalisasi laporan Anda."
+        prevStep="intro"
+        nextStep="tech-stack"
+        disableNext={!contextData.company || !contextData.email}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="space-y-5 bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</label>
+                <input 
+                  type="text" 
+                  value={contextData.company}
+                  onChange={(e) => setContextData({...contextData, company: e.target.value})}
+                  autoFocus
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  placeholder="cth. PT Maju Bersama"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-400 mb-1.5">Nama Anda</label>
+                <input 
+                  type="text" 
+                  value={contextData.name}
+                  onChange={(e) => setContextData({...contextData, name: e.target.value})}
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  placeholder="cth. Budi Santoso"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-400 mb-1.5 flex items-center gap-2">
+                  <Mail className="w-4 h-4" /> Email Bisnis
+                </label>
+                <input 
+                  type="email" 
+                  value={contextData.email}
+                  onChange={(e) => setContextData({...contextData, email: e.target.value})}
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  placeholder="budi@perusahaan.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-400 mb-1.5 flex items-center gap-2">
+                  <Phone className="w-4 h-4" /> WhatsApp (Opsional)
+                </label>
+                <input 
+                  type="tel" 
+                  value={contextData.phone}
+                  onChange={(e) => setContextData({...contextData, phone: e.target.value})}
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  placeholder="0812..."
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-400 mb-3">Industri</label>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {industries.map((ind) => (
+                  <button
+                    key={ind.id}
+                    onClick={() => setContextData({...contextData, industry: ind.id})}
+                    className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border transition-all h-24 text-center ${
+                      contextData.industry === ind.id 
+                        ? 'bg-blue-600/20 border-blue-500 text-blue-100' 
+                        : 'bg-slate-800 border-transparent hover:bg-slate-700 text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    <ind.icon className="w-6 h-6" />
+                    <span className="text-xs font-medium">{ind.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-400 mb-2">Ukuran Tim</label>
+              <div className="grid grid-cols-4 gap-2">
+                {['< 50', '50-200', '200-1k', '> 1k'].map(size => (
+                  <button
+                    key={size}
+                    onClick={() => setContextData({...contextData, teamSize: size})}
+                    className={`px-2 py-2 rounded-lg text-sm font-medium transition-all ${
+                      contextData.teamSize === size 
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/20' 
+                        : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'tech-stack') {
+    return (
+      <StepLayout
+        title="Platform Teknologi"
+        desc="Pilih opsi yang paling menggambarkan situasi sistem saat ini."
+        prevStep="context"
+        nextStep="operational-context"
+        disableNext={!contextData.techStack}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="grid grid-cols-1 gap-3">
+            {techStackOptions.map((item) => {
+              const isSelected = contextData.techStack === item.id;
+              return (
+                <div 
+                  key={item.id}
+                  onClick={() => setContextData({...contextData, techStack: item.id})}
+                  className={`p-5 rounded-xl border cursor-pointer transition-all duration-200 group relative overflow-hidden flex items-start gap-4 ${
+                    isSelected 
+                    ? 'bg-blue-900/20 border-blue-500 ring-1 ring-blue-500' 
+                    : 'bg-slate-900/50 border-white/10 hover:border-blue-500/50 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className={`mt-1 p-2 rounded-lg shrink-0 ${isSelected ? 'bg-blue-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-blue-400'}`}>
+                    <Server className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className={`font-semibold mb-1 ${isSelected ? 'text-blue-100' : 'text-slate-200'}`}>{item.label}</h3>
+                    <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                  </div>
+                  {isSelected && (
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-500">
+                      <CheckCircle className="w-6 h-6" />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'operational-context') {
+    const techQuestions = holisticIssues.technology[contextData.techStack as keyof typeof holisticIssues.technology] || [];
+    return (
+      <StepLayout
+        title="Konteks Operasional (PPT)"
+        desc="Pilih isu-isu yang relevan di 3 pilar utama (People, Process, Technology)."
+        prevStep="tech-stack"
+        nextStep="pain-points"
+        disableNext={false}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* COLUMN 1: PEOPLE */}
+            <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
+                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-blue-400" /> People & Culture
+                </h3>
+                <div className="space-y-3">
+                    {holisticIssues.people.map((item) => {
+                        const isSelected = selectedHolisticIssues.includes(item.id);
+                        return (
+                            <div key={item.id} onClick={() => toggleSelection(selectedHolisticIssues, item.id, setSelectedHolisticIssues)}
+                                className={`p-3 rounded-xl border cursor-pointer transition-all text-sm ${isSelected ? 'bg-blue-900/30 border-blue-500/50 text-blue-100' : 'bg-slate-800/50 border-white/5 hover:bg-slate-800 text-slate-400'}`}>
+                                <div className="font-medium mb-1">{item.label.split(':')[0]}</div>
+                                <div className="text-xs opacity-70 leading-relaxed">{item.label.split(':')[1]}</div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* COLUMN 2: PROCESS */}
+            <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
+                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <GitMerge className="w-5 h-5 text-emerald-400" /> Process & SOP
+                </h3>
+                <div className="space-y-3">
+                    {holisticIssues.process.map((item) => {
+                        const isSelected = selectedHolisticIssues.includes(item.id);
+                        return (
+                            <div key={item.id} onClick={() => toggleSelection(selectedHolisticIssues, item.id, setSelectedHolisticIssues)}
+                                className={`p-3 rounded-xl border cursor-pointer transition-all text-sm ${isSelected ? 'bg-emerald-900/30 border-emerald-500/50 text-emerald-100' : 'bg-slate-800/50 border-white/5 hover:bg-slate-800 text-slate-400'}`}>
+                                <div className="font-medium mb-1">{item.label.split(':')[0]}</div>
+                                <div className="text-xs opacity-70 leading-relaxed">{item.label.split(':')[1]}</div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* COLUMN 3: TECHNOLOGY */}
+            <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
+                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <Settings className="w-5 h-5 text-amber-400" /> Technology
+                </h3>
+                <div className="space-y-3">
+                    {techQuestions.map((item) => {
+                        const isSelected = selectedHolisticIssues.includes(item.id);
+                        return (
+                            <div key={item.id} onClick={() => toggleSelection(selectedHolisticIssues, item.id, setSelectedHolisticIssues)}
+                                className={`p-3 rounded-xl border cursor-pointer transition-all text-sm ${isSelected ? 'bg-amber-900/30 border-amber-500/50 text-amber-100' : 'bg-slate-800/50 border-white/5 hover:bg-slate-800 text-slate-400'}`}>
+                                <div className="font-medium mb-1">{item.label}</div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'pain-points') {
+    return (
+      <StepLayout
+        title="Tantangan Operasional"
+        desc="Masalah bisnis apa yang berdampak langsung pada bottom-line?"
+        prevStep="operational-context"
+        nextStep="goals"
+        disableNext={false}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="grid md:grid-cols-2 gap-4">
+            {painPoints.map((item) => {
+              const isSelected = selectedPainPoints.includes(item.id);
+              return (
+                <div 
+                  key={item.id}
+                  onClick={() => toggleSelection(selectedPainPoints, item.id, setSelectedPainPoints)}
+                  className={`p-5 rounded-xl border cursor-pointer transition-all duration-200 group relative overflow-hidden ${
+                    isSelected 
+                    ? 'bg-red-900/20 border-red-500 ring-1 ring-red-500' 
+                    : 'bg-slate-900/50 border-white/10 hover:border-red-500/50 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-start gap-4 relative z-10">
+                    <div className={`p-2 rounded-lg ${isSelected ? 'bg-red-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-red-400'}`}>
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className={`font-semibold mb-1 ${isSelected ? 'text-red-100' : 'text-slate-200'}`}>{item.label}</h3>
+                      <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'goals') {
+    return (
+      <StepLayout
+        title="Target Strategis"
+        desc="Pilih objektif utama untuk 6-12 bulan ke depan."
+        prevStep="pain-points"
+        nextStep="expectations"
+        disableNext={selectedGoals.length === 0}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="grid md:grid-cols-2 gap-4">
+            {goals.map((item) => {
+              const isSelected = selectedGoals.includes(item.id);
+              return (
+                <div 
+                  key={item.id}
+                  onClick={() => toggleSelection(selectedGoals, item.id, setSelectedGoals)}
+                  className={`p-5 rounded-xl border cursor-pointer transition-all duration-200 group relative overflow-hidden ${
+                    isSelected 
+                    ? 'bg-emerald-900/20 border-emerald-500 ring-1 ring-emerald-500' 
+                    : 'bg-slate-900/50 border-white/10 hover:border-emerald-500/50 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-start gap-4 relative z-10">
+                    <div className={`p-2 rounded-lg ${isSelected ? 'bg-emerald-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-emerald-400'}`}>
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-100' : 'text-slate-200'}`}>{item.label}</h3>
+                      <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'expectations') {
+    return (
+      <StepLayout
+        title="Ekspektasi Proyek"
+        desc="Bantu kami memahami timeline dan sumber daya yang Anda siapkan."
+        prevStep="goals"
+        nextStep={handleFinish}
+        disableNext={!selectedTimeline || !selectedBudget}
+        setStep={setStep}
+        displayStep={displayStep}
+        totalSteps={totalSteps}
+        handleFinish={handleFinish}
+      >
+          <div className="space-y-8">
+            {/* Timeline */}
+            <div>
+              <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
+                <Clock className="w-4 h-4" /> Target Go-Live
+              </label>
+              <div className="grid md:grid-cols-3 gap-3">
+                {timelines.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSelectedTimeline(item.id)}
+                    className={`p-4 rounded-xl border text-left transition-all ${
+                      selectedTimeline === item.id 
+                        ? 'bg-blue-600/20 border-blue-500 text-blue-100' 
+                        : 'bg-slate-900/50 border-white/10 hover:bg-slate-900 hover:border-white/30 text-slate-400'
+                    }`}
+                  >
+                    <div className="font-bold mb-1">{item.label}</div>
+                    <div className="text-xs opacity-70">{item.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Budget */}
+            <div>
+              <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
+                <Wallet className="w-4 h-4" /> Estimasi Budget Tahunan
+              </label>
+              <div className="grid md:grid-cols-3 gap-3">
+                {budgets.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSelectedBudget(item.id)}
+                    className={`p-4 rounded-xl border text-left transition-all ${
+                      selectedBudget === item.id 
+                        ? 'bg-blue-600/20 border-blue-500 text-blue-100' 
+                        : 'bg-slate-900/50 border-white/10 hover:bg-slate-900 hover:border-white/30 text-slate-400'
+                    }`}
+                  >
+                    <div className="font-bold mb-1">{item.label}</div>
+                    <div className="text-xs opacity-70">{item.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+      </StepLayout>
+    );
+  }
+
+  if (step === 'analyzing') {
+    return (
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-center relative overflow-hidden">
+         <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="mb-8"
+          >
+            <div className="w-20 h-20 rounded-full border-4 border-slate-800 border-t-blue-500" />
+          </motion.div>
+          <h2 className="text-2xl font-bold text-white mb-2">Mengkurasi Solusi...</h2>
+          <p className="text-slate-400">Menghubungkan {selectedPainPoints.length} tantangan bisnis dengan solusi PPT kami.</p>
+      </div>
+    );
+  }
+
+  if (step === 'result') {
+    const recommended = getRecommendedModules();
+    const recommendedServices = getRecommendedServices();
+    const selectedTech = techStackOptions.find(t => t.id === contextData.techStack);
+    const selectedIndustry = industries.find(i => i.id === contextData.industry);
+    const timelineLabel = timelines.find(t => t.id === selectedTimeline)?.label;
+
+    return (
+      <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row justify-between items-start mb-10 border-b border-white/10 pb-8 print:border-gray-300">
+             <div>
+                <div className="text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">Confidential Report</div>
+                <h1 className="text-3xl font-bold mb-2">Holistic Solution Blueprint</h1>
+                <p className="text-slate-400 print:text-gray-600">Rekomendasi strategis untuk {contextData.company}.</p>
+             </div>
+             <div className="mt-4 md:mt-0 flex gap-3 print:hidden">
+                <Button variant="outline-white" onClick={() => window.print()} className="gap-2">
+                  <Download className="w-4 h-4" /> Save PDF
+                </Button>
+                <Button onClick={() => navigate('/contact')} className="gap-2">
+                   Diskusi Proposal <ArrowRight className="w-4 h-4" />
+                </Button>
+             </div>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-8">
+            
+            {/* Left: Quick Context Summary */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
+                <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                  <Activity className="w-4 h-4" /> Snapshot Diagnosa
+                </h3>
+                
+                {/* Visual Radar Logic (Simplified) */}
+                <div className="space-y-4 mb-6">
+                    <div className="bg-slate-800/50 p-4 rounded-xl">
+                        <div className="flex justify-between text-xs text-slate-400 mb-1">
+                            <span>People Maturity Gap</span>
+                            <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.people.find(p => p.id === i)).length > 0 ? 'High' : 'Low'}</span>
+                        </div>
+                        <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                             <div className={`h-full ${selectedHolisticIssues.some(i => holisticIssues.people.find(p => p.id === i)) ? 'w-[80%] bg-red-500' : 'w-[20%] bg-emerald-500'}`}></div>
+                        </div>
+                    </div>
+                    <div className="bg-slate-800/50 p-4 rounded-xl">
+                        <div className="flex justify-between text-xs text-slate-400 mb-1">
+                            <span>Process Complexity</span>
+                            <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.process.find(p => p.id === i)).length > 0 ? 'Complex' : 'Standard'}</span>
+                        </div>
+                        <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                             <div className={`h-full ${selectedHolisticIssues.some(i => holisticIssues.process.find(p => p.id === i)) ? 'w-[75%] bg-amber-500' : 'w-[30%] bg-emerald-500'}`}></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-2 text-sm text-slate-300">
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-slate-500">Contact</span>
+                        <span>{contextData.name}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-slate-500">Industry</span>
+                        <span>{selectedIndustry?.label}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-slate-500">Tech Stack</span>
+                        <span>{selectedTech?.label}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                        <span className="text-slate-500">Timeline</span>
+                        <span>{timelineLabel}</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Recommendations */}
+            <div className="lg:col-span-8 space-y-8">
+               
+               {/* 1. VISUAL ROADMAP */}
+               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
+                  <h2 className="text-lg font-bold mb-6 flex items-center gap-2 text-blue-100">
+                    <Calendar className="w-5 h-5 text-blue-500" /> Rencana Implementasi (Roadmap)
+                  </h2>
+                  <div className="relative pt-6 pb-2 px-2">
+                      <div className="absolute top-8 left-0 w-full h-1 bg-slate-800 rounded-full"></div>
+                      <div className="grid grid-cols-3 gap-4 relative z-10">
+                          {/* Phase 1 */}
+                          <div className="text-center">
+                              <div className="w-4 h-4 bg-blue-500 rounded-full mx-auto border-4 border-slate-900 mb-3 shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
+                              <div className="text-xs font-bold text-blue-400 uppercase mb-1">Bulan 1</div>
+                              <div className="bg-slate-800 p-3 rounded-lg border border-white/5 text-sm">
+                                  <div className="font-medium text-white mb-1">Quick Win</div>
+                                  <div className="text-slate-400 text-xs">Setup {recommended[0]?.title} & Data Migration</div>
+                              </div>
+                          </div>
+                           {/* Phase 2 */}
+                           <div className="text-center">
+                              <div className="w-4 h-4 bg-slate-700 rounded-full mx-auto border-4 border-slate-900 mb-3"></div>
+                              <div className="text-xs font-bold text-slate-500 uppercase mb-1">Bulan 2-3</div>
+                              <div className="bg-slate-800 p-3 rounded-lg border border-white/5 text-sm">
+                                  <div className="font-medium text-white mb-1">Expansion</div>
+                                  <div className="text-slate-400 text-xs">Integrasi {recommended[1]?.title} & User Training</div>
+                              </div>
+                          </div>
+                           {/* Phase 3 */}
+                           <div className="text-center">
+                              <div className="w-4 h-4 bg-slate-700 rounded-full mx-auto border-4 border-slate-900 mb-3"></div>
+                              <div className="text-xs font-bold text-slate-500 uppercase mb-1">Bulan 4+</div>
+                              <div className="bg-slate-800 p-3 rounded-lg border border-white/5 text-sm">
+                                  <div className="font-medium text-white mb-1">Optimization</div>
+                                  <div className="text-slate-400 text-xs">Full Automation & Dashboarding</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+               </div>
+
+               <div className="grid md:grid-cols-2 gap-6">
+                   {/* 2. TECHNOLOGY SOLUTIONS */}
+                   <div>
+                       <h3 className="text-md font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                           <Server className="w-4 h-4" /> Solusi Teknologi
+                       </h3>
+                       <div className="space-y-3">
+                           {recommended.map((mod, idx) => (
+                               <div key={mod.id} className="bg-slate-900 border border-white/10 p-4 rounded-xl flex items-start gap-3">
+                                   <div className="mt-1 p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
+                                       <Layers className="w-4 h-4" />
+                                   </div>
+                                   <div>
+                                       <h4 className="font-bold text-white text-sm">{mod.title}</h4>
+                                       <p className="text-xs text-slate-400 mt-1 line-clamp-2">{mod.desc}</p>
+                                   </div>
+                               </div>
+                           ))}
+                       </div>
+                   </div>
+
+                   {/* 3. SERVICE SOLUTIONS (NEW) */}
+                   <div>
+                       <h3 className="text-md font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                           <Users className="w-4 h-4" /> Pendampingan (Services)
+                       </h3>
+                       <div className="space-y-3">
+                           {recommendedServices.length > 0 ? recommendedServices.map((svc) => (
+                               <div key={svc.id} className="bg-gradient-to-br from-emerald-900/20 to-slate-900 border border-emerald-500/20 p-4 rounded-xl flex items-start gap-3">
+                                   <div className="mt-1 p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                                       <svc.icon className="w-4 h-4" />
+                                   </div>
+                                   <div>
+                                       <h4 className="font-bold text-white text-sm">{svc.title}</h4>
+                                       <p className="text-xs text-slate-400 mt-1 line-clamp-2">{svc.desc}</p>
+                                   </div>
+                               </div>
+                           )) : (
+                               <div className="p-4 rounded-xl border border-white/5 border-dashed text-slate-500 text-sm text-center">
+                                   Tidak ada rekomendasi service khusus diperlukan.
+                               </div>
+                           )}
+                       </div>
+                   </div>
+               </div>
+            </div>
+          </div>
+          
+           {/* NEXT STEPS / CROSS-SELL SECTION */}
+           <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Lightbulb className="w-5 h-5 text-amber-400" /> Langkah Selanjutnya
+              </h3>
+              
+              <div className="grid md:grid-cols-3 gap-5">
+                {/* ROI Calculator */}
+                <div 
+                  onClick={() => navigate('/tools/roi-calculator')}
+                  className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
+                >
+                   <div className="bg-blue-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                     <Calculator className="w-5 h-5" />
+                   </div>
+                   <h4 className="font-bold text-white mb-2 group-hover:text-blue-400">Hitung Potensi ROI</h4>
+                   <p className="text-sm text-slate-400 leading-relaxed">
+                     Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.
+                   </p>
+                   <div className="mt-4 flex items-center text-xs font-bold text-blue-500">
+                     Buka Kalkulator ROI <ChevronRight className="w-3 h-3 ml-1" />
+                   </div>
+                </div>
+
+                {/* Maturity Assessment */}
+                <div 
+                  onClick={() => navigate('/tools/assessment')}
+                  className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
+                >
+                   <div className="bg-emerald-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                     <PieChart className="w-5 h-5" />
+                   </div>
+                   <h4 className="font-bold text-white mb-2 group-hover:text-emerald-400">Maturity Assessment</h4>
+                   <p className="text-sm text-slate-400 leading-relaxed">
+                     Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).
+                   </p>
+                    <div className="mt-4 flex items-center text-xs font-bold text-emerald-500">
+                     Mulai Audit <ChevronRight className="w-3 h-3 ml-1" />
+                   </div>
+                </div>
+
+                {/* Expert Consultation */}
+                <div 
+                  onClick={() => navigate('/contact')}
+                  className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
+                >
+                   <div className="bg-amber-500/10 w-10 h-10 rounded-lg flex items-center justify-center text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                     <Briefcase className="w-5 h-5" />
+                   </div>
+                   <h4 className="font-bold text-white mb-2 group-hover:text-amber-400">Konsultasi Ahli</h4>
+                   <p className="text-sm text-slate-400 leading-relaxed">
+                     Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.
+                   </p>
+                    <div className="mt-4 flex items-center text-xs font-bold text-amber-500">
+                     Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
+                   </div>
+                </div>
+              </div>
+           </div>
+
+           <div className="mt-12 text-center print:hidden">
+              <button 
+                onClick={handleReset}
+                className="text-slate-500 hover:text-white text-sm flex items-center justify-center mx-auto transition-colors gap-2"
+              >
+                <RefreshCw className="w-3 h-3" /> Ulangi Diagnosa
+              </button>
+           </div>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+export default NeedsAnalysisPage;

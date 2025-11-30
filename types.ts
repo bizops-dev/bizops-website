@@ -37,6 +37,7 @@ export type Challenge = {
 export type Solution = {
   title: string;
   desc: string;
+  icon?: LucideIcon;
 };
 
 export type IndustryData = {
@@ -48,8 +49,27 @@ export type IndustryData = {
   icon: LucideIcon;
   challenges: Array<Challenge>;
   solutions: Array<Solution>;
+  metrics?: Array<{ value: string; label: string; }>;
+  faqs?: Array<{ question: string; answer: string; }>;
   caseStudyTitle: string;
   caseStudy: string;
+  testimonial?: TestimonialData;
+};
+
+export type ServiceMethodology = {
+  title: string;
+  desc: string;
+};
+
+export type ServiceData = {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: LucideIcon;
+  methodology: Array<ServiceMethodology>;
+  benefits: Array<{ title: string; desc: string }>; // NEW: Selling points
+  deliverables: Array<string>; // NEW: Concrete outcomes
+  cta: string;
 };
 
 export type RoleChallenge = {
@@ -79,11 +99,19 @@ export type RoleData = {
 export type ModuleFeature = {
   title: string;
   desc: string;
+  icon?: LucideIcon;
 };
 
 export type ModuleConnection = {
   target: string;
   desc: string;
+};
+
+export type TestimonialData = {
+  quote: string;
+  author: string;
+  role: string;
+  avatar: string;
 };
 
 export type ModuleData = {
@@ -94,6 +122,10 @@ export type ModuleData = {
   metaDesc: string;
   icon: LucideIcon;
   features: Array<ModuleFeature>;
+  metrics?: Array<{ value: string; label: string; }>;
+  problems?: Array<{ title: string; desc: string; icon: LucideIcon; }>; // Added Problem section
+  faqs?: Array<{ question: string; answer: string; }>;
+  testimonial?: TestimonialData;
   mobileAdvantage?: {
     title: string;
     desc: string;

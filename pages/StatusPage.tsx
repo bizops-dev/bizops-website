@@ -1,101 +1,192 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { statusData } from '../data/content';
 import Button from '../components/Button';
-import { CheckCircle, AlertTriangle, Clock, Server, Activity, Database, Cloud } from 'lucide-react';
+import { 
+  CheckCircle, AlertTriangle, Clock, Server, 
+  Activity, Database, Cloud, Bell, RefreshCw, 
+  BarChart3, Wifi
+} from 'lucide-react';
 import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
 
 const StatusPage: React.FC = () => {
+  const [subscribed, setSubscribed] = useState(false);
+
+  // Mock Uptime Data (90 days)
+  const uptimeDays = Array.from({ length: 90 }, (_, i) => ({
+    status: Math.random() > 0.98 ? 'incident' : 'operational', // 2% chance of incident
+    date: new Date(Date.now() - (89 - i) * 24 * 60 * 60 * 1000).toLocaleDateString()
+  }));
+
   return (
-    <div className="pt-16 pb-24 bg-white">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen font-sans">
       <SEO title="System Status | BizOps Service Health" description="Real-time status monitoring for BizOps API, Dashboard, and Cloud Services." />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* --- HERO HEADER --- */}
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 pt-32 pb-16">
+         <div className="max-w-5xl mx-auto px-4 text-center">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="w-24 h-24 mx-auto bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-8 relative"
+            >
+               <div className="absolute inset-0 bg-green-500 rounded-full opacity-20 animate-ping"></div>
+               <CheckCircle className="w-12 h-12 text-green-600 dark:text-green-400 relative z-10" />
+            </motion.div>
+            
+            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+               {statusData.currentStatus}
+            </h1>
+            <p className="text-slate-500 dark:text-slate-400 text-lg mb-8">
+               All systems are running smoothly. No incidents reported today.
+            </p>
+
+            <div className="inline-flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
+               <span className="flex items-center gap-2">
+                  <RefreshCw className="w-4 h-4" /> Updated: {statusData.lastUpdated}
+               </span>
+               <span className="w-px h-4 bg-slate-300 dark:bg-slate-600"></span>
+               <span className="flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-blue-500" /> API Latency: <span className="text-slate-900 dark:text-white">{statusData.apiResponseTime}</span>
+               </span>
+            </div>
+         </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
         
-        {/* Header / Hero */}
-        <div className="mb-12 flex flex-col items-center text-center">
-           <div className="relative mb-6">
-              <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center animate-pulse">
-                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
-                 </div>
-              </div>
+        {/* --- UPTIME HISTORY --- */}
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+           <div className="flex justify-between items-end mb-6">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                 <BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <span className="text-xs font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">90 Days</span>
+              </h2>
+              <span className="text-green-600 dark:text-green-400 font-bold text-lg">99.99%</span>
            </div>
-           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 leading-tight">{statusData.currentStatus}</h1>
-           <div className="flex items-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {statusData.lastUpdated}</span>
-              <span className="flex items-center gap-1"><Activity className="w-4 h-4" /> API Latency: {statusData.apiResponseTime}</span>
-           </div>
-        </div>
-
-        {/* System Components */}
-        <div className="space-y-8">
            
-           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-              <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
-                 <h2 className="font-bold text-slate-900 flex items-center gap-2"><Server className="w-5 h-5 text-slate-500" /> Core Services</h2>
-                 <span className="text-xs font-bold uppercase text-green-600 bg-green-100 px-2 py-1 rounded">Operational</span>
-              </div>
-              <div className="divide-y divide-slate-100">
-                 {statusData.systems.map((sys, idx) => (
-                    <div key={idx} className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                       <div>
-                          <h3 className="font-bold text-slate-900">{sys.name}</h3>
-                          <p className="text-sm text-slate-500">{sys.desc}</p>
-                       </div>
-                       <div className="flex items-center gap-4 min-w-[150px] justify-end">
-                          <span className="text-sm font-medium text-green-600 flex items-center gap-2">
-                             <CheckCircle className="w-4 h-4" /> {sys.status}
-                          </span>
-                          <span className="text-xs text-slate-400 border border-slate-200 px-2 py-1 rounded">{sys.uptime}</span>
-                       </div>
-                    </div>
-                 ))}
-              </div>
+           {/* Visualizer Bars */}
+           <div className="flex items-end justify-between gap-[2px] h-12 mb-2">
+              {uptimeDays.map((day, i) => (
+                 <div 
+                    key={i}
+                    title={day.date}
+                    className={`flex-1 rounded-sm transition-all hover:scale-y-125 cursor-help ${
+                       day.status === 'operational' 
+                       ? 'bg-green-500 h-full opacity-80 hover:opacity-100' 
+                       : 'bg-amber-500 h-[60%]'
+                    }`}
+                 ></div>
+              ))}
            </div>
-
-           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-              <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
-                 <h2 className="font-bold text-slate-900 flex items-center gap-2"><Cloud className="w-5 h-5 text-slate-500" /> Third-Party Dependencies</h2>
-              </div>
-              <div className="divide-y divide-slate-100">
-                 {statusData.thirdParty.map((sys, idx) => (
-                    <div key={idx} className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                       <div>
-                          <h3 className="font-bold text-slate-900">{sys.name}</h3>
-                          <p className="text-sm text-slate-500">{sys.desc}</p>
-                       </div>
-                       <div className="flex items-center gap-4 min-w-[150px] justify-end">
-                          <span className="text-sm font-medium text-green-600 flex items-center gap-2">
-                             <CheckCircle className="w-4 h-4" /> {sys.status}
-                          </span>
-                       </div>
-                    </div>
-                 ))}
-              </div>
+           <div className="flex justify-between text-xs text-slate-400 font-medium">
+              <span>90 days ago</span>
+              <span>Today</span>
            </div>
-
         </div>
 
-        {/* Incident History */}
-        <div className="mt-16">
-           <h2 className="text-xl font-bold text-slate-900 mb-6">Incident History</h2>
-           <div className="space-y-6">
-              {statusData.incidents.map((inc, idx) => (
-                 <div key={idx} className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                       <h3 className="font-bold text-slate-900 flex items-center gap-2">
-                          <AlertTriangle className="w-5 h-5 text-amber-500" /> {inc.title}
-                       </h3>
-                       <span className="text-sm text-slate-500">{inc.date}</span>
+        {/* --- SYSTEM COMPONENTS --- */}
+        <div className="space-y-6">
+           <h3 className="text-xl font-bold text-slate-900 dark:text-white">System Metrics</h3>
+           
+           {/* Core Services */}
+           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+                 <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <Server className="w-4 h-4 text-slate-500" /> Platform Services
+                 </h4>
+              </div>
+              <div className="divide-y divide-slate-100 dark:divide-slate-800">
+                 {statusData.systems.map((sys, idx) => (
+                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                       <div className="flex items-center gap-4">
+                          <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
+                          <div>
+                             <h5 className="font-semibold text-slate-900 dark:text-white text-sm">{sys.name}</h5>
+                             <p className="text-xs text-slate-500 dark:text-slate-400">{sys.desc}</p>
+                          </div>
+                       </div>
+                       <div className="text-right">
+                          <span className="text-sm font-medium text-green-600 dark:text-green-400 block">{sys.status}</span>
+                          <span className="text-[10px] text-slate-400 font-mono">{sys.uptime} uptime</span>
+                       </div>
                     </div>
-                    <p className="text-sm text-slate-700 leading-relaxed mb-4">{inc.desc}</p>
-                    <div className="flex gap-4 text-xs font-medium">
-                       <span className="bg-green-100 text-green-700 px-2 py-1 rounded">Status: {inc.status}</span>
-                       <span className="bg-slate-200 text-slate-600 px-2 py-1 rounded">Time to Resolve: {inc.duration}</span>
+                 ))}
+              </div>
+           </div>
+
+           {/* Third Party */}
+           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+                 <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <Cloud className="w-4 h-4 text-slate-500" /> Third-Party Dependencies
+                 </h4>
+              </div>
+              <div className="divide-y divide-slate-100 dark:divide-slate-800">
+                 {statusData.thirdParty.map((sys, idx) => (
+                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                       <div className="flex items-center gap-4">
+                          <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
+                          <h5 className="font-semibold text-slate-900 dark:text-white text-sm">{sys.name}</h5>
+                       </div>
+                       <span className="text-sm font-medium text-green-600 dark:text-green-400">{sys.status}</span>
+                    </div>
+                 ))}
+              </div>
+           </div>
+        </div>
+
+        {/* --- INCIDENTS --- */}
+        <div>
+           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Past Incidents</h3>
+           <div className="space-y-4">
+              {statusData.incidents.map((inc, idx) => (
+                 <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-colors">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
+                       <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                          <AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}
+                       </h4>
+                       <span className="text-xs font-mono text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 pl-6 border-l-2 border-slate-200 dark:border-slate-800 ml-2">
+                       {inc.desc}
+                    </p>
+                    <div className="flex items-center gap-4 pl-6 ml-2">
+                       <span className="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded border border-green-100 dark:border-green-900/30">Resolved</span>
+                       <span className="text-xs text-slate-500">Duration: {inc.duration}</span>
                     </div>
                  </div>
               ))}
+           </div>
+        </div>
+
+        {/* --- SUBSCRIBE CTA --- */}
+        <div className="bg-slate-900 rounded-2xl p-8 text-center text-white relative overflow-hidden">
+           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
+           <div className="relative z-10 max-w-lg mx-auto">
+              <Bell className="w-8 h-8 mx-auto mb-4 text-primary-400" />
+              <h3 className="text-xl font-bold mb-2">Get Status Updates</h3>
+              <p className="text-slate-400 text-sm mb-6">
+                 Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.
+              </p>
+              
+              {!subscribed ? (
+                 <div className="flex gap-2">
+                    <input 
+                       type="email" 
+                       placeholder="user@company.com" 
+                       className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm"
+                    />
+                    <Button onClick={() => setSubscribed(true)} size="sm" className="whitespace-nowrap">Subscribe</Button>
+                 </div>
+              ) : (
+                 <motion.div 
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    className="bg-green-500/20 text-green-300 px-4 py-2 rounded-lg text-sm font-bold border border-green-500/30"
+                 >
+                    ✓ Subscribed successfully!
+                 </motion.div>
+              )}
            </div>
         </div>
 

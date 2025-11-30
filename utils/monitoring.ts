@@ -63,8 +63,7 @@ export const initHeatmap = () => {
     // if (HOTJAR_ID) {
     //    (function(h,o,t,j,a,r){ ... })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     // }
-    if (process.env.NODE_ENV === 'development') {
-      console.log("BizOps Heatmap: Analytics Ready (Script injection skipped in mock env)");
-    }
+  } else if (process.env.NODE_ENV === 'development') {
+    console.log("BizOps Heatmap: Analytics Ready (Script injection skipped in mock env)");
   }
 };

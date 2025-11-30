@@ -1,120 +1,306 @@
-
-import React from 'react';
-import Button from '../components/Button';
-import { Code, Layers, Zap, Settings, Briefcase, Link as LinkIcon } from 'lucide-react';
-import SEO from '../components/SEO';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../components/Button';
+import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { 
+  Code, Layers, Zap, Settings, Briefcase, Link as LinkIcon, 
+  ShieldCheck, CheckCircle2, ArrowRight, Sparkles, FileText, Check, Database, Server, Package, GitBranch, FileCode, Terminal
+} from 'lucide-react';
+import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
+import { StaggeredText } from '../components/ui/motion-text';
 
-const CustomDevPage: React.FC = () => {
+// --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
+const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
   return (
-    <div className="flex flex-col">
-      <SEO title="Custom ERP Development Services | BizOps" description="Layanan pengembangan modul kustom di atas BizOps. Buat fitur unik sesuai 'Secret Sauce' bisnis Anda tanpa merusak inti sistem." />
-
-      {/* Hero */}
-      <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
-             <Code className="w-8 h-8 text-primary-400" />
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Fitur Standar Tidak Cukup?<br/>Kami Bangunkan Untuk Anda.
-          </h1>
-          <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-            Setiap bisnis memiliki "Saus Rahasia" operasionalnya sendiri yang menjadi keunggulan kompetitif. Jangan korbankan keunikan bisnis Anda demi menyesuaikan diri dengan software kaku. Kami mengembangkan modul kustom yang presisi di atas framework BizOps yang kokoh.
-          </p>
-          <Link to="/contact">
-             <Button size="lg" variant="white">Konsultasi Kebutuhan Custom</Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Why Custom */}
-      <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white leading-tight">Why Build Custom with Us?</h2>
-               <p className="text-slate-600 dark:text-slate-400 mt-2">Pendekatan "Low Code" kami memastikan development cepat dan aman.</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6">
-                     <ShieldCheckIcon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Upgrade-Safe Architecture</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Kode kustom Anda dibuat sebagai <em>Custom App</em> terpisah di dalam ekosistem Frappe Framework. Artinya, saat BizOps melakukan update inti sistem untuk keamanan atau fitur baru, modul kustom Anda tidak akan tertimpa atau rusak. Investasi jangka panjang yang aman.
-                  </p>
-               </div>
-               <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6">
-                     <Zap className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Rapid Development (Low Code)</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Kami tidak mulai dari nol. Kami memanfaatkan pondasi kuat BizOps seperti <em>user management</em>, <em>workflow engine</em>, <em>PDF generator</em>, dan <em>email alert</em> bawaan. Pengembangan menjadi 5x lebih cepat dan hemat biaya dibandingkan membangun software dari awal (<em>scratch</em>).
-                  </p>
-               </div>
-               <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6">
-                     <Layers className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Seamless Integration</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Modul kustom akan terasa seperti bagian asli dari aplikasi. UI/UX yang konsisten membuat user tidak perlu belajar cara penggunaan baru. Data dari modul kustom dapat langsung berinteraksi dengan modul standar (misal: Payroll, Akuntansi).
-                  </p>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white text-center mb-16 leading-tight">Real World Use Cases</h2>
-            <div className="space-y-8">
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="flex-shrink-0 p-4 bg-green-100 dark:bg-green-900/20 rounded-2xl">
-                     <Briefcase className="w-8 h-8 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Complex Incentive Scheme</h3>
-                     <p className="text-slate-600 dark:text-slate-400">
-                        "Perhitungan komisi sales bertingkat yang sangat spesifik berdasarkan kombinasi margin produk, tenor pembayaran, dan pencapaian target tim, yang dihitung otomatis setiap malam."
-                     </p>
-                  </div>
-               </div>
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="flex-shrink-0 p-4 bg-blue-100 dark:bg-blue-900/20 rounded-2xl">
-                     <Settings className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Specialized Manufacturing</h3>
-                     <p className="text-slate-600 dark:text-slate-400">
-                        "Modul perhitungan <em>waste</em> produksi garmen secara otomatis berdasarkan pola potong kain dan jenis bahan, terintegrasi langsung dengan stok gudang kain."
-                     </p>
-                  </div>
-               </div>
-               <div className="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                  <div className="flex-shrink-0 p-4 bg-amber-100 dark:bg-amber-900/20 rounded-2xl">
-                     <LinkIcon className="w-8 h-8 text-amber-600 dark:text-amber-400" />
-                  </div>
-                  <div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Vendor Portal</h3>
-                     <p className="text-slate-600 dark:text-slate-400">
-                        "Portal lelang tertutup khusus supplier di mana mereka bisa login, melihat kebutuhan pengadaan, dan mengajukan penawaran harga secara digital."
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+    <div
+      className={`group relative border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden ${className}`}
+      onMouseMove={handleMouseMove}
+    >
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              ${spotlightColor},
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className="relative h-full">{children}</div>
     </div>
   );
 };
 
-const ShieldCheckIcon = ({ className }: { className?: string }) => (
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg>
-);
+const CustomDevPage: React.FC = () => {
+  // Data Mockup to match ServiceData structure
+  const pageData = {
+    title: "Custom Development",
+    subtitle: "Build Your Secret Sauce.",
+    description: "Jangan korbankan keunikan bisnis Anda demi menyesuaikan diri dengan software kaku. Kami mengembangkan modul kustom yang presisi di atas framework BizOps yang kokoh, aman, dan scalable.",
+    cta: "Consult Your Needs",
+    benefits: [
+      { title: "Upgrade-Safe Architecture", desc: "Kode kustom terisolasi sebagai App terpisah. Aman saat update core." },
+      { title: "Rapid Development", desc: "5x lebih cepat menggunakan Low-Code Framework yang sudah matang." },
+      { title: "Seamless Integration", desc: "Langsung terhubung dengan modul standar (Accounting, HR) tanpa API ribet." }
+    ],
+    // Use Cases mapping to Methodology Timeline
+    useCases: [
+      { 
+        id: "complex-incentive",
+        title: "Complex Incentive Scheme", 
+        desc: "Perhitungan komisi sales bertingkat yang sangat spesifik berdasarkan kombinasi margin produk, tenor pembayaran, dan pencapaian target tim, yang dihitung otomatis setiap malam.",
+        icon: Briefcase
+      },
+      { 
+        id: "specialized-manufacturing",
+        title: "Specialized Manufacturing", 
+        desc: "Modul perhitungan waste produksi garmen secara otomatis berdasarkan pola potong kain dan jenis bahan, terintegrasi langsung dengan stok gudang kain.",
+        icon: Settings
+      },
+      { 
+        id: "vendor-portal",
+        title: "Exclusive Vendor Portal", 
+        desc: "Portal lelang tertutup khusus supplier di mana mereka bisa login, melihat kebutuhan pengadaan, dan mengajukan penawaran harga secara digital.",
+        icon: LinkIcon
+      }
+    ],
+    // Deliverables instead of Tech Stack
+    deliverables: [
+      { title: "Source Code Repository", desc: "Akses penuh ke Git repository (Private). Anda memiliki hak penuh atas kode kustom.", icon: GitBranch },
+      { title: "Technical Documentation", desc: "Dokumen arsitektur, skema database, dan panduan API (Swagger) untuk developer.", icon: FileCode },
+      { title: "Automated Test Scripts", desc: "Unit test yang berjalan otomatis untuk memastikan fitur tidak rusak saat update.", icon: Terminal },
+      { title: "User Manual & Guide", desc: "Panduan penggunaan fitur kustom dalam format PDF/Video untuk end-user.", icon: FileText },
+      { title: "Deployment Scripts", desc: "CI/CD pipeline configuration untuk deployment otomatis yang aman.", icon: Server },
+      { title: "Warranty & Support", desc: "Garansi bug fixing 3 bulan pasca Go-Live untuk modul yang dikembangkan.", icon: ShieldCheck }
+    ]
+  };
+
+  return (
+    <div className="pt-16 bg-slate-50 dark:bg-slate-950 min-h-screen font-sans selection:bg-primary-500/30">
+      <SEO title="Custom ERP Development | BizOps" description="Layanan pengembangan modul kustom di atas BizOps. Solusi tailor-made untuk kebutuhan bisnis unik." />
+
+      {/* --- HERO SECTION --- */}
+      <Section className="relative pt-20 pb-32 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+        {/* Abstract Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+           <div className="mb-8">
+              <Breadcrumbs items={[{ label: 'Services', path: '/services' }, { label: pageData.title, path: '/services/custom-dev' }]} />
+           </div>
+
+           <div className="grid lg:grid-cols-2 gap-16 items-start">
+              {/* Left Column */}
+              <motion.div initial="hidden" animate="visible" variants={STAGGER_CONTAINER}>
+                 <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
+                    <Code className="w-3 h-3 text-blue-500" />
+                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Tailor-Made Solutions</span>
+                 </motion.div>
+
+                 <motion.h1 variants={FADE_UP_VARIANTS} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
+                   <span className="text-blue-600 dark:text-blue-400">{pageData.title}</span><br />
+                   <span className="text-slate-400 dark:text-slate-500 text-3xl md:text-4xl font-medium block mt-2">{pageData.subtitle}</span>
+                 </motion.h1>
+
+                 <motion.p variants={FADE_UP_VARIANTS} className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 border-l-4 border-blue-500 pl-6">
+                   {pageData.description}
+                 </motion.p>
+
+                 <motion.div variants={FADE_UP_VARIANTS} className="flex flex-wrap gap-4">
+                    <Link to="/contact">
+                       <Button size="lg" className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 font-bold px-8 h-14 rounded-full shadow-xl">
+                          {pageData.cta}
+                       </Button>
+                    </Link>
+                    <Link to="/use-cases">
+                       <Button variant="outline" size="lg" className="h-14 rounded-full px-8 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          View Use Cases
+                       </Button>
+                    </Link>
+                 </motion.div>
+              </motion.div>
+
+              {/* Right Column: Why Choose (Floating Card) */}
+              <motion.div variants={FADE_UP_VARIANTS} initial="hidden" animate="visible" transition={{ delay: 0.3 }} className="relative hidden lg:block">
+                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
+                 <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
+                    <div className="flex items-center gap-4 mb-8">
+                       <div className="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg">
+                          <Code className="w-7 h-7" />
+                       </div>
+                       <h3 className="text-xl font-bold text-slate-900 dark:text-white">Why Go Custom?</h3>
+                    </div>
+                    
+                    <div className="space-y-6">
+                       {pageData.benefits.map((benefit, idx) => (
+                          <div key={idx} className="group flex gap-4">
+                             <div className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-200 dark:border-blue-800/50">
+                                <Check className="w-3.5 h-3.5" />
+                             </div>
+                             <div>
+                                <h4 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-600 transition-colors">{benefit.title}</h4>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
+                             </div>
+                          </div>
+                       ))}
+                    </div>
+                 </SpotlightCard>
+              </motion.div>
+           </div>
+        </div>
+      </Section>
+
+      {/* --- USE CASES (Timeline Style) --- */}
+      <Section className="bg-white dark:bg-slate-950 relative z-20">
+         <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+               <div>
+                  <h2 className="text-sm font-bold tracking-widest text-slate-500 uppercase mb-3">Real World Impact</h2>
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Solved by Custom Dev</h3>
+               </div>
+               <Link to="/use-cases">
+                 <Button variant="ghost" className="text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 gap-2">
+                    See All Case Studies <ArrowRight className="w-4 h-4" />
+                 </Button>
+               </Link>
+            </div>
+
+            <div className="relative">
+               {/* Vertical Line */}
+               <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 hidden md:block"></div>
+
+               <div className="space-y-12">
+                  {pageData.useCases.map((item, idx) => {
+                     const isEven = idx % 2 === 0;
+                     return (
+                        <motion.div 
+                           key={idx}
+                           initial={{ opacity: 0, y: 20 }}
+                           whileInView={{ opacity: 1, y: 0 }}
+                           viewport={{ once: true }}
+                           transition={{ delay: idx * 0.1 }}
+                           className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}
+                        >
+                           {/* Content Side */}
+                           <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
+                              <Link to={`/use-cases/${item.id}`} className="block group">
+                                <SpotlightCard className="p-8 rounded-2xl hover:border-blue-200 dark:hover:border-blue-800 transition-colors">
+                                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+                                      <span className="text-blue-500 mr-2 md:hidden">Case {idx + 1}:</span>
+                                      {item.title}
+                                  </h4>
+                                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                      {item.desc}
+                                  </p>
+                                  <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 justify-end md:justify-start">
+                                     Read Full Story <ArrowRight className="w-4 h-4" />
+                                  </span>
+                                </SpotlightCard>
+                              </Link>
+                           </div>
+
+                           {/* Center Marker */}
+                           <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 flex items-center justify-center z-10 hidden md:flex">
+                              <item.icon className="w-6 h-6 text-slate-400" />
+                           </div>
+
+                           {/* Empty Side for Balance */}
+                           <div className="flex-1 hidden md:block"></div>
+                        </motion.div>
+                     );
+                  })}
+               </div>
+            </div>
+         </div>
+      </Section>
+
+      {/* --- DELIVERABLES (Previously Tech Stack) --- */}
+      <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
+           <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                   Key Deliverables
+                 </h2>
+                 <p className="text-slate-600 dark:text-slate-400">
+                   Output konkrit yang akan Anda terima dari proyek custom development ini.
+                 </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {pageData.deliverables.map((item, idx) => (
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-300 group"
+                    >
+                       <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors mt-1">
+                          <item.icon className="w-6 h-6" />
+                       </div>
+                       <div>
+                          <h4 className="font-bold text-slate-900 dark:text-white text-lg mb-1">{item.title}</h4>
+                          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                       </div>
+                    </motion.div>
+                 ))}
+              </div>
+           </div>
+      </Section>
+
+      {/* --- CTA SECTION --- */}
+      <Section className="py-24 bg-white dark:bg-slate-950">
+        <motion.div 
+           initial={{ opacity: 0, scale: 0.98 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+           transition={SPRING_TRANSITION}
+           className="relative rounded-[2.5rem] bg-slate-900 dark:bg-black overflow-hidden px-6 py-20 md:px-20 text-center shadow-2xl shadow-slate-900/10"
+        >
+           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+           
+           <div className="relative z-10 max-w-3xl mx-auto">
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+               Ready to Build <span className="text-blue-400">Unique Features?</span>
+             </h2>
+             <p className="text-lg text-slate-400 mb-10 font-light leading-relaxed max-w-xl mx-auto">
+                Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.
+             </p>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+               <Link to="/contact">
+                  <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
+                     Start Custom Project
+                  </Button>
+               </Link>
+               <a href="https://wa.me/6281234567890">
+                  <Button variant="outline" size="lg" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white px-8 h-14 rounded-full">
+                     Chat via WhatsApp
+                  </Button>
+               </a>
+             </div>
+           </div>
+        </motion.div>
+      </Section>
+    </div>
+  );
+};
 
 export default CustomDevPage;

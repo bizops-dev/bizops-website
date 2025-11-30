@@ -1,122 +1,184 @@
 import React from 'react';
-import { jobsData, careersContent } from '../data/content';
+import { careersContent } from '../data/content';
 import Button from '../components/Button';
-import { Heart, Coffee, Zap, MapPin, Clock, GitMerge, BookOpen, Monitor, Award, CheckCircle } from 'lucide-react';
+import { Heart, Coffee, Zap, MapPin, Clock, GitMerge, BookOpen, Monitor, Award, CheckCircle, ArrowRight, ExternalLink, Globe, Code, Smile } from 'lucide-react';
 import SEO from '../components/SEO';
+import Section from '../components/Section';
 
 const CareersPage: React.FC = () => {
   return (
-    <div className="pt-16 pb-24">
-      <SEO title="Karir di BizOps & Divistant" description="Bergabunglah dengan tim yang sedang membangun masa depan ERP di Indonesia. Budaya Remote-First dan Open Source." />
+    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors font-sans">
+      <SEO title="Karir di BizOps (Divistant) | Build The Future of ERP" description="Bergabunglah dengan tim engineering BizOps yang berada di bawah naungan Divistant. Budaya Remote-First, Open Source, dan Inovasi tanpa batas." />
 
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-          {careersContent.hero.headline}
-        </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          {careersContent.hero.subheadline}
-        </p>
-      </section>
+      {/* --- HERO SECTION --- */}
+      <div className="relative bg-[#0F172A] pt-32 pb-24 lg:pt-48 lg:pb-32 text-white text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-      {/* Engineering Culture */}
-      <section className="bg-slate-50 py-24 mb-24">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-16 text-center leading-tight">Engineering Culture (Why Top Talent Loves Us)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               
-               {careersContent.culture.map((cult, idx) => (
-                 <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div className={`inline-flex p-3 rounded-full mb-6 ${idx === 0 ? 'bg-purple-50 text-purple-600' : idx === 1 ? 'bg-blue-50 text-blue-600' : 'bg-green-50 text-green-600'}`}>
-                       {idx === 0 && <GitMerge className="w-6 h-6" />}
-                       {idx === 1 && <Zap className="w-6 h-6" />}
-                       {idx === 2 && <BookOpen className="w-6 h-6" />}
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{cult.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">
-                       {cult.desc}
-                    </p>
-                 </div>
-               ))}
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
+             <Globe className="w-3 h-3" /> Part of Divistant Ecosystem
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
+            Build Software that <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Runs The World.</span>
+          </h1>
+          <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.
+          </p>
+          <div className="flex justify-center">
+             <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
+                   View Open Roles <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+             </a>
+          </div>
+        </div>
+      </div>
 
-            </div>
-         </div>
-      </section>
-
-      {/* Benefit Stack */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center leading-tight">The Total Rewards System</h2>
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {careersContent.benefits.map((ben, idx) => (
-              <div key={idx} className="flex gap-4 p-6 border border-slate-100 rounded-xl hover:border-primary-100 transition-colors">
-                 <div className="mt-1">
-                    {idx === 0 && <Coffee className="w-6 h-6 text-slate-600" />}
-                    {idx === 1 && <Monitor className="w-6 h-6 text-primary-600" />}
-                    {idx === 2 && <Heart className="w-6 h-6 text-red-500" />}
-                    {idx === 3 && <Award className="w-6 h-6 text-amber-500" />}
-                 </div>
-                 <div>
-                    <h3 className="font-bold text-slate-900">{ben.title}</h3>
-                    <p className="text-sm text-slate-600 mt-1">{ben.desc}</p>
-                 </div>
-              </div>
-            ))}
-         </div>
-      </section>
-
-      {/* Hiring Process */}
-      <section className="bg-slate-900 text-white py-24 mb-24">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-16 text-center leading-tight">Hiring Process: What to Expect</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-               {/* Connecting Line */}
-               <div className="hidden md:block absolute top-8 left-0 w-full h-1 bg-slate-700 -z-10 transform translate-y-4"></div>
-
-               {careersContent.hiring.map((step, idx) => (
-                 <div key={idx} className="relative pt-8 text-center md:text-left">
-                    <div className="w-12 h-12 bg-slate-800 rounded-full border-4 border-slate-900 flex items-center justify-center font-bold text-lg mb-4 mx-auto md:mx-0 z-10 relative">{step.step}</div>
-                    <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                    <p className="text-sm text-slate-400">{step.desc}</p>
-                 </div>
-               ))}
-            </div>
-         </div>
-      </section>
-
-      {/* Openings */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center leading-tight">Open Positions</h2>
-         <div className="space-y-4">
-            {jobsData.map((job, idx) => (
-               <div key={idx} className="bg-white border border-slate-200 p-6 rounded-xl hover:border-primary-500 hover:shadow-md transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                  <div className="flex-1">
-                     <h3 className="text-xl font-bold text-slate-900">{job.title}</h3>
-                     <div className="flex flex-wrap gap-x-4 gap-y-2 mt-2 text-sm text-slate-500 mb-3">
-                        <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {job.loc}</span>
-                        <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {job.type}</span>
-                     </div>
-                     <div className="flex gap-2 mb-3">
-                        {job.tags && job.tags.map(tag => (
-                           <span key={tag} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded font-medium">{tag}</span>
-                        ))}
-                     </div>
-                     <p className="text-slate-600 text-sm leading-relaxed">{job.desc}</p>
-                  </div>
-                  <Button size="sm" className="whitespace-nowrap">Apply Now</Button>
+      {/* --- PHOTO GRID (CULTURE SNAPSHOT) --- */}
+      <div className="bg-[#0F172A] pb-24 overflow-hidden">
+         <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
+               <div className="bg-slate-800 rounded-3xl overflow-hidden relative group">
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
                </div>
-            ))}
-         </div>
-         
-         <div className="mt-16 text-center p-8 bg-primary-50 rounded-2xl border border-primary-100">
-            <h3 className="font-bold text-primary-900 mb-2">Posisi Anda Belum Tersedia?</h3>
-            <p className="text-primary-800 text-sm mb-4">
-               Kami selalu terbuka untuk talenta luar biasa. Jika Anda merasa bisa berkontribusi, jangan ragu.
-            </p>
-            <a href="mailto:careers@bizops.id" className="inline-flex items-center font-bold text-primary-700 hover:underline">
-               Kirim CV ke careers@bizops.id <CheckCircle className="w-4 h-4 ml-2" />
-            </a>
+               <div className="bg-slate-800 rounded-3xl overflow-hidden relative group md:mt-12">
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Office vibe" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="bg-slate-800 rounded-3xl overflow-hidden relative group md:-mt-8">
+                  <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Meeting" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               <div className="bg-slate-800 rounded-3xl overflow-hidden relative group md:mt-4">
+                  <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Code review" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+               </div>
+            </div>
          </div>
       </div>
+
+      {/* --- ENGINEERING CULTURE --- */}
+      <Section className="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Engineering First Culture</h2>
+               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                  Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.
+               </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group">
+                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <GitMerge className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Open Source DNA</h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                     Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
+                  </p>
+               </div>
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Zap className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Autonomy & Speed</h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                     Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
+                  </p>
+               </div>
+               <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group">
+                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <BookOpen className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Continuous Learning</h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                     Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </Section>
+
+      {/* --- BENEFITS / PERKS --- */}
+      <Section className="py-24 bg-slate-50 dark:bg-slate-950">
+         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">The Total Rewards</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
+                     <Coffee className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Remote-First & Flexible</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                        Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
+                     <Monitor className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Top-Tier Gear</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                        MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
+                     <Heart className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Comprehensive Health</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                        Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.
+                     </p>
+                  </div>
+               </div>
+               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
+                     <Award className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-slate-900 dark:text-white text-lg">Performance Bonus</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                        Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </Section>
+
+      {/* --- OPEN POSITIONS CTA --- */}
+      <section className="py-24 bg-[#0F172A] relative overflow-hidden">
+         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
+         {/* Glow */}
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none"></div>
+
+         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Join Us?</h2>
+            <p className="text-xl text-slate-300 mb-12 leading-relaxed font-light">
+               Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all rounded-2xl w-full sm:w-auto">
+                     Explore Careers at Divistant <ExternalLink className="ml-2 w-5 h-5" />
+                  </Button>
+               </a>
+            </div>
+            
+            <div className="mt-12 pt-8 border-t border-slate-800 flex justify-center items-center gap-2 text-slate-500 text-sm">
+               <CheckCircle className="w-4 h-4" /> 
+               <span>Kami membalas setiap lamaran dalam 3-5 hari kerja.</span>
+            </div>
+         </div>
+      </section>
+
     </div>
   );
 };

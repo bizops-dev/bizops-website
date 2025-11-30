@@ -9,7 +9,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    hover: {
+    hoverEffect: {
       control: 'boolean',
     },
     padding: {
@@ -35,7 +35,7 @@ export const Default: Story = {
 
 export const WithHover: Story = {
   args: {
-    hover: true,
+    hoverEffect: true,
     children: (
       <div>
         <h3 className="text-xl font-bold mb-2">Hoverable Card</h3>
@@ -93,4 +93,5 @@ export const WithCustomClass: Story = {
     ),
   },
 };
+
 

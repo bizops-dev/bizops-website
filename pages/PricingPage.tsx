@@ -23,6 +23,11 @@ import Badge from '../components/Badge';
 import PricingFeatureTable from '../components/PricingFeatureTable';
 import FAQAccordion from '../components/FAQAccordion';
 
+// Motion Imports
+import { StaggeredText } from '../components/ui/motion-text';
+import { motion } from 'framer-motion';
+import { FADE_UP_VARIANTS } from '../utils/animation';
+
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
   const faqs = pricingFaqs || [];
@@ -62,14 +67,20 @@ const PricingPage: React.FC = () => {
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
              </span>
-             <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">New: Infrastructure Auto-Scaling</span>
+             <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-            Investasi Cerdas untuk <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
+            <StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />
+            <motion.span 
+              variants={FADE_UP_VARIANTS}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3 }}
+              className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400"
+            >
               Pertumbuhan Bisnis.
-            </span>
+            </motion.span>
           </h1>
           
           <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
@@ -78,19 +89,19 @@ const PricingPage: React.FC = () => {
           
           {/* Enhanced Toggle */}
           <div className="flex items-center justify-center animate-in fade-in zoom-in duration-700 delay-300">
-            <div className="relative flex items-center bg-slate-100 dark:bg-slate-800 p-1.5 rounded-full border border-slate-200 dark:border-slate-700">
+            <div className="relative inline-grid grid-cols-2 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-full border border-slate-200 dark:border-slate-700">
               <div 
                 className={`absolute left-1.5 top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 transition-transform duration-300 ease-spring ${annual ? 'translate-x-full' : 'translate-x-0'}`}
               />
               <button 
                 onClick={() => setAnnual(false)}
-                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
+                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex justify-center ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
               >
                 Bulanan
               </button>
               <button 
                 onClick={() => setAnnual(true)}
-                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex items-center gap-2 ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
+                className={`relative z-10 px-8 py-2.5 rounded-full text-sm font-bold transition-colors duration-300 flex items-center justify-center gap-2 ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700'}`}
               >
                 Tahunan
                 <span className="bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-300 text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-extrabold border border-green-200 dark:border-green-500/30">
@@ -104,7 +115,7 @@ const PricingPage: React.FC = () => {
 
       <Section className="-mt-12 pt-0 relative z-20">
         {/* --- PRICING CARDS --- */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto mb-24">
            
            {/* Plan 1: Business */}
            <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
@@ -152,48 +163,48 @@ const PricingPage: React.FC = () => {
            </div>
 
            {/* Plan 2: Growth (Popular) */}
-           <div className="bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 flex flex-col h-full border-2 border-primary-500 relative transform lg:-translate-y-4 shadow-2xl shadow-primary-900/20 z-10">
+           <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 flex flex-col h-full border-2 border-primary-600 dark:border-primary-500 relative transform lg:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
              <div className="absolute -top-5 left-0 right-0 flex justify-center">
-               <div className="bg-gradient-to-r from-primary-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 tracking-wide uppercase">
+               <div className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 tracking-wide uppercase">
                  <Zap className="w-3.5 h-3.5 fill-current" />
                  Most Popular
                </div>
              </div>
              
              <div className="mb-6 mt-2">
-               <h3 className="text-2xl font-bold text-white mb-2">Growth</h3>
-               <p className="text-slate-300 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
+               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Growth</h3>
+               <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
              </div>
 
-             <div className="mb-8 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+             <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
                <div className="flex items-baseline gap-1">
-                 <span className="text-sm font-semibold text-primary-400 mb-auto mt-2">IDR</span>
-                 <span className="text-5xl font-extrabold text-white tracking-tight">
+                 <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
+                 <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                    {annual ? '7.5' : '9'}
                  </span>
-                 <span className="text-xl font-bold text-white">Jt</span>
+                 <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                </div>
                <div className="flex items-center justify-between mt-3 text-sm">
-                 <span className="text-slate-400">/ bulan</span>
-                 {annual && <span className="text-primary-300 font-medium bg-primary-900/50 px-2 py-0.5 rounded border border-primary-500/30">Hemat 18 Jt/thn</span>}
+                 <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
+                 {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
                </div>
              </div>
 
              <div className="mb-8">
                <Link to="/demo?plan=growth">
-                 <Button fullWidth variant="primary" size="lg" className="h-14 text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 border-t border-white/20">
+                 <Button fullWidth variant="primary" size="lg" className="h-14 text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40">
                    Pilih Paket Growth
                  </Button>
                </Link>
              </div>
 
-             <div className="space-y-4 flex-grow border-t border-slate-700/50 pt-8">
-               <p className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-4">Semua di Business, plus:</p>
+             <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
+               <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-4">Semua di Business, plus:</p>
                {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
-                 <div key={i} className="flex gap-3 text-sm font-medium text-slate-200">
+                 <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
                    <div className="mt-0.5 min-w-[18px]">
-                     <div className="bg-primary-500/20 rounded-full p-0.5">
-                       <Check className="w-3.5 h-3.5 text-primary-400" />
+                     <div className="bg-primary-100 dark:bg-primary-500/20 rounded-full p-0.5">
+                       <Check className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
                      </div>
                    </div>
                    <span>{f}</span>

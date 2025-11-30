@@ -1,62 +1,326 @@
-
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { servicesData } from '../data/content';
+import { ServiceData } from '../types';
 import Button from '../components/Button';
-import { CheckCircle } from 'lucide-react';
+import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { 
+  ArrowLeft, AlertCircle, CheckCircle2, ShieldCheck, 
+  Zap, Layers, PackageCheck, ArrowRight, Sparkles, FileText, Check
+} from 'lucide-react';
+import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
+import { StaggeredText } from '../components/ui/motion-text';
+
+// --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
+const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div
+      className={`group relative border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden ${className}`}
+      onMouseMove={handleMouseMove}
+    >
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              ${spotlightColor},
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className="relative h-full">{children}</div>
+    </div>
+  );
+};
 
 const ServiceDetailPage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  const data = serviceId ? servicesData[serviceId] : null;
+  const data = serviceId ? (servicesData[serviceId] as ServiceData) : null;
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Service Not Found</h1>
-        <Link to="/"><Button>Back Home</Button></Link>
-      </div>
+      <Section className="min-h-[60vh] flex flex-col items-center justify-center text-center">
+        <SEO title="Service Not Found" noindex={true} />
+        <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-6">
+          <AlertCircle className="w-8 h-8" />
+        </div>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Service Not Found</h1>
+        <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-md">
+          Maaf, layanan yang Anda cari tidak ditemukan atau telah dipindahkan.
+        </p>
+        <Link to="/services">
+          <Button variant="outline" className="flex items-center gap-2">
+            <ArrowLeft className="w-4 h-4" />
+            Kembali ke Layanan
+          </Button>
+        </Link>
+      </Section>
     );
   }
 
   const Icon = data.icon;
 
   return (
-    <div className="flex flex-col">
-      {/* Hero */}
-      <section className="bg-slate-900 py-24 text-white">
-         <div className="max-w-4xl mx-auto px-4 text-center">
-            <div className="inline-flex p-4 bg-slate-800 rounded-2xl mb-6">
-               <Icon className="w-10 h-10 text-primary-400" />
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">{data.subtitle}</h1>
-            <p className="text-xl text-slate-300 leading-relaxed mb-10">{data.description}</p>
-            <Link to="/demo">
-               <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">{data.cta}</Button>
-            </Link>
-         </div>
-      </section>
+    <div className="pt-16 bg-slate-50 dark:bg-slate-950 min-h-screen font-sans selection:bg-primary-500/30">
+      <SEO 
+        title={data.title} 
+        description={data.subtitle}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": data.title,
+          "description": data.description,
+          "provider": {
+             "@type": "Organization",
+             "name": "BizOps"
+          },
+          "serviceType": "Enterprise Resource Planning",
+          "areaServed": "Indonesia"
+        }}
+      />
 
-      {/* Methodology */}
-      <section className="py-24 bg-white">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-16 leading-tight">Our Methodology</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-               {data.methodology.map((item: any, idx: number) => (
-                  <div key={idx} className="flex gap-6">
-                     <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold">
-                           {idx + 1}
-                        </div>
-                     </div>
-                     <div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                     </div>
-                  </div>
-               ))}
+      {/* --- HERO SECTION --- */}
+      <Section className="relative pt-20 pb-32 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+        {/* Abstract Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+           <div className="mb-8">
+              <Breadcrumbs items={[
+                { label: 'Services', path: '/services' },
+                { label: data.title, path: `/services/${serviceId}` }
+              ]} />
+           </div>
+
+           <div className="grid lg:grid-cols-2 gap-16 items-start">
+              {/* Left Column: Title & Desc */}
+              <motion.div 
+                initial="hidden"
+                animate="visible"
+                variants={STAGGER_CONTAINER}
+              >
+                 <motion.div 
+                   variants={FADE_UP_VARIANTS}
+                   className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8"
+                 >
+                    <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></div>
+                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Enterprise Service</span>
+                 </motion.div>
+
+                 <motion.h1 
+                   variants={FADE_UP_VARIANTS}
+                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]"
+                 >
+                   <span className="text-primary-600 dark:text-primary-400">{data.title}</span><br />
+                   <span className="text-slate-400 dark:text-slate-500 text-3xl md:text-4xl font-medium block mt-2">{data.subtitle}</span>
+                 </motion.h1>
+
+                 <motion.p 
+                   variants={FADE_UP_VARIANTS}
+                   className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 border-l-4 border-primary-500 pl-6"
+                 >
+                   {data.description}
+                 </motion.p>
+
+                 <motion.div variants={FADE_UP_VARIANTS} className="flex flex-wrap gap-4">
+                    <Link to="/contact">
+                       <Button size="lg" className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 font-bold px-8 h-14 rounded-full shadow-xl shadow-primary-500/10 hover:shadow-primary-500/20">
+                          {data.cta}
+                       </Button>
+                    </Link>
+                    {data.deliverables && (
+                       <a href="#deliverables">
+                          <Button variant="outline" size="lg" className="h-14 rounded-full px-8 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+                             View Deliverables
+                          </Button>
+                       </a>
+                    )}
+                 </motion.div>
+              </motion.div>
+
+              {/* Right Column: Why Choose Us (Floating Card) */}
+              <motion.div 
+                variants={FADE_UP_VARIANTS}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.3 }}
+                className="relative mt-12 lg:mt-0"
+              >
+                 <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
+                 <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
+                    <div className="flex items-center gap-4 mb-8">
+                       <div className="w-14 h-14 rounded-2xl bg-primary-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30">
+                          <Icon className="w-7 h-7" />
+                       </div>
+                       <h3 className="text-xl font-bold text-slate-900 dark:text-white">Why BizOps?</h3>
+                    </div>
+                    
+                    <div className="space-y-6">
+                       {data.benefits?.map((benefit, idx) => (
+                          <div key={idx} className="group flex gap-4">
+                             <div className="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center shrink-0 border border-green-200 dark:border-green-800/50">
+                                <Check className="w-3.5 h-3.5" />
+                             </div>
+                             <div>
+                                <h4 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-primary-600 transition-colors">{benefit.title}</h4>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
+                             </div>
+                          </div>
+                       ))}
+                    </div>
+
+                    <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700/50 flex items-center gap-2 text-sm text-slate-400 font-medium">
+                       <ShieldCheck className="w-4 h-4 text-primary-500" />
+                       Guaranteed Results & SLA
+                    </div>
+                 </SpotlightCard>
+              </motion.div>
+           </div>
+        </div>
+      </Section>
+
+      {/* --- METHODOLOGY (Timeline Style) --- */}
+      <Section className="bg-white dark:bg-slate-950 relative z-20">
+         <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+               <div>
+                  <h2 className="text-sm font-bold tracking-widest text-slate-500 uppercase mb-3">Our Methodology</h2>
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Execution Roadmap</h3>
+               </div>
+               <p className="text-slate-500 dark:text-slate-400 max-w-md">
+                  Langkah-langkah terstruktur untuk memastikan keberhasilan proyek Anda dari awal hingga akhir.
+               </p>
+            </div>
+
+            <div className="relative">
+               {/* Vertical Line for Desktop */}
+               <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 hidden md:block"></div>
+
+               <div className="space-y-12">
+                  {data.methodology.map((item, idx) => {
+                     const isEven = idx % 2 === 0;
+                     return (
+                        <motion.div 
+                           key={idx}
+                           initial={{ opacity: 0, y: 20 }}
+                           whileInView={{ opacity: 1, y: 0 }}
+                           viewport={{ once: true }}
+                           transition={{ delay: idx * 0.1 }}
+                           className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}
+                        >
+                           {/* Content Side */}
+                           <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
+                              <SpotlightCard className="p-8 rounded-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-colors">
+                                 <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                    <span className="text-primary-500 mr-2 md:hidden">Step {idx + 1}:</span>
+                                    {item.title}
+                                 </h4>
+                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    {item.desc}
+                                 </p>
+                              </SpotlightCard>
+                           </div>
+
+                           {/* Center Marker */}
+                           <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 flex items-center justify-center z-10 hidden md:flex">
+                              <span className="text-lg font-bold text-slate-400">{idx + 1}</span>
+                           </div>
+
+                           {/* Empty Side for Balance */}
+                           <div className="flex-1 hidden md:block"></div>
+                        </motion.div>
+                     );
+                  })}
+               </div>
             </div>
          </div>
-      </section>
+      </Section>
+
+      {/* --- DELIVERABLES (Grid) --- */}
+      {data.deliverables && (
+        <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
+           <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                   Tangible Deliverables
+                 </h2>
+                 <p className="text-slate-600 dark:text-slate-400">
+                   Aset konkret yang akan menjadi milik perusahaan Anda selamanya.
+                 </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {data.deliverables.map((item, idx) => (
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300 group"
+                    >
+                       <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                          <FileText className="w-6 h-6" />
+                       </div>
+                       <span className="font-bold text-slate-900 dark:text-white text-lg">{item}</span>
+                    </motion.div>
+                 ))}
+              </div>
+           </div>
+        </Section>
+      )}
+
+      {/* --- CTA SECTION (Consistent with ServicesPage) --- */}
+      <Section className="py-24 bg-white dark:bg-slate-950">
+        <motion.div 
+           initial={{ opacity: 0, scale: 0.98 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+           transition={SPRING_TRANSITION}
+           className="relative rounded-[2.5rem] bg-slate-900 dark:bg-black overflow-hidden px-6 py-20 md:px-20 text-center shadow-2xl shadow-slate-900/10"
+        >
+           {/* Sophisticated Background */}
+           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+           
+           <div className="relative z-10 max-w-3xl mx-auto">
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+               Start Your <span className="text-primary-400">{data.title}</span> Journey.
+             </h2>
+             <p className="text-lg text-slate-400 mb-10 font-light leading-relaxed max-w-xl mx-auto">
+                Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.
+             </p>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+               <Link to="/contact">
+                  <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
+                     Book Free Consultation
+                  </Button>
+               </Link>
+               <a href="https://wa.me/6281234567890">
+                  <Button variant="outline" size="lg" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white px-8 h-14 rounded-full">
+                     Chat via WhatsApp
+                  </Button>
+               </a>
+             </div>
+           </div>
+        </motion.div>
+      </Section>
     </div>
   );
 };

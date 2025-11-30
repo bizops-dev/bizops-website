@@ -1,212 +1,126 @@
-
-import { Wrench, Code, GraduationCap, Headphones } from 'lucide-react';
+import { Wrench, Code, GraduationCap, Headphones, Compass, Lightbulb, Settings } from 'lucide-react';
+import { ServiceData } from '../types';
 
 // --- SERVICES DATA ---
-export const servicesData: Record<string, any> = {
+export const servicesData: Record<string, ServiceData> = {
+  'consulting': {
+    title: "Strategic Consulting",
+    subtitle: "Diagnosis Tepat Sebelum Obat. Hindari Salah Investasi.",
+    description: "Banyak proyek transformasi digital gagal karena 'Technology First, Process Later'. Kami membalik paradigma itu. Kami mulai dengan diagnosis mendalam terhadap kesehatan proses bisnis Anda, baru merekomendasikan teknologi yang tepat.",
+    icon: Compass,
+    methodology: [
+      { title: "Business Process Mapping", desc: "Memetakan flow operasional Anda saat ini (As-Is) untuk menemukan bottleneck tersembunyi." },
+      { title: "Gap Analysis", desc: "Membandingkan kebutuhan bisnis vs kapabilitas sistem standar untuk menentukan strategi kustomisasi." },
+      { title: "Technology Roadmap", desc: "Menyusun rencana jangka panjang (1-3 tahun) agar investasi teknologi Anda scalable." },
+      { title: "Change Readiness Assessment", desc: "Mengukur kesiapan mental dan skill tim Anda menghadapi perubahan sistem baru." }
+    ],
+    benefits: [
+      { title: "Risk Mitigation", desc: "Menghindari pembelian modul/lisensi mahal yang ternyata tidak dibutuhkan perusahaan." },
+      { title: "Clear Direction", desc: "Anda mendapatkan peta jalan yang jelas, bukan sekadar janji-janji sales software." },
+      { title: "Process Optimization", desc: "Seringkali kami menemukan efisiensi proses manual bahkan sebelum software diimplementasikan." }
+    ],
+    deliverables: [
+      "Document Business Process Review (BPR)",
+      "Digital Transformation Roadmap",
+      "RFP (Request for Proposal) Support",
+      "Budget & Timeline Estimation"
+    ],
+    cta: "Mulai Sesi Konsultasi"
+  },
   'implementation': {
     title: "Implementation & Migration",
-    subtitle: "Kami Memastikan Sistem Anda Berjalan, Bukan Sekadar Terinstall.",
-    description: "Layanan implementasi profesional dengan metodologi 'Sprint'. Kami menangani migrasi data legacy, konfigurasi server, dan manajemen perubahan.",
+    subtitle: "Risiko Gagal Implementasi ERP Itu Nyata. Kami Menghilangkannya.",
+    description: "Statistik industri menunjukkan 60% implementasi ERP gagal atau melebihi budget. Pendekatan 'BizOps Agile Sprint' kami dirancang untuk memitigasi risiko tersebut dengan deliverable bertahap yang terukur, transparan, dan fokus pada Business Continuity.",
     icon: Wrench,
     methodology: [
-      { title: "Discovery & Blueprint", desc: "Audit proses As-Is vs To-Be dan identifikasi Gap Analysis." },
-      { title: "Configuration & Migration", desc: "Setup infrastruktur dan pembersihan data legacy (Data Cleansing)." },
-      { title: "UAT (User Acceptance Test)", desc: "Simulasi transaksi riil oleh Key Users sebelum Go-Live." },
-      { title: "Hypercare", desc: "Pendampingan intensif 2 minggu pertama pasca peluncuran." }
+      { title: "Blueprint Audit (Week 1-2)", desc: "Kami tidak menebak. Kami memetakan proses As-Is vs To-Be secara detail untuk mengunci scope dan budget." },
+      { title: "Data Cleansing & Migration", desc: "Migrasi data bukan sekadar copy-paste. Kami memvalidasi integritas data historis Anda sebelum masuk ke sistem baru." },
+      { title: "Conference Room Pilot (CRP)", desc: "Simulasi end-to-end proses bisnis di ruang meeting sebelum satu baris kode pun di-deploy ke produksi." },
+      { title: "Go-Live & Hypercare", desc: "Pendampingan standby 24/7 selama 14 hari pertama pasca peluncuran untuk memastikan operasional lancar." }
     ],
-    cta: "Konsultasi Paket Implementasi"
+    benefits: [
+      { title: "Fixed Cost Guarantee", desc: "Tidak ada biaya tersembunyi. Scope terkunci di awal, budget aman hingga akhir." },
+      { title: "Zero Data Loss", desc: "Protokol migrasi ketat memastikan setiap transaksi historis berpindah dengan akurat." },
+      { title: "Business Continuity", desc: "Strategi cut-over kami meminimalkan downtime operasional saat perpindahan sistem." }
+    ],
+    deliverables: [
+      "Dokumen Business Blueprint (BBP)",
+      "Sistem BizOps Production Ready",
+      "Dokumen UAT Sign-off",
+      "Panduan Migrasi Data"
+    ],
+    cta: "Jadwalkan Sesi Discovery Call"
   },
   'custom-dev': {
     title: "Custom Development",
-    subtitle: "Fitur Standar Tidak Cukup? Kami Bangunkan Untuk Anda.",
-    description: "Layanan pengembangan modul kustom di atas BizOps. Buat fitur unik sesuai kebutuhan bisnis spesifik Anda tanpa merusak inti sistem.",
+    subtitle: "Fitur Unik adalah Competitive Advantage Anda. Jangan Dibuang.",
+    description: "ERP 'Vanilla' seringkali memaksa Anda mengubah proses bisnis unik yang justru menjadi kekuatan perusahaan. Layanan Custom Development kami membangun jembatan antara standar industri dan keunikan operasional Anda, tanpa mengorbankan upgrade-ability sistem.",
     icon: Code,
     methodology: [
-      { title: "Upgrade-Safe Architecture", desc: "Kode kustom terisolasi sebagai App terpisah, tidak hilang saat update core." },
-      { title: "Rapid Development", desc: "5x lebih cepat menggunakan Frappe Framework yang sudah matang." },
-      { title: "Python & JS", desc: "Stack teknologi modern yang powerful dan mudah dipelihara." },
-      { title: "API First", desc: "Modul kustom otomatis memiliki API endpoints." }
+      { title: "Solution Architecture", desc: "Mendesain struktur database dan logika bisnis yang efisien dan scalable." },
+      { title: "Clean Code Development", desc: "Menggunakan standar PEP-8 (Python) dan ESLint untuk kode yang mudah dibaca dan dipelihara developer lain." },
+      { title: "Automated Testing", desc: "Setiap fitur kustom dilengkapi Unit Test untuk mencegah regresi saat update sistem utama." },
+      { title: "Documentation", desc: "Dokumentasi teknis lengkap (API Docs & Schema) agar Anda tidak bergantung total pada kami (No Vendor Lock-in)." }
     ],
-    cta: "Diskusikan Kebutuhan Kustom"
+    benefits: [
+      { title: "Upgrade-Safe", desc: "Arsitektur 'App' terpisah memastikan custom code Anda tidak hilang saat Core BizOps di-update." },
+      { title: "High Performance", desc: "Optimasi query database tingkat lanjut untuk menangani jutaan record transaksi." },
+      { title: "Seamless UI/UX", desc: "Tampilan fitur kustom menyatu sempurna dengan desain bawaan sistem, user tidak akan sadar itu kustom." }
+    ],
+    deliverables: [
+      "Source Code (Git Repository)",
+      "API Documentation (Swagger/Postman)",
+      "Technical Design Document",
+      "Automated Test Scripts"
+    ],
+    cta: "Konsultasi Teknis Gratis"
   },
   'training': {
-    title: "Training & Academy",
+    title: "Training & Change Management",
     subtitle: "Investasi Terbesar Adalah Manusia, Bukan Software.",
-    description: "Jasa pelatihan user dan admin untuk memastikan adopsi sistem maksimal. Pendekatan Role-Based Training.",
+    description: "Sistem tercanggih di dunia tidak akan berguna jika tim Anda menolak menggunakannya. Program kami bukan sekadar 'Training Cara Pakai', tapi 'Change Management' untuk mengubah mindset dan budaya kerja tim Anda menuju digitalisasi.",
     icon: GraduationCap,
     methodology: [
-      { title: "Role-Based Training", desc: "Materi spesifik per departemen, bukan training massal membosankan." },
-      { title: "Train the Trainer", desc: "Mencetak Super User internal untuk keberlanjutan jangka panjang." },
-      { title: "BizOps Academy LMS", desc: "Akses perpustakaan video tutorial 24/7." },
-      { title: "On-Site Bootcamp", desc: "Sesi intensif tatap muka di lokasi pabrik/proyek." }
+      { title: "Role-Based Curriculum", desc: "Materi Warehouse Admin berbeda dengan Finance Manager. Kami sesuaikan bahasa dan konteksnya." },
+      { title: "Gamified Learning", desc: "Sesi interaktif dengan studi kasus nyata perusahaan Anda, bukan teori membosankan." },
+      { title: "Super User Coaching", desc: "Kami melatih 'Champion' internal di perusahaan Anda untuk menjadi pusat bantuan tingkat pertama." },
+      { title: "Certification", desc: "Ujian kompetensi di akhir sesi untuk memastikan user benar-benar siap dilepas." }
+    ],
+    benefits: [
+      { title: "Faster ROI", desc: "User yang mahir bekerja lebih cepat, mengurangi kesalahan input, dan mempercepat balik modal investasi ERP." },
+      { title: "Reduced Resistance", desc: "Pendekatan psikologis kami mengurangi resistensi karyawan senior terhadap teknologi baru." },
+      { title: "Knowledge Retention", desc: "Akses seumur hidup ke BizOps Academy (Video Learning Portal) untuk re-training mandiri." }
+    ],
+    deliverables: [
+      "Modul Training & Video Tutorial",
+      "User Manual (PDF) per Departemen",
+      "Sertifikat Kelulusan User",
+      "Rekaman Sesi Zoom (jika online)"
     ],
     cta: "Lihat Silabus Training"
   },
   'support': {
-    title: "Support Plans (SLA)",
-    subtitle: "Tenang, Kami Menjaga Sistem Anda 24/7.",
-    description: "Paket dukungan teknis dan pemeliharaan sistem. Jaminan respon cepat dan perbaikan bug.",
+    title: "Support & Managed Services",
+    subtitle: "Tim IT Virtual Anda. Tenang, Kami yang Jaga Lembur.",
+    description: "Jangan biarkan tim internal Anda habis waktu mengurus server down atau bug sistem. Fokuskan mereka pada inovasi bisnis, biarkan kami yang menangani 'kabel ruwet' dan pemeliharaan rutin infrastruktur ERP Anda dengan SLA yang ketat.",
     icon: Headphones,
     methodology: [
-      { title: "Standard Support", desc: "Respon 1x24 jam via Email & Tiket Portal." },
-      { title: "Priority Support", desc: "Respon < 4 jam via WhatsApp Business Priority Line." },
-      { title: "Managed Service", desc: "Kami mengurus update OS, Database, dan Backup Server Anda." },
-      { title: "Security Patching", desc: "Pembaruan keamanan rutin untuk menutup celah kerentanan." }
+      { title: "Proactive Monitoring", desc: "Kami tahu server penuh sebelum Anda menyadarinya. Monitoring 24/7 terhadap CPU, RAM, dan Disk." },
+      { title: "Ticket Management System", desc: "Portal tiket transparan. Anda bisa lacak status perbaikan bug secara real-time." },
+      { title: "Regular Patching", desc: "Update keamanan rutin untuk melindungi data sensitif perusahaan dari serangan siber terbaru." },
+      { title: "Quarterly Review", desc: "Evaluasi performa sistem setiap 3 bulan dan rekomendasi optimasi infrastruktur." }
     ],
-    cta: "Download Dokumen SLA"
+    benefits: [
+      { title: "Guaranteed SLA", desc: "Jaminan respon time (e.g., < 1 jam untuk isu kritis) atau kami berikan penalti refund kredit." },
+      { title: "Data Security", desc: "Backup otomatis harian ke lokasi terpisah (Off-site DR) untuk jaminan keamanan data 100%." },
+      { title: "Cost Efficiency", desc: "Lebih murah daripada menggaji satu orang Senior DevOps Engineer full-time." }
+    ],
+    deliverables: [
+      "Akses Portal Tiket Prioritas",
+      "Laporan Bulanan (Uptime & Issue)",
+      "Dedicated Account Manager",
+      "Backup Data Rutin"
+    ],
+    cta: "Pelajari Paket SLA"
   }
 };
-
-// --- COMPARISON DATA ---
-export const comparisonsData: Record<string, any> = {
-  'odoo': {
-    title: "BizOps vs Odoo Enterprise",
-    subtitle: "Alternatif Odoo dengan Pengalaman Mobile & Lokalisasi Indonesia yang Lebih Baik.",
-    description: "BizOps hadir sebagai solusi presisi: Baik sebagai Pengganti Total yang lebih lincah, atau sebagai Pelengkap Mobile (Front-end) untuk backend Odoo Anda.",
-    competitorName: "Odoo Enterprise",
-    type: "matrix",
-    headers: ["Aspek Perbandingan", "Odoo Enterprise (Global)", "BizOps (Indonesia Optimized)", "Implikasi Bisnis"],
-    rows: [
-      { feature: "Mobile User Experience", them: "Web Wrapper (HTML5 Hybrid). Terasa lambat di HP low-end.", us: "Native Flutter App. 60fps, akses hardware cepat.", impact: "Adopsi user lapangan jauh lebih tinggi." },
-      { feature: "Offline Capability", them: "Terbatas / Butuh modul 3rd party mahal.", us: "Native Offline-First (SQLite Local DB).", impact: "Operasional jalan terus meski internet mati." },
-      { feature: "Indonesian Compliance", them: "Butuh lokalisasi manual/komunitas.", us: "Built-in PPh 21 TER, BPJS & E-Faktur.", impact: "Bebas risiko denda pajak & hemat biaya konsultan." },
-      { feature: "Integration Nature", them: "Monolithic Ecosystem.", us: "Modular & Middleware Ready.", impact: "Fleksibilitas arsitektur tanpa vendor lock-in." }
-    ],
-    strategy: {
-      title: "The 'Better Together' Strategy (Two-Tier ERP)",
-      scenario: "Sudah investasi mahal di Odoo/SAP untuk Back Office tapi Salesman komplain aplikasi lambat?",
-      solution: "Gunakan BizOps sebagai Tier-2 (Front-end) khusus untuk Sales & Operasional Lapangan. Biarkan Odoo tetap menangani Accounting Pusat. Kami jembatani data via API real-time."
-    },
-    verdict: "Gunakan BizOps jika Anda butuh performa mobile lapangan yang tinggi dan kepatuhan pajak Indonesia tanpa ribet."
-  },
-  'local-saas': {
-    title: "BizOps vs SaaS Lokal",
-    subtitle: "Akhiri Fragmentasi Aplikasi. Satu Platform Terpadu untuk Semua.",
-    description: "Mengapa perusahaan Anda harus membayar 3 vendor berbeda (Satu untuk HRIS, Satu untuk Akuntansi, Satu untuk CRM) dan pusing mengintegrasikannya?",
-    competitorName: "Mekari / Jurnal / Accurate",
-    type: "columns",
-    features: [
-      { 
-         title: "Integration & Data Flow",
-         them: "Silo (Data Terpisah)",
-         us: "Unified (Satu Database)",
-         themDesc: "HRIS tidak bicara dengan Accounting. Perlu ekspor-impor Excel manual. Rawan error.",
-         usDesc: "Payroll disetujui -> Jurnal beban gaji & hutang pajak otomatis terbentuk detik itu juga."
-      },
-      { 
-         title: "Deployment & Sovereignty",
-         them: "Public Cloud Only",
-         us: "Hybrid (Cloud / Self-Hosted)",
-         themDesc: "Data wajib di server vendor. Tidak ada kontrol fisik. Risiko lock-in tinggi.",
-         usDesc: "Bebas pilih. Gunakan Cloud kami atau Private Server Anda sendiri. Data 100% milik Anda."
-      },
-      { 
-         title: "Customizability",
-         them: "Kaku (As-is)",
-         us: "Flexible Framework",
-         themDesc: "Fitur 'Take it or leave it'. Roadmap fitur bergantung vendor.",
-         usDesc: "Low-code framework memungkinkan penambahan field, flow, atau logika bisnis unik tanpa batas."
-      }
-    ],
-    verdict: "Pilih BizOps jika bisnis Anda mulai kompleks dan butuh kustomisasi atau integrasi mendalam yang tidak bisa dilayani SaaS standar."
-  },
-  'custom-build': {
-    title: "BizOps vs Custom Build",
-    subtitle: "Jebakan 'Membangun Sendiri' (The Trap of In-House Development).",
-    description: "Memiliki tim IT internal bukan berarti Anda harus membangun ERP dari nol. Fokuskan dev team Anda pada inovasi, bukan reinvention.",
-    competitorName: "In-House Development",
-    type: "analysis",
-    scenarios: [
-       {
-          name: "Skenario A: Membangun Sendiri",
-          color: "bg-red-50 border-red-200",
-          iconColor: "text-red-500",
-          metrics: [
-             { label: "Time to Market", val: "12 - 18 Bulan" },
-             { label: "Cost Risk", val: "> Rp 1.2 Milyar / thn" },
-             { label: "Risk Factor", val: "High (Dev Turnover)" }
-          ],
-          points: [
-             "Biaya gaji tim dev (PM, Backend, Frontend, QA) sangat mahal.",
-             "Kode menjadi 'Ghost Code' saat Lead Dev resign.",
-             "Fitur security & audit sering terabaikan."
-          ]
-       },
-       {
-          name: "Skenario B: Menggunakan BizOps",
-          color: "bg-green-50 border-green-200",
-          iconColor: "text-green-500",
-          metrics: [
-             { label: "Time to Market", val: "2 - 4 Minggu" },
-             { label: "Cost Risk", val: "Fixed Subscription" },
-             { label: "Risk Factor", val: "Low (Vendor Support)" }
-          ],
-          points: [
-             "Hemat biaya 10x lipat dibanding gaji tim dev setahun.",
-             "Security patch & update fitur ditangani profesional.",
-             "Tetap fleksibel dengan custom app di atas framework kami."
-          ]
-       }
-    ],
-    verdict: "Jangan reinvent the wheel. Gunakan BizOps sebagai fondasi core, lalu kustomisasi 20% fitur unik bisnis Anda di atasnya."
-  }
-};
-
-// --- FAQS ---
-export const pricingFaqs = [
-  {
-    q: "Apakah ada biaya tersembunyi untuk implementasi?",
-    a: "Untuk paket Business dan Growth (SaaS), tidak ada biaya implementasi wajib. Anda bisa setup mandiri (DIY). Namun, untuk Enterprise (Self-Hosted), biaya implementasi dihitung berdasarkan man-days consultant."
-  },
-  {
-    q: "Bisakah saya upgrade dari Cloud ke Self-Hosted nanti?",
-    a: "Ya, 100%. Kami menyediakan fitur 'Data Liberation'. Anda bisa memulai di Cloud kami, dan ketika tim IT Anda siap, kami bantu migrasi database ke server Anda."
-  },
-  {
-    q: "Apakah data saya aman di Cloud BizOps?",
-    a: "Sangat aman. Kami menggunakan enkripsi AES-256 untuk data-at-rest dan TLS 1.3 untuk data-in-transit. Server kami berlokasi di Jakarta (Google Cloud Platform Region Jakarta) sesuai regulasi PP 71."
-  },
-  {
-    q: "Bagaimana dengan support purna jual?",
-    a: "Setiap paket termasuk akses ke Knowledge Base. Paket Growth mendapat Priority WhatsApp Support. Paket Enterprise mendapat Dedicated Account Manager."
-  }
-];
-
-// --- SEARCH MOCK DATA ---
-export const searchMockData = [
-  {
-    title: "Cara Integrasi Payment Gateway Xendit",
-    path: "Documentation > Integrations > Payment",
-    snippet: "...panduan langkah demi langkah menghubungkan API Key Xendit ke dalam modul Sales BizOps untuk mengaktifkan pembayaran otomatis pada Invoice...",
-    tag: "Developer Docs",
-    category: "docs"
-  },
-  {
-    title: "Human Capital (HRIS) Module",
-    path: "Platform > Modules > HR",
-    snippet: "Kelola payroll, PPh 21, dan absensi karyawan dalam satu platform terintegrasi.",
-    tag: "Product",
-    category: "product"
-  },
-  {
-    title: "Mengatasi Error 'Budget Exceeded' pada Purchase Request",
-    path: "Help Center > Finance > Procurement",
-    snippet: "Error ini muncul karena fitur Budget Control aktif. Hubungi Finance Manager untuk revisi anggaran atau...",
-    tag: "Troubleshooting",
-    category: "docs"
-  },
-  {
-    title: "5 Tanda Bisnis Anda Sudah 'Tumbuh Kelewat Batas' untuk Excel",
-    path: "Blog > Operational Efficiency",
-    snippet: "Apakah spreadsheet stok Anda mulai lambat dibuka dan sering crash? Kenali titik kritis di mana...",
-    tag: "Blog",
-    category: "blog"
-  },
-  {
-    title: "Mitra Konsultan Pajak & Implementator",
-    path: "Partners > Directory",
-    snippet: "Temukan mitra tersertifikasi untuk membantu implementasi BizOps di perusahaan Anda.",
-    tag: "Directory",
-    category: "partner"
-  }
-];

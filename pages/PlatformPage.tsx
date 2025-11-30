@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Check, ArrowRight, Layers, Smartphone, 
@@ -86,8 +85,8 @@ const PlatformPage: React.FC = () => {
 
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map((cap) => {
-               const isSpecialPage = ['automation-ai', 'multi-company', 'portals', 'analytics'].includes(cap.id);
-               const linkUrl = isSpecialPage ? `/platform/${cap.id}` : `/capabilities/${cap.id}`;
+               // Updated Link to New Path Structure
+               const linkUrl = `/platform/capabilities/${cap.id}`;
                
                return (
                   <Link key={cap.id} to={linkUrl} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group hover:shadow-xl hover:-translate-y-1 block h-full">
@@ -133,7 +132,8 @@ const PlatformPage: React.FC = () => {
           {modules.map((mod) => (
             <Link 
               key={mod.id} 
-              to={`/platform/${mod.id}`}
+              // Updated Link to New Path Structure
+              to={`/platform/modules/${mod.id}`}
               className="group h-full"
             >
               <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50" hoverEffect>
@@ -178,7 +178,7 @@ const PlatformPage: React.FC = () => {
                   <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-lg">
                      BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.
                   </p>
-                  <Link to="/integrations">
+                  <Link to="/platform/technologies/integration">
                      <Button variant="white" size="lg">Jelajahi Library Integrasi</Button>
                   </Link>
                </div>
@@ -207,26 +207,55 @@ const PlatformPage: React.FC = () => {
       </Section>
 
       {/* 5. TECH STACK */}
-      <Section className="bg-slate-50 dark:bg-slate-900/50">
-         <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-12">Dibangun dengan Teknologi Open Source Terbaik</h2>
+      <Section className="bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
+         {/* Background Decoration */}
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+         <div className="max-w-5xl mx-auto text-center relative z-10">
+            <Badge variant="outline" className="mb-6 bg-white dark:bg-slate-900">Engineering Excellence</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Dibangun dengan Teknologi Enterprise-Grade</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12">
+               Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.
+            </p>
             
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
                {[
-                  { name: 'Python', icon: 'PY' },
-                  { name: 'React', icon: 'RC' },
-                  { name: 'PostgreSQL', icon: 'PG' },
-                  { name: 'Redis', icon: 'RD' },
-                  { name: 'Docker', icon: 'DK' },
-                  { name: 'Flutter', icon: 'FL' }
+                  { name: 'Python', icon: 'PY', desc: 'Backend Logic' },
+                  { name: 'React', icon: 'RC', desc: 'Frontend UI' },
+                  { name: 'PostgreSQL', icon: 'PG', desc: 'Database' },
+                  { name: 'Redis', icon: 'RD', desc: 'High-Speed Cache' },
+                  { name: 'Docker', icon: 'DK', desc: 'Containerization' },
+                  { name: 'Flutter', icon: 'FL', desc: 'Native Mobile' }
                ].map((tech) => (
-                  <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default">
+                  <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32">
                      <div className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
                         {tech.icon}
                      </div>
-                     <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-600 transition-colors">{tech.name}</span>
+                     <div>
+                        <div className="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary-600 transition-colors">{tech.name}</div>
+                        <div className="text-[10px] text-slate-400 font-medium mt-0.5">{tech.desc}</div>
+                     </div>
                   </div>
                ))}
+            </div>
+
+            {/* Frappe Partner Badge */}
+            <div className="inline-flex items-center gap-4 p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
+               <div className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-primary-600" />
+               </div>
+               <div className="text-left">
+                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Official Partner</div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-white">Frappe Technologies</div>
+               </div>
+            </div>
+
+            <div className="flex justify-center">
+               <Link to="/platform/technologies/architecture">
+                  <Button variant="outline" className="border-slate-300 text-slate-600 hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-white">
+                     Pelajari Tech Stack Lengkap
+                  </Button>
+               </Link>
             </div>
          </div>
       </Section>

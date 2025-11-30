@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { AlertCircle } from 'lucide-react';
 
@@ -61,9 +60,10 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   error?: string;
   helperText?: string;
   options: { value: string; label: string }[];
+  icon?: React.ReactNode;
 }
 
-export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, options, className = "", ...props }) => {
+export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, options, icon, className = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
@@ -71,8 +71,13 @@ export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, o
     <div className="w-full">
       {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{label}</label>}
       <div className="relative">
+        {icon && (
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            {icon}
+          </div>
+        )}
         <select 
-          className={`w-full h-11 px-4 py-2.5 rounded-lg border bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 disabled:opacity-50 disabled:cursor-not-allowed appearance-none ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-slate-300 dark:border-slate-700'} ${className}`}
+          className={`w-full h-11 ${icon ? 'pl-10' : 'px-4'} py-2.5 rounded-lg border bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 disabled:opacity-50 disabled:cursor-not-allowed appearance-none ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-slate-300 dark:border-slate-700'} ${className}`}
           aria-invalid={!!error}
           aria-describedby={describedBy || undefined}
           {...props}
@@ -129,7 +134,7 @@ export const TextArea: React.FC<TextAreaProps> = memo(({ label, error, helperTex
 TextArea.displayName = 'TextArea';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: React.ReactNode; // Updated to ReactNode to allow links
+  label: React.ReactNode; 
 }
 
 export const Checkbox: React.FC<CheckboxProps> = memo(({ label, className = "", ...props }) => (

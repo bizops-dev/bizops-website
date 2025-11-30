@@ -1,29 +1,64 @@
-
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { industriesData } from '../data/content';
 import Button from '../components/Button';
-import { CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
+import Badge from '../components/Badge';
+import { HelpCircle, ChevronRight, Check, Quote, ArrowRight, AlertTriangle, PlayCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import Section from '../components/Section';
+
+// Motion Components
+import { StaggeredText } from '../components/ui/motion-text';
+import { BouncyButton } from '../components/ui/motion-button';
+import { CounterUp } from '../components/ui/motion-scroll';
+import { motion } from 'framer-motion';
+import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
+
+// Generic Components
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
+      >
+        <span className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary-600 transition-colors pr-8">{question}</span>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30'}`}>
+           <ChevronRight className="w-5 h-5" />
+        </div>
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
+        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+          {answer}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const IndustryPage: React.FC = () => {
   const { industryId } = useParams<{ industryId: string }>();
   const data = industryId ? industriesData[industryId] : null;
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [industryId]);
+
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
-        <h1 className="text-2xl font-bold text-slate-900 mb-2">Industry Solution Not Found</h1>
-        <p className="text-slate-600 mb-6">The solution you are looking for does not exist or has been moved.</p>
-        <Link to="/"><Button>Back Home</Button></Link>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Industry Solution Not Found</h1>
+        <p className="text-slate-600 dark:text-slate-400 mb-6">The solution you are looking for does not exist or has been moved.</p>
+        <Link to="/solutions"><Button>Back to Solutions</Button></Link>
       </div>
     );
   }
 
-  const Icon = data.icon;
+  const Icon = data.icon || HelpCircle;
 
-  // JSON-LD Structured Data for Product/Service
+  // JSON-LD Structured Data
   const industrySchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -33,159 +68,365 @@ const IndustryPage: React.FC = () => {
       "@type": "Brand",
       "name": "BizOps"
     },
-    "logo": "https://bizops.id/logo.png",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "85"
-    },
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Client"
-      },
-      "reviewBody": data.caseStudy
     }
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
-        title={data.metaTitle || data.title} 
-        description={data.metaDesc || data.description} 
+        title={data.metaTitle} 
+        description={data.metaDesc} 
         structuredData={industrySchema}
       />
 
-      {/* Hero */}
-      <section className="bg-slate-900 py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8 animate-fade-in-up">
-            <div className="p-4 bg-slate-800 rounded-2xl border border-slate-700">
-              <Icon className="w-8 h-8 text-primary-400" />
+      {/* 1. HERO SECTION - Premium Upgrade */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+         {/* Premium Background Effects */}
+         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
+         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            {/* Icon - Moved to Top as Visual Anchor */}
+            <motion.div 
+               initial={{ scale: 0.8, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               transition={{ type: "spring", stiffness: 200, damping: 15 }}
+               className="relative inline-flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-8 shadow-2xl group"
+            >
+               <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+               <Icon className="w-12 h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
+            </motion.div>
+
+            {/* Context Label */}
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center justify-center mb-8"
+            >
+               <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
+                  <span>Industry Solution</span>
+                  <span className="text-slate-500 mx-1">/</span>
+                  <span className="text-white">{data.title}</span>
+               </div>
+            </motion.div>
+            
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-display max-w-5xl mx-auto drop-shadow-sm">
+               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
+                 {data.subtitle}
+               </span>
+            </h1>
+            
+            <motion.p 
+               variants={FADE_UP_VARIANTS}
+               initial="hidden"
+               animate="visible"
+               transition={{ delay: 0.4 }}
+               className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+            >
+               {data.description}
+            </motion.p>
+            
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.6 }}
+               className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+            >
+               <Link to="/demo">
+                  <div className="group relative">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+                    <button className="relative h-14 px-8 bg-slate-950 rounded-lg leading-none flex items-center divide-x divide-slate-600">
+                      <span className="flex items-center space-x-3">
+                        <span className="text-white font-bold text-lg pr-4">Lihat Demo Live</span>
+                      </span>
+                      <span className="pl-4 text-primary-400 group-hover:text-primary-300 transition duration-200">
+                        <PlayCircle className="w-6 h-6" />
+                      </span>
+                    </button>
+                  </div>
+               </Link>
+               <Link to="/contact">
+                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5">
+                     Konsultasi Ahli <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+               </Link>
+            </motion.div>
+         </div>
+      </section>
+
+      {/* 2. METRICS (Impact) - Upgraded Design */}
+      {data.metrics && (
+         <section className="relative -mt-20 z-20 pb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {data.metrics.map((metric, idx) => {
+                     const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
+                     const prefix = metric.value.match(/^[^0-9]*/) ? metric.value.match(/^[^0-9]*/)![0] : '';
+                     const suffix = metric.value.match(/[^0-9]*$/) ? metric.value.match(/[^0-9]*$/)![0] : '';
+                     const isNumber = !isNaN(numericValue);
+
+                     return (
+                       <motion.div 
+                          key={idx}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.2 + idx * 0.1 }}
+                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                       >
+                          {/* Top Highlight Line */}
+                          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          
+                          {/* Background Glow */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          
+                          {isNumber ? (
+                            <div className="relative z-10">
+                              <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
+                            </div>
+                          ) : (
+                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                               {metric.value}
+                            </div>
+                          )}
+                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10">{metric.label}</div>}
+                       </motion.div>
+                     );
+                  })}
+               </div>
             </div>
-            <span className="text-primary-400 font-bold tracking-wide uppercase text-sm bg-primary-900/50 px-3 py-1 rounded-full border border-primary-800">Industry Solution</span>
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 max-w-4xl leading-tight">{data.subtitle}</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">{data.description}</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/demo">
-               <Button size="lg" variant="white">Jadwalkan Demo</Button>
-            </Link>
-            <Link to="/contact">
-               <Button variant="outline-white" size="lg">Hubungi Sales</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+         </section>
+      )}
 
-      {/* Challenges (Pain Points) */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">The Industry Challenge</h2>
-            <p className="text-lg text-slate-600">Pain points umum yang menghambat pertumbuhan perusahaan {data.title}.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {data.challenges.map((item: any, idx: number) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-2 h-full bg-red-500"></div>
-                <div className="mb-6 w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
-                    <AlertTriangle className="w-6 h-6 text-red-500" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed">"{item.desc}"</p>
-              </div>
+      {/* 3. CHALLENGES (Pain Points) - Modernized UI */}
+      <Section className="bg-[#0B1120] relative border-t border-white/5">
+         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/20 via-[#0B1120] to-[#0B1120] pointer-events-none"></div>
+         
+         <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+              <AlertTriangle className="w-3 h-3" /> Operational Risks
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
+               Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_10px_rgba(248,113,113,0.4)]">Stuck?</span>
+            </h2>
+            <p className="text-lg text-slate-400 leading-relaxed">
+               Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.
+            </p>
+         </div>
+
+         <motion.div 
+            variants={STAGGER_CONTAINER}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8 relative z-10"
+         >
+            {data.challenges.map((challenge, idx) => (
+               <motion.div 
+                  key={idx}
+                  variants={FADE_UP_VARIANTS}
+                  className="bg-[#1E293B]/30 p-8 rounded-3xl border border-white/5 hover:border-red-500/30 shadow-lg transition-all duration-500 group relative overflow-hidden hover:-translate-y-1"
+               >
+                  {/* Subtle Red Gradient Background */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 rounded-full blur-[60px] -mr-10 -mt-10 group-hover:bg-red-500/20 transition-colors duration-500 pointer-events-none"></div>
+                  
+                  <div className="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                     <span className="font-bold text-xl">0{idx + 1}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-200 transition-colors relative z-10">
+                    {challenge.title}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed text-sm relative z-10 group-hover:text-slate-300 transition-colors">
+                    {challenge.desc}
+                  </p>
+               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+         </motion.div>
+      </Section>
 
-      {/* Solutions (Deep Dive Features) */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="mb-16 text-center">
-             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">The BizOps Solution</h2>
-             <p className="text-slate-600 mt-4">Bagaimana kami menyelesaikan masalah tersebut secara sistematis.</p>
+      {/* 4. SOLUTIONS (Bento Grid) - High Contrast */}
+      <Section className="relative overflow-hidden bg-white dark:bg-slate-950">
+         {/* Background Decoration */}
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+         <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+              <Check className="w-3 h-3" /> The Solution
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+               Solusi Terintegrasi
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+               Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.
+            </p>
+         </div>
+
+         <motion.div 
+            variants={STAGGER_CONTAINER}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
+         >
+            {data.solutions.map((sol, idx) => {
+               const SolIcon = sol.icon || Check;
+               return (
+                  <motion.div 
+                     key={idx}
+                     variants={FADE_UP_VARIANTS}
+                     className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 group shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2 relative overflow-hidden"
+                  >
+                     {/* Dot Pattern Overlay */}
+                     <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                     <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 via-primary-500/0 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                     
+                     <div className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30">
+                        <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
+                     </div>
+                     
+                     <h3 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                        {sol.title}
+                     </h3>
+                     <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+                        {sol.desc}
+                     </p>
+                  </motion.div>
+               );
+            })}
+         </motion.div>
+         
+         <div className="mt-16 text-center relative z-10">
+            <Link to="/platform">
+               <Button variant="outline" size="lg" className="border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 h-14 text-lg">Lihat Semua Modul Platform</Button>
+            </Link>
+         </div>
+      </Section>
+
+      {/* 5. CASE STUDY */}
+      <Section dark className="relative overflow-hidden">
+         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-primary-900/20 to-transparent pointer-events-none"></div>
+         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+         
+         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+               <Badge variant="outline-white" className="mb-6">Success Story</Badge>
+               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  {data.caseStudyTitle}
+               </h2>
+               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+                  "{data.caseStudy}"
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/customers">
+                     <Button variant="white" className="group">
+                        Baca Studi Kasus Lengkap <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Button>
+                  </Link>
+               </div>
+            </div>
+            
+            {/* Visual Abstract */}
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.9 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-10 rounded-3xl relative"
+            >
+               <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-500/30 rounded-full blur-xl animate-pulse-slow"></div>
+               <Quote className="w-12 h-12 text-primary-400 mb-6 opacity-50" />
+               <p className="text-xl font-medium text-white italic mb-8 leading-relaxed">
+                  "{data.testimonial?.quote || "BizOps memberikan visibilitas yang kami cari selama ini. Keputusan bisnis jadi lebih cepat dan akurat."}"
+               </p>
+               <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-slate-700 overflow-hidden ring-2 ring-primary-500/50">
+                     <img src={data.testimonial?.avatar || "https://ui-avatars.com/api/?name=User&background=random"} alt="User" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                     <div className="font-bold text-white text-lg">{data.testimonial?.author || "Happy Client"}</div>
+                     <div className="text-sm text-primary-300">{data.testimonial?.role || "Director"}</div>
+                  </div>
+               </div>
+            </motion.div>
+         </div>
+      </Section>
+
+      {/* 6. FAQ */}
+      {data.faqs && (
+         <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+               <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Pertanyaan Umum</h2>
+                  <p className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</p>
+               </div>
+               <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-8">
+                  {data.faqs.map((faq, i) => (
+                     <FAQItem key={i} question={faq.question} answer={faq.answer} />
+                  ))}
+               </div>
+            </div>
+         </Section>
+      )}
+
+      {/* 7. CTA (Final Push - Premium Style) */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-[#020617]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-[#020617]"></div>
+        
+        {/* Animated Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>
+
+        {/* Glow Effects */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary-500/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary-300 text-sm font-medium mb-8 backdrop-blur-sm"
+           >
+             <span className="relative flex h-2 w-2">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+             </span>
+             Market Leader Choice
+           </motion.div>
+
+           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-display drop-shadow-xl">
+              Siap Mendominasi Pasar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-cyan-300">{data.title}</span>?
+           </h2>
+           
+           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.
+           </p>
+
+           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+              <Link to="/demo">
+                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2">
+                    Mulai Free Trial <ArrowRight className="w-5 h-5" />
+                 </BouncyButton>
+              </Link>
+              <Link to="/contact">
+                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md">
+                    Hubungi Sales
+                 </Button>
+              </Link>
            </div>
            
-           <div className="space-y-20">
-              {data.solutions.map((item: any, idx: number) => (
-                <div key={idx} className={`flex flex-col md:flex-row gap-12 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                   {/* Text Content */}
-                   <div className="flex-1">
-                      <div className="inline-flex items-center gap-2 mb-4">
-                         <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">0{idx + 1}</div>
-                         <div className="h-px w-12 bg-primary-200"></div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
-                      <p className="text-lg text-slate-600 leading-relaxed">{item.desc}</p>
-                   </div>
-                   
-                   {/* Visual Placeholder */}
-                   <div className="flex-1 w-full">
-                      <div className="bg-white p-2 rounded-2xl shadow-xl border border-slate-200 transform hover:scale-[1.02] transition-transform duration-300">
-                          <div className="bg-slate-100 rounded-2xl aspect-[16/10] flex items-center justify-center relative overflow-hidden group">
-                              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200"></div>
-                              <div className="relative z-10 text-center p-8">
-                                  <div className="w-16 h-16 bg-white rounded-2xl shadow-sm mx-auto mb-4 flex items-center justify-center text-slate-400">
-                                      <Icon className="w-8 h-8" />
-                                  </div>
-                                  <span className="text-slate-500 font-semibold block mb-2">{item.title}</span>
-                                  <span className="text-xs text-slate-400 uppercase tracking-widest">Interface Preview</span>
-                              </div>
-                              {/* Decorative Lines */}
-                              <div className="absolute bottom-0 left-0 w-full h-1 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                          </div>
-                      </div>
-                   </div>
-                </div>
-              ))}
-           </div>
+           <p className="mt-8 text-sm text-slate-500">
+              *Free trial 14 hari. Full akses ke semua modul.
+           </p>
         </div>
-      </section>
-
-      {/* Case Scenario (Story) */}
-      <section className="py-24 bg-white border-t border-slate-100">
-         <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-primary-50 rounded-2xl p-8 md:p-12 relative overflow-hidden border border-primary-100">
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                    <CheckCircle className="w-32 h-32 text-primary-600" />
-                </div>
-                
-                <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-white rounded-lg shadow-sm">
-                            <CheckCircle className="w-6 h-6 text-primary-600" />
-                        </div>
-                        <span className="text-primary-800 font-bold uppercase tracking-wide text-sm">Real World Scenario</span>
-                    </div>
-                    
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-snug">
-                        "{data.caseStudyTitle || "Success Story"}"
-                    </h2>
-                    
-                    <div className="prose prose-lg text-slate-700">
-                        <p className="italic leading-relaxed">
-                           "{data.caseStudy}"
-                        </p>
-                    </div>
-                    
-                    <div className="mt-8 pt-8 border-t border-primary-200 flex flex-col sm:flex-row gap-4">
-                        <Link to="/demo">
-                           <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white border-none shadow-lg shadow-primary-500/30">
-                              Lihat Demo {data.title}
-                           </Button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-         </div>
       </section>
     </div>
   );

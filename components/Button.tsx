@@ -1,6 +1,7 @@
 
 import React, { memo } from 'react';
 import { Loader2 } from 'lucide-react';
+import { twMerge } from 'tailwind-merge';
 
 interface ButtonProps {
   children?: React.ReactNode;
@@ -50,7 +51,7 @@ const Button: React.FC<ButtonProps> = memo(({
   return (
     <button 
       type={type}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthClass} ${className}`}
+      className={twMerge(baseStyles, variants[variant], sizes[size], widthClass, className)}
       disabled={disabled || isLoading}
       onClick={onClick}
     >

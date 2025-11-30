@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Button from '../components/Button';
-import { Copy, Check, FileText } from 'lucide-react';
+import { Copy, Check, FileText, Download, Type, Palette, Image as ImageIcon, Mail, ExternalLink, ArrowRight, X, Globe } from 'lucide-react';
 import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
 
 const MediaKitPage: React.FC = () => {
   const [copied, setCopied] = React.useState<string | null>(null);
@@ -19,178 +19,385 @@ const MediaKitPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-16 pb-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+    <div className="bg-slate-50 dark:bg-slate-950 transition-colors duration-300 font-sans selection:bg-indigo-500/30">
       <SEO title="Brand Assets, Logo & Press Resources | BizOps Media Kit" description="Unduh aset resmi BizOps. Logo High-Res, Panduan Brand, dan Boilerplate perusahaan." />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">Ceritakan Kisah Kami dengan Benar.</h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400">
-            Kami menyediakan aset resmi, panduan merek, dan informasi perusahaan yang terkurasi untuk memudahkan rekan media, partner strategis, dan event organizer dalam mempublikasikan tentang BizOps secara akurat dan konsisten.
-          </p>
-        </div>
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-md text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8"
+          >
+             <Download className="w-3 h-3" /> Official Press Resources
+          </motion.div>
 
-        {/* Logos */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Brand Assets (Logo Pack)</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            {/* Primary Logo */}
-            <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-950 flex flex-col items-center">
-              <div className="flex-grow flex items-center justify-center w-full mb-8 min-h-[120px]">
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                        <div className="w-5 h-5 bg-white rounded-sm transform rotate-45"></div>
-                    </div>
-                    <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-                        BizOps
-                    </span>
-                </div>
-              </div>
-              <div className="w-full text-center mb-4">
-                 <p className="text-xs text-slate-500 dark:text-slate-400 italic">Usage: Opsi utama untuk dokumen resmi & header website.</p>
-              </div>
-              <div className="w-full flex justify-between items-center border-t border-slate-100 dark:border-slate-800 pt-6">
-                <span className="text-sm font-bold text-slate-900 dark:text-white">Logo Utama (Primary)</span>
-                <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="h-8 text-xs">SVG</Button>
-                  <Button size="sm" variant="outline" className="h-8 text-xs">PNG</Button>
-                </div>
-              </div>
-            </div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]"
+          >
+            Ceritakan Kisah Kami <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-300">Dengan Benar.</span>
+          </motion.h1>
 
-            {/* Dark Mode Logo (Inverse) */}
-            <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-900 flex flex-col items-center">
-               <div className="flex-grow flex items-center justify-center w-full mb-8 min-h-[120px]">
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <div className="w-5 h-5 bg-slate-900 rounded-sm transform rotate-45"></div>
-                    </div>
-                    <span className="text-3xl font-bold tracking-tight text-white">
-                        BizOps
-                    </span>
-                </div>
-              </div>
-              <div className="w-full text-center mb-4">
-                 <p className="text-xs text-slate-400 italic">Usage: Untuk background gelap atau overlay foto/video.</p>
-              </div>
-              <div className="w-full flex justify-between items-center border-t border-slate-700 pt-6">
-                <span className="text-sm font-bold text-white">Logo Monokrom (White)</span>
-                <div className="flex gap-2">
-                  <Button size="sm" variant="white" className="h-8 text-xs">SVG</Button>
-                  <Button size="sm" variant="white" className="h-8 text-xs">PNG</Button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12 font-light"
+          >
+            Aset resmi, panduan merek, dan informasi perusahaan yang terkurasi untuk memudahkan rekan media, partner strategis, dan event organizer.
+          </motion.p>
           
-          <div className="mt-8 p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6">
-             <div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Brand Guidelines (PDF)</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm max-w-2xl">
-                   Panduan komprehensif mengenai penggunaan logo (Do's and Don'ts), kode warna HEX/RGB/CMYK untuk konsistensi digital dan cetak, serta hierarki tipografi resmi.
-                </p>
-             </div>
-             <Button variant="primary" className="shrink-0">Download Brand Book PDF</Button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
+             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold shadow-xl">
+               Download All Assets (ZIP) <Download className="w-4 h-4 ml-2" />
+             </Button>
+             <Button size="lg" variant="outline" className="border-slate-700 text-white hover:bg-white/10">
+               Lihat Brand Guidelines <ExternalLink className="w-4 h-4 ml-2" />
+             </Button>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Company Boilerplate */}
-        <div className="mb-16">
-           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Company Boilerplate</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-32">
+        
+        {/* --- LOGO PACK --- */}
+        <section>
+           <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                 <ImageIcon className="w-6 h-6" />
+              </div>
+              <div>
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Brand Assets (Logo)</h2>
+                 <p className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</p>
+              </div>
+           </div>
+
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                 <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                       <FileText className="w-5 h-5 text-primary-600" /> Short Bio (50 Words)
-                    </h3>
-                    <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1">
-                       {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy</>}
+              {/* Primary Logo */}
+              <motion.div 
+                 whileHover={{ y: -5 }}
+                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all"
+              >
+                 <div className="flex-grow flex items-center justify-center w-full mb-10 min-h-[160px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-50">
+                    <div className="flex items-center gap-3 scale-150 transform">
+                       <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30">
+                          <div className="w-5 h-5 bg-white rounded-md transform rotate-45"></div>
+                       </div>
+                       <span className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">BizOps</span>
+                    </div>
+                 </div>
+                 <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-6">
+                    <div className="flex justify-between items-end mb-4">
+                       <div>
+                          <h3 className="font-bold text-slate-900 dark:text-white text-lg">Primary Logo</h3>
+                          <p className="text-sm text-slate-500">Gunakan pada background terang/putih.</p>
+                       </div>
+                       <div className="flex gap-2">
+                          <Button size="sm" variant="outline" className="text-xs h-8">SVG</Button>
+                          <Button size="sm" variant="outline" className="text-xs h-8">PNG</Button>
+                       </div>
+                    </div>
+                 </div>
+              </motion.div>
+
+              {/* Inverse/Dark Logo */}
+              <motion.div 
+                 whileHover={{ y: -5 }}
+                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all relative overflow-hidden"
+              >
+                 <div className="absolute inset-0 bg-slate-800/50 mix-blend-overlay"></div>
+                 <div className="relative z-10 flex-grow flex items-center justify-center w-full mb-10 min-h-[160px]">
+                    <div className="flex items-center gap-3 scale-150 transform">
+                       <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                          <div className="w-5 h-5 bg-slate-900 rounded-md transform rotate-45"></div>
+                       </div>
+                       <span className="text-3xl font-extrabold tracking-tight text-white">BizOps</span>
+                    </div>
+                 </div>
+                 <div className="relative z-10 w-full border-t border-slate-700/50 pt-6">
+                    <div className="flex justify-between items-end mb-4">
+                       <div>
+                          <h3 className="font-bold text-white text-lg">Monochrome (Inverse)</h3>
+                          <p className="text-sm text-slate-400">Gunakan pada background gelap/foto.</p>
+                       </div>
+                       <div className="flex gap-2">
+                          <Button size="sm" variant="outline-white" className="text-xs h-8 border-slate-600 hover:bg-slate-800">SVG</Button>
+                          <Button size="sm" variant="outline-white" className="text-xs h-8 border-slate-600 hover:bg-slate-800">PNG</Button>
+                       </div>
+                    </div>
+                 </div>
+              </motion.div>
+           </div>
+
+           {/* Do's and Don'ts */}
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+               <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/30 flex flex-col items-center text-center">
+                  <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4">
+                     <Check className="w-4 h-4" />
+                  </div>
+                  <p className="text-xs font-bold text-green-700 dark:text-green-400">Gunakan Space yang Cukup</p>
+               </div>
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+                     <X className="w-4 h-4" />
+                  </div>
+                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Mengubah Proporsi</p>
+               </div>
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+                     <X className="w-4 h-4" />
+                  </div>
+                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Mengganti Warna</p>
+               </div>
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+                     <X className="w-4 h-4" />
+                  </div>
+                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Menambah Efek</p>
+               </div>
+           </div>
+        </section>
+
+        {/* --- COLOR PALETTE --- */}
+        <section>
+           <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400">
+                 <Palette className="w-6 h-6" />
+              </div>
+              <div>
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Color System</h2>
+                 <p className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</p>
+              </div>
+           </div>
+           
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+              <motion.div whileHover={{ y: -5 }} className="group">
+                 <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
+                    <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
+                 </div>
+                 <div className="flex justify-between items-center px-2">
+                    <div>
+                       <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
+                       <div className="text-xs text-slate-500">Brand Primary</div>
+                    </div>
+                    <button 
+                      onClick={() => copyToClipboard('#2563EB', 'c1')} 
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                    >
+                       {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
+                       {copied !== 'c1' && <Copy className="w-3 h-3" />}
                     </button>
                  </div>
-                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700">
+              </motion.div>
+
+              <motion.div whileHover={{ y: -5 }} className="group">
+                 <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
+                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
+                 </div>
+                 <div className="flex justify-between items-center px-2">
+                    <div>
+                       <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
+                       <div className="text-xs text-slate-500">Backgrounds / Text</div>
+                    </div>
+                    <button 
+                      onClick={() => copyToClipboard('#0F172A', 'c2')} 
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                    >
+                       {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
+                       {copied !== 'c2' && <Copy className="w-3 h-3" />}
+                    </button>
+                 </div>
+              </motion.div>
+
+              <motion.div whileHover={{ y: -5 }} className="group">
+                 <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
+                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
+                 </div>
+                 <div className="flex justify-between items-center px-2">
+                    <div>
+                       <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
+                       <div className="text-xs text-slate-500">Positive Actions</div>
+                    </div>
+                    <button 
+                      onClick={() => copyToClipboard('#10B981', 'c3')} 
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                    >
+                       {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
+                       {copied !== 'c3' && <Copy className="w-3 h-3" />}
+                    </button>
+                 </div>
+              </motion.div>
+
+              <motion.div whileHover={{ y: -5 }} className="group">
+                 <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
+                     <span className="text-white/80 font-mono opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
+                 </div>
+                 <div className="flex justify-between items-center px-2">
+                    <div>
+                       <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
+                       <div className="text-xs text-slate-500">Alerts / Attention</div>
+                    </div>
+                    <button 
+                      onClick={() => copyToClipboard('#F59E0B', 'c4')} 
+                      className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                    >
+                       {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
+                       {copied !== 'c4' && <Copy className="w-3 h-3" />}
+                    </button>
+                 </div>
+              </motion.div>
+           </div>
+        </section>
+
+        {/* --- TYPOGRAPHY --- */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+           <div>
+              <div className="flex items-center gap-4 mb-8">
+                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400">
+                    <Type className="w-6 h-6" />
+                 </div>
+                 <div>
+                    <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Typography</h2>
+                    <p className="text-slate-500 dark:text-slate-400">Inter (Google Fonts) untuk keterbacaan UI.</p>
+                 </div>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+                 BizOps menggunakan typeface <strong>Inter</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.
+              </p>
+              <div className="space-y-6">
+                 <div>
+                    <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
+                    <span className="text-6xl font-normal text-slate-900 dark:text-white ml-4">Aa</span>
+                 </div>
+                 <div className="grid grid-cols-3 gap-4">
+                    <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
+                       <div className="text-2xl font-bold mb-1">Bold</div>
+                       <div className="text-xs text-slate-500">Headings</div>
+                    </div>
+                    <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
+                       <div className="text-2xl font-medium mb-1">Medium</div>
+                       <div className="text-xs text-slate-500">Buttons / UI</div>
+                    </div>
+                    <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
+                       <div className="text-2xl font-normal mb-1">Regular</div>
+                       <div className="text-xs text-slate-500">Body Text</div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           
+           <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-[2rem] blur-xl opacity-70"></div>
+              <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl">
+                 <div className="space-y-4">
+                    <h1 className="text-4xl font-bold text-slate-900 dark:text-white">The Quick Brown Fox</h1>
+                    <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">Jumps Over The Lazy Dog</h2>
+                    <h3 className="text-2xl font-medium text-slate-900 dark:text-white">1234567890</h3>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                       BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                 </div>
+              </div>
+           </div>
+        </section>
+
+        {/* --- BOILERPLATE --- */}
+        <section>
+           <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400">
+                 <FileText className="w-6 h-6" />
+              </div>
+              <div>
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Company Boilerplate</h2>
+                 <p className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</p>
+              </div>
+           </div>
+
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
+                 <div className="flex items-center justify-between mb-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                       Short Bio <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-normal">~50 Words</span>
+                    </h3>
+                    <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
+                       {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
+                    </button>
+                 </div>
+                 <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700/50 italic">
                     "{boilerplate.short}"
                  </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-                 <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                       <FileText className="w-5 h-5 text-primary-600" /> Standard Bio (100 Words)
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
+                 <div className="flex items-center justify-between mb-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                       Standard Bio <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-normal">~100 Words</span>
                     </h3>
-                    <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1">
-                       {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy</>}
+                    <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
+                       {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
                  </div>
-                 <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700">
+                 <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700/50 italic">
                     "{boilerplate.standard}"
                  </div>
               </div>
-
            </div>
-        </div>
+        </section>
 
-        {/* Colors */}
-        <div className="mb-16">
-           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Brand Colors</h2>
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {/* --- PRESS CONTACT --- */}
+        <section className="bg-slate-900 rounded-[3rem] p-12 relative overflow-hidden text-center lg:text-left">
+           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+           
+           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="max-w-xl">
+                 <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">Media Inquiries</h2>
+                 <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                    Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.
+                 </p>
+                 <div className="flex flex-col sm:flex-row gap-4">
+                    <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
+                       <Mail className="w-4 h-4" /> Hubungi PR Team
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/20 text-white rounded-xl font-bold hover:bg-white/10 transition-colors">
+                       WhatsApp
+                    </a>
+                 </div>
+              </div>
               
-              <div className="space-y-3">
-                 <div className="h-24 bg-primary-600 rounded-xl shadow-sm"></div>
-                 <div className="flex justify-between items-center">
+              <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-sm w-full">
+                 <div className="flex items-center gap-4 mb-6">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="PR Contact" className="w-16 h-16 rounded-full border-2 border-indigo-400" />
                     <div>
-                       <div className="font-bold text-slate-900 dark:text-white text-sm">Primary Blue</div>
-                       <div className="text-xs text-slate-500 font-mono">#2563EB</div>
+                       <div className="font-bold text-white text-lg">Sarah Jenkins</div>
+                       <div className="text-indigo-300 text-sm">Head of Communications</div>
                     </div>
-                    <button onClick={() => copyToClipboard('#2563EB', 'c1')} className="text-slate-400 hover:text-primary-600">
-                       {copied === 'c1' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    </button>
+                 </div>
+                 <div className="space-y-3 text-sm text-slate-300">
+                    <div className="flex items-center gap-3">
+                       <Mail className="w-4 h-4 text-slate-400" /> pr@divistant.com
+                    </div>
+                    <div className="flex items-center gap-3">
+                       <Globe className="w-4 h-4 text-slate-400" /> Jakarta, Indonesia
+                    </div>
                  </div>
               </div>
-
-              <div className="space-y-3">
-                 <div className="h-24 bg-slate-900 rounded-xl shadow-sm"></div>
-                 <div className="flex justify-between items-center">
-                    <div>
-                       <div className="font-bold text-slate-900 dark:text-white text-sm">Deep Slate</div>
-                       <div className="text-xs text-slate-500 font-mono">#0F172A</div>
-                    </div>
-                    <button onClick={() => copyToClipboard('#0F172A', 'c2')} className="text-slate-400 hover:text-primary-600">
-                       {copied === 'c2' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    </button>
-                 </div>
-              </div>
-
-              <div className="space-y-3">
-                 <div className="h-24 bg-green-500 rounded-xl shadow-sm"></div>
-                 <div className="flex justify-between items-center">
-                    <div>
-                       <div className="font-bold text-slate-900 dark:text-white text-sm">Success Green</div>
-                       <div className="text-xs text-slate-500 font-mono">#22C55E</div>
-                    </div>
-                    <button onClick={() => copyToClipboard('#22C55E', 'c3')} className="text-slate-400 hover:text-primary-600">
-                       {copied === 'c3' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    </button>
-                 </div>
-              </div>
-
-              <div className="space-y-3">
-                 <div className="h-24 bg-amber-500 rounded-xl shadow-sm"></div>
-                 <div className="flex justify-between items-center">
-                    <div>
-                       <div className="font-bold text-slate-900 dark:text-white text-sm">Accent Amber</div>
-                       <div className="text-xs text-slate-500 font-mono">#F59E0B</div>
-                    </div>
-                    <button onClick={() => copyToClipboard('#F59E0B', 'c4')} className="text-slate-400 hover:text-primary-600">
-                       {copied === 'c4' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    </button>
-                 </div>
-              </div>
-
            </div>
-        </div>
+        </section>
 
       </div>
     </div>

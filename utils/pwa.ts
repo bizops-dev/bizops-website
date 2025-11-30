@@ -253,3 +253,4 @@ export const initializePWA = async (): Promise<void> => {
   }
 };
 
+

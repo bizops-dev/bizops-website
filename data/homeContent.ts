@@ -157,6 +157,22 @@ export const homeSolutions = [
       "Mobile Sales Force Automation",
       "Customer Support Ticketing"
     ]
+  },
+  {
+    id: 'project',
+    label: 'Project & Service',
+    category: 'Services',
+    icon: Briefcase,
+    color: 'text-purple-500',
+    bg: 'bg-purple-500/10',
+    border: 'border-purple-500/20',
+    impact: "Kelola profitabilitas proyek secara real-time. Pantau budget vs aktual, timesheet tim, dan penagihan termin.",
+    modules: [
+      "Project Budgeting (RAB)",
+      "Timesheet & Utilitas Tim",
+      "Progress Billing (Termin)",
+      "Job Costing & Profitability"
+    ]
   }
 ];
 

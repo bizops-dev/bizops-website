@@ -240,45 +240,59 @@ export const whyBizOpsContent = {
 // --- CUSTOMER STORIES ---
 export const customerStories = [
   {
-    client: "PT Bangun Persada",
-    industry: "Construction & Engineering",
-    logo: "BP",
-    title: "Menghemat Rp 2,5 Milyar dari Efisiensi Material.",
-    chaos: "Selisih material semen dan besi di 5 lokasi proyek mencapai 8% akibat pencurian internal dan admin lapangan yang lambat merekap data.",
-    solution: "Implementasi modul Project Operations & Inventory dengan fitur Laporan Harian Digital berbasis foto Geo-tagging dan Approval Workflow material ketat.",
-    desc: "Kami menghemat Rp 2,5 Milyar dari efisiensi material dalam 6 bulan pertama. Selisih stok turun drastis ke bawah 1%.",
+    client: "Divistant",
+    industry: "IT Consulting",
+    logo: "DV",
+    title: "Profitabilitas Proyek Naik 30% dengan Auto-Billing.",
+    chaos: "Kami sering kehilangan potensi pendapatan karena 'revenue leakage'—jam kerja konsultan yang lupa tercatat dan tagihan yang terlambat dikirim ke klien.",
+    solution: "BizOps Project Automation mencatat timesheet konsultan via mobile app dan mengonversinya menjadi Invoice secara otomatis sesuai rate card kontrak.",
+    desc: "Cashflow kami menjadi jauh lebih sehat. Tidak ada lagi drama tagihan telat atau jam kerja yang tidak terbayar.",
     metrics: [
-      { value: "0.8%", label: "Selisih Stok" },
-      { value: "H+1", label: "Laporan P&L" },
-      { value: "2.5M", label: "Cost Saved" }
+      { value: "30%", label: "Profit Naik" },
+      { value: "0", label: "Missed Invoice" },
+      { value: "100%", label: "Time Tracked" }
     ]
   },
   {
-    client: "Berkah Abadi Group",
-    industry: "Retail & Distribution",
-    logo: "BA",
-    title: "Order Fulfillment Rate Naik dari 75% ke 98%.",
-    chaos: "Salesman sering melakukan 'tembak' order fiktif demi insentif, sementara stok gudang fisik sering kosong karena data sistem tidak real-time.",
-    solution: "Aplikasi Mobile Taking Order dengan validasi GPS Check-in, fitur Live Stock Availability, dan kunci Credit Limit otomatis.",
-    desc: "Piutang macet turun 40%, dan Omzet naik 30% karena kami tidak lagi kehilangan penjualan akibat stok kosong semu.",
+    client: "Dikstra",
+    industry: "IT Consulting",
+    logo: "DK",
+    title: "Kecepatan Penempatan Talent Meningkat 2x Lipat.",
+    chaos: "Database talent engineer kami tersebar di ratusan file CV. Sulit mencari engineer dengan skill spesifik (misal: Golang + React) yang sedang 'bench' (idle) saat ada permintaan mendadak.",
+    solution: "Implementasi Talent Resource Planning. Database skill matrix terpusat dengan fitur forecasting ketersediaan resource.",
+    desc: "Respon kami terhadap permintaan klien menjadi sangat cepat. Kami tahu persis siapa yang available dan skill-nya apa.",
     metrics: [
-      { value: "98%", label: "Fulfillment Rate" },
-      { value: "40%", label: "Piutang Turun" },
-      { value: "+30%", label: "Omzet Naik" }
+      { value: "2x", label: "Faster Placement" },
+      { value: "95%", label: "Skill Match" },
+      { value: "40%", label: "Bench Cost Down" }
     ]
   },
   {
-    client: "GuardOne Security",
-    industry: "Outsourcing Services",
-    logo: "GO",
-    title: "Perpanjangan Kontrak Klien Mencapai 100%.",
-    chaos: "Klien sering komplain satpam jarang patroli, dan HR pusing menghitung lembur manual serta jadwal shift rotasi untuk 2.000 personil.",
-    solution: "Modul HRIS dengan fitur Complex Rostering otomatis dan NFC Patrol Tracking yang mewajibkan scan titik patroli.",
-    desc: "BizOps menjadi nilai jual utama kami saat tender. Klien puas dengan laporan patroli digital yang transparan.",
+    client: "PT Arena Rasa Nusantara",
+    industry: "F&B",
+    logo: "AR",
+    title: "Food Cost Terkendali di 15 Outlet Cabang.",
+    chaos: "HPP (Harga Pokok Penjualan) sering meleset karena resep tidak standar dan transfer bahan baku dari Central Kitchen ke outlet sering selisih tanpa jejak.",
+    solution: "Central Kitchen Management System. Fitur Auto-Transfer berdasarkan permintaan outlet dan perhitungan HPP otomatis dari BOM (Bill of Material).",
+    desc: "Kami bisa memantau performa profitabilitas setiap outlet secara real-time. Kebocoran bahan baku turun drastis.",
     metrics: [
-      { value: "100%", label: "Client Retention" },
-      { value: "2.000", label: "Personil Terkelola" },
-      { value: "0", label: "Komplain Lembur" }
+      { value: "12%", label: "Food Cost Turun" },
+      { value: "15", label: "Outlet Terkoneksi" },
+      { value: "Real-time", label: "Stock View" }
+    ]
+  },
+  {
+    client: "PT Aero Travel Indonesia",
+    industry: "Tour & Travel",
+    logo: "AT",
+    title: "Rekonsiliasi Komisi Otomatis, Hemat 5 Hari Kerja.",
+    chaos: "Setiap akhir bulan, tim finance lembur 5 hari hanya untuk mencocokkan penjualan tiket dengan tagihan vendor dan menghitung komisi agen sub-agent secara manual.",
+    solution: "Sistem Backoffice Travel Terintegrasi. Mengambil data booking, mencocokkan dengan invoice vendor, dan menghitung komisi agen secara otomatis.",
+    desc: "Tim finance kami sekarang bisa fokus pada analisis strategi harga, bukan sekadar input data dan cek selisih.",
+    metrics: [
+      { value: "5 Hari", label: "Waktu Hemat" },
+      { value: "0%", label: "Human Error" },
+      { value: "Auto", label: "Commission Calc" }
     ]
   }
 ];

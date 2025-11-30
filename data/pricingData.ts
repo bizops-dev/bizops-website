@@ -34,6 +34,7 @@ export interface ServiceAddon {
   availableFor: string[];
   category: 'infrastructure' | 'implementation' | 'support' | 'integration';
   recommended?: boolean;
+  tooltip?: string;
 }
 
 export const pricingPlans: PricingPlan[] = [
@@ -173,7 +174,8 @@ export const addOns: ServiceAddon[] = [
     price: 100000,
     unit: 'per 10GB/bulan',
     availableFor: ['business', 'growth'],
-    category: 'infrastructure'
+    category: 'infrastructure',
+    tooltip: 'Ideal jika Anda menyimpan banyak lampiran file (PDF/Gambar) transaksi.'
   },
   {
     id: 'dedicated-ip',
@@ -182,7 +184,8 @@ export const addOns: ServiceAddon[] = [
     price: 250000,
     unit: 'per bulan',
     availableFor: ['growth', 'enterprise'],
-    category: 'infrastructure'
+    category: 'infrastructure',
+    tooltip: 'Wajib untuk integrasi API tertentu (Bank/Payment) yang membutuhkan IP Whitelist.'
   },
   
   // Implementation Services
@@ -193,7 +196,8 @@ export const addOns: ServiceAddon[] = [
     price: 5000000,
     unit: 'one-time',
     availableFor: ['business'],
-    category: 'implementation'
+    category: 'implementation',
+    tooltip: 'Paket kilat untuk bisnis kecil yang data master-nya sudah rapi (Excel ready).'
   },
   {
     id: 'impl-standard',
@@ -203,7 +207,8 @@ export const addOns: ServiceAddon[] = [
     unit: 'one-time',
     availableFor: ['business', 'growth'],
     category: 'implementation',
-    recommended: true
+    recommended: true,
+    tooltip: 'Pilihan paling populer. Mencakup setup end-to-end standar.'
   },
   {
     id: 'impl-pro',
@@ -212,7 +217,8 @@ export const addOns: ServiceAddon[] = [
     price: 25000000,
     unit: 'one-time',
     availableFor: ['growth', 'enterprise'],
-    category: 'implementation'
+    category: 'implementation',
+    tooltip: 'Untuk perusahaan yang butuh pendampingan intensif & migrasi data kompleks.'
   },
   {
     id: 'data-migration',
@@ -221,7 +227,8 @@ export const addOns: ServiceAddon[] = [
     price: 8000000,
     unit: 'per sistem',
     availableFor: ['business', 'growth', 'enterprise'],
-    category: 'implementation'
+    category: 'implementation',
+    tooltip: 'Layanan pemindahan data historis (Saldo Awal, Stok, Hutang/Piutang) dari software lama.'
   },
   
   // Support Services
@@ -232,7 +239,8 @@ export const addOns: ServiceAddon[] = [
     price: 1500000,
     unit: 'per sesi',
     availableFor: ['business', 'growth', 'enterprise'],
-    category: 'support'
+    category: 'support',
+    tooltip: 'Jika staff Anda butuh bimbingan ulang atau ada karyawan baru.'
   },
   {
     id: 'onsite-visit',
@@ -241,7 +249,8 @@ export const addOns: ServiceAddon[] = [
     price: 3500000,
     unit: 'per hari',
     availableFor: ['growth', 'enterprise'],
-    category: 'support'
+    category: 'support',
+    tooltip: 'Kunjungan fisik untuk troubleshooting jaringan/hardware atau training tatap muka.'
   },
   {
     id: 'dedicated-support',
@@ -250,7 +259,8 @@ export const addOns: ServiceAddon[] = [
     price: 2500000,
     unit: 'per bulan',
     availableFor: ['enterprise'],
-    category: 'support'
+    category: 'support',
+    tooltip: 'Jaminan respon cepat untuk bisnis operasional 24 jam.'
   },
   
   // Integration Services
@@ -261,7 +271,8 @@ export const addOns: ServiceAddon[] = [
     price: 5000000,
     unit: 'per integrasi',
     availableFor: ['growth', 'enterprise'],
-    category: 'integration'
+    category: 'integration',
+    tooltip: 'Menghubungkan ERP dengan Webstore, Marketplace, CRM lain, atau Logistics.'
   },
   {
     id: 'custom-report',
@@ -270,6 +281,30 @@ export const addOns: ServiceAddon[] = [
     price: 2000000,
     unit: 'per report',
     availableFor: ['growth', 'enterprise'],
-    category: 'integration'
+    category: 'integration',
+    tooltip: 'Desain ulang format Invoice, PO, atau Laporan Management khusus.'
+  }
+];
+
+export const pricingFaqs = [
+  {
+    q: "Apakah biaya berlangganan sudah termasuk hosting?",
+    a: "Ya, untuk paket Business dan Growth, biaya berlangganan sudah termasuk biaya cloud hosting (AWS/Google Cloud) yang dikelola sepenuhnya oleh BizOps. Anda tidak perlu memikirkan biaya server terpisah."
+  },
+  {
+    q: "Apakah ada biaya implementasi di awal?",
+    a: "Biaya implementasi bersifat opsional namun sangat disarankan untuk memastikan sistem berjalan lancar. Kami menyediakan paket implementasi mulai dari Rp 5 Juta (Express) hingga Rp 25 Juta (Professional). Untuk user yang tech-savvy, Anda bisa melakukan setup mandiri dengan panduan dokumentasi kami secara gratis."
+  },
+  {
+    q: "Bagaimana jika saya ingin upgrade paket di tengah jalan?",
+    a: "Anda bisa melakukan upgrade kapan saja. Sistem akan secara otomatis menghitung selisih biaya pro-rata untuk sisa masa berlangganan Anda. Data Anda akan tetap aman dan tidak ada downtime saat upgrade."
+  },
+  {
+    q: "Apakah data saya aman?",
+    a: "Sangat aman. Kami menggunakan enkripsi SSL 256-bit untuk seluruh transmisi data. Database Anda di-backup secara otomatis setiap hari ke lokasi server terpisah (Disaster Recovery). Untuk paket Enterprise, Anda bahkan bisa memilih untuk host data di server Anda sendiri (On-Premise)."
+  },
+  {
+    q: "Apakah saya bisa membatalkan langganan kapan saja?",
+    a: "Untuk paket bulanan, Anda bisa berhenti berlangganan kapan saja sebelum tanggal tagihan berikutnya. Untuk paket tahunan, pembatalan di tengah periode tidak mendapatkan pengembalian dana (refund), namun layanan akan tetap aktif hingga akhir periode berlangganan."
   }
 ];

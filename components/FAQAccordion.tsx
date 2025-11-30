@@ -53,3 +53,4 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs }) => {
 
 export default FAQAccordion;
 
+

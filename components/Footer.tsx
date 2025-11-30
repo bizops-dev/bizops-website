@@ -1,43 +1,44 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Globe, Moon, Sun, ChevronDown, ArrowRight, ShieldCheck, Signal, Cookie, FileText, Lock, AlertCircle } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Moon, Sun, ChevronRight, ShieldCheck, Signal, ArrowUpRight, Lock, Bug } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
-// --- SVG Assets for Official Badges ---
+// --- SVG Assets for App Stores ---
 const AppleIcon = () => (
   <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" role="img" aria-label="Apple Logo"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.74 1.18 0 2.21-.93 3.69-.74 1.6.19 2.72.79 3.42 1.82-3.06 1.86-2.51 5.71.6 7.02-.62 1.58-1.53 3.14-2.79 4.13zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
 );
 
 const PlayStoreIcon = () => (
-  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" role="img" aria-label="Google Play Logo"><path d="M3.6,1.6v20.8c0,0.4,0.2,0.8,0.6,1l11.2-11.6L4.2,0.6C3.9,0.8,3.6,1.2,3.6,1.6z M16.7,13.1L19.9,15l-3.2,1.8L16.7,13.1z M16.7,10.9L19.9,9l-3.2-1.8L16.7,10.9z M5.8,23l10.3-10.3l-3.2-1.8L5.8,23z M5.8,1L16.1,11.3l-3.2,1.8L5.8,1z M18.7,6.6L21.9,8.4c0.8,0.5,0.8,1.3,0,1.7l-3.2,1.8L18.7,6.6z"/></svg>
+  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" role="img" aria-label="Google Play Logo"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.89l1.434 1.433 4.505-2.503a1 1 0 0 0 .003-1.737l-4.507-2.505-1.435 1.435zm-9.98 10.208l10.66-10.66 2.452 2.45-11.793 6.552a1 1 0 0 1-1.319-1.658zM4.52 1.088l11.795 6.553-2.454 2.45-10.66-10.66A1 1 0 0 1 4.52 1.088z" /></svg>
 );
 
-// --- Helper Component: Responsive Footer Section (Accordion) ---
-const FooterSection = ({ title, children }: { title: string, children?: React.ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FooterLink = ({ to, children, isExternal = false, icon: Icon }: { to: string, children: React.ReactNode, isExternal?: boolean, icon?: any }) => (
+  <li>
+    <Link 
+      to={to} 
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className="group flex items-center gap-2 transition-colors text-[14px] py-1 text-slate-400 hover:text-white"
+    >
+      {Icon && <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-primary-400 transition-colors" />}
+      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block truncate">{children}</span>
+      {isExternal && <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-500" />}
+    </Link>
+  </li>
+);
 
-  return (
-    <div className="border-b border-slate-800 lg:border-none last:border-none">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full py-4 lg:py-0 lg:mb-6 text-left group focus:outline-none lg:cursor-default"
-        aria-expanded={isOpen}
-      >
-        <h4 className="text-xs font-bold uppercase tracking-widest text-slate-100 group-hover:text-primary-400 lg:group-hover:text-slate-100 transition-colors">
-          {title}
-        </h4>
-        <ChevronDown className={`w-4 h-4 text-slate-500 lg:hidden transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
-      <div className={`${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0 lg:max-h-full lg:opacity-100 lg:pb-0'} overflow-hidden transition-all duration-300 ease-in-out lg:overflow-visible`}>
-        <ul className="space-y-3 text-sm text-slate-400">
-          {children}
-        </ul>
-      </div>
-    </div>
-  );
-};
+const SocialLink = ({ href, icon: Icon, label }: { href: string, icon: any, label: string }) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label={label}
+    className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-white hover:text-slate-950 transition-all duration-300 border border-slate-800 hover:border-white hover:-translate-y-1"
+  >
+    <Icon className="w-5 h-5" />
+  </a>
+);
 
 const Footer: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -49,201 +50,186 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-slate-950 text-white pt-16 lg:pt-24 pb-12 border-t border-slate-900 font-sans relative z-10" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* TOP GRID AREA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 mb-16 lg:mb-24">
-          
-          {/* Column 1: Brand & Identity (Span 4 columns) */}
-          <div className="lg:col-span-4 space-y-8">
-             <Link to="/" className="flex items-center gap-3 group w-fit focus:outline-none rounded-lg" aria-label="BizOps Home">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center transition-transform group-hover:rotate-6 shadow-lg shadow-white/10">
-                  <div className="w-5 h-5 bg-slate-950 rounded-sm transform rotate-45"></div>
-                </div>
-                <span className="text-2xl font-bold tracking-tight text-white">
-                  BizOps
-                </span>
-             </Link>
-             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-               The Adaptive Business Operating System. Menyatukan HR, Finance, dan Operasional dalam satu ekosistem terintegrasi yang aman dan sesuai regulasi Indonesia.
-             </p>
-             
-             {/* Contact Info */}
-             <div className="space-y-4 text-sm text-slate-400 pt-2">
-                <div className="flex items-start gap-3 group">
-                   <MapPin className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0 mt-0.5" aria-hidden="true" />
-                   <span className="group-hover:text-slate-300 transition-colors">
-                     Eco-S Sahid Sudirman Residence<br/>
-                     Jl. Jenderal Sudirman No.86, Karet Tengsin<br/>
-                     Tanah Abang, Jakarta 10250.
-                   </span>
-                </div>
-                <div className="flex items-center gap-3 group">
-                   <Phone className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0" aria-hidden="true" />
-                   <a href="tel:+622139702834" className="hover:text-white hover:underline transition-colors focus:outline-none">+62 21 39702834</a>
-                </div>
-                <div className="flex items-center gap-3 group">
-                   <Mail className="w-5 h-5 text-slate-600 group-hover:text-primary-500 transition-colors shrink-0" aria-hidden="true" />
-                   <a href="mailto:hello@bizops.id" className="hover:text-white hover:underline transition-colors focus:outline-none">hello@bizops.id</a>
-                </div>
-             </div>
+    <footer className="bg-[#0B0F19] text-white border-t border-slate-900/50 font-sans relative z-10 overflow-hidden">
+      {/* Ambient Background Glow */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-900/10 rounded-full blur-[100px] pointer-events-none" />
 
-             {/* Social Links */}
-             <div className="flex gap-4 pt-2">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-primary-600 hover:text-white transition-all border border-slate-800 hover:border-primary-500" aria-label="LinkedIn">
-                 <Linkedin className="w-5 h-5" />
-               </a>
-               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition-all border border-slate-800 hover:border-sky-400" aria-label="Twitter">
-                 <Twitter className="w-5 h-5" />
-               </a>
-               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition-all border border-slate-800 hover:border-red-500" aria-label="YouTube">
-                 <Youtube className="w-5 h-5" />
-               </a>
-               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:text-white transition-all border border-slate-800 hover:border-pink-500" aria-label="Instagram">
-                 <Instagram className="w-5 h-5" />
-               </a>
-             </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 relative z-10">
+        
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 xl:gap-12 mb-20">
+          
+          {/* BRAND COLUMN (Left) */}
+          <div className="md:col-span-12 lg:col-span-4 space-y-8">
+            <Link to="/" className="flex items-center gap-3 group w-fit focus:outline-none" aria-label="BizOps Home">
+              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center transition-transform group-hover:rotate-6 shadow-lg shadow-white/5">
+                <div className="w-5 h-5 bg-[#0B0F19] rounded-sm transform rotate-45"></div>
+              </div>
+              <span className="text-2xl font-bold tracking-tight text-white">BizOps</span>
+            </Link>
+            
+            {/* Short Boilerplate */}
+            <p className="text-slate-400 text-[14px] leading-relaxed max-w-sm">
+              Sistem operasi bisnis adaptif yang menyatukan HR, Finance, dan Operasional dalam satu platform aman terintegrasi.
+            </p>
+            
+            <div className="space-y-4 pt-2">
+              <div className="flex items-start gap-3 text-slate-400 text-[13px]">
+                <MapPin className="w-4 h-4 text-slate-500 mt-0.5 shrink-0" />
+                <span>Eco-S Sahid Sudirman Residence<br/>Jl. Jenderal Sudirman No.86, Jakarta 10250</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-400 text-[13px] hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-slate-500" />
+                <a href="mailto:hello@bizops.id">hello@bizops.id</a>
+              </div>
+              <div className="flex items-center gap-3 text-slate-400 text-[13px] hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-slate-500" />
+                <a href="tel:+622139702834">+62 21 3970 2834</a>
+              </div>
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <SocialLink href="#" icon={Linkedin} label="LinkedIn" />
+              <SocialLink href="#" icon={Twitter} label="Twitter" />
+              <SocialLink href="#" icon={Youtube} label="YouTube" />
+              <SocialLink href="#" icon={Instagram} label="Instagram" />
+            </div>
           </div>
 
-          {/* Navigation Columns (Span 8 columns total) */}
-          <div className="lg:col-span-8 grid grid-cols-1 lg:grid-cols-3 gap-y-4 lg:gap-y-0 gap-x-8 xl:gap-x-12">
+          {/* LINKS COLUMNS (Middle) - Compact titles */}
+          <div className="md:col-span-7 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8">
             
-            {/* Column 2: Platform */}
-            <FooterSection title="Platform">
-              <li><Link to="/platform" className="hover:text-primary-400 transition-colors block w-fit">Platform Overview</Link></li>
-              <li><Link to="/platform/hr" className="hover:text-primary-400 transition-colors block w-fit">Human Capital</Link></li>
-              <li><Link to="/platform/finance" className="hover:text-primary-400 transition-colors block w-fit">Finance & Control</Link></li>
-              <li><Link to="/platform/operations" className="hover:text-primary-400 transition-colors block w-fit">Operations & Projects</Link></li>
-              <li><Link to="/pricing" className="hover:text-primary-400 transition-colors block w-fit">Pricing & Plans</Link></li>
-              <li><Link to="/integrations" className="hover:text-primary-400 transition-colors block w-fit">Integrations Library</Link></li>
-              <li><Link to="/roadmap" className="hover:text-primary-400 transition-colors block w-fit">Product Roadmap</Link></li>
-              <li><Link to="/status" className="hover:text-primary-400 transition-colors block w-fit flex items-center gap-2"><Signal className="w-3 h-3 text-green-500" /> System Status</Link></li>
-            </FooterSection>
+            {/* Platform */}
+            <div className="space-y-5">
+              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Platform</h3>
+              <ul className="space-y-2.5">
+                <FooterLink to="/platform">Overview</FooterLink>
+                <FooterLink to="/platform/modules/hr">HR System</FooterLink>
+                <FooterLink to="/platform/modules/finance">Finance</FooterLink>
+                <FooterLink to="/platform/modules/operations">Operations</FooterLink>
+                <FooterLink to="/platform/technologies/integration">Integrations</FooterLink>
+                <FooterLink to="/pricing">Pricing</FooterLink>
+                <FooterLink to="/roadmap">Roadmap</FooterLink>
+              </ul>
+            </div>
 
-            {/* Column 3: Company */}
-            <FooterSection title="Company">
-              <li><Link to="/about" className="hover:text-primary-400 transition-colors block w-fit">About Us</Link></li>
-              <li><Link to="/customers" className="hover:text-primary-400 transition-colors block w-fit">Customer Stories</Link></li>
-              <li><Link to="/careers" className="hover:text-primary-400 transition-colors block w-fit">Careers</Link></li>
-              <li><Link to="/partners" className="hover:text-primary-400 transition-colors block w-fit">Partner Program</Link></li>
-              <li><Link to="/partners/startup" className="hover:text-primary-400 transition-colors block w-fit text-amber-400 font-medium">Startup Program</Link></li>
-              <li><Link to="/media-kit" className="hover:text-primary-400 transition-colors block w-fit">Media Kit</Link></li>
-              <li><Link to="/contact" className="hover:text-primary-400 transition-colors block w-fit">Contact Sales</Link></li>
-              <li><Link to="/trust" className="hover:text-primary-400 transition-colors block w-fit flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5" /> Trust Center</Link></li>
-            </FooterSection>
+            {/* Company */}
+            <div className="space-y-5">
+              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Company</h3>
+              <ul className="space-y-2.5">
+                <FooterLink to="/about">About Us</FooterLink>
+                <FooterLink to="/customers">Customers</FooterLink>
+                <FooterLink to="/partners">Partners</FooterLink>
+                <FooterLink to="/careers">Careers</FooterLink>
+                <FooterLink to="/media-kit">Media Kit</FooterLink>
+                <FooterLink to="/contact">Contact</FooterLink>
+                <FooterLink to="/trust" icon={ShieldCheck}>Trust Center</FooterLink>
+              </ul>
+            </div>
 
-            {/* Column 4: Resources & Action */}
-            <div className="flex flex-col gap-10 lg:py-0 py-6 border-t border-slate-800 lg:border-none">
-              <div className="space-y-4">
-                 <h4 className="text-xs font-bold uppercase tracking-widest text-slate-100 lg:text-slate-500">Resources</h4>
-                 <ul className="space-y-3 text-sm text-slate-400">
-                    <li><Link to="/blog" className="hover:text-primary-400 transition-colors block w-fit">Blog & Insights</Link></li>
-                    <li><Link to="/docs" className="hover:text-primary-400 transition-colors block w-fit">Documentation</Link></li>
-                    <li><Link to="/resources/roi" className="hover:text-primary-400 transition-colors block w-fit">ROI Calculator</Link></li>
-                    <li><Link to="/security/report" className="hover:text-primary-400 transition-colors block w-fit flex items-center gap-2"><AlertCircle className="w-3 h-3" /> Report Vulnerability</Link></li>
-                 </ul>
-              </div>
+            {/* Resources */}
+            <div className="space-y-5 col-span-2 sm:col-span-1">
+              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Resources</h3>
+              <ul className="space-y-2.5">
+                <FooterLink to="/blog">Blog</FooterLink>
+                <FooterLink to="/docs">Docs</FooterLink>
+                <FooterLink to="/tools/roi-calculator">ROI Calc</FooterLink>
+                <FooterLink to="/tools/assessment">Assessment</FooterLink>
+                <FooterLink to="/status" icon={Signal}>Status</FooterLink>
+              </ul>
+            </div>
 
-              {/* Newsletter */}
-              <div className="pt-2">
-                 <h4 className="text-xs font-bold uppercase tracking-widest text-slate-100 mb-4 flex items-center gap-2">
-                    Stay Updated
-                 </h4>
-                 <form onSubmit={handleSubscribe} className="relative group">
-                    <label htmlFor="footer-email" className="sr-only">Email address</label>
-                    <input 
-                      id="footer-email"
-                      type="email" 
-                      placeholder="Email kerja Anda..." 
-                      className="w-full bg-slate-900 border border-slate-800 text-white text-sm rounded-lg py-3 pl-4 pr-12 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all placeholder:text-slate-600 group-hover:border-slate-700"
-                      required
-                    />
-                    <button 
-                      type="submit" 
-                      className="absolute right-1.5 top-1.5 p-1.5 bg-slate-800 hover:bg-primary-600 text-slate-400 hover:text-white rounded-md transition-colors"
-                      aria-label="Subscribe"
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                 </form>
-              </div>
+          </div>
 
-              {/* Download Apps */}
-              <div>
-                 <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Get the App</h4>
-                 <div className="flex flex-row gap-3 flex-wrap">
-                   
-                   {/* App Store */}
-                   <Link to="/download" className="flex items-center gap-3 bg-black hover:bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 transition-all group focus:ring-2 focus:ring-primary-500 shadow-lg hover:shadow-primary-900/20 hover:-translate-y-0.5 min-h-[48px]">
-                      <div className="text-white pb-1">
-                        <AppleIcon />
-                      </div>
-                      <div className="flex flex-col">
-                         <span className="text-[9px] uppercase text-slate-400 leading-none mb-1 font-medium tracking-wider">Download on the</span>
-                         <span className="text-sm font-bold text-white leading-none font-sans">App Store</span>
-                      </div>
-                   </Link>
+          {/* NEWSLETTER & APP (Right) */}
+          <div className="md:col-span-5 lg:col-span-3 space-y-8">
+            
+            {/* Newsletter */}
+            <div className="space-y-4 bg-slate-900/50 p-5 rounded-xl border border-slate-800/50 backdrop-blur-sm">
+              <h3 className="text-sm font-bold text-white">Stay Updated</h3>
+              <form onSubmit={handleSubscribe} className="relative">
+                <input 
+                  type="email" 
+                  placeholder="Email kerja..." 
+                  className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-3 pr-10 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600/50 transition-all"
+                  required
+                />
+                <button 
+                  type="submit"
+                  aria-label="Subscribe"
+                  className="absolute right-1.5 top-1.5 p-1 bg-slate-800 hover:bg-primary-600 text-slate-400 hover:text-white rounded-md transition-all"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
 
-                   {/* Google Play */}
-                   <Link to="/download" className="flex items-center gap-3 bg-black hover:bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 transition-all group focus:ring-2 focus:ring-primary-500 shadow-lg hover:shadow-primary-900/20 hover:-translate-y-0.5 min-h-[48px]">
-                      <div className="text-white">
-                         <PlayStoreIcon />
-                      </div>
-                      <div className="flex flex-col">
-                         <span className="text-[9px] uppercase text-slate-400 leading-none mb-1 font-medium tracking-wider">GET IT ON</span>
-                         <span className="text-sm font-bold text-white leading-none font-sans">Google Play</span>
-                      </div>
-                   </Link>
-
-                 </div>
+            {/* Mobile Apps - Compact */}
+            <div className="space-y-4">
+              <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Mobile App</h3>
+              <div className="flex flex-col gap-2.5">
+                <a href="#" className="flex items-center gap-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-lg p-2.5 pr-4 transition-all group">
+                  <div className="w-8 h-8 bg-black text-white rounded flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <AppleIcon />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[9px] uppercase font-bold text-slate-500">Download on the</div>
+                    <div className="text-xs font-bold text-white leading-tight">App Store</div>
+                  </div>
+                </a>
+                <a href="#" className="flex items-center gap-3 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-lg p-2.5 pr-4 transition-all group">
+                  <div className="w-8 h-8 bg-slate-800 text-white border border-slate-700 rounded flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <PlayStoreIcon />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[9px] uppercase font-bold text-slate-500">Get it on</div>
+                    <div className="text-xs font-bold text-white leading-tight">Google Play</div>
+                  </div>
+                </a>
               </div>
             </div>
 
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col lg:flex-row justify-between items-center gap-6">
+        {/* FOOTER BOTTOM */}
+        <div className="border-t border-slate-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
           
-          {/* Copyright */}
-          <div className="text-slate-500 text-xs text-center lg:text-left order-2 lg:order-1">
-             &copy; {new Date().getFullYear()} PT Divistant Teknologi Indonesia. All rights reserved.
+          {/* Copyright & Language */}
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+            <div className="text-slate-500 text-xs">
+              &copy; {new Date().getFullYear()} PT Divistant Teknologi Indonesia.
+            </div>
+            
+            {/* Lang/Theme Switcher Pill - Compact */}
+            <div className="hidden md:flex items-center gap-0.5 bg-slate-900/80 p-0.5 rounded-full border border-slate-800">
+              <button 
+                onClick={toggleLanguage}
+                className="px-2 py-1 text-[10px] font-bold rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
+              >
+                ID
+              </button>
+              <div className="w-px h-2.5 bg-slate-800"></div>
+              <button 
+                onClick={toggleTheme}
+                className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
+                aria-label="Toggle Theme"
+              >
+                {theme === 'dark' ? <Sun className="w-3 h-3" /> : <Moon className="w-3 h-3" />}
+              </button>
+            </div>
           </div>
-          
-          {/* Compliance Links - Enterprise Requirement */}
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-slate-500 font-medium order-1 lg:order-2">
-             <Link to="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-             <Link to="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-             <Link to="/legal/dpa" className="hover:text-white transition-colors flex items-center gap-1"><Lock className="w-3 h-3" /> DPA</Link>
-             <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
-             <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
-             <button 
-               onClick={() => window.dispatchEvent(new CustomEvent('openCookieSettings'))}
-               className="hover:text-white transition-colors flex items-center gap-1"
-             >
-               <Cookie className="w-3 h-3" /> Cookie Settings
-             </button>
-          </nav>
-          
-          {/* Controls */}
-          <div className="flex gap-3 order-3">
-             <button 
-               onClick={toggleLanguage}
-               className="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 hover:border-slate-600 transition-colors bg-slate-900/50"
-               aria-label={`Switch to ${language === 'id' ? 'English' : 'Indonesian'}`}
-             >
-                <Globe className="w-3 h-3" /> {language === 'id' ? 'ID' : 'EN'}
-             </button>
-             <button 
-               onClick={toggleTheme}
-               className="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 hover:border-slate-600 transition-colors bg-slate-900/50"
-               aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
-             >
-                {theme === 'light' ? <Moon className="w-3 h-3" /> : <Sun className="w-3 h-3" />} 
-                {theme === 'light' ? 'Dark' : 'Light'}
-             </button>
+
+          {/* Legal Links - Compact */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-slate-500">
+            <Link to="/legal/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/legal/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link to="/legal/dpa" className="hover:text-white transition-colors flex items-center gap-1"><Lock className="w-3 h-3" /> DPA</Link>
+            <Link to="/security/report" className="hover:text-white transition-colors flex items-center gap-1"><Bug className="w-3 h-3" /> Report Bug</Link>
+            <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
           </div>
+
         </div>
       </div>
     </footer>

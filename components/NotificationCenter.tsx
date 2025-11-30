@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { Bell, Settings, Radio, Calendar, FileText, Info, Check } from 'lucide-react';
+import { Bell, Settings, Radio, Calendar, FileText, Info, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
@@ -62,9 +61,11 @@ const NotificationCenter: React.FC = () => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   useEffect(() => {
-    // Check browser permission status
-    if ('Notification' in window && Notification.permission === 'granted') {
-      setPushEnabled(true);
+    // Check browser permission status safely
+    if (typeof window !== 'undefined' && 'Notification' in window) {
+      if (Notification.permission === 'granted') {
+        setPushEnabled(true);
+      }
     }
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -83,13 +84,17 @@ const NotificationCenter: React.FC = () => {
       return;
     }
 
-    const permission = await Notification.requestPermission();
-    if (permission === 'granted') {
-      setPushEnabled(true);
-      new Notification('BizOps Notifications Enabled', {
-        body: 'You will now receive updates about system status and events.',
-        icon: '/vite.svg' // Fallback icon
-      });
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission === 'granted') {
+        setPushEnabled(true);
+        new Notification('BizOps Notifications Enabled', {
+          body: 'You will now receive updates about system status and events.',
+          icon: '/vite.svg'
+        });
+      }
+    } catch (error) {
+      console.error('Error requesting notification permission:', error);
     }
   };
 
@@ -100,6 +105,12 @@ const NotificationCenter: React.FC = () => {
   const markAllRead = () => {
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));
   };
+
+  const deleteNotification = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setNotifications(prev => prev.filter(n => n.id !== id));
+  }
 
   const getIcon = (type: string) => {
     switch (type) {
@@ -159,30 +170,37 @@ const NotificationCenter: React.FC = () => {
                   key={n.id}
                   to={n.url || '#'}
                   onClick={() => markAsRead(n.id)}
-                  className={`block p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors flex gap-3 ${!n.read ? 'bg-primary-50/30 dark:bg-primary-900/10' : ''}`}
+                  className={`block p-4 border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors group relative ${!n.read ? 'bg-primary-50/30 dark:bg-primary-900/10' : ''}`}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-700 shadow-sm`}>
-                    {getIcon(n.type)}
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex justify-between items-start mb-1">
-                      <h4 className={`text-sm font-medium ${!n.read ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-600 dark:text-slate-300'}`}>
-                        {n.title}
-                      </h4>
-                      {!n.read && <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5"></div>}
+                  <div className="flex gap-3">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-700 shadow-sm`}>
+                      {getIcon(n.type)}
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-snug mb-1 line-clamp-2">
-                      {n.desc}
-                    </p>
-                    <span className="text-[10px] text-slate-400 block">{n.time}</span>
+                    <div className="flex-grow pr-4">
+                      <div className="flex justify-between items-start mb-1">
+                        <h4 className={`text-sm font-medium ${!n.read ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-600 dark:text-slate-300'}`}>
+                          {n.title}
+                        </h4>
+                        {!n.read && <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></div>}
+                      </div>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-snug mb-1 line-clamp-2">
+                        {n.desc}
+                      </p>
+                      <span className="text-[10px] text-slate-400 block">{n.time}</span>
+                    </div>
                   </div>
+                  
+                  {/* Delete Button (Visible on Hover) */}
+                  <button 
+                    onClick={(e) => deleteNotification(e, n.id)}
+                    className="absolute top-2 right-2 p-1 text-slate-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all rounded-full hover:bg-slate-100 dark:hover:bg-slate-700"
+                    aria-label="Remove notification"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
                 </Link>
               ))
             )}
-          </div>
-          
-          <div className="p-3 border-t border-slate-100 dark:border-slate-800 text-center bg-slate-50 dark:bg-slate-800/50">
-            <a href="#" className="text-xs font-bold text-slate-500 hover:text-primary-600 transition-colors">View Archive</a>
           </div>
         </div>
       )}
