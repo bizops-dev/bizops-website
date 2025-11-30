@@ -256,7 +256,7 @@ const UseCasesPage: React.FC = () => {
                <Stack direction="col" gap={3} className="lg:hidden -mx-4 px-4 pb-4 sticky top-16 bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-sm z-30 py-4 border-b border-slate-200 dark:border-slate-800">
                   {/* Category Pills */}
                   <div className="overflow-x-auto scrollbar-hide pb-1">
-                     <div className="flex gap-2 w-max px-4">
+                     <Stack direction="row" gap={2} className="w-max px-4">
                         {categories.map((cat) => (
                            <button
                               key={cat}
@@ -271,11 +271,11 @@ const UseCasesPage: React.FC = () => {
                               {cat}
                            </button>
                         ))}
-                     </div>
+                     </Stack>
                   </div>
                   {/* Industry Pills */}
                   <div className="overflow-x-auto scrollbar-hide">
-                     <div className="flex gap-2 w-max px-4">
+                     <Stack direction="row" gap={2} className="w-max px-4">
                         {industries.map((ind) => (
                            <button
                               key={ind}
@@ -290,7 +290,7 @@ const UseCasesPage: React.FC = () => {
                               {ind}
                            </button>
                         ))}
-                     </div>
+                     </Stack>
                   </div>
                </Stack>
 
@@ -318,7 +318,7 @@ const UseCasesPage: React.FC = () => {
                         </div>
                      </div>
 
-                     <div className="flex justify-between items-center flex-wrap gap-4">
+                     <Stack direction="row" gap={4} align="center" justify="between">
                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Menampilkan <span className="font-bold text-slate-900 dark:text-white">{Math.min((currentPage - 1) * ITEMS_PER_PAGE + 1, filteredCases.length)} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredCases.length)}</span> dari <span className="font-bold text-slate-900 dark:text-white">{filteredCases.length}</span> studi kasus</Typography>
                         
                         {/* Reset Filter Button */}
@@ -330,7 +330,7 @@ const UseCasesPage: React.FC = () => {
                               <X className="w-3.5 h-3.5" /> Clear All Filters
                            </button>
                         )}
-                     </div>
+                     </Stack>
                   </Stack>
 
                   {filteredCases.length === 0 ? (
@@ -362,7 +362,7 @@ const UseCasesPage: React.FC = () => {
                                  >
                                     <Link to={`/use-cases/${item.id}`} className="block h-full">
                                        <SpotlightCard className="rounded-3xl p-8 h-full flex flex-col hover:shadow-2xl transition-all duration-300 group border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
-                                          <div className="flex items-start justify-between mb-6">
+                                          <Stack direction="row" gap={4} align="start" justify="between" className="mb-6">
                                              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 bg-${item.color}-50 dark:bg-${item.color}-900/20 ring-1 ring-${item.color}-100 dark:ring-${item.color}-900/50 shadow-sm`}>
                                                 <item.icon className="w-7 h-7" />
                                              </div>
@@ -374,16 +374,16 @@ const UseCasesPage: React.FC = () => {
                                                    {item.category}
                                                 </span>
                                              </Stack>
-                                          </div>
+                                          </Stack>
                                           
                                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 leading-tight">{item.title}</Typography>
                                           <Typography variant="body" className="text-slate-400 dark:text-slate-500 tracking-wide">{item.subtitle}</Typography>
                                           <div className="h-px w-10 bg-slate-200 dark:bg-slate-700 mb-4"></div>
                                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
 
-                                          <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800">
+                                          <Stack direction="row" gap={4} align="center" className="text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800">
                                              Read Full Story <ArrowRight className="w-4 h-4 ml-2 text-primary-500" />
-                                          </div>
+                                          </Stack>
                                        </SpotlightCard>
                                     </Link>
                                  </motion.div>

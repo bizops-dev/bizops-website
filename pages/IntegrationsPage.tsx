@@ -26,22 +26,22 @@ const IntegrationsPage: React.FC = () => {
          <Grid cols={1} gap={12}>
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
-                  <div className="flex items-end gap-4 mb-6 border-b border-slate-200 pb-4">
+                  <Stack direction="row" gap={4} align="end" className="mb-6 border-b border-slate-200 pb-4">
                       <Typography variant="h2" as="h2" className="font-bold text-slate-900">{cat.category}</Typography>
                       <Typography variant="body" className="text-slate-500">{cat.desc}</Typography>
-                  </div>
+                  </Stack>
                   
                   <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                      {cat.apps.map((app: any, i: number) => (
                         <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all group cursor-default h-full">
-                           <div className="flex items-center justify-between mb-4">
+                           <Stack direction="row" gap={4} align="center" justify="between" className="mb-4">
                               <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
                                  {app.name.substring(0,2).toUpperCase()}
                               </div>
                               <div className="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold uppercase rounded-full border border-green-100">
                                  Verified
                               </div>
-                           </div>
+                           </Stack>
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 group-hover:text-primary-600">{app.name}</Typography>
                            <Typography variant="caption" className="text-slate-600 leading-snug">{app.desc}</Typography>
                         </div>

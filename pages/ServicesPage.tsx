@@ -77,9 +77,9 @@ const ServicesPage: React.FC = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary-500/10 rounded-[100%] blur-[100px] pointer-events-none animate-pulse-slow"></div>
 
         <Container size="5xl" className="relative z-10 text-center">
-           <div className="flex justify-center mb-8">
+           <Stack direction="row" gap={4} justify="center" className="mb-8">
               <Breadcrumbs />
-           </div>
+           </Stack>
            
            <motion.div 
              variants={FADE_UP_VARIANTS}
@@ -124,10 +124,10 @@ const ServicesPage: React.FC = () => {
                 { label: 'Uptime SLA', val: '99.9%', icon: Clock },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center">
-                   <div className="flex items-center justify-center gap-2 mb-1 text-slate-900 dark:text-white font-bold text-2xl md:text-3xl">
+                   <Stack direction="row" gap={2} align="center" justify="center" className="mb-1 text-slate-900 dark:text-white font-bold text-2xl md:text-3xl">
                       <stat.icon className="w-5 h-5 text-primary-500" />
                       {stat.val}
-                   </div>
+                   </Stack>
                    <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
@@ -201,14 +201,14 @@ const ServicesPage: React.FC = () => {
                         >
                           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                           <div className="relative z-10 flex flex-col h-full">
-                              <div className="flex items-center gap-3 mb-6">
+                              <Stack direction="row" gap={3} align="center" className="mb-6">
                                 <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shrink-0">
                                     <service.icon className="w-6 h-6 text-white" />
                                 </div>
                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
                                     <Sparkles className="w-3 h-3" /> Top Pick
                                 </span>
-                              </div>
+                              </Stack>
                               <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
                               <Typography variant="caption" className="text-slate-300 leading-relaxed">{service.description}</Typography>
                               <div className="mt-auto">
@@ -259,14 +259,14 @@ const ServicesPage: React.FC = () => {
                          
                          <Stack direction="col" gap={8} className="relative z-10 h-full">
                             <div className="flex-1 flex flex-col">
-                               <div className="flex items-center gap-3 mb-6">
+                               <Stack direction="row" gap={3} align="center" className="mb-6">
                                   <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shrink-0">
                                      <service.icon className="w-6 h-6 text-white" />
                                   </div>
                                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
                                      <Sparkles className="w-3 h-3" /> Recommended Start
                                   </span>
-                               </div>
+                               </Stack>
                                
                                <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
                                <Typography variant="body-lg" className="text-slate-300 leading-relaxed">{service.description}</Typography>

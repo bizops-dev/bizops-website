@@ -8,6 +8,7 @@ import SEO from '../components/SEO';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const CapabilityPage: React.FC = () => {
   const { capabilityId } = useParams<{ capabilityId: string }>();
@@ -26,7 +27,7 @@ const CapabilityPage: React.FC = () => {
   const Icon = data.icon;
 
   return (
-    <div className="flex flex-col">
+    <Stack direction="col" gap={4}>
       <SEO title={`${data.title} | BizOps Technical Specs`} description={data.description} />
 
       {/* Hero */}
@@ -109,7 +110,7 @@ const CapabilityPage: React.FC = () => {
             </Link>
          </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 

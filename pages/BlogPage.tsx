@@ -159,10 +159,10 @@ const BlogPage: React.FC = () => {
             {/* FEATURED POST (Only on 'All' view and page 1) */}
             {!searchQuery && selectedCategory === 'All' && featuredPost && currentPage === 1 && (
                <div className="mb-24">
-                  <div className="flex items-center gap-2 mb-6">
+                  <Stack direction="row" gap={2} align="center" className="mb-6">
                      <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
                      <Typography variant="caption" className="text-slate-500">Editor's Choice</Typography>
-                  </div>
+                  </Stack>
                   <Link to={`/blog/${featuredPost.slug}`} className="group relative block w-full rounded-[2.5rem] overflow-hidden shadow-2xl transition-transform hover:-translate-y-1 duration-500">
                      <div className="absolute inset-0 bg-slate-900">
                         <OptimizedImage 
@@ -174,33 +174,33 @@ const BlogPage: React.FC = () => {
                      </div>
                      
                      <div className="relative p-8 md:p-16 lg:p-20 flex flex-col justify-end min-h-[500px] md:min-h-[600px]">
-                        <div className="flex flex-wrap items-center gap-4 mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                        <Stack direction="row" gap={4} align="center" className="mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                            <span className="bg-white/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/10">
                               {featuredPost.category}
                            </span>
-                        </div>
+                        </Stack>
                         
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{featuredPost.title}</Typography>
                         
                         <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{featuredPost.summary}</Typography>
                         
-                        <div className="flex flex-wrap items-center gap-8 text-sm text-slate-300 font-medium border-t border-white/10 pt-8">
-                           <div className="flex items-center gap-3">
+                        <Stack direction="row" gap={8} align="center" className="text-sm text-slate-300 font-medium border-t border-white/10 pt-8">
+                           <Stack direction="row" gap={3} align="center">
                               <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
                                  {featuredPost.author.charAt(0)}
                               </div>
                               <span className="text-white">{featuredPost.author.split(',')[0]}</span>
-                           </div>
-                           <div className="flex items-center gap-2">
+                           </Stack>
+                           <Stack direction="row" gap={2} align="center">
                               <Calendar className="w-4 h-4 text-blue-400" /> {featuredPost.date}
-                           </div>
-                           <div className="flex items-center gap-2">
+                           </Stack>
+                           <Stack direction="row" gap={2} align="center">
                               <Clock className="w-4 h-4 text-blue-400" /> 12 Min Read
-                           </div>
+                           </Stack>
                            <div className="ml-auto flex items-center gap-2 text-white font-bold group-hover:translate-x-2 transition-transform">
                               Read Article <ArrowRight className="w-5 h-5 text-blue-500" />
                            </div>
-                        </div>
+                        </Stack>
                      </div>
                   </Link>
                </div>
@@ -279,12 +279,12 @@ const BlogPage: React.FC = () => {
                <div className="flex-1">
                   
                   {/* Results Header */}
-                  <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
+                  <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
                      <Typography variant="h2" as="h2" className="text-2xl font-bold text-slate-900 dark:text-white">{searchQuery ? `Search Results: "${searchQuery}"` : (selectedCategory === 'All' ? 'Latest Articles' : selectedCategory)}</Typography>
                      <span className="text-sm font-medium text-slate-500">
                         Showing {paginatedPosts.length} of {gridPosts.length}
                      </span>
-                  </div>
+                  </Stack>
 
                   {gridPosts.length > 0 ? (
                      <>
@@ -316,27 +316,27 @@ const BlogPage: React.FC = () => {
                                           </div>
                                           
                                           <div className="p-8 flex flex-col flex-1">
-                                             <div className="flex items-center gap-3 mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                             <Stack direction="row" gap={3} align="center" className="mb-4 text-xs font-medium text-slate-500 dark:text-slate-400">
                                                 <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
                                                 <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
                                                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min</span>
-                                             </div>
+                                             </Stack>
                                              
                                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{post.title}</Typography>
                                              
                                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{post.summary}</Typography>
                                              
-                                             <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
-                                                <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                                             <Stack direction="row" gap={4} align="center" justify="between" className="pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
+                                                <Stack direction="row" gap={2} align="center" className="text-xs font-bold text-slate-900 dark:text-white">
                                                    <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] border border-slate-200 dark:border-slate-700">
                                                       {post.author.charAt(0)}
                                                    </div>
                                                    {post.author.split(',')[0]}
-                                                </div>
+                                                </Stack>
                                                 <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                                    <ArrowRight className="w-4 h-4" />
                                                 </div>
-                                             </div>
+                                             </Stack>
                                           </div>
                                        </SpotlightCard>
                                     </Link>

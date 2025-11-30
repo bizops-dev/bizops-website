@@ -108,7 +108,7 @@ const StepLayout = ({
         {children}
       </motion.div>
 
-      <div className="flex justify-between border-t border-white/10 pt-6">
+      <Stack direction="row" gap={4} justify="between" className="border-t border-white/10 pt-6">
          <button onClick={() => setStep(prevStep)} className="text-slate-500 hover:text-white flex items-center gap-2">
            <ArrowLeft className="w-4 h-4" /> Kembali
          </button>
@@ -121,7 +121,7 @@ const StepLayout = ({
            {nextStep !== handleFinish && <ChevronRight className="w-4 h-4 ml-2" />}
            {nextStep === handleFinish && <Search className="w-4 h-4 ml-2" />}
          </Button>
-      </div>
+      </Stack>
     </Container>
   </div>
 );
@@ -265,12 +265,12 @@ const NeedsAnalysisPage = () => {
               </Stack>
 
               <div className="mt-8 flex items-center gap-6 text-sm text-slate-500">
-                <div className="flex items-center gap-2">
+                <Stack direction="row" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> Free Analysis
-                </div>
-                <div className="flex items-center gap-2">
+                </Stack>
+                <Stack direction="row" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> No Sign-up Required
-                </div>
+                </Stack>
               </div>
             </motion.div>
 
@@ -575,7 +575,7 @@ const NeedsAnalysisPage = () => {
                     : 'bg-slate-900/50 border-white/10 hover:border-red-500/50 hover:bg-slate-900'
                   }`}
                 >
-                  <div className="flex items-start gap-4 relative z-10">
+                  <Stack direction="row" gap={4} align="start" className="relative z-10">
                     <div className={`p-2 rounded-lg ${isSelected ? 'bg-red-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-red-400'}`}>
                       <item.icon className="w-6 h-6" />
                     </div>
@@ -583,7 +583,7 @@ const NeedsAnalysisPage = () => {
                       <Typography variant="h3" as="h3">{item.label}</Typography>
                       <Typography variant="caption" className="text-slate-500 leading-snug">{item.desc}</Typography>
                     </div>
-                  </div>
+                  </Stack>
                 </div>
               );
             })}
@@ -618,7 +618,7 @@ const NeedsAnalysisPage = () => {
                     : 'bg-slate-900/50 border-white/10 hover:border-emerald-500/50 hover:bg-slate-900'
                   }`}
                 >
-                  <div className="flex items-start gap-4 relative z-10">
+                  <Stack direction="row" gap={4} align="start" className="relative z-10">
                     <div className={`p-2 rounded-lg ${isSelected ? 'bg-emerald-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-emerald-400'}`}>
                       <item.icon className="w-6 h-6" />
                     </div>
@@ -626,7 +626,7 @@ const NeedsAnalysisPage = () => {
                       <Typography variant="h3" as="h3">{item.label}</Typography>
                       <Typography variant="caption" className="text-slate-500 leading-snug">{item.desc}</Typography>
                     </div>
-                  </div>
+                  </Stack>
                 </div>
               );
             })}
@@ -726,7 +726,7 @@ const NeedsAnalysisPage = () => {
       <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
         <Container size="6xl">
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start mb-10 border-b border-white/10 pb-8 print:border-gray-300">
+          <Stack direction="col" gap={4} align="start" justify="between" className="mb-10 border-b border-white/10 pb-8 print:border-gray-300">
              <div>
                 <div className="text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">Confidential Report</div>
                 <Typography variant="h1" as="h1">Holistic Solution Blueprint</Typography>
@@ -740,7 +740,7 @@ const NeedsAnalysisPage = () => {
                    Diskusi Proposal <ArrowRight className="w-4 h-4" />
                 </Button>
              </div>
-          </div>
+          </Stack>
 
           <Grid cols={12} gap={8}>
             
@@ -752,19 +752,19 @@ const NeedsAnalysisPage = () => {
                 {/* Visual Radar Logic (Simplified) */}
                 <Stack direction="col" gap={4} className="mb-6">
                     <div className="bg-slate-800/50 p-4 rounded-xl">
-                        <div className="flex justify-between text-xs text-slate-400 mb-1">
+                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
                             <span>People Maturity Gap</span>
                             <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.people.find(p => p.id === i)).length > 0 ? 'High' : 'Low'}</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
                              <div className={`h-full ${selectedHolisticIssues.some(i => holisticIssues.people.find(p => p.id === i)) ? 'w-[80%] bg-red-500' : 'w-[20%] bg-emerald-500'}`}></div>
                         </div>
                     </div>
                     <div className="bg-slate-800/50 p-4 rounded-xl">
-                        <div className="flex justify-between text-xs text-slate-400 mb-1">
+                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
                             <span>Process Complexity</span>
                             <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.process.find(p => p.id === i)).length > 0 ? 'Complex' : 'Standard'}</span>
-                        </div>
+                        </Stack>
                         <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
                              <div className={`h-full ${selectedHolisticIssues.some(i => holisticIssues.process.find(p => p.id === i)) ? 'w-[75%] bg-amber-500' : 'w-[30%] bg-emerald-500'}`}></div>
                         </div>
@@ -772,22 +772,22 @@ const NeedsAnalysisPage = () => {
                 </Stack>
 
                 <Stack direction="col" gap={2} className="text-sm text-slate-300">
-                    <div className="flex justify-between border-b border-white/5 pb-2">
+                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Contact</span>
                         <span>{contextData.name}</span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/5 pb-2">
+                    </Stack>
+                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Industry</span>
                         <span>{selectedIndustry?.label}</span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/5 pb-2">
+                    </Stack>
+                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Tech Stack</span>
                         <span>{selectedTech?.label}</span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/5 pb-2">
+                    </Stack>
+                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Timeline</span>
                         <span>{timelineLabel}</span>
-                    </div>
+                    </Stack>
                 </Stack>
               </div>
             </Stack>

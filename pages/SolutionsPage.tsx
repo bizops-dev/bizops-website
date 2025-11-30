@@ -112,9 +112,9 @@ const SolutionsPage: React.FC = () => {
                             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                             <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
                          </div>
-                         <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all pt-4 shrink-0">
+                         <Stack direction="row" gap={2} align="center" className="text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto transition-all pt-4 shrink-0">
                             Pelajari Selengkapnya <ArrowRight className="w-4 h-4 ml-2" />
-                         </div>
+                         </Stack>
                       </motion.div>
                    </Link>
                 ))}
@@ -124,11 +124,11 @@ const SolutionsPage: React.FC = () => {
            {/* Social Proof Interstitial */}
            <div className="mb-16 md:mb-32 text-center">
               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dipercaya Pemimpin Industri</Typography>
-              <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
+              <Stack direction="row" gap={4} align="center" justify="center" className="opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
                  {['HEXAGON', 'KARYA BETON', 'TRANS LOGISTIC', 'MEGA FINANCE', 'AGRO CORP'].map(brand => (
                     <span key={brand} className="text-xl font-black text-slate-800 dark:text-slate-200 tracking-tighter">{brand}</span>
                  ))}
-              </div>
+              </Stack>
            </div>
 
            {/* Roles Section */}

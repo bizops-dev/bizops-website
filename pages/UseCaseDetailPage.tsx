@@ -368,9 +368,9 @@ const UseCaseDetailPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="flex items-center gap-3 mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
+                <Stack direction="row" gap={3} align="center" className="mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
                   <span className="w-8 h-px bg-red-500"></span> The Challenge
-                </div>
+                </Stack>
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Problem Statement</Typography>
                 <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300">
                   <Typography variant="body-xl" className="leading-relaxed">{data.challenge}</Typography>
@@ -390,7 +390,7 @@ const UseCaseDetailPage: React.FC = () => {
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">BizOps Approach</Typography>
                 
                 <div className={`rounded-3xl p-8 border ${theme.border} ${theme.bgLight} ${theme.bgDark} mb-8`}>
-                  <div className="flex items-start gap-6">
+                  <Stack direction="row" gap={6} align="start">
                     <div className={`p-4 rounded-2xl bg-white dark:bg-black/20 text-slate-900 dark:text-white shadow-sm shrink-0`}>
                       <Icon className="w-8 h-8" />
                     </div>
@@ -398,7 +398,7 @@ const UseCaseDetailPage: React.FC = () => {
                       <Typography variant="h3" as="h3">Custom Implementation</Typography>
                       <Typography variant="body" className="text-slate-700 dark:text-slate-300 leading-relaxed">{data.solution}</Typography>
                     </div>
-                  </div>
+                  </Stack>
                 </div>
 
                 <div className="relative pl-8 border-l-4 border-slate-200 dark:border-slate-800 italic text-xl font-medium text-slate-700 dark:text-slate-300 my-12">
@@ -415,20 +415,20 @@ const UseCaseDetailPage: React.FC = () => {
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
                   <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Code2 className="w-4 h-4" /> Tech Stack Used</Typography>
-                  <div className="flex flex-wrap gap-2">
+                  <Stack direction="row" gap={2}>
                     {data.techStack.map((tech, i) => (
                       <span key={i} className="px-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-slate-300 transition-colors cursor-default">
                         {tech}
                       </span>
                     ))}
-                  </div>
+                  </Stack>
                   <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-                    <div className="flex items-center justify-between">
+                    <Stack direction="row" gap={4} align="center" justify="between">
                        <Typography variant="caption" className="text-slate-500">Module Category</Typography>
                        <span className={`px-3 py-1 rounded-lg ${theme.bgLight} ${theme.bgDark} text-xs font-bold ${theme.primary} uppercase border ${theme.border}`}>
                           {data.category}
                        </span>
-                    </div>
+                    </Stack>
                   </div>
                 </div>
 
@@ -475,12 +475,12 @@ const UseCaseDetailPage: React.FC = () => {
       {relatedCases.length > 0 && (
         <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-24">
           <Container size="7xl">
-            <div className="flex items-center justify-between mb-12">
+            <Stack direction="row" gap={4} align="center" justify="between" className="mb-12">
               <Typography variant="h2" as="h2">More Success Stories</Typography>
               <Link to="/use-cases" className="text-primary-600 dark:text-primary-400 font-bold hover:underline flex items-center gap-1">
                 Lihat Semua <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
+            </Stack>
             
             <Grid cols={3} gap={8}>
               {relatedCases.map((item) => {

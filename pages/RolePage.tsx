@@ -39,7 +39,7 @@ const RolePage: React.FC = () => {
   const Icon = data.icon;
 
   return (
-    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors duration-500">
+    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO title={data.metaTitle} description={data.metaDesc} />
 
       {/* 1. HERO (Dark Enterprise Style - Premium Upgrade) */}
@@ -149,11 +149,11 @@ const RolePage: React.FC = () => {
 
                   {/* Browser Header */}
                   <div className="absolute top-0 w-full h-12 bg-[#1E293B]/90 backdrop-blur-md border-b border-slate-700 flex items-center px-4 gap-3 z-20 select-none">
-                     <div className="flex gap-1.5">
+                     <Stack direction="row" gap={1}>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] shadow-sm"></div>
-                     </div>
+                     </Stack>
                      <div className="ml-4 flex-1 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 flex items-center gap-2 overflow-hidden shadow-inner transition-all duration-300">
                         <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
@@ -180,7 +180,7 @@ const RolePage: React.FC = () => {
                            {[1,2,3].map((i) => (
                               <div key={i} className="h-28 bg-[#1E293B] rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg group/card relative overflow-hidden">
                                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
-                                 <div className="flex justify-between items-start">
+                                 <Stack direction="row" gap={4} align="start" justify="between">
                                     <div className="h-8 w-8 bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center">
                                        <div className={`w-4 h-4 rounded transition-colors duration-500 ${
                                           activeFeature === i-1 ? 'bg-white animate-pulse' : 'bg-slate-600'
@@ -189,7 +189,7 @@ const RolePage: React.FC = () => {
                                     <div className={`text-xs font-bold ${i===1 ? 'text-emerald-400' : 'text-slate-500'}`}>
                                        {i===1 ? '+12.5%' : ''}
                                     </div>
-                                 </div>
+                                 </Stack>
                                  <Stack direction="col" gap={2}>
                                     <div className="h-6 w-2/3 bg-slate-700 rounded animate-pulse transition-all duration-500" style={{ width: `${60 + (activeFeature * 10) + (i * 5)}%` }}></div>
                                     <div className="h-3 w-1/3 bg-slate-800 rounded"></div>
@@ -200,11 +200,11 @@ const RolePage: React.FC = () => {
 
                         {/* Chart Area - Dynamic Bars */}
                         <div className="col-span-2 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 relative overflow-hidden p-5 hover:border-slate-600 transition-colors">
-                           <div className="flex justify-between mb-6 items-center">
+                           <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                               <div className="h-5 w-1/3 bg-slate-700 rounded"></div>
                               <div className="h-7 w-20 bg-slate-800 rounded border border-slate-700"></div>
-                           </div>
-                           <div className="flex items-end justify-between h-36 gap-2 px-1">
+                           </Stack>
+                           <Stack direction="row" gap={2} align="end" justify="between" className="h-36 px-1">
                               {/* Dynamic Chart Data Generation based on ActiveFeature */}
                               {(() => {
                                  const seeds = [
@@ -229,7 +229,7 @@ const RolePage: React.FC = () => {
                                     />
                                  ));
                               })()}
-                           </div>
+                           </Stack>
                         </div>
 
                         {/* Side Panel */}
@@ -291,12 +291,12 @@ const RolePage: React.FC = () => {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
                         
                         <div className="relative z-10 flex-grow">
-                           <div className="flex items-center gap-3 mb-6">
+                           <Stack direction="row" gap={3} align="center" className="mb-6">
                               <div className="p-2 bg-red-500/10 border border-red-500/20 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.1)]">
                                  <AlertTriangle className="w-5 h-5 text-red-500" />
                               </div>
                               <span className="text-red-500/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
-                           </div>
+                           </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold leading-snug group-hover:text-white">"{item.pain}"</Typography>
                            <Typography variant="caption" className="leading-relaxed">{item.context}</Typography>
                         </div>
@@ -309,12 +309,12 @@ const RolePage: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] -ml-20 -mb-20 pointer-events-none"></div>
 
                         <div className="relative z-10 flex-grow">
-                           <div className="flex items-center gap-3 mb-6 justify-end md:justify-start">
+                           <Stack direction="row" gap={3} align="center" justify="end" className="mb-6">
                               <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">After BizOps</span>
                               <div className="p-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg order-1 md:order-2 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                                  <CheckCircle className="w-5 h-5 text-emerald-400" />
                               </div>
-                           </div>
+                           </Stack>
                            <Typography variant="h3" as="h3" className="font-extrabold text-white">{item.gain}</Typography>
                            <Typography variant="caption" className="leading-relaxed">{item.gainDesc}</Typography>
                         </div>
@@ -371,7 +371,7 @@ const RolePage: React.FC = () => {
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
         </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 

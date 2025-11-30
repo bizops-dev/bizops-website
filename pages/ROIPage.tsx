@@ -133,7 +133,7 @@ const ROIPage: React.FC = () => {
            
            {/* LEFT: INPUTS */}
            <div className="lg:col-span-5 bg-slate-900/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
-              <div className="flex items-center justify-between mb-8">
+              <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
                 <Typography variant="h2" as="h2" className="font-bold text-white"><Settings className="w-5 h-5 text-blue-400" />
                    Parameter Operasional</Typography>
                 {/* Reset Button */}
@@ -145,15 +145,15 @@ const ROIPage: React.FC = () => {
                 >
                   Reset Default
                 </button>
-              </div>
+              </Stack>
               
               <Stack direction="col" gap={8}>
                  {/* 1. Admin Count */}
                  <div>
-                    <div className="flex justify-between mb-2">
+                    <Stack direction="row" gap={4} justify="between" className="mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Jumlah Staf Admin</Typography>
                        <Typography variant="caption" className="text-blue-400">{adminCount} Orang</Typography>
-                    </div>
+                    </Stack>
                     <input 
                       type="range" min="1" max="50" value={adminCount} 
                       onChange={(e) => setAdminCount(parseInt(e.target.value))}
@@ -176,24 +176,24 @@ const ROIPage: React.FC = () => {
                     </div>
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Estimasi Efisiensi</Typography>
-                        <div className="flex items-center gap-2">
+                        <Stack direction="row" gap={2} align="center">
                           <input 
                             type="range" min="10" max="90" step="5" value={efficiencyRate}
                             onChange={(e) => setEfficiencyRate(parseInt(e.target.value))}
                             className="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                           />
                           <Typography variant="caption" className="text-emerald-400">{efficiencyRate}%</Typography>
-                        </div>
+                        </Stack>
                         <Typography variant="body" className="text-slate-500">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
                     </div>
                  </Grid>
 
                  {/* 3. Overtime */}
                  <div>
-                    <div className="flex justify-between mb-2">
+                    <Stack direction="row" gap={4} justify="between" className="mb-2">
                        <Typography variant="caption" className="text-sm font-medium text-slate-300">Lembur (Jam/Orang/Bulan)</Typography>
                        <Typography variant="caption" className="text-amber-400">{overtime} Jam</Typography>
-                    </div>
+                    </Stack>
                     <input 
                       type="range" min="0" max="100" value={overtime} 
                       onChange={(e) => setOvertime(parseInt(e.target.value))}
@@ -261,12 +261,12 @@ const ROIPage: React.FC = () => {
               <Grid cols={2} gap={4}>
                  {/* Efficiency */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
-                    <div className="flex justify-between items-start mb-2">
+                    <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <TrendingUp className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-blue-400">Soft Savings</Typography>
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <Typography variant="body" className="text-slate-500">Efisiensi {efficiencyRate}% dari {adminCount} staf.</Typography>
@@ -274,12 +274,12 @@ const ROIPage: React.FC = () => {
                  
                  {/* Overtime */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
-                    <div className="flex justify-between items-start mb-2">
+                    <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <div className="w-10 h-10 bg-amber-500/10 text-amber-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <Clock className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-amber-400">Hard Savings</Typography>
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <Typography variant="body" className="text-slate-500">Mengurangi 90% lembur manual.</Typography>
@@ -287,12 +287,12 @@ const ROIPage: React.FC = () => {
 
                  {/* Fraud */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
-                    <div className="flex justify-between items-start mb-2">
+                    <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <div className="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <AlertTriangle className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-red-400">Risk Avoidance</Typography>
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3">Loss Prevention</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <Typography variant="body" className="text-slate-500">Mengurangi 80% risiko kebocoran.</Typography>
@@ -300,12 +300,12 @@ const ROIPage: React.FC = () => {
 
                  {/* Tech Cost Savings (New) */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
-                    <div className="flex justify-between items-start mb-2">
+                    <Stack direction="row" gap={4} align="start" justify="between" className="mb-2">
                       <div className="w-10 h-10 bg-purple-500/10 text-purple-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                          <Database className="w-5 h-5" />
                       </div>
                       <Typography variant="caption" className="text-purple-400">Hard Savings</Typography>
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <Typography variant="body" className="text-slate-500">Biaya sistem lama yang dihapus.</Typography>
@@ -321,7 +321,7 @@ const ROIPage: React.FC = () => {
                           {formatCompactCurrency(annualSavings)}
                        </div>
                        
-                       <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                       <Stack direction="row" gap={4} justify="center">
                           <div className="bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-xl flex items-center gap-3">
                              <div className="p-1 bg-emerald-500 rounded-full text-black"><TrendingUp className="w-3 h-3" /></div>
                              <div className="text-left">
@@ -336,7 +336,7 @@ const ROIPage: React.FC = () => {
                                <div className="text-lg font-bold text-blue-400">{paybackMonths < 1 ? "< 1 Bulan" : `${paybackMonths.toFixed(1)} Bulan`}</div>
                              </div>
                           </div>
-                       </div>
+                       </Stack>
                     </div>
 
                     <Stack direction="col" gap={3} className="w-full md:w-auto min-w-[200px]">

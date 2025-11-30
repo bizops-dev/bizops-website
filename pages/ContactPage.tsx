@@ -231,7 +231,7 @@ const ContactPage: React.FC = () => {
                      className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-center"
                   >
                      {isSent ? (
-                       <div className="flex flex-col items-center justify-center text-center py-12">
+                       <Stack direction="col" gap={4} align="center" justify="center" className="text-center py-12">
                           <motion.div 
                              initial={{ scale: 0 }} animate={{ scale: 1 }}
                              className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 shadow-lg"
@@ -241,7 +241,7 @@ const ContactPage: React.FC = () => {
                           <Typography variant="h2" as="h2">Pesan Diterima!</Typography>
                           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.</Typography>
                           <Button variant="outline" onClick={() => setIsSent(false)}>Kirim Pesan Lain</Button>
-                       </div>
+                       </Stack>
                      ) : (
                        <>
                          <div className="mb-10">

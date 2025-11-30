@@ -12,7 +12,7 @@ import Stack from '../components/Stack';
 
 const StartupProgramPage: React.FC = () => {
   return (
-    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors font-sans selection:bg-purple-500/30">
+    <Stack direction="col" gap={4} className="bg-slate-50 dark:bg-slate-950 transition-colors font-sans selection:bg-purple-500/30">
       <SEO title="Program BizOps for Startups | Diskon & Kredit Gratis" description="Program akselerasi eksklusif untuk startup. Dapatkan akses teknologi ERP kelas dunia dengan harga khusus agar Anda bisa fokus pada pertumbuhan." />
 
       {/* --- HERO SECTION --- */}
@@ -83,14 +83,14 @@ const StartupProgramPage: React.FC = () => {
       {/* --- LOGO WALL (Social Proof) --- */}
       <section className="bg-[#0F172A] border-b border-slate-800 pb-16">
          <Container size="7xl" className="overflow-hidden">
-            <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500 flex-wrap">
+            <Stack direction="row" gap={12} justify="center" className="grayscale opacity-40 hover:opacity-70 transition-opacity duration-500">
                {/* Placeholder Logos */}
                <div className="text-xl font-bold text-white">ACME Corp</div>
                <div className="text-xl font-bold text-white">Nebula AI</div>
                <div className="text-xl font-bold text-white">Quantum Leap</div>
                <div className="text-xl font-bold text-white">HyperGrowth</div>
                <div className="text-xl font-bold text-white hidden md:block">Stark Industries</div>
-            </div>
+            </Stack>
          </Container>
       </section>
 
@@ -176,7 +176,7 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
                   
                   <Stack direction="col" gap={8}>
-                     <div className="flex gap-5">
+                     <Stack direction="row" gap={5}>
                         <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
                            <Layout className="w-6 h-6" />
                         </div>
@@ -184,8 +184,8 @@ const StartupProgramPage: React.FC = () => {
                            <Typography variant="h4" as="h4">Investor-Ready Reports</Typography>
                            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.</Typography>
                         </div>
-                     </div>
-                     <div className="flex gap-5">
+                     </Stack>
+                     <Stack direction="row" gap={5}>
                         <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
                            <ShieldCheck className="w-6 h-6" />
                         </div>
@@ -193,7 +193,7 @@ const StartupProgramPage: React.FC = () => {
                            <Typography variant="h4" as="h4">Enterprise-Grade Compliance</Typography>
                            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.</Typography>
                         </div>
-                     </div>
+                     </Stack>
                   </Stack>
                </div>
 
@@ -203,14 +203,14 @@ const StartupProgramPage: React.FC = () => {
                   <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[80px]"></div>
                   
                   <div className="bg-slate-50 dark:bg-slate-800/80 backdrop-blur-xl rounded-[2.5rem] p-10 border border-slate-200 dark:border-slate-700 shadow-2xl relative overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                     <div className="flex items-center justify-between mb-10">
-                        <div className="flex items-center gap-3">
+                     <Stack direction="row" gap={4} align="center" justify="between" className="mb-10">
+                        <Stack direction="row" gap={3} align="center">
                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
+                        </Stack>
                         <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
-                     </div>
+                     </Stack>
                      {/* Mockup Content */}
                      <Stack direction="col" gap={6}>
                         <Grid cols={2} gap={4}>
@@ -227,10 +227,10 @@ const StartupProgramPage: React.FC = () => {
                         </Grid>
                         
                         <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                           <div className="flex justify-between items-end mb-4">
+                           <Stack direction="row" gap={4} align="end" justify="between" className="mb-4">
                               <div className="text-sm font-bold text-slate-700 dark:text-slate-300">Revenue Growth (MRR)</div>
                               <div className="text-xs text-slate-400">Last 6 Months</div>
-                           </div>
+                           </Stack>
                            <div className="h-32 flex items-end justify-between gap-3">
                               {[30, 45, 40, 60, 55, 85, 70, 95].map((h, i) => (
                                  <div key={i} className="w-full bg-slate-100 dark:bg-slate-800 rounded-t-lg relative group overflow-hidden">
@@ -266,7 +266,7 @@ const StartupProgramPage: React.FC = () => {
                   <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
                      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                      
-                     <div className="flex items-center gap-5 mb-10">
+                     <Stack direction="row" gap={5} align="center" className="mb-10">
                         <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner">
                            <Zap className="w-8 h-8" />
                         </div>
@@ -274,35 +274,35 @@ const StartupProgramPage: React.FC = () => {
                            <Typography variant="h3" as="h3">Bootstrap</Typography>
                            <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <div className="mb-10 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
-                        <div className="flex items-baseline gap-2 mb-2">
+                        <Stack direction="row" gap={2} align="baseline" className="mb-2">
                            <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
                            <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
-                        </div>
+                        </Stack>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                      </div>
                      
                      <Stack direction="col" gap={5} className="mb-12 flex-grow">
-                        <div className="flex items-center gap-4">
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
-                        </div>
-                        <div className="flex items-center gap-4">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
-                        </div>
-                        <div className="flex items-center gap-4">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
-                        </div>
+                        </Stack>
                      </Stack>
                      
                      <Link to="/partners/apply?track=bootstrap" className="mt-auto">
@@ -317,7 +317,7 @@ const StartupProgramPage: React.FC = () => {
                      <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
                      <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
                      
-                     <div className="flex items-center gap-5 mb-10 mt-4">
+                     <Stack direction="row" gap={5} align="center" className="mb-10 mt-4">
                         <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-300 shadow-inner border border-purple-500/30">
                            <TrendingUp className="w-8 h-8" />
                         </div>
@@ -325,35 +325,35 @@ const StartupProgramPage: React.FC = () => {
                            <Typography variant="h3" as="h3">Scale-Up</Typography>
                            <Typography variant="body">Seed / Series A+</Typography>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <div className="mb-10 p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
-                        <div className="flex items-baseline gap-2 mb-2">
+                        <Stack direction="row" gap={2} align="baseline" className="mb-2">
                            <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
                            <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
-                        </div>
+                        </Stack>
                         <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                      </div>
                      
                      <Stack direction="col" gap={5} className="mb-12 flex-grow">
-                        <div className="flex items-center gap-4">
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
-                        </div>
-                        <div className="flex items-center gap-4">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
-                        </div>
-                        <div className="flex items-center gap-4">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
                            </div>
                            <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
-                        </div>
+                        </Stack>
                      </Stack>
                      
                      <Link to="/partners/apply?track=scaleup" className="mt-auto">
@@ -370,7 +370,7 @@ const StartupProgramPage: React.FC = () => {
                <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                   
-                  <div className="flex items-center gap-5 mb-10">
+                  <Stack direction="row" gap={5} align="center" className="mb-10">
                      <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner">
                         <Zap className="w-8 h-8" />
                      </div>
@@ -378,35 +378,35 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Bootstrap</Typography>
                         <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <div className="mb-10 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
-                     <div className="flex items-baseline gap-2 mb-2">
+                     <Stack direction="row" gap={2} align="baseline" className="mb-2">
                         <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
                         <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
-                     </div>
+                     </Stack>
                      <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                   </div>
                   
                   <Stack direction="col" gap={5} className="mb-12 flex-grow">
-                     <div className="flex items-center gap-4">
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
-                     </div>
-                     <div className="flex items-center gap-4">
+                     </Stack>
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
-                     </div>
-                     <div className="flex items-center gap-4">
+                     </Stack>
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
-                     </div>
+                     </Stack>
                   </Stack>
                   
                   <Link to="/partners/apply?track=bootstrap" className="mt-auto">
@@ -421,7 +421,7 @@ const StartupProgramPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
                   <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
                   
-                  <div className="flex items-center gap-5 mb-10 mt-4">
+                  <Stack direction="row" gap={5} align="center" className="mb-10 mt-4">
                      <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-300 shadow-inner border border-purple-500/30">
                         <TrendingUp className="w-8 h-8" />
                      </div>
@@ -429,35 +429,35 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Scale-Up</Typography>
                         <Typography variant="body">Seed / Series A+</Typography>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <div className="mb-10 p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
-                     <div className="flex items-baseline gap-2 mb-2">
+                     <Stack direction="row" gap={2} align="baseline" className="mb-2">
                         <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
                         <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
-                     </div>
+                     </Stack>
                      <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                   </div>
                   
                   <Stack direction="col" gap={5} className="mb-12 flex-grow">
-                     <div className="flex items-center gap-4">
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
-                     </div>
-                     <div className="flex items-center gap-4">
+                     </Stack>
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
-                     </div>
-                     <div className="flex items-center gap-4">
+                     </Stack>
+                     <Stack direction="row" gap={4} align="center">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
                         </div>
                         <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
-                     </div>
+                     </Stack>
                   </Stack>
                   
                   <Link to="/partners/apply?track=scaleup" className="mt-auto">
@@ -477,28 +477,28 @@ const StartupProgramPage: React.FC = () => {
             
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
-                  <div className="flex flex-col items-center group h-full">
+                  <Stack direction="col" gap={4} align="center" className="group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
                      <Typography variant="h3" as="h3">Submit Form</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
-                  </div>
-                  <div className="flex flex-col items-center group h-full">
+                  </Stack>
+                  <Stack direction="col" gap={4} align="center" className="group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
                      <Typography variant="h3" as="h3">Verification</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
-                  </div>
-                  <div className="flex flex-col items-center group h-full">
+                  </Stack>
+                  <Stack direction="col" gap={4} align="center" className="group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
                      <Typography variant="h3" as="h3">Approval</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
-                  </div>
-                  <div className="flex flex-col items-center group h-full">
+                  </Stack>
+                  <Stack direction="col" gap={4} align="center" className="group h-full">
                      <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                         <CheckCircle className="w-8 h-8" />
                      </div>
                      <Typography variant="h3" as="h3">Onboarding</Typography>
                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
-                  </div>
+                  </Stack>
                </CardSlider>
             </div>
 
@@ -506,28 +506,28 @@ const StartupProgramPage: React.FC = () => {
                {/* Connecting Line (Desktop Only) */}
                <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
 
-               <div className="flex flex-col items-center group h-full">
+               <Stack direction="col" gap={4} align="center" className="group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
                   <Typography variant="h3" as="h3">Submit Form</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
-               </div>
-               <div className="flex flex-col items-center group h-full">
+               </Stack>
+               <Stack direction="col" gap={4} align="center" className="group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
                   <Typography variant="h3" as="h3">Verification</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
-               </div>
-               <div className="flex flex-col items-center group h-full">
+               </Stack>
+               <Stack direction="col" gap={4} align="center" className="group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
                   <Typography variant="h3" as="h3">Approval</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
-               </div>
-               <div className="flex flex-col items-center group h-full">
+               </Stack>
+               <Stack direction="col" gap={4} align="center" className="group h-full">
                   <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                      <CheckCircle className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Onboarding</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
-               </div>
+               </Stack>
             </Grid>
          </Container>
       </section>
@@ -571,7 +571,7 @@ const StartupProgramPage: React.FC = () => {
          </Container>
       </section>
 
-    </div>
+    </Stack>
   );
 };
 

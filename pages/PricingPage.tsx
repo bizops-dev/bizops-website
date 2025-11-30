@@ -48,7 +48,7 @@ const PricingPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors">
+    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors">
       <SEO 
         title="Harga & Paket Langganan ERP | BizOps" 
         description="Pilih paket Business, Growth, atau Enterprise. Investasi cerdas mulai Rp 2.5 Juta/bulan. Hitung kebutuhan spesifik Anda dengan kalkulator kami."
@@ -89,7 +89,7 @@ const PricingPage: React.FC = () => {
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
           
           {/* Enhanced Toggle */}
-          <div className="flex items-center justify-center animate-in fade-in zoom-in duration-700 delay-300">
+          <Stack direction="row" gap={4} align="center" justify="center" className="animate-in fade-in zoom-in duration-700 delay-300">
             <Grid cols={2} gap={6} className="relative bg-slate-100 dark:bg-slate-800 p-1.5 rounded-full border border-slate-200 dark:border-slate-700">
               <div 
                 className={`absolute left-1.5 top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 transition-transform duration-300 ease-spring ${annual ? 'translate-x-full' : 'translate-x-0'}`}
@@ -110,7 +110,7 @@ const PricingPage: React.FC = () => {
                 </span>
               </button>
             </Grid>
-          </div>
+          </Stack>
         </Container>
       </div>
 
@@ -127,17 +127,17 @@ const PricingPage: React.FC = () => {
                </div>
                
                <div className="mb-8">
-                 <div className="flex items-baseline gap-1">
+                 <Stack direction="row" gap={1} align="baseline">
                    <span className="text-sm font-semibold text-slate-500 mb-auto mt-2">IDR</span>
                    <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      {annual ? '2.5' : '3'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
-                 </div>
-                 <div className="flex items-center justify-between mt-3 text-sm">
+                 </Stack>
+                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
                    <span className="text-slate-500">/ bulan</span>
                    {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
-                 </div>
+                 </Stack>
                  <Typography variant="body" className="text-slate-400">{annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}</Typography>
                </div>
 
@@ -177,17 +177,17 @@ const PricingPage: React.FC = () => {
                </div>
 
                <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
-                 <div className="flex items-baseline gap-1">
+                 <Stack direction="row" gap={1} align="baseline">
                    <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
                    <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      {annual ? '7.5' : '9'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
-                 </div>
-                 <div className="flex items-center justify-between mt-3 text-sm">
+                 </Stack>
+                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
                    <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
                    {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
-                 </div>
+                 </Stack>
                </div>
 
                <div className="mb-8">
@@ -225,14 +225,14 @@ const PricingPage: React.FC = () => {
                </div>
                
                <div className="mb-8 relative z-10">
-                 <div className="flex items-baseline gap-1">
+                 <Stack direction="row" gap={1} align="baseline">
                    <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      Custom
                    </span>
-                 </div>
-                 <div className="flex items-center justify-between mt-3 text-sm">
+                 </Stack>
+                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
                     <span className="text-slate-500">Sesuai Kebutuhan</span>
-                 </div>
+                 </Stack>
                  <Typography variant="body" className="text-slate-400">Negosiasi kontrak tahunan & SLA</Typography>
                </div>
 
@@ -356,7 +356,7 @@ const PricingPage: React.FC = () => {
         </Grid>
 
       </Section>
-    </div>
+    </Stack>
   );
 };
 

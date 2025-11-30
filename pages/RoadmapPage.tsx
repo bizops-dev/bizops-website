@@ -104,7 +104,7 @@ const RoadmapPage: React.FC = () => {
                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Transparansi adalah kunci. Pantau progres fitur BizOps dan ikut serta dalam menentukan prioritas kami selanjutnya.</Typography>
               </div>
               
-              <div className="flex items-center gap-3 w-full md:w-auto">
+              <Stack direction="row" gap={3} align="center" className="w-full md:w-auto">
                  {/* Mobile Filter Toggle */}
                  <button 
                     onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
@@ -119,7 +119,7 @@ const RoadmapPage: React.FC = () => {
                  >
                     <Plus className="w-4 h-4 mr-2" /> Request Fitur
                  </Button>
-              </div>
+              </Stack>
            </Stack>
         </Container>
 
@@ -178,11 +178,11 @@ const RoadmapPage: React.FC = () => {
                           className="absolute bottom-0 left-0 w-full bg-white dark:bg-slate-900 rounded-t-2xl p-6 border-t border-slate-200 dark:border-slate-800"
                           onClick={e => e.stopPropagation()}
                        >
-                          <div className="flex justify-between items-center mb-6">
+                          <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                              <Typography variant="h3" as="h3">Filter Categories</Typography>
                              <button onClick={() => setMobileFilterOpen(false)}><X className="w-5 h-5" /></button>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mb-6">
+                          </Stack>
+                          <Stack direction="row" gap={2} className="mb-6">
                              {allTags.map(tag => (
                                 <button
                                    key={tag}
@@ -196,7 +196,7 @@ const RoadmapPage: React.FC = () => {
                                    {tag}
                                 </button>
                              ))}
-                          </div>
+                          </Stack>
                        </motion.div>
                     </div>
                  )}
@@ -212,15 +212,15 @@ const RoadmapPage: React.FC = () => {
                              mb-4 p-4 bg-white dark:bg-slate-900 rounded-xl shadow-sm border-t-4
                              ${getStatusColor(column.color)}
                           `}>
-                             <div className="flex items-center justify-between mb-1">
+                             <Stack direction="row" gap={4} align="center" justify="between" className="mb-1">
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{column.status}</Typography>
                                 <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">
                                    {column.items.length}
                                 </span>
-                             </div>
-                             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                             </Stack>
+                             <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                                 <Clock className="w-3 h-3" /> {column.period}
-                             </div>
+                             </Stack>
                           </div>
 
                           {/* Items List */}
@@ -246,7 +246,7 @@ const RoadmapPage: React.FC = () => {
                                       
                                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
 
-                                      <div className="flex items-center justify-between pt-3 border-t border-slate-50 dark:border-slate-800">
+                                      <Stack direction="row" gap={4} align="center" justify="between" className="pt-3 border-t border-slate-50 dark:border-slate-800">
                                          <button 
                                             onClick={() => handleVote(item.id)}
                                             className={`
@@ -262,7 +262,7 @@ const RoadmapPage: React.FC = () => {
                                          <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
                                             <item.icon className="w-3 h-3" />
                                          </div>
-                                      </div>
+                                      </Stack>
                                    </motion.div>
                                 ))}
                              </AnimatePresence>

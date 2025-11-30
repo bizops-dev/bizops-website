@@ -78,24 +78,24 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             <div className="mb-8">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
-               <div className="flex gap-4 mb-8">
+               <Stack direction="row" gap={4} className="mb-8">
                   <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0" />
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">{story.desc}</Typography>
-               </div>
+               </Stack>
             </div>
 
             {/* Transformation Grid */}
             <Grid cols={2} gap={6} className="mt-auto">
                <div className="bg-red-50 dark:bg-red-900/10 p-5 rounded-xl border border-red-100 dark:border-red-900/20">
-                  <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
+                  <Stack direction="row" gap={2} align="center" className="mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
                      <AlertTriangle className="w-4 h-4" /> Before BizOps
-                  </div>
+                  </Stack>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.chaos}</Typography>
                </div>
                <div className="bg-green-50 dark:bg-green-900/10 p-5 rounded-xl border border-green-100 dark:border-green-900/20">
-                  <div className="flex items-center gap-2 mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
+                  <Stack direction="row" gap={2} align="center" className="mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
                      <CheckCircle2 className="w-4 h-4" /> After BizOps
-                  </div>
+                  </Stack>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.solution}</Typography>
                </div>
             </Grid>
@@ -224,13 +224,13 @@ const CustomerPage: React.FC = () => {
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
-            <div className="flex justify-center gap-4">
+            <Stack direction="row" gap={4} justify="center">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 hover:bg-blue-50 font-bold shadow-xl">
                      Start Transformation
                   </Button>
                </Link>
-            </div>
+            </Stack>
          </Container>
       </section>
     </div>

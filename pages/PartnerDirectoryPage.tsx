@@ -278,12 +278,12 @@ const PartnerDirectoryPage: React.FC = () => {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-950 rounded-t-[2rem] z-50 p-6 max-h-[85vh] overflow-y-auto"
             >
-              <div className="flex justify-between items-center mb-6">
+              <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                 <Typography variant="h3" as="h3">Filters</Typography>
                 <button onClick={() => setShowMobileFilter(false)} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500">
                   <X className="w-5 h-5" />
                 </button>
-              </div>
+              </Stack>
               
               <Stack direction="col" gap={8} className="pb-20">
                  {/* Partner Type */}
@@ -369,14 +369,14 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
 
    return (
       <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-xl transition-all hover:border-primary-500/30 group flex flex-col h-full">
-         <div className="flex justify-between items-start mb-6">
-            <div className="flex items-center gap-4">
+         <Stack direction="row" gap={4} align="start" justify="between" className="mb-6">
+            <Stack direction="row" gap={4} align="center">
                <div className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 flex items-center justify-center shadow-sm">
                    <OptimizedImage src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
                </div>
                <div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-500">{partner.name}</Typography>
-                  <div className="flex items-center gap-2 mt-1">
+                  <Stack direction="row" gap={2} align="center" className="mt-1">
                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${getTypeColor(partner.type)}`}>
                         {partner.type}
                      </span>
@@ -385,23 +385,23 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                            <CheckCircle className="w-3 h-3" /> Certified
                         </span>
                      )}
-                  </div>
+                  </Stack>
                </div>
-            </div>
+            </Stack>
             
             {/* Tier Badge / Status */}
             <div className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-md flex items-center ${getTierColor(partner.tier)}`}>
                {partner.partnershipStatus || partner.tier} {getTierIcon(partner.tier)}
             </div>
-         </div>
+         </Stack>
 
          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
 
          <Stack direction="col" gap={3} className="mb-6">
-            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
+            <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-500">
                <MapPin className="w-3.5 h-3.5" /> {partner.location}
-            </div>
-            <div className="flex flex-wrap gap-2">
+            </Stack>
+            <Stack direction="row" gap={2}>
                {partner.industries.slice(0, 3).map(ind => (
                   <span key={ind} className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700">
                      {ind}
@@ -412,7 +412,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                      +{partner.industries.length - 3}
                   </span>
                )}
-            </div>
+            </Stack>
          </Stack>
 
          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-3">

@@ -52,7 +52,7 @@ const DownloadPage: React.FC = () => {
               </Stack>
 
               {/* QR Code & Enterprise */}
-              <div className="flex items-center gap-6">
+              <Stack direction="row" gap={6} align="center">
                  <div className="hidden sm:block p-2 bg-white rounded-xl shadow-md border border-slate-100">
                     {/* Mock QR Code */}
                     <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] p-1 text-center leading-tight">
@@ -61,13 +61,13 @@ const DownloadPage: React.FC = () => {
                  </div>
                  <div className="h-12 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
                  <div>
-                    <div className="flex items-center gap-1 mb-1">
+                    <Stack direction="row" gap={1} align="center" className="mb-1">
                        {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
                        <span className="text-sm font-bold text-slate-900 dark:text-white ml-2">4.8</span>
-                    </div>
+                    </Stack>
                     <Typography variant="body" className="text-slate-500 dark:text-slate-400">Based on 1,200+ reviews from verified users.</Typography>
                  </div>
-              </div>
+              </Stack>
             </div>
 
             {/* Right Visual (Phone) */}
@@ -89,18 +89,18 @@ const DownloadPage: React.FC = () => {
                         {/* Status Bar */}
                         <div className="h-8 bg-slate-900 flex justify-between items-center px-6">
                            <span className="text-[10px] text-white font-bold">9:41</span>
-                           <div className="flex gap-1">
+                           <Stack direction="row" gap={1}>
                               <div className="w-3 h-3 bg-white rounded-full opacity-20"></div>
                               <div className="w-3 h-3 bg-white rounded-full"></div>
-                           </div>
+                           </Stack>
                         </div>
                         
                         {/* App Header */}
                         <div className="bg-slate-900 p-6 pb-8 text-white rounded-b-[2rem] shadow-lg relative z-10">
-                           <div className="flex justify-between items-center mb-6">
+                           <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500"></div>
                               <Bell className="w-5 h-5 text-slate-300" />
-                           </div>
+                           </Stack>
                            <Typography variant="h2" as="h2">Good Morning,</Typography>
                            <Typography variant="body" className="text-slate-400">Site Manager - Jakarta</Typography>
                         </div>
@@ -109,15 +109,15 @@ const DownloadPage: React.FC = () => {
                         <Stack direction="col" gap={4} className="p-4 -mt-6 relative z-20">
                            {/* Stats Card */}
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
-                              <div className="flex justify-between items-center mb-4">
+                              <Stack direction="row" gap={4} align="center" justify="between" className="mb-4">
                                  <Typography variant="h3" as="h3">Today's Approval</Typography>
                                  <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">3 Pending</span>
-                              </div>
-                              <div className="flex gap-3 overflow-x-auto pb-2">
+                              </Stack>
+                              <Stack direction="row" gap={3} className="overflow-x-auto pb-2">
                                  {[1,2,3].map(i => (
                                     <div key={i} className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-white dark:border-slate-700"></div>
                                  ))}
-                              </div>
+                              </Stack>
                            </div>
 
                            {/* Menu Grid */}

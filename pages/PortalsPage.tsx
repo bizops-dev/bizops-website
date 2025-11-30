@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const PortalsPage: React.FC = () => {
   return (
-    <div className="flex flex-col">
+    <Stack direction="col" gap={4}>
       <SEO title="B2B Customer & Vendor Portals | BizOps" description="Berikan akses mandiri kepada pelanggan dan supplier Anda. Cek tagihan, status pengiriman, dan bidding tender secara online 24/7." />
 
       {/* Hero */}
@@ -84,7 +85,7 @@ const PortalsPage: React.FC = () => {
             </Grid>
          </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 

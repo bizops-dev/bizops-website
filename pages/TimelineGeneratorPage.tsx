@@ -101,11 +101,11 @@ const TimelineGeneratorPage: React.FC = () => {
                             onChange={(e) => setInput({...input, employeeCount: parseInt(e.target.value)})}
                             className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
                           />
-                          <div className="flex justify-between mt-2 text-xs font-medium text-slate-500">
+                          <Stack direction="row" gap={4} justify="between" className="mt-2 text-xs font-medium text-slate-500">
                              <span>Small (10)</span>
                              <span className="text-primary-600 font-bold text-sm">{input.employeeCount} Users</span>
                              <span>Enterprise (1000+)</span>
-                          </div>
+                          </Stack>
                       </div>
 
                       <div>
@@ -171,7 +171,7 @@ const TimelineGeneratorPage: React.FC = () => {
                           <label className="block text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                              <FileText className="w-4 h-4 text-purple-500" /> Kebutuhan Kustomisasi
                           </label>
-                          <div className="flex gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+                          <Stack direction="row" gap={2} className="bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
                              {['none', 'minor', 'major'].map((level) => (
                                 <button
                                    key={level}
@@ -185,7 +185,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                    {level}
                                 </button>
                              ))}
-                          </div>
+                          </Stack>
                       </div>
                   </Stack>
                </Grid>
@@ -235,19 +235,24 @@ const TimelineGeneratorPage: React.FC = () => {
 
                {/* INTERACTIVE GANTT CHART */}
                <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl p-8 overflow-hidden">
-                  <div className="flex items-center justify-between mb-8">
+                  <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-primary-500" /> Project Schedule</Typography>
-                     <div className="text-sm text-slate-500 flex gap-4">
-                        <div className="flex items-center gap-2"><div className="w-3 h-3 bg-blue-500 rounded-full"></div> Planning</div>
-                        <div className="flex items-center gap-2"><div className="w-3 h-3 bg-amber-500 rounded-full"></div> Data</div>
-                        <div className="flex items-center gap-2"><div className="w-3 h-3 bg-green-500 rounded-full"></div> Launch</div>
-                     </div>
-                  </div>
+                     <Stack direction="row" gap={4} className="text-sm text-slate-500">
+                        <Stack direction="row" gap={2} align="center">
+                           <Calendar className="w-4 h-4" />
+                           <span>{result.totalDays} Hari Kerja</span>
+                        </Stack>
+                        <Stack direction="row" gap={2} align="center">
+                           <Clock className="w-4 h-4" />
+                           <span>{result.totalWeeks} Minggu</span>
+                        </Stack>
+                     </Stack>
+                  </Stack>
 
                   <div className="relative overflow-x-auto pb-4">
                      <div className="min-w-[800px]">
                         {/* Weeks Header */}
-                        <div className="flex border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">
+                        <Stack direction="row" gap={4} className="border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">
                            <div className="w-1/4 font-bold text-xs text-slate-400 uppercase">Phase & Detail</div>
                            <div className="w-3/4 flex relative">
                               {Array.from({ length: result.totalWeeks + 2 }).map((_, i) => (
@@ -256,7 +261,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                  </div>
                               ))}
                            </div>
-                        </div>
+                        </Stack>
 
                         {/* Phases Bars */}
                         <Stack direction="col" gap={6}>
@@ -267,10 +272,10 @@ const TimelineGeneratorPage: React.FC = () => {
                                     onClick={() => togglePhase(phase.id)}
                                  >
                                     <div className="w-1/4 pr-4">
-                                       <div className="flex items-center justify-between">
+                                       <Stack direction="row" gap={4} align="center" justify="between">
                                           <div className="font-bold text-sm text-slate-800 dark:text-white">{phase.title}</div>
                                           {expandedPhase === phase.id ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
-                                       </div>
+                                       </Stack>
                                        <div className="text-[10px] text-slate-500">{phase.duration} Hari Kerja</div>
                                     </div>
                                     <div className="w-3/4 relative h-8 bg-slate-50 dark:bg-slate-800/50 rounded-lg">

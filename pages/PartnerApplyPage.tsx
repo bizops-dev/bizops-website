@@ -253,35 +253,35 @@ const PartnerApplyPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Next Steps</Typography>
                   
                   <Stack direction="col" gap={8} className="relative z-10">
-                     <div className="flex gap-4 group">
-                        <div className="flex flex-col items-center">
+                     <Stack direction="row" gap={4} className="group">
+                        <Stack direction="col" gap={4} align="center">
                            <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">1</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
-                        </div>
+                        </Stack>
                         <div>
                            <Typography variant="h4" as="h4">Review (1-2 Hari)</Typography>
                            <Typography variant="body" className="text-slate-400 leading-relaxed">Tim Channel Manager memverifikasi legalitas & profil bisnis Anda.</Typography>
                         </div>
-                     </div>
-                     <div className="flex gap-4 group">
-                        <div className="flex flex-col items-center">
+                     </Stack>
+                     <Stack direction="row" gap={4} className="group">
+                        <Stack direction="col" gap={4} align="center">
                            <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">2</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
-                        </div>
+                        </Stack>
                         <div>
                            <Typography variant="h4" as="h4">Discovery Call</Typography>
                            <Typography variant="body" className="text-slate-500 leading-relaxed">Diskusi skema kerjasama, demo panel admin, dan strategi go-to-market.</Typography>
                         </div>
-                     </div>
-                     <div className="flex gap-4 group">
-                        <div className="flex flex-col items-center">
+                     </Stack>
+                     <Stack direction="row" gap={4} className="group">
+                        <Stack direction="col" gap={4} align="center">
                            <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">3</div>
-                        </div>
+                        </Stack>
                         <div>
                            <Typography variant="h4" as="h4">Onboarding</Typography>
                            <Typography variant="body" className="text-slate-500 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</Typography>
                         </div>
-                     </div>
+                     </Stack>
                   </Stack>
                </div>
 
@@ -298,17 +298,17 @@ const PartnerApplyPage: React.FC = () => {
                <div className="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl text-white shadow-lg relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
                   <div className="relative z-10">
-                     <div className="flex gap-1 mb-3 text-amber-300">
+                     <Stack direction="row" gap={1} className="mb-3 text-amber-300">
                         {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
-                     </div>
+                     </Stack>
                      <Typography variant="caption">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</Typography>
-                     <div className="flex items-center gap-3">
+                     <Stack direction="row" gap={3} align="center">
                         <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs">RS</div>
                         <div>
                            <div className="font-bold text-xs">Rudi Setiawan</div>
                            <div className="text-[10px] opacity-75">CTO, Mitra Solusi Digital</div>
                         </div>
-                     </div>
+                     </Stack>
                   </div>
                </div>
 

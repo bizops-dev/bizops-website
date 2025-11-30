@@ -108,10 +108,10 @@ const ComparePage: React.FC = () => {
            <Grid cols={2} gap={8} className="mb-16">
               {[].map((scene: any, idx: number) => (
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
-                    <div className="flex items-center gap-3 mb-6">
+                    <Stack direction="row" gap={3} align="center" className="mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900">{scene.name}</Typography>
-                    </div>
+                    </Stack>
 
                     <Stack direction="col" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (

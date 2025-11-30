@@ -110,18 +110,18 @@ const EventDetailPage: React.FC = () => {
                 transition={{ delay: 0.3 }}
                 className="flex flex-wrap gap-6 mt-8 text-sm font-medium text-slate-300"
               >
-                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <Calendar className="w-4 h-4 text-primary-400" />
                   {event.formattedDate}
-                </div>
-                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                </Stack>
+                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <Clock className="w-4 h-4 text-primary-400" />
                   {event.time}
-                </div>
-                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                </Stack>
+                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <MapPin className="w-4 h-4 text-primary-400" />
                   {event.location}
-                </div>
+                </Stack>
               </motion.div>
             </div>
           </Grid>
@@ -282,13 +282,13 @@ const EventDetailPage: React.FC = () => {
 
               <div className="bg-slate-100 dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bagikan Event Ini</Typography>
-                 <div className="flex justify-center gap-2">
+                 <Stack direction="row" gap={2} justify="center">
                     {['LinkedIn', 'Twitter', 'WhatsApp', 'Email'].map((social) => (
                        <button key={social} className="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-500 hover:border-primary-500 transition-all">
                           {social}
                        </button>
                     ))}
-                 </div>
+                 </Stack>
               </div>
             </Stack>
           </div>

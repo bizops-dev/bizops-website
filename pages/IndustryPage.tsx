@@ -80,7 +80,7 @@ const IndustryPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors duration-500">
+    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title={data.metaTitle} 
         description={data.metaDesc} 
@@ -324,7 +324,7 @@ const IndustryPage: React.FC = () => {
                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-500/30 rounded-full blur-xl animate-pulse-slow"></div>
                <Quote className="w-12 h-12 text-primary-400 mb-6 opacity-50" />
                <Typography variant="body-xl" className="leading-relaxed">"{data.testimonial?.quote || "BizOps memberikan visibilitas yang kami cari selama ini. Keputusan bisnis jadi lebih cepat dan akurat."}"</Typography>
-               <div className="flex items-center gap-4">
+               <Stack direction="row" gap={4} align="center">
                   <div className="w-14 h-14 rounded-full bg-slate-700 overflow-hidden ring-2 ring-primary-500/50">
                      <OptimizedImage 
                         src={data.testimonial?.avatar || "https://ui-avatars.com/api/?name=User&background=random"} 
@@ -338,7 +338,7 @@ const IndustryPage: React.FC = () => {
                      <div className="font-bold text-white text-lg">{data.testimonial?.author || "Happy Client"}</div>
                      <div className="text-sm text-primary-300">{data.testimonial?.role || "Director"}</div>
                   </div>
-               </div>
+               </Stack>
             </motion.div>
          </Grid>
       </Section>
@@ -406,7 +406,7 @@ const IndustryPage: React.FC = () => {
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Full akses ke semua modul.</Typography>
         </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 

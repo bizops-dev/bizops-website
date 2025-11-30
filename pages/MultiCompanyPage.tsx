@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const MultiCompanyPage: React.FC = () => {
   return (
-    <div className="flex flex-col">
+    <Stack direction="col" gap={4}>
       <SEO title="Multi-Company ERP & Financial Consolidation | BizOps" description="Kelola banyak anak perusahaan (PT/CV) dalam satu sistem terpusat. Konsolidasi laporan keuangan otomatis dan transaksi antar-perusahaan yang mulus." />
 
       {/* Hero */}
@@ -59,7 +60,7 @@ const MultiCompanyPage: React.FC = () => {
             </Grid>
          </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 

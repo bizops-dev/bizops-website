@@ -13,7 +13,7 @@ import Stack from '../components/Stack';
 
 const CareersPage: React.FC = () => {
   return (
-    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors font-sans">
+    <Stack direction="col" gap={4} className="bg-slate-50 dark:bg-slate-950 transition-colors font-sans">
       <SEO title="Karir di BizOps (Divistant) | Build The Future of ERP" description="Bergabunglah dengan tim engineering BizOps yang berada di bawah naungan Divistant. Budaya Remote-First, Open Source, dan Inovasi tanpa batas." />
 
       {/* --- HERO SECTION --- */}
@@ -29,13 +29,13 @@ const CareersPage: React.FC = () => {
           <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight">Build Software that <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Runs The World.</span></Typography>
           <Typography variant="body-xl" className="text-slate-300">BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.</Typography>
-          <div className="flex justify-center">
+          <Stack direction="row" gap={4} justify="center">
              <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
                    View Open Roles <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
              </a>
-          </div>
+          </Stack>
         </Container>
       </div>
 
@@ -125,7 +125,7 @@ const CareersPage: React.FC = () => {
             <Typography variant="h2" as="h2">The Total Rewards</Typography>
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
-                  <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+                  <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                      <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
                         <Coffee className="w-6 h-6" />
                      </div>
@@ -133,8 +133,8 @@ const CareersPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                      </div>
-                  </div>
-                  <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+                  </Stack>
+                  <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                      <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                         <Monitor className="w-6 h-6" />
                      </div>
@@ -142,8 +142,8 @@ const CareersPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                      </div>
-                  </div>
-                  <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+                  </Stack>
+                  <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                      <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
                         <Heart className="w-6 h-6" />
                      </div>
@@ -151,8 +151,8 @@ const CareersPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Comprehensive Health</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                      </div>
-                  </div>
-                  <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+                  </Stack>
+                  <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                      <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
                         <Award className="w-6 h-6" />
                      </div>
@@ -160,12 +160,12 @@ const CareersPage: React.FC = () => {
                         <Typography variant="h3" as="h3">Performance Bonus</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                      </div>
-                  </div>
+                  </Stack>
                </CardSlider>
             </div>
 
             <Grid cols={2} gap={6} className="hidden">
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+               <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
                      <Coffee className="w-6 h-6" />
                   </div>
@@ -173,8 +173,8 @@ const CareersPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                   </div>
-               </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+               </Stack>
+               <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
                      <Monitor className="w-6 h-6" />
                   </div>
@@ -182,8 +182,8 @@ const CareersPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                   </div>
-               </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+               </Stack>
+               <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
                      <Heart className="w-6 h-6" />
                   </div>
@@ -191,8 +191,8 @@ const CareersPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Comprehensive Health</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                   </div>
-               </div>
-               <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
+               </Stack>
+               <Stack direction="row" gap={5} className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
                      <Award className="w-6 h-6" />
                   </div>
@@ -200,7 +200,7 @@ const CareersPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Performance Bonus</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                   </div>
-               </div>
+               </Stack>
             </Grid>
          </Container>
       </Section>
@@ -230,7 +230,7 @@ const CareersPage: React.FC = () => {
          </Container>
       </section>
 
-    </div>
+    </Stack>
   );
 };
 

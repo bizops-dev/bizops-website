@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const MaintenancePage: React.FC = () => {
   return (
@@ -62,7 +63,7 @@ const MaintenancePage: React.FC = () => {
           className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 max-w-md mx-auto"
         >
            <Typography variant="h3" as="h3">Need urgent help?</Typography>
-           <div className="flex justify-center gap-4">
+           <Stack direction="row" gap={4} justify="center">
               <a href="mailto:support@bizops.id" className="flex flex-col items-center gap-2 group">
                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-all">
                     <Mail className="w-5 h-5" />
@@ -81,7 +82,7 @@ const MaintenancePage: React.FC = () => {
                  </div>
                  <Typography variant="caption" className="text-slate-400">LinkedIn</Typography>
               </a>
-           </div>
+           </Stack>
         </motion.div>
       </Container>
     </div>

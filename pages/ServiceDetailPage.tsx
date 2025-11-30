@@ -167,12 +167,12 @@ const ServiceDetailPage: React.FC = () => {
               >
                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-blue-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
                  <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
-                    <div className="flex items-center gap-4 mb-8">
+                    <Stack direction="row" gap={4} align="center" className="mb-8">
                        <div className="w-14 h-14 rounded-2xl bg-primary-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30">
                           <Icon className="w-7 h-7" />
                        </div>
                        <Typography variant="h3" as="h3">Why BizOps?</Typography>
-                    </div>
+                    </Stack>
                     
                     <Stack direction="col" gap={6}>
                        {data.benefits?.map((benefit, idx) => (

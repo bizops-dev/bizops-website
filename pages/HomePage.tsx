@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
   const roles = Object.entries(homeRolesData).map(([key, val]) => ({ id: key, ...val }));
 
   return (
-    <div className="flex flex-col bg-white dark:bg-slate-950 transition-colors duration-500">
+    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title="BizOps ERP | Sistem Operasional Bisnis Terintegrasi" 
         description="BizOps ERP: Platform terintegrasi untuk HR, Finance, dan Supply Chain. Solusi ERP Indonesia yang aman, cepat, dan siap scale-up. Mulai gratis 14 hari."
@@ -234,7 +234,7 @@ const HomePage: React.FC = () => {
                            : 'hover:bg-slate-800/30 border border-transparent text-slate-400'
                         }`}
                      >
-                        <div className="flex items-center gap-4">
+                        <Stack direction="row" gap={4} align="center">
                            <div className={`p-2 rounded-lg transition-colors ${activeTab === sol.id ? sol.bg : 'bg-slate-800 group-hover:bg-slate-700'}`}>
                               <sol.icon className={`w-5 h-5 ${activeTab === sol.id ? sol.color : 'text-slate-500'}`} aria-hidden="true" />
                            </div>
@@ -246,7 +246,7 @@ const HomePage: React.FC = () => {
                                  {sol.category}
                               </div>
                            </div>
-                        </div>
+                        </Stack>
                         {activeTab === sol.id && <ChevronRight className={`w-5 h-5 ${sol.color}`} aria-hidden="true" />}
                      </button>
                   ))}
@@ -369,32 +369,32 @@ const HomePage: React.FC = () => {
 
                      {/* Detailed Cost Breakdown */}
                      <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>CRM License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 150rb<span className="font-normal text-[8px]">/user</span></span>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Accounting App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 250rb<span className="font-normal text-[8px]">/user</span></span>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>HRIS App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 20rb<span className="font-normal text-[8px]">/user</span></span>
-                        </div>
+                        </Stack>
                      </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
-                        <div className="flex justify-between items-end mb-1">
+                        <Stack direction="row" gap={4} align="end" justify="between" className="mb-1">
                            <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
-                        </div>
+                        </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-red-400 h-full w-[90%]"></div>
                         </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-400">
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
                             <span>Integration Time:</span>
                             <span className="text-red-500 font-bold">3-6 Bulan</span>
-                        </div>
+                        </Stack>
                      </div>
                   </div>
 
@@ -413,32 +413,32 @@ const HomePage: React.FC = () => {
 
                      {/* Detailed Cost Breakdown */}
                      <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Standard License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~Rp 210rb<span className="font-normal text-[8px]">/user</span></span>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Implementation</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">$$$ (Extra)</span>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
+                        </Stack>
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Maintenance</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~20% / year</span>
-                        </div>
+                        </Stack>
                      </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
-                        <div className="flex justify-between items-end mb-1">
+                        <Stack direction="row" gap={4} align="end" justify="between" className="mb-1">
                            <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
-                        </div>
+                        </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-amber-400 h-full w-[60%]"></div>
                         </div>
-                         <div className="flex justify-between items-center text-[10px] text-slate-400">
-                            <span>Implementation Time:</span>
-                            <span className="text-amber-500 font-bold">6-12 Bulan</span>
-                        </div>
+                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
+                           <span>Implementation Time:</span>
+                           <span className="text-amber-500 font-bold">6-12 Bulan</span>
+                        </Stack>
                      </div>
                   </div>
 
@@ -479,12 +479,12 @@ const HomePage: React.FC = () => {
                                        <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
                                        <Typography variant="body" className="text-slate-500">Paket Business (50 User)</Typography>
                                    </div>
-                                   <div className="flex flex-col justify-center items-end text-right">
+                                   <Stack direction="col" gap={4} align="end" justify="center" className="text-right">
                                        <div className="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
                                            HEMAT 85%
                                        </div>
                                        <Typography variant="body" className="text-slate-400">vs Fragmented Stack</Typography>
-                                   </div>
+                                   </Stack>
                                </Grid>
                            </div>
 
@@ -576,9 +576,9 @@ const HomePage: React.FC = () => {
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
-                        <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                        <Stack direction="row" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Explore <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
-                        </div>
+                        </Stack>
                      </Card>
                   </Link>
                ))}
@@ -640,33 +640,33 @@ const HomePage: React.FC = () => {
                <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
                   <div className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 relative overflow-hidden">
-                     <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-6">
+                     <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 border-b border-white/10 pb-6">
                         <div>
                            <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">System Status</div>
-                           <div className="flex items-center gap-2">
+                           <Stack direction="row" gap={2} align="center">
                               <span className="relative flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                               </span>
                               <span className="text-white font-bold">All Systems Operational</span>
-                           </div>
+                           </Stack>
                         </div>
                         <div className="text-right">
                            <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">Uptime (30 Hari)</div>
                            <div className="text-white font-bold">99.98%</div>
                         </div>
-                     </div>
+                     </Stack>
                      
                      {/* Mock Activity Graph */}
                      <Stack direction="col" gap={4}>
-                        <div className="flex justify-between text-xs text-slate-500">
+                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-500">
                            <span>00:00</span>
                            <span>06:00</span>
                            <span>12:00</span>
                            <span>18:00</span>
                            <span>24:00</span>
-                        </div>
-                        <div className="flex items-end gap-1 h-32">
+                        </Stack>
+                        <Stack direction="row" gap={1} align="end" className="h-32">
                            {Array.from({ length: 40 }).map((_, i) => {
                               const height = 30 + Math.random() * 50;
                               return (
@@ -681,11 +681,11 @@ const HomePage: React.FC = () => {
                                  ></motion.div>
                               )
                            })}
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-slate-400 mt-4 bg-slate-800/50 p-3 rounded-lg">
+                        </Stack>
+                        <Stack direction="row" gap={2} align="center" className="text-xs text-slate-400 mt-4 bg-slate-800/50 p-3 rounded-lg">
                            <CheckCircle2 className="w-4 h-4 text-green-500" aria-hidden="true" />
                            <span>Backup terakhir berhasil: Hari ini, 03:00 WIB</span>
-                        </div>
+                        </Stack>
                      </Stack>
                   </div>
                </div>
@@ -744,7 +744,7 @@ const HomePage: React.FC = () => {
          </Container>
       </section>
 
-    </div>
+    </Stack>
   );
 };
 

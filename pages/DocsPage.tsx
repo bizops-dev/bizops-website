@@ -25,7 +25,7 @@ const DocsPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors">
+    <Stack direction="col" gap={4} className="bg-slate-50 dark:bg-slate-950 transition-colors">
       <SEO title="Documentation & API Reference | BizOps Developer Hub" description="Panduan pengguna lengkap dan dokumentasi API teknis untuk integrasi BizOps ERP." />
 
       {/* --- HERO SECTION --- */}
@@ -157,7 +157,7 @@ const DocsPage: React.FC = () => {
                  
                  <Typography variant="h2" as="h2">Build with BizOps API</Typography>
                  
-                 <div className="flex items-center gap-4 mb-8">
+                 <Stack direction="row" gap={4} align="center" className="mb-8">
                     <div className="relative">
                        <select 
                           value={version}
@@ -172,7 +172,7 @@ const DocsPage: React.FC = () => {
                     </div>
                     <span className="inline-block w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
                     <Typography variant="caption" className="text-slate-400">All systems operational</Typography>
-                 </div>
+                 </Stack>
 
                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.</Typography>
                  
@@ -191,20 +191,20 @@ const DocsPage: React.FC = () => {
               {/* Code Preview */}
               <div className="lg:col-span-3">
                  <div className="bg-[#1e293b] rounded-xl border border-slate-700 shadow-2xl overflow-hidden">
-                    <div className="flex justify-between items-center px-4 py-3 bg-[#0f172a] border-b border-slate-700">
-                       <div className="flex gap-2">
+                    <Stack direction="row" gap={4} align="center" justify="between" className="px-4 py-3 bg-[#0f172a] border-b border-slate-700">
+                       <Stack direction="row" gap={2}>
                           <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
                           <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
                           <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
-                       </div>
-                       <div className="flex items-center gap-4">
+                       </Stack>
+                       <Stack direction="row" gap={4} align="center">
                           <span className="text-xs text-slate-500">bash</span>
                           <button onClick={handleCopy} className="text-xs flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors group">
                              {copied ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3 group-hover:text-blue-400" />}
                              {copied ? <span className="text-green-400">Copied!</span> : "Copy"}
                           </button>
-                       </div>
-                    </div>
+                       </Stack>
+                    </Stack>
                     <div className="p-6 text-sm leading-relaxed overflow-x-auto">
                        <div className="text-slate-300">
                           <span className="text-purple-400">curl</span> --request GET \<br/>
@@ -320,7 +320,7 @@ const DocsPage: React.FC = () => {
         </div>
 
       </Container>
-    </div>
+    </Stack>
   );
 };
 

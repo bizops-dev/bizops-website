@@ -7,6 +7,7 @@ import { searchMockData } from '../data/content';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const SearchPage: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -97,12 +98,12 @@ const SearchPage: React.FC = () => {
                     to={res.path} // Now using direct path from data
                     className="block bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all group cursor-pointer"
                  >
-                    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider font-bold">
+                    <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider font-bold">
                        {getIcon(res.category)}
                        <span>{res.category}</span>
                        <span className="text-slate-300 dark:text-slate-700">•</span>
                        <span>{res.tag}</span>
-                    </div>
+                    </Stack>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{res.title}</Typography>
                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{res.snippet}</Typography>
                  </Link>

@@ -137,19 +137,19 @@ const BlogDetailPage: React.FC = () => {
 
          <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
-               <div className="flex flex-wrap items-center gap-3 mb-8">
+               <Stack direction="row" gap={3} align="center" className="mb-8">
                   <Link to="/blog" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
                      <ArrowLeft className="w-4 h-4" /> Back to Blog
                   </Link>
                   <span className="text-blue-300 font-bold uppercase tracking-widest text-xs px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full backdrop-blur-md">
                      {post.category}
                   </span>
-               </div>
+               </Stack>
                
                <Typography variant="h1" as="h1" className="font-bold text-white leading-[1.1] font-sans tracking-tight">{post.title}</Typography>
 
-               <div className="flex flex-wrap items-center gap-8 text-white/90 text-sm font-sans font-medium">
-                  <div className="flex items-center gap-3">
+               <Stack direction="row" gap={8} align="center" className="text-white/90 text-sm font-sans font-medium">
+                  <Stack direction="row" gap={3} align="center">
                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-lg border border-white/20">
                         {post.author.charAt(0)}
                      </div>
@@ -157,18 +157,18 @@ const BlogDetailPage: React.FC = () => {
                         <span className="block text-white font-bold">{post.author.split(',')[0]}</span>
                         <span className="text-white/60 text-xs">Author</span>
                      </div>
-                  </div>
+                  </Stack>
                   <div className="w-px h-10 bg-white/20 hidden sm:block"></div>
-                  <div className="flex flex-col">
+                  <Stack direction="col" gap={4}>
                      <span className="flex items-center gap-2 text-white"><Calendar className="w-3 h-3" /> {post.date}</span>
                      <span className="text-white/60 text-xs">Published</span>
-                  </div>
+                  </Stack>
                   <div className="w-px h-10 bg-white/20 hidden sm:block"></div>
-                  <div className="flex flex-col">
+                  <Stack direction="col" gap={4}>
                      <span className="flex items-center gap-2 text-white"><Clock className="w-3 h-3" /> 12 Min Read</span>
                      <span className="text-white/60 text-xs">Time</span>
-                  </div>
-               </div>
+                  </Stack>
+               </Stack>
             </motion.div>
          </Container>
       </div>
@@ -206,22 +206,22 @@ const BlogDetailPage: React.FC = () => {
 
                   {/* Tags & Share */}
                   <Stack direction="col" gap={8} className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 justify-between items-center font-sans">
-                     <div className="flex flex-wrap gap-2">
+                     <Stack direction="row" gap={2}>
                         {['Strategy', 'Enterprise', 'Management'].map(tag => (
                            <span key={tag} className="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-default">
                               <Tag className="w-3 h-3" /> {tag}
                            </span>
                         ))}
-                     </div>
-                     <div className="flex items-center gap-4">
+                     </Stack>
+                     <Stack direction="row" gap={4} align="center">
                         <Typography variant="caption" className="text-slate-500">Share</Typography>
-                        <div className="flex gap-2">
+                        <Stack direction="row" gap={2}>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"><Facebook className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
-                        </div>
-                     </div>
+                        </Stack>
+                     </Stack>
                   </Stack>
                </div>
 
@@ -255,7 +255,7 @@ const BlogDetailPage: React.FC = () => {
                      {/* 2. Author Profile */}
                      <div>
                         <Typography variant="h3" as="h3">Author</Typography>
-                        <div className="flex items-center gap-4 mb-4">
+                        <Stack direction="row" gap={4} align="center" className="mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
                               <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
                                  <Typography variant="body-xl" className="text-blue-600">{post.author.charAt(0)}</Typography>
@@ -265,7 +265,7 @@ const BlogDetailPage: React.FC = () => {
                               <div className="font-bold text-slate-900 dark:text-white">{post.author.split(',')[0]}</div>
                               <div className="text-xs text-blue-600 font-bold uppercase tracking-wide">{post.author.split(',')[1] || 'Contributor'}</div>
                            </div>
-                        </div>
+                        </Stack>
                         <Typography variant="caption" className="text-slate-500">Experienced consultant specializing in ERP implementation and business process re-engineering.</Typography>
                         <button className="text-sm font-bold text-blue-600 hover:underline">View Profile</button>
                      </div>
@@ -291,7 +291,7 @@ const BlogDetailPage: React.FC = () => {
       {/* --- READ NEXT --- */}
       <div className="bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-200 dark:border-slate-800">
          <Container size="7xl">
-            <div className="flex items-center justify-between mb-12">
+            <Stack direction="row" gap={4} align="center" justify="between" className="mb-12">
                <div>
                   <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
                   <Typography variant="h2" as="h2">Related Articles</Typography>
@@ -299,7 +299,7 @@ const BlogDetailPage: React.FC = () => {
                <Link to="/blog" className="hidden md:flex items-center gap-2 text-slate-600 hover:text-blue-600 font-bold transition-colors">
                   View All <ArrowRight className="w-4 h-4" />
                </Link>
-            </div>
+            </Stack>
             
             <Grid cols={3} gap={8}>
                {relatedPosts.map((rp, idx) => (
@@ -320,9 +320,9 @@ const BlogDetailPage: React.FC = () => {
                         <div className="p-8 flex flex-col flex-1">
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{rp.summary}</Typography>
-                           <div className="flex items-center text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
+                           <Stack direction="row" gap={4} align="center" className="text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
                               Read Article <ArrowRight className="w-4 h-4 ml-2" />
-                           </div>
+                           </Stack>
                         </div>
                      </div>
                   </Link>
@@ -352,14 +352,14 @@ const BlogDetailPage: React.FC = () => {
                   <Typography variant="body-xl" className="text-slate-400">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>
                   
                   {/* Trust Signals */}
-                  <div className="flex items-center gap-4 text-sm font-medium text-slate-500">
-                     <div className="flex -space-x-3">
+                  <Stack direction="row" gap={4} align="center" className="text-sm font-medium text-slate-500">
+                     <Stack direction="row" gap={4} className="-space-x-3">
                         {[1,2,3,4].map(i => (
                            <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0B1120] bg-slate-700"></div>
                         ))}
-                     </div>
+                     </Stack>
                      <span>Trusted by 500+ Enterprises</span>
-                  </div>
+                  </Stack>
                </div>
 
                {/* Right: Actions */}

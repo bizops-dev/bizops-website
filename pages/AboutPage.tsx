@@ -295,7 +295,7 @@ const AboutPage: React.FC = () => {
                <div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
                   <Stack direction="col" gap={10} className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
-                     <div className="flex gap-6 items-start">
+                     <Stack direction="row" gap={6} align="start">
                         <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
                            <FileCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
                         </div>
@@ -311,9 +311,9 @@ const AboutPage: React.FC = () => {
                               </a>
                            </Stack>
                         </div>
-                     </div>
+                     </Stack>
                      
-                     <div className="flex gap-6 items-start">
+                     <Stack direction="row" gap={6} align="start">
                         <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
                            <ShieldCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
                         </div>
@@ -324,22 +324,22 @@ const AboutPage: React.FC = () => {
                               Lihat Dokumen Legal <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </a>
                         </div>
-                     </div>
+                     </Stack>
 
                      <Grid cols={1} gap={8} className="pt-8 border-t border-slate-200 dark:border-slate-700/50">
                         <div>
-                           <div className="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-bold">
+                           <Stack direction="row" gap={2} align="center" className="mb-3 text-slate-900 dark:text-white font-bold">
                               <MapPin className="w-5 h-5 text-indigo-500" /> HQ (Jakarta)
-                           </div>
+                           </Stack>
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br/>
                               Jl. Jenderal Sudirman No.86,<br/>
                               Karet Tengsin, Tanah Abang,<br/>
                               Jakarta 10250.</Typography>
                         </div>
                         <div>
-                           <div className="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-bold">
+                           <Stack direction="row" gap={2} align="center" className="mb-3 text-slate-900 dark:text-white font-bold">
                               <Code className="w-5 h-5 text-purple-500" /> R&D (Yogyakarta)
-                           </div>
+                           </Stack>
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru,<br/>
                               Sleman, DIY 55281.</Typography>
                         </div>
@@ -347,7 +347,7 @@ const AboutPage: React.FC = () => {
                   </Stack>
                </div>
 
-               <div className="flex flex-col justify-center h-full">
+               <Stack direction="col" gap={4} justify="center" className="h-full">
                   <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl h-full flex flex-col justify-center">
                      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px]"></div>
                      <div className="absolute bottom-0 left-0 w-60 h-60 bg-indigo-500/20 rounded-full blur-[80px]"></div>
@@ -360,21 +360,21 @@ const AboutPage: React.FC = () => {
                         <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
                            <br/><br/>
                            Ini memastikan fokus utama perusahaan adalah inovasi produk dan stabilitas sistem, bukan sekadar operasi marketing yang agresif. Kami berinvestasi pada kode, bukan hanya pada iklan.</Typography>
-                        <div className="flex items-center gap-6 pt-8 border-t border-white/10">
-                           <div className="flex -space-x-4">
+                        <Stack direction="row" gap={6} align="center" className="pt-8 border-t border-white/10">
+                           <Stack direction="row" gap={4} className="-space-x-4">
                               {[1,2,3,4].map(i => (
                                  <div key={i} className="w-12 h-12 rounded-full bg-slate-700 border-4 border-slate-800 flex items-center justify-center text-[10px] font-bold shadow-lg">
                                     <User className="w-5 h-5 text-slate-400" />
                                  </div>
                               ))}
-                           </div>
+                           </Stack>
                            <Link to="/careers" className="text-base font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2 group">
                               Join our growing team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </Link>
-                        </div>
+                        </Stack>
                      </div>
                   </div>
-               </div>
+               </Stack>
             </Grid>
          </Container>
       </section>

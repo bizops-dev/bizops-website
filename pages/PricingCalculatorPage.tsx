@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Lock, Award, Users } from 'lucide-react';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const PricingCalculatorPage: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
@@ -81,20 +82,20 @@ const PricingCalculatorPage: React.FC = () => {
                 </button>
 
                 {/* Trust Indicators */}
-                <div className="flex items-center gap-8 pt-4 border-t border-white/5">
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                <Stack direction="row" gap={8} align="center" className="pt-4 border-t border-white/5">
+                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
                     <ShieldCheck className="w-4 h-4 text-emerald-500" />
                     <span>ISO 27001 Certified</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                  </Stack>
+                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
                     <Lock className="w-4 h-4 text-blue-500" />
                     <span>Data Encrypted</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                  </Stack>
+                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
                     <Award className="w-4 h-4 text-amber-500" />
                     <span>Industry Leader</span>
-                  </div>
-                </div>
+                  </Stack>
+                </Stack>
               </motion.div>
             </Container>
           </motion.section>
@@ -117,12 +118,12 @@ const PricingCalculatorPage: React.FC = () => {
                  <span className="hidden sm:inline">Back to Intro</span>
                </button>
                
-               <div className="flex items-center gap-4">
+               <Stack direction="row" gap={4} align="center">
                  <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
                     Live Estimation
                  </div>
-               </div>
+               </Stack>
             </div>
 
             {/* Main Content Area */}

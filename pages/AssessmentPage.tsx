@@ -325,24 +325,24 @@ const AssessmentPage = () => {
           >
             {showMethodology ? (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl h-full overflow-y-auto max-h-[600px] custom-scrollbar">
-                <div className="flex justify-between items-center mb-6">
+                <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                   <Typography variant="h3" as="h3">Framework Reference</Typography>
                   <button onClick={() => setShowMethodology(false)} className="text-slate-500 hover:text-white">
                     Tutup
                   </button>
-                </div>
+                </Stack>
                 <MethodologyReference />
               </div>
             ) : (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
+                <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 pb-6 border-b border-white/5">
                   <Typography variant="h3" as="h3">Assessment Preview</Typography>
-                  <div className="flex gap-2">
+                  <Stack direction="row" gap={2}>
                     <div className="w-3 h-3 rounded-full bg-red-500/50" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
                     <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                  </div>
-                </div>
+                  </Stack>
+                </Stack>
                 <Stack direction="col" gap={4}>
                   {Object.entries(categoryLabels).map(([key, label], idx) => (
                     <div key={key} className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary-500/30 transition-all">
@@ -541,7 +541,7 @@ const AssessmentPage = () => {
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
             <Stack direction="col" gap={6} className="justify-between items-start md:items-center">
               <div>
-                <div className="flex items-center gap-3 mb-3">
+                <Stack direction="row" gap={3} align="center" className="mb-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
                     <CheckCircle className="w-3 h-3" /> Assessment Completed
                   </div>
@@ -554,7 +554,7 @@ const AssessmentPage = () => {
                     <RefreshCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" /> 
                     <span>Reset</span>
                   </button>
-                </div>
+                </Stack>
 
                 <Typography variant="h1" as="h1" className="font-bold text-white">Laporan Digital Maturity</Typography>
                 <Typography variant="caption" className="text-slate-400">ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}</Typography>
@@ -562,22 +562,22 @@ const AssessmentPage = () => {
               
               {/* User Details Grid */}
               <Grid cols={2} gap={6} className="text-sm text-slate-300 print:text-gray-800 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
-                <div className="flex items-center gap-2">
+                <Stack direction="row" gap={2} align="center">
                   <Building2 className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span className="font-semibold">{leadForm.company}</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </Stack>
+                <Stack direction="row" gap={2} align="center">
                   <Users className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{leadForm.name}</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </Stack>
+                <Stack direction="row" gap={2} align="center">
                   <Briefcase className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{leadForm.role || 'N/A'}</span>
-                </div>
-                 <div className="flex items-center gap-2">
+                </Stack>
+                 <Stack direction="row" gap={2} align="center">
                   <Calendar className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{assessmentDate}</span>
-                </div>
+                </Stack>
               </Grid>
             </Stack>
           </div>
@@ -645,13 +645,13 @@ const AssessmentPage = () => {
                     
                     return (
                       <div key={cat} className="print:break-inside-avoid">
-                        <div className="flex justify-between mb-2 items-center">
+                        <Stack direction="row" gap={4} align="center" justify="between" className="mb-2">
                           <span className="text-slate-300 font-medium flex items-center gap-3 print:text-black">
                             <span className="p-1.5 rounded-lg bg-slate-800 text-slate-400 print:hidden">{categoryIcons[catKey]}</span> 
                             {categoryLabels[catKey]}
                           </span>
                           <span className="text-white font-bold bg-slate-800 px-3 py-1 rounded-lg border border-white/5 print:text-black print:bg-white print:border-gray-300">{score.toFixed(1)}</span>
-                        </div>
+                        </Stack>
                         <div className="w-full bg-slate-800 rounded-full h-4 p-1 border border-white/5 print:bg-gray-200">
                           <motion.div 
                             initial={{ width: 0 }}
@@ -688,7 +688,7 @@ const AssessmentPage = () => {
 
                     return (
                       <div key={cat} className="group bg-slate-800/50 p-6 rounded-2xl border border-white/5 hover:bg-slate-800 hover:border-primary-500/30 transition-all print:bg-gray-50 print:border-gray-200 print:break-inside-avoid">
-                        <div className="flex justify-between items-start mb-4">
+                        <Stack direction="row" gap={4} align="start" justify="between" className="mb-4">
                           <Typography variant="h4" as="h4" className="text-white font-semibold tracking-wider text-slate-400 group-hover:text-primary-400">{categoryLabels[catKey]}</Typography>
                           <span className={`text-[10px] font-bold px-2 py-1 rounded border uppercase ${
                             score < 3 
@@ -697,16 +697,16 @@ const AssessmentPage = () => {
                           }`}>
                             {score < 3 ? 'Priority' : 'On Track'}
                           </span>
-                        </div>
+                        </Stack>
                         <Typography variant="body-lg">{rec.title}</Typography>
                         <Typography variant="caption" className="text-slate-400 leading-relaxed">{rec.advice}</Typography>
-                        <div className="flex flex-wrap gap-2">
+                        <Stack direction="row" gap={2}>
                           {rec.modules.map((m: string) => (
                             <span key={m} className="text-[10px] font-medium bg-slate-950 text-slate-300 px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-white/20 print:bg-white print:text-black print:border-gray-400">
                               {m}
                             </span>
                           ))}
-                        </div>
+                        </Stack>
                       </div>
                     );
                   })}
@@ -773,14 +773,14 @@ const AssessmentPage = () => {
               <div className="text-sm text-slate-400 hidden sm:block">
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>
-              <div className="flex gap-3 w-full sm:w-auto">
+              <Stack direction="row" gap={3} className="w-full sm:w-auto">
                 <Button onClick={handlePrint} variant="outline-white" className="flex-1 sm:flex-none items-center gap-2 h-10">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
                 <Button onClick={handleConsultationClick} variant="primary" className="flex-1 sm:flex-none items-center gap-2 h-10 bg-gradient-to-r from-primary-600 to-indigo-600 border-0 shadow-lg shadow-primary-900/20">
                    Consultation <ArrowRight className="w-4 h-4" />
                 </Button>
-              </div>
+              </Stack>
             </Container>
           </div>
           
@@ -816,10 +816,10 @@ const AssessmentPage = () => {
         
         {/* Mobile Nav Toggle / Progress */}
         <div className="lg:hidden mb-8 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-md p-4 -mx-4 border-b border-white/10">
-           <div className="flex justify-between items-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+           <Stack direction="row" gap={4} align="center" justify="between" className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
              <span>Progress</span>
              <span>{Math.round(progress)}%</span>
-           </div>
+           </Stack>
            <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
              <div className="bg-gradient-to-r from-primary-500 to-indigo-500 h-full rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
            </div>
@@ -839,12 +839,12 @@ const AssessmentPage = () => {
 
                   {Object.entries(questionsByCategory).map(([cat, questions]) => (
                     <div key={cat} className="relative z-10">
-                      <div className="flex items-center gap-3 mb-3 text-sm font-bold text-slate-300">
+                      <Stack direction="row" gap={3} align="center" className="mb-3 text-sm font-bold text-slate-300">
                         <div className={`p-1 rounded-full bg-slate-950 border border-white/10 z-10`}>
                            <div className="w-4 h-4 text-primary-400">{categoryIcons[cat as CategoryKey]}</div>
                         </div>
                         {categoryLabels[cat as CategoryKey]}
-                      </div>
+                      </Stack>
                       <Grid cols={5} gap={2} className="pl-8">
                         {/* @ts-ignore */}
                         {questions.map((q) => {
@@ -876,10 +876,10 @@ const AssessmentPage = () => {
                 </Stack>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="flex justify-between text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
+                  <Stack direction="row" gap={4} justify="between" className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
                     <span>Completion</span>
                     <span>{Math.round(progress)}%</span>
-                  </div>
+                  </Stack>
                   <div className="w-full bg-slate-950 rounded-full h-2 border border-white/5 p-0.5">
                     <div className="bg-gradient-to-r from-primary-500 to-green-400 h-full rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
                   </div>
@@ -902,7 +902,7 @@ const AssessmentPage = () => {
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-500/10 rounded-full blur-[80px] pointer-events-none" />
 
                 <div className="mb-8 relative z-10">
-                  <div className="flex items-center justify-between mb-6">
+                  <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                     <span className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-800 text-primary-400 uppercase tracking-wider border border-white/5`}>
                       {categoryIcons[currentCategory]}
                       {categoryLabels[currentCategory]}
@@ -910,7 +910,7 @@ const AssessmentPage = () => {
                     <span className="text-slate-500 text-sm">
                       {currentStep + 1} / {totalQuestions}
                     </span>
-                  </div>
+                  </Stack>
                   
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentQuestion?.question}</Typography>
                 </div>

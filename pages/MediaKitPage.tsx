@@ -82,7 +82,7 @@ const MediaKitPage: React.FC = () => {
         
         {/* --- LOGO PACK --- */}
         <section>
-           <div className="flex items-center gap-4 mb-10">
+           <Stack direction="row" gap={4} align="center" className="mb-10">
               <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400">
                  <ImageIcon className="w-6 h-6" />
               </div>
@@ -90,7 +90,7 @@ const MediaKitPage: React.FC = () => {
                  <Typography variant="h2" as="h2">Brand Assets (Logo)</Typography>
                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</Typography>
               </div>
-           </div>
+           </Stack>
 
            <Grid cols={2} gap={8}>
               {/* Primary Logo */}
@@ -99,24 +99,24 @@ const MediaKitPage: React.FC = () => {
                  className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all"
               >
                  <div className="flex-grow flex items-center justify-center w-full mb-10 min-h-[160px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-50">
-                    <div className="flex items-center gap-3 scale-150 transform">
+                    <Stack direction="row" gap={3} align="center" className="scale-150 transform">
                        <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30">
                           <div className="w-5 h-5 bg-white rounded-md transform rotate-45"></div>
                        </div>
                        <Typography variant="body" className="text-3xl text-slate-900 dark:text-white">BizOps</Typography>
-                    </div>
+                    </Stack>
                  </div>
                  <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-6">
-                    <div className="flex justify-between items-end mb-4">
+                    <Stack direction="row" gap={4} align="end" justify="between" className="mb-4">
                        <div>
                           <Typography variant="h3" as="h3">Primary Logo</Typography>
                           <Typography variant="caption" className="text-slate-500">Gunakan pada background terang/putih.</Typography>
                        </div>
-                       <div className="flex gap-2">
+                       <Stack direction="row" gap={2}>
                           <Button size="sm" variant="outline" className="text-xs h-8">SVG</Button>
                           <Button size="sm" variant="outline" className="text-xs h-8">PNG</Button>
-                       </div>
-                    </div>
+                       </Stack>
+                    </Stack>
                  </div>
               </motion.div>
 
@@ -127,24 +127,24 @@ const MediaKitPage: React.FC = () => {
               >
                  <div className="absolute inset-0 bg-slate-800/50 mix-blend-overlay"></div>
                  <div className="relative z-10 flex-grow flex items-center justify-center w-full mb-10 min-h-[160px]">
-                    <div className="flex items-center gap-3 scale-150 transform">
+                    <Stack direction="row" gap={3} align="center" className="scale-150 transform">
                        <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
                           <div className="w-5 h-5 bg-slate-900 rounded-md transform rotate-45"></div>
                        </div>
                        <Typography variant="body" className="text-3xl text-white">BizOps</Typography>
-                    </div>
+                    </Stack>
                  </div>
                  <div className="relative z-10 w-full border-t border-slate-700/50 pt-6">
-                    <div className="flex justify-between items-end mb-4">
+                    <Stack direction="row" gap={4} align="end" justify="between" className="mb-4">
                        <div>
                           <Typography variant="h3" as="h3">Monochrome (Inverse)</Typography>
                           <Typography variant="caption" className="text-slate-400">Gunakan pada background gelap/foto.</Typography>
                        </div>
-                       <div className="flex gap-2">
+                       <Stack direction="row" gap={2}>
                           <Button size="sm" variant="outline-white" className="text-xs h-8 border-slate-600 hover:bg-slate-800">SVG</Button>
                           <Button size="sm" variant="outline-white" className="text-xs h-8 border-slate-600 hover:bg-slate-800">PNG</Button>
-                       </div>
-                    </div>
+                       </Stack>
+                    </Stack>
                  </div>
               </motion.div>
            </Grid>
@@ -180,7 +180,7 @@ const MediaKitPage: React.FC = () => {
 
         {/* --- COLOR PALETTE --- */}
         <section>
-           <div className="flex items-center gap-4 mb-10">
+           <Stack direction="row" gap={4} align="center" className="mb-10">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400">
                  <Palette className="w-6 h-6" />
               </div>
@@ -188,7 +188,7 @@ const MediaKitPage: React.FC = () => {
                  <Typography variant="h2" as="h2">Color System</Typography>
                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</Typography>
               </div>
-           </div>
+           </Stack>
            
            <div className="md:hidden">
               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -196,7 +196,7 @@ const MediaKitPage: React.FC = () => {
                     <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
                        <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
                           <div className="text-xs text-slate-500">Brand Primary</div>
@@ -208,14 +208,14 @@ const MediaKitPage: React.FC = () => {
                           {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
                           {copied !== 'c1' && <Copy className="w-3 h-3" />}
                        </button>
-                    </div>
+                    </Stack>
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
                     <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
                           <div className="text-xs text-slate-500">Backgrounds / Text</div>
@@ -227,14 +227,14 @@ const MediaKitPage: React.FC = () => {
                           {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
                           {copied !== 'c2' && <Copy className="w-3 h-3" />}
                        </button>
-                    </div>
+                    </Stack>
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
                     <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
                           <div className="text-xs text-slate-500">Positive Actions</div>
@@ -246,14 +246,14 @@ const MediaKitPage: React.FC = () => {
                           {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
                           {copied !== 'c3' && <Copy className="w-3 h-3" />}
                        </button>
-                    </div>
+                    </Stack>
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
                     <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
                           <div className="text-xs text-slate-500">Alerts / Attention</div>
@@ -265,7 +265,7 @@ const MediaKitPage: React.FC = () => {
                           {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
                           {copied !== 'c4' && <Copy className="w-3 h-3" />}
                        </button>
-                    </div>
+                    </Stack>
                  </motion.div>
               </CardSlider>
            </div>
@@ -275,7 +275,7 @@ const MediaKitPage: React.FC = () => {
                  <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
                        <div className="text-xs text-slate-500">Brand Primary</div>
@@ -287,14 +287,14 @@ const MediaKitPage: React.FC = () => {
                        {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
                        {copied !== 'c1' && <Copy className="w-3 h-3" />}
                     </button>
-                 </div>
+                 </Stack>
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
                        <div className="text-xs text-slate-500">Backgrounds / Text</div>
@@ -306,14 +306,14 @@ const MediaKitPage: React.FC = () => {
                        {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
                        {copied !== 'c2' && <Copy className="w-3 h-3" />}
                     </button>
-                 </div>
+                 </Stack>
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
                        <div className="text-xs text-slate-500">Positive Actions</div>
@@ -325,14 +325,14 @@ const MediaKitPage: React.FC = () => {
                        {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
                        {copied !== 'c3' && <Copy className="w-3 h-3" />}
                     </button>
-                 </div>
+                 </Stack>
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
                        <div className="text-xs text-slate-500">Alerts / Attention</div>
@@ -344,7 +344,7 @@ const MediaKitPage: React.FC = () => {
                        {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
                        {copied !== 'c4' && <Copy className="w-3 h-3" />}
                     </button>
-                 </div>
+                 </Stack>
               </motion.div>
            </Grid>
         </section>
@@ -352,7 +352,7 @@ const MediaKitPage: React.FC = () => {
         {/* --- TYPOGRAPHY --- */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
            <div>
-              <div className="flex items-center gap-4 mb-8">
+              <Stack direction="row" gap={4} align="center" className="mb-8">
                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400">
                     <Type className="w-6 h-6" />
                  </div>
@@ -360,7 +360,7 @@ const MediaKitPage: React.FC = () => {
                  <Typography variant="h2" as="h2">Typography</Typography>
                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</Typography>
               </div>
-           </div>
+           </Stack>
            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
               <Stack direction="col" gap={6}>
                  <div>
@@ -399,7 +399,7 @@ const MediaKitPage: React.FC = () => {
 
         {/* --- BOILERPLATE --- */}
         <section>
-           <div className="flex items-center gap-4 mb-10">
+           <Stack direction="row" gap={4} align="center" className="mb-10">
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400">
                  <FileText className="w-6 h-6" />
               </div>
@@ -407,28 +407,28 @@ const MediaKitPage: React.FC = () => {
                  <Typography variant="h2" as="h2">Company Boilerplate</Typography>
                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</Typography>
               </div>
-           </div>
+           </Stack>
 
            <Grid cols={2} gap={8}>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
-                 <div className="flex items-center justify-between mb-6">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500">~50 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
-                 </div>
+                 </Stack>
                  <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700/50 italic">
                     "{boilerplate.short}"
                  </div>
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
-                 <div className="flex items-center justify-between mb-6">
+                 <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <Typography variant="caption" className="text-slate-500">~100 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
                     </button>
-                 </div>
+                 </Stack>
                  <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl text-slate-700 dark:text-slate-300 text-sm leading-relaxed border border-slate-100 dark:border-slate-700/50 italic">
                     "{boilerplate.standard}"
                  </div>
@@ -456,20 +456,20 @@ const MediaKitPage: React.FC = () => {
               </div>
               
               <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-sm w-full">
-                 <div className="flex items-center gap-4 mb-6">
+                 <Stack direction="row" gap={4} align="center" className="mb-6">
                     <OptimizedImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="PR Contact" className="w-16 h-16 rounded-full border-2 border-indigo-400 object-cover" />
                     <div>
                        <div className="font-bold text-white text-lg">Sarah Jenkins</div>
                        <div className="text-indigo-300 text-sm">Head of Communications</div>
                     </div>
-                 </div>
+                 </Stack>
                  <Stack direction="col" gap={3} className="text-sm text-slate-300">
-                    <div className="flex items-center gap-3">
+                    <Stack direction="row" gap={3} align="center">
                        <Mail className="w-4 h-4 text-slate-400" /> pr@divistant.com
-                    </div>
-                    <div className="flex items-center gap-3">
+                    </Stack>
+                    <Stack direction="row" gap={3} align="center">
                        <Globe className="w-4 h-4 text-slate-400" /> Jakarta, Indonesia
-                    </div>
+                    </Stack>
                  </Stack>
               </div>
            </Stack>

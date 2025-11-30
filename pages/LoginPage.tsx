@@ -69,7 +69,7 @@ const LoginPage: React.FC = () => {
           </div>
 
           {/* Login Type Switcher */}
-          <div className="flex p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">
+          <Stack direction="row" gap={4} className="p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">
              <button 
                 onClick={() => setLoginType('employee')}
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'employee' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
@@ -88,7 +88,7 @@ const LoginPage: React.FC = () => {
              >
                 <Handshake className="w-4 h-4" /> Partner
              </button>
-          </div>
+          </Stack>
 
           <motion.div
              key={loginType}
@@ -150,12 +150,12 @@ const LoginPage: React.FC = () => {
                    </button>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <Stack direction="row" gap={4} align="center" justify="between">
                    <Checkbox label="Remember me" name="remember" />
                   <Link to="/coming-soon" className="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline">
                      Forgot password?
                   </Link>
-                </div>
+                </Stack>
 
                 <Button fullWidth size="lg" type="submit" isLoading={isLoading} className="h-12 text-base shadow-lg shadow-primary-500/20">
                    {isLoading ? 'Signing in...' : `Sign in as ${loginType === 'admin' ? 'Administrator' : loginType === 'employee' ? 'Employee' : 'Partner'}`}
@@ -201,14 +201,14 @@ const LoginPage: React.FC = () => {
                >
                   {loginType === 'employee' && (
                      <div className="bg-slate-800/50 backdrop-blur-md p-6 rounded-2xl border border-slate-700 shadow-2xl text-left transform rotate-[-2deg]">
-                        <div className="flex items-center gap-4 mb-4 border-b border-slate-700 pb-4">
+                        <Stack direction="row" gap={4} align="center" className="mb-4 border-b border-slate-700 pb-4">
                            <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">JD</div>
                            <div>
                               <div className="text-white font-bold">John Doe</div>
                               <div className="text-slate-400 text-xs">Senior Engineer</div>
                            </div>
                            <div className="ml-auto text-green-400 text-xs">● Active</div>
-                        </div>
+                        </Stack>
                         <Stack direction="col" gap={3}>
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>
                            <div className="h-2 w-1/2 bg-slate-700 rounded-full"></div>
@@ -233,10 +233,10 @@ const LoginPage: React.FC = () => {
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
                         <Stack direction="col" gap={2}>
-                           <div className="flex justify-between text-sm text-indigo-200">
+                           <Stack direction="row" gap={4} justify="between" className="text-sm text-indigo-200">
                               <span>Active Clients</span>
                               <span className="font-bold text-white">14</span>
-                           </div>
+                           </Stack>
                            <div className="w-full bg-indigo-950 rounded-full h-2">
                               <div className="bg-indigo-400 h-2 rounded-full w-[70%]"></div>
                            </div>

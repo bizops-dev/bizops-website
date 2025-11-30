@@ -166,7 +166,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                 onClick={() => { setIsMobileNavOpen(!isMobileNavOpen); setIsMobileTOCOpen(false); }}
                 className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform"
              >
-                <div className="flex items-center gap-3">
+                <Stack direction="row" gap={3} align="center">
                    <div className="bg-primary-50 p-2 rounded-lg text-primary-600">
                       <Scale className="w-5 h-5" />
                    </div>
@@ -174,7 +174,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Current Document</div>
                       <div className="font-bold text-slate-900">{currentDocLabel}</div>
                    </div>
-                </div>
+                </Stack>
                 <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isMobileNavOpen ? 'rotate-90' : ''}`} />
              </button>
 
@@ -262,9 +262,9 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
 
                    {/* Emergency Contact */}
                    <div className="bg-red-50 rounded-xl p-5 border border-red-100">
-                      <div className="flex items-center gap-2 mb-2 text-red-700 font-bold text-xs uppercase tracking-wide">
+                      <Stack direction="row" gap={2} align="center" className="mb-2 text-red-700 font-bold text-xs uppercase tracking-wide">
                          <Phone className="w-4 h-4" /> Security Incident
-                      </div>
+                      </Stack>
                       <Typography variant="body" className="leading-relaxed">Untuk pelaporan insiden keamanan kritis atau pelanggaran data.</Typography>
                       <a href="mailto:security@bizops.id" className="text-xs font-bold text-red-700 hover:underline flex items-center gap-1">
                          security@bizops.id <ChevronRight className="w-3 h-3" />
@@ -280,11 +280,11 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                    
                    <div className="relative z-10">
-                      <div className="flex items-center gap-2 text-xs font-medium text-slate-500 mb-4 bg-slate-100 w-fit px-3 py-1 rounded-full">
+                      <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500 mb-4 bg-slate-100 w-fit px-3 py-1 rounded-full">
                          <span>Legal</span>
                          <span className="text-slate-300">•</span>
                          <span>Last Updated: {data.updated}</span>
-                      </div>
+                      </Stack>
                       <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight tracking-tight">{data.title}</Typography>
                       <Typography variant="body-lg" className="text-slate-600 leading-relaxed">{data.subtitle}</Typography>
                    </div>
@@ -340,13 +340,13 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                )}
                                <Typography variant="h3" as="h3" className="font-bold text-slate-900">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
                                {requestStatus === 'success' ? (
-                                  <div className="flex items-center gap-4 text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
+                                  <Stack direction="row" gap={4} align="center" className="text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
                                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="w-5 h-5 text-green-600" /></div>
                                      <div>
                                         <div className="font-bold text-lg">Permintaan Diterima</div>
                                         <div className="text-sm mt-1">Nomor Tiket <strong>DSAR-#8821</strong> telah dibuat. Cek email Anda untuk verifikasi.</div>
                                      </div>
-                                  </div>
+                                  </Stack>
                                ) : (
                                   <form onSubmit={handleDataRequest} className="space-y-4 max-w-md">
                                      <Typography variant="caption" className="text-slate-600">Untuk keamanan, kami perlu memverifikasi kepemilikan akun. Masukkan email terdaftar Anda.</Typography>
@@ -361,12 +361,12 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                           placeholder="nama@perusahaan.com"
                                         />
                                      </div>
-                                     <div className="flex gap-3 pt-2">
+                                     <Stack direction="row" gap={3} className="pt-2">
                                         <Button type="submit" className={requestType === 'delete' ? 'bg-red-600 hover:bg-red-700 shadow-red-500/20' : ''}>
                                            {requestType === 'delete' ? 'Kirim Permintaan Hapus' : 'Kirim Permintaan Export'}
                                         </Button>
                                         <Button type="button" variant="ghost" onClick={() => setRequestType(null)}>Batal</Button>
-                                     </div>
+                                     </Stack>
                                   </form>
                                )}
                             </div>
@@ -377,25 +377,25 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {/* SPECIAL INTERACTIVE UI: COOKIES */}
                    {activeDocId === 'cookies' && (
                       <div className="mb-12 bg-slate-50 rounded-2xl border border-slate-200 p-8">
-                         <div className="flex items-center justify-between mb-6">
+                         <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
                             <Typography variant="h3" as="h3">Pengaturan Preferensi</Typography>
                             {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-fade-in"><CheckCircle className="w-4 h-4" /> Tersimpan</span>}
-                         </div>
+                         </Stack>
                          <Stack direction="col" gap={6}>
-                            <div className="flex items-start gap-4 pb-6 border-b border-slate-200">
+                            <Stack direction="row" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Shield className="w-5 h-5 text-green-600" /></div>
                                <div className="flex-grow">
-                                  <div className="flex items-center gap-3 mb-1">
+                                  <Stack direction="row" gap={3} align="center" className="mb-1">
                                      <Typography variant="h4" as="h4">Strictly Necessary</Typography>
                                      <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded border border-green-200">REQUIRED</span>
-                                  </div>
+                                  </Stack>
                                   <Typography variant="caption" className="text-slate-600">Wajib agar website berfungsi (login session, keamanan, load balancing).</Typography>
                                </div>
                                <div className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 cursor-not-allowed opacity-50">
                                   <span className="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition" />
                                </div>
-                            </div>
-                            <div className="flex items-start gap-4 pb-6 border-b border-slate-200">
+                            </Stack>
+                            <Stack direction="row" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Cookie className="w-5 h-5 text-blue-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Analytics & Performance</Typography>
@@ -407,8 +407,8 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                >
                                   <span className={`${preferences.analytics ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition shadow-sm`} />
                                </button>
-                            </div>
-                            <div className="flex items-start gap-4">
+                            </Stack>
+                            <Stack direction="row" gap={4} align="start">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Share2 className="w-5 h-5 text-amber-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Marketing & Targeting</Typography>
@@ -420,7 +420,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                >
                                   <span className={`${preferences.marketing ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition shadow-sm`} />
                                </button>
-                            </div>
+                            </Stack>
                             <div className="pt-6 mt-4 flex justify-end">
                                <Button onClick={handleSaveCookies} disabled={saved} size="lg" className="w-full sm:w-auto">
                                   {saved ? 'Preferensi Disimpan' : 'Simpan Perubahan'}
@@ -461,10 +461,10 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
 
                    <Stack direction="col" gap={4} className="mt-16 pt-8 border-t border-slate-100 justify-between items-center text-sm text-slate-500">
                       <Typography variant="body">© 2024 BizOps Inc. All rights reserved.</Typography>
-                      <div className="flex gap-6">
+                      <Stack direction="row" gap={6}>
                          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); }} className="hover:text-primary-600 transition-colors">Back to top</a>
                          <Link to="/contact" className="hover:text-primary-600 transition-colors">Contact Legal Team</Link>
-                      </div>
+                      </Stack>
                    </Stack>
                 </div>
              </div>

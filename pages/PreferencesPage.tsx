@@ -37,7 +37,7 @@ const PreferencesPage: React.FC = () => {
                  
                  {/* Explicit accessible checkbox structure */}
                  <div className="relative flex items-start">
-                    <div className="flex h-6 items-center">
+                    <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_updates" 
                           aria-describedby="pref_updates_desc"
@@ -46,7 +46,7 @@ const PreferencesPage: React.FC = () => {
                           defaultChecked 
                           className="h-5 w-5 rounded border-slate-300 text-primary-600 focus:ring-primary-600" 
                         />
-                    </div>
+                    </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_updates" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Shield className="w-4 h-4 text-green-600" aria-hidden="true" /> Product Updates & Alerts
@@ -56,7 +56,7 @@ const PreferencesPage: React.FC = () => {
                  </div>
                  
                  <div className="relative flex items-start">
-                    <div className="flex h-6 items-center">
+                    <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_digest" 
                           aria-describedby="pref_digest_desc"
@@ -65,7 +65,7 @@ const PreferencesPage: React.FC = () => {
                           defaultChecked 
                           className="h-5 w-5 rounded border-slate-300 text-primary-600 focus:ring-primary-600" 
                         />
-                    </div>
+                    </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_digest" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Mail className="w-4 h-4 text-blue-600" aria-hidden="true" /> BizOps Digest
@@ -75,7 +75,7 @@ const PreferencesPage: React.FC = () => {
                  </div>
 
                  <div className="relative flex items-start">
-                    <div className="flex h-6 items-center">
+                    <Stack direction="row" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_promo" 
                           aria-describedby="pref_promo_desc"
@@ -83,7 +83,7 @@ const PreferencesPage: React.FC = () => {
                           type="checkbox" 
                           className="h-5 w-5 rounded border-slate-300 text-primary-600 focus:ring-primary-600" 
                         />
-                    </div>
+                    </Stack>
                     <div className="ml-3 text-sm leading-6">
                        <label htmlFor="pref_promo" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Bell className="w-4 h-4 text-amber-600" aria-hidden="true" /> Marketing Promo
@@ -98,29 +98,29 @@ const PreferencesPage: React.FC = () => {
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <Typography variant="h3" as="h3">Frekuensi Maksimal</Typography>
               <div className="flex gap-6" role="radiogroup" aria-label="Email frequency">
-                 <div className="flex items-center">
+                 <Stack direction="row" gap={4} align="center">
                     <input id="freq_daily" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_daily" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Harian</label>
-                 </div>
-                 <div className="flex items-center">
+                 </Stack>
+                 <Stack direction="row" gap={4} align="center">
                     <input id="freq_weekly" name="freq" type="radio" defaultChecked className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_weekly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Mingguan</label>
-                 </div>
-                 <div className="flex items-center">
+                 </Stack>
+                 <Stack direction="row" gap={4} align="center">
                     <input id="freq_monthly" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_monthly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Bulanan</label>
-                 </div>
+                 </Stack>
               </div>
            </div>
 
-           <div className="flex justify-between items-center pt-4">
+           <Stack direction="row" gap={4} align="center" justify="between" className="pt-4">
               <button type="button" className="text-sm text-red-500 hover:text-red-700 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1">
                  <XCircle className="w-4 h-4" /> Unsubscribe All
               </button>
               <Button type="submit" disabled={saved}>
                  {saved ? 'Tersimpan!' : 'Simpan Preferensi'}
               </Button>
-           </div>
+           </Stack>
         </form>
       </Container>
     </div>

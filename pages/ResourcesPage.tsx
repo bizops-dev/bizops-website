@@ -115,7 +115,7 @@ const ResourcesPage = () => {
 
       {/* Featured Insight (Blog) */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-10">
+        <Stack direction="row" gap={4} align="end" justify="between" className="mb-10">
           <div>
             <Typography variant="h2" as="h2">Latest Insights</Typography>
             <Typography variant="body" className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</Typography>
@@ -123,7 +123,7 @@ const ResourcesPage = () => {
           <Link to="/blog" className="hidden sm:flex items-center text-primary-600 font-bold hover:underline">
             View All Articles <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
-        </div>
+        </Stack>
 
         <Grid cols={3} gap={8}>
           {/* Main Featured Post */}
@@ -140,11 +140,11 @@ const ResourcesPage = () => {
               </span>
               <Typography variant="h3" as="h3" className="text-xl md:text-3xl font-bold text-white group-hover:text-primary-200"><Link to={`/blog/${latestBlogs[0].slug}`}>{latestBlogs[0].title}</Link></Typography>
               <Typography variant="caption" className="text-slate-300">{latestBlogs[0].summary}</Typography>
-              <div className="flex items-center gap-4 text-slate-300 text-xs md:text-sm">
+              <Stack direction="row" gap={4} align="center" className="text-slate-300 text-xs md:text-sm">
                 <span>{latestBlogs[0].date}</span>
                 <span>•</span>
                 <span>{latestBlogs[0].author}</span>
-              </div>
+              </Stack>
             </div>
           </div>
 
@@ -187,23 +187,23 @@ const ResourcesPage = () => {
             </div>
             <div className="relative mt-8 md:mt-0">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 md:transform md:rotate-2 md:hover:rotate-0 transition-transform duration-500">
-                <div className="flex items-center justify-between mb-8">
+                <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
                   <div className="text-sm font-bold text-slate-400">YOUR SCORE</div>
                   <div className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">EXCELLENT</div>
-                </div>
+                </Stack>
                 <div className="text-5xl font-bold mb-2">85<span className="text-2xl text-slate-400">/100</span></div>
                 <div className="w-full bg-slate-700 h-2 rounded-full mb-6">
                   <div className="bg-green-500 w-[85%] h-2 rounded-full"></div>
                 </div>
                 <Stack direction="col" gap={3}>
-                  <div className="flex justify-between text-sm">
+                  <Stack direction="row" gap={4} justify="between" className="text-sm">
                     <span>Process Automation</span>
                     <span className="font-bold">90%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
+                  </Stack>
+                  <Stack direction="row" gap={4} justify="between" className="text-sm">
                     <span>Data Integration</span>
                     <span className="font-bold">75%</span>
-                  </div>
+                  </Stack>
                 </Stack>
               </div>
             </div>
@@ -217,10 +217,10 @@ const ResourcesPage = () => {
           
           {/* Success Stories Preview */}
           <div>
-            <div className="flex justify-between items-center mb-8">
+            <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
               <Typography variant="h2" as="h2">Customer Success</Typography>
               <Link to="/use-cases" className="text-primary-600 text-sm font-bold hover:underline">View All</Link>
-            </div>
+            </Stack>
             <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800">
               <div className="mb-6">
                 <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center text-primary-600 mb-4">
@@ -244,10 +244,10 @@ const ResourcesPage = () => {
 
           {/* Upcoming Events */}
           <div>
-            <div className="flex justify-between items-center mb-8">
+            <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
               <Typography variant="h2" as="h2">Upcoming Events</Typography>
               <Link to="/events" className="text-primary-600 text-sm font-bold hover:underline">View Calendar</Link>
-            </div>
+            </Stack>
             <Stack direction="col" gap={4}>
               {upcomingEvents.map((event, idx) => (
                 <div key={idx} className="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow">

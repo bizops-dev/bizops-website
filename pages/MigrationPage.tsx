@@ -417,14 +417,14 @@ const MigrationPage: React.FC = () => {
                                    </div>
                                    <Typography variant="h3" as="h3">Struktur File Valid!</Typography>
                                    <Typography variant="caption" className="text-slate-500">File Anda siap untuk diimpor. Tidak ditemukan error kritis.</Typography>
-                                   <div className="flex gap-3 justify-center">
+                                   <Stack direction="row" gap={3} justify="center">
                                       <Button onClick={() => navigate('/contact')} className="bg-emerald-600 hover:bg-emerald-500 border-none shadow-lg shadow-emerald-500/20">
                                          Konsultasi Migrasi
                                       </Button>
                                       <Button variant="outline" onClick={() => {setCheckStatus('idle'); setFileName(null)}} className="bg-white dark:bg-transparent">
                                          <RefreshCw className="w-4 h-4" />
                                       </Button>
-                                   </div>
+                                   </Stack>
                                 </div>
                              )}
                           </div>
@@ -548,7 +548,7 @@ const MigrationPage: React.FC = () => {
                     >
                        {/* Header */}
                        <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
-                          <div className="flex items-center gap-4 mb-4">
+                          <Stack direction="row" gap={4} align="center" className="mb-4">
                              <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm">
                                 <item.icon className="w-6 h-6" />
                              </div>
@@ -556,12 +556,12 @@ const MigrationPage: React.FC = () => {
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{item.title}</Typography>
                                 <Typography variant="body" className="text-slate-500 tracking-wide">{item.desc}</Typography>
                              </div>
-                          </div>
+                          </Stack>
                        </div>
                        
                        {/* Content */}
                        <Stack direction="col" gap={6} className="p-8 flex-grow">
-                          <div className="flex gap-4">
+                          <Stack direction="row" gap={4}>
                              <div className="flex-shrink-0 mt-1">
                                 <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
                                    <Info className="w-3.5 h-3.5" />
@@ -571,9 +571,9 @@ const MigrationPage: React.FC = () => {
                                 <Typography variant="h4" as="h4">Tantangan Utama</Typography>
                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
                              </div>
-                          </div>
+                          </Stack>
 
-                          <div className="flex gap-4">
+                          <Stack direction="row" gap={4}>
                              <div className="flex-shrink-0 mt-1">
                                 <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center">
                                    <Check className="w-3.5 h-3.5" strokeWidth={3} />
@@ -583,7 +583,7 @@ const MigrationPage: React.FC = () => {
                                 <Typography variant="h4" as="h4">Solusi BizOps</Typography>
                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.solution}</Typography>
                              </div>
-                          </div>
+                          </Stack>
                        </Stack>
 
                        <div className="px-8 pb-8 pt-0 mt-auto">
@@ -609,7 +609,7 @@ const MigrationPage: React.FC = () => {
                  >
                     {/* Header */}
                     <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
-                       <div className="flex items-center gap-4 mb-4">
+                       <Stack direction="row" gap={4} align="center" className="mb-4">
                           <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm">
                              <item.icon className="w-6 h-6" />
                           </div>
@@ -617,12 +617,12 @@ const MigrationPage: React.FC = () => {
                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{item.title}</Typography>
                              <Typography variant="body" className="text-slate-500 tracking-wide">{item.desc}</Typography>
                           </div>
-                       </div>
+                       </Stack>
                     </div>
                     
                     {/* Content */}
                     <Stack direction="col" gap={6} className="p-8 flex-grow">
-                       <div className="flex gap-4">
+                       <Stack direction="row" gap={4}>
                           <div className="flex-shrink-0 mt-1">
                              <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
                                 <Info className="w-3.5 h-3.5" />
@@ -632,9 +632,9 @@ const MigrationPage: React.FC = () => {
                              <Typography variant="h4" as="h4">Tantangan Utama</Typography>
                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
                           </div>
-                       </div>
+                       </Stack>
 
-                       <div className="flex gap-4">
+                       <Stack direction="row" gap={4}>
                           <div className="flex-shrink-0 mt-1">
                              <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center">
                                 <Check className="w-3.5 h-3.5" strokeWidth={3} />
@@ -644,7 +644,7 @@ const MigrationPage: React.FC = () => {
                              <Typography variant="h4" as="h4">Solusi BizOps</Typography>
                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.solution}</Typography>
                           </div>
-                       </div>
+                       </Stack>
                     </Stack>
 
                     <div className="px-8 pb-8 pt-0 mt-auto">

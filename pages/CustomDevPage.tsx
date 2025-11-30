@@ -144,12 +144,12 @@ const CustomDevPage: React.FC = () => {
               <motion.div variants={FADE_UP_VARIANTS} initial="hidden" animate="visible" transition={{ delay: 0.3 }} className="relative hidden lg:block">
                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl transform rotate-3"></div>
                  <SpotlightCard className="rounded-[2.5rem] p-10 shadow-2xl relative z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-white/20">
-                    <div className="flex items-center gap-4 mb-8">
+                    <Stack direction="row" gap={4} align="center" className="mb-8">
                        <div className="w-14 h-14 rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-lg">
                           <Code className="w-7 h-7" />
                        </div>
                        <Typography variant="h3" as="h3">Why Go Custom?</Typography>
-                    </div>
+                    </Stack>
                     
                     <Stack direction="col" gap={6}>
                        {pageData.benefits.map((benefit, idx) => (

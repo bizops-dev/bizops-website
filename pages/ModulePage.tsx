@@ -157,7 +157,7 @@ const ModulePage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white dark:bg-slate-950">
+    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950">
       <SEO 
         title={data.metaTitle || data.title} 
         description={data.metaDesc || data.description} 
@@ -467,10 +467,10 @@ const ModulePage: React.FC = () => {
                            <ul className="space-y-4">
                               {cat.apps.map((app, i) => (
                                  <li key={i} className="flex flex-col gap-1 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                                    <div className="flex items-center justify-between">
+                                    <Stack direction="row" gap={4} align="center" justify="between">
                                        <span className="font-bold text-slate-700 dark:text-slate-300">{app.name}</span>
                                        <Badge size="sm" variant="outline" className="text-[10px] py-0 h-5">Managed</Badge>
-                                    </div>
+                                    </Stack>
                                     <Typography variant="body" className="text-slate-500 dark:text-slate-400">{app.desc}</Typography>
                                  </li>
                               ))}
@@ -516,7 +516,7 @@ const ModulePage: React.FC = () => {
          <Container size="7xl" className="text-center">
             <Quote className="w-12 h-12 text-primary-200 dark:text-primary-900 mx-auto mb-8" />
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{testimonial.quote}"</Typography>
-            <div className="flex items-center justify-center gap-4">
+            <Stack direction="row" gap={4} align="center" justify="center">
                <OptimizedImage 
                   src={testimonial.avatar} 
                   alt={testimonial.author} 
@@ -528,7 +528,7 @@ const ModulePage: React.FC = () => {
                   <div className="font-bold text-slate-900 dark:text-white">{testimonial.author}</div>
                   <div className="text-sm text-slate-500 dark:text-slate-400">{testimonial.role}</div>
                </div>
-            </div>
+            </Stack>
          </Container>
       </section>
 
@@ -578,9 +578,9 @@ const ModulePage: React.FC = () => {
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{mod.description}</Typography>
-                        <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                        <Stack direction="row" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Lihat Detail <ArrowRight className="w-4 h-4 ml-1" />
-                        </div>
+                        </Stack>
                      </Card>
                   </Link>
                   );
@@ -607,7 +607,7 @@ const ModulePage: React.FC = () => {
          </Container>
       </section>
 
-    </div>
+    </Stack>
   );
 };
 

@@ -40,12 +40,12 @@ const GlossaryPage: React.FC = () => {
         <Grid cols={2} gap={8} className="mb-16">
            {glossaryData.map((item, idx) => (
               <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-primary-100 transition-all group">
-                 <div className="flex items-center gap-4 mb-4">
+                 <Stack direction="row" gap={4} align="center" className="mb-4">
                     <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
                        {item.char}
                     </div>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.term}</Typography>
-                 </div>
+                 </Stack>
                  <Stack direction="col" gap={4}>
                     <div>
                        <Typography variant="caption" className="text-slate-400">Definisi</Typography>

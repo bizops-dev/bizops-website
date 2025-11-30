@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const AnalyticsPage: React.FC = () => {
   return (
-    <div className="flex flex-col">
+    <Stack direction="col" gap={4}>
       <SEO title="Real-time Dashboard & Custom Report Builder | BizOps" description="Buat laporan bisnis kustom tanpa coding. Analisis data penjualan, stok, dan keuangan dengan fitur Drag-and-Drop Report Builder yang powerful." />
 
       {/* Hero */}
@@ -59,7 +60,7 @@ const AnalyticsPage: React.FC = () => {
             </Grid>
          </Container>
       </section>
-    </div>
+    </Stack>
   );
 };
 
