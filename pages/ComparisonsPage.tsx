@@ -68,9 +68,7 @@ const ComparisonsPage: React.FC = () => {
             >
                 <LayoutGrid className="w-4 h-4" /> System Architecture Comparison
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight">
-              Upgrade Your <br/> Business Engine.
-            </h1>
+            <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">Upgrade Your <br/> Business Engine.</Typography>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
               Bandingkan arsitektur sistem Anda saat ini dengan <span className="text-slate-900 dark:text-white font-semibold">BizOps Evolution</span>. Lihat perbedaannya secara radikal.
             </p>
@@ -166,9 +164,7 @@ const ComparisonsPage: React.FC = () => {
                                                 {selectedData.bottleneckLabel}
                                             </span>
                                         </div>
-                                        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-                                            "{selectedData.verdict}"
-                                        </h2>
+                                        <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">"{selectedData.verdict}"</Typography>
                                         <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-4 border-slate-200 dark:border-slate-800 pl-6">
                                             {selectedData.description}
                                         </p>
@@ -217,9 +213,7 @@ const ComparisonsPage: React.FC = () => {
                         {/* 3. COMPARISON LIST (WIDE STACKED) */}
                         <div className="space-y-6">
                             <div className="flex items-center justify-between px-2">
-                                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                  <LayoutGrid className="w-5 h-5 text-primary-500" /> Detail Perbandingan
-                                </h3>
+                                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><LayoutGrid className="w-5 h-5 text-primary-500" /> Detail Perbandingan</Typography>
                             </div>
 
                             {selectedData.points.map((point, idx) => (
@@ -232,9 +226,7 @@ const ComparisonsPage: React.FC = () => {
                                                 <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold text-sm">
                                                    {idx + 1}
                                                 </div>
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-lg">
-                                                    {point.feature}
-                                                </h4>
+                                                <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{point.feature}</Typography>
                                             </div>
                                             
                                             <div className={`p-4 rounded-xl border ${isBizOps ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-100 dark:border-blue-900/20' : 'bg-red-50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20'}`}>
@@ -291,9 +283,7 @@ const ComparisonsPage: React.FC = () => {
                              
                              <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                                 <div>
-                                   <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                                     <AlertTriangle className="w-6 h-6 text-amber-500" /> Why Upgrade Now?
-                                   </h3>
+                                   <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500" /> Why Upgrade Now?</Typography>
                                    <p className="text-slate-400 mb-8 leading-relaxed">
                                      Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.
                                    </p>
@@ -326,7 +316,7 @@ const ComparisonsPage: React.FC = () => {
                         {/* MOBILE CTA */}
                         <div className="lg:hidden mt-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white text-center shadow-xl">
                             <Typography variant="h3" as="h3">Hitung ROI Upgrade</Typography>
-                            <p className="text-sm text-blue-100 mb-6">Lihat berapa banyak biaya yang bisa dihemat.</p>
+                            <Typography variant="caption">Lihat berapa banyak biaya yang bisa dihemat.</Typography>
                             <Button fullWidth onClick={() => navigate('/tools/roi-calculator')} className="bg-white text-blue-700 hover:bg-blue-50 border-none font-bold">
                                 Buka Kalkulator ROI
                             </Button>

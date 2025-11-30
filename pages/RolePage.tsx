@@ -59,11 +59,9 @@ const RolePage: React.FC = () => {
               <span className="text-sm font-medium text-slate-200 tracking-wide uppercase">Role-Based Experience</span>
           </motion.div>
           
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight font-sans drop-shadow-2xl">
-             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
+          <Typography variant="h1" as="h1" className="font-bold leading-[1.1] tracking-tight font-sans"><span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
                {data.heroHeadline}
-             </span>
-          </h1>
+             </span></Typography>
           
           <motion.p 
              variants={FADE_UP_VARIANTS}
@@ -103,9 +101,7 @@ const RolePage: React.FC = () => {
                      <BarChart2 className="w-4 h-4" />
                      Live Dashboard Preview
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 max-w-4xl mx-auto leading-tight">
-                    {data.dashboardInsight}
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">{data.dashboardInsight}</Typography>
                   
                   {/* Dashboard Metrics Grid - Interactive */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
@@ -272,9 +268,7 @@ const RolePage: React.FC = () => {
                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
                   From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span>
                </h2>
-               <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                  Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.
-               </p>
+               <Typography variant="body-lg" className="text-slate-400">Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.</Typography>
             </div>
             
             <CardSlider desktopClassName="md:block md:space-y-6" mobileItemWidth="w-[85vw] sm:w-[400px]">
@@ -302,7 +296,7 @@ const RolePage: React.FC = () => {
                               </div>
                               <span className="text-red-500/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
                            </div>
-                           <h3 className="text-xl md:text-2xl font-extrabold text-red-50/90 mb-4 leading-snug group-hover:text-white transition-colors">"{item.pain}"</h3>
+                           <Typography variant="h3" as="h3" className="font-extrabold leading-snug group-hover:text-white">"{item.pain}"</Typography>
                            <p className="text-red-200/50 leading-relaxed text-sm font-medium">
                               {item.context}
                            </p>
@@ -322,7 +316,7 @@ const RolePage: React.FC = () => {
                                  <CheckCircle className="w-5 h-5 text-emerald-400" />
                               </div>
                            </div>
-                           <h3 className="text-xl md:text-2xl font-extrabold text-white mb-4 text-right md:text-left group-hover:text-emerald-50 transition-colors drop-shadow-lg">{item.gain}</h3>
+                           <Typography variant="h3" as="h3" className="font-extrabold text-white">{item.gain}</Typography>
                            <p className="text-emerald-100/70 leading-relaxed text-sm text-right md:text-left font-medium">
                               {item.gainDesc}
                            </p>
@@ -360,13 +354,9 @@ const RolePage: React.FC = () => {
              Ready to deploy?
            </motion.div>
 
-           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-sans drop-shadow-xl">
-              {data.cta?.head || "Siap Transformasi Bisnis Anda?"}
-           </h2>
+           <Typography variant="h2" as="h2" className="font-bold text-white leading-tight tracking-tight font-sans">{data.cta?.head || "Siap Transformasi Bisnis Anda?"}</Typography>
            
-           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.
-           </p>
+           <Typography variant="body-xl" className="text-slate-400">Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.</Typography>
 
            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">

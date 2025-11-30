@@ -176,7 +176,7 @@ const PartnersPage: React.FC = () => {
                      <Gift className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Referral Partner</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</Typography>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Tidak perlu tim teknis atau sertifikasi</li>
@@ -194,7 +194,7 @@ const PartnersPage: React.FC = () => {
                      <Code className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Implementation Partner</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</Typography>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> 100% Revenue dari Jasa Implementasi & Support</li>
@@ -211,7 +211,7 @@ const PartnersPage: React.FC = () => {
                      <Briefcase className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Managed Services Partner</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</Typography>
                   <ul className="space-y-3 mb-8 flex-grow">
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
                      <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Recurring Revenue dari Retainer Fee</li>
@@ -231,7 +231,7 @@ const PartnersPage: React.FC = () => {
                   <Gift className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Referral Partner</Typography>
-               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</Typography>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Tidak perlu tim teknis atau sertifikasi</li>
@@ -249,7 +249,7 @@ const PartnersPage: React.FC = () => {
                   <Code className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Implementation Partner</Typography>
-               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</Typography>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> 100% Revenue dari Jasa Implementasi & Support</li>
@@ -266,7 +266,7 @@ const PartnersPage: React.FC = () => {
                   <Briefcase className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Managed Services Partner</Typography>
-               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</Typography>
                <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Recurring Revenue dari Retainer Fee</li>
@@ -303,7 +303,7 @@ const PartnersPage: React.FC = () => {
                {/* Selling Price */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Harga Lisensi (Bulan)</label>
+                     <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Lisensi (Bulan)</Typography>
                      <span className="text-sm font-bold text-white">{formatCurrency(sellingPrice)}</span>
                   </div>
                   <input 
@@ -317,7 +317,7 @@ const PartnersPage: React.FC = () => {
                {/* Setup Fee */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Biaya Setup (One-time)</label>
+                     <Typography variant="caption" className="text-sm font-medium text-slate-300">Biaya Setup (One-time)</Typography>
                      <span className="text-sm font-bold text-white">{formatCurrency(setupFee)}</span>
                   </div>
                   <input 
@@ -333,7 +333,7 @@ const PartnersPage: React.FC = () => {
                {/* Partner Cost */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Harga Dasar Partner</label>
+                     <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Dasar Partner</Typography>
                      <span className="text-sm font-bold text-slate-400">{formatCurrency(partnerCost)}</span>
                   </div>
                   <input 
@@ -349,7 +349,7 @@ const PartnersPage: React.FC = () => {
                {/* Clients */}
                <div className="grid grid-cols-2 gap-6">
                   <div>
-                     <label className="block text-sm font-medium text-slate-300 mb-2">Klien Awal</label>
+                     <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Klien Awal</Typography>
                      <div className="relative">
                         <input 
                            type="number" 
@@ -359,7 +359,7 @@ const PartnersPage: React.FC = () => {
                      </div>
                   </div>
                   <div>
-                     <label className="block text-sm font-medium text-slate-300 mb-2">New Clients / Mo</label>
+                     <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">New Clients / Mo</Typography>
                      <div className="relative">
                         <input 
                            type="number" 
@@ -461,7 +461,7 @@ const PartnersPage: React.FC = () => {
                      <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
                         <benefit.icon className="w-6 h-6" />
                      </div>
-                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2">{benefit.title}</h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</p>
                   </div>
                ))}
@@ -474,7 +474,7 @@ const PartnersPage: React.FC = () => {
                   <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
                      <benefit.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2">{benefit.title}</h3>
+                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</p>
                </div>
             ))}

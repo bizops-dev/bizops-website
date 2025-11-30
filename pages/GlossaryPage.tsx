@@ -20,9 +20,7 @@ const GlossaryPage: React.FC = () => {
               <BookOpen className="w-8 h-8" />
            </div>
            <Typography variant="h1" as="h1">Pahami Bahasa Bisnis & Teknologi.</Typography>
-           <p className="text-xl text-slate-600">
-              Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.
-           </p>
+           <Typography variant="body-xl" className="text-slate-600">Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.</Typography>
            
            {/* Search Bar */}
            <div className="mt-8 relative max-w-lg mx-auto">
@@ -43,7 +41,7 @@ const GlossaryPage: React.FC = () => {
                     <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center font-bold text-2xl text-primary-600 border border-slate-200 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
                        {item.char}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">{item.term}</h3>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.term}</Typography>
                  </div>
                  <div className="space-y-4">
                     <div>

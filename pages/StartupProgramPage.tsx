@@ -181,12 +181,8 @@ const StartupProgramPage: React.FC = () => {
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      The Scaling Trap
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
-                     Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.
-                  </h2>
-                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
-                     Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.
-                  </p>
+                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.</Typography>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
                   
                   <div className="space-y-8">
                      <div className="flex gap-5">
@@ -499,24 +495,24 @@ const StartupProgramPage: React.FC = () => {
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
                      <Typography variant="h3" as="h3">Submit Form</Typography>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
                      <Typography variant="h3" as="h3">Verification</Typography>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
                      <Typography variant="h3" as="h3">Approval</Typography>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                   </div>
                   <div className="flex flex-col items-center group h-full">
                      <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                         <CheckCircle className="w-8 h-8" />
                      </div>
                      <Typography variant="h3" as="h3">Onboarding</Typography>
-                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Setup akun Enterprise Anda dan mulai scaling.</p>
+                     <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -528,24 +524,24 @@ const StartupProgramPage: React.FC = () => {
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
                   <Typography variant="h3" as="h3">Submit Form</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Isi formulir aplikasi online. Hanya butuh 5 menit.</Typography>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
                   <Typography variant="h3" as="h3">Verification</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</Typography>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
                   <Typography variant="h3" as="h3">Approval</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima email konfirmasi & kode promo dalam 48 jam.</Typography>
                </div>
                <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                      <CheckCircle className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Onboarding</Typography>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Setup akun Enterprise Anda dan mulai scaling.</p>
+                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                </div>
             </div>
          </div>
@@ -575,10 +571,8 @@ const StartupProgramPage: React.FC = () => {
          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/30 rounded-full blur-[150px] pointer-events-none"></div>
          
          <div className="relative z-10 max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight tracking-tight">Siap Membangun <br/>Unicorn Berikutnya?</h2>
-            <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-               Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).
-            </p>
+            <Typography variant="h2" as="h2" className="font-extrabold leading-tight tracking-tight">Siap Membangun <br/>Unicorn Berikutnya?</Typography>
+            <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
                <Link to="/partners/apply">
                   <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
@@ -605,7 +599,7 @@ const FAQAccordion: React.FC<{ question: string; answer: string }> = ({ question
             onClick={() => setIsOpen(!isOpen)}
             className="w-full px-6 py-5 flex justify-between items-center text-left"
          >
-            <h3 className="font-bold text-slate-900 dark:text-white text-lg">{question}</h3>
+            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{question}</Typography>
             <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
                {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
             </div>

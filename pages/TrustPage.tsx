@@ -213,7 +213,7 @@ const TrustPage: React.FC = () => {
                        </div>
                        <div>
                           <Typography variant="h3" as="h3">Encryption at Rest & Transit</Typography>
-                          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Semua data database dienkripsi menggunakan AES-256. Komunikasi data menggunakan TLS 1.3 terbaru.</p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Semua data database dienkripsi menggunakan AES-256. Komunikasi data menggunakan TLS 1.3 terbaru.</Typography>
                        </div>
                     </div>
                     <div className="flex gap-4 p-4 border border-transparent hover:border-blue-500/30 rounded-xl transition-colors">
@@ -222,7 +222,7 @@ const TrustPage: React.FC = () => {
                        </div>
                        <div>
                           <Typography variant="h3" as="h3">Infrastructure Isolation</Typography>
-                          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Setiap tenant Enterprise berjalan di container terisolasi (Virtual Private Cloud). Data Anda tidak bercampur dengan klien lain.</p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Setiap tenant Enterprise berjalan di container terisolasi (Virtual Private Cloud). Data Anda tidak bercampur dengan klien lain.</Typography>
                        </div>
                     </div>
                     <div className="flex gap-4 p-4 border border-transparent hover:border-amber-500/30 rounded-xl transition-colors">
@@ -231,7 +231,7 @@ const TrustPage: React.FC = () => {
                        </div>
                        <div>
                           <Typography variant="h3" as="h3">24/7 Threat Monitoring</Typography>
-                          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Tim Security Operations Center (SOC) kami memantau anomali traffic dan upaya intrusi secara real-time.</p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tim Security Operations Center (SOC) kami memantau anomali traffic dan upaya intrusi secara real-time.</Typography>
                        </div>
                     </div>
                  </CardSlider>
@@ -244,7 +244,7 @@ const TrustPage: React.FC = () => {
                     </div>
                     <div>
                        <Typography variant="h3" as="h3">Encryption at Rest & Transit</Typography>
-                       <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Semua data database dienkripsi menggunakan AES-256. Komunikasi data menggunakan TLS 1.3 terbaru.</p>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Semua data database dienkripsi menggunakan AES-256. Komunikasi data menggunakan TLS 1.3 terbaru.</Typography>
                     </div>
                  </div>
                  <div className="flex gap-4 p-4 border border-transparent hover:border-blue-500/30 rounded-xl transition-colors">
@@ -253,7 +253,7 @@ const TrustPage: React.FC = () => {
                     </div>
                     <div>
                        <Typography variant="h3" as="h3">Infrastructure Isolation</Typography>
-                       <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Setiap tenant Enterprise berjalan di container terisolasi (Virtual Private Cloud). Data Anda tidak bercampur dengan klien lain.</p>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Setiap tenant Enterprise berjalan di container terisolasi (Virtual Private Cloud). Data Anda tidak bercampur dengan klien lain.</Typography>
                     </div>
                  </div>
                  <div className="flex gap-4 p-4 border border-transparent hover:border-amber-500/30 rounded-xl transition-colors">
@@ -262,7 +262,7 @@ const TrustPage: React.FC = () => {
                     </div>
                     <div>
                        <Typography variant="h3" as="h3">24/7 Threat Monitoring</Typography>
-                       <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Tim Security Operations Center (SOC) kami memantau anomali traffic dan upaya intrusi secara real-time.</p>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tim Security Operations Center (SOC) kami memantau anomali traffic dan upaya intrusi secara real-time.</Typography>
                     </div>
                  </div>
               </div>
@@ -354,9 +354,7 @@ const TrustPage: React.FC = () => {
         {/* --- CTA: ACCESS REPORTS --- */}
         <section className="text-center">
            <Typography variant="h2" as="h2">Butuh Dokumen Audit?</Typography>
-           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-              Akses laporan audit keamanan lengkap kami (Penetration Test Result & Compliance Certifications) melalui portal khusus klien Enterprise.
-           </p>
+           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Akses laporan audit keamanan lengkap kami (Penetration Test Result & Compliance Certifications) melalui portal khusus klien Enterprise.</Typography>
            <Button size="lg" className="h-14 px-8 font-bold">
               Request Access to Trust Portal <ChevronRight className="w-4 h-4 ml-2" />
            </Button>

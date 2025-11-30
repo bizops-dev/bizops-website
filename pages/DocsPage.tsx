@@ -108,7 +108,7 @@ const DocsPage: React.FC = () => {
                          <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
                             <cat.icon className="w-6 h-6" />
                          </div>
-                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cat.title}</h3>
+                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                          <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
                          <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                             Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
@@ -133,7 +133,7 @@ const DocsPage: React.FC = () => {
                       <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
                          <cat.icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cat.title}</h3>
+                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
                       <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                          Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
@@ -256,9 +256,7 @@ const DocsPage: React.FC = () => {
                           <MessageSquare className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Developer Community</Typography>
-                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                          Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.
-                       </p>
+                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.</Typography>
                        <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm">Join Discord &rarr;</span>
                     </Card>
                  </a>
@@ -269,9 +267,7 @@ const DocsPage: React.FC = () => {
                           <Zap className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Feature Requests</Typography>
-                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                          Missing a feature? Submit a request or vote on our public roadmap.
-                       </p>
+                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Missing a feature? Submit a request or vote on our public roadmap.</Typography>
                        <span className="text-amber-600 dark:text-amber-400 font-bold text-sm">View Roadmap &rarr;</span>
                     </Card>
                  </Link>
@@ -282,9 +278,7 @@ const DocsPage: React.FC = () => {
                           <Shield className="w-8 h-8" />
                        </div>
                        <Typography variant="h3" as="h3">Premium Support</Typography>
-                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                          Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.
-                       </p>
+                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.</Typography>
                        <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
                     </Card>
                  </Link>
@@ -298,9 +292,7 @@ const DocsPage: React.FC = () => {
                        <MessageSquare className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Developer Community</Typography>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                       Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.
-                    </p>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.</Typography>
                     <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm">Join Discord &rarr;</span>
                  </Card>
               </a>
@@ -311,9 +303,7 @@ const DocsPage: React.FC = () => {
                        <Zap className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Feature Requests</Typography>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                       Missing a feature? Submit a request or vote on our public roadmap.
-                    </p>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Missing a feature? Submit a request or vote on our public roadmap.</Typography>
                     <span className="text-amber-600 dark:text-amber-400 font-bold text-sm">View Roadmap &rarr;</span>
                  </Card>
               </Link>
@@ -324,9 +314,7 @@ const DocsPage: React.FC = () => {
                        <Shield className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Premium Support</Typography>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
-                       Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.
-                    </p>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.</Typography>
                     <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
                  </Card>
               </Link>

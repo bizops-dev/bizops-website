@@ -277,10 +277,8 @@ const AssessmentPage = () => {
               <span>Executive Assessment Tool</span>
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
-              Unlock Your <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Digital Potential</span>
-            </h1>
+            <Typography variant="h1" as="h1" className="font-bold text-white leading-tight tracking-tight">Unlock Your <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Digital Potential</span></Typography>
             
             <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-xl">
               Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.
@@ -419,7 +417,7 @@ const AssessmentPage = () => {
             <form onSubmit={handleLeadSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</label>
+                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</Typography>
                   <input 
                     type="text" 
                     required
@@ -431,7 +429,7 @@ const AssessmentPage = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Perusahaan</label>
+                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Perusahaan</Typography>
                   <input 
                     type="text" 
                     required
@@ -482,7 +480,7 @@ const AssessmentPage = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</label>
+                <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</Typography>
                 <input 
                   type="text" 
                   className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
@@ -561,9 +559,7 @@ const AssessmentPage = () => {
                   </button>
                 </div>
 
-                <h1 className="text-3xl font-bold text-white print:text-black">
-                  Laporan Digital Maturity
-                </h1>
+                <Typography variant="h1" as="h1" className="font-bold text-white">Laporan Digital Maturity</Typography>
                 <p className="text-slate-400 text-sm mt-1 print:text-gray-500">
                   ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}
                 </p>
@@ -616,7 +612,7 @@ const AssessmentPage = () => {
                      </div>
                   </div>
                   
-                  <h2 className="text-xl font-bold text-white mb-2 print:text-black">{results.maturityLevel.title}</h2>
+                  <Typography variant="h2" as="h2" className="font-bold text-white">{results.maturityLevel.title}</Typography>
                   <div className={`px-3 py-1 rounded-full text-xs font-bold text-white mb-4 ${results.maturityLevel.color} print:bg-gray-200 print:text-black`}>
                     Level {results.maturityLevel.level}
                   </div>
@@ -645,10 +641,8 @@ const AssessmentPage = () => {
             <div className="lg:col-span-8 space-y-8">
               {/* Chart */}
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-white/10 print:bg-white print:border-gray-300 print:text-black print:break-inside-avoid">
-                <h3 className="text-xl font-bold text-white mb-8 flex items-center print:text-black">
-                  <BarChart className="w-6 h-6 mr-3 text-primary-500 print:text-black" />
-                  Analisis per Dimensi
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-white"><BarChart className="w-6 h-6 mr-3 text-primary-500 print:text-black" />
+                  Analisis per Dimensi</Typography>
                 
                 <div className="space-y-6">
                   {Object.entries(results.categoryScores).map(([cat, data]) => {
@@ -685,10 +679,8 @@ const AssessmentPage = () => {
 
               {/* Recommendations Grid */}
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-white/10 print:bg-white print:border-gray-300 print:text-black">
-                <h3 className="text-xl font-bold text-white mb-8 flex items-center print:text-black">
-                  <Crosshair className="w-6 h-6 mr-3 text-secondary-500 print:text-black" />
-                  Rekomendasi Strategis
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-white"><Crosshair className="w-6 h-6 mr-3 text-secondary-500 print:text-black" />
+                  Rekomendasi Strategis</Typography>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {Object.entries(results.categoryScores).map(([cat, data]) => {
@@ -704,7 +696,7 @@ const AssessmentPage = () => {
                     return (
                       <div key={cat} className="group bg-slate-800/50 p-6 rounded-2xl border border-white/5 hover:bg-slate-800 hover:border-primary-500/30 transition-all print:bg-gray-50 print:border-gray-200 print:break-inside-avoid">
                         <div className="flex justify-between items-start mb-4">
-                          <h4 className="text-white font-semibold print:text-black text-sm uppercase tracking-wider text-slate-400 group-hover:text-primary-400 transition-colors">{categoryLabels[catKey]}</h4>
+                          <Typography variant="h4" as="h4" className="text-white font-semibold tracking-wider text-slate-400 group-hover:text-primary-400">{categoryLabels[catKey]}</Typography>
                           <span className={`text-[10px] font-bold px-2 py-1 rounded border uppercase ${
                             score < 3 
                               ? 'bg-red-500/10 text-red-400 border-red-500/20 print:text-red-600 print:border-red-600' 
@@ -732,9 +724,7 @@ const AssessmentPage = () => {
           
           {/* NEXT STEPS / CROSS-SELL SECTION (New) */}
           <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page pb-24">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Lightbulb className="w-5 h-5 text-amber-400" /> Rekomendasi Tindak Lanjut
-              </h3>
+              <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400" /> Rekomendasi Tindak Lanjut</Typography>
               
               <div className="grid md:grid-cols-3 gap-5">
                 {/* Solution Finder */}
@@ -746,9 +736,7 @@ const AssessmentPage = () => {
                      <Search className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Solution Finder</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
                    <div className="mt-4 flex items-center text-xs font-bold text-blue-500">
                      Cari Solusi <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
@@ -763,9 +751,7 @@ const AssessmentPage = () => {
                      <Calculator className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
                     <div className="mt-4 flex items-center text-xs font-bold text-emerald-500">
                      Hitung Biaya <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
@@ -780,9 +766,7 @@ const AssessmentPage = () => {
                      <Briefcase className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
                     <div className="mt-4 flex items-center text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
@@ -853,10 +837,8 @@ const AssessmentPage = () => {
           {/* LEFT: NAVIGATION SIDEBAR */}
           <div className="hidden lg:block lg:col-span-4 xl:col-span-3">
              <div className="bg-slate-900/50 backdrop-blur-md rounded-3xl border border-white/10 p-6 sticky top-24">
-                <h3 className="text-white font-bold mb-6 flex items-center text-lg">
-                  <LayoutDashboard className="w-5 h-5 mr-3 text-primary-500" />
-                  Navigation
-                </h3>
+                <Typography variant="h3" as="h3" className="text-white font-bold"><LayoutDashboard className="w-5 h-5 mr-3 text-primary-500" />
+                  Navigation</Typography>
                 
                 <div className="space-y-8 relative">
                   {/* Vertical Line */}
@@ -937,9 +919,7 @@ const AssessmentPage = () => {
                     </span>
                   </div>
                   
-                  <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-                    {currentQuestion?.question}
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentQuestion?.question}</Typography>
                 </div>
 
                 <div className="space-y-4 flex-grow relative z-10">

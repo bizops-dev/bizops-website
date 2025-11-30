@@ -121,13 +121,9 @@ const ROIPage: React.FC = () => {
            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" /> ROI Calculator
            </div>
-           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-             Hitung Nilai Investasi <br/>
-             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Transformasi Digital</span>
-           </h1>
-           <p className="text-lg text-slate-400">
-              Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).
-           </p>
+           <Typography variant="h1" as="h1" className="font-bold text-white leading-tight">Hitung Nilai Investasi <br/>
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Transformasi Digital</span></Typography>
+           <Typography variant="body-lg" className="text-slate-400">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
@@ -135,10 +131,8 @@ const ROIPage: React.FC = () => {
            {/* LEFT: INPUTS */}
            <div className="lg:col-span-5 bg-slate-900/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold text-white flex items-center gap-3">
-                   <Settings className="w-5 h-5 text-blue-400" />
-                   Parameter Operasional
-                </h2>
+                <Typography variant="h2" as="h2" className="font-bold text-white"><Settings className="w-5 h-5 text-blue-400" />
+                   Parameter Operasional</Typography>
                 {/* Reset Button */}
                 <button 
                   onClick={() => {
@@ -154,7 +148,7 @@ const ROIPage: React.FC = () => {
                  {/* 1. Admin Count */}
                  <div>
                     <div className="flex justify-between mb-2">
-                       <label className="text-sm font-medium text-slate-300">Jumlah Staf Admin</label>
+                       <Typography variant="caption" className="text-sm font-medium text-slate-300">Jumlah Staf Admin</Typography>
                        <span className="text-sm font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">{adminCount} Orang</span>
                     </div>
                     <input 
@@ -167,7 +161,7 @@ const ROIPage: React.FC = () => {
                  {/* 2. Salary & Efficiency */}
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Gaji Rata-rata</label>
+                        <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Gaji Rata-rata</Typography>
                         <div className="relative group">
                           <span className="absolute left-3 top-3 text-slate-500 text-xs">Rp</span>
                           <input 
@@ -178,7 +172,7 @@ const ROIPage: React.FC = () => {
                         </div>
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Estimasi Efisiensi</label>
+                        <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Estimasi Efisiensi</Typography>
                         <div className="flex items-center gap-2">
                           <input 
                             type="range" min="10" max="90" step="5" value={efficiencyRate}
@@ -194,7 +188,7 @@ const ROIPage: React.FC = () => {
                  {/* 3. Overtime */}
                  <div>
                     <div className="flex justify-between mb-2">
-                       <label className="text-sm font-medium text-slate-300">Lembur (Jam/Orang/Bulan)</label>
+                       <Typography variant="caption" className="text-sm font-medium text-slate-300">Lembur (Jam/Orang/Bulan)</Typography>
                        <span className="text-sm font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">{overtime} Jam</span>
                     </div>
                     <input 
@@ -207,7 +201,7 @@ const ROIPage: React.FC = () => {
                  {/* 4. Losses & Existing Cost */}
                  <div className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Estimasi Kebocoran (IDR/Tahun)</label>
+                        <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Estimasi Kebocoran (IDR/Tahun)</Typography>
                         <div className="relative">
                           <span className="absolute left-4 top-3.5 text-slate-500 text-sm">Rp</span>
                           <input 
@@ -219,7 +213,7 @@ const ROIPage: React.FC = () => {
                     </div>
                     
                     <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Biaya Aplikasi/Server Lama (IDR/Bulan)</label>
+                        <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Biaya Aplikasi/Server Lama (IDR/Bulan)</Typography>
                         <div className="relative">
                           <span className="absolute left-4 top-3.5 text-slate-500 text-sm">Rp</span>
                           <input 
@@ -236,7 +230,7 @@ const ROIPage: React.FC = () => {
 
                  {/* Plan Selection */}
                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-3">Pilih Paket BizOps</label>
+                    <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-3">Pilih Paket BizOps</Typography>
                     <div className="grid grid-cols-3 gap-2">
                       {PRICING_TIERS.map(plan => (
                         <button
@@ -403,12 +397,12 @@ const ROIPage: React.FC = () => {
                     <FileText className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Simpan Kalkulasi ROI</Typography>
-                  <p className="text-sm text-slate-400">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</p>
+                  <Typography variant="caption" className="text-slate-400">Masukkan detail Anda untuk mengunduh laporan PDF lengkap.</Typography>
                 </div>
 
                 <form onSubmit={handleLeadSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">Nama Lengkap</label>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Nama Lengkap</Typography>
                     <div className="relative">
                       <User className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
                       <input 
@@ -422,7 +416,7 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">Perusahaan</label>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Perusahaan</Typography>
                     <div className="relative">
                       <Building2 className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
                       <input 
@@ -436,7 +430,7 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">Email Bisnis</label>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">Email Bisnis</Typography>
                     <div className="relative">
                       <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
                       <input 
@@ -450,7 +444,7 @@ const ROIPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">WhatsApp</label>
+                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase mb-1">WhatsApp</Typography>
                     <div className="relative">
                       <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
                       <input 

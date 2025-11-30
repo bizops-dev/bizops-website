@@ -370,16 +370,12 @@ const UseCaseDetailPage: React.FC = () => {
                 <div className="flex items-center gap-3 mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
                   <span className="w-8 h-px bg-red-500"></span> The Challenge
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
-                  Problem Statement
-                </h2>
+                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Problem Statement</Typography>
                 <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300">
                   <p className="text-xl leading-relaxed font-light">
                     {data.challenge}
                   </p>
-                  <p className="text-base mt-4 text-slate-500">
-                     Hambatan ini berdampak signifikan pada efisiensi operasional dan potensi pertumbuhan pendapatan perusahaan dalam jangka panjang, sehingga membutuhkan intervensi strategis segera.
-                  </p>
+                  <Typography variant="body" className="text-slate-500">Hambatan ini berdampak signifikan pada efisiensi operasional dan potensi pertumbuhan pendapatan perusahaan dalam jangka panjang, sehingga membutuhkan intervensi strategis segera.</Typography>
                 </div>
               </motion.div>
 
@@ -392,9 +388,7 @@ const UseCaseDetailPage: React.FC = () => {
                 <div className={`flex items-center gap-3 mb-6 ${theme.primary} font-bold uppercase tracking-widest text-sm`}>
                   <span className={`w-8 h-px bg-current opacity-50`}></span> The Solution
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
-                  BizOps Approach
-                </h2>
+                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">BizOps Approach</Typography>
                 
                 <div className={`rounded-3xl p-8 border ${theme.border} ${theme.bgLight} ${theme.bgDark} mb-8`}>
                   <div className="flex items-start gap-6">
@@ -423,9 +417,7 @@ const UseCaseDetailPage: React.FC = () => {
                 
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6 flex items-center gap-2">
-                    <Code2 className="w-4 h-4" /> Tech Stack Used
-                  </h3>
+                  <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Code2 className="w-4 h-4" /> Tech Stack Used</Typography>
                   <div className="flex flex-wrap gap-2">
                     {data.techStack.map((tech, i) => (
                       <span key={i} className="px-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-slate-300 transition-colors cursor-default">
@@ -447,9 +439,7 @@ const UseCaseDetailPage: React.FC = () => {
                 <div className="bg-[#0B1120] rounded-3xl p-8 text-white relative overflow-hidden group border border-slate-800">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary-500 to-indigo-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   
-                  <h3 className="text-2xl font-bold mb-4 relative z-10">
-                    Hadapi Tantangan Serupa?
-                  </h3>
+                  <Typography variant="h3" as="h3" className="font-bold">Hadapi Tantangan Serupa?</Typography>
                   <p className="text-slate-400 mb-8 leading-relaxed relative z-10 text-sm">
                     Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.
                   </p>
@@ -472,12 +462,8 @@ const UseCaseDetailPage: React.FC = () => {
               <span className={`inline-block px-3 py-1 rounded-full ${theme.bgLight} ${theme.bgDark} ${theme.primary} font-bold uppercase tracking-widest text-xs mb-4 border ${theme.border}`}>
                  Key Outcomes
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-                Business Impact
-              </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400">
-                Hasil nyata yang terukur setelah implementasi sistem BizOps.
-              </p>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Impact</Typography>
+              <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Hasil nyata yang terukur setelah implementasi sistem BizOps.</Typography>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -519,9 +505,7 @@ const UseCaseDetailPage: React.FC = () => {
                          </span>
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 transition-colors">
-                      {item.title}
-                    </h3>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{item.title}</Typography>
                     <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
                       {item.subtitle}
                     </p>

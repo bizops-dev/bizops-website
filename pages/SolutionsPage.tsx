@@ -7,6 +7,7 @@ import CardSlider from '../components/CardSlider';
 import { ArrowRight, LayoutGrid, Briefcase, Users, Check, TrendingUp, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import Typography from '../components/Typography';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -50,10 +51,8 @@ const SolutionsPage: React.FC = () => {
                <Badge variant="outline-white" className="mb-8">Context-Aware ERP</Badge>
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 tracking-tight leading-tight drop-shadow-sm">
-               <StaggeredText text="Stop Memaksa Bisnis Masuk ke" className="inline-flex justify-center mr-3" />
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Kotak ERP Generik.</span>
-            </h1>
+            <Typography variant="h1" as="h1" className="font-extrabold text-white tracking-tight leading-tight"><StaggeredText text="Stop Memaksa Bisnis Masuk ke" className="inline-flex justify-center mr-3" />
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Kotak ERP Generik.</span></Typography>
             
             <motion.p 
                variants={FADE_UP_VARIANTS}
@@ -89,12 +88,8 @@ const SolutionsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
            {/* Industry Section */}
            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                 Solusi Spesifik Industri
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
-                 Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.
-              </p>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Solusi Spesifik Industri</Typography>
+              <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.</Typography>
            </div>
            
            <div className="mb-16 md:mb-32">
@@ -112,7 +107,7 @@ const SolutionsPage: React.FC = () => {
                             <ind.icon className="w-8 h-8" />
                          </div>
                          <div className="flex-grow flex flex-col">
-                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
+                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                             <p className="text-slate-600 dark:text-slate-400 text-base mb-8 leading-relaxed flex-grow">
                                {ind.description}
                             </p>
@@ -128,9 +123,7 @@ const SolutionsPage: React.FC = () => {
 
            {/* Social Proof Interstitial */}
            <div className="mb-16 md:mb-32 text-center">
-              <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8">
-                 Dipercaya Pemimpin Industri
-              </p>
+              <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dipercaya Pemimpin Industri</Typography>
               <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
                  {['HEXAGON', 'KARYA BETON', 'TRANS LOGISTIC', 'MEGA FINANCE', 'AGRO CORP'].map(brand => (
                     <span key={brand} className="text-xl font-black text-slate-800 dark:text-slate-200 tracking-tighter">{brand}</span>
@@ -146,12 +139,8 @@ const SolutionsPage: React.FC = () => {
                <div className="relative z-10 px-6 py-12 md:p-24">
                   <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                      <Badge variant="outline" className="mb-4 bg-white dark:bg-slate-800">Role-Based Experience</Badge>
-                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                        Satu Platform, Beda Perspektif.
-                     </h2>
-                     <p className="text-lg text-slate-600 dark:text-slate-400">
-                        CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.
-                     </p>
+                     <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Satu Platform, Beda Perspektif.</Typography>
+                     <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.</Typography>
                   </div>
 
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[250px]">
@@ -168,7 +157,7 @@ const SolutionsPage: React.FC = () => {
                                  <role.icon className="w-7 h-7" />
                               </div>
                               <div className="flex-grow flex flex-col justify-center w-full">
-                                 <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{role.title}</h3>
+                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{role.title}</Typography>
                                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{role.subtitle}</p>
                               </div>
                            </motion.div>
@@ -184,12 +173,8 @@ const SolutionsPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-20"></div>
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-               Bisnis Anda Unik? <br/>Konsultan Kami Paham.
-            </h2>
-            <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-light">
-               Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">Bisnis Anda Unik? <br/>Konsultan Kami Paham.</Typography>
+            <Typography variant="body-xl" className="text-slate-400">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 border-none transition-all hover:scale-105">

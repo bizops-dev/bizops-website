@@ -39,12 +39,8 @@ const AccessibilityPage: React.FC = () => {
           <div className="inline-flex items-center justify-center p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
              <Accessibility className="w-8 h-8" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
-            Teknologi untuk <span className="text-primary-600">Semua Orang.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            BizOps berkomitmen membangun platform yang inklusif. Kami percaya bahwa hambatan fisik tidak boleh menjadi penghalang produktivitas bisnis.
-          </p>
+          <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white">Teknologi untuk <span className="text-primary-600">Semua Orang.</span></Typography>
+          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-300">BizOps berkomitmen membangun platform yang inklusif. Kami percaya bahwa hambatan fisik tidak boleh menjadi penghalang produktivitas bisnis.</Typography>
         </div>
       </section>
 
@@ -56,7 +52,7 @@ const AccessibilityPage: React.FC = () => {
               <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600">
                 <feat.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feat.title}</h3>
+              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                 {feat.desc}
               </p>
@@ -87,12 +83,8 @@ const AccessibilityPage: React.FC = () => {
               </div>
            </div>
            <div className="md:w-1/2 bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl w-full">
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                 <MessageSquare className="w-5 h-5" /> Laporkan Masalah
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
-                 Menemukan bug aksesibilitas? Tim engineering kami memprioritaskan perbaikan isu ini.
-              </p>
+              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><MessageSquare className="w-5 h-5" /> Laporkan Masalah</Typography>
+              <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Menemukan bug aksesibilitas? Tim engineering kami memprioritaskan perbaikan isu ini.</Typography>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                  <input 
                     type="email" 

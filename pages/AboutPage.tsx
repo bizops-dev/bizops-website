@@ -106,9 +106,7 @@ const AboutPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 md:mb-24">
                <Typography variant="h2" as="h2">Our Origin Story</Typography>
-               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
-                  Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
             </div>
             
             <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8 space-y-16 md:space-y-20">
@@ -150,9 +148,7 @@ const AboutPage: React.FC = () => {
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16 md:mb-20">
-               <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-                  Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span>
-               </h2>
+               <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span></Typography>
                <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</p>
             </div>
             
@@ -170,7 +166,7 @@ const AboutPage: React.FC = () => {
                           {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
                           {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
                        </div>
-                       <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-200 transition-colors">{val.title}</h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
                        <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
                           {val.manifesto}
                        </p>
@@ -196,7 +192,7 @@ const AboutPage: React.FC = () => {
                        {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
                        {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-200 transition-colors">{val.title}</h3>
+                    <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
                     <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
                        {val.manifesto}
                     </p>
@@ -218,9 +214,7 @@ const AboutPage: React.FC = () => {
                   <Sparkles className="w-3 h-3" /> The Task Force
                </div>
                <Typography variant="h2" as="h2">Meet the Builders</Typography>
-               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-                  Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim inti (Task Force) yang berdedikasi membangun fondasi teknologi BizOps. Kombinasi Product, Engineering, dan Quality Assurance.</Typography>
             </div>
 
             {/* Mobile View: Slider */}
@@ -248,7 +242,7 @@ const AboutPage: React.FC = () => {
                            <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                               <div className="text-white">
                                  <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
-                                 <h3 className="font-bold text-lg md:text-xl leading-tight mb-3">{member.name}</h3>
+                                 <Typography variant="h3" as="h3" className="font-bold leading-tight">{member.name}</Typography>
                                  <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
                                     <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
                                        "{member.quote}"
@@ -286,7 +280,7 @@ const AboutPage: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                            <div className="text-white">
                               <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
-                              <h3 className="font-bold text-lg md:text-xl leading-tight mb-3">{member.name}</h3>
+                              <Typography variant="h3" as="h3" className="font-bold leading-tight">{member.name}</Typography>
                               <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
                                  <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
                                     "{member.quote}"
@@ -306,9 +300,7 @@ const AboutPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-stretch">
                <div>
-                  <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-10 flex items-center gap-4">
-                     <Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
                   <div className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 space-y-10 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
                      <div className="flex gap-6 items-start">
                         <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">

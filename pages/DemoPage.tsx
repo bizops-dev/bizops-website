@@ -142,13 +142,9 @@ const DemoPage: React.FC = () => {
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-wider mb-6">
                     <Video className="w-3 h-3" /> Live Walkthrough
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                    Lihat BizOps <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">In Action.</span>
-                  </h1>
-                  <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                    Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.
-                  </p>
+                  <Typography variant="h1" as="h1" className="font-extrabold text-white leading-tight tracking-tight">Lihat BizOps <br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">In Action.</span></Typography>
+                  <Typography variant="body-lg" className="text-slate-400">Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.</Typography>
 
                   <div className="space-y-8 mb-12">
                     {[
@@ -161,7 +157,7 @@ const DemoPage: React.FC = () => {
                           <item.icon className="w-6 h-6 text-primary-400" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                          <Typography variant="h4" as="h4" className="font-bold text-white">{item.title}</Typography>
                           <p className="text-sm text-slate-400 mt-1 leading-relaxed">{item.desc}</p>
                         </div>
                       </div>

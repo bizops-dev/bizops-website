@@ -51,12 +51,8 @@ mQINBF... (Truncated for display) ...
           >
             <Terminal className="w-3 h-3" /> VULNERABILITY DISCLOSURE PROGRAM
           </motion.div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            See Something, <span className="text-green-500">Say Something.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Keamanan adalah prioritas #1 kami. Kami mengundang peneliti keamanan untuk membantu melindungi ekosistem BizOps melalui pengungkapan yang bertanggung jawab.
-          </p>
+          <Typography variant="h1" as="h1" className="font-bold text-white tracking-tight">See Something, <span className="text-green-500">Say Something.</span></Typography>
+          <Typography variant="body-xl" className="text-slate-400">Keamanan adalah prioritas #1 kami. Kami mengundang peneliti keamanan untuk membantu melindungi ekosistem BizOps melalui pengungkapan yang bertanggung jawab.</Typography>
         </div>
       </section>
 
@@ -65,10 +61,8 @@ mQINBF... (Truncated for display) ...
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* In Scope */}
           <div className="bg-slate-900/50 border border-green-900/30 rounded-2xl p-8 hover:border-green-700/50 transition-colors">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <div className="p-2 bg-green-900/30 rounded-lg text-green-400"><CheckCircle className="w-5 h-5" /></div>
-              In Scope
-            </h3>
+            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-green-900/30 rounded-lg text-green-400"><CheckCircle className="w-5 h-5" /></div>
+              In Scope</Typography>
             <ul className="space-y-4">
               {scopeIn.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm">
@@ -80,10 +74,8 @@ mQINBF... (Truncated for display) ...
 
           {/* Out of Scope */}
           <div className="bg-slate-900/50 border border-red-900/30 rounded-2xl p-8 hover:border-red-700/50 transition-colors">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <div className="p-2 bg-red-900/30 rounded-lg text-red-400"><AlertTriangle className="w-5 h-5" /></div>
-              Out of Scope
-            </h3>
+            <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-red-900/30 rounded-lg text-red-400"><AlertTriangle className="w-5 h-5" /></div>
+              Out of Scope</Typography>
             <ul className="space-y-4">
               {scopeOut.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-slate-400 text-sm">

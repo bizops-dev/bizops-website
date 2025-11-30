@@ -17,9 +17,7 @@ const MultiCompanyPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Network className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Satu Platform untuk<br/>Seluruh Grup Bisnis Anda.
-          </h1>
+          <Typography variant="h1" as="h1" className="font-bold leading-tight">Satu Platform untuk<br/>Seluruh Grup Bisnis Anda.</Typography>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             Punya banyak PT, CV, atau unit bisnis berbeda? Jangan kelola mereka di pulau-pulau terpisah. Satukan manajemen grup perusahaan Anda dengan struktur <em>Multi-Company</em> yang <em>native</em>.
           </p>

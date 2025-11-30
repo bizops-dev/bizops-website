@@ -296,9 +296,7 @@ const ModulePage: React.FC = () => {
                <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <div>
                      <Badge variant="outline" className="mb-6">The Challenge</Badge>
-                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
-                        Tantangan {data.title} Tradisional
-                     </h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Tantangan {data.title} Tradisional</Typography>
                      <div className="space-y-8">
                         {data.problems.map((prob, idx) => {
                            const ProbIcon = prob.icon || AlertTriangle;
@@ -315,7 +313,7 @@ const ModulePage: React.FC = () => {
                                     <ProbIcon className="w-6 h-6 text-red-500" />
                                  </div>
                                  <div>
-                                    <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{prob.title}</h4>
+                                    <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
                                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</p>
                                  </div>
                               </motion.div>
@@ -350,9 +348,7 @@ const ModulePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.
-            </p>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
           </div>
 
           <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -371,7 +367,7 @@ const ModulePage: React.FC = () => {
                      <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
                         <FeatureIcon className="w-6 h-6" />
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                         {feature.desc}
                      </p>
@@ -395,9 +391,7 @@ const ModulePage: React.FC = () => {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
                            <Smartphone className="w-4 h-4" /> Mobile Native
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                           {data.mobileAdvantage.title}
-                        </h2>
+                        <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
                         <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                            {data.mobileAdvantage.desc}
                         </p>
@@ -449,9 +443,7 @@ const ModulePage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                <Badge variant="outline" className="mb-4">Ecosystem</Badge>
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                  {moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}
-               </h2>
+               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                   {moduleId === 'integration' 
                      ? 'Jelajahi berbagai aplikasi dan layanan yang sudah terhubung dengan ekosistem BizOps.'
@@ -477,10 +469,8 @@ const ModulePage: React.FC = () => {
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                      {integrationsData.map((cat, idx) => (
                         <div key={idx} className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 h-full">
-                           <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                              <Layers className="w-5 h-5 text-primary-500" />
-                              {cat.category}
-                           </h3>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Layers className="w-5 h-5 text-primary-500" />
+                              {cat.category}</Typography>
                            <ul className="space-y-4">
                               {cat.apps.map((app, i) => (
                                  <li key={i} className="flex flex-col gap-1 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
@@ -517,7 +507,7 @@ const ModulePage: React.FC = () => {
                            </div>
                            <div className="mt-6 text-center">
                               <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
-                              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{conn.target}</h3>
+                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
                               <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                  {conn.desc}
                               </p>
@@ -534,9 +524,7 @@ const ModulePage: React.FC = () => {
       <section className="py-24 bg-white dark:bg-slate-950">
          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Quote className="w-12 h-12 text-primary-200 dark:text-primary-900 mx-auto mb-8" />
-            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
-               "{testimonial.quote}"
-            </h2>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{testimonial.quote}"</Typography>
             <div className="flex items-center justify-center gap-4">
                <OptimizedImage 
                   src={testimonial.avatar} 
@@ -597,7 +585,7 @@ const ModulePage: React.FC = () => {
                         <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                            <ModIcon className="w-6 h-6" />
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{mod.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
                         <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                            {mod.description}
                         </p>
@@ -616,9 +604,7 @@ const ModulePage: React.FC = () => {
       <section className="py-24 bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-               {data.cta?.text || "Siap untuk transformasi digital?"}
-            </h2>
+            <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.cta?.text || "Siap untuk transformasi digital?"}</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Link to="/demo">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none text-white">

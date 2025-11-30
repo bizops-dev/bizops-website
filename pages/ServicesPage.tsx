@@ -168,10 +168,8 @@ const ServicesPage: React.FC = () => {
                               <item.icon className="w-6 h-6" />
                            </div>
                            <div className="flex-grow">
-                              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1 flex flex-col md:flex-row items-center md:items-start gap-2 justify-center md:justify-start">
-                                 {item.title}
-                                 <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span>
-                              </h4>
+                              <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}
+                                 <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
                               <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
                            </div>
                        </SpotlightCard>
@@ -212,7 +210,7 @@ const ServicesPage: React.FC = () => {
                                     <Sparkles className="w-3 h-3" /> Top Pick
                                 </span>
                               </div>
-                              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                              <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
                               <p className="text-slate-300 text-sm leading-relaxed mb-8 flex-grow">
                                 {service.description}
                               </p>
@@ -233,7 +231,7 @@ const ServicesPage: React.FC = () => {
                           <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                               <service.icon className="w-6 h-6" />
                           </div>
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
+                          <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{service.description}</p>
                           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                               <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
@@ -273,7 +271,7 @@ const ServicesPage: React.FC = () => {
                                   </span>
                                </div>
                                
-                               <h3 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h3>
+                               <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
                                <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-lg flex-grow">
                                   {service.description}
                                </p>
@@ -317,9 +315,7 @@ const ServicesPage: React.FC = () => {
                            <service.icon className="w-6 h-6" />
                         </div>
 
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                           {service.title}
-                        </h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                         <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
                            {service.description}
                         </p>
@@ -349,12 +345,8 @@ const ServicesPage: React.FC = () => {
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.1),transparent_70%)] pointer-events-none"></div>
            
            <div className="relative z-10 max-w-3xl mx-auto">
-             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
-               Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span>
-             </h2>
-             <p className="text-xl text-slate-400 mb-12 font-light leading-relaxed max-w-xl mx-auto">
-                Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.
-             </p>
+             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span></Typography>
+             <Typography variant="body-xl" className="text-slate-400">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">

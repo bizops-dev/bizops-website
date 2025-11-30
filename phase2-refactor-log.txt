@@ -1,0 +1,121 @@
+[36mPhase 2 Refactoring - Typography Enhancement[0m
+
+[36mProcessing 65 pages...[0m
+
+[32m✓ AboutPage.tsx[0m
+  - 2 paragraphs
+[33m○ AccessDeniedPage.tsx[0m
+[32m✓ AccessibilityPage.tsx[0m
+  - 2 paragraphs
+[33m○ AnalyticsPage.tsx[0m
+[32m✓ AssessmentPage.tsx[0m
+  - 3 paragraphs
+[33m○ AutomationAIPage.tsx[0m
+[32m✓ BlogDetailPage.tsx[0m
+  - 2 paragraphs
+[33m○ BlogPage.tsx[0m
+[33m○ CapabilityPage.tsx[0m
+[32m✓ CareersPage.tsx[0m
+  - 10 paragraphs
+[32m✓ ComingSoonPage.tsx[0m
+  - 2 paragraphs
+[33m○ ComparePage.tsx[0m
+[32m✓ ComparisonsPage.tsx[0m
+  - 1 paragraphs
+[33m○ ContactPage.tsx[0m
+[32m✓ CustomDevPage.tsx[0m
+  - 1 paragraphs
+[32m✓ CustomerPage.tsx[0m
+  - 2 paragraphs
+[32m✓ DemoPage.tsx[0m
+  - 1 paragraphs
+[32m✓ DocsPage.tsx[0m
+  - 6 paragraphs
+[32m✓ DownloadPage.tsx[0m
+  - 7 paragraphs
+[33m○ ErrorPage.tsx[0m
+[32m✓ EventDetailPage.tsx[0m
+  - 2 paragraphs
+[32m✓ EventsPage.tsx[0m
+  - 1 paragraphs
+[32m✓ GlossaryPage.tsx[0m
+  - 1 paragraphs
+[32m✓ HomePage.tsx[0m
+  - 5 paragraphs
+[32m✓ IndustryPage.tsx[0m
+  - 3 paragraphs
+[32m✓ IntegrationsPage.tsx[0m
+  - 1 paragraphs
+[32m✓ LegalPage.tsx[0m
+  - 3 paragraphs
+[33m○ LoginPage.tsx[0m
+[33m○ MaintenancePage.tsx[0m
+[32m✓ ManagedServicesPage.tsx[0m
+  - 4 paragraphs
+[32m✓ MediaKitPage.tsx[0m
+  - 2 paragraphs
+[32m✓ MigrationPage.tsx[0m
+  - 3 paragraphs
+[32m✓ ModulePage.tsx[0m
+  - 1 paragraphs
+[33m○ MultiCompanyPage.tsx[0m
+[32m✓ NeedsAnalysisPage.tsx[0m
+  - 3 paragraphs
+[32m✓ NotFoundPage.tsx[0m
+  - 1 paragraphs
+[32m✓ PartnerApplyPage.tsx[0m
+  - 2 paragraphs
+[32m✓ PartnerDirectoryPage.tsx[0m
+  - 1 paragraphs
+[32m✓ PartnersPage.tsx[0m
+  - 6 paragraphs
+[32m✓ PlatformPage.tsx[0m
+  - 5 paragraphs
+[32m✓ PortalsPage.tsx[0m
+  - 1 paragraphs
+[33m○ PreferencesPage.tsx[0m
+[33m○ PricingCalculatorPage.tsx[0m
+[32m✓ PricingPage.tsx[0m
+  - 3 paragraphs
+[32m✓ ProductTourPage.tsx[0m
+  - 7 paragraphs
+[32m✓ ROIPage.tsx[0m
+  - 2 paragraphs
+[33m○ ResourcesPage.tsx[0m
+[32m✓ RoadmapPage.tsx[0m
+  - 2 paragraphs
+[32m✓ RolePage.tsx[0m
+  - 2 paragraphs
+[33m○ SearchPage.tsx[0m
+[32m✓ SecurityReportPage.tsx[0m
+  - 1 paragraphs
+[32m✓ ServiceDetailPage.tsx[0m
+  - 1 paragraphs
+[32m✓ ServicesPage.tsx[0m
+  - 1 paragraphs
+[33m○ SitemapPage.tsx[0m
+[32m✓ SolutionsPage.tsx[0m
+  - 4 paragraphs
+[32m✓ StartupProgramPage.tsx[0m
+  - 10 paragraphs
+[33m○ StatusPage.tsx[0m
+[32m✓ SysReqPage.tsx[0m
+  - 1 paragraphs
+[32m✓ TechnologyPage.tsx[0m
+  - 8 paragraphs
+[33m○ ThankYouPage.tsx[0m
+[32m✓ TimelineGeneratorPage.tsx[0m
+  - 1 paragraphs
+[32m✓ TrustPage.tsx[0m
+  - 7 paragraphs
+[32m✓ UseCaseDetailPage.tsx[0m
+  - 2 paragraphs
+[33m○ UseCasesPage.tsx[0m
+[32m✓ WhyBizOpsPage.tsx[0m
+  - 3 paragraphs
+
+[32m✨ Complete![0m
+[36mFiles changed: 46/65[0m
+[36mTotal changes: 139[0m
+  - Paragraphs: 139
+  - Spans: 0

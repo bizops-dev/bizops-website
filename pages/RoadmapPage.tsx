@@ -97,12 +97,8 @@ const RoadmapPage: React.FC = () => {
                  <div className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold uppercase tracking-widest text-xs mb-3">
                     <Map className="w-4 h-4" /> Public Roadmap
                  </div>
-                 <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 leading-tight">
-                   Apa yang Sedang Kami Bangun?
-                 </h1>
-                 <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Transparansi adalah kunci. Pantau progres fitur BizOps dan ikut serta dalam menentukan prioritas kami selanjutnya.
-                 </p>
+                 <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-tight">Apa yang Sedang Kami Bangun?</Typography>
+                 <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Transparansi adalah kunci. Pantau progres fitur BizOps dan ikut serta dalam menentukan prioritas kami selanjutnya.</Typography>
               </div>
               
               <div className="flex items-center gap-3 w-full md:w-auto">
@@ -216,7 +212,7 @@ const RoadmapPage: React.FC = () => {
                              ${getStatusColor(column.color)}
                           `}>
                              <div className="flex items-center justify-between mb-1">
-                                <h3 className="font-bold text-slate-900 dark:text-white">{column.status}</h3>
+                                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{column.status}</Typography>
                                 <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">
                                    {column.items.length}
                                 </span>
@@ -244,9 +240,7 @@ const RoadmapPage: React.FC = () => {
                                          <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 px-2 py-0.5 rounded-md mb-2">
                                             {item.tag}
                                          </span>
-                                         <h4 className="font-bold text-slate-900 dark:text-white text-sm leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                            {item.title}
-                                         </h4>
+                                         <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-400">{item.title}</Typography>
                                       </div>
                                       
                                       <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-4 min-h-[3em]">
@@ -311,9 +305,7 @@ const RoadmapPage: React.FC = () => {
                   className="bg-white dark:bg-slate-900 rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden flex flex-col"
                >
                   <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
-                     <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        <Lightbulb className="w-5 h-5 text-primary-500" /> Request Fitur
-                     </h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Lightbulb className="w-5 h-5 text-primary-500" /> Request Fitur</Typography>
                      <button 
                         onClick={() => setShowRequestForm(false)}
                         className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -326,7 +318,7 @@ const RoadmapPage: React.FC = () => {
                      {!formSuccess ? (
                        <form onSubmit={handleFeatureSubmit} className="space-y-4">
                           <div>
-                             <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1.5">Judul Fitur</label>
+                             <Typography variant="caption" className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1.5">Judul Fitur</Typography>
                              <input 
                                 required
                                 autoFocus
@@ -336,7 +328,7 @@ const RoadmapPage: React.FC = () => {
                              />
                           </div>
                           <div>
-                             <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1.5">Deskripsi & Manfaat</label>
+                             <Typography variant="caption" className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1.5">Deskripsi & Manfaat</Typography>
                              <textarea 
                                 required
                                 rows={4} 
@@ -373,9 +365,7 @@ const RoadmapPage: React.FC = () => {
                              <CheckCircle2 className="w-8 h-8" />
                           </div>
                           <Typography variant="h3" as="h3">Request Terkirim!</Typography>
-                          <p className="text-sm text-slate-500 dark:text-slate-400">
-                             Terima kasih atas masukan Anda. Tim produk kami akan segera mereview ide ini.
-                          </p>
+                          <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Terima kasih atas masukan Anda. Tim produk kami akan segera mereview ide ini.</Typography>
                        </motion.div>
                      )}
                   </div>

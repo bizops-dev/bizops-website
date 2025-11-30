@@ -155,7 +155,7 @@ const CustomDevPage: React.FC = () => {
                                 <Check className="w-3.5 h-3.5" />
                              </div>
                              <div>
-                                <h4 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-600 transition-colors">{benefit.title}</h4>
+                                <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
                              </div>
                           </div>
@@ -202,10 +202,8 @@ const CustomDevPage: React.FC = () => {
                            <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
                               <Link to={`/use-cases/${item.id}`} className="block group">
                                 <SpotlightCard className="p-8 rounded-2xl hover:border-blue-200 dark:hover:border-blue-800 transition-colors">
-                                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
-                                      <span className="text-blue-500 mr-2 md:hidden">Case {idx + 1}:</span>
-                                      {item.title}
-                                  </h4>
+                                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-blue-500 mr-2 md:hidden">Case {idx + 1}:</span>
+                                      {item.title}</Typography>
                                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                                       {item.desc}
                                   </p>
@@ -235,9 +233,7 @@ const CustomDevPage: React.FC = () => {
       <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
            <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                   Key Deliverables
-                 </h2>
+                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Key Deliverables</Typography>
                  <p className="text-slate-600 dark:text-slate-400">
                    Output konkrit yang akan Anda terima dari proyek custom development ini.
                  </p>
@@ -257,7 +253,7 @@ const CustomDevPage: React.FC = () => {
                           <item.icon className="w-6 h-6" />
                        </div>
                        <div>
-                          <h4 className="font-bold text-slate-900 dark:text-white text-lg mb-1">{item.title}</h4>
+                          <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
                           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
                        </div>
                     </motion.div>
@@ -279,12 +275,8 @@ const CustomDevPage: React.FC = () => {
            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
            
            <div className="relative z-10 max-w-3xl mx-auto">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-               Ready to Build <span className="text-blue-400">Unique Features?</span>
-             </h2>
-             <p className="text-lg text-slate-400 mb-10 font-light leading-relaxed max-w-xl mx-auto">
-                Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.
-             </p>
+             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to Build <span className="text-blue-400">Unique Features?</span></Typography>
+             <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.</Typography>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">

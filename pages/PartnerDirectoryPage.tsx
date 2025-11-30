@@ -78,9 +78,7 @@ const PartnerDirectoryPage: React.FC = () => {
             <Globe className="w-3 h-3" /> Global Partner Network
           </div>
           <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
-            Hubungkan bisnis Anda dengan konsultan implementasi, reseller, dan principal teknologi resmi yang terintegrasi dengan BizOps.
-          </p>
+          <Typography variant="body-lg" className="text-slate-300">Hubungkan bisnis Anda dengan konsultan implementasi, reseller, dan principal teknologi resmi yang terintegrasi dengan BizOps.</Typography>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
              <Link to="/partners/apply">
@@ -231,9 +229,7 @@ const PartnerDirectoryPage: React.FC = () => {
           {/* --- PARTNER GRID --- */}
           <div className="col-span-1 lg:col-span-3">
              <div className="mb-6 flex justify-between items-center">
-                <h2 className="text-slate-900 dark:text-white font-bold text-lg">
-                   Showing {filteredPartners.length} Partners
-                </h2>
+                <Typography variant="h2" as="h2" className="text-slate-900 dark:text-white font-bold">Showing {filteredPartners.length} Partners</Typography>
              </div>
 
              {filteredPartners.length > 0 ? (
@@ -376,9 +372,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                    <OptimizedImage src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
                </div>
                <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-lg leading-tight group-hover:text-primary-500 transition-colors">
-                     {partner.name}
-                  </h3>
+                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-500">{partner.name}</Typography>
                   <div className="flex items-center gap-2 mt-1">
                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${getTypeColor(partner.type)}`}>
                         {partner.type}

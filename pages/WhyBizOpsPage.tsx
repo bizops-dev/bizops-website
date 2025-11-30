@@ -185,9 +185,7 @@ const WhyBizOpsPage: React.FC = () => {
       {/* --- 5 STRATEGIC REASONS --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-center text-slate-900 dark:text-white mb-16">
-               5 Alasan Strategis Berinvestasi di BizOps
-            </h2>
+            <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white">5 Alasan Strategis Berinvestasi di BizOps</Typography>
             
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -200,7 +198,7 @@ const WhyBizOpsPage: React.FC = () => {
                            {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
                            {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{reason.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
                         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
                      </Card>
                   ))}
@@ -227,7 +225,7 @@ const WhyBizOpsPage: React.FC = () => {
                         {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
                         {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{reason.title}</h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
                   </Card>
                ))}
@@ -256,9 +254,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-                     Clean Code, <br/>Lean Infrastructure.
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
                   <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                      Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.
                   </p>
@@ -270,7 +266,7 @@ const WhyBizOpsPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Lower TCO (Total Cost of Ownership)</Typography>
-                           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Jalankan di server 4GB RAM untuk 50 user. Hemat biaya cloud hosting hingga 40% per tahun.</p>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jalankan di server 4GB RAM untuk 50 user. Hemat biaya cloud hosting hingga 40% per tahun.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4 items-start">
@@ -279,7 +275,7 @@ const WhyBizOpsPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Green Computing</Typography>
-                           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Optimasi query database dan lazy-loading assets mengurangi konsumsi energi data center secara signifikan.</p>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Optimasi query database dan lazy-loading assets mengurangi konsumsi energi data center secara signifikan.</Typography>
                         </div>
                      </div>
                   </div>
@@ -344,10 +340,8 @@ const WhyBizOpsPage: React.FC = () => {
       <section className="py-32 bg-[#0B1120] text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight">Masa Depan Operasional Anda <br/>Dimulai Di Sini.</h2>
-            <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light">
-               Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.
-            </p>
+            <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Masa Depan Operasional Anda <br/>Dimulai Di Sini.</Typography>
+            <Typography variant="body-xl" className="text-slate-300">Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>

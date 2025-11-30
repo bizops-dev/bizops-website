@@ -25,14 +25,10 @@ const DownloadPage: React.FC = () => {
                  <Smartphone className="w-3 h-3" /> BizOps Mobile v4.2
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
-                Your entire business, <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">in your pocket.</span>
-              </h1>
+              <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Your entire business, <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">in your pocket.</span></Typography>
               
-              <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-lg">
-                Jangan biarkan meja kerja membatasi produktivitas. Approve PO, cek stok gudang, dan pantau sales—kapan saja, di mana saja.
-              </p>
+              <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jangan biarkan meja kerja membatasi produktivitas. Approve PO, cek stok gudang, dan pantau sales—kapan saja, di mana saja.</Typography>
               
               {/* Store Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -170,27 +166,21 @@ const DownloadPage: React.FC = () => {
                         <WifiOff className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Offline-First Mode</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                      <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                         <Fingerprint className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Biometric Security</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                      <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
                         <Bell className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Instant Push Notif</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -201,27 +191,21 @@ const DownloadPage: React.FC = () => {
                      <WifiOff className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Offline-First Mode</Typography>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                     Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                      <Fingerprint className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Biometric Security</Typography>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                     Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
                      <Bell className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Instant Push Notif</Typography>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                     Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
                </div>
             </div>
          </div>

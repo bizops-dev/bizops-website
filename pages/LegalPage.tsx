@@ -284,7 +284,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          <span className="text-slate-300">•</span>
                          <span>Last Updated: {data.updated}</span>
                       </div>
-                      <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">{data.title}</h1>
+                      <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight tracking-tight">{data.title}</Typography>
                       <p className="text-lg text-slate-600 leading-relaxed">{data.subtitle}</p>
                    </div>
                    
@@ -343,9 +343,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
                                   </div>
                                )}
-                               <h3 className="font-bold text-slate-900 text-xl mb-4">
-                                  {requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}
-                               </h3>
+                               <Typography variant="h3" as="h3" className="font-bold text-slate-900">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
                                {requestStatus === 'success' ? (
                                   <div className="flex items-center gap-4 text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
                                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="w-5 h-5 text-green-600" /></div>
@@ -360,7 +358,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                         Untuk keamanan, kami perlu memverifikasi kepemilikan akun. Masukkan email terdaftar Anda.
                                      </p>
                                      <div>
-                                        <label className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">Email Terdaftar</label>
+                                        <Typography variant="caption" className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">Email Terdaftar</Typography>
                                         <input 
                                           type="email" 
                                           required 
@@ -398,7 +396,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                      <Typography variant="h4" as="h4">Strictly Necessary</Typography>
                                      <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded border border-green-200">REQUIRED</span>
                                   </div>
-                                  <p className="text-sm text-slate-600 leading-relaxed">Wajib agar website berfungsi (login session, keamanan, load balancing).</p>
+                                  <Typography variant="caption" className="text-slate-600">Wajib agar website berfungsi (login session, keamanan, load balancing).</Typography>
                                </div>
                                <div className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 cursor-not-allowed opacity-50">
                                   <span className="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition" />
@@ -408,7 +406,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Cookie className="w-5 h-5 text-blue-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Analytics & Performance</Typography>
-                                  <p className="text-sm text-slate-600 leading-relaxed">Membantu kami memahami statistik kunjungan (Google Analytics) secara anonim.</p>
+                                  <Typography variant="caption" className="text-slate-600">Membantu kami memahami statistik kunjungan (Google Analytics) secara anonim.</Typography>
                                </div>
                                <button 
                                  onClick={() => setPreferences(prev => ({...prev, analytics: !prev.analytics}))}
@@ -421,7 +419,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Share2 className="w-5 h-5 text-amber-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Marketing & Targeting</Typography>
-                                  <p className="text-sm text-slate-600 leading-relaxed">Untuk personalisasi konten iklan yang relevan (Meta Pixel, LinkedIn Insight).</p>
+                                  <Typography variant="caption" className="text-slate-600">Untuk personalisasi konten iklan yang relevan (Meta Pixel, LinkedIn Insight).</Typography>
                                </div>
                                <button 
                                  onClick={() => setPreferences(prev => ({...prev, marketing: !prev.marketing}))}

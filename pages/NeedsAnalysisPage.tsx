@@ -92,7 +92,7 @@ const StepLayout = ({
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
          <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">Step {displayStep} of {totalSteps}</div>
-         <h2 className="text-3xl font-bold mb-2">{title}</h2>
+         <Typography variant="h2" as="h2" className="font-bold">{title}</Typography>
          <p className="text-slate-400">{desc}</p>
       </div>
 
@@ -250,10 +250,8 @@ const NeedsAnalysisPage = () => {
                 <Crosshair className="w-4 h-4" /> Solution Finder 2.0
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
-                Temukan Solusi BizOps <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Yang Paling Tepat.</span>
-              </h1>
+              <Typography variant="h1" as="h1" className="font-bold leading-tight tracking-tight">Temukan Solusi BizOps <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Yang Paling Tepat.</span></Typography>
               
               <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
                 Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.
@@ -350,7 +348,7 @@ const NeedsAnalysisPage = () => {
           <div className="space-y-5 bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</label>
+                <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</Typography>
                 <input 
                   type="text" 
                   value={contextData.company}
@@ -361,7 +359,7 @@ const NeedsAnalysisPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-400 mb-1.5">Nama Anda</label>
+                <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-1.5">Nama Anda</Typography>
                 <input 
                   type="text" 
                   value={contextData.name}
@@ -400,7 +398,7 @@ const NeedsAnalysisPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-400 mb-3">Industri</label>
+              <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-3">Industri</Typography>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {industries.map((ind) => (
                   <button
@@ -419,7 +417,7 @@ const NeedsAnalysisPage = () => {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-400 mb-2">Ukuran Tim</label>
+              <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-2">Ukuran Tim</Typography>
               <div className="grid grid-cols-4 gap-2">
                 {['< 50', '50-200', '200-1k', '> 1k'].map(size => (
                   <button
@@ -504,9 +502,7 @@ const NeedsAnalysisPage = () => {
           <div className="grid lg:grid-cols-3 gap-6">
             {/* COLUMN 1: PEOPLE */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
-                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-blue-400" /> People & Culture
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Users className="w-5 h-5 text-blue-400" /> People & Culture</Typography>
                 <div className="space-y-3">
                     {holisticIssues.people.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
@@ -523,9 +519,7 @@ const NeedsAnalysisPage = () => {
 
             {/* COLUMN 2: PROCESS */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
-                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
-                    <GitMerge className="w-5 h-5 text-emerald-400" /> Process & SOP
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-200"><GitMerge className="w-5 h-5 text-emerald-400" /> Process & SOP</Typography>
                 <div className="space-y-3">
                     {holisticIssues.process.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
@@ -542,9 +536,7 @@ const NeedsAnalysisPage = () => {
 
             {/* COLUMN 3: TECHNOLOGY */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
-                <h3 className="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
-                    <Settings className="w-5 h-5 text-amber-400" /> Technology
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Settings className="w-5 h-5 text-amber-400" /> Technology</Typography>
                 <div className="space-y-3">
                     {techQuestions.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
@@ -760,9 +752,7 @@ const NeedsAnalysisPage = () => {
             {/* Left: Quick Context Summary */}
             <div className="lg:col-span-4 space-y-6">
               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
-                <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                  <Activity className="w-4 h-4" /> Snapshot Diagnosa
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-500 tracking-widest"><Activity className="w-4 h-4" /> Snapshot Diagnosa</Typography>
                 
                 {/* Visual Radar Logic (Simplified) */}
                 <div className="space-y-4 mb-6">
@@ -812,9 +802,7 @@ const NeedsAnalysisPage = () => {
                
                {/* 1. VISUAL ROADMAP */}
                <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
-                  <h2 className="text-lg font-bold mb-6 flex items-center gap-2 text-blue-100">
-                    <Calendar className="w-5 h-5 text-blue-500" /> Rencana Implementasi (Roadmap)
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-bold"><Calendar className="w-5 h-5 text-blue-500" /> Rencana Implementasi (Roadmap)</Typography>
                   <div className="relative pt-6 pb-2 px-2">
                       <div className="absolute top-8 left-0 w-full h-1 bg-slate-800 rounded-full"></div>
                       <div className="grid grid-cols-3 gap-4 relative z-10">
@@ -852,9 +840,7 @@ const NeedsAnalysisPage = () => {
                <div className="grid md:grid-cols-2 gap-6">
                    {/* 2. TECHNOLOGY SOLUTIONS */}
                    <div>
-                       <h3 className="text-md font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                           <Server className="w-4 h-4" /> Solusi Teknologi
-                       </h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Server className="w-4 h-4" /> Solusi Teknologi</Typography>
                        <div className="space-y-3">
                            {recommended.map((mod, idx) => (
                                <div key={mod.id} className="bg-slate-900 border border-white/10 p-4 rounded-xl flex items-start gap-3">
@@ -862,7 +848,7 @@ const NeedsAnalysisPage = () => {
                                        <Layers className="w-4 h-4" />
                                    </div>
                                    <div>
-                                       <h4 className="font-bold text-white text-sm">{mod.title}</h4>
+                                       <Typography variant="h4" as="h4" className="font-bold text-white">{mod.title}</Typography>
                                        <p className="text-xs text-slate-400 mt-1 line-clamp-2">{mod.desc}</p>
                                    </div>
                                </div>
@@ -872,9 +858,7 @@ const NeedsAnalysisPage = () => {
 
                    {/* 3. SERVICE SOLUTIONS (NEW) */}
                    <div>
-                       <h3 className="text-md font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                           <Users className="w-4 h-4" /> Pendampingan (Services)
-                       </h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Users className="w-4 h-4" /> Pendampingan (Services)</Typography>
                        <div className="space-y-3">
                            {recommendedServices.length > 0 ? recommendedServices.map((svc) => (
                                <div key={svc.id} className="bg-gradient-to-br from-emerald-900/20 to-slate-900 border border-emerald-500/20 p-4 rounded-xl flex items-start gap-3">
@@ -882,7 +866,7 @@ const NeedsAnalysisPage = () => {
                                        <svc.icon className="w-4 h-4" />
                                    </div>
                                    <div>
-                                       <h4 className="font-bold text-white text-sm">{svc.title}</h4>
+                                       <Typography variant="h4" as="h4" className="font-bold text-white">{svc.title}</Typography>
                                        <p className="text-xs text-slate-400 mt-1 line-clamp-2">{svc.desc}</p>
                                    </div>
                                </div>
@@ -899,9 +883,7 @@ const NeedsAnalysisPage = () => {
           
            {/* NEXT STEPS / CROSS-SELL SECTION */}
            <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Lightbulb className="w-5 h-5 text-amber-400" /> Langkah Selanjutnya
-              </h3>
+              <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400" /> Langkah Selanjutnya</Typography>
               
               <div className="grid md:grid-cols-3 gap-5">
                 {/* ROI Calculator */}
@@ -913,9 +895,7 @@ const NeedsAnalysisPage = () => {
                      <Calculator className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Hitung Potensi ROI</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.</Typography>
                    <div className="mt-4 flex items-center text-xs font-bold text-blue-500">
                      Buka Kalkulator ROI <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
@@ -930,9 +910,7 @@ const NeedsAnalysisPage = () => {
                      <PieChart className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Maturity Assessment</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).</Typography>
                     <div className="mt-4 flex items-center text-xs font-bold text-emerald-500">
                      Mulai Audit <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
@@ -947,9 +925,7 @@ const NeedsAnalysisPage = () => {
                      <Briefcase className="w-5 h-5" />
                    </div>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
-                   <p className="text-sm text-slate-400 leading-relaxed">
-                     Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.
-                   </p>
+                   <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.</Typography>
                     <div className="mt-4 flex items-center text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>

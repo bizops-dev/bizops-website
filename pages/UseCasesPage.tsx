@@ -178,9 +178,7 @@ const UseCasesPage: React.FC = () => {
                      
                      {/* Filter by Category/Function */}
                      <div>
-                        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2 px-2">
-                           <Layers className="w-3.5 h-3.5" /> Solution Type
-                        </h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Solution Type</Typography>
                         <div className="space-y-1">
                            {categories.map((cat) => (
                               <button
@@ -211,9 +209,7 @@ const UseCasesPage: React.FC = () => {
 
                      {/* Filter by Industry */}
                      <div>
-                        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2 px-2">
-                           <Briefcase className="w-3.5 h-3.5" /> Industry
-                        </h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Briefcase className="w-3.5 h-3.5" /> Industry</Typography>
                         <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
                            {industries.map((ind) => (
                               <button
@@ -382,9 +378,7 @@ const UseCasesPage: React.FC = () => {
                                              </div>
                                           </div>
                                           
-                                          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2 leading-tight">
-                                             {item.title}
-                                          </h3>
+                                          <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 leading-tight">{item.title}</Typography>
                                           <p className="text-xs font-bold text-slate-400 dark:text-slate-500 mb-4 uppercase tracking-wide">
                                              {item.subtitle}
                                           </p>

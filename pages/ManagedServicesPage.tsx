@@ -12,6 +12,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import OptimizedImage from '../components/OptimizedImage'; // Added OptimizedImage import
     import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
+import Typography from '../components/Typography';
 
 const ManagedServicesPage: React.FC = () => {
   return (
@@ -107,12 +108,8 @@ const ManagedServicesPage: React.FC = () => {
       {/* --- PROBLEM & SOLUTION --- */}
       <Section className="bg-slate-50 dark:bg-slate-950 py-20">
          <div className="max-w-4xl mx-auto text-center mb-16 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-               Business Operations is Distracting.
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-               CEO seharusnya fokus pada Strategi, Inovasi, dan Pertumbuhan. Bukan terjebak mengurus laporan pajak bulanan, rekrutmen staff admin, atau maintenance server.
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Operations is Distracting.</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO seharusnya fokus pada Strategi, Inovasi, dan Pertumbuhan. Bukan terjebak mengurus laporan pajak bulanan, rekrutmen staff admin, atau maintenance server.</Typography>
          </div>
 
          {/* Mobile Slider (< md) */}
@@ -129,7 +126,7 @@ const ManagedServicesPage: React.FC = () => {
                         <div className={`w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 ${service.color}`}>
                            <service.icon className="w-7 h-7" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                         <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                            {service.desc}
                         </p>
@@ -151,7 +148,7 @@ const ManagedServicesPage: React.FC = () => {
                   <div className={`w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 ${service.color}`}>
                      <service.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
+                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                      {service.desc}
                   </p>
@@ -165,13 +162,9 @@ const ManagedServicesPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                     Powered by <br/>
-                     <span className="text-primary-600">Vetted Expert Network</span>
-                  </h2>
-                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                     Kami tidak bekerja sendirian. BizOps bermitra dengan firma konsultan top-tier yang telah melalui proses kurasi ketat. Anda mendapatkan kualitas Big 4 dengan fleksibilitas startup.
-                  </p>
+                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Powered by <br/>
+                     <span className="text-primary-600">Vetted Expert Network</span></Typography>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami tidak bekerja sendirian. BizOps bermitra dengan firma konsultan top-tier yang telah melalui proses kurasi ketat. Anda mendapatkan kualitas Big 4 dengan fleksibilitas startup.</Typography>
                   
                   <ul className="space-y-4 mb-10">
                      {[
@@ -212,7 +205,7 @@ const ManagedServicesPage: React.FC = () => {
                          ))}
                       </div>
                       <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
-                         <p className="text-sm text-slate-500 mb-4">Ingin bergabung sebagai partner ahli?</p>
+                         <Typography variant="caption" className="text-slate-500">Ingin bergabung sebagai partner ahli?</Typography>
                          <Link to="/partners" className="text-primary-600 font-bold hover:underline">
                             Daftar Partner Network →
                          </Link>
@@ -226,12 +219,8 @@ const ManagedServicesPage: React.FC = () => {
       {/* --- CTA --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8">
-               Siap Meng-upgrade Operasional Anda?
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
-               Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Siap Meng-upgrade Operasional Anda?</Typography>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">

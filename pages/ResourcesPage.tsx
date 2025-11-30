@@ -101,7 +101,7 @@ const ResourcesPage = () => {
                   <div className={`p-3 rounded-full mb-3 ${cat.color} group-hover:scale-110 transition-transform`}>
                     <cat.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-sm mb-1">{cat.title}</h3>
+                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cat.title}</Typography>
                   <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{cat.desc}</p>
                 </Link>
               </motion.div>
@@ -233,9 +233,7 @@ const ResourcesPage = () => {
                 <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm flex items-center justify-center text-primary-600 mb-4">
                   <featuredUseCase.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  {featuredUseCase.title}
-                </h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{featuredUseCase.title}</Typography>
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   {featuredUseCase.subtitle} - {featuredUseCase.industry}
                 </p>

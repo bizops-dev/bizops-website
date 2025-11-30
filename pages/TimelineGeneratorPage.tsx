@@ -21,6 +21,7 @@ import {
   ChevronUp
 } from 'lucide-react';
 import { calculateTimeline, TimelineInput } from '../data/timelineData';
+import Typography from '../components/Typography';
 
 const TimelineGeneratorPage: React.FC = () => {
   const [step, setStep] = useState<'input' | 'result'>('input');
@@ -71,12 +72,8 @@ const TimelineGeneratorPage: React.FC = () => {
            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200 dark:border-blue-800">
               <Calendar className="w-4 h-4" /> Project Planner
            </div>
-           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
-             Estimasi Waktu Implementasi <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Secara Realistis</span>
-           </h1>
-           <p className="text-lg text-slate-600 dark:text-slate-400">
-             Setiap perusahaan berbeda. Masukkan parameter proyek Anda untuk mendapatkan Timeline & Resource Plan yang akurat.
-           </p>
+           <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white leading-tight">Estimasi Waktu Implementasi <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Secara Realistis</span></Typography>
+           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Setiap perusahaan berbeda. Masukkan parameter proyek Anda untuk mendapatkan Timeline & Resource Plan yang akurat.</Typography>
         </div>
 
         <AnimatePresence mode="wait">
@@ -238,9 +235,7 @@ const TimelineGeneratorPage: React.FC = () => {
                {/* INTERACTIVE GANTT CHART */}
                <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl p-8 overflow-hidden">
                   <div className="flex items-center justify-between mb-8">
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        <BarChart3 className="w-5 h-5 text-primary-500" /> Project Schedule
-                     </h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-primary-500" /> Project Schedule</Typography>
                      <div className="text-sm text-slate-500 flex gap-4">
                         <div className="flex items-center gap-2"><div className="w-3 h-3 bg-blue-500 rounded-full"></div> Planning</div>
                         <div className="flex items-center gap-2"><div className="w-3 h-3 bg-amber-500 rounded-full"></div> Data</div>
@@ -305,9 +300,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                              
                                              {/* Preparation */}
                                              <div>
-                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-2">
-                                                   <ClipboardList className="w-3 h-3" /> Preparation
-                                                </h4>
+                                                <Typography variant="h4" as="h4" className="font-bold text-slate-500 tracking-wider"><ClipboardList className="w-3 h-3" /> Preparation</Typography>
                                                 <ul className="space-y-1">
                                                    {phase.preparation.map((item, i) => (
                                                       <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2">
@@ -319,9 +312,7 @@ const TimelineGeneratorPage: React.FC = () => {
 
                                              {/* Roles */}
                                              <div>
-                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-2">
-                                                   <Users className="w-3 h-3" /> Key Roles
-                                                </h4>
+                                                <Typography variant="h4" as="h4" className="font-bold text-slate-500 tracking-wider"><Users className="w-3 h-3" /> Key Roles</Typography>
                                                 <ul className="space-y-1">
                                                    {phase.roles.map((item, i) => (
                                                       <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2">
@@ -333,9 +324,7 @@ const TimelineGeneratorPage: React.FC = () => {
 
                                              {/* Deliverables */}
                                              <div>
-                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-2">
-                                                   <Box className="w-3 h-3" /> Deliverables
-                                                </h4>
+                                                <Typography variant="h4" as="h4" className="font-bold text-slate-500 tracking-wider"><Box className="w-3 h-3" /> Deliverables</Typography>
                                                 <ul className="space-y-1">
                                                    {phase.deliverables.map((item, i) => (
                                                       <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2">
@@ -347,9 +336,7 @@ const TimelineGeneratorPage: React.FC = () => {
 
                                              {/* Risks */}
                                              <div>
-                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-2">
-                                                   <ShieldAlert className="w-3 h-3 text-amber-500" /> Risk Watch
-                                                </h4>
+                                                <Typography variant="h4" as="h4" className="font-bold text-slate-500 tracking-wider"><ShieldAlert className="w-3 h-3 text-amber-500" /> Risk Watch</Typography>
                                                 <ul className="space-y-1">
                                                    {phase.risks.map((item, i) => (
                                                       <li key={i} className="text-xs text-amber-700 dark:text-amber-400 flex items-start gap-2">

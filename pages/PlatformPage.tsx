@@ -48,13 +48,9 @@ const PlatformPage: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-8">The Operating System for Business</Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 leading-[1.1] tracking-tight">
-            Satu Platform, <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-            BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.
-          </p>
+          <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Satu Platform, <br className="hidden md:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span></Typography>
+          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.</Typography>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
              <Link to="/demo" className="w-full sm:w-auto">
                 <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
@@ -80,9 +76,7 @@ const PlatformPage: React.FC = () => {
       <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <div className="text-center max-w-3xl mx-auto mb-12">
             <Typography variant="h2" as="h2">Fondasi Teknologi Modern</Typography>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-               Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.
-            </p>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.</Typography>
          </div>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -100,7 +94,7 @@ const PlatformPage: React.FC = () => {
                            <ArrowRight className="w-5 h-5" />
                         </div>
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{cap.title}</h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cap.title}</Typography>
                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-3">
                         {cap.description}
                      </p>
@@ -173,10 +167,8 @@ const PlatformPage: React.FC = () => {
             
             <div className="order-1 lg:order-2">
                <Badge className="mb-6 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">The Citizen Developer Era</Badge>
-               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                  Buat Aplikasi Enterprise <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Tanpa Koding.</span>
-               </h2>
+               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Buat Aplikasi Enterprise <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Tanpa Koding.</span></Typography>
                <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   Berdayakan tim operasional Anda untuk menjadi <b>Citizen Developer</b>. Dengan BizOps Studio, siapa pun bisa membuat form digital, workflow approval, dan laporan kustom hanya dengan drag-and-drop.
                </p>
@@ -225,9 +217,7 @@ const PlatformPage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
            <Badge variant="outline" className="mb-4">Comprehensive Suite</Badge>
            <Typography variant="h2" as="h2">Modul yang Saling Terhubung</Typography>
-           <p className="text-lg text-slate-600 dark:text-slate-400">
-             Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.
-           </p>
+           <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.</Typography>
         </div>
 
         <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -246,7 +236,7 @@ const PlatformPage: React.FC = () => {
                    <ArrowRight className="w-6 h-6 text-slate-300 group-hover:text-primary-500 -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">{mod.title}</h3>
+                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{mod.title}</Typography>
                 <p className="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed flex-grow">
                   {mod.subtitle}
                 </p>
@@ -273,10 +263,8 @@ const PlatformPage: React.FC = () => {
          <div className="relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                     API-First Ecosystem. <br />
-                     <span className="text-primary-400">Bukan Pulau Terisolasi.</span>
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">API-First Ecosystem. <br />
+                     <span className="text-primary-400">Bukan Pulau Terisolasi.</span></Typography>
                   <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-lg">
                      BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.
                   </p>
@@ -316,9 +304,7 @@ const PlatformPage: React.FC = () => {
          <div className="max-w-5xl mx-auto text-center relative z-10">
             <Badge variant="outline" className="mb-6 bg-white dark:bg-slate-900">Engineering Excellence</Badge>
             <Typography variant="h2" as="h2">Dibangun dengan Teknologi Enterprise-Grade</Typography>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12">
-               Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.
-            </p>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.</Typography>
             
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
                {[
@@ -366,12 +352,8 @@ const PlatformPage: React.FC = () => {
       <Section className="py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
          <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 -z-10"></div>
          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
-               Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
-               Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                <Link to="/demo">
                   <Button size="lg" className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>

@@ -121,11 +121,9 @@ const IndustryPage: React.FC = () => {
                </div>
             </motion.div>
             
-            <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-sans max-w-5xl mx-auto drop-shadow-sm">
-               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
+            <Typography variant="h1" as="h1" className="font-extrabold text-white tracking-tight leading-[1.1] font-sans"><span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
                  {data.subtitle}
-               </span>
-            </h1>
+               </span></Typography>
             
             <motion.p 
                variants={FADE_UP_VARIANTS}
@@ -222,12 +220,8 @@ const IndustryPage: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-               Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span>
-            </h2>
-            <p className="text-lg text-slate-400 leading-relaxed">
-               Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
+            <Typography variant="body-lg" className="text-slate-400">Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.</Typography>
          </div>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -246,9 +240,7 @@ const IndustryPage: React.FC = () => {
                   </div>
                   
                   <div className="flex-grow relative z-10 flex flex-col">
-                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-200 transition-colors">
-                        {challenge.title}
-                     </h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
                      <p className="text-slate-400 leading-relaxed text-sm group-hover:text-slate-300 transition-colors">
                         {challenge.desc}
                      </p>
@@ -267,12 +259,8 @@ const IndustryPage: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <Check className="w-3 h-3" /> The Solution
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-               Solusi Terintegrasi
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-               Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.
-            </p>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.</Typography>
          </div>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -293,9 +281,7 @@ const IndustryPage: React.FC = () => {
                      </div>
                      
                      <div className="flex-grow flex flex-col">
-                        <h3 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                           {sol.title}
-                        </h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
                         <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-base flex-grow">
                            {sol.desc}
                         </p>
@@ -320,9 +306,7 @@ const IndustryPage: React.FC = () => {
          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
                <Badge variant="outline-white" className="mb-6">Success Story</Badge>
-               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  {data.caseStudyTitle}
-               </h2>
+               <Typography variant="h2" as="h2" className="font-bold text-white">{data.caseStudyTitle}</Typography>
                <p className="text-slate-300 text-lg mb-8 leading-relaxed">
                   "{data.caseStudy}"
                </p>
@@ -409,13 +393,9 @@ const IndustryPage: React.FC = () => {
              Market Leader Choice
            </motion.div>
 
-           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight font-sans drop-shadow-xl">
-              Siap Mendominasi Pasar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-cyan-300">{data.title}</span>?
-           </h2>
+           <Typography variant="h2" as="h2" className="font-bold text-white leading-tight tracking-tight font-sans">Siap Mendominasi Pasar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-cyan-300">{data.title}</span>?</Typography>
            
-           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.
-           </p>
+           <Typography variant="body-xl" className="text-slate-400">Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.</Typography>
 
            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">

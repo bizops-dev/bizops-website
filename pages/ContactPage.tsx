@@ -170,9 +170,7 @@ const ContactPage: React.FC = () => {
                   >
                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
                      <div className="relative z-10">
-                        <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                           <Globe className="w-5 h-5 text-blue-400" /> Our Offices
-                        </h2>
+                        <Typography variant="h2" as="h2" className="font-bold"><Globe className="w-5 h-5 text-blue-400" /> Our Offices</Typography>
                         
                         <div className="space-y-6">
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">

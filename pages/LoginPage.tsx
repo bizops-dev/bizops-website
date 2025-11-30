@@ -103,7 +103,7 @@ const LoginPage: React.FC = () => {
                    {loginType === 'partner' && <Handshake className="w-5 h-5" />}
                 </div>
                 <div>
-                   <h3 className="font-bold text-slate-900 dark:text-white text-sm">{getLoginTitle()}</h3>
+                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{getLoginTitle()}</Typography>
                    <p className="text-xs text-slate-500 dark:text-slate-400">{getLoginDesc()}</p>
                 </div>
              </div>

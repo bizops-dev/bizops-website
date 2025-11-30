@@ -18,9 +18,7 @@ const IntegrationsPage: React.FC = () => {
            <Plug className="w-8 h-8 text-primary-600" />
         </div>
         <Typography variant="h1" as="h1">Ekosistem yang Saling Terhubung.</Typography>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-           Jangan buang waktu membangun integrasi dari nol. Gunakan pustaka konektor siap pakai (Plug-and-Play) kami untuk menghubungkan BizOps dengan aplikasi bisnis populer.
-        </p>
+        <Typography variant="body-xl" className="text-slate-600">Jangan buang waktu membangun integrasi dari nol. Gunakan pustaka konektor siap pakai (Plug-and-Play) kami untuk menghubungkan BizOps dengan aplikasi bisnis populer.</Typography>
       </div>
 
       {/* Grid */}
@@ -29,7 +27,7 @@ const IntegrationsPage: React.FC = () => {
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
                   <div className="flex items-end gap-4 mb-6 border-b border-slate-200 pb-4">
-                      <h2 className="text-2xl font-bold text-slate-900">{cat.category}</h2>
+                      <Typography variant="h2" as="h2" className="font-bold text-slate-900">{cat.category}</Typography>
                       <p className="text-slate-500 pb-1">{cat.desc}</p>
                   </div>
                   
@@ -44,7 +42,7 @@ const IntegrationsPage: React.FC = () => {
                                  Verified
                               </div>
                            </div>
-                           <h3 className="font-bold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">{app.name}</h3>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 group-hover:text-primary-600">{app.name}</Typography>
                            <p className="text-sm text-slate-600 leading-snug">
                               {app.desc}
                            </p>

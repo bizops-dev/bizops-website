@@ -121,9 +121,7 @@ const EventsPage: React.FC = () => {
         {/* Upcoming Events Grid */}
         <div className="space-y-8">
            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                 <Calendar className="w-6 h-6 text-primary-400" /> Upcoming Live Sessions
-              </h2>
+              <Typography variant="h2" as="h2" className="font-bold text-white"><Calendar className="w-6 h-6 text-primary-400" /> Upcoming Live Sessions</Typography>
            </div>
 
            <div className="md:hidden">
@@ -272,9 +270,7 @@ const EventsPage: React.FC = () => {
                                 {rec.duration}
                              </div>
                           </div>
-                          <h3 className="font-bold text-white mb-2 leading-snug group-hover:text-primary-400 transition-colors line-clamp-2">
-                             {rec.title}
-                          </h3>
+                          <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
                           <div className="flex items-center gap-4 text-xs text-slate-500 font-medium">
                              <span>{rec.views} views</span>
                              <span>•</span>
@@ -296,9 +292,7 @@ const EventsPage: React.FC = () => {
                              {rec.duration}
                           </div>
                        </div>
-                       <h3 className="font-bold text-white mb-2 leading-snug group-hover:text-primary-400 transition-colors line-clamp-2">
-                          {rec.title}
-                       </h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
                        <div className="flex items-center gap-4 text-xs text-slate-500 font-medium">
                           <span>{rec.views} views</span>
                           <span>•</span>
@@ -310,7 +304,7 @@ const EventsPage: React.FC = () => {
               
               <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
-                 <p className="text-sm text-slate-400 mb-6">Dapatkan akses ke 50+ jam materi pembelajaran premium.</p>
+                 <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
                  <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
                     <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>

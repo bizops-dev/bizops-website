@@ -319,7 +319,7 @@ const MigrationPage: React.FC = () => {
                       <div className={`w-16 h-16 ${item.bg} ${item.color} rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm`}>
                          <item.icon className="w-8 h-8" />
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{item.title}</h3>
+                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
                       <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">
                          {item.desc}
                       </p>
@@ -343,9 +343,7 @@ const MigrationPage: React.FC = () => {
                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
                           <CheckCircle className="w-3 h-3" /> Free Validation Tool
                        </div>
-                       <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                          Cek Kesehatan Data Anda
-                       </h2>
+                       <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Cek Kesehatan Data Anda</Typography>
                        <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg leading-relaxed">
                           Algoritma kami akan memindai struktur file Excel Anda secara lokal untuk memastikan kompatibilitas sebelum proses upload sesungguhnya.
                        </p>
@@ -390,9 +388,7 @@ const MigrationPage: React.FC = () => {
                                       <FileSpreadsheet className="w-10 h-10 text-slate-400" />
                                    </div>
                                    <Typography variant="h3" as="h3">Upload Excel / CSV</Typography>
-                                   <p className="text-sm text-slate-500 mb-8">
-                                      Drag file ke sini atau klik tombol di bawah
-                                   </p>
+                                   <Typography variant="caption" className="text-slate-500">Drag file ke sini atau klik tombol di bawah</Typography>
                                    <Button onClick={handleFileSimulate} className="shadow-lg shadow-primary-500/20">
                                       <Upload className="w-4 h-4 mr-2" /> Pilih File dari Komputer
                                    </Button>
@@ -425,9 +421,7 @@ const MigrationPage: React.FC = () => {
                                       <CheckCircle className="w-10 h-10" />
                                    </div>
                                    <Typography variant="h3" as="h3">Struktur File Valid!</Typography>
-                                   <p className="text-sm text-slate-500 mb-8">
-                                      File Anda siap untuk diimpor. Tidak ditemukan error kritis.
-                                   </p>
+                                   <Typography variant="caption" className="text-slate-500">File Anda siap untuk diimpor. Tidak ditemukan error kritis.</Typography>
                                    <div className="flex gap-3 justify-center">
                                       <Button onClick={() => navigate('/contact')} className="bg-emerald-600 hover:bg-emerald-500 border-none shadow-lg shadow-emerald-500/20">
                                          Konsultasi Migrasi
@@ -480,12 +474,10 @@ const MigrationPage: React.FC = () => {
               <div className="flex-1 p-6 md:p-10 flex flex-col">
                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
                     <div>
-                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                          <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
                              <activeSample.icon className="w-6 h-6" />
                           </div>
-                          {activeSample.label}
-                       </h3>
+                          {activeSample.label}</Typography>
                        <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
                           {activeSample.desc}
                        </p>
@@ -574,7 +566,7 @@ const MigrationPage: React.FC = () => {
                                 <item.icon className="w-6 h-6" />
                              </div>
                              <div>
-                                <h3 className="font-bold text-slate-900 dark:text-white text-lg leading-tight">{item.title}</h3>
+                                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{item.title}</Typography>
                                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mt-1">{item.desc}</p>
                              </div>
                           </div>
@@ -641,7 +633,7 @@ const MigrationPage: React.FC = () => {
                              <item.icon className="w-6 h-6" />
                           </div>
                           <div>
-                             <h3 className="font-bold text-slate-900 dark:text-white text-lg leading-tight">{item.title}</h3>
+                             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{item.title}</Typography>
                              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mt-1">{item.desc}</p>
                           </div>
                        </div>
@@ -740,9 +732,7 @@ const MigrationPage: React.FC = () => {
 
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Typography variant="h2" as="h2">Siap untuk Berpindah?</Typography>
-            <p className="text-xl text-slate-400 mb-16 max-w-2xl mx-auto">
-               Setiap perusahaan memiliki kompleksitas data yang unik. Pilih pendekatan migrasi yang paling sesuai dengan sumber daya tim Anda.
-            </p>
+            <Typography variant="body-xl" className="text-slate-400">Setiap perusahaan memiliki kompleksitas data yang unik. Pilih pendekatan migrasi yang paling sesuai dengan sumber daya tim Anda.</Typography>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                {/* Self-Managed Option */}

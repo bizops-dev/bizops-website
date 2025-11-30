@@ -31,7 +31,7 @@ const ComparePage: React.FC = () => {
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
             BizOps vs {data.name}
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.verdict}</h1>
+          <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight">{data.verdict}</Typography>
           <p className="text-xl text-slate-600">{data.description}</p>
         </div>
 
@@ -76,10 +76,8 @@ const ComparePage: React.FC = () => {
             {data.verdict && (
                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden">
                   <div className="relative z-10 max-w-3xl">
-                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                        <Layers className="w-6 h-6 text-primary-400" />
-                        Verdict
-                     </h2>
+                     <Typography variant="h2" as="h2" className="font-bold"><Layers className="w-6 h-6 text-primary-400" />
+                        Verdict</Typography>
                      <p className="text-lg text-slate-300 mb-8">{data.verdict}</p>
                      <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-6">
                         <Typography variant="h3" as="h3">Key Takeaways:</Typography>
@@ -109,7 +107,7 @@ const ComparePage: React.FC = () => {
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
                     <div className="flex items-center gap-3 mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
-                       <h3 className="text-xl font-bold text-slate-900">{scene.name}</h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900">{scene.name}</Typography>
                     </div>
 
                     <div className="space-y-4 mb-8">
@@ -140,7 +138,7 @@ const ComparePage: React.FC = () => {
               {[].map((feat: any, idx: number) => (
                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0">
-                       <h3 className="text-lg font-bold text-slate-900">{feat.title}</h3>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900">{feat.title}</Typography>
                     </div>
                     <div className="md:col-span-1">
                        <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>

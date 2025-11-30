@@ -23,13 +23,9 @@ const CareersPage: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
              <Globe className="w-3 h-3" /> Part of Divistant Ecosystem
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
-            Build Software that <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Runs The World.</span>
-          </h1>
-          <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.
-          </p>
+          <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight">Build Software that <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Runs The World.</span></Typography>
+          <Typography variant="body-xl" className="text-slate-300">BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.</Typography>
           <div className="flex justify-center">
              <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
@@ -146,9 +142,7 @@ const CareersPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                           Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -157,9 +151,7 @@ const CareersPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                           MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -168,9 +160,7 @@ const CareersPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Comprehensive Health</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                           Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -179,9 +169,7 @@ const CareersPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Performance Bonus</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                           Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                      </div>
                   </div>
                </CardSlider>
@@ -194,9 +182,7 @@ const CareersPage: React.FC = () => {
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Remote-First & Flexible</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kerja dari mana saja. Kami mengukur output, bukan jam duduk di kursi. WFA (Work From Anywhere) policy.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -205,9 +191,7 @@ const CareersPage: React.FC = () => {
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Top-Tier Gear</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">MacBook Pro M-Series untuk seluruh engineer dan desainer. Monitor 4K dan aksesori ergonomis disediakan.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -216,9 +200,7 @@ const CareersPage: React.FC = () => {
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Comprehensive Health</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Asuransi kesehatan lengkap (BPJS + Swasta) untuk Anda dan keluarga inti. Termasuk kacamata dan dental.</Typography>
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
@@ -227,9 +209,7 @@ const CareersPage: React.FC = () => {
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Performance Bonus</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                   </div>
                </div>
             </div>
@@ -244,9 +224,7 @@ const CareersPage: React.FC = () => {
 
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <Typography variant="h2" as="h2">Ready to Join Us?</Typography>
-            <p className="text-xl text-slate-300 mb-12 leading-relaxed font-light">
-               Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.
-            </p>
+            <Typography variant="body-xl" className="text-slate-300">Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.</Typography>
             
             <div className="flex flex-col sm:flex-row justify-center gap-6">
                <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">

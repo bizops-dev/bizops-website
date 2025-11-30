@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { Home, FileText, HelpCircle, LogIn, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Typography from '../components/Typography';
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -38,13 +39,9 @@ const NotFoundPage: React.FC = () => {
                 <span className="text-5xl animate-bounce">🤔</span>
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-               Halaman Ini Sedang <br/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-500">"Cuti Di Luar Tanggungan"</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-               Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa.
-            </p>
+            <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-tight">Halaman Ini Sedang <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-500">"Cuti Di Luar Tanggungan"</span></Typography>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa.</Typography>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                <Link to="/">

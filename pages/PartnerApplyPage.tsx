@@ -112,7 +112,7 @@ const PartnerApplyPage: React.FC = () => {
          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
          <div className="relative z-10 px-4 max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">{getPageTitle()}</h1>
+            <Typography variant="h1" as="h1" className="font-bold tracking-tight">{getPageTitle()}</Typography>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
                {trackParam 
                   ? "Bergabung dengan ratusan founder lain yang telah mengakselerasi pertumbuhan mereka dengan BizOps." 
@@ -132,15 +132,13 @@ const PartnerApplyPage: React.FC = () => {
                      <div className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl flex items-start gap-3">
                         <Info className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                         <div>
-                           <h4 className="font-bold text-purple-900 dark:text-purple-300 text-sm">Anda mendaftar untuk {trackParam === 'bootstrap' ? 'Bootstrap' : 'Scale-Up'} Track</h4>
+                           <Typography variant="h4" as="h4" className="font-bold dark:text-purple-300">Anda mendaftar untuk {trackParam === 'bootstrap' ? 'Bootstrap' : 'Scale-Up'} Track</Typography>
                            <p className="text-xs text-purple-800 dark:text-purple-400 mt-1">Kami akan memprioritaskan aplikasi Anda sesuai kriteria program startup.</p>
                         </div>
                      </div>
                   )}
 
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-                     <Briefcase className="w-6 h-6 text-primary-600" /> Profil Bisnis
-                  </h2>
+                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><Briefcase className="w-6 h-6 text-primary-600" /> Profil Bisnis</Typography>
                   
                   <form onSubmit={handleSubmit} className="space-y-8">
                      
@@ -169,9 +167,7 @@ const PartnerApplyPage: React.FC = () => {
                      <hr className="border-slate-100 dark:border-slate-800" />
 
                      {/* Contact Person */}
-                     <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        <User className="w-5 h-5 text-primary-600" /> Kontak PIC
-                     </h3>
+                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><User className="w-5 h-5 text-primary-600" /> Kontak PIC</Typography>
                      
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <Input label="Nama Lengkap" name="picName" placeholder="John Doe" required />
@@ -188,7 +184,7 @@ const PartnerApplyPage: React.FC = () => {
                      {/* Program Interest - Only show if not startup track (since startup track implies 'startup' program) */}
                      {!trackParam && (
                         <div>
-                           <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">Program yang Diminati</label>
+                           <Typography variant="caption" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">Program yang Diminati</Typography>
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <label className={`flex items-start gap-3 p-4 border rounded-xl cursor-pointer transition-all ${selectedProgram === 'referral' ? 'bg-primary-50 border-primary-500 ring-1 ring-primary-500 dark:bg-primary-900/20' : 'border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
                                  <input 
@@ -297,9 +293,7 @@ const PartnerApplyPage: React.FC = () => {
                {/* Quick Contact */}
                <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg">
                   <Typography variant="h4" as="h4">Butuh Bantuan Cepat?</Typography>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                     Ingin diskusi informal sebelum mendaftar resmi? Hubungi tim kemitraan kami langsung.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Ingin diskusi informal sebelum mendaftar resmi? Hubungi tim kemitraan kami langsung.</Typography>
                   <Button variant="outline" size="sm" className="w-full justify-start gap-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">
                      <Mail className="w-4 h-4" /> partners@bizops.id
                   </Button>
@@ -312,7 +306,7 @@ const PartnerApplyPage: React.FC = () => {
                      <div className="flex gap-1 mb-3 text-amber-300">
                         {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
                      </div>
-                     <p className="text-sm italic opacity-90 mb-4 leading-relaxed">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</p>
+                     <Typography variant="caption">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</Typography>
                      <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs">RS</div>
                         <div>

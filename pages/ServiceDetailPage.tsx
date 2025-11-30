@@ -180,7 +180,7 @@ const ServiceDetailPage: React.FC = () => {
                                 <Check className="w-3.5 h-3.5" />
                              </div>
                              <div>
-                                <h4 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-primary-600 transition-colors">{benefit.title}</h4>
+                                <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{benefit.title}</Typography>
                                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
                              </div>
                           </div>
@@ -229,10 +229,8 @@ const ServiceDetailPage: React.FC = () => {
                            {/* Content Side */}
                            <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'} h-full`}>
                               <SpotlightCard className="p-8 rounded-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-colors h-full flex flex-col">
-                                 <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                                    <span className="text-primary-500 mr-2 md:hidden">Step {idx + 1}:</span>
-                                    {item.title}
-                                 </h4>
+                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-primary-500 mr-2 md:hidden">Step {idx + 1}:</span>
+                                    {item.title}</Typography>
                                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                                     {item.desc}
                                  </p>
@@ -259,9 +257,7 @@ const ServiceDetailPage: React.FC = () => {
         <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
            <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
-                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                   Tangible Deliverables
-                 </h2>
+                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Tangible Deliverables</Typography>
                  <p className="text-slate-600 dark:text-slate-400">
                    Aset konkret yang akan menjadi milik perusahaan Anda selamanya.
                  </p>
@@ -302,12 +298,8 @@ const ServiceDetailPage: React.FC = () => {
            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
            
            <div className="relative z-10 max-w-3xl mx-auto">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-               Start Your <span className="text-primary-400">{data.title}</span> Journey.
-             </h2>
-             <p className="text-lg text-slate-400 mb-10 font-light leading-relaxed max-w-xl mx-auto">
-                Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.
-             </p>
+             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Start Your <span className="text-primary-400">{data.title}</span> Journey.</Typography>
+             <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.</Typography>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">

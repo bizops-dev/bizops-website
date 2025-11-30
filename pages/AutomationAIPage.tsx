@@ -17,9 +17,7 @@ const AutomationAIPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Biarkan Sistem yang Bekerja,<br/>Bukan Anda.
-          </h1>
+          <Typography variant="h1" as="h1" className="font-bold leading-tight">Biarkan Sistem yang Bekerja,<br/>Bukan Anda.</Typography>
           <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             Kurangi pekerjaan manual yang repetitif dan membosankan hingga 80%. BizOps dilengkapi dengan mesin Otomatisasi (<em>Workflow Builder</em>) dan Kecerdasan Buatan (<em>Applied AI</em>) yang praktis untuk membuat bisnis Anda berjalan secara autopilot.
           </p>

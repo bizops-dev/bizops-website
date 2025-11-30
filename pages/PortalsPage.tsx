@@ -17,12 +17,8 @@ const PortalsPage: React.FC = () => {
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Berhenti Menjadi Admin<br/>untuk Klien Anda.
-          </h1>
-          <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-            Bebaskan tim CS, Sales Admin, dan Purchasing Anda dari pertanyaan berulang via WhatsApp. Berikan akses portal mandiri 24/7 kepada mitra bisnis Anda untuk melihat data yang mereka butuhkan sendiri.
-          </p>
+          <Typography variant="h1" as="h1" className="font-bold leading-tight">Berhenti Menjadi Admin<br/>untuk Klien Anda.</Typography>
+          <Typography variant="body-xl" className="text-slate-300">Bebaskan tim CS, Sales Admin, dan Purchasing Anda dari pertanyaan berulang via WhatsApp. Berikan akses portal mandiri 24/7 kepada mitra bisnis Anda untuk melihat data yang mereka butuhkan sendiri.</Typography>
         </div>
       </section>
 

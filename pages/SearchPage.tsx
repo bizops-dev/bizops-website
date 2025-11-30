@@ -102,9 +102,7 @@ const SearchPage: React.FC = () => {
                        <span className="text-slate-300 dark:text-slate-700">•</span>
                        <span>{res.tag}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                       {res.title}
-                    </h3>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{res.title}</Typography>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                        {res.snippet}
                     </p>

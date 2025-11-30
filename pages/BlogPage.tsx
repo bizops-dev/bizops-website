@@ -177,9 +177,7 @@ const BlogPage: React.FC = () => {
                            </span>
                         </div>
                         
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                           {featuredPost.title}
-                        </h2>
+                        <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{featuredPost.title}</Typography>
                         
                         <p className="text-lg md:text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed font-light line-clamp-2 md:line-clamp-none">
                            {featuredPost.summary}
@@ -235,9 +233,7 @@ const BlogPage: React.FC = () => {
 
                      {/* Categories */}
                      <div>
-                        <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2 px-2">
-                           <Layers className="w-3.5 h-3.5" /> Topics
-                        </h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Topics</Typography>
                         <div className="space-y-1">
                            {categories.map((cat) => (
                               <button
@@ -327,9 +323,7 @@ const BlogPage: React.FC = () => {
                                                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min</span>
                                              </div>
                                              
-                                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                                                {post.title}
-                                             </h3>
+                                             <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{post.title}</Typography>
                                              
                                              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
                                                 {post.summary}

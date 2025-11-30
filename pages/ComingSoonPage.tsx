@@ -71,14 +71,12 @@ const ComingSoonPage: React.FC = () => {
                    <Bell className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3">Terima Kasih!</Typography>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Kami akan memberi tahu Anda segera setelah fitur ini siap.</p>
+                <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Kami akan memberi tahu Anda segera setelah fitur ini siap.</Typography>
              </motion.div>
            ) : (
              <>
-               <h3 className="font-bold text-slate-900 dark:text-white mb-2 flex items-center justify-center gap-2">
-                  <Mail className="w-4 h-4 text-primary-500" /> Beritahu saya saat siap
-               </h3>
-               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Dapatkan notifikasi prioritas saat fitur ini live.</p>
+               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Mail className="w-4 h-4 text-primary-500" /> Beritahu saya saat siap</Typography>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dapatkan notifikasi prioritas saat fitur ini live.</Typography>
                <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
                   <Input 
                     placeholder="email@perusahaan.com" 

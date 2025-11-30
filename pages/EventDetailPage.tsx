@@ -160,9 +160,7 @@ const EventDetailPage: React.FC = () => {
                       </span>
                     </div>
                     <div className="flex-1 pb-6 border-b border-slate-100 dark:border-slate-800 last:border-0 last:pb-0">
-                      <h4 className="font-semibold text-slate-900 dark:text-white text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                        {item.activity}
-                      </h4>
+                      <Typography variant="h4" as="h4" className="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{item.activity}</Typography>
                     </div>
                   </div>
                 ))}
@@ -183,7 +181,7 @@ const EventDetailPage: React.FC = () => {
                       height={64}
                     />
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white">{speaker.name}</h4>
+                      <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{speaker.name}</Typography>
                       <p className="text-sm text-slate-500 dark:text-slate-400">{speaker.role}</p>
                     </div>
                   </div>
@@ -201,13 +199,11 @@ const EventDetailPage: React.FC = () => {
                 {!isSuccess ? (
                   <>
                     <Typography variant="h3" as="h3">Amankan Kursi Anda</Typography>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-                      Slot terbatas. Pendaftaran gratis untuk profesional bisnis.
-                    </p>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Slot terbatas. Pendaftaran gratis untuk profesional bisnis.</Typography>
 
                     <form onSubmit={handleRegister} className="space-y-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Nama Lengkap</label>
+                        <Typography variant="caption" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Nama Lengkap</Typography>
                         <input 
                           required
                           type="text" 
@@ -217,7 +213,7 @@ const EventDetailPage: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Email Kantor</label>
+                        <Typography variant="caption" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Email Kantor</Typography>
                         <input 
                           required
                           type="email" 
@@ -227,7 +223,7 @@ const EventDetailPage: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Perusahaan</label>
+                        <Typography variant="caption" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Perusahaan</Typography>
                         <input 
                           required
                           type="text" 
@@ -237,7 +233,7 @@ const EventDetailPage: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Jabatan</label>
+                        <Typography variant="caption" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-2">Jabatan</Typography>
                         <input 
                           required
                           type="text" 
@@ -286,7 +282,7 @@ const EventDetailPage: React.FC = () => {
               </div>
 
               <div className="bg-slate-100 dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
-                 <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-3">Bagikan Event Ini</p>
+                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bagikan Event Ini</Typography>
                  <div className="flex justify-center gap-2">
                     {['LinkedIn', 'Twitter', 'WhatsApp', 'Email'].map((social) => (
                        <button key={social} className="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-500 hover:border-primary-500 transition-all">

@@ -35,9 +35,7 @@ const StatusPage: React.FC = () => {
                <CheckCircle className="w-12 h-12 text-green-600 dark:text-green-400 relative z-10" />
             </motion.div>
             
-            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-               {statusData.currentStatus}
-            </h1>
+            <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white">{statusData.currentStatus}</Typography>
             <p className="text-slate-500 dark:text-slate-400 text-lg mb-8">
                All systems are running smoothly. No incidents reported today.
             </p>
@@ -59,9 +57,7 @@ const StatusPage: React.FC = () => {
         {/* --- UPTIME HISTORY --- */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
            <div className="flex justify-between items-end mb-6">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <span className="text-xs font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">90 Days</span>
-              </h2>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <span className="text-xs font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">90 Days</span></Typography>
               <span className="text-green-600 dark:text-green-400 font-bold text-lg">99.99%</span>
            </div>
            
@@ -92,9 +88,7 @@ const StatusPage: React.FC = () => {
            {/* Core Services */}
            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
               <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
-                 <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <Server className="w-4 h-4 text-slate-500" /> Platform Services
-                 </h4>
+                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><Server className="w-4 h-4 text-slate-500" /> Platform Services</Typography>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.systems.map((sys, idx) => (
@@ -102,7 +96,7 @@ const StatusPage: React.FC = () => {
                        <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <div>
-                             <h5 className="font-semibold text-slate-900 dark:text-white text-sm">{sys.name}</h5>
+                             <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
                              <p className="text-xs text-slate-500 dark:text-slate-400">{sys.desc}</p>
                           </div>
                        </div>
@@ -118,16 +112,14 @@ const StatusPage: React.FC = () => {
            {/* Third Party */}
            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
               <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
-                 <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <Cloud className="w-4 h-4 text-slate-500" /> Third-Party Dependencies
-                 </h4>
+                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><Cloud className="w-4 h-4 text-slate-500" /> Third-Party Dependencies</Typography>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.thirdParty.map((sys, idx) => (
                     <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
                        <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
-                          <h5 className="font-semibold text-slate-900 dark:text-white text-sm">{sys.name}</h5>
+                          <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
                        </div>
                        <span className="text-sm font-medium text-green-600 dark:text-green-400">{sys.status}</span>
                     </div>
@@ -143,9 +135,7 @@ const StatusPage: React.FC = () => {
               {statusData.incidents.map((inc, idx) => (
                  <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-colors">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-                       <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                          <AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}
-                       </h4>
+                       <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}</Typography>
                        <span className="text-xs text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 pl-6 border-l-2 border-slate-200 dark:border-slate-800 ml-2">

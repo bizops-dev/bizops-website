@@ -160,7 +160,7 @@ const SitemapPage: React.FC = () => {
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${section.color}`}>
                 <section.icon className="w-5 h-5" />
               </div>
-              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">{section.title}</h2>
+              <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{section.title}</Typography>
               <ul className="space-y-2.5">
                 {section.links.map((link, lIdx) => (
                   <li key={lIdx}>

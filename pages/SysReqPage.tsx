@@ -15,17 +15,13 @@ const SysReqPage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
            <Typography variant="h1" as="h1">Spesifikasi Teknis</Typography>
-           <p className="text-lg text-slate-600">
-              Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.
-           </p>
+           <Typography variant="body-lg" className="text-slate-600">Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.</Typography>
         </div>
 
         {/* Server Req */}
         <div className="mb-16">
-           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <div className="p-2 bg-slate-100 rounded-lg"><Server className="w-6 h-6 text-slate-600" /></div>
-              Server Requirements (On-Premise)
-           </h2>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Server className="w-6 h-6 text-slate-600" /></div>
+              Server Requirements (On-Premise)</Typography>
            <div className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
               <table className="w-full text-left">
                  <thead className="bg-slate-100 border-b border-slate-200">
@@ -48,14 +44,12 @@ const SysReqPage: React.FC = () => {
 
         {/* Client Req */}
         <div className="mb-16">
-           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <div className="p-2 bg-slate-100 rounded-lg"><Monitor className="w-6 h-6 text-slate-600" /></div>
-              Client Requirements (End-User)
-           </h2>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Monitor className="w-6 h-6 text-slate-600" /></div>
+              Client Requirements (End-User)</Typography>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {sysReqData.client.map((req, idx) => (
                  <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <h3 className="font-bold text-slate-900 mb-2">{req.item}</h3>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{req.spec}</p>
                     {req.note && (
                        <div className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded inline-flex items-center gap-1">
@@ -69,10 +63,8 @@ const SysReqPage: React.FC = () => {
 
         {/* Network */}
         <div className="mb-16">
-           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
-              Network Configuration (Firewall)
-           </h2>
+           <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
+              Network Configuration (Firewall)</Typography>
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <div className="space-y-4">
                  {sysReqData.network.map((net, idx) => (

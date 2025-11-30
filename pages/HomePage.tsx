@@ -158,9 +158,7 @@ const HomePage: React.FC = () => {
 
             {/* Social Proof Logos - Updated to match Customer Stories */}
             <div className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 overflow-hidden">
-               <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8">
-                  Dipercaya oleh Pemimpin Industri
-               </p>
+               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Dipercaya oleh Pemimpin Industri</Typography>
                <InfiniteScrollLoop speed={30} className="opacity-60 grayscale hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-40 dark:hover:opacity-100">
                   {['Divistant', 'Dikstra', 'Arena Rasa Nusantara', 'Aero Travel Indonesia', 'TechCorp', 'BuildCo'].map(brand => (
                      <span key={brand} className="text-xl md:text-2xl font-black text-slate-800 dark:text-slate-200 tracking-tighter whitespace-nowrap mx-4 cursor-default">{brand}</span>
@@ -182,9 +180,7 @@ const HomePage: React.FC = () => {
                 <h2 id="problems-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
                    Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span>
                 </h2>
-                <p className="text-lg text-slate-600 dark:text-slate-400">
-                   Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.
-                </p>
+                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
             </div>
              
              <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -193,7 +189,7 @@ const HomePage: React.FC = () => {
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${prob.bg} ring-1 ring-inset ring-black/5 dark:ring-white/10`}>
                          <prob.icon className={`w-7 h-7 ${prob.color}`} aria-hidden="true" />
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{prob.title}</h3>
+                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
                       <p className="text-xs font-bold text-red-500 dark:text-red-400 mb-4 uppercase tracking-wide">{prob.subtitle}</p>
                       <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                          {prob.desc}
@@ -322,9 +318,7 @@ const HomePage: React.FC = () => {
             <h2 id="uvp-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
                Bukan Sekadar ERP Biasa
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-               Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.
-            </p>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
          </div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -338,7 +332,7 @@ const HomePage: React.FC = () => {
                         <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <uvp.icon className="w-7 h-7" aria-hidden="true" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{uvp.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
                         <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-4">{uvp.subtitle}</p>
                         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                            {uvp.desc}
@@ -495,13 +489,9 @@ const HomePage: React.FC = () => {
                               </div>
                            </div>
 
-                           <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
-                              Satu Platform.<br/>
-                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Tanpa Batas User.</span>
-                           </h3>
-                           <p className="text-base text-slate-300 mb-10 max-w-lg leading-relaxed font-light">
-                              Platform terintegrasi dengan harga flat yang adil. Infrastruktur managed service, siap mendukung pertumbuhan bisnis Anda tanpa penalti biaya.
-                           </p>
+                           <Typography variant="h3" as="h3" className="font-black text-white tracking-tight leading-tight">Satu Platform.<br/>
+                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Tanpa Batas User.</span></Typography>
+                           <Typography variant="body" className="text-slate-300">Platform terintegrasi dengan harga flat yang adil. Infrastruktur managed service, siap mendukung pertumbuhan bisnis Anda tanpa penalti biaya.</Typography>
 
                            {/* Main Metric */}
                            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/10 mb-8 relative group-hover:bg-white/10 transition-colors duration-500">
@@ -587,7 +577,7 @@ const HomePage: React.FC = () => {
                      
                      <div className="relative z-10 bg-slate-900/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700/50 h-full hover:bg-slate-800 hover:border-primary-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-900/20 group-hover:-translate-y-1">
                         <div className="text-5xl font-black text-slate-800 group-hover:text-primary-500/20 transition-colors duration-500 mb-6">{step.step}</div>
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">{step.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-white group-hover:text-primary-400">{step.title}</Typography>
                         <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors text-sm">{step.desc}</p>
                      </div>
                   </div>
@@ -611,7 +601,7 @@ const HomePage: React.FC = () => {
                         <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <ind.icon className="w-6 h-6" aria-hidden="true" />
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                         <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
                            {ind.description}
                         </p>
@@ -635,7 +625,7 @@ const HomePage: React.FC = () => {
                         <div className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                            <role.icon className="w-5 h-5" aria-hidden="true" />
                         </div>
-                        <h3 className="font-bold text-slate-900 dark:text-white mb-1 text-sm">{role.title}</h3>
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{role.title}</Typography>
                         <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
                            {role.subtitle}
                         </p>
@@ -673,7 +663,7 @@ const HomePage: React.FC = () => {
                               <item.icon className="w-6 h-6 text-blue-400" aria-hidden="true" />
                            </div>
                            <div>
-                              <h3 className="text-white font-bold text-lg">{item.title}</h3>
+                              <Typography variant="h3" as="h3" className="text-white font-bold">{item.title}</Typography>
                               <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                            </div>
                         </div>
@@ -776,9 +766,7 @@ const HomePage: React.FC = () => {
             <h2 id="cta-heading" className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                Siap Mengubah Cara Anda Bekerja?
             </h2>
-            <p className="text-xl text-primary-100 mb-12 max-w-2xl mx-auto">
-               Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.
-            </p>
+            <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl font-bold w-full sm:w-auto shadow-2xl shadow-blue-900/20 bg-white text-blue-700 hover:bg-blue-50">

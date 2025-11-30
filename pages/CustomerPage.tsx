@@ -56,7 +56,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                <div className="w-16 h-16 bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
                   {story.logo}
                </div>
-               <h3 className="text-2xl font-bold mb-2">{story.client}</h3>
+               <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
                <p className="text-slate-400 font-medium uppercase tracking-wider text-xs mb-8">{story.industry}</p>
                
                <div className="space-y-6 pt-8 border-t border-white/10">
@@ -73,9 +73,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
          {/* RIGHT: The Story (Light Side) */}
          <div className="flex-1 p-10 lg:p-14 flex flex-col">
             <div className="mb-8">
-               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
-                  "{story.title}"
-               </h2>
+               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
                <div className="flex gap-4 mb-8">
                   <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0" />
@@ -193,7 +191,7 @@ const CustomerPage: React.FC = () => {
       {/* --- INFINITE LOGO LOOP --- */}
       <div className="py-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-            <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Trusted by Industry Leaders</p>
+            <Typography variant="caption" className="text-slate-500">Trusted by Industry Leaders</Typography>
          </div>
          
          {/* Marquee Container */}
@@ -228,9 +226,7 @@ const CustomerPage: React.FC = () => {
       <section className="bg-[#0B1120] py-24 relative overflow-hidden text-white">
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
-            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-               Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.
-            </p>
+            <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 hover:bg-blue-50 font-bold shadow-xl">

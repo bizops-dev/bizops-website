@@ -85,9 +85,7 @@ const PricingPage: React.FC = () => {
             </motion.span>
           </h1>
           
-          <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-            Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.
-          </p>
+          <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
           
           {/* Enhanced Toggle */}
           <div className="flex items-center justify-center animate-in fade-in zoom-in duration-700 delay-300">
@@ -222,10 +220,8 @@ const PricingPage: React.FC = () => {
                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
 
                <div className="mb-6 relative z-10">
-                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                   Enterprise
-                   <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span>
-                 </h3>
+                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Enterprise
+                   <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span></Typography>
                  <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Infrastruktur dedicated & kontrol penuh untuk korporasi.</p>
                </div>
                
@@ -279,10 +275,8 @@ const PricingPage: React.FC = () => {
                   <Calculator className="w-3.5 h-3.5" />
                   SIMULASI BIAYA CUSTOM
                 </div>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
-                  Butuh Spesifikasi Khusus? <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span>
-                </h3>
+                <Typography variant="h3" as="h3" className="font-extrabold text-white leading-tight">Butuh Spesifikasi Khusus? <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span></Typography>
                 <p className="text-slate-300 text-base md:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.
                 </p>
@@ -325,7 +319,7 @@ const PricingPage: React.FC = () => {
                    <div className={`p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm mb-4 ${item.color}`}>
                      <item.icon className="w-8 h-8" />
                    </div>
-                   <h4 className="font-bold text-slate-900 dark:text-white mb-1">{item.title}</h4>
+                   <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
                    <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
                  </div>
                ))}
@@ -342,16 +336,12 @@ const PricingPage: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-12 max-w-7xl mx-auto mb-24">
           <div className="lg:col-span-5">
              <div className="sticky top-24">
-               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
-                 Frequently Asked Questions
-               </h2>
-               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                 Jawaban untuk pertanyaan umum seputar lisensi, pembayaran, dan teknis implementasi.
-               </p>
+               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Frequently Asked Questions</Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Jawaban untuk pertanyaan umum seputar lisensi, pembayaran, dan teknis implementasi.</Typography>
                
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800">
                  <Typography variant="h4" as="h4">Masih ada pertanyaan?</Typography>
-                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Tim konsultan kami siap membantu Anda.</p>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim konsultan kami siap membantu Anda.</Typography>
                  <div className="space-y-3">
                    <a href="mailto:sales@bizops.id" className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                      <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm"><MessageSquare className="w-5 h-5" /></div>

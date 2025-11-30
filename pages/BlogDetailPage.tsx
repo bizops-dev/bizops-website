@@ -143,9 +143,7 @@ const BlogDetailPage: React.FC = () => {
                   </span>
                </div>
                
-               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] font-sans tracking-tight">
-                  {post.title}
-               </h1>
+               <Typography variant="h1" as="h1" className="font-bold text-white leading-[1.1] font-sans tracking-tight">{post.title}</Typography>
 
                <div className="flex flex-wrap items-center gap-8 text-white/90 text-sm font-sans font-medium">
                   <div className="flex items-center gap-3">
@@ -231,9 +229,7 @@ const BlogDetailPage: React.FC = () => {
                      {/* 1. Table of Contents */}
                      {headings.length > 0 && (
                         <div>
-                           <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 flex items-center gap-2">
-                              <Menu className="w-4 h-4" /> On this page
-                           </h3>
+                           <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Menu className="w-4 h-4" /> On this page</Typography>
                            <ul className="space-y-1 border-l border-slate-200 dark:border-slate-800">
                               {headings.map((heading) => (
                                  <li key={heading.id}>
@@ -267,9 +263,7 @@ const BlogDetailPage: React.FC = () => {
                               <div className="text-xs text-blue-600 font-bold uppercase tracking-wide">{post.author.split(',')[1] || 'Contributor'}</div>
                            </div>
                         </div>
-                        <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                           Experienced consultant specializing in ERP implementation and business process re-engineering.
-                        </p>
+                        <Typography variant="caption" className="text-slate-500">Experienced consultant specializing in ERP implementation and business process re-engineering.</Typography>
                         <button className="text-sm font-bold text-blue-600 hover:underline">View Profile</button>
                      </div>
 
@@ -321,9 +315,7 @@ const BlogDetailPage: React.FC = () => {
                            </div>
                         </div>
                         <div className="p-8 flex flex-col flex-1">
-                           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
-                              {rp.title}
-                           </h3>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
                            <p className="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-6 flex-grow">
                               {rp.summary}
                            </p>
@@ -354,13 +346,9 @@ const BlogDetailPage: React.FC = () => {
                      <Rocket className="w-4 h-4 text-blue-400" />
                      <span className="text-xs font-bold text-blue-300 uppercase tracking-widest">Start Your Journey</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-white">
-                     Turn Insights into <br/>
-                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Actionable Growth.</span>
-                  </h2>
-                  <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-lg">
-                     Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.
-                  </p>
+                  <Typography variant="h2" as="h2" className="font-bold tracking-tight leading-[1.1] text-white">Turn Insights into <br/>
+                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Actionable Growth.</span></Typography>
+                  <Typography variant="body-xl" className="text-slate-400">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>
                   
                   {/* Trust Signals */}
                   <div className="flex items-center gap-4 text-sm font-medium text-slate-500">
