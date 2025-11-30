@@ -24,6 +24,7 @@
     "percy:snapshot": "percy snapshot ./dist",
     "sync:figma": "node scripts/sync-figma-tokens.js",
     "refactor:analyze": "node scripts/refactor-helper.js",
+    "refactor:auto": "node scripts/auto-refactor.js",
     "prepare": "husky install"
   },
   "dependencies": {

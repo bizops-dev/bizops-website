@@ -1,0 +1,23 @@
+[1m[34m🚀 Starting Automated Refactoring...[0m
+
+[36mFound 65 pages to refactor[0m
+
+[1m[1/65][0m
+[36mProcessing: AboutPage.tsx[0m
+file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:44
+    const importName = importStatement.match(/import (\w+)/)[1];
+                                                            ^
+
+TypeError: Cannot read properties of null (reading '1')
+    at file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:44:61
+    at Array.forEach (<anonymous>)
+    at addImports (file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:42:11)
+    at refactorFile (file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:199:69)
+    at file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:266:21
+    at Array.forEach (<anonymous>)
+    at main (file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:262:9)
+    at file:///Users/andrimuhyidin/Workspaces/bizops/bizops-website/scripts/auto-refactor.js:282:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+
+Node.js v20.11.1
