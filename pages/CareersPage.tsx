@@ -17,7 +17,7 @@ const CareersPage: React.FC = () => {
       <SEO title="Karir di BizOps (Divistant) | Build The Future of ERP" description="Bergabunglah dengan tim engineering BizOps yang berada di bawah naungan Divistant. Budaya Remote-First, Open Source, dan Inovasi tanpa batas." />
 
       {/* --- HERO SECTION --- */}
-      <div className="relative bg-[#0F172A] pt-32 pb-24 lg:pt-48 lg:pb-32 text-white text-center overflow-hidden">
+      <div className="relative bg-slate-900 pt-32 pb-24 lg:pt-48 lg:pb-32 text-white text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
@@ -40,7 +40,7 @@ const CareersPage: React.FC = () => {
       </div>
 
       {/* --- PHOTO GRID (CULTURE SNAPSHOT) --- */}
-      <div className="bg-[#0F172A] pb-24 overflow-hidden">
+      <div className="bg-slate-900 pb-24 overflow-hidden">
          <Container size="7xl">
             <Grid cols={4} gap={4} className="h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
                <div className="bg-slate-800 rounded-3xl overflow-hidden relative group">
@@ -206,7 +206,7 @@ const CareersPage: React.FC = () => {
       </Section>
 
       {/* --- OPEN POSITIONS CTA --- */}
-      <section className="py-24 bg-[#0F172A] relative overflow-hidden">
+      <section className="py-24 bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
          {/* Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none"></div>

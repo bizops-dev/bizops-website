@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative bg-[#0F172A] pt-24 pb-32 lg:pt-48 lg:pb-64 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-24 pb-32 lg:pt-48 lg:pb-64 text-white overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
          
          {/* Abstract Glows */}

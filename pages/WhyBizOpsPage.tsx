@@ -179,7 +179,7 @@ const WhyBizOpsPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {whyBizOpsContent.reasons.map((reason, idx) => (
-                     <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
+                     <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                         <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
                            {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
                            {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
@@ -206,7 +206,7 @@ const WhyBizOpsPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                {whyBizOpsContent.reasons.map((reason, idx) => (
-                  <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
+                  <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                      <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
                         {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
                         {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}

@@ -117,7 +117,7 @@ const PricingPage: React.FC = () => {
       <Section className="-mt-12 pt-0 relative z-20">
         {/* --- PRICING CARDS --- */}
         <div className="mb-24">
-           <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12">
+           <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12 shadow-lg hover:shadow-xl transition-shadow">
              
              {/* Plan 1: Business */}
              <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">

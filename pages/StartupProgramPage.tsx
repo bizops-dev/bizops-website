@@ -16,7 +16,7 @@ const StartupProgramPage: React.FC = () => {
       <SEO title="Program BizOps for Startups | Diskon & Kredit Gratis" description="Program akselerasi eksklusif untuk startup. Dapatkan akses teknologi ERP kelas dunia dengan harga khusus agar Anda bisa fokus pada pertumbuhan." />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative bg-[#0F172A] pt-32 pb-32 lg:pt-48 lg:pb-40 text-white text-center overflow-hidden">
+      <section className="relative bg-slate-900 pt-32 pb-32 lg:pt-48 lg:pb-40 text-white text-center overflow-hidden">
         {/* Modern Grid Background */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -81,7 +81,7 @@ const StartupProgramPage: React.FC = () => {
       </section>
 
       {/* --- LOGO WALL (Social Proof) --- */}
-      <section className="bg-[#0F172A] border-b border-slate-800 pb-16">
+      <section className="bg-slate-900 border-b border-slate-800 pb-16">
          <Container size="7xl" className="overflow-hidden">
             <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500 flex-wrap">
                {/* Placeholder Logos */}

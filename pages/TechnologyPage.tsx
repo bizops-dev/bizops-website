@@ -260,7 +260,7 @@ const TechnologyPage: React.FC = () => {
       </Section>
 
       {/* 3. BUSINESS KERNEL: ERPNEXT */}
-      <Section dark className="bg-[#0f172a]">
+      <Section dark className="bg-slate-900">
          <Container size="7xl">
             <Grid cols={2} gap={16} className="items-center">
                <div className="order-2 md:order-1 relative">
@@ -349,7 +349,7 @@ const TechnologyPage: React.FC = () => {
       </Section>
 
       {/* 5. PERFORMANCE & SCALABILITY */}
-      <Section dark className="bg-[#0f172a] border-t border-slate-800">
+      <Section dark className="bg-slate-900 border-t border-slate-800">
          <Container size="6xl">
             <Grid cols={2} gap={12} className="items-center">
                <div>
@@ -433,7 +433,7 @@ const TechnologyPage: React.FC = () => {
       </Section>
 
       {/* 6. FUTURE READY MODULES (RESTORED) */}
-      <Section dark className="bg-[#0f172a]">
+      <Section dark className="bg-slate-900">
          <Container size="7xl">
             <div className="mb-16 text-center">
                <Badge variant="outline" className="mb-4 border-blue-500/30 text-blue-300 bg-blue-500/10">Scalability First</Badge>

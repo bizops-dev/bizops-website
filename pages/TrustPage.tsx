@@ -198,7 +198,7 @@ const TrustPage: React.FC = () => {
         </section>
 
         {/* --- SECURITY ARCHITECTURE --- */}
-        <section className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-16 items-center">
            <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                  <Layers className="w-3 h-3" /> Defense in Depth

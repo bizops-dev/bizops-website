@@ -348,7 +348,7 @@ const HomePage: React.FC = () => {
                {/* LEFT COLUMN: The Problems (Span 5) */}
                <CardSlider 
                   breakpoint="lg" 
-                  className="lg:col-span-5 h-full"
+                  className="lg:col-span-5 h-full shadow-lg hover:shadow-xl transition-shadow"
                   desktopClassName="lg:grid lg:grid-cols-1 gap-6 h-full"
                   mobileItemWidth="w-full"
                   desktopItemWidth="lg:w-full"
@@ -450,7 +450,7 @@ const HomePage: React.FC = () => {
                      {/* Glowing Border Animation */}
                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-primary-500 to-blue-600 rounded-[2.5rem] p-[2px] opacity-100 animate-border-pulse pointer-events-none"></div>
                      
-                     <Stack direction="vertical" gap={4} justify="between" className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full overflow-hidden">
+                     <Stack direction="vertical" gap={4} justify="between" className="bg-slate-900 rounded-[2.4rem] p-8 md:p-12 relative h-full overflow-hidden">
                         {/* Abstract Background */}
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -567,7 +567,7 @@ const HomePage: React.FC = () => {
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
             </div>
             
-            <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]" className="mb-16">
+            <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]" className="mb-16 shadow-lg hover:shadow-xl transition-shadow">
                {industries.map((ind) => (
                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
                      <Card className="h-full border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" padding="lg">

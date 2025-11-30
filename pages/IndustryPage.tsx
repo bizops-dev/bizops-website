@@ -230,7 +230,7 @@ const IndustryPage: React.FC = () => {
                <motion.div 
                   key={idx}
                   variants={FADE_UP_VARIANTS}
-                  className="bg-gradient-to-b from-[#1E293B]/60 to-[#0F172A]/60 p-8 rounded-3xl border border-white/5 hover:border-red-500/40 shadow-lg hover:shadow-red-900/10 transition-all duration-500 group relative overflow-hidden hover:-translate-y-1 h-full flex flex-col backdrop-blur-sm"
+                  className="bg-gradient-to-b from-slate-800/60 to-slate-900/60 p-8 rounded-3xl border border-white/5 hover:border-red-500/40 shadow-lg hover:shadow-red-900/10 transition-all duration-500 group relative overflow-hidden hover:-translate-y-1 h-full flex flex-col backdrop-blur-sm"
                >
                   {/* Enhanced Card Background Effects */}
                   <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>

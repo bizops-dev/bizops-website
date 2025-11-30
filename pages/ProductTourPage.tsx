@@ -327,7 +327,7 @@ const MobileFrame: React.FC<{children: React.ReactNode}> = ({ children }) => (
            <div className="w-20 h-5 bg-black rounded-b-2xl absolute left-1/2 -translate-x-1/2 top-0"></div>
            <div className="flex gap-1.5">
               <Signal className="w-3 h-3" />
-              <div className="w-5 h-2.5 bg-white rounded-[3px]"></div>
+              <div className="w-5 h-2.5 bg-white rounded"></div>
            </div>
         </div>
         {children}
@@ -338,7 +338,7 @@ const MobileFrame: React.FC<{children: React.ReactNode}> = ({ children }) => (
 
 const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ children, role }) => (
   <Container size="6xl" className="w-full aspect-[16/10] bg-slate-900 rounded-xl md:rounded-2xl border border-slate-700 shadow-2xl overflow-hidden flex flex-col ring-4 ring-slate-900/50 relative transform transition-transform duration-500 hover:scale-[1.01]">
-     <div className="h-8 md:h-10 bg-[#1e293b] border-b border-slate-700 flex items-center px-4 gap-2 select-none">
+     <div className="h-8 md:h-10 bg-slate-800 border-b border-slate-700 flex items-center px-4 gap-2 select-none">
         <div className="flex gap-1.5 md:gap-2">
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff5f56]"></div>
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]"></div>
@@ -349,7 +349,7 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
         </div>
      </div>
      <div className="flex-1 flex overflow-hidden bg-slate-50 dark:bg-[#0B1120] text-slate-900 dark:text-white">
-        <div className="w-48 md:w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col p-3 md:p-4 hidden sm:flex shrink-0">
+        <div className="w-48 md:w-64 bg-slate-900 border-r border-slate-800 flex flex-col p-3 md:p-4 hidden sm:flex shrink-0">
            <div className="flex items-center gap-3 mb-6 md:mb-8 text-white font-bold text-base md:text-lg px-2">
               <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center text-xs md:text-sm shadow-lg shadow-primary-900/50">B</div>
               <span className="tracking-tight">BizOps</span>
@@ -380,8 +380,8 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
               </div>
            </div>
         </div>
-        <div className="flex-1 flex flex-col relative overflow-hidden bg-[#0f172a]">
-           <div className="h-12 md:h-16 border-b border-slate-800 flex items-center justify-between px-4 md:px-6 bg-[#0f172a]/95 backdrop-blur supports-[backdrop-filter]:bg-[#0f172a]/60 z-10">
+        <div className="flex-1 flex flex-col relative overflow-hidden bg-slate-900">
+           <div className="h-12 md:h-16 border-b border-slate-800 flex items-center justify-between px-4 md:px-6 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 z-10">
               <div className="text-xs md:text-sm font-medium text-slate-400 flex items-center gap-2">
                  <span className="text-slate-500">Workspace</span> <ChevronRight className="w-3 h-3"/> <span className="text-white">Desk</span>
               </div>
@@ -596,7 +596,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
 
             {step === 1 && (
                <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 z-20 animate-fade-in">
-                  <div className="bg-[#1e293b] w-full max-w-lg rounded-2xl shadow-2xl border border-slate-700 overflow-hidden animate-scale-in">
+                  <div className="bg-slate-800 w-full max-w-lg rounded-2xl shadow-2xl border border-slate-700 overflow-hidden animate-scale-in">
                      <div className="p-4 md:p-6 border-b border-slate-700 flex justify-between items-center bg-slate-800/50">
                         <div className="flex items-center gap-3">
                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500"><FileText className="w-4 h-4"/></div>
@@ -969,7 +969,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             {step === 0 && (
                <div className="px-6 -mt-12 flex-1 overflow-y-auto relative z-10 pb-6">
                   {/* Attendance Card */}
-                  <div className="bg-[#1e293b] rounded-3xl shadow-xl p-6 mb-6 border border-slate-800">
+                  <div className="bg-slate-800 rounded-3xl shadow-xl p-6 mb-6 border border-slate-800">
                      <div className="flex justify-between items-center mb-6">
                         <div>
                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">Today's Shift</div>

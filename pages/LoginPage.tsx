@@ -182,7 +182,7 @@ const LoginPage: React.FC = () => {
       </Stack>
 
       {/* RIGHT: VISUAL SECTION (Desktop Only) */}
-      <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden w-1/2 bg-[#0F172A] relative overflow-hidden">
+      <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden w-1/2 bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
          
          {/* Animated Background Shapes */}

@@ -197,7 +197,7 @@ const ServicesPage: React.FC = () => {
                         <motion.div 
                           key={service.id}
                           variants={FADE_UP_VARIANTS}
-                          className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full"
+                          className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full"
                         >
                           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                           <Stack direction="vertical" gap={4} className="relative z-10 h-full">
@@ -253,7 +253,7 @@ const ServicesPage: React.FC = () => {
                       <motion.div 
                         key={service.id}
                         variants={FADE_UP_VARIANTS}
-                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500 h-full"
+                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500 h-full"
                       >
                          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700"></div>
                          

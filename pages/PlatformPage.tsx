@@ -221,7 +221,7 @@ const PlatformPage: React.FC = () => {
               to={`/platform/modules/${mod.id}`}
               className="group h-full block"
             >
-              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50" hoverEffect>
+              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50 shadow-lg hover:shadow-xl transition-shadow" hoverEffect>
                 <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-8">
                    <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
                      <mod.icon className="w-8 h-8" />
