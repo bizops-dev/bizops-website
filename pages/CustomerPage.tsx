@@ -62,7 +62,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
                <Typography variant="body" className="text-slate-400 tracking-wider">{story.industry}</Typography>
                
-               <Stack direction="col" gap={6} className="pt-8 border-t border-white/10">
+               <Stack direction="vertical" gap={6} className="pt-8 border-t border-white/10">
                   {story.metrics.map((m: any, i: number) => (
                      <div key={i}>
                         <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-1">{m.value}</div>
@@ -177,7 +177,7 @@ const CustomerPage: React.FC = () => {
             </div>
 
             {/* Desktop Stack */}
-            <Stack direction="col" gap={12} className="hidden md:block">
+            <Stack direction="vertical" gap={12} className="hidden md:block">
                {customerStories.map((story, idx) => (
                   <StoryCard key={idx} story={story} idx={idx} />
                ))}

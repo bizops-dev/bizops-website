@@ -245,14 +245,14 @@ const PartnerApplyPage: React.FC = () => {
             </div>
 
             {/* RIGHT: INFO SIDEBAR */}
-            <Stack direction="col" gap={8} className="lg:col-span-4">
+            <Stack direction="vertical" gap={8} className="lg:col-span-4">
                
                {/* Process Timeline */}
                <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl"></div>
                   <Typography variant="h3" as="h3">Next Steps</Typography>
                   
-                  <Stack direction="col" gap={8} className="relative z-10">
+                  <Stack direction="vertical" gap={8} className="relative z-10">
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center">
                            <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">1</div>

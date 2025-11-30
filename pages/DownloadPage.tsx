@@ -34,7 +34,7 @@ const DownloadPage: React.FC = () => {
               <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jangan biarkan meja kerja membatasi produktivitas. Approve PO, cek stok gudang, dan pantau sales—kapan saja, di mana saja.</Typography>
               
               {/* Store Buttons */}
-              <Stack direction="col" gap={4} className="mb-10">
+              <Stack direction="vertical" gap={4} className="mb-10">
                  <a href="#" className="flex items-center gap-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-xl">
                     <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.98 1.07-3.12-1.02.05-2.27.69-3.02 1.55-.67.78-1.26 2.03-1.11 3.17 1.14.09 2.3-.63 3.06-1.6z"/></svg>
                     <div className="text-left leading-none">
@@ -106,7 +106,7 @@ const DownloadPage: React.FC = () => {
                         </div>
 
                         {/* App Body */}
-                        <Stack direction="col" gap={4} className="p-4 -mt-6 relative z-20">
+                        <Stack direction="vertical" gap={4} className="p-4 -mt-6 relative z-20">
                            {/* Stats Card */}
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
                               <div className="flex justify-between items-center mb-4">
@@ -218,7 +218,7 @@ const DownloadPage: React.FC = () => {
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Enterprise Deployment?</Typography>
             <Typography variant="body" className="text-slate-400">Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
                   <FileCode className="w-4 h-4" /> Download APK (v4.2.1)
                </Button>

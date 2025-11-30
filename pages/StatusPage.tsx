@@ -82,7 +82,7 @@ const StatusPage: React.FC = () => {
         </div>
 
         {/* --- SYSTEM COMPONENTS --- */}
-        <Stack direction="col" gap={6}>
+        <Stack direction="vertical" gap={6}>
            <Typography variant="h3" as="h3">System Metrics</Typography>
            
            {/* Core Services */}
@@ -131,10 +131,10 @@ const StatusPage: React.FC = () => {
         {/* --- INCIDENTS --- */}
         <div>
            <Typography variant="h3" as="h3">Past Incidents</Typography>
-           <Stack direction="col" gap={4}>
+           <Stack direction="vertical" gap={4}>
               {statusData.incidents.map((inc, idx) => (
                  <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-colors">
-                    <Stack direction="col" gap={4} className="sm:items-center justify-between mb-3">
+                    <Stack direction="vertical" gap={4} className="sm:items-center justify-between mb-3">
                        <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}</Typography>
                        <Typography variant="caption" className="text-slate-500">{inc.date}</Typography>
                     </Stack>

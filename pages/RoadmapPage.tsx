@@ -95,7 +95,7 @@ const RoadmapPage: React.FC = () => {
         
         {/* COMPACT HERO */}
         <Container size="7xl" className="mb-12">
-           <Stack direction="col" gap={6} className="items-end justify-between border-b border-slate-200 dark:border-slate-800 pb-8">
+           <Stack direction="vertical" gap={6} className="items-end justify-between border-b border-slate-200 dark:border-slate-800 pb-8">
               <div className="max-w-2xl">
                  <div className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold uppercase tracking-widest text-xs mb-3">
                     <Map className="w-4 h-4" /> Public Roadmap
@@ -104,7 +104,7 @@ const RoadmapPage: React.FC = () => {
                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Transparansi adalah kunci. Pantau progres fitur BizOps dan ikut serta dalam menentukan prioritas kami selanjutnya.</Typography>
               </div>
               
-              <Stack direction="row" gap={3} align="center" className="w-full md:w-auto">
+              <Stack direction="horizontal" gap={3} align="center" className="w-full md:w-auto">
                  {/* Mobile Filter Toggle */}
                  <button 
                     onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
@@ -124,14 +124,14 @@ const RoadmapPage: React.FC = () => {
         </Container>
 
         <Container size="7xl">
-           <Stack direction="col" gap={8}>
+           <Stack direction="vertical" gap={8}>
               
               {/* SIDEBAR FILTER (Desktop Sticky) */}
               <div className="hidden md:block w-64 flex-shrink-0">
-                 <Stack direction="col" gap={8} className="sticky top-28">
+                 <Stack direction="vertical" gap={8} className="sticky top-28">
                     <div>
                        <Typography variant="h3" as="h3">Filter by Category</Typography>
-                       <Stack direction="col" gap={1}>
+                       <Stack direction="vertical" gap={1}>
                           {allTags.map(tag => (
                              <button
                                 key={tag}
@@ -178,11 +178,11 @@ const RoadmapPage: React.FC = () => {
                           className="absolute bottom-0 left-0 w-full bg-white dark:bg-slate-900 rounded-t-2xl p-6 border-t border-slate-200 dark:border-slate-800"
                           onClick={e => e.stopPropagation()}
                        >
-                          <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                          <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                              <Typography variant="h3" as="h3">Filter Categories</Typography>
                              <button onClick={() => setMobileFilterOpen(false)}><X className="w-5 h-5" /></button>
                           </Stack>
-                          <Stack direction="row" gap={2} className="mb-6">
+                          <Stack direction="horizontal" gap={2} className="mb-6">
                              {allTags.map(tag => (
                                 <button
                                    key={tag}
@@ -212,19 +212,19 @@ const RoadmapPage: React.FC = () => {
                              mb-4 p-4 bg-white dark:bg-slate-900 rounded-xl shadow-sm border-t-4
                              ${getStatusColor(column.color)}
                           `}>
-                             <Stack direction="row" gap={4} align="center" justify="between" className="mb-1">
+                             <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-1">
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{column.status}</Typography>
                                 <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full">
                                    {column.items.length}
                                 </span>
                              </Stack>
-                             <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400">
+                             <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400">
                                 <Clock className="w-3 h-3" /> {column.period}
                              </Stack>
                           </div>
 
                           {/* Items List */}
-                          <Stack direction="col" gap={3} className="flex-1">
+                          <Stack direction="vertical" gap={3} className="flex-1">
                              <AnimatePresence mode='popLayout'>
                                 {column.items
                                    .filter(item => activeFilter === 'All' || item.tag === activeFilter)
@@ -246,7 +246,7 @@ const RoadmapPage: React.FC = () => {
                                       
                                       <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
 
-                                      <Stack direction="row" gap={4} align="center" justify="between" className="pt-3 border-t border-slate-50 dark:border-slate-800">
+                                      <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-3 border-t border-slate-50 dark:border-slate-800">
                                          <button 
                                             onClick={() => handleVote(item.id)}
                                             className={`

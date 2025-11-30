@@ -122,7 +122,7 @@ const EventsPage: React.FC = () => {
       <Container size="7xl" className="-mt-20 relative z-20 pb-24 space-y-24">
         
         {/* Upcoming Events Grid */}
-        <Stack direction="col" gap={8}>
+        <Stack direction="vertical" gap={8}>
            <div className="flex items-center justify-between">
               <Typography variant="h2" as="h2" className="font-bold text-white"><Calendar className="w-6 h-6 text-primary-400" /> Upcoming Live Sessions</Typography>
            </div>
@@ -241,7 +241,7 @@ const EventsPage: React.FC = () => {
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            
            <div className="relative z-10">
-              <Stack direction="col" gap={6} className="justify-between items-end mb-12">
+              <Stack direction="vertical" gap={6} className="justify-between items-end mb-12">
                  <div>
                     <Typography variant="h2" as="h2">On-Demand Library</Typography>
                     <Typography variant="body-lg" className="text-slate-400">Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.</Typography>
@@ -298,7 +298,7 @@ const EventsPage: React.FC = () => {
               <Container size="3xl" className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
                  <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
-                 <Stack direction="col" gap={4} className="justify-center">
+                 <Stack direction="vertical" gap={4} className="justify-center">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
                     <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>
                  </Stack>

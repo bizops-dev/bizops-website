@@ -77,7 +77,7 @@ const ServicesPage: React.FC = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary-500/10 rounded-[100%] blur-[100px] pointer-events-none animate-pulse-slow"></div>
 
         <Container size="5xl" className="relative z-10 text-center">
-           <Stack direction="row" gap={4} justify="center" className="mb-8">
+           <Stack direction="horizontal" gap={4} justify="center" className="mb-8">
               <Breadcrumbs />
            </Stack>
            
@@ -124,7 +124,7 @@ const ServicesPage: React.FC = () => {
                 { label: 'Uptime SLA', val: '99.9%', icon: Clock },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center">
-                   <Stack direction="row" gap={2} align="center" justify="center" className="mb-1 text-slate-900 dark:text-white font-bold text-2xl md:text-3xl">
+                   <Stack direction="horizontal" gap={2} align="center" justify="center" className="mb-1 text-slate-900 dark:text-white font-bold text-2xl md:text-3xl">
                       <stat.icon className="w-5 h-5 text-primary-500" />
                       {stat.val}
                    </Stack>
@@ -138,7 +138,7 @@ const ServicesPage: React.FC = () => {
       {/* --- ENGAGEMENT MODEL (JOURNEY) --- */}
       <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20">
         <Container size="7xl">
-           <Stack direction="col" gap={6} className="justify-between items-end mb-16">
+           <Stack direction="vertical" gap={6} className="justify-between items-end mb-16">
               <div>
                 <Typography variant="h2" as="h2">How We Work</Typography>
                 <Typography variant="h3" as="h3">The Transformation Arc</Typography>
@@ -166,7 +166,7 @@ const ServicesPage: React.FC = () => {
                            <div className={`w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-4 shadow-sm mx-auto md:mx-0 ${item.color} shrink-0`}>
                               <item.icon className="w-6 h-6" />
                            </div>
-                           <Stack direction="row" gap={4}>
+                           <Stack direction="horizontal" gap={4}>
                               <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}
                                  <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
                               <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
@@ -200,9 +200,9 @@ const ServicesPage: React.FC = () => {
                           className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full"
                         >
                           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                          <Stack direction="col" gap={4} className="relative z-10 h-full">
-                              <Stack direction="row" gap={3} align="center" className="mb-6">
-                                <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
+                          <Stack direction="vertical" gap={4} className="relative z-10 h-full">
+                              <Stack direction="horizontal" gap={3} align="center" className="mb-6">
+                                <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
                                     <service.icon className="w-6 h-6 text-white" />
                                 </Stack>
                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
@@ -225,7 +225,7 @@ const ServicesPage: React.FC = () => {
                   return (
                     <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
                         <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col">
-                          <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
+                          <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                               <service.icon className="w-6 h-6" />
                           </Stack>
                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
@@ -257,10 +257,10 @@ const ServicesPage: React.FC = () => {
                       >
                          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700"></div>
                          
-                         <Stack direction="col" gap={8} className="relative z-10 h-full">
-                            <Stack direction="col" gap={4}>
-                               <Stack direction="row" gap={3} align="center" className="mb-6">
-                                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
+                         <Stack direction="vertical" gap={8} className="relative z-10 h-full">
+                            <Stack direction="vertical" gap={4}>
+                               <Stack direction="horizontal" gap={3} align="center" className="mb-6">
+                                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur shrink-0">
                                      <service.icon className="w-6 h-6 text-white" />
                                   </Stack>
                                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
@@ -281,12 +281,12 @@ const ServicesPage: React.FC = () => {
                             </Stack>
                             
                             {/* Decorative List for Featured - Hidden on mobile small screens if needed, but better visible */}
-                            <Stack direction="row" gap={4} className="bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hidden md:block">
+                            <Stack direction="horizontal" gap={4} className="bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hidden md:block">
                                <Typography variant="h4" as="h4">What we analyze</Typography>
                                <ul className="space-y-4">
                                   {service.methodology.map((item, i) => (
                                      <li key={i} className="flex items-start gap-3 text-slate-200">
-                                        <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-primary-500/20 mt-0.5">
+                                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-primary-500/20 mt-0.5">
                                            <div className="w-2 h-2 rounded-full bg-primary-400"></div>
                                         </Stack>
                                         <div>
@@ -306,7 +306,7 @@ const ServicesPage: React.FC = () => {
                 return (
                   <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
                      <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                            <service.icon className="w-6 h-6" />
                         </Stack>
 
@@ -340,7 +340,7 @@ const ServicesPage: React.FC = () => {
            <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span></Typography>
              <Typography variant="body-xl" className="text-slate-400">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
-             <Stack direction="col" gap={4} className="items-center justify-center">
+             <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Start Transformation

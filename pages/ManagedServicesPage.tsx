@@ -39,7 +39,7 @@ const ManagedServicesPage: React.FC = () => {
               ]} />
             </div>
 
-            <Stack direction="col" gap={16} className="items-center">
+            <Stack direction="vertical" gap={16} className="items-center">
                <motion.div 
                  initial="hidden" 
                  animate="visible" 
@@ -220,7 +220,7 @@ const ManagedServicesPage: React.FC = () => {
          <Container size="7xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Siap Meng-upgrade Operasional Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">
                      Hubungi Kami

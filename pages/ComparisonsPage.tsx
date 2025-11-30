@@ -78,12 +78,12 @@ const ComparisonsPage: React.FC = () => {
         <Grid cols={12} gap={8} className="items-start">
             
             {/* SIDEBAR SELECTION */}
-            <Stack direction="col" gap={6} className="lg:col-span-3 lg:sticky lg:top-28">
+            <Stack direction="vertical" gap={6} className="lg:col-span-3 lg:sticky lg:top-28">
                 <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-200/60 dark:border-slate-800/60 p-3 shadow-xl shadow-slate-200/20 dark:shadow-black/20">
                     <div className="px-4 py-3 text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
                         Select System
                     </div>
-                    <Stack direction="col" gap={2} className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide">
+                    <Stack direction="vertical" gap={2} className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide">
                         {Object.values(comparisonsData).map((item) => (
                             <button
                                 key={item.id}
@@ -152,7 +152,7 @@ const ComparisonsPage: React.FC = () => {
                              <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] -mr-32 -mt-32 pointer-events-none opacity-20 ${getScoreBg(selectedData.bottleneckScore)}`}></div>
 
                             <div className="relative z-10">
-                                <Stack direction="col" gap={10} className="items-start mb-12">
+                                <Stack direction="vertical" gap={10} className="items-start mb-12">
                                     <div className="flex-1">
                                         <div className="flex items-center gap-3 mb-6">
                                             <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border backdrop-blur-sm ${
@@ -210,7 +210,7 @@ const ComparisonsPage: React.FC = () => {
                         </div>
 
                         {/* 3. COMPARISON LIST (WIDE STACKED) */}
-                        <Stack direction="col" gap={6}>
+                        <Stack direction="vertical" gap={6}>
                             <div className="flex items-center justify-between px-2">
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><LayoutGrid className="w-5 h-5 text-primary-500" /> Detail Perbandingan</Typography>
                             </div>
@@ -220,7 +220,7 @@ const ComparisonsPage: React.FC = () => {
                                     <Grid cols={12} gap={8} className="items-center relative z-10">
                                         
                                         {/* Col 1: Feature & Limit */}
-                                        <Stack direction="col" gap={4} className="md:col-span-4">
+                                        <Stack direction="vertical" gap={4} className="md:col-span-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold text-sm">
                                                    {idx + 1}

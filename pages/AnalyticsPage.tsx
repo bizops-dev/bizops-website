@@ -11,13 +11,13 @@ import Stack from '../components/Stack';
 
 const AnalyticsPage: React.FC = () => {
   return (
-    <Stack direction="col" gap={4}>
+    <Stack direction="vertical" gap={4}>
       <SEO title="Real-time Dashboard & Custom Report Builder | BizOps" description="Buat laporan bisnis kustom tanpa coding. Analisis data penjualan, stok, dan keuangan dengan fitur Drag-and-Drop Report Builder yang powerful." />
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <BarChart2 className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Laporan Anda, Cara Anda.<br/>Tanpa Coding.</Typography>
@@ -34,7 +34,7 @@ const AnalyticsPage: React.FC = () => {
             <Grid cols={3} gap={8}>
                
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl mb-6">
                      <PieChart className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Real-time Dashboard</Typography>
@@ -42,7 +42,7 @@ const AnalyticsPage: React.FC = () => {
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl mb-6">
                      <Filter className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Drag-and-Drop Report Builder</Typography>
@@ -50,7 +50,7 @@ const AnalyticsPage: React.FC = () => {
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-xl mb-6">
                      <Calendar className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Auto-Schedule Email</Typography>

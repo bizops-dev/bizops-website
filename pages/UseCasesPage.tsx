@@ -172,16 +172,16 @@ const UseCasesPage: React.FC = () => {
       {/* Main Content with Sidebar Layout */}
       <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32" id="case-grid">
          <Container size="7xl">
-            <Stack direction="col" gap={12}>
+            <Stack direction="vertical" gap={12}>
                
                {/* Sidebar Filter (Desktop) */}
                <div className="hidden lg:block w-72 flex-shrink-0">
-                  <Stack direction="col" gap={10} className="sticky top-28">
+                  <Stack direction="vertical" gap={10} className="sticky top-28">
                      
                      {/* Filter by Category/Function */}
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Solution Type</Typography>
-                        <Stack direction="col" gap={1}>
+                        <Stack direction="vertical" gap={1}>
                            {categories.map((cat) => (
                               <button
                                  key={cat}
@@ -212,7 +212,7 @@ const UseCasesPage: React.FC = () => {
                      {/* Filter by Industry */}
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Briefcase className="w-3.5 h-3.5" /> Industry</Typography>
-                        <Stack direction="col" gap={1} className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
+                        <Stack direction="vertical" gap={1} className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
                            {industries.map((ind) => (
                               <button
                                  key={ind}
@@ -253,7 +253,7 @@ const UseCasesPage: React.FC = () => {
                </div>
 
                {/* Mobile Filter (Horizontal Scroll - Two Rows) */}
-               <Stack direction="col" gap={3} className="lg:hidden -mx-4 px-4 pb-4 sticky top-16 bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-sm z-30 py-4 border-b border-slate-200 dark:border-slate-800">
+               <Stack direction="vertical" gap={3} className="lg:hidden -mx-4 px-4 pb-4 sticky top-16 bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-sm z-30 py-4 border-b border-slate-200 dark:border-slate-800">
                   {/* Category Pills */}
                   <div className="overflow-x-auto scrollbar-hide pb-1">
                      <div className="flex gap-2 w-max px-4">
@@ -297,7 +297,7 @@ const UseCasesPage: React.FC = () => {
                {/* Grid Content */}
                <div className="flex-1 min-h-[600px]">
                   {/* Search Bar & Result Info Moved Here */}
-                  <Stack direction="col" gap={6} className="mb-8">
+                  <Stack direction="vertical" gap={6} className="mb-8">
                      {/* Search Bar */}
                      <div className="relative group max-w-lg">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
@@ -366,7 +366,7 @@ const UseCasesPage: React.FC = () => {
                                              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 bg-${item.color}-50 dark:bg-${item.color}-900/20 ring-1 ring-${item.color}-100 dark:ring-${item.color}-900/50 shadow-sm`}>
                                                 <item.icon className="w-7 h-7" />
                                              </div>
-                                             <Stack direction="col" gap={2} className="items-end">
+                                             <Stack direction="vertical" gap={2} className="items-end">
                                                 <span className="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider border border-slate-200 dark:border-slate-700">
                                                    {item.industry}
                                                 </span>

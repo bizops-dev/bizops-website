@@ -10,11 +10,11 @@ import Stack from '../components/Stack';
 
 const ThankYouPage: React.FC = () => {
   return (
-    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[80vh] py-16 px-4 bg-slate-50">
+    <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[80vh] py-16 px-4 bg-slate-50">
       <SEO title="Terima Kasih | Permintaan Diterima" description="Konfirmasi pengiriman formulir BizOps." />
       
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-200 max-w-2xl w-full text-center">
-        <Stack direction="row" gap={4} align="center" justify="center" className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-8 animate-bounce">
+        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-8 animate-bounce">
            <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
         

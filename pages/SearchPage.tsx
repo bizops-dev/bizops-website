@@ -98,7 +98,7 @@ const SearchPage: React.FC = () => {
                     to={res.path} // Now using direct path from data
                     className="block bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all group cursor-pointer"
                  >
-                    <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider font-bold">
+                    <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider font-bold">
                        {getIcon(res.category)}
                        <span>{res.category}</span>
                        <span className="text-slate-300 dark:text-slate-700">•</span>

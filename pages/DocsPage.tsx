@@ -176,7 +176,7 @@ const DocsPage: React.FC = () => {
 
                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.</Typography>
                  
-                 <Stack direction="col" gap={3}>
+                 <Stack direction="vertical" gap={3}>
                     <Link to="/docs/api">
                        <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 border-none font-bold">
                           Read API Docs

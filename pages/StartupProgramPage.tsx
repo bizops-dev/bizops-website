@@ -175,7 +175,7 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.</Typography>
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
                   
-                  <Stack direction="col" gap={8}>
+                  <Stack direction="vertical" gap={8}>
                      <div className="flex gap-5">
                         <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
                            <Layout className="w-6 h-6" />
@@ -212,7 +212,7 @@ const StartupProgramPage: React.FC = () => {
                         <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
                      </div>
                      {/* Mockup Content */}
-                     <Stack direction="col" gap={6}>
+                     <Stack direction="vertical" gap={6}>
                         <Grid cols={2} gap={4}>
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                               <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Runway</div>
@@ -284,7 +284,7 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                      </div>
                      
-                     <Stack direction="col" gap={5} className="mb-12 flex-grow">
+                     <Stack direction="vertical" gap={5} className="mb-12 flex-grow">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -335,7 +335,7 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                      </div>
                      
-                     <Stack direction="col" gap={5} className="mb-12 flex-grow">
+                     <Stack direction="vertical" gap={5} className="mb-12 flex-grow">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
@@ -388,7 +388,7 @@ const StartupProgramPage: React.FC = () => {
                      <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                   </div>
                   
-                  <Stack direction="col" gap={5} className="mb-12 flex-grow">
+                  <Stack direction="vertical" gap={5} className="mb-12 flex-grow">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -439,7 +439,7 @@ const StartupProgramPage: React.FC = () => {
                      <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                   </div>
                   
-                  <Stack direction="col" gap={5} className="mb-12 flex-grow">
+                  <Stack direction="vertical" gap={5} className="mb-12 flex-grow">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
@@ -536,7 +536,7 @@ const StartupProgramPage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <Container size="7xl">
             <Typography variant="h2" as="h2">Founder's FAQ</Typography>
-            <Stack direction="col" gap={4}>
+            <Stack direction="vertical" gap={4}>
                {[
                   { q: "Apakah ada biaya tersembunyi?", a: "Tidak ada. Diskon diberikan dimuka pada tagihan bulanan/tahunan. Setelah periode program berakhir (12 atau 24 bulan), tagihan akan kembali ke harga normal. Kami akan mengirimkan notifikasi 30 hari sebelumnya." },
                   { q: "Bagaimana jika kami belum punya badan hukum?", a: "Anda bisa mendaftar dengan nama tim sementara atau 'Stealth Mode'. Namun, untuk aktivasi lisensi komersial dan faktur pajak, kami memerlukan dokumen legalitas (NIB/SK Kemenkumham) dalam waktu 3 bulan setelah onboarding." },
@@ -558,7 +558,7 @@ const StartupProgramPage: React.FC = () => {
          <Container size="4xl" className="relative z-10">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight tracking-tight">Siap Membangun <br/>Unicorn Berikutnya?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
-            <Stack direction="col" gap={6} className="justify-center">
+            <Stack direction="vertical" gap={6} className="justify-center">
                <Link to="/partners/apply">
                   <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
                      Apply Now - It's Free <ArrowRight className="ml-2 w-5 h-5" />

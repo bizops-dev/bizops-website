@@ -360,7 +360,7 @@ const UseCaseDetailPage: React.FC = () => {
           <Grid cols={12} gap={12}>
             
             {/* LEFT CONTENT (Story) */}
-            <Stack direction="col" gap={20} className="lg:col-span-7">
+            <Stack direction="vertical" gap={20} className="lg:col-span-7">
               
               {/* Challenge */}
               <motion.div 
@@ -410,7 +410,7 @@ const UseCaseDetailPage: React.FC = () => {
 
             {/* RIGHT SIDEBAR (Sticky) */}
             <div className="lg:col-span-5 relative">
-              <Stack direction="col" gap={8} className="sticky top-32">
+              <Stack direction="vertical" gap={8} className="sticky top-32">
                 
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">

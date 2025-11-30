@@ -215,7 +215,7 @@ const CareersPage: React.FC = () => {
             <Typography variant="h2" as="h2">Ready to Join Us?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.</Typography>
             
-            <Stack direction="col" gap={6} className="justify-center">
+            <Stack direction="vertical" gap={6} className="justify-center">
                <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all rounded-2xl w-full sm:w-auto">
                      Explore Careers at Divistant <ExternalLink className="ml-2 w-5 h-5" />

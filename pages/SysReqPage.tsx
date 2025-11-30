@@ -55,7 +55,7 @@ const SysReqPage: React.FC = () => {
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
                     <Typography variant="caption" className="text-slate-600 leading-relaxed">{req.spec}</Typography>
                     {req.note && (
-                       <Stack direction="row" gap={1} align="center" className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">
+                       <Stack direction="horizontal" gap={1} align="center" className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">
                           <AlertCircle className="w-3 h-3" /> {req.note}
                        </div>
                     )}
@@ -69,7 +69,7 @@ const SysReqPage: React.FC = () => {
            <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
               Network Configuration (Firewall)</Typography>
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <Stack direction="col" gap={4}>
+              <Stack direction="vertical" gap={4}>
                  {sysReqData.network.map((net, idx) => (
                     <div key={idx} className="flex items-start gap-4 pb-4 border-b border-slate-100 last:border-0 last:pb-0">
                        <div className="bg-slate-100 px-3 py-1 rounded text-sm font-bold text-slate-700 min-w-[100px] text-center">

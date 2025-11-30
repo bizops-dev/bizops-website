@@ -11,13 +11,13 @@ import Stack from '../components/Stack';
 
 const MultiCompanyPage: React.FC = () => {
   return (
-    <Stack direction="col" gap={4}>
+    <Stack direction="vertical" gap={4}>
       <SEO title="Multi-Company ERP & Financial Consolidation | BizOps" description="Kelola banyak anak perusahaan (PT/CV) dalam satu sistem terpusat. Konsolidasi laporan keuangan otomatis dan transaksi antar-perusahaan yang mulus." />
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Network className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Satu Platform untuk<br/>Seluruh Grup Bisnis Anda.</Typography>
@@ -34,7 +34,7 @@ const MultiCompanyPage: React.FC = () => {
             <Grid cols={3} gap={12}>
                
                <div className="text-center md:text-left">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl text-blue-600 dark:text-blue-400 mb-6 mx-auto md:mx-0">
                      <Key className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Unified Login & Access</Typography>
@@ -42,7 +42,7 @@ const MultiCompanyPage: React.FC = () => {
                </div>
 
                <div className="text-center md:text-left">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-green-50 dark:bg-green-900/30 rounded-2xl text-green-600 dark:text-green-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-green-50 dark:bg-green-900/30 rounded-2xl text-green-600 dark:text-green-400 mb-6 mx-auto md:mx-0">
                      <FileText className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Financial Consolidation</Typography>
@@ -50,7 +50,7 @@ const MultiCompanyPage: React.FC = () => {
                </div>
 
                <div className="text-center md:text-left">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 dark:text-purple-400 mb-6 mx-auto md:mx-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-purple-50 dark:bg-purple-900/30 rounded-2xl text-purple-600 dark:text-purple-400 mb-6 mx-auto md:mx-0">
                      <RefreshCw className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">Inter-Company Transactions</Typography>

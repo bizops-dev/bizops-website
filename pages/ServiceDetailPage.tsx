@@ -174,7 +174,7 @@ const ServiceDetailPage: React.FC = () => {
                        <Typography variant="h3" as="h3">Why BizOps?</Typography>
                     </div>
                     
-                    <Stack direction="col" gap={6}>
+                    <Stack direction="vertical" gap={6}>
                        {data.benefits?.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
                              <div className="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center shrink-0 border border-green-200 dark:border-green-800/50">
@@ -201,7 +201,7 @@ const ServiceDetailPage: React.FC = () => {
       {/* --- METHODOLOGY (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
          <Container size="7xl">
-            <Stack direction="col" gap={6} className="md:items-end justify-between mb-16">
+            <Stack direction="vertical" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Our Methodology</Typography>
                   <Typography variant="h3" as="h3">Execution Roadmap</Typography>
@@ -295,7 +295,7 @@ const ServiceDetailPage: React.FC = () => {
            <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Start Your <span className="text-primary-400">{data.title}</span> Journey.</Typography>
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.</Typography>
-             <Stack direction="col" gap={4} className="items-center justify-center">
+             <Stack direction="vertical" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Book Free Consultation

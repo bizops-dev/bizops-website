@@ -61,7 +61,7 @@ const AccessibilityPage: React.FC = () => {
           ))}
         </Grid>
 
-        <Stack direction="col" gap={12} className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 items-center shadow-xl">
+        <Stack direction="vertical" gap={12} className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 items-center shadow-xl">
            <div className="md:w-1/2">
               <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
               <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>

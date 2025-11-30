@@ -108,7 +108,7 @@ const StepLayout = ({
         {children}
       </motion.div>
 
-      <Stack direction="row" gap={4} justify="between" className="border-t border-white/10 pt-6">
+      <Stack direction="horizontal" gap={4} justify="between" className="border-t border-white/10 pt-6">
          <button onClick={() => setStep(prevStep)} className="text-slate-500 hover:text-white flex items-center gap-2">
            <ArrowLeft className="w-4 h-4" /> Kembali
          </button>
@@ -233,7 +233,7 @@ const NeedsAnalysisPage = () => {
 
   if (step === 'intro') {
     return (
-      <Stack direction="row" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+      <Stack direction="horizontal" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
@@ -249,7 +249,7 @@ const NeedsAnalysisPage = () => {
               transition={{ duration: 0.6 }}
               className="text-left"
             >
-              <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
+              <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm">
                 <Crosshair className="w-4 h-4" /> Solution Finder 2.0
               </Stack>
               
@@ -258,17 +258,17 @@ const NeedsAnalysisPage = () => {
               
               <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.</Typography>
               
-              <Stack direction="col" gap={4}>
+              <Stack direction="vertical" gap={4}>
                 <Button onClick={() => setStep('context')} size="lg" className="h-14 px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
                   Mulai Diagnosa Gratis <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Stack>
 
-              <Stack direction="row" gap={6} align="center" className="mt-8 text-sm text-slate-500">
-                <Stack direction="row" gap={2} align="center">
+              <Stack direction="horizontal" gap={6} align="center" className="mt-8 text-sm text-slate-500">
+                <Stack direction="horizontal" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> Free Analysis
                 </Stack>
-                <Stack direction="row" gap={2} align="center">
+                <Stack direction="horizontal" gap={2} align="center">
                   <CheckCircle className="w-4 h-4 text-emerald-500" /> No Sign-up Required
                 </Stack>
               </Stack>
@@ -284,7 +284,7 @@ const NeedsAnalysisPage = () => {
               {/* Floating Cards */}
               <Grid cols={3} gap={5} className="relative z-10">
                 {/* Card 1: Holistic */}
-                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="horizontal" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
                   <div className="p-3 bg-blue-500/20 rounded-xl text-blue-400">
                     <Layers className="w-6 h-6" />
                   </div>
@@ -295,7 +295,7 @@ const NeedsAnalysisPage = () => {
                 </Stack>
 
                 {/* Card 2: Roadmap */}
-                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="horizontal" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform translate-x-8 hover:translate-x-8 hover:-translate-y-1 transition-transform duration-300">
                    <div className="p-3 bg-emerald-500/20 rounded-xl text-emerald-400">
                     <Calendar className="w-6 h-6" />
                   </div>
@@ -306,7 +306,7 @@ const NeedsAnalysisPage = () => {
                 </Stack>
 
                 {/* Card 3: Difference */}
-                <Stack direction="row" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
+                <Stack direction="horizontal" gap={4} align="start" className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl transform hover:-translate-y-1 transition-transform duration-300">
                    <div className="p-3 bg-amber-500/20 rounded-xl text-amber-400">
                     <Lightbulb className="w-6 h-6" />
                   </div>
@@ -340,7 +340,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <Stack direction="col" gap={5} className="bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+          <Stack direction="vertical" gap={5} className="bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
             <Grid cols={2} gap={5}>
               <div>
                 <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</Typography>
@@ -498,7 +498,7 @@ const NeedsAnalysisPage = () => {
             {/* COLUMN 1: PEOPLE */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Users className="w-5 h-5 text-blue-400" /> People & Culture</Typography>
-                <Stack direction="col" gap={3}>
+                <Stack direction="vertical" gap={3}>
                     {holisticIssues.people.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -515,7 +515,7 @@ const NeedsAnalysisPage = () => {
             {/* COLUMN 2: PROCESS */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><GitMerge className="w-5 h-5 text-emerald-400" /> Process & SOP</Typography>
-                <Stack direction="col" gap={3}>
+                <Stack direction="vertical" gap={3}>
                     {holisticIssues.process.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -532,7 +532,7 @@ const NeedsAnalysisPage = () => {
             {/* COLUMN 3: TECHNOLOGY */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Settings className="w-5 h-5 text-amber-400" /> Technology</Typography>
-                <Stack direction="col" gap={3}>
+                <Stack direction="vertical" gap={3}>
                     {techQuestions.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -575,7 +575,7 @@ const NeedsAnalysisPage = () => {
                     : 'bg-slate-900/50 border-white/10 hover:border-red-500/50 hover:bg-slate-900'
                   }`}
                 >
-                  <Stack direction="row" gap={4} align="start" className="relative z-10">
+                  <Stack direction="horizontal" gap={4} align="start" className="relative z-10">
                     <div className={`p-2 rounded-lg ${isSelected ? 'bg-red-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-red-400'}`}>
                       <item.icon className="w-6 h-6" />
                     </div>
@@ -618,7 +618,7 @@ const NeedsAnalysisPage = () => {
                     : 'bg-slate-900/50 border-white/10 hover:border-emerald-500/50 hover:bg-slate-900'
                   }`}
                 >
-                  <Stack direction="row" gap={4} align="start" className="relative z-10">
+                  <Stack direction="horizontal" gap={4} align="start" className="relative z-10">
                     <div className={`p-2 rounded-lg ${isSelected ? 'bg-emerald-500 text-white' : 'bg-slate-800 text-slate-400 group-hover:text-emerald-400'}`}>
                       <item.icon className="w-6 h-6" />
                     </div>
@@ -648,7 +648,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <Stack direction="col" gap={8}>
+          <Stack direction="vertical" gap={8}>
             {/* Timeline */}
             <div>
               <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
@@ -701,7 +701,7 @@ const NeedsAnalysisPage = () => {
 
   if (step === 'analyzing') {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
          <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -726,13 +726,13 @@ const NeedsAnalysisPage = () => {
       <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
         <Container size="6xl">
           {/* Header */}
-          <Stack direction="col" gap={4} align="start" justify="between" className="mb-10 border-b border-white/10 pb-8 print:border-gray-300">
+          <Stack direction="vertical" gap={4} align="start" justify="between" className="mb-10 border-b border-white/10 pb-8 print:border-gray-300">
              <div>
                 <div className="text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">Confidential Report</div>
                 <Typography variant="h1" as="h1">Holistic Solution Blueprint</Typography>
                 <Typography variant="body" className="text-slate-400">Rekomendasi strategis untuk {contextData.company}.</Typography>
              </div>
-             <Stack direction="row" gap={3} className="mt-4 md:mt-0 print:hidden">
+             <Stack direction="horizontal" gap={3} className="mt-4 md:mt-0 print:hidden">
                 <Button variant="outline-white" onClick={() => window.print()} className="gap-2">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
@@ -745,14 +745,14 @@ const NeedsAnalysisPage = () => {
           <Grid cols={12} gap={8}>
             
             {/* Left: Quick Context Summary */}
-            <Stack direction="col" gap={6} className="lg:col-span-4">
+            <Stack direction="vertical" gap={6} className="lg:col-span-4">
               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-500 tracking-widest"><Activity className="w-4 h-4" /> Snapshot Diagnosa</Typography>
                 
                 {/* Visual Radar Logic (Simplified) */}
-                <Stack direction="col" gap={4} className="mb-6">
+                <Stack direction="vertical" gap={4} className="mb-6">
                     <div className="bg-slate-800/50 p-4 rounded-xl">
-                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
+                        <Stack direction="horizontal" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
                             <span>People Maturity Gap</span>
                             <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.people.find(p => p.id === i)).length > 0 ? 'High' : 'Low'}</span>
                         </Stack>
@@ -761,7 +761,7 @@ const NeedsAnalysisPage = () => {
                         </div>
                     </div>
                     <div className="bg-slate-800/50 p-4 rounded-xl">
-                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
+                        <Stack direction="horizontal" gap={4} justify="between" className="text-xs text-slate-400 mb-1">
                             <span>Process Complexity</span>
                             <span className="text-white font-medium">{selectedHolisticIssues.filter(i => holisticIssues.process.find(p => p.id === i)).length > 0 ? 'Complex' : 'Standard'}</span>
                         </Stack>
@@ -771,20 +771,20 @@ const NeedsAnalysisPage = () => {
                     </div>
                 </Stack>
 
-                <Stack direction="col" gap={2} className="text-sm text-slate-300">
-                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
+                <Stack direction="vertical" gap={2} className="text-sm text-slate-300">
+                    <Stack direction="horizontal" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Contact</span>
                         <span>{contextData.name}</span>
                     </Stack>
-                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
+                    <Stack direction="horizontal" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Industry</span>
                         <span>{selectedIndustry?.label}</span>
                     </Stack>
-                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
+                    <Stack direction="horizontal" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Tech Stack</span>
                         <span>{selectedTech?.label}</span>
                     </Stack>
-                    <Stack direction="row" gap={4} justify="between" className="border-b border-white/5 pb-2">
+                    <Stack direction="horizontal" gap={4} justify="between" className="border-b border-white/5 pb-2">
                         <span className="text-slate-500">Timeline</span>
                         <span>{timelineLabel}</span>
                     </Stack>
@@ -793,7 +793,7 @@ const NeedsAnalysisPage = () => {
             </Stack>
 
             {/* Right: Recommendations */}
-            <Stack direction="col" gap={8} className="lg:col-span-8">
+            <Stack direction="vertical" gap={8} className="lg:col-span-8">
                
                {/* 1. VISUAL ROADMAP */}
                <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
@@ -836,7 +836,7 @@ const NeedsAnalysisPage = () => {
                    {/* 2. TECHNOLOGY SOLUTIONS */}
                    <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Server className="w-4 h-4" /> Solusi Teknologi</Typography>
-                       <Stack direction="col" gap={3}>
+                       <Stack direction="vertical" gap={3}>
                            {recommended.map((mod, idx) => (
                                <div key={mod.id} className="bg-slate-900 border border-white/10 p-4 rounded-xl flex items-start gap-3">
                                    <div className="mt-1 p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
@@ -854,7 +854,7 @@ const NeedsAnalysisPage = () => {
                    {/* 3. SERVICE SOLUTIONS (NEW) */}
                    <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Users className="w-4 h-4" /> Pendampingan (Services)</Typography>
-                       <Stack direction="col" gap={3}>
+                       <Stack direction="vertical" gap={3}>
                            {recommendedServices.length > 0 ? recommendedServices.map((svc) => (
                                <div key={svc.id} className="bg-gradient-to-br from-emerald-900/20 to-slate-900 border border-emerald-500/20 p-4 rounded-xl flex items-start gap-3">
                                    <div className="mt-1 p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
@@ -886,12 +886,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/tools/roi-calculator')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Hitung Potensi ROI</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung potensi penghematan operasional dan keuntungan investasi (ROI) dari solusi ini.</Typography>
-                   <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
+                   <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Buka Kalkulator ROI <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -901,12 +901,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/tools/assessment')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <PieChart className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Maturity Assessment</Typography>
                    <Typography variant="caption" className="text-slate-400">Belum yakin dengan skor kematangan Anda? Lakukan audit komprehensif (0-5 Level).</Typography>
-                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Mulai Audit <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -916,12 +916,12 @@ const NeedsAnalysisPage = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan ini dengan konsultan BizOps senior kami.</Typography>
-                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>

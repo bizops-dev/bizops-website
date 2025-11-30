@@ -175,7 +175,7 @@ const SolutionsPage: React.FC = () => {
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">Bisnis Anda Unik? <br/>Konsultan Kami Paham.</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 border-none transition-all hover:scale-105">
                      Jadwalkan Audit Gratis

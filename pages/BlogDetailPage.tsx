@@ -82,7 +82,7 @@ const BlogDetailPage: React.FC = () => {
 
   if (!post) {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950">
         <Typography variant="h1" as="h1">Article Not Found</Typography>
         <Link to="/blog"><Button variant="primary">Back to Insights</Button></Link>
       </Stack>
@@ -137,7 +137,7 @@ const BlogDetailPage: React.FC = () => {
 
          <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
-               <Stack direction="row" gap={3} align="center" className="mb-8">
+               <Stack direction="horizontal" gap={3} align="center" className="mb-8">
                   <Link to="/blog" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
                      <ArrowLeft className="w-4 h-4" /> Back to Blog
                   </Link>
@@ -148,9 +148,9 @@ const BlogDetailPage: React.FC = () => {
                
                <Typography variant="h1" as="h1" className="font-bold text-white leading-[1.1] font-sans tracking-tight">{post.title}</Typography>
 
-               <Stack direction="row" gap={8} align="center" className="text-white/90 text-sm font-sans font-medium">
-                  <Stack direction="row" gap={3} align="center">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-sm shadow-lg border border-white/20">
+               <Stack direction="horizontal" gap={8} align="center" className="text-white/90 text-sm font-sans font-medium">
+                  <Stack direction="horizontal" gap={3} align="center">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-sm shadow-lg border border-white/20">
                         {post.author.charAt(0)}
                      </Stack>
                      <div>
@@ -159,12 +159,12 @@ const BlogDetailPage: React.FC = () => {
                      </div>
                   </Stack>
                   <div className="w-px h-10 bg-white/20 hidden sm:block"></div>
-                  <Stack direction="col" gap={4}>
+                  <Stack direction="vertical" gap={4}>
                      <span className="flex items-center gap-2 text-white"><Calendar className="w-3 h-3" /> {post.date}</span>
                      <span className="text-white/60 text-xs">Published</span>
                   </Stack>
                   <div className="w-px h-10 bg-white/20 hidden sm:block"></div>
-                  <Stack direction="col" gap={4}>
+                  <Stack direction="vertical" gap={4}>
                      <span className="flex items-center gap-2 text-white"><Clock className="w-3 h-3" /> 12 Min Read</span>
                      <span className="text-white/60 text-xs">Time</span>
                   </Stack>
@@ -205,17 +205,17 @@ const BlogDetailPage: React.FC = () => {
                   />
 
                   {/* Tags & Share */}
-                  <Stack direction="col" gap={8} className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 justify-between items-center font-sans">
-                     <Stack direction="row" gap={2}>
+                  <Stack direction="vertical" gap={8} className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 justify-between items-center font-sans">
+                     <Stack direction="horizontal" gap={2}>
                         {['Strategy', 'Enterprise', 'Management'].map(tag => (
                            <span key={tag} className="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-default">
                               <Tag className="w-3 h-3" /> {tag}
                            </span>
                         ))}
                      </Stack>
-                     <Stack direction="row" gap={4} align="center">
+                     <Stack direction="horizontal" gap={4} align="center">
                         <Typography variant="caption" className="text-slate-500">Share</Typography>
-                        <Stack direction="row" gap={2}>
+                        <Stack direction="horizontal" gap={2}>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"><Linkedin className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition-colors"><Twitter className="w-5 h-5" /></button>
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"><Facebook className="w-5 h-5" /></button>
@@ -227,7 +227,7 @@ const BlogDetailPage: React.FC = () => {
 
                {/* RIGHT: STICKY SIDEBAR (4 cols) */}
                <div className="lg:col-span-4 relative font-sans hidden lg:block">
-                  <Stack direction="col" gap={12} className="sticky top-32">
+                  <Stack direction="vertical" gap={12} className="sticky top-32">
                      
                      {/* 1. Table of Contents */}
                      {headings.length > 0 && (
@@ -255,9 +255,9 @@ const BlogDetailPage: React.FC = () => {
                      {/* 2. Author Profile */}
                      <div>
                         <Typography variant="h3" as="h3">Author</Typography>
-                        <Stack direction="row" gap={4} align="center" className="mb-4">
+                        <Stack direction="horizontal" gap={4} align="center" className="mb-4">
                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-0.5">
-                              <Stack direction="row" gap={4} align="center" justify="center" className="w-full h-full rounded-full bg-white dark:bg-slate-900">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-full h-full rounded-full bg-white dark:bg-slate-900">
                                  <Typography variant="body-xl" className="text-blue-600">{post.author.charAt(0)}</Typography>
                               </Stack>
                            </div>
@@ -291,7 +291,7 @@ const BlogDetailPage: React.FC = () => {
       {/* --- READ NEXT --- */}
       <div className="bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-200 dark:border-slate-800">
          <Container size="7xl">
-            <Stack direction="row" gap={4} align="center" justify="between" className="mb-12">
+            <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-12">
                <div>
                   <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
                   <Typography variant="h2" as="h2">Related Articles</Typography>
@@ -304,7 +304,7 @@ const BlogDetailPage: React.FC = () => {
             <Grid cols={3} gap={8}>
                {relatedPosts.map((rp, idx) => (
                   <Link key={idx} to={`/blog/${rp.slug}`} className="group block h-full">
-                     <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full">
+                     <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full">
                         <div className="aspect-[16/10] overflow-hidden relative">
                            <OptimizedImage 
                               src={rp.image} 
@@ -317,10 +317,10 @@ const BlogDetailPage: React.FC = () => {
                               </span>
                            </div>
                         </div>
-                        <Stack direction="col" gap={4} className="p-8">
+                        <Stack direction="vertical" gap={4} className="p-8">
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{rp.summary}</Typography>
-                           <Stack direction="row" gap={4} align="center" className="text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
+                           <Stack direction="horizontal" gap={4} align="center" className="text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
                               Read Article <ArrowRight className="w-4 h-4 ml-2" />
                            </Stack>
                         </Stack>
@@ -339,11 +339,11 @@ const BlogDetailPage: React.FC = () => {
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
          <Container size="7xl" className="relative z-10">
-            <Stack direction="col" gap={16} className="items-center justify-between">
+            <Stack direction="vertical" gap={16} className="items-center justify-between">
                
                {/* Left: Copy */}
                <div className="max-w-2xl">
-                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
+                  <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-sm">
                      <Rocket className="w-4 h-4 text-blue-400" />
                      <Typography variant="caption" className="text-blue-300">Start Your Journey</Typography>
                   </Stack>
@@ -352,8 +352,8 @@ const BlogDetailPage: React.FC = () => {
                   <Typography variant="body-xl" className="text-slate-400">Implement the strategies you just read about. BizOps provides the engine to scale your operations effortlessly.</Typography>
                   
                   {/* Trust Signals */}
-                  <Stack direction="row" gap={4} align="center" className="text-sm font-medium text-slate-500">
-                     <Stack direction="row" gap={4} className="-space-x-3">
+                  <Stack direction="horizontal" gap={4} align="center" className="text-sm font-medium text-slate-500">
+                     <Stack direction="horizontal" gap={4} className="-space-x-3">
                         {[1,2,3,4].map(i => (
                            <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0B1120] bg-slate-700"></div>
                         ))}
@@ -363,7 +363,7 @@ const BlogDetailPage: React.FC = () => {
                </div>
 
                {/* Right: Actions */}
-               <Stack direction="col" gap={4} className="w-full lg:w-auto">
+               <Stack direction="vertical" gap={4} className="w-full lg:w-auto">
                   <Link to="/demo" className="w-full sm:w-auto">
                      <Button size="lg" className="w-full bg-white text-slate-900 hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
                         Book a Live Demo

@@ -48,16 +48,16 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="row" gap={4} className="min-h-screen bg-white dark:bg-slate-950 font-sans">
+    <Stack direction="horizontal" gap={4} className="min-h-screen bg-white dark:bg-slate-950 font-sans">
       <SEO title="Login to BizOps | Enterprise ERP" description="Secure access to your BizOps workspace." />
 
       {/* LEFT: FORM SECTION */}
-      <Stack direction="col" gap={4} justify="center" className="w-full lg:w-1/2 px-8 sm:px-12 lg:px-24 py-12 relative z-10">
+      <Stack direction="vertical" gap={4} justify="center" className="w-full lg:w-1/2 px-8 sm:px-12 lg:px-24 py-12 relative z-10">
         <Container className="w-full">
           
           {/* Logo Mobile Only */}
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 w-fit">
-             <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 bg-slate-900 rounded-lg">
+             <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-8 h-8 bg-slate-900 rounded-lg">
                 <div className="w-4 h-4 bg-white rounded-sm transform rotate-45"></div>
              </Stack>
              <span className="font-bold text-xl text-slate-900 dark:text-white">BizOps</span>
@@ -69,7 +69,7 @@ const LoginPage: React.FC = () => {
           </div>
 
           {/* Login Type Switcher */}
-          <Stack direction="row" gap={4} className="p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">
+          <Stack direction="horizontal" gap={4} className="p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-8">
              <button 
                 onClick={() => setLoginType('employee')}
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-lg transition-all ${loginType === 'employee' ? 'bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
@@ -96,7 +96,7 @@ const LoginPage: React.FC = () => {
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.3 }}
           >
-             <Stack direction="row" gap={3} align="center" className="mb-6 p-4 bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/30 rounded-xl">
+             <Stack direction="horizontal" gap={3} align="center" className="mb-6 p-4 bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/30 rounded-xl">
                 <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm text-primary-600">
                    {loginType === 'employee' && <Users className="w-5 h-5" />}
                    {loginType === 'admin' && <Briefcase className="w-5 h-5" />}
@@ -150,7 +150,7 @@ const LoginPage: React.FC = () => {
                    </button>
                 </div>
 
-                <Stack direction="row" gap={4} align="center" justify="between">
+                <Stack direction="horizontal" gap={4} align="center" justify="between">
                    <Checkbox label="Remember me" name="remember" />
                   <Link to="/coming-soon" className="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline">
                      Forgot password?
@@ -173,7 +173,7 @@ const LoginPage: React.FC = () => {
              </Typography>
           )}
           
-          <Stack direction="row" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400">
+          <Stack direction="horizontal" gap={4} align="center" justify="center" className="mt-12 text-xs text-slate-400">
              <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> SOC2 Compliant</span>
              <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> 256-bit SSL</span>
           </Stack>
@@ -182,7 +182,7 @@ const LoginPage: React.FC = () => {
       </Stack>
 
       {/* RIGHT: VISUAL SECTION (Desktop Only) */}
-      <Stack direction="row" gap={4} align="center" justify="center" className="hidden w-1/2 bg-[#0F172A] relative overflow-hidden">
+      <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden w-1/2 bg-[#0F172A] relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
          
          {/* Animated Background Shapes */}

@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
   const roles = Object.entries(homeRolesData).map(([key, val]) => ({ id: key, ...val }));
 
   return (
-    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
+    <div className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title="BizOps ERP | Sistem Operasional Bisnis Terintegrasi" 
         description="BizOps ERP: Platform terintegrasi untuk HR, Finance, dan Supply Chain. Solusi ERP Indonesia yang aman, cepat, dan siap scale-up. Mulai gratis 14 hari."
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
                   />
                   
                   {/* Overlay UI Badge - retained for context */}
-                  <Stack direction="row" gap={2} align="center" className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 shadow-lg">
+                  <Stack direction="horizontal" gap={2} align="center" className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 shadow-lg">
                     <Lock className="w-3 h-3 text-green-400" /> bizops.id/dashboard
                   </Stack>
                </div>
@@ -203,7 +203,7 @@ const HomePage: React.FC = () => {
          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/20 via-slate-900 to-slate-950 pointer-events-none"></div>
          
          <Container size="7xl" className="relative z-10">
-            <Stack direction="col" gap={8} className="items-end justify-between mb-16">
+            <Stack direction="vertical" gap={8} className="items-end justify-between mb-16">
                <div className="max-w-2xl">
                   <Badge variant="outline-white" className="mb-4">BizOps Platform</Badge>
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Satu Solusi, <br />
@@ -234,7 +234,7 @@ const HomePage: React.FC = () => {
                            : 'hover:bg-slate-800/30 border border-transparent text-slate-400'
                         }`}
                      >
-                        <Stack direction="row" gap={4} align="center">
+                        <Stack direction="horizontal" gap={4} align="center">
                            <div className={`p-2 rounded-lg transition-colors ${activeTab === sol.id ? sol.bg : 'bg-slate-800 group-hover:bg-slate-700'}`}>
                               <sol.icon className={`w-5 h-5 ${activeTab === sol.id ? sol.color : 'text-slate-500'}`} aria-hidden="true" />
                            </div>
@@ -283,7 +283,7 @@ const HomePage: React.FC = () => {
                                  ))}
                               </ul>
                            </div>
-                           <Stack direction="col" gap={4} align="center" justify="center" className="bg-slate-900/50 rounded-2xl p-6 border border-slate-700/50 text-center">
+                           <Stack direction="vertical" gap={4} align="center" justify="center" className="bg-slate-900/50 rounded-2xl p-6 border border-slate-700/50 text-center">
                               <div className="mb-4 p-4 rounded-full bg-slate-800 ring-1 ring-slate-700">
                                  <PlayCircle className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
                               </div>
@@ -316,7 +316,7 @@ const HomePage: React.FC = () => {
                         <uvp.icon className="w-24 h-24 opacity-20 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" aria-hidden="true" />
                      </div>
                      <div className="relative z-10">
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 text-primary-600 dark:text-primary-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <uvp.icon className="w-7 h-7" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
@@ -355,7 +355,7 @@ const HomePage: React.FC = () => {
                >
                   
                   {/* Card 1: Fragmented Stack */}
-                  <Stack direction="row" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 h-full">
+                  <Stack direction="horizontal" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
@@ -368,30 +368,30 @@ const HomePage: React.FC = () => {
                      <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
-                     <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                     <Stack direction="vertical" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>CRM License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 150rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Accounting App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 250rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>HRIS App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 20rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
                      </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
-                        <Stack direction="row" gap={4} align="end" justify="between" className="mb-1">
+                        <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-1">
                            <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 21 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-red-400 h-full w-[90%]"></div>
                         </div>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
                             <span>Integration Time:</span>
                             <span className="text-red-500 font-bold">3-6 Bulan</span>
                         </Stack>
@@ -399,7 +399,7 @@ const HomePage: React.FC = () => {
                   </Stack>
 
                   {/* Card 2: Legacy ERP */}
-                  <Stack direction="row" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 h-full">
+                  <Stack direction="horizontal" gap={4} className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
@@ -412,30 +412,30 @@ const HomePage: React.FC = () => {
                      <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
-                     <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                     <Stack direction="vertical" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Standard License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~Rp 210rb<span className="font-normal text-[8px]">/user</span></span>
                         </Stack>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Implementation</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">$$$ (Extra)</span>
                         </Stack>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Maintenance</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~20% / year</span>
                         </Stack>
                      </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
-                        <Stack direction="row" gap={4} align="end" justify="between" className="mb-1">
+                        <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-1">
                            <Typography variant="caption" className="text-slate-500">Total Cost (50 Users)</Typography>
                            <span className="text-lg font-bold text-slate-900 dark:text-white">~Rp 10.5 Jt<span className="text-xs font-normal text-slate-400">/bln</span></span>
                         </Stack>
                         <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mb-2">
                            <div className="bg-amber-400 h-full w-[60%]"></div>
                         </div>
-                        <Stack direction="row" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-[10px] text-slate-400">
                            <span>Implementation Time:</span>
                            <span className="text-amber-500 font-bold">6-12 Bulan</span>
                         </Stack>
@@ -450,15 +450,15 @@ const HomePage: React.FC = () => {
                      {/* Glowing Border Animation */}
                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-primary-500 to-blue-600 rounded-[2.5rem] p-[2px] opacity-100 animate-border-pulse pointer-events-none"></div>
                      
-                     <Stack direction="col" gap={4} justify="between" className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full overflow-hidden">
+                     <Stack direction="vertical" gap={4} justify="between" className="bg-[#0f172a] rounded-[2.4rem] p-8 md:p-12 relative h-full overflow-hidden">
                         {/* Abstract Background */}
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
                         <div className="relative z-10">
-                           <Stack direction="col" gap={4} className="md:items-center justify-between mb-8">
-                              <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
+                           <Stack direction="vertical" gap={4} className="md:items-center justify-between mb-8">
+                              <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
                                  <CheckCircle2 className="w-3.5 h-3.5" /> The BizOps Way
                               </Stack>
                               <div className="text-left md:text-right">
@@ -479,7 +479,7 @@ const HomePage: React.FC = () => {
                                        <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
                                        <Typography variant="body" className="text-slate-500">Paket Business (50 User)</Typography>
                                    </div>
-                                   <Stack direction="col" gap={4} align="end" justify="center" className="text-right">
+                                   <Stack direction="vertical" gap={4} align="end" justify="center" className="text-right">
                                        <div className="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
                                            HEMAT 85%
                                        </div>
@@ -490,14 +490,14 @@ const HomePage: React.FC = () => {
 
                            {/* Features Grid */}
                            <Grid cols={2} gap={4}>
-                               <Stack direction="row" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                               <Stack direction="horizontal" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
                                    <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Local Compliance</Typography>
                                        <Typography variant="body" className="text-slate-400">Pajak, BPJS, Kasbon Ready.</Typography>
                                    </div>
                                </Stack>
-                               <Stack direction="row" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                               <Stack direction="horizontal" gap={3} align="start" className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
                                    <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Managed Infrastructure</Typography>
@@ -528,7 +528,7 @@ const HomePage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
          
          <Container size="7xl" className="relative z-10">
-            <Stack direction="col" gap={6} className="justify-between items-end mb-16">
+            <Stack direction="vertical" gap={6} className="justify-between items-end mb-16">
                <div className="max-w-2xl">
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
@@ -571,12 +571,12 @@ const HomePage: React.FC = () => {
                {industries.map((ind) => (
                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
                      <Card className="h-full border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" padding="lg">
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                            <ind.icon className="w-6 h-6" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
-                        <Stack direction="row" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Explore <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
                         </Stack>
                      </Card>
@@ -593,7 +593,7 @@ const HomePage: React.FC = () => {
                {roles.map((role) => (
                   <Link key={role.id} to={`/role/${role.id}`} className="group h-full">
                      <Card className="h-full text-center border border-slate-100 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-300" padding="md">
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 mx-auto bg-blue-50 dark:bg-blue-900/20 rounded-full text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                            <role.icon className="w-5 h-5" aria-hidden="true" />
                         </Stack>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{role.title}</Typography>
@@ -617,14 +617,14 @@ const HomePage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight">Tenang, Data Anda Aman.</Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Fokuslah mengembangkan bisnis, biarkan kami menjaga infrastruktur Anda. BizOps menjamin keamanan data setara standar perbankan.</Typography>
                   
-                  <Stack direction="col" gap={6}>
+                  <Stack direction="vertical" gap={6}>
                      {[
                         { title: "Enkripsi End-to-End", desc: "Data sensitif (gaji, profit) terenkripsi saat dikirim dan disimpan (AES-256).", icon: Lock },
                         { title: "99.9% Uptime SLA", desc: "Server kami selalu aktif. Redundansi otomatis mencegah downtime saat jam sibuk.", icon: CheckCircle2 },
                         { title: "Backup Otomatis Harian", desc: "Data di-backup setiap hari ke lokasi terpisah. Restore data kapan saja dalam hitungan menit.", icon: PlayCircle } 
                      ].map((item, idx) => (
                         <div key={idx} className="flex gap-4">
-                           <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-slate-800/50 ring-1 ring-white/10">
+                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-slate-800/50 ring-1 ring-white/10">
                               <item.icon className="w-6 h-6 text-blue-400" aria-hidden="true" />
                            </Stack>
                            <div>
@@ -640,10 +640,10 @@ const HomePage: React.FC = () => {
                <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
                   <div className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 relative overflow-hidden">
-                     <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 border-b border-white/10 pb-6">
+                     <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8 border-b border-white/10 pb-6">
                         <div>
                            <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">System Status</div>
-                           <Stack direction="row" gap={2} align="center">
+                           <Stack direction="horizontal" gap={2} align="center">
                               <span className="relative flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -658,15 +658,15 @@ const HomePage: React.FC = () => {
                      </Stack>
                      
                      {/* Mock Activity Graph */}
-                     <Stack direction="col" gap={4}>
-                        <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-500">
+                     <Stack direction="vertical" gap={4}>
+                        <Stack direction="horizontal" gap={4} justify="between" className="text-xs text-slate-500">
                            <span>00:00</span>
                            <span>06:00</span>
                            <span>12:00</span>
                            <span>18:00</span>
                            <span>24:00</span>
                         </Stack>
-                        <Stack direction="row" gap={1} align="end" className="h-32">
+                        <Stack direction="horizontal" gap={1} align="end" className="h-32">
                            {Array.from({ length: 40 }).map((_, i) => {
                               const height = 30 + Math.random() * 50;
                               return (
@@ -682,7 +682,7 @@ const HomePage: React.FC = () => {
                               )
                            })}
                         </Stack>
-                        <Stack direction="row" gap={2} align="center" className="text-xs text-slate-400 mt-4 bg-slate-800/50 p-3 rounded-lg">
+                        <Stack direction="horizontal" gap={2} align="center" className="text-xs text-slate-400 mt-4 bg-slate-800/50 p-3 rounded-lg">
                            <CheckCircle2 className="w-4 h-4 text-green-500" aria-hidden="true" />
                            <span>Backup terakhir berhasil: Hari ini, 03:00 WIB</span>
                         </Stack>
@@ -728,7 +728,7 @@ const HomePage: React.FC = () => {
          <Container size="4xl" className="relative z-10 text-center">
             <Typography variant="h2" as="h2" className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Siap Mengubah Cara Anda Bekerja?</Typography>
             <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl font-bold w-full sm:w-auto shadow-2xl shadow-blue-900/20 bg-white text-blue-700 hover:bg-blue-50">
                      Hubungi Sales
@@ -744,7 +744,7 @@ const HomePage: React.FC = () => {
          </Container>
       </section>
 
-    </Stack>
+    </div>
   );
 };
 

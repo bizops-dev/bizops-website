@@ -195,7 +195,7 @@ const TechnologyPage: React.FC = () => {
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
-               <Stack direction="col" gap={6}>
+               <Stack direction="vertical" gap={6}>
                   <div className="flex gap-4">
                      <div className="mt-1"><FileJson className="w-5 h-5 text-primary-500" /></div>
                      <div>
@@ -357,7 +357,7 @@ const TechnologyPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-white">Didesain untuk Skala Enterprise.</Typography>
                   <Typography variant="body-lg" className="text-slate-400">Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.</Typography>
                   
-                  <Stack direction="col" gap={6}>
+                  <Stack direction="vertical" gap={6}>
                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">1</div>
                         <div>
@@ -389,7 +389,7 @@ const TechnologyPage: React.FC = () => {
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse delay-75"></div>
                      </div>
                   </div>
-                  <Stack direction="col" gap={8}>
+                  <Stack direction="vertical" gap={8}>
                      <div>
                         <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
@@ -510,7 +510,7 @@ const TechnologyPage: React.FC = () => {
          <Container size="4xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Diskusikan Kebutuhan Teknis Anda</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim engineer kami siap menjelaskan lebih dalam tentang bagaimana arsitektur BizOps dapat beradaptasi dengan ekosistem IT perusahaan Anda.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/docs">
                   <Button size="lg" className="shadow-xl shadow-primary-500/20">Buka Dokumentasi Developer</Button>
                </Link>

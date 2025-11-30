@@ -137,7 +137,7 @@ const ProductTourPage: React.FC = () => {
         <Grid cols={12} gap={12} className="items-center">
           
           {/* LEFT PANEL: CONTROLS (Span 4) */}
-          <Stack direction="col" gap={8} className="lg:col-span-4">
+          <Stack direction="vertical" gap={8} className="lg:col-span-4">
             
             {/* Header Title */}
             <div className="animate-fade-in-up">
@@ -175,7 +175,7 @@ const ProductTourPage: React.FC = () => {
             </div>
 
             {/* Desktop Vertical Scenario Menu */}
-            <Stack direction="col" gap={2} className="hidden animate-fade-in-up delay-100">
+            <Stack direction="vertical" gap={2} className="hidden animate-fade-in-up delay-100">
               <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 px-2">Select Scenario</Typography>
               {scenarios.map((sc) => (
                 <button
@@ -295,7 +295,7 @@ const ProductTourPage: React.FC = () => {
           <Badge variant="outline" className="mb-6 border-primary-500/30 text-primary-300 bg-primary-500/10">Ready for the real thing?</Badge>
           <Typography variant="h2" as="h2" className="font-extrabold text-white tracking-tight font-sans">Bawa Efisiensi Ini ke <span className="text-primary-400">Bisnis Anda.</span></Typography>
           <Typography variant="body-xl" className="text-slate-400">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
-          <Stack direction="col" gap={4} className="justify-center">
+          <Stack direction="vertical" gap={4} className="justify-center">
             <Link to="/demo">
               <Button size="lg" className="h-14 px-10 text-lg font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-[0_0_40px_rgba(14,165,233,0.3)] w-full sm:w-auto group">
                 Mulai Trial Gratis <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -354,7 +354,7 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
               <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center text-xs md:text-sm shadow-lg shadow-primary-900/50">B</div>
               <span className="tracking-tight">BizOps</span>
            </div>
-           <Stack direction="col" gap={1}>
+           <Stack direction="vertical" gap={1}>
               <div className="px-3 py-2 md:py-2.5 bg-primary-600/10 text-primary-400 rounded-lg text-xs md:text-sm font-medium flex items-center gap-3 border border-primary-500/10">
                  <LayoutDashboard className="w-3.5 h-3.5 md:w-4 md:h-4" /> Dashboard
               </div>
@@ -410,7 +410,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             </div>
             <Typography variant="h3" as="h3">Task Completed!</Typography>
             <Typography variant="caption" className="text-slate-400 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
-            <Stack direction="col" gap={3} className="w-full max-w-xs">
+            <Stack direction="vertical" gap={3} className="w-full max-w-xs">
                <Link to="/demo" className="w-full">
                   <Button fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
                </Link>
@@ -432,7 +432,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             </div>
 
             {step === 0 && (
-               <Stack direction="col" gap={4} className="flex-1 p-4 overflow-y-auto">
+               <Stack direction="vertical" gap={4} className="flex-1 p-4 overflow-y-auto">
                   <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-5 rounded-2xl shadow-lg mb-4 text-white relative overflow-hidden">
                      <div className="relative z-10">
                         <div className="text-xs text-blue-200 font-bold uppercase tracking-wider mb-1">Sales Target (Oct)</div>
@@ -467,15 +467,15 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             )}
 
             {step === 1 && (
-               <Stack direction="col" gap={5} className="flex-1 p-4">
-                  <Stack direction="col" gap={2}>
+               <Stack direction="vertical" gap={5} className="flex-1 p-4">
+                  <Stack direction="vertical" gap={2}>
                      <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase">Customer</Typography>
                      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white flex justify-between items-center shadow-sm">
                         PT Mitra Abadi Teknik
                         <div className="w-5 h-5 bg-green-500/20 rounded-full flex items-center justify-center"><Check className="w-3 h-3 text-green-500" /></div>
                      </div>
                   </Stack>
-                  <Stack direction="col" gap={2}>
+                  <Stack direction="vertical" gap={2}>
                      <Typography variant="caption" className="text-xs font-bold text-slate-500 uppercase">Items</Typography>
                      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
                         <div className="flex justify-between text-sm mb-1 text-white font-medium">
@@ -508,7 +508,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             )}
 
             {step === 2 && (
-               <Stack direction="col" gap={6} className="flex-1 flex flex-col items-center justify-center p-6 text-center bg-slate-950">
+               <Stack direction="vertical" gap={6} className="flex-1 flex flex-col items-center justify-center p-6 text-center bg-slate-950">
                   <div className="w-20 h-20 bg-slate-900 rounded-3xl border border-slate-800 flex items-center justify-center shadow-2xl relative overflow-hidden group">
                      <div className="absolute inset-0 bg-primary-500/10 blur-xl"></div>
                      <FileText className="w-10 h-10 text-primary-500 relative z-10" />
@@ -518,7 +518,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <Typography variant="caption" className="text-slate-500">QT-2023-088 siap dikirim.</Typography>
                   </div>
                   
-                  <Stack direction="col" gap={3} className="w-full">
+                  <Stack direction="vertical" gap={3} className="w-full">
                      <button onClick={onNext} className="w-full p-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold flex items-center justify-center gap-3 transition-transform active:scale-95 shadow-lg shadow-green-900/20">
                         <Send className="w-5 h-5" /> Kirim via WhatsApp
                      </button>
@@ -538,7 +538,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
          <div className="h-full flex flex-col">
             {step === 0 && (
                <Grid cols={1} gap={4} className="h-full">
-                  <Stack direction="col" gap={4} className="sm:col-span-2">
+                  <Stack direction="vertical" gap={4} className="sm:col-span-2">
                      <Grid cols={3} gap={3}>
                         {['Revenue', 'Expenses', 'Net Profit'].map((l, i) => (
                            <div key={i} className="bg-slate-800/50 p-3 md:p-5 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors group">
@@ -604,19 +604,19 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         </div>
                         <X className="w-5 h-5 text-slate-400 cursor-pointer hover:text-white" onClick={onReset} />
                      </div>
-                     <Stack direction="col" gap={4} className="p-4 md:p-6">
+                     <Stack direction="vertical" gap={4} className="p-4 md:p-6">
                         <Grid cols={2} gap={4}>
-                           <Stack direction="col" gap={1}>
+                           <Stack direction="vertical" gap={1}>
                               <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Supplier</div>
                               <div className="font-medium text-white text-base md:text-lg">iBox Official Store</div>
                            </Stack>
-                           <Stack direction="col" gap={1}>
+                           <Stack direction="vertical" gap={1}>
                               <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Total Amount</div>
                               <div className="font-bold text-emerald-400 text-base md:text-lg">Rp 125.000.000</div>
                            </Stack>
                         </Grid>
                         
-                        <Stack direction="col" gap={2}>
+                        <Stack direction="vertical" gap={2}>
                            <div className="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Items</div>
                            <div className="bg-slate-900 rounded-xl border border-slate-700 overflow-hidden">
                               <div className="p-3 border-b border-slate-700 flex justify-between text-xs md:text-sm text-slate-300">
@@ -662,7 +662,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
       return (
          <div className="h-full flex flex-col">
             {step === 0 && (
-               <Stack direction="col" gap={4} className="p-4 md:p-6 h-full flex flex-col">
+               <Stack direction="vertical" gap={4} className="p-4 md:p-6 h-full flex flex-col">
                   <div className="flex justify-between items-end">
                      <div>
                         <Typography variant="h2" as="h2">Bank Reconciliation</Typography>
@@ -679,7 +679,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="bg-slate-800 p-3 border-b border-slate-700 font-bold text-xs md:text-sm text-slate-300 flex items-center gap-2">
                            <div className="w-2 h-2 rounded-full bg-blue-500"></div> BCA Statement
                         </div>
-                        <Stack direction="col" gap={3} className="p-3 md:p-4 overflow-y-auto">
+                        <Stack direction="vertical" gap={3} className="p-3 md:p-4 overflow-y-auto">
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-slate-500">TRF 12/10</span>
@@ -704,7 +704,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="bg-slate-800 p-3 border-b border-slate-700 font-bold text-xs md:text-sm text-slate-300 flex items-center gap-2">
                            <div className="w-2 h-2 rounded-full bg-purple-500"></div> System Invoices
                         </div>
-                        <Stack direction="col" gap={3} className="p-3 md:p-4 overflow-y-auto">
+                        <Stack direction="vertical" gap={3} className="p-3 md:p-4 overflow-y-auto">
                            <div className="p-3 bg-slate-900/50 border border-slate-700 rounded-lg opacity-50">
                               <div className="flex justify-between mb-1">
                                  <span className="text-[10px] md:text-xs text-slate-500">INV-2023-001</span>
@@ -727,8 +727,8 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             )}
 
             {step === 1 && (
-               <Stack direction="col" gap={6} className="flex-1 flex flex-col items-center justify-center p-4 md:p-8">
-                  <Stack direction="col" gap={4} className="items-center">
+               <Stack direction="vertical" gap={6} className="flex-1 flex flex-col items-center justify-center p-4 md:p-8">
+                  <Stack direction="vertical" gap={4} className="items-center">
                      <div className="p-4 md:p-6 bg-blue-900/20 border border-blue-500/50 rounded-2xl text-center w-full sm:w-48">
                         <div className="text-[10px] md:text-xs text-blue-400 mb-2 font-bold">BANK TRF</div>
                         <div className="text-lg md:text-xl font-bold text-white">45.500.000</div>
@@ -752,7 +752,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
 
             {step === 2 && (
                <div className="flex items-center justify-center h-full relative">
-                  <Stack direction="col" gap={2} className="bg-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl items-center animate-fade-in-up z-30">
+                  <Stack direction="vertical" gap={2} className="bg-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl items-center animate-fade-in-up z-30">
                      <Check className="w-8 h-8" />
                      <div className="font-bold text-lg">Reconciled!</div>
                      <div className="text-sm opacity-90">Payment status updated to "Paid"</div>
@@ -779,7 +779,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             </div>
 
             {step === 0 && (
-               <Stack direction="col" gap={4} className="flex-1 p-4 overflow-y-auto">
+               <Stack direction="vertical" gap={4} className="flex-1 p-4 overflow-y-auto">
                   {/* Hero Metric */}
                   <div className="p-5 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl shadow-lg text-white">
                      <div className="text-indigo-200 text-xs font-bold uppercase mb-1">Net Profit (YTD)</div>
@@ -826,14 +826,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             )}
 
             {step === 1 && (
-               <Stack direction="col" gap={4} className="flex-1 p-4">
+               <Stack direction="vertical" gap={4} className="flex-1 p-4">
                   <div className="text-xs font-bold text-slate-500 uppercase mb-2">Drill Down: Cash Flow</div>
                   <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
                      <div className="flex justify-between items-center mb-4">
                         <div className="text-sm text-white font-bold">Bank Accounts</div>
                         <div className="text-xs text-emerald-400 font-medium">Updated 5m ago</div>
                      </div>
-                     <Stack direction="col" gap={3}>
+                     <Stack direction="vertical" gap={3}>
                         <div className="flex justify-between items-center p-3 bg-slate-800 rounded-lg">
                            <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">BCA</div>
@@ -887,7 +887,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             </div>
 
             {step === 0 && (
-               <Stack direction="col" gap={8} className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+               <Stack direction="vertical" gap={8} className="flex-1 flex flex-col items-center justify-center p-6 text-center">
                   <div className="w-64 h-64 border-2 border-dashed border-slate-600 rounded-3xl flex items-center justify-center bg-slate-800/30 relative overflow-hidden group cursor-pointer hover:border-primary-500 transition-colors" onClick={onNext}>
                      <Scan className="w-20 h-20 text-slate-600 group-hover:text-primary-500 transition-colors" />
                      <div className="absolute top-0 left-0 w-full h-1 bg-red-500/80 shadow-[0_0_20px_rgba(239,68,68,1)] animate-[scan_2s_ease-in-out_infinite]"></div>
@@ -901,7 +901,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             )}
 
             {step === 1 && (
-               <Stack direction="col" gap={6} className="flex-1 p-4">
+               <Stack direction="vertical" gap={6} className="flex-1 p-4">
                   <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-xl flex items-center gap-4 animate-slide-up">
                      <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
                         <Check className="w-5 h-5 text-green-400" />
@@ -912,7 +912,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      </div>
                   </div>
 
-                  <Stack direction="col" gap={3} className="animate-slide-up delay-100">
+                  <Stack direction="vertical" gap={3} className="animate-slide-up delay-100">
                      <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                         <div className="text-xs text-slate-500 mb-1 uppercase font-bold">Product Name</div>
                         <div className="text-lg font-bold">Kursi Ergonomis Type-X</div>

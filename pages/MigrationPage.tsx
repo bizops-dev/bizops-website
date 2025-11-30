@@ -347,7 +347,7 @@ const MigrationPage: React.FC = () => {
                        <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Cek Kesehatan Data Anda</Typography>
                        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Algoritma kami akan memindai struktur file Excel Anda secara lokal untuk memastikan kompatibilitas sebelum proses upload sesungguhnya.</Typography>
                        
-                       <Stack direction="col" gap={4} className="mb-8">
+                       <Stack direction="vertical" gap={4} className="mb-8">
                           {[
                             "Deteksi Header & Kolom Wajib",
                             "Validasi Format Tanggal & Angka",
@@ -445,7 +445,7 @@ const MigrationPage: React.FC = () => {
            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[500px]">
               {/* Sidebar Tabs */}
               <div className="w-full md:w-1/4 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 p-2 md:p-4">
-                 <Stack direction="col" gap={1}>
+                 <Stack direction="vertical" gap={1}>
                     {sampleStructures.map(sample => (
                        <button
                           key={sample.id}
@@ -465,7 +465,7 @@ const MigrationPage: React.FC = () => {
 
               {/* Content Area */}
               <div className="flex-1 p-6 md:p-10 flex flex-col">
-                 <Stack direction="col" gap={4} className="justify-between items-start sm:items-center mb-8">
+                 <Stack direction="vertical" gap={4} className="justify-between items-start sm:items-center mb-8">
                     <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
                              <activeSample.icon className="w-6 h-6" />
@@ -560,7 +560,7 @@ const MigrationPage: React.FC = () => {
                        </div>
                        
                        {/* Content */}
-                       <Stack direction="col" gap={6} className="p-8 flex-grow">
+                       <Stack direction="vertical" gap={6} className="p-8 flex-grow">
                           <div className="flex gap-4">
                              <div className="flex-shrink-0 mt-1">
                                 <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
@@ -621,7 +621,7 @@ const MigrationPage: React.FC = () => {
                     </div>
                     
                     {/* Content */}
-                    <Stack direction="col" gap={6} className="p-8 flex-grow">
+                    <Stack direction="vertical" gap={6} className="p-8 flex-grow">
                        <div className="flex gap-4">
                           <div className="flex-shrink-0 mt-1">
                              <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
@@ -662,7 +662,7 @@ const MigrationPage: React.FC = () => {
            <div className="text-center mb-10">
               <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
            </div>
-           <Stack direction="col" gap={3}>
+           <Stack direction="vertical" gap={3}>
               {migrationFaqs.slice(0, 4).map((faq, idx) => (
                  <div key={idx} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                     <button 

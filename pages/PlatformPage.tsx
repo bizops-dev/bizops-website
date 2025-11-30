@@ -54,7 +54,7 @@ const PlatformPage: React.FC = () => {
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Satu Platform, <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span></Typography>
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.</Typography>
-          <Stack direction="col" gap={4} className="justify-center">
+          <Stack direction="vertical" gap={4} className="justify-center">
              <Link to="/demo" className="w-full sm:w-auto">
                 <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
              </Link>
@@ -89,7 +89,7 @@ const PlatformPage: React.FC = () => {
                
                return (
                   <Link key={cap.id} to={linkUrl} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group hover:shadow-xl hover:-translate-y-1 block h-full">
-                     <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                     <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                         <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:text-primary-600 transition-colors">
                            <cap.icon className="w-8 h-8" />
                         </div>
@@ -122,8 +122,8 @@ const PlatformPage: React.FC = () => {
                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-[3rem] transform -rotate-3"></div>
                <div className="relative bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-800 shadow-2xl">
                   {/* Visual Representation of Low Code Builder */}
-                  <Stack direction="row" gap={4} align="center" justify="between" className="mb-6 border-b border-slate-700 pb-4">
-                     <Stack direction="row" gap={3} align="center">
+                  <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6 border-b border-slate-700 pb-4">
+                     <Stack direction="horizontal" gap={3} align="center">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -132,16 +132,16 @@ const PlatformPage: React.FC = () => {
                      <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase">Drag & Drop Mode</div>
                   </Stack>
                   
-                  <Stack direction="col" gap={4}>
+                  <Stack direction="vertical" gap={4}>
                      {/* Form Builder Simulation */}
-                     <Stack direction="row" gap={4}>
-                        <Stack direction="col" gap={3} className="w-1/3">
+                     <Stack direction="horizontal" gap={4}>
+                        <Stack direction="vertical" gap={3} className="w-1/3">
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📝 Text Field</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📅 Date Picker</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">✅ Checkbox</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📊 Dropdown</div>
                         </Stack>
-                        <Stack direction="col" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
+                        <Stack direction="vertical" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
                               <div className="text-[10px] text-blue-400 mb-1">Field Label</div>
                               <div className="h-6 bg-slate-800 rounded w-full"></div>
@@ -156,7 +156,7 @@ const PlatformPage: React.FC = () => {
                   </Stack>
                   
                   {/* Floating Badge */}
-                  <Stack direction="row" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
+                  <Stack direction="horizontal" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
                      <div className="bg-blue-100 dark:bg-white/20 p-2 rounded-lg"><Zap className="w-5 h-5 text-blue-600 dark:text-white" /></div>
                      <div>
                         <div className="text-xs opacity-80">Development Time</div>
@@ -174,7 +174,7 @@ const PlatformPage: React.FC = () => {
                
                <ul className="space-y-6">
                   <li className="flex items-start gap-4">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 mt-1">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 mt-1">
                         <Layout className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                      </Stack>
                      <div>
@@ -183,7 +183,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 mt-1">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 mt-1">
                         <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                      </Stack>
                      <div>
@@ -192,7 +192,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 mt-1">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 mt-1">
                         <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                      </Stack>
                      <div>
@@ -222,7 +222,7 @@ const PlatformPage: React.FC = () => {
               className="group h-full block"
             >
               <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50" hoverEffect>
-                <Stack direction="row" gap={4} align="start" justify="between" className="mb-8">
+                <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-8">
                    <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
                      <mod.icon className="w-8 h-8" />
                    </div>
@@ -232,7 +232,7 @@ const PlatformPage: React.FC = () => {
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{mod.title}</Typography>
                 <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{mod.subtitle}</Typography>
                 
-                <Stack direction="row" gap={2} className="mt-auto">
+                <Stack direction="horizontal" gap={2} className="mt-auto">
                    {mod.features.slice(0, 3).map((f: any, idx: number) => (
                       <span key={idx} className="text-xs font-bold px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-700 group-hover:shadow-sm transition-all border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600">
                          {f.title}
@@ -266,7 +266,7 @@ const PlatformPage: React.FC = () => {
                <Grid cols={1} gap={4}>
                   {integrationsData.map((cat, idx) => (
                      <div key={idx} className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 hover:border-slate-600 transition-colors group">
-                        <Stack direction="row" gap={4} align="center" justify="between" className="mb-4">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-4">
                            <div className="text-sm font-bold text-primary-400 uppercase tracking-wider">{cat.category}</div>
                            <Share2 className="w-4 h-4 text-slate-600 group-hover:text-primary-400 transition-colors"/>
                         </Stack>
@@ -295,7 +295,7 @@ const PlatformPage: React.FC = () => {
             <Typography variant="h2" as="h2">Dibangun dengan Teknologi Enterprise-Grade</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.</Typography>
             
-            <Stack direction="row" gap={6} justify="center" className="mb-12">
+            <Stack direction="horizontal" gap={6} justify="center" className="mb-12">
                {[
                   { name: 'Python', icon: 'PY', desc: 'Backend Logic' },
                   { name: 'React', icon: 'RC', desc: 'Frontend UI' },
@@ -305,7 +305,7 @@ const PlatformPage: React.FC = () => {
                   { name: 'Flutter', icon: 'FL', desc: 'Native Mobile' }
                ].map((tech) => (
                   <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm font-black text-sm text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
                         {tech.icon}
                      </Stack>
                      <div>
@@ -317,8 +317,8 @@ const PlatformPage: React.FC = () => {
             </Stack>
 
             {/* Frappe Partner Badge */}
-            <Stack direction="row" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
+            <Stack direction="horizontal" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
+               <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
                   <Check className="w-5 h-5 text-primary-600" />
                </Stack>
                <div className="text-left">
@@ -327,7 +327,7 @@ const PlatformPage: React.FC = () => {
                </div>
             </Stack>
 
-            <Stack direction="row" gap={4} justify="center">
+            <Stack direction="horizontal" gap={4} justify="center">
                <Link to="/platform/technologies/architecture">
                   <Button variant="outline" className="border-slate-300 text-slate-600 hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-white">
                      Pelajari Tech Stack Lengkap
@@ -343,7 +343,7 @@ const PlatformPage: React.FC = () => {
          <Container size="4xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/demo">
                   <Button size="lg" className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
                </Link>

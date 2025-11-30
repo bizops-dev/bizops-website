@@ -262,7 +262,7 @@ const AssessmentPage = () => {
   // 1. INTRO SCREEN
   if (viewState === 'intro') {
     return (
-      <Stack direction="row" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+      <Stack direction="horizontal" gap={4} align="center" className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
         {/* Ambient Background - Optimized for Mobile */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[60%] md:w-[40%] h-[40%] bg-primary-900/20 rounded-full blur-[80px] md:blur-[120px]" />
@@ -275,7 +275,7 @@ const AssessmentPage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Stack direction="row" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-slate-900/50 border border-white/10 text-primary-400 text-sm font-medium mb-8 backdrop-blur-md">
+            <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-slate-900/50 border border-white/10 text-primary-400 text-sm font-medium mb-8 backdrop-blur-md">
               <LayoutDashboard className="w-4 h-4" /> 
               <span>Executive Assessment Tool</span>
             </Stack>
@@ -293,7 +293,7 @@ const AssessmentPage = () => {
                 { icon: ShieldCheck, text: "Data Aman", desc: "Enkripsi Enterprise" },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 rounded-lg bg-slate-900 text-primary-400 shrink-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 rounded-lg bg-slate-900 text-primary-400 shrink-0">
                     <item.icon className="w-5 h-5" />
                   </Stack>
                   <div>
@@ -325,7 +325,7 @@ const AssessmentPage = () => {
           >
             {showMethodology ? (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl h-full overflow-y-auto max-h-[600px] custom-scrollbar">
-                <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                   <Typography variant="h3" as="h3">Framework Reference</Typography>
                   <button onClick={() => setShowMethodology(false)} className="text-slate-500 hover:text-white">
                     Tutup
@@ -335,15 +335,15 @@ const AssessmentPage = () => {
               </div>
             ) : (
               <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <Stack direction="row" gap={4} align="center" justify="between" className="mb-8 pb-6 border-b border-white/5">
+                <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8 pb-6 border-b border-white/5">
                   <Typography variant="h3" as="h3">Assessment Preview</Typography>
-                  <Stack direction="row" gap={2}>
+                  <Stack direction="horizontal" gap={2}>
                     <div className="w-3 h-3 rounded-full bg-red-500/50" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
                     <div className="w-3 h-3 rounded-full bg-green-500/50" />
                   </Stack>
                 </Stack>
-                <Stack direction="col" gap={4}>
+                <Stack direction="vertical" gap={4}>
                   {Object.entries(categoryLabels).map(([key, label], idx) => (
                     <div key={key} className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary-500/30 transition-all">
                       <div className={`p-3 rounded-lg bg-slate-950 shadow-inner ${
@@ -355,7 +355,7 @@ const AssessmentPage = () => {
                       }`}>
                         {categoryIcons[key as CategoryKey]}
                       </div>
-                      <Stack direction="row" gap={4}>
+                      <Stack direction="horizontal" gap={4}>
                         <div className="font-medium text-slate-200">{label}</div>
                         <div className="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
                           <div className="bg-slate-600 h-full w-2/3 opacity-30 group-hover:bg-primary-500 group-hover:opacity-100 transition-all duration-500" />
@@ -375,7 +375,7 @@ const AssessmentPage = () => {
         
         {/* Mobile Methodology Modal (if needed) */}
         {showMethodology && (
-          <Stack direction="row" gap={4} align="center" justify="center" className="lg:hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto">
+          <Stack direction="horizontal" gap={4} align="center" justify="center" className="lg:hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto">
             <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-lg relative">
               <button 
                 onClick={() => setShowMethodology(false)}
@@ -394,7 +394,7 @@ const AssessmentPage = () => {
   // 2. LEAD FORM
   if (viewState === 'lead-form') {
     return (
-      <Stack direction="row" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-white p-4 relative overflow-hidden">
+      <Stack direction="horizontal" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-white p-4 relative overflow-hidden">
         {/* Background Mesh */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
         <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-primary-900/10 rounded-full blur-[100px]" />
@@ -406,7 +406,7 @@ const AssessmentPage = () => {
             className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl"
           >
             <div className="text-center mb-8">
-              <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mx-auto mb-6 shadow-inner border border-white/5">
+              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mx-auto mb-6 shadow-inner border border-white/5">
                 <Users className="w-8 h-8 text-primary-400" />
               </Stack>
               <Typography variant="h2" as="h2">Profil Penilai</Typography>
@@ -509,7 +509,7 @@ const AssessmentPage = () => {
   // 3. ANALYZING / LOADING
   if (viewState === 'analyzing') {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-screen bg-slate-950 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-slate-950">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-900/20 rounded-full blur-[100px] animate-pulse" />
         </div>
@@ -521,7 +521,7 @@ const AssessmentPage = () => {
             className="mb-8 relative"
           >
             <div className="w-24 h-24 rounded-full border-4 border-slate-800 border-t-primary-500" />
-            <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0">
+            <Stack direction="horizontal" gap={4} align="center" justify="center" className="absolute inset-0">
               <Cpu className="w-8 h-8 text-primary-500" />
             </Stack>
           </motion.div>
@@ -539,10 +539,10 @@ const AssessmentPage = () => {
         <Container size="6xl">
           {/* --- REPORT HEADER (Formal) --- */}
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
-            <Stack direction="col" gap={6} className="justify-between items-start md:items-center">
+            <Stack direction="vertical" gap={6} className="justify-between items-start md:items-center">
               <div>
-                <Stack direction="row" gap={3} align="center" className="mb-3">
-                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
+                <Stack direction="horizontal" gap={3} align="center" className="mb-3">
+                  <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
                     <CheckCircle className="w-3 h-3" /> Assessment Completed
                   </Stack>
                   {/* Reset Button Moved Here */}
@@ -562,19 +562,19 @@ const AssessmentPage = () => {
               
               {/* User Details Grid */}
               <Grid cols={2} gap={6} className="text-sm text-slate-300 print:text-gray-800 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
-                <Stack direction="row" gap={2} align="center">
+                <Stack direction="horizontal" gap={2} align="center">
                   <Building2 className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span className="font-semibold">{leadForm.company}</span>
                 </Stack>
-                <Stack direction="row" gap={2} align="center">
+                <Stack direction="horizontal" gap={2} align="center">
                   <Users className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{leadForm.name}</span>
                 </Stack>
-                <Stack direction="row" gap={2} align="center">
+                <Stack direction="horizontal" gap={2} align="center">
                   <Briefcase className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{leadForm.role || 'N/A'}</span>
                 </Stack>
-                 <Stack direction="row" gap={2} align="center">
+                 <Stack direction="horizontal" gap={2} align="center">
                   <Calendar className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{assessmentDate}</span>
                 </Stack>
@@ -585,10 +585,10 @@ const AssessmentPage = () => {
           <Grid cols={12} gap={8} className="mb-12 print:mb-6">
             
             {/* LEFT: Executive Summary & Score */}
-            <Stack direction="col" gap={6} className="lg:col-span-4">
+            <Stack direction="vertical" gap={6} className="lg:col-span-4">
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-1 border border-white/10 shadow-2xl print:bg-white print:border-gray-300 print:text-black h-fit">
-                <Stack direction="col" gap={4} align="center" className="bg-slate-900/80 rounded-[22px] p-8 text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
-                   <Stack direction="row" gap={4} align="center" justify="center" className="relative w-40 h-40 mb-6">
+                <Stack direction="vertical" gap={4} align="center" className="bg-slate-900/80 rounded-[22px] p-8 text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="relative w-40 h-40 mb-6">
                      <svg className="w-full h-full transform -rotate-90">
                        <circle cx="80" cy="80" r="72" fill="none" stroke="currentColor" strokeWidth="10" className="text-slate-800 print:text-gray-200" />
                        <circle 
@@ -599,7 +599,7 @@ const AssessmentPage = () => {
                           strokeLinecap="round"
                        />
                      </svg>
-                     <Stack direction="col" gap={4} align="center" justify="center" className="absolute inset-0">
+                     <Stack direction="vertical" gap={4} align="center" justify="center" className="absolute inset-0">
                         <span className={`text-5xl font-bold ${results.maturityLevel.color.replace('bg-', 'text-')}`}>
                           {results.avgScore.toFixed(1)}
                         </span>
@@ -631,13 +631,13 @@ const AssessmentPage = () => {
             </Stack>
 
             {/* RIGHT: Detailed Analysis */}
-            <Stack direction="col" gap={8} className="lg:col-span-8">
+            <Stack direction="vertical" gap={8} className="lg:col-span-8">
               {/* Chart */}
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-white/10 print:bg-white print:border-gray-300 print:text-black print:break-inside-avoid">
                 <Typography variant="h3" as="h3" className="font-bold text-white"><BarChart className="w-6 h-6 mr-3 text-primary-500 print:text-black" />
                   Analisis per Dimensi</Typography>
                 
-                <Stack direction="col" gap={6}>
+                <Stack direction="vertical" gap={6}>
                   {Object.entries(results.categoryScores).map(([cat, data]) => {
                     const score = data.count > 0 ? data.total / data.count : 0;
                     const percentage = (score / 5) * 100;
@@ -645,7 +645,7 @@ const AssessmentPage = () => {
                     
                     return (
                       <div key={cat} className="print:break-inside-avoid">
-                        <Stack direction="row" gap={4} align="center" justify="between" className="mb-2">
+                        <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-2">
                           <span className="text-slate-300 font-medium flex items-center gap-3 print:text-black">
                             <span className="p-1.5 rounded-lg bg-slate-800 text-slate-400 print:hidden">{categoryIcons[catKey]}</span> 
                             {categoryLabels[catKey]}
@@ -688,7 +688,7 @@ const AssessmentPage = () => {
 
                     return (
                       <div key={cat} className="group bg-slate-800/50 p-6 rounded-2xl border border-white/5 hover:bg-slate-800 hover:border-primary-500/30 transition-all print:bg-gray-50 print:border-gray-200 print:break-inside-avoid">
-                        <Stack direction="row" gap={4} align="start" justify="between" className="mb-4">
+                        <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-4">
                           <Typography variant="h4" as="h4" className="text-white font-semibold tracking-wider text-slate-400 group-hover:text-primary-400">{categoryLabels[catKey]}</Typography>
                           <span className={`text-[10px] font-bold px-2 py-1 rounded border uppercase ${
                             score < 3 
@@ -700,7 +700,7 @@ const AssessmentPage = () => {
                         </Stack>
                         <Typography variant="body-lg">{rec.title}</Typography>
                         <Typography variant="caption" className="text-slate-400 leading-relaxed">{rec.advice}</Typography>
-                        <Stack direction="row" gap={2}>
+                        <Stack direction="horizontal" gap={2}>
                           {rec.modules.map((m: string) => (
                             <span key={m} className="text-[10px] font-medium bg-slate-950 text-slate-300 px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-white/20 print:bg-white print:text-black print:border-gray-400">
                               {m}
@@ -725,12 +725,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/needs-analysis')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-blue-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-blue-500/10 w-10 h-10 rounded-lg text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                      <Search className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Solution Finder</Typography>
                    <Typography variant="caption" className="text-slate-400">Diagnosis spesifik untuk menemukan modul software yang tepat mengatasi gap skor Anda.</Typography>
-                   <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
+                   <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-blue-500">
                      Cari Solusi <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -740,12 +740,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/tools/pricing-calculator')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-emerald-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-emerald-500/10 w-10 h-10 rounded-lg text-emerald-400 mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                      <Calculator className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Estimasi Investasi</Typography>
                    <Typography variant="caption" className="text-slate-400">Hitung biaya implementasi digital transformation untuk menaikkan level maturity Anda.</Typography>
-                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-emerald-500">
                      Hitung Biaya <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -755,12 +755,12 @@ const AssessmentPage = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-slate-900/40 border border-white/5 p-5 rounded-xl hover:bg-slate-800 hover:border-amber-500/30 transition-all cursor-pointer group"
                 >
-                   <Stack direction="row" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-amber-500/10 w-10 h-10 rounded-lg text-amber-400 mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                      <Briefcase className="w-5 h-5" />
                    </Stack>
                    <Typography variant="h4" as="h4">Konsultasi Ahli</Typography>
                    <Typography variant="caption" className="text-slate-400">Diskusi mendalam tentang temuan skor ini dengan konsultan senior kami.</Typography>
-                    <Stack direction="row" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
+                    <Stack direction="horizontal" gap={4} align="center" className="mt-4 text-xs font-bold text-amber-500">
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </Stack>
                 </div>
@@ -773,7 +773,7 @@ const AssessmentPage = () => {
               <div className="text-sm text-slate-400 hidden sm:block">
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>
-              <Stack direction="row" gap={3} className="w-full sm:w-auto">
+              <Stack direction="horizontal" gap={3} className="w-full sm:w-auto">
                 <Button onClick={handlePrint} variant="outline-white" className="flex-1 sm:flex-none items-center gap-2 h-10">
                   <Download className="w-4 h-4" /> Save PDF
                 </Button>
@@ -788,7 +788,7 @@ const AssessmentPage = () => {
 
           {/* Methodology Modal for Results Page */}
           {showMethodology && (
-            <Stack direction="row" gap={4} align="center" justify="center" className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto print:hidden">
+            <Stack direction="horizontal" gap={4} align="center" justify="center" className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm p-4 overflow-y-auto print:hidden">
               <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-2xl relative shadow-2xl">
                 <button 
                   onClick={() => setShowMethodology(false)}
@@ -816,7 +816,7 @@ const AssessmentPage = () => {
         
         {/* Mobile Nav Toggle / Progress */}
         <div className="lg:hidden mb-8 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-md p-4 -mx-4 border-b border-white/10">
-           <Stack direction="row" gap={4} align="center" justify="between" className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+           <Stack direction="horizontal" gap={4} align="center" justify="between" className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
              <span>Progress</span>
              <span>{Math.round(progress)}%</span>
            </Stack>
@@ -833,13 +833,13 @@ const AssessmentPage = () => {
                 <Typography variant="h3" as="h3" className="text-white font-bold"><LayoutDashboard className="w-5 h-5 mr-3 text-primary-500" />
                   Navigation</Typography>
                 
-                <Stack direction="col" gap={8} className="relative">
+                <Stack direction="vertical" gap={8} className="relative">
                   {/* Vertical Line */}
                   <div className="absolute left-[11px] top-4 bottom-4 w-px bg-white/10 z-0" />
 
                   {Object.entries(questionsByCategory).map(([cat, questions]) => (
                     <div key={cat} className="relative z-10">
-                      <Stack direction="row" gap={3} align="center" className="mb-3 text-sm font-bold text-slate-300">
+                      <Stack direction="horizontal" gap={3} align="center" className="mb-3 text-sm font-bold text-slate-300">
                         <div className={`p-1 rounded-full bg-slate-950 border border-white/10 z-10`}>
                            <div className="w-4 h-4 text-primary-400">{categoryIcons[cat as CategoryKey]}</div>
                         </div>
@@ -876,7 +876,7 @@ const AssessmentPage = () => {
                 </Stack>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <Stack direction="row" gap={4} justify="between" className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
+                  <Stack direction="horizontal" gap={4} justify="between" className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
                     <span>Completion</span>
                     <span>{Math.round(progress)}%</span>
                   </Stack>
@@ -902,7 +902,7 @@ const AssessmentPage = () => {
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-500/10 rounded-full blur-[80px] pointer-events-none" />
 
                 <div className="mb-8 relative z-10">
-                  <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                  <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                     <span className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-slate-800 text-primary-400 uppercase tracking-wider border border-white/5`}>
                       {categoryIcons[currentCategory]}
                       {categoryLabels[currentCategory]}
@@ -915,7 +915,7 @@ const AssessmentPage = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentQuestion?.question}</Typography>
                 </div>
 
-                <Stack direction="col" gap={4} className="flex-grow relative z-10">
+                <Stack direction="vertical" gap={4} className="flex-grow relative z-10">
                   {currentQuestion?.options.map((option, index) => {
                     const isSelected = answers[currentQuestion.id] === option.score;
                     return (
@@ -944,7 +944,7 @@ const AssessmentPage = () => {
                   })}
                 </Stack>
 
-                <Stack direction="row" gap={4} align="center" justify="between" className="mt-10 pt-8 border-t border-white/10 relative z-10">
+                <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-10 pt-8 border-t border-white/10 relative z-10">
                   <Button 
                     variant="ghost"
                     onClick={() => currentStep > 0 && setCurrentStep(prev => prev - 1)}

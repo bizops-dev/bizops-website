@@ -83,7 +83,7 @@ const PartnerDirectoryPage: React.FC = () => {
           <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
           <Typography variant="body-lg" className="text-slate-300">Hubungkan bisnis Anda dengan konsultan implementasi, reseller, dan principal teknologi resmi yang terintegrasi dengan BizOps.</Typography>
           
-          <Stack direction="col" gap={4} className="justify-center">
+          <Stack direction="vertical" gap={4} className="justify-center">
              <Link to="/partners/apply">
                 <Button variant="outline" className="border-slate-600 text-slate-300 hover:text-white hover:bg-white/10">
                    Become a Partner
@@ -97,7 +97,7 @@ const PartnerDirectoryPage: React.FC = () => {
         <Grid cols={4} gap={8}>
           
           {/* --- SIDEBAR FILTERS (Desktop) --- */}
-          <Stack direction="col" gap={8} className="hidden lg:block lg:col-span-1 sticky top-24 h-fit">
+          <Stack direction="vertical" gap={8} className="hidden lg:block lg:col-span-1 sticky top-24 h-fit">
             
             {/* Search */}
             <div className="relative">
@@ -114,7 +114,7 @@ const PartnerDirectoryPage: React.FC = () => {
             {/* Partner Type */}
             <div>
               <Typography variant="h3" as="h3">Partner Type</Typography>
-              <Stack direction="col" gap={2}>
+              <Stack direction="vertical" gap={2}>
                 {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                   <div key={type}>
                      <label className="flex items-center gap-3 cursor-pointer group">
@@ -153,7 +153,7 @@ const PartnerDirectoryPage: React.FC = () => {
             {/* Industry */}
             <div>
               <Typography variant="h3" as="h3">Industry / Focus</Typography>
-              <Stack direction="col" gap={2} className="max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+              <Stack direction="vertical" gap={2} className="max-h-60 overflow-y-auto pr-2 custom-scrollbar">
                 {industriesList.map(industry => (
                   <label key={industry} className="flex items-center gap-3 cursor-pointer group">
                     <div className={`w-4 h-4 rounded border flex items-center justify-center transition-all ${selectedIndustry === industry ? 'bg-primary-600 border-primary-600' : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 group-hover:border-primary-400'}`}>
@@ -285,11 +285,11 @@ const PartnerDirectoryPage: React.FC = () => {
                 </button>
               </div>
               
-              <Stack direction="col" gap={8} className="pb-20">
+              <Stack direction="vertical" gap={8} className="pb-20">
                  {/* Partner Type */}
                  <div>
                     <Typography variant="h4" as="h4">Type</Typography>
-                    <Stack direction="col" gap={3}>
+                    <Stack direction="vertical" gap={3}>
                        {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                           <label key={type} className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
                              <div>
@@ -397,7 +397,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
 
          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
 
-         <Stack direction="col" gap={3} className="mb-6">
+         <Stack direction="vertical" gap={3} className="mb-6">
             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
                <MapPin className="w-3.5 h-3.5" /> {partner.location}
             </div>

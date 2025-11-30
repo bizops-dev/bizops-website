@@ -11,13 +11,13 @@ import Stack from '../components/Stack';
 
 const AutomationAIPage: React.FC = () => {
   return (
-    <Stack direction="col" gap={4}>
+    <Stack direction="vertical" gap={4}>
       <SEO title="Business Process Automation & AI Features | BizOps Engine" description="Otomatisasi alur kerja bisnis Anda. Fitur Low-Code Workflow Builder, OCR Scanner cerdas, dan AI Forecasting untuk operasional autopilot." />
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Biarkan Sistem yang Bekerja,<br/>Bukan Anda.</Typography>
@@ -34,8 +34,8 @@ const AutomationAIPage: React.FC = () => {
             <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2">Workflow Automation (No-Code Logic)</Typography>
-                  <Stack direction="col" gap={8}>
-                     <Stack direction="row" gap={4}>
+                  <Stack direction="vertical" gap={8}>
+                     <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg h-fit">
                            <GitMerge className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                         </div>
@@ -44,7 +44,7 @@ const AutomationAIPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Antarmuka <em>drag-and-drop</em> intuitif untuk membuat aturan logika "Jika X maka Y" tanpa perlu menulis satu baris kode pun.</Typography>
                         </div>
                      </Stack>
-                     <Stack direction="row" gap={4}>
+                     <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-purple-50 dark:bg-purple-900/30 rounded-lg h-fit">
                            <ArrowRight className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                         </div>
@@ -53,7 +53,7 @@ const AutomationAIPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-600 dark:text-slate-400">"Jika Stok Barang &lt; 10 unit, otomatis buat <em>Purchase Request</em> ke Vendor A, kirim email PO PDF ke vendor, dan kirim notifikasi WhatsApp ke Manajer Gudang."</Typography>
                         </div>
                      </Stack>
-                     <Stack direction="row" gap={4}>
+                     <Stack direction="horizontal" gap={4}>
                         <div className="mt-1 p-2 bg-green-50 dark:bg-green-900/30 rounded-lg h-fit">
                            <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
                         </div>
@@ -65,18 +65,18 @@ const AutomationAIPage: React.FC = () => {
                   </Stack>
                </div>
                {/* Visual Placeholder */}
-               <Stack direction="row" gap={4} align="center" justify="center" className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square relative shadow-inner">
+               <Stack direction="horizontal" gap={4} align="center" justify="center" className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square relative shadow-inner">
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
                   <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg max-w-xs w-full relative z-10">
-                     <Stack direction="row" gap={4} align="center" justify="between" className="mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">
+                     <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">
                         <Typography variant="caption" className="text-slate-500">Logic Flow</Typography>
-                        <Stack direction="row" gap={1}>
+                        <Stack direction="horizontal" gap={1}>
                      </div>
-                     <Stack direction="col" gap={3} className="text-xs">
+                     <Stack direction="vertical" gap={3} className="text-xs">
                         <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-bold">IF Stock &lt; 10</div>
-                        <Stack direction="row" gap={4} justify="center">
+                        <Stack direction="horizontal" gap={4} justify="center">
                         <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 font-bold">THEN Create PR</div>
-                        <Stack direction="row" gap={4} justify="center">
+                        <Stack direction="horizontal" gap={4} justify="center">
                         <div className="p-2 bg-green-50 dark:bg-green-900/30 rounded border border-green-100 dark:border-green-800 text-green-700 dark:text-green-300 font-bold">THEN Email Vendor</div>
                      </Stack>
                   </div>

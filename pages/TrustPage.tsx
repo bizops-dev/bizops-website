@@ -238,7 +238,7 @@ const TrustPage: React.FC = () => {
                  </CardSlider>
               </div>
 
-              <Stack direction="col" gap={6} className="hidden lg:block">
+              <Stack direction="vertical" gap={6} className="hidden lg:block">
                  <div className="flex gap-4 p-4 border border-transparent hover:border-emerald-500/30 rounded-xl transition-colors">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600">
                        <Database className="w-5 h-5" />
@@ -274,7 +274,7 @@ const TrustPage: React.FC = () => {
                <div className="aspect-square bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 relative overflow-hidden shadow-2xl border border-slate-800">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-emerald-500/20 rounded-full blur-[80px] animate-pulse"></div>
                   
-                  <Stack direction="col" gap={4} className="relative z-10 h-full justify-center">
+                  <Stack direction="vertical" gap={4} className="relative z-10 h-full justify-center">
                       <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between">
                          <div className="flex items-center gap-3 text-emerald-400 text-xs">
                             <Globe className="w-4 h-4" /> Cloudflare WAF

@@ -160,13 +160,13 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
        <Container>
           
           {/* MOBILE NAV CONTROLS */}
-          <Stack direction="col" gap={3} className="lg:hidden mb-6 relative z-30">
+          <Stack direction="vertical" gap={3} className="lg:hidden mb-6 relative z-30">
              {/* 1. Document Switcher */}
              <button 
                 onClick={() => { setIsMobileNavOpen(!isMobileNavOpen); setIsMobileTOCOpen(false); }}
                 className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform"
              >
-                <Stack direction="row" gap={3} align="center">
+                <Stack direction="horizontal" gap={3} align="center">
                    <div className="bg-primary-50 p-2 rounded-lg text-primary-600">
                       <Scale className="w-5 h-5" />
                    </div>
@@ -250,7 +250,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              
              {/* LEFT SIDEBAR NAV (Desktop) */}
              <div className="lg:col-span-3 hidden lg:block">
-                <Stack direction="col" gap={8} className="sticky top-28">
+                <Stack direction="vertical" gap={8} className="sticky top-28">
                    <div>
                       <Typography variant="h3" as="h3">Legal Center</Typography>
                       <nav className="space-y-1">
@@ -262,7 +262,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
 
                    {/* Emergency Contact */}
                    <div className="bg-red-50 rounded-xl p-5 border border-red-100">
-                      <Stack direction="row" gap={2} align="center" className="mb-2 text-red-700 font-bold text-xs uppercase tracking-wide">
+                      <Stack direction="horizontal" gap={2} align="center" className="mb-2 text-red-700 font-bold text-xs uppercase tracking-wide">
                          <Phone className="w-4 h-4" /> Security Incident
                       </Stack>
                       <Typography variant="body" className="leading-relaxed">Untuk pelaporan insiden keamanan kritis atau pelanggaran data.</Typography>
@@ -280,7 +280,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                    
                    <div className="relative z-10">
-                      <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500 mb-4 bg-slate-100 w-fit px-3 py-1 rounded-full">
+                      <Stack direction="horizontal" gap={2} align="center" className="text-xs font-medium text-slate-500 mb-4 bg-slate-100 w-fit px-3 py-1 rounded-full">
                          <span>Legal</span>
                          <span className="text-slate-300">•</span>
                          <span>Last Updated: {data.updated}</span>
@@ -304,7 +304,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                   
                    {/* SPECIAL INTERACTIVE UI: DATA RIGHTS */}
                    {activeDocId === 'data-rights' && (
-                      <Stack direction="col" gap={8} className="animate-fade-in-up mb-12">
+                      <Stack direction="vertical" gap={8} className="animate-fade-in-up mb-12">
                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                             <Typography variant="h3" as="h3">Data Subject Access Rights (DSAR)</Typography>
                             <Typography variant="caption" className="leading-relaxed">Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").</Typography>
@@ -340,7 +340,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                )}
                                <Typography variant="h3" as="h3" className="font-bold text-slate-900">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
                                {requestStatus === 'success' ? (
-                                  <Stack direction="row" gap={4} align="center" className="text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
+                                  <Stack direction="horizontal" gap={4} align="center" className="text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
                                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="w-5 h-5 text-green-600" /></div>
                                      <div>
                                         <div className="font-bold text-lg">Permintaan Diterima</div>
@@ -361,7 +361,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                           placeholder="nama@perusahaan.com"
                                         />
                                      </div>
-                                     <Stack direction="row" gap={3} className="pt-2">
+                                     <Stack direction="horizontal" gap={3} className="pt-2">
                                         <Button type="submit" className={requestType === 'delete' ? 'bg-red-600 hover:bg-red-700 shadow-red-500/20' : ''}>
                                            {requestType === 'delete' ? 'Kirim Permintaan Hapus' : 'Kirim Permintaan Export'}
                                         </Button>
@@ -377,15 +377,15 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    {/* SPECIAL INTERACTIVE UI: COOKIES */}
                    {activeDocId === 'cookies' && (
                       <div className="mb-12 bg-slate-50 rounded-2xl border border-slate-200 p-8">
-                         <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                         <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                             <Typography variant="h3" as="h3">Pengaturan Preferensi</Typography>
                             {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-fade-in"><CheckCircle className="w-4 h-4" /> Tersimpan</span>}
                          </Stack>
-                         <Stack direction="col" gap={6}>
-                            <Stack direction="row" gap={4} align="start" className="pb-6 border-b border-slate-200">
+                         <Stack direction="vertical" gap={6}>
+                            <Stack direction="horizontal" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Shield className="w-5 h-5 text-green-600" /></div>
                                <div className="flex-grow">
-                                  <Stack direction="row" gap={3} align="center" className="mb-1">
+                                  <Stack direction="horizontal" gap={3} align="center" className="mb-1">
                                      <Typography variant="h4" as="h4">Strictly Necessary</Typography>
                                      <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded border border-green-200">REQUIRED</span>
                                   </Stack>
@@ -395,7 +395,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   <span className="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition" />
                                </div>
                             </Stack>
-                            <Stack direction="row" gap={4} align="start" className="pb-6 border-b border-slate-200">
+                            <Stack direction="horizontal" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Cookie className="w-5 h-5 text-blue-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Analytics & Performance</Typography>
@@ -408,7 +408,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   <span className={`${preferences.analytics ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition shadow-sm`} />
                                </button>
                             </Stack>
-                            <Stack direction="row" gap={4} align="start">
+                            <Stack direction="horizontal" gap={4} align="start">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Share2 className="w-5 h-5 text-amber-600" /></div>
                                <div className="flex-grow">
                                   <Typography variant="h4" as="h4">Marketing & Targeting</Typography>
@@ -459,9 +459,9 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                      }}
                    />
 
-                   <Stack direction="col" gap={4} className="mt-16 pt-8 border-t border-slate-100 justify-between items-center text-sm text-slate-500">
+                   <Stack direction="vertical" gap={4} className="mt-16 pt-8 border-t border-slate-100 justify-between items-center text-sm text-slate-500">
                       <Typography variant="body">© 2024 BizOps Inc. All rights reserved.</Typography>
-                      <Stack direction="row" gap={6}>
+                      <Stack direction="horizontal" gap={6}>
                          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); }} className="hover:text-primary-600 transition-colors">Back to top</a>
                          <Link to="/contact" className="hover:text-primary-600 transition-colors">Contact Legal Team</Link>
                       </Stack>

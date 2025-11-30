@@ -133,7 +133,7 @@ const EventDetailPage: React.FC = () => {
         <Grid cols={3} gap={8}>
           
           {/* Main Info */}
-          <Stack direction="col" gap={8} className="lg:col-span-2">
+          <Stack direction="vertical" gap={8} className="lg:col-span-2">
             {/* About Event */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Tentang Event Ini</Typography>
@@ -154,7 +154,7 @@ const EventDetailPage: React.FC = () => {
             {/* Agenda */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Agenda Sesi</Typography>
-              <Stack direction="col" gap={6}>
+              <Stack direction="vertical" gap={6}>
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
                     <div className="w-16 flex-shrink-0 pt-1">
@@ -195,7 +195,7 @@ const EventDetailPage: React.FC = () => {
 
           {/* Sidebar Registration */}
           <div className="lg:col-span-1">
-            <Stack direction="col" gap={6} className="sticky top-24">
+            <Stack direction="vertical" gap={6} className="sticky top-24">
               <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-xl border border-slate-100 dark:border-slate-800 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-indigo-500"></div>
                 

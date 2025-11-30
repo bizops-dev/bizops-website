@@ -362,7 +362,7 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
-              <Stack direction="col" gap={6}>
+              <Stack direction="vertical" gap={6}>
                  <div>
                     <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
                     <span className="text-6xl font-normal text-slate-900 dark:text-white ml-4">Aa</span>
@@ -387,7 +387,7 @@ const MediaKitPage: React.FC = () => {
            <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-[2rem] blur-xl opacity-70"></div>
               <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl">
-                 <Stack direction="col" gap={4}>
+                 <Stack direction="vertical" gap={4}>
                     <Typography variant="h1" as="h1">The Quick Brown Fox</Typography>
                     <Typography variant="h2" as="h2">Jumps Over The Lazy Dog</Typography>
                     <Typography variant="h3" as="h3">1234567890</Typography>
@@ -441,11 +441,11 @@ const MediaKitPage: React.FC = () => {
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
            
-           <Stack direction="col" gap={12} className="relative z-10 items-center justify-between">
+           <Stack direction="vertical" gap={12} className="relative z-10 items-center justify-between">
               <div className="max-w-xl">
                  <Typography variant="h2" as="h2">Media Inquiries</Typography>
                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.</Typography>
-                 <Stack direction="col" gap={4}>
+                 <Stack direction="vertical" gap={4}>
                     <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
                        <Mail className="w-4 h-4" /> Hubungi PR Team
                     </a>
@@ -463,7 +463,7 @@ const MediaKitPage: React.FC = () => {
                        <div className="text-indigo-300 text-sm">Head of Communications</div>
                     </div>
                  </div>
-                 <Stack direction="col" gap={3} className="text-sm text-slate-300">
+                 <Stack direction="vertical" gap={3} className="text-sm text-slate-300">
                     <div className="flex items-center gap-3">
                        <Mail className="w-4 h-4 text-slate-400" /> pr@divistant.com
                     </div>

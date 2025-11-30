@@ -28,7 +28,7 @@ const RolePage: React.FC = () => {
 
   if (!data) {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Role Not Found" />
         <Typography variant="h1" as="h1">Role Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
@@ -39,7 +39,7 @@ const RolePage: React.FC = () => {
   const Icon = data.icon;
 
   return (
-    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
+    <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO title={data.metaTitle} description={data.metaDesc} />
 
       {/* 1. HERO (Dark Enterprise Style - Premium Upgrade) */}
@@ -100,7 +100,7 @@ const RolePage: React.FC = () => {
          <Container size="7xl">
             <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-6 lg:p-10 shadow-2xl overflow-hidden relative">
                <div className="text-center mb-10 relative z-10">
-                  <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-4 shadow-sm">
+                  <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-4 shadow-sm">
                      <BarChart2 className="w-4 h-4" />
                      Live Dashboard Preview
                   </Stack>
@@ -148,13 +148,13 @@ const RolePage: React.FC = () => {
                   }`}></div>
 
                   {/* Browser Header */}
-                  <Stack direction="row" gap={3} align="center" className="absolute top-0 w-full h-12 bg-[#1E293B]/90 backdrop-blur-md border-b border-slate-700 px-4 z-20 select-none">
-                     <Stack direction="row" gap={1}>
+                  <Stack direction="horizontal" gap={3} align="center" className="absolute top-0 w-full h-12 bg-[#1E293B]/90 backdrop-blur-md border-b border-slate-700 px-4 z-20 select-none">
+                     <Stack direction="horizontal" gap={1}>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] shadow-sm"></div>
                      </Stack>
-                     <Stack direction="row" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 overflow-hidden shadow-inner transition-all duration-300">
+                     <Stack direction="horizontal" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 overflow-hidden shadow-inner transition-all duration-300">
                         <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
                      </Stack>
@@ -166,7 +166,7 @@ const RolePage: React.FC = () => {
                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:32px_32px] opacity-20 pointer-events-none"></div>
                      
                      {/* Left Sidebar */}
-                     <Stack direction="col" gap={2} className="col-span-2 hidden border-r border-slate-800 pr-4 relative z-10">
+                     <Stack direction="vertical" gap={2} className="col-span-2 hidden border-r border-slate-800 pr-4 relative z-10">
                         <div className={`h-8 bg-gradient-to-r rounded-md w-full mb-4 shadow-lg transition-all duration-500 ${
                            ['from-blue-600 to-blue-700', 'from-green-600 to-green-700', 'from-purple-600 to-purple-700', 'from-amber-600 to-amber-700'][activeFeature % 4]
                         }`}></div>
@@ -180,8 +180,8 @@ const RolePage: React.FC = () => {
                            {[1,2,3].map((i) => (
                               <div key={i} className="h-28 bg-[#1E293B] rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg group/card relative overflow-hidden">
                                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
-                                 <Stack direction="row" gap={4} align="start" justify="between">
-                                    <Stack direction="row" gap={4} align="center" justify="center" className="h-8 w-8 bg-slate-800 rounded-lg border border-slate-700">
+                                 <Stack direction="horizontal" gap={4} align="start" justify="between">
+                                    <Stack direction="horizontal" gap={4} align="center" justify="center" className="h-8 w-8 bg-slate-800 rounded-lg border border-slate-700">
                                        <div className={`w-4 h-4 rounded transition-colors duration-500 ${
                                           activeFeature === i-1 ? 'bg-white animate-pulse' : 'bg-slate-600'
                                        }`}></div>
@@ -190,7 +190,7 @@ const RolePage: React.FC = () => {
                                        {i===1 ? '+12.5%' : ''}
                                     </div>
                                  </Stack>
-                                 <Stack direction="col" gap={2}>
+                                 <Stack direction="vertical" gap={2}>
                                     <div className="h-6 w-2/3 bg-slate-700 rounded animate-pulse transition-all duration-500" style={{ width: `${60 + (activeFeature * 10) + (i * 5)}%` }}></div>
                                     <div className="h-3 w-1/3 bg-slate-800 rounded"></div>
                                  </Stack>
@@ -200,11 +200,11 @@ const RolePage: React.FC = () => {
 
                         {/* Chart Area - Dynamic Bars */}
                         <div className="col-span-2 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 relative overflow-hidden p-5 hover:border-slate-600 transition-colors">
-                           <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+                           <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
                               <div className="h-5 w-1/3 bg-slate-700 rounded"></div>
                               <div className="h-7 w-20 bg-slate-800 rounded border border-slate-700"></div>
                            </Stack>
-                           <Stack direction="row" gap={2} align="end" justify="between" className="h-36 px-1">
+                           <Stack direction="horizontal" gap={2} align="end" justify="between" className="h-36 px-1">
                               {/* Dynamic Chart Data Generation based on ActiveFeature */}
                               {(() => {
                                  const seeds = [
@@ -233,14 +233,14 @@ const RolePage: React.FC = () => {
                         </div>
 
                         {/* Side Panel */}
-                        <Stack direction="col" gap={3} className="col-span-1 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 p-5 hover:border-slate-600 transition-colors">
+                        <Stack direction="vertical" gap={3} className="col-span-1 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 p-5 hover:border-slate-600 transition-colors">
                            <div className="h-5 w-1/2 bg-slate-700 rounded mb-4"></div>
                            {[1,2,3,4].map(i => (
                               <div key={i} className="flex items-center gap-3 p-1.5 rounded-lg hover:bg-slate-800/50 transition-colors">
                                  <div className={`h-7 w-7 rounded-full border border-slate-700 transition-colors duration-500 ${
                                     activeFeature === i-1 ? 'bg-white/10' : 'bg-slate-800'
                                  }`}></div>
-                                 <Stack direction="col" gap={1} className="flex-1">
+                                 <Stack direction="vertical" gap={1} className="flex-1">
                                     <div className="h-2.5 w-3/4 bg-slate-700 rounded"></div>
                                     <div className="h-1.5 w-1/2 bg-slate-800 rounded"></div>
                                  </Stack>
@@ -265,7 +265,7 @@ const RolePage: React.FC = () => {
          
          <Container size="7xl" className="relative z-10">
             <div className="text-center mb-12 md:mb-20">
-               <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
+               <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
                   <RefreshCw className="w-3 h-3" /> Transformation
                </Stack>
                <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-bold text-white leading-tight">From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span></Typography>
@@ -280,18 +280,18 @@ const RolePage: React.FC = () => {
                      className="relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden group transition-all duration-500 h-full shadow-2xl shadow-black/50 ring-1 ring-white/10 hover:ring-white/20"
                   >
                      {/* Connector Arrow (Desktop) */}
-                     <Stack direction="row" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#0F172A] border-4 border-[#020617] rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#0F172A] border-4 border-[#020617] rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
                         <ArrowRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
                      </Stack>
 
                      {/* Pain Side (Left) - Darker, Red-tinted Chaos */}
-                     <Stack direction="col" gap={4} className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/5 bg-gradient-to-br from-[#1a0505] via-[#0f0303] to-[#050101] relative overflow-hidden group-hover:from-[#2b0a0a] transition-colors duration-500 h-full">
+                     <Stack direction="vertical" gap={4} className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/5 bg-gradient-to-br from-[#1a0505] via-[#0f0303] to-[#050101] relative overflow-hidden group-hover:from-[#2b0a0a] transition-colors duration-500 h-full">
                         {/* Chaos Noise/Texture */}
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
                         <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
                         
-                        <Stack direction="row" gap={4} className="relative z-10">
-                           <Stack direction="row" gap={3} align="center" className="mb-6">
+                        <Stack direction="horizontal" gap={4} className="relative z-10">
+                           <Stack direction="horizontal" gap={3} align="center" className="mb-6">
                               <div className="p-2 bg-red-500/10 border border-red-500/20 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.1)]">
                                  <AlertTriangle className="w-5 h-5 text-red-500" />
                               </div>
@@ -303,13 +303,13 @@ const RolePage: React.FC = () => {
                      </Stack>
 
                      {/* Gain Side (Right) - Bright, Emerald-tinted Clarity */}
-                     <Stack direction="col" gap={4} className="p-8 md:p-12 bg-gradient-to-bl from-[#022c22] via-[#011c16] to-[#050101] relative overflow-hidden group-hover:from-[#033d2e] transition-colors duration-500 h-full">
+                     <Stack direction="vertical" gap={4} className="p-8 md:p-12 bg-gradient-to-bl from-[#022c22] via-[#011c16] to-[#050101] relative overflow-hidden group-hover:from-[#033d2e] transition-colors duration-500 h-full">
                         {/* Clarity Texture */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 to-transparent opacity-50"></div>
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] -ml-20 -mb-20 pointer-events-none"></div>
 
-                        <Stack direction="row" gap={4} className="relative z-10">
-                           <Stack direction="row" gap={3} align="center" justify="end" className="mb-6">
+                        <Stack direction="horizontal" gap={4} className="relative z-10">
+                           <Stack direction="horizontal" gap={3} align="center" justify="end" className="mb-6">
                               <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">After BizOps</span>
                               <div className="p-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg order-1 md:order-2 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                                  <CheckCircle className="w-5 h-5 text-emerald-400" />
@@ -355,7 +355,7 @@ const RolePage: React.FC = () => {
            
            <Typography variant="body-xl" className="text-slate-400">Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.</Typography>
 
-           <Stack direction="col" gap={5} className="justify-center items-center">
+           <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
                  <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Sekarang <ArrowRight className="w-5 h-5" />

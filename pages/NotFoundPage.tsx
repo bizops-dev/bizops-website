@@ -46,7 +46,7 @@ const NotFoundPage: React.FC = () => {
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-500">"Cuti Di Luar Tanggungan"</span></Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa.</Typography>
 
-            <Stack direction="col" gap={4} className="justify-center mb-16">
+            <Stack direction="vertical" gap={4} className="justify-center mb-16">
                <Link to="/">
                   <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg hover:shadow-primary-500/20 shadow-primary-500/10 text-lg">
                      Kembali ke Dashboard

@@ -51,7 +51,7 @@ const IndustryPage: React.FC = () => {
 
   if (!data) {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
         <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">The solution you are looking for does not exist or has been moved.</Typography>
@@ -80,7 +80,7 @@ const IndustryPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
+    <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-950 transition-colors duration-500">
       <SEO 
         title={data.metaTitle} 
         description={data.metaDesc} 
@@ -114,7 +114,7 @@ const IndustryPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="flex items-center justify-center mb-8"
             >
-               <Stack direction="row" gap={2} align="center" justify="center" className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
+               <Stack direction="horizontal" gap={2} align="center" justify="center" className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
                   <span>Industry Solution</span>
                   <span className="text-slate-500 mx-1">/</span>
@@ -190,7 +190,7 @@ const IndustryPage: React.FC = () => {
                           {/* Background Glow */}
                           <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           
-                          <Stack direction="col" gap={4} align="center" justify="center" className="w-full relative z-10">
+                          <Stack direction="vertical" gap={4} align="center" justify="center" className="w-full relative z-10">
                              {isNumber ? (
                                <div>
                                  <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
@@ -218,7 +218,7 @@ const IndustryPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
          
          <Container size="3xl" className="text-center mb-16 relative z-10">
-            <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
+            <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
@@ -236,11 +236,11 @@ const IndustryPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>
                   <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600/5 rounded-full blur-[50px] -ml-10 -mb-10 group-hover:bg-orange-600/10 transition-colors duration-500 pointer-events-none"></div>
                   
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
+                  <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
                      <span className="font-bold text-xl">0{idx + 1}</span>
                   </Stack>
                   
-                  <Stack direction="col" gap={4} className="relative z-10">
+                  <Stack direction="vertical" gap={4} className="relative z-10">
                      <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
                      <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
                   </Stack>
@@ -255,7 +255,7 @@ const IndustryPage: React.FC = () => {
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
          <Container size="3xl" className="text-center mb-16 relative z-10">
-            <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+            <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <Check className="w-3 h-3" /> The Solution
             </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
@@ -275,11 +275,11 @@ const IndustryPage: React.FC = () => {
                      <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 via-primary-500/0 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      
-                     <Stack direction="row" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
                         <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
                      </Stack>
                      
-                     <Stack direction="col" gap={4}>
+                     <Stack direction="vertical" gap={4}>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{sol.desc}</Typography>
                      </Stack>
@@ -305,7 +305,7 @@ const IndustryPage: React.FC = () => {
                <Badge variant="outline-white" className="mb-6">Success Story</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-white">{data.caseStudyTitle}</Typography>
                <Typography variant="body-lg" className="text-slate-300 leading-relaxed">"{data.caseStudy}"</Typography>
-               <Stack direction="col" gap={4}>
+               <Stack direction="vertical" gap={4}>
                   <Link to="/customers">
                      <Button variant="white" className="group">
                         Baca Studi Kasus Lengkap <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -324,7 +324,7 @@ const IndustryPage: React.FC = () => {
                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-500/30 rounded-full blur-xl animate-pulse-slow"></div>
                <Quote className="w-12 h-12 text-primary-400 mb-6 opacity-50" />
                <Typography variant="body-xl" className="leading-relaxed">"{data.testimonial?.quote || "BizOps memberikan visibilitas yang kami cari selama ini. Keputusan bisnis jadi lebih cepat dan akurat."}"</Typography>
-               <Stack direction="row" gap={4} align="center">
+               <Stack direction="horizontal" gap={4} align="center">
                   <div className="w-14 h-14 rounded-full bg-slate-700 overflow-hidden ring-2 ring-primary-500/50">
                      <OptimizedImage 
                         src={data.testimonial?.avatar || "https://ui-avatars.com/api/?name=User&background=random"} 
@@ -390,7 +390,7 @@ const IndustryPage: React.FC = () => {
            
            <Typography variant="body-xl" className="text-slate-400">Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.</Typography>
 
-           <Stack direction="col" gap={5} className="justify-center items-center">
+           <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
                  <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Free Trial <ArrowRight className="w-5 h-5" />

@@ -132,7 +132,7 @@ const PartnersPage: React.FC = () => {
                          <div className="font-bold text-white text-xl">Revenue Overview</div>
                       </div>
                    </div>
-                   <Stack direction="col" gap={4}>
+                   <Stack direction="vertical" gap={4}>
                       <div className="flex justify-between items-center p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
                          <div className="flex items-center gap-3">
                             <Code className="w-5 h-5 text-emerald-400" />
@@ -295,7 +295,7 @@ const PartnersPage: React.FC = () => {
           <Grid cols={12} gap={8} className="items-start">
             
             {/* Controls */}
-            <Stack direction="col" gap={8} className="lg:col-span-5 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
+            <Stack direction="vertical" gap={8} className="lg:col-span-5 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
                
                <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold uppercase tracking-wider text-xs">
                   <Sliders className="w-4 h-4" /> Konfigurasi Bisnis

@@ -14,7 +14,7 @@ const IntegrationsPage: React.FC = () => {
       
       {/* Hero */}
       <Container size="7xl" className="mb-20 text-center">
-        <Stack direction="row" gap={4} className="p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
+        <Stack direction="horizontal" gap={4} className="p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
            <Plug className="w-8 h-8 text-primary-600" />
         </div>
         <Typography variant="h1" as="h1">Ekosistem yang Saling Terhubung.</Typography>
@@ -26,7 +26,7 @@ const IntegrationsPage: React.FC = () => {
          <Grid cols={1} gap={12}>
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
-                  <Stack direction="row" gap={4} align="end" className="mb-6 border-b border-slate-200 pb-4">
+                  <Stack direction="horizontal" gap={4} align="end" className="mb-6 border-b border-slate-200 pb-4">
                       <Typography variant="h2" as="h2" className="font-bold text-slate-900">{cat.category}</Typography>
                       <Typography variant="body" className="text-slate-500">{cat.desc}</Typography>
                   </Stack>
@@ -34,8 +34,8 @@ const IntegrationsPage: React.FC = () => {
                   <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                      {cat.apps.map((app: any, i: number) => (
                         <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all group cursor-default h-full">
-                           <Stack direction="row" gap={4} align="center" justify="between" className="mb-4">
-                              <Stack direction="row" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-50 rounded-lg text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+                           <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-4">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-50 rounded-lg text-xs font-bold text-slate-600 border border-slate-100 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
                                  {app.name.substring(0,2).toUpperCase()}
                               </div>
                               <div className="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold uppercase rounded-full border border-green-100">
@@ -54,7 +54,7 @@ const IntegrationsPage: React.FC = () => {
          <div className="mt-24 text-center bg-white p-12 rounded-2xl border border-slate-200 shadow-sm">
             <Typography variant="h2" as="h2">Butuh Integrasi Khusus?</Typography>
             <Typography variant="body" className="text-slate-600">Gunakan REST API standar kami untuk menghubungkan sistem legacy atau aplikasi custom internal Anda. Dokumentasi lengkap tersedia.</Typography>
-            <Stack direction="col" gap={4} className="justify-center">
+            <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/capabilities/integration">
                   <Button size="lg" variant="primary">Lihat Dokumentasi API</Button>
                </Link>

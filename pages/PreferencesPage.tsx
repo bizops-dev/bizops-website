@@ -22,7 +22,7 @@ const PreferencesPage: React.FC = () => {
       
       <Container size="7xl">
         <div className="text-center mb-12">
-           <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600">
+           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
            </div>
            <Typography variant="h1" as="h1">Kendalikan Isi Inbox Anda</Typography>
@@ -33,11 +33,11 @@ const PreferencesPage: React.FC = () => {
            
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <Typography variant="h3" as="h3">Jenis Email</Typography>
-              <Stack direction="col" gap={6}>
+              <Stack direction="vertical" gap={6}>
                  
                  {/* Explicit accessible checkbox structure */}
-                 <Stack direction="row" gap={4} align="start" className="relative">
-                    <Stack direction="row" gap={4} align="center" className="h-6">
+                 <Stack direction="horizontal" gap={4} align="start" className="relative">
+                    <Stack direction="horizontal" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_updates" 
                           aria-describedby="pref_updates_desc"
@@ -55,8 +55,8 @@ const PreferencesPage: React.FC = () => {
                     </div>
                  </div>
                  
-                 <Stack direction="row" gap={4} align="start" className="relative">
-                    <Stack direction="row" gap={4} align="center" className="h-6">
+                 <Stack direction="horizontal" gap={4} align="start" className="relative">
+                    <Stack direction="horizontal" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_digest" 
                           aria-describedby="pref_digest_desc"
@@ -74,8 +74,8 @@ const PreferencesPage: React.FC = () => {
                     </div>
                  </div>
 
-                 <Stack direction="row" gap={4} align="start" className="relative">
-                    <Stack direction="row" gap={4} align="center" className="h-6">
+                 <Stack direction="horizontal" gap={4} align="start" className="relative">
+                    <Stack direction="horizontal" gap={4} align="center" className="h-6">
                        <input 
                           id="pref_promo" 
                           aria-describedby="pref_promo_desc"
@@ -98,22 +98,22 @@ const PreferencesPage: React.FC = () => {
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <Typography variant="h3" as="h3">Frekuensi Maksimal</Typography>
               <div className="flex gap-6" role="radiogroup" aria-label="Email frequency">
-                 <Stack direction="row" gap={4} align="center">
+                 <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_daily" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_daily" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Harian</label>
                  </Stack>
-                 <Stack direction="row" gap={4} align="center">
+                 <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_weekly" name="freq" type="radio" defaultChecked className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_weekly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Mingguan</label>
                  </Stack>
-                 <Stack direction="row" gap={4} align="center">
+                 <Stack direction="horizontal" gap={4} align="center">
                     <input id="freq_monthly" name="freq" type="radio" className="h-4 w-4 border-slate-300 text-primary-600 focus:ring-primary-600" />
                     <label htmlFor="freq_monthly" className="ml-3 block text-sm font-medium leading-6 text-slate-900 cursor-pointer">Bulanan</label>
                  </Stack>
               </div>
            </div>
 
-           <Stack direction="row" gap={4} align="center" justify="between" className="pt-4">
+           <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-4">
               <button type="button" className="text-sm text-red-500 hover:text-red-700 font-medium flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1">
                  <XCircle className="w-4 h-4" /> Unsubscribe All
               </button>

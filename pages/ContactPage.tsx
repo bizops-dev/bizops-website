@@ -121,7 +121,7 @@ const ContactPage: React.FC = () => {
             <Grid cols={12} gap={8}>
                
                {/* LEFT: CONTACT INFO (Bento Grid Style) */}
-               <Stack direction="col" gap={6} className="lg:col-span-5">
+               <Stack direction="vertical" gap={6} className="lg:col-span-5">
                   
                   {/* Primary Contact Card */}
                   <motion.div 
@@ -135,9 +135,9 @@ const ContactPage: React.FC = () => {
                      <div className="relative z-10">
                         <Typography variant="h2" as="h2">Direct Channels</Typography>
                         
-                        <Stack direction="col" gap={8}>
+                        <Stack direction="vertical" gap={8}>
                            <a href="mailto:hello@bizops.id" className="flex items-start gap-5 group/item">
-                              <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
                                  <Mail className="w-6 h-6" />
                               </Stack>
                               <div>
@@ -148,13 +148,13 @@ const ContactPage: React.FC = () => {
                            </a>
 
                            <a href="tel:+622139702834" className="flex items-start gap-5 group/item">
-                              <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl text-emerald-600 dark:text-emerald-400 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl text-emerald-600 dark:text-emerald-400 transition-colors group-hover/item:bg-emerald-600 group-hover/item:text-white">
                                  <Phone className="w-6 h-6" />
                               </Stack>
                               <div>
                                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Call Center</div>
                                  <div className="text-lg font-bold text-slate-900 dark:text-white group-hover/item:text-emerald-600 dark:group-hover/item:text-emerald-400 transition-colors">+62 21 3970 2834</div>
-                                 <Stack direction="row" gap={1} align="center" className="text-xs text-slate-400 mt-1">
+                                 <Stack direction="horizontal" gap={1} align="center" className="text-xs text-slate-400 mt-1">
                                     <Clock className="w-3 h-3" /> Mon-Fri, 09:00 - 17:00 WIB
                                  </Stack>
                               </div>
@@ -175,7 +175,7 @@ const ContactPage: React.FC = () => {
                      <div className="relative z-10">
                         <Typography variant="h2" as="h2" className="font-bold"><Globe className="w-5 h-5 text-blue-400" /> Our Offices</Typography>
                         
-                        <Stack direction="col" gap={6}>
+                        <Stack direction="vertical" gap={6}>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">
                               <Typography variant="h3" as="h3">Jakarta HQ</Typography>
                               <Typography variant="caption" className="text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br />
@@ -207,7 +207,7 @@ const ContactPage: React.FC = () => {
                      transition={{ delay: 0.2 }}
                      className="bg-gradient-to-r from-indigo-600 to-violet-600 p-1 rounded-3xl shadow-xl"
                   >
-                     <Stack direction="row" gap={4} align="center" justify="between" className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full">
+                     <Stack direction="horizontal" gap={4} align="center" justify="between" className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full">
                         <div>
                            <Typography variant="h3" as="h3">Join Developer Community</Typography>
                            <Typography variant="body" className="text-slate-500 dark:text-slate-400">Chat with 500+ peers on Discord.</Typography>
@@ -231,7 +231,7 @@ const ContactPage: React.FC = () => {
                      className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-center"
                   >
                      {isSent ? (
-                       <Stack direction="col" gap={4} align="center" justify="center" className="text-center py-12">
+                       <Stack direction="vertical" gap={4} align="center" justify="center" className="text-center py-12">
                           <motion.div 
                              initial={{ scale: 0 }} animate={{ scale: 1 }}
                              className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 shadow-lg"
@@ -300,7 +300,7 @@ const ContactPage: React.FC = () => {
                                )}
                             </div>
 
-                            <Stack direction="row" gap={4} align="center" justify="between" className="pt-4">
+                            <Stack direction="horizontal" gap={4} align="center" justify="between" className="pt-4">
                                <Typography variant="body" className="text-slate-400">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
                                <Button size="lg" type="submit" isLoading={isLoading} className="h-14 px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
                                   {isLoading ? 'Mengirim...' : 'Kirim Pesan'} <Send className="w-4 h-4 ml-2" />

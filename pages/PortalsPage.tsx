@@ -11,13 +11,13 @@ import Stack from '../components/Stack';
 
 const PortalsPage: React.FC = () => {
   return (
-    <Stack direction="col" gap={4}>
+    <Stack direction="vertical" gap={4}>
       <SEO title="B2B Customer & Vendor Portals | BizOps" description="Berikan akses mandiri kepada pelanggan dan supplier Anda. Cek tagihan, status pengiriman, dan bidding tender secara online 24/7." />
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
         <Container size="7xl">
-          <Stack direction="row" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
+          <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Berhenti Menjadi Admin<br/>untuk Klien Anda.</Typography>

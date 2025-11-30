@@ -63,7 +63,7 @@ const WhyBizOpsPage: React.FC = () => {
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.</Typography>
             </div>
             
-            <Stack direction="col" gap={16} className="items-center">
+            <Stack direction="vertical" gap={16} className="items-center">
                {/* Quadrant Chart */}
                <Container className="w-full lg:w-1/2 aspect-square relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8">
                   {/* Axes */}
@@ -135,7 +135,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </CardSlider>
                   </div>
                   
-                  <Stack direction="col" gap={6} className="hidden lg:block">
+                  <Stack direction="vertical" gap={6} className="hidden lg:block">
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <div className="flex gap-4">
                            <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
@@ -246,7 +246,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.</Typography>
                   
-                  <Stack direction="col" gap={6}>
+                  <Stack direction="vertical" gap={6}>
                      <div className="flex gap-4 items-start">
                         <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
                            <Database className="w-5 h-5" />
@@ -278,7 +278,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <Typography variant="caption" className="text-green-700">-75% Usage</Typography>
                   </div>
                   
-                  <Stack direction="col" gap={8}>
+                  <Stack direction="vertical" gap={8}>
                      <div className="relative">
                         <div className="flex justify-between text-sm mb-2 font-semibold">
                            <span className="text-slate-900 dark:text-white flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"></div> BizOps ERP</span>
@@ -329,7 +329,7 @@ const WhyBizOpsPage: React.FC = () => {
          <Container size="4xl" className="relative z-10 text-center">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Masa Depan Operasional Anda <br/>Dimulai Di Sini.</Typography>
             <Typography variant="body-xl" className="text-slate-300">Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.</Typography>
-            <Stack direction="col" gap={6} className="justify-center">
+            <Stack direction="vertical" gap={6} className="justify-center">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>
                </Link>

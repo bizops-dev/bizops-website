@@ -16,7 +16,7 @@ const ComparePage: React.FC = () => {
 
   if (!data) {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4">
+      <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-[60vh] text-center px-4">
         <SEO title="Comparison Not Found" />
         <Typography variant="h1" as="h1">Comparison Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
@@ -54,13 +54,13 @@ const ComparePage: React.FC = () => {
                     <div className="font-bold text-slate-900 md:col-span-1">{row.feature}</div>
                     
                     {/* Them */}
-                    <Stack direction="row" gap={3} align="start" className="text-slate-600">
+                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-600">
                        <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
                        <Typography variant="caption">{row.them}</Typography>
                     </div>
 
                     {/* Us */}
-                    <Stack direction="row" gap={3} align="start" className="text-slate-900 font-medium bg-primary-50 rounded-lg p-3">
+                    <Stack direction="horizontal" gap={3} align="start" className="text-slate-900 font-medium bg-primary-50 rounded-lg p-3">
                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
                        <Typography variant="caption">{row.us}</Typography>
                     </div>
@@ -108,12 +108,12 @@ const ComparePage: React.FC = () => {
            <Grid cols={2} gap={8} className="mb-16">
               {[].map((scene: any, idx: number) => (
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
-                    <Stack direction="row" gap={3} align="center" className="mb-6">
+                    <Stack direction="horizontal" gap={3} align="center" className="mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900">{scene.name}</Typography>
                     </Stack>
 
-                    <Stack direction="col" gap={4} className="mb-8">
+                    <Stack direction="vertical" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (
                           <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
                              <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
@@ -137,7 +137,7 @@ const ComparePage: React.FC = () => {
 
         {/* LAYOUT 3: COLUMNS (For SaaS Comparison) */}
         {false && (
-           <Stack direction="col" gap={6} className="mb-16">
+           <Stack direction="vertical" gap={6} className="mb-16">
               {[].map((feat: any, idx: number) => (
                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0">
@@ -145,12 +145,12 @@ const ComparePage: React.FC = () => {
                     </div>
                     <div className="md:col-span-1">
                        <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
-                       <Stack direction="row" gap={2} align="center" className="text-red-500 font-bold mb-2">
+                       <Stack direction="horizontal" gap={2} align="center" className="text-red-500 font-bold mb-2">
                        <Typography variant="caption" className="text-slate-600">{feat.themDesc}</Typography>
                     </div>
                     <div className="md:col-span-1 bg-primary-50 -m-4 p-4 rounded-xl">
                        <div className="text-xs font-bold text-primary-600 uppercase mb-2">BizOps</div>
-                       <Stack direction="row" gap={2} align="center" className="text-slate-900 font-bold mb-2">
+                       <Stack direction="horizontal" gap={2} align="center" className="text-slate-900 font-bold mb-2">
                        <Typography variant="caption" className="text-slate-700">{feat.usDesc}</Typography>
                     </div>
                  </div>
@@ -162,7 +162,7 @@ const ComparePage: React.FC = () => {
         <Container size="4xl" className="text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
            <Typography variant="body-lg" className="text-slate-600 leading-relaxed">"{data.verdict}"</Typography>
-           <Stack direction="col" gap={4} className="justify-center">
+           <Stack direction="vertical" gap={4} className="justify-center">
               <Link to="/demo">
                  <Button size="lg" className="shadow-lg">Jadwalkan Demo & Migrasi</Button>
               </Link>

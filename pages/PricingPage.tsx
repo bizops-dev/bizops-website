@@ -48,7 +48,7 @@ const PricingPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="col" gap={4} className="bg-white dark:bg-slate-950 transition-colors">
+    <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-950 transition-colors">
       <SEO 
         title="Harga & Paket Langganan ERP | BizOps" 
         description="Pilih paket Business, Growth, atau Enterprise. Investasi cerdas mulai Rp 2.5 Juta/bulan. Hitung kebutuhan spesifik Anda dengan kalkulator kami."
@@ -67,7 +67,7 @@ const PricingPage: React.FC = () => {
         </div>
 
         <Container size="7xl" className="relative z-10 text-center">
-          <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
              <span className="relative flex h-2 w-2">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -89,7 +89,7 @@ const PricingPage: React.FC = () => {
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
           
           {/* Enhanced Toggle */}
-          <Stack direction="row" gap={4} align="center" justify="center" className="animate-in fade-in zoom-in duration-700 delay-300">
+          <Stack direction="horizontal" gap={4} align="center" justify="center" className="animate-in fade-in zoom-in duration-700 delay-300">
             <Grid cols={2} gap={6} className="relative bg-slate-100 dark:bg-slate-800 p-1.5 rounded-full border border-slate-200 dark:border-slate-700">
               <div 
                 className={`absolute left-1.5 top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 transition-transform duration-300 ease-spring ${annual ? 'translate-x-full' : 'translate-x-0'}`}
@@ -120,21 +120,21 @@ const PricingPage: React.FC = () => {
            <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12">
              
              {/* Plan 1: Business */}
-             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+             <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
                <div className="mb-6">
                  <Typography variant="h3" as="h3">Business</Typography>
                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Pondasi digital yang kuat untuk startup & bisnis berkembang.</Typography>
                </div>
                
                <div className="mb-8">
-                 <Stack direction="row" gap={1} align="baseline">
+                 <Stack direction="horizontal" gap={1} align="baseline">
                    <span className="text-sm font-semibold text-slate-500 mb-auto mt-2">IDR</span>
                    <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      {annual ? '2.5' : '3'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                  </Stack>
-                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
+                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
                    <span className="text-slate-500">/ bulan</span>
                    {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
                  </Stack>
@@ -149,7 +149,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="col" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
                  <Typography variant="body" className="text-slate-400 tracking-wider">Fitur Utama:</Typography>
                  {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
@@ -163,9 +163,9 @@ const PricingPage: React.FC = () => {
              </Stack>
 
              {/* Plan 2: Growth (Popular) */}
-             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl p-8 h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
-               <Stack direction="row" gap={4} justify="center" className="absolute -top-5 left-0 right-0">
-                 <Stack direction="row" gap={1} align="center" className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg tracking-wide uppercase">
+             <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl p-8 h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
+               <Stack direction="horizontal" gap={4} justify="center" className="absolute -top-5 left-0 right-0">
+                 <Stack direction="horizontal" gap={1} align="center" className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg tracking-wide uppercase">
                    <Zap className="w-3.5 h-3.5 fill-current" />
                    Most Popular
                  </Stack>
@@ -177,14 +177,14 @@ const PricingPage: React.FC = () => {
                </div>
 
                <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
-                 <Stack direction="row" gap={1} align="baseline">
+                 <Stack direction="horizontal" gap={1} align="baseline">
                    <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
                    <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      {annual ? '7.5' : '9'}
                    </span>
                    <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                  </Stack>
-                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
+                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
                    <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
                    {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
                  </Stack>
@@ -198,7 +198,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="col" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
                  <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wider">Semua di Business, plus:</Typography>
                  {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
@@ -214,7 +214,7 @@ const PricingPage: React.FC = () => {
              </Stack>
 
              {/* Plan 3: Enterprise */}
-             <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
+             <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
                {/* Subtle Texture */}
                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
 
@@ -225,12 +225,12 @@ const PricingPage: React.FC = () => {
                </div>
                
                <div className="mb-8 relative z-10">
-                 <Stack direction="row" gap={1} align="baseline">
+                 <Stack direction="horizontal" gap={1} align="baseline">
                    <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                      Custom
                    </span>
                  </Stack>
-                 <Stack direction="row" gap={4} align="center" justify="between" className="mt-3 text-sm">
+                 <Stack direction="horizontal" gap={4} align="center" justify="between" className="mt-3 text-sm">
                     <span className="text-slate-500">Sesuai Kebutuhan</span>
                  </Stack>
                  <Typography variant="body" className="text-slate-400">Negosiasi kontrak tahunan & SLA</Typography>
@@ -244,7 +244,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="col" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
                  <Typography variant="body" className="dark:text-amber-500 tracking-wider">Enterprise Exclusive:</Typography>
                  {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
@@ -266,9 +266,9 @@ const PricingPage: React.FC = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
             
-            <Stack direction="col" gap={8} className="relative z-10 items-center p-8 md:p-16">
-              <Stack direction="row" gap={4} className="text-center lg:text-left">
-                <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
+            <Stack direction="vertical" gap={8} className="relative z-10 items-center p-8 md:p-16">
+              <Stack direction="horizontal" gap={4} className="text-center lg:text-left">
+                <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
                   <Calculator className="w-3.5 h-3.5" />
                   SIMULASI BIAYA CUSTOM
                 </Stack>
@@ -283,13 +283,13 @@ const PricingPage: React.FC = () => {
               </Stack>
               
               {/* Illustration Placeholder / Abstract Graphic */}
-              <Stack direction="row" gap={4} className="w-full lg:w-1/3">
+              <Stack direction="horizontal" gap={4} className="w-full lg:w-1/3">
                  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                    <Stack direction="col" gap={4} className="opacity-80">
+                    <Stack direction="vertical" gap={4} className="opacity-80">
                        <div className="h-4 bg-white/20 rounded w-3/4"></div>
                        <div className="h-4 bg-white/10 rounded w-full"></div>
                        <div className="h-4 bg-white/10 rounded w-5/6"></div>
-                       <Stack direction="row" gap={4} align="center" justify="center" className="h-12 bg-blue-500/80 rounded-lg mt-4 w-full text-white font-bold">
+                       <Stack direction="horizontal" gap={4} align="center" justify="center" className="h-12 bg-blue-500/80 rounded-lg mt-4 w-full text-white font-bold">
                     </Stack>
                  </Stack>
               </div>
@@ -337,7 +337,7 @@ const PricingPage: React.FC = () => {
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800">
                  <Typography variant="h4" as="h4">Masih ada pertanyaan?</Typography>
                  <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Tim konsultan kami siap membantu Anda.</Typography>
-                 <Stack direction="col" gap={3}>
+                 <Stack direction="vertical" gap={3}>
                    <a href="mailto:sales@bizops.id" className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                      <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm"><MessageSquare className="w-5 h-5" /></div>
                      <span className="font-medium">sales@bizops.id</span>

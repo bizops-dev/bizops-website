@@ -115,7 +115,7 @@ const ResourcesPage = () => {
 
       {/* Featured Insight (Blog) */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <Stack direction="row" gap={4} align="end" justify="between" className="mb-10">
+        <Stack direction="horizontal" gap={4} align="end" justify="between" className="mb-10">
           <div>
             <Typography variant="h2" as="h2">Latest Insights</Typography>
             <Typography variant="body" className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</Typography>
@@ -140,7 +140,7 @@ const ResourcesPage = () => {
               </span>
               <Typography variant="h3" as="h3" className="text-xl md:text-3xl font-bold text-white group-hover:text-primary-200"><Link to={`/blog/${latestBlogs[0].slug}`}>{latestBlogs[0].title}</Link></Typography>
               <Typography variant="caption" className="text-slate-300">{latestBlogs[0].summary}</Typography>
-              <Stack direction="row" gap={4} align="center" className="text-slate-300 text-xs md:text-sm">
+              <Stack direction="horizontal" gap={4} align="center" className="text-slate-300 text-xs md:text-sm">
                 <span>{latestBlogs[0].date}</span>
                 <span>•</span>
                 <span>{latestBlogs[0].author}</span>
@@ -149,7 +149,7 @@ const ResourcesPage = () => {
           </div>
 
           {/* Side Posts */}
-          <Stack direction="col" gap={8} className="flex flex-col">
+          <Stack direction="vertical" gap={8} className="flex flex-col">
             {latestBlogs.slice(1, 3).map((post, idx) => (
               <div key={idx} className="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:border-primary-300 transition-colors">
                 <Typography variant="caption" className="text-primary-600">{post.category}</Typography>
@@ -172,7 +172,7 @@ const ResourcesPage = () => {
             <div>
               <Typography variant="h2" as="h2">Ukur Kesiapan Digital Anda</Typography>
               <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Apakah perusahaan Anda siap untuk transformasi digital? Gunakan alat asesmen gratis kami untuk mendapatkan skor maturitas dan rekomendasi personal dalam 5 menit.</Typography>
-              <Stack direction="col" gap={4}>
+              <Stack direction="vertical" gap={4}>
                 <Link to="/tools/assessment">
                   <Button size="lg" className="bg-primary-600 hover:bg-primary-500 border-none w-full sm:w-auto">
                     Mulai Assessment Gratis
@@ -187,7 +187,7 @@ const ResourcesPage = () => {
             </div>
             <div className="relative mt-8 md:mt-0">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 md:transform md:rotate-2 md:hover:rotate-0 transition-transform duration-500">
-                <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
+                <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8">
                   <div className="text-sm font-bold text-slate-400">YOUR SCORE</div>
                   <div className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">EXCELLENT</div>
                 </Stack>
@@ -195,12 +195,12 @@ const ResourcesPage = () => {
                 <div className="w-full bg-slate-700 h-2 rounded-full mb-6">
                   <div className="bg-green-500 w-[85%] h-2 rounded-full"></div>
                 </div>
-                <Stack direction="col" gap={3}>
-                  <Stack direction="row" gap={4} justify="between" className="text-sm">
+                <Stack direction="vertical" gap={3}>
+                  <Stack direction="horizontal" gap={4} justify="between" className="text-sm">
                     <span>Process Automation</span>
                     <span className="font-bold">90%</span>
                   </Stack>
-                  <Stack direction="row" gap={4} justify="between" className="text-sm">
+                  <Stack direction="horizontal" gap={4} justify="between" className="text-sm">
                     <span>Data Integration</span>
                     <span className="font-bold">75%</span>
                   </Stack>
@@ -217,7 +217,7 @@ const ResourcesPage = () => {
           
           {/* Success Stories Preview */}
           <div>
-            <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
+            <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8">
               <Typography variant="h2" as="h2">Customer Success</Typography>
               <Link to="/use-cases" className="text-primary-600 text-sm font-bold hover:underline">View All</Link>
             </Stack>
@@ -228,7 +228,7 @@ const ResourcesPage = () => {
                 </div>
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{featuredUseCase.title}</Typography>
                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{featuredUseCase.subtitle} - {featuredUseCase.industry}</Typography>
-                <Stack direction="col" gap={2} className="mb-6">
+                <Stack direction="vertical" gap={2} className="mb-6">
                   {featuredUseCase.results.slice(0, 2).map((res, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
                       <span className="text-green-500 mt-1">✓</span> {res}
@@ -244,11 +244,11 @@ const ResourcesPage = () => {
 
           {/* Upcoming Events */}
           <div>
-            <Stack direction="row" gap={4} align="center" justify="between" className="mb-8">
+            <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-8">
               <Typography variant="h2" as="h2">Upcoming Events</Typography>
               <Link to="/events" className="text-primary-600 text-sm font-bold hover:underline">View Calendar</Link>
             </Stack>
-            <Stack direction="col" gap={4}>
+            <Stack direction="vertical" gap={4}>
               {upcomingEvents.map((event, idx) => (
                 <div key={idx} className="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow">
                   <div className="flex-shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg flex flex-col items-center justify-center text-center">
