@@ -153,7 +153,7 @@ const RolePage: React.FC = () => {
                         <div className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] shadow-sm"></div>
                         <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] shadow-sm"></div>
                      </div>
-                     <div className="ml-4 flex-1 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 font-mono flex items-center gap-2 overflow-hidden shadow-inner transition-all duration-300">
+                     <div className="ml-4 flex-1 max-w-md px-3 py-1.5 bg-[#0F172A]/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 flex items-center gap-2 overflow-hidden shadow-inner transition-all duration-300">
                         <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
                      </div>

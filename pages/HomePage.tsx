@@ -380,15 +380,15 @@ const HomePage: React.FC = () => {
                      <div className="space-y-3 mb-6">
                          <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
                              <span className="font-semibold">CRM License</span>
-                             <span className="font-mono font-bold">Rp 150rb</span>
+                             <span className="font-bold">Rp 150rb</span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
                              <span className="font-semibold">Accounting App</span>
-                             <span className="font-mono font-bold">Rp 250rb</span>
+                             <span className="font-bold">Rp 250rb</span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
                              <span className="font-semibold">HRIS App</span>
-                             <span className="font-mono font-bold">Rp 20rb</span>
+                             <span className="font-bold">Rp 20rb</span>
                          </div>
                      </div>
                   </div>
