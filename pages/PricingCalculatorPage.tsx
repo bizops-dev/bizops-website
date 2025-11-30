@@ -4,13 +4,12 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Lock, Award, Users } from 'lucide-react';
 import Container from '../components/Container';
-import Stack from '../components/Stack';
 
 const PricingCalculatorPage: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
 
   return (
-    <Stack direction="col" gap={4} className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden font-sans">
+    <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden flex flex-col font-sans">
       <SEO
         title="Enterprise Pricing Estimator | BizOps"
         description="Kalkulasi investasi sistem ERP BizOps secara presisi. Sesuaikan modul, user, dan infrastruktur dengan kebutuhan enterprise Anda."
@@ -82,20 +81,20 @@ const PricingCalculatorPage: React.FC = () => {
                 </button>
 
                 {/* Trust Indicators */}
-                <Stack direction="row" gap={8} align="center" className="pt-4 border-t border-white/5">
-                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
+                <div className="flex items-center gap-8 pt-4 border-t border-white/5">
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
                     <ShieldCheck className="w-4 h-4 text-emerald-500" />
                     <span>ISO 27001 Certified</span>
-                  </Stack>
-                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
                     <Lock className="w-4 h-4 text-blue-500" />
                     <span>Data Encrypted</span>
-                  </Stack>
-                  <Stack direction="row" gap={2} align="center" className="text-xs font-medium text-slate-500">
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
                     <Award className="w-4 h-4 text-amber-500" />
                     <span>Industry Leader</span>
-                  </Stack>
-                </Stack>
+                  </div>
+                </div>
               </motion.div>
             </Container>
           </motion.section>
@@ -109,7 +108,7 @@ const PricingCalculatorPage: React.FC = () => {
             className="flex flex-col h-screen overflow-hidden bg-[#0B0F19]"
           >
             {/* Minimal Header */}
-            <Stack direction="row" gap={4} align="center" justify="between" className="px-6 h-16 border-b border-white/5 bg-[#0B0F19]/80 backdrop-blur-md z-20">
+            <div className="flex-shrink-0 px-6 h-16 border-b border-white/5 flex items-center justify-between bg-[#0B0F19]/80 backdrop-blur-md z-20">
                <button 
                  onClick={() => setIsStarted(false)} 
                  className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5"
@@ -118,16 +117,16 @@ const PricingCalculatorPage: React.FC = () => {
                  <span className="hidden sm:inline">Back to Intro</span>
                </button>
                
-               <Stack direction="row" gap={4} align="center">
-                 <Stack direction="row" gap={2} align="center" className="hidden text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+               <div className="flex items-center gap-4">
+                 <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
                     Live Estimation
                  </div>
-               </Stack>
+               </div>
             </div>
 
             {/* Main Content Area */}
-            <Stack direction="row" gap={4} className="overflow-hidden relative">
+            <div className="flex-grow overflow-hidden relative">
               <PricingCalculator />
             </div>
           </motion.div>

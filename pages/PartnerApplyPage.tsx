@@ -83,7 +83,7 @@ const PartnerApplyPage: React.FC = () => {
   if (formState === 'success') {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center p-4 text-center bg-slate-50 dark:bg-slate-900" role="alert">
-        <Stack direction="row" gap={4} align="center" justify="center" className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full mb-8 animate-bounce shadow-lg">
+        <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 animate-bounce shadow-lg">
           <CheckCircle className="w-12 h-12" aria-hidden="true" />
         </div>
         <Typography variant="h2" as="h2">Aplikasi Diterima!</Typography>
@@ -128,7 +128,7 @@ const PartnerApplyPage: React.FC = () => {
                <div className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
                   
                   {trackParam && (
-                     <Stack direction="row" gap={3} align="start" className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl">
+                     <div className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl flex items-start gap-3">
                         <Info className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                         <div>
                            <Typography variant="h4" as="h4" className="font-bold dark:text-purple-300">Anda mendaftar untuk {trackParam === 'bootstrap' ? 'Bootstrap' : 'Scale-Up'} Track</Typography>
@@ -253,35 +253,35 @@ const PartnerApplyPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Next Steps</Typography>
                   
                   <Stack direction="col" gap={8} className="relative z-10">
-                     <Stack direction="row" gap={4} className="group">
-                        <Stack direction="col" gap={4} align="center">
-                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-primary-500 font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">
+                     <div className="flex gap-4 group">
+                        <div className="flex flex-col items-center">
+                           <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">1</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
-                        </Stack>
+                        </div>
                         <div>
                            <Typography variant="h4" as="h4">Review (1-2 Hari)</Typography>
                            <Typography variant="body" className="text-slate-400 leading-relaxed">Tim Channel Manager memverifikasi legalitas & profil bisnis Anda.</Typography>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={4} className="group">
-                        <Stack direction="col" gap={4} align="center">
-                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">
+                     </div>
+                     <div className="flex gap-4 group">
+                        <div className="flex flex-col items-center">
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">2</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
-                        </Stack>
+                        </div>
                         <div>
                            <Typography variant="h4" as="h4">Discovery Call</Typography>
                            <Typography variant="body" className="text-slate-500 leading-relaxed">Diskusi skema kerjasama, demo panel admin, dan strategi go-to-market.</Typography>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={4} className="group">
-                        <Stack direction="col" gap={4} align="center">
-                           <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">
-                        </Stack>
+                     </div>
+                     <div className="flex gap-4 group">
+                        <div className="flex flex-col items-center">
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors">3</div>
+                        </div>
                         <div>
                            <Typography variant="h4" as="h4">Onboarding</Typography>
                            <Typography variant="body" className="text-slate-500 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</Typography>
                         </div>
-                     </Stack>
+                     </div>
                   </Stack>
                </div>
 
@@ -298,17 +298,17 @@ const PartnerApplyPage: React.FC = () => {
                <div className="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl text-white shadow-lg relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
                   <div className="relative z-10">
-                     <Stack direction="row" gap={1} className="mb-3 text-amber-300">
+                     <div className="flex gap-1 mb-3 text-amber-300">
                         {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
-                     </Stack>
+                     </div>
                      <Typography variant="caption">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</Typography>
-                     <Stack direction="row" gap={3} align="center">
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 bg-white/20 rounded-full font-bold text-xs">
+                     <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs">RS</div>
                         <div>
                            <div className="font-bold text-xs">Rudi Setiawan</div>
                            <div className="text-[10px] opacity-75">CTO, Mitra Solusi Digital</div>
                         </div>
-                     </Stack>
+                     </div>
                   </div>
                </div>
 

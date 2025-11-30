@@ -40,7 +40,7 @@ const StatusPage: React.FC = () => {
             <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white">{statusData.currentStatus}</Typography>
             <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">All systems are running smoothly. No incidents reported today.</Typography>
 
-            <Stack direction="row" gap={6} align="center" className="text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
+            <div className="inline-flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
                <span className="flex items-center gap-2">
                   <RefreshCw className="w-4 h-4" /> Updated: {statusData.lastUpdated}
                </span>
@@ -56,13 +56,13 @@ const StatusPage: React.FC = () => {
         
         {/* --- UPTIME HISTORY --- */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
-           <Stack direction="row" gap={4} align="end" justify="between" className="mb-6">
+           <div className="flex justify-between items-end mb-6">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <Typography variant="caption" className="text-slate-500">90 Days</Typography></Typography>
               <span className="text-green-600 dark:text-green-400 font-bold text-lg">99.99%</span>
-           </Stack>
+           </div>
            
            {/* Visualizer Bars */}
-           <Stack direction="row" gap={4} align="end" justify="between" className="h-12 mb-2">
+           <div className="flex items-end justify-between gap-[2px] h-12 mb-2">
               {uptimeDays.map((day, i) => (
                  <div 
                     key={i}
@@ -74,11 +74,11 @@ const StatusPage: React.FC = () => {
                     }`}
                  ></div>
               ))}
-           </Stack>
-           <Stack direction="row" gap={4} justify="between" className="text-xs text-slate-400 font-medium">
+           </div>
+           <div className="flex justify-between text-xs text-slate-400 font-medium">
               <span>90 days ago</span>
               <span>Today</span>
-           </Stack>
+           </div>
         </div>
 
         {/* --- SYSTEM COMPONENTS --- */}
@@ -87,19 +87,19 @@ const StatusPage: React.FC = () => {
            
            {/* Core Services */}
            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-              <Stack direction="row" gap={4} align="center" justify="between" className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><Server className="w-4 h-4 text-slate-500" /> Platform Services</Typography>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.systems.map((sys, idx) => (
                     <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                       <Stack direction="row" gap={4} align="center">
+                       <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <div>
                              <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
                              <Typography variant="body" className="text-slate-500 dark:text-slate-400">{sys.desc}</Typography>
                           </div>
-                       </Stack>
+                       </div>
                        <div className="text-right">
                           <Typography variant="caption" className="text-green-600 dark:text-green-400">{sys.status}</Typography>
                           <span className="text-[10px] text-slate-400">{sys.uptime} uptime</span>
@@ -117,10 +117,10 @@ const StatusPage: React.FC = () => {
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.thirdParty.map((sys, idx) => (
                     <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                       <Stack direction="row" gap={4} align="center">
+                       <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
-                       </Stack>
+                       </div>
                        <Typography variant="caption" className="text-green-600 dark:text-green-400">{sys.status}</Typography>
                     </div>
                  ))}
@@ -139,10 +139,10 @@ const StatusPage: React.FC = () => {
                        <Typography variant="caption" className="text-slate-500">{inc.date}</Typography>
                     </Stack>
                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{inc.desc}</Typography>
-                    <Stack direction="row" gap={4} align="center" className="pl-6 ml-2">
+                    <div className="flex items-center gap-4 pl-6 ml-2">
                        <Typography variant="caption" className="text-green-600 dark:text-green-400">Resolved</Typography>
                        <Typography variant="caption" className="text-slate-500">Duration: {inc.duration}</Typography>
-                    </Stack>
+                    </div>
                  </div>
               ))}
            </Stack>
@@ -157,14 +157,14 @@ const StatusPage: React.FC = () => {
               <Typography variant="caption" className="text-slate-400">Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.</Typography>
               
               {!subscribed ? (
-                 <Stack direction="row" gap={2}>
+                 <div className="flex gap-2">
                     <input 
                        type="email" 
                        placeholder="user@company.com" 
                        className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm"
                     />
                     <Button onClick={() => setSubscribed(true)} size="sm" className="whitespace-nowrap">Subscribe</Button>
-                 </Stack>
+                 </div>
               ) : (
                  <motion.div 
                     initial={{ scale: 0.8, opacity: 0 }}

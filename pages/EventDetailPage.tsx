@@ -30,7 +30,7 @@ const EventDetailPage: React.FC = () => {
 
   if (!event) {
     return (
-      <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center">
         <Typography variant="h1" as="h1">Event Tidak Ditemukan</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</Typography>
         <Link to="/events">
@@ -110,18 +110,18 @@ const EventDetailPage: React.FC = () => {
                 transition={{ delay: 0.3 }}
                 className="flex flex-wrap gap-6 mt-8 text-sm font-medium text-slate-300"
               >
-                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <Calendar className="w-4 h-4 text-primary-400" />
                   {event.formattedDate}
-                </Stack>
-                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                </div>
+                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <Clock className="w-4 h-4 text-primary-400" />
                   {event.time}
-                </Stack>
-                <Stack direction="row" gap={2} align="center" className="bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
+                </div>
+                <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700">
                   <MapPin className="w-4 h-4 text-primary-400" />
                   {event.location}
-                </Stack>
+                </div>
               </motion.div>
             </div>
           </Grid>
@@ -157,12 +157,12 @@ const EventDetailPage: React.FC = () => {
               <Stack direction="col" gap={6}>
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
-                    <Stack direction="row" gap={4} className="w-16 pt-1">
+                    <div className="w-16 flex-shrink-0 pt-1">
                       <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors">
                         {item.time}
                       </span>
                     </div>
-                    <Stack direction="row" gap={4} className="pb-6 border-b border-slate-100 dark:border-slate-800 last:border-0 last:pb-0">
+                    <div className="flex-1 pb-6 border-b border-slate-100 dark:border-slate-800 last:border-0 last:pb-0">
                       <Typography variant="h4" as="h4" className="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{item.activity}</Typography>
                     </div>
                   </div>
@@ -259,7 +259,7 @@ const EventDetailPage: React.FC = () => {
                   </>
                 ) : (
                   <div className="text-center py-8">
-                    <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full mx-auto mb-4 animate-bounce">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Pendaftaran Berhasil!</Typography>
@@ -282,13 +282,13 @@ const EventDetailPage: React.FC = () => {
 
               <div className="bg-slate-100 dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center">
                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bagikan Event Ini</Typography>
-                 <Stack direction="row" gap={2} justify="center">
+                 <div className="flex justify-center gap-2">
                     {['LinkedIn', 'Twitter', 'WhatsApp', 'Email'].map((social) => (
                        <button key={social} className="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary-500 hover:border-primary-500 transition-all">
                           {social}
                        </button>
                     ))}
-                 </Stack>
+                 </div>
               </div>
             </Stack>
           </div>

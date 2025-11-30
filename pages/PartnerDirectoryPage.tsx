@@ -77,7 +77,7 @@ const PartnerDirectoryPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         
         <Container size="7xl" className="relative z-10 text-center">
-          <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
             <Globe className="w-3 h-3" /> Global Partner Network
           </div>
           <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
@@ -231,7 +231,7 @@ const PartnerDirectoryPage: React.FC = () => {
 
           {/* --- PARTNER GRID --- */}
           <div className="col-span-1 lg:col-span-3">
-             <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+             <div className="mb-6 flex justify-between items-center">
                 <Typography variant="h2" as="h2" className="text-slate-900 dark:text-white font-bold">Showing {filteredPartners.length} Partners</Typography>
              </div>
 
@@ -252,7 +252,7 @@ const PartnerDirectoryPage: React.FC = () => {
                </div>
              ) : (
                <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-6 text-slate-400">
+                  <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
                      <Search className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">No partners found</Typography>
@@ -278,12 +278,12 @@ const PartnerDirectoryPage: React.FC = () => {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-950 rounded-t-[2rem] z-50 p-6 max-h-[85vh] overflow-y-auto"
             >
-              <Stack direction="row" gap={4} align="center" justify="between" className="mb-6">
+              <div className="flex justify-between items-center mb-6">
                 <Typography variant="h3" as="h3">Filters</Typography>
                 <button onClick={() => setShowMobileFilter(false)} className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500">
                   <X className="w-5 h-5" />
                 </button>
-              </Stack>
+              </div>
               
               <Stack direction="col" gap={8} className="pb-20">
                  {/* Partner Type */}
@@ -323,7 +323,7 @@ const PartnerDirectoryPage: React.FC = () => {
                  </div>
               </Stack>
 
-              <Stack direction="row" gap={4} className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+              <div className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex gap-4">
                  <Button variant="outline" fullWidth onClick={clearFilters}>Reset</Button>
                  <Button fullWidth onClick={() => setShowMobileFilter(false)}>Show Results</Button>
               </div>
@@ -368,15 +368,15 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
    };
 
    return (
-      <Stack direction="col" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-xl transition-all hover:border-primary-500/30 group h-full">
-         <Stack direction="row" gap={4} align="start" justify="between" className="mb-6">
-            <Stack direction="row" gap={4} align="center">
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 shadow-sm">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-xl transition-all hover:border-primary-500/30 group flex flex-col h-full">
+         <div className="flex justify-between items-start mb-6">
+            <div className="flex items-center gap-4">
+               <div className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 flex items-center justify-center shadow-sm">
                    <OptimizedImage src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
                </div>
                <div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-500">{partner.name}</Typography>
-                  <Stack direction="row" gap={2} align="center" className="mt-1">
+                  <div className="flex items-center gap-2 mt-1">
                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${getTypeColor(partner.type)}`}>
                         {partner.type}
                      </span>
@@ -385,23 +385,23 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                            <CheckCircle className="w-3 h-3" /> Certified
                         </span>
                      )}
-                  </Stack>
+                  </div>
                </div>
-            </Stack>
+            </div>
             
             {/* Tier Badge / Status */}
             <div className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-md flex items-center ${getTierColor(partner.tier)}`}>
                {partner.partnershipStatus || partner.tier} {getTierIcon(partner.tier)}
             </div>
-         </Stack>
+         </div>
 
          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
 
          <Stack direction="col" gap={3} className="mb-6">
-            <Stack direction="row" gap={2} align="center" className="text-xs text-slate-500 dark:text-slate-500">
+            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
                <MapPin className="w-3.5 h-3.5" /> {partner.location}
-            </Stack>
-            <Stack direction="row" gap={2}>
+            </div>
+            <div className="flex flex-wrap gap-2">
                {partner.industries.slice(0, 3).map(ind => (
                   <span key={ind} className="px-2 py-1 bg-slate-50 dark:bg-slate-800 rounded text-xs text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-slate-700">
                      {ind}
@@ -412,10 +412,10 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                      +{partner.industries.length - 3}
                   </span>
                )}
-            </Stack>
+            </div>
          </Stack>
 
-         <Stack direction="row" gap={3} className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+         <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-3">
             <a href={partner.website} target="_blank" rel="noopener noreferrer" className="w-full">
                <Button size="sm" variant="outline" fullWidth className="rounded-xl border-slate-200 dark:border-slate-700">
                   <Globe className="w-4 h-4 mr-2" /> Visit Website

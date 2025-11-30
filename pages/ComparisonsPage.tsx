@@ -118,7 +118,7 @@ const ComparisonsPage: React.FC = () => {
                 <div className="hidden lg:block bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-6 text-white text-center shadow-lg shadow-blue-500/20 relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-white/20 transition-all"></div>
                     <div className="relative z-10">
-                      <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-white/20 rounded-2xl mx-auto mb-4 backdrop-blur-sm border border-white/10">
+                      <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/10">
                           <Calculator className="w-6 h-6 text-white" />
                       </div>
                       <Typography variant="h3" as="h3">Hitung Kerugian</Typography>
@@ -153,8 +153,8 @@ const ComparisonsPage: React.FC = () => {
 
                             <div className="relative z-10">
                                 <Stack direction="col" gap={10} className="items-start mb-12">
-                                    <Stack direction="row" gap={4}>
-                                        <Stack direction="row" gap={3} align="center" className="mb-6">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-3 mb-6">
                                             <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border backdrop-blur-sm ${
                                                 selectedData.bottleneckScore <= 20
                                                 ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400'
@@ -164,14 +164,14 @@ const ComparisonsPage: React.FC = () => {
                                             }`}>
                                                 {selectedData.bottleneckLabel}
                                             </span>
-                                        </Stack>
+                                        </div>
                                         <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">"{selectedData.verdict}"</Typography>
                                         <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">{selectedData.description}</Typography>
                                     </div>
 
                                     {/* Score Meter */}
-                                    <Stack direction="row" gap={4} className="mx-auto md:mx-0 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 backdrop-blur-sm">
-                                        <Stack direction="row" gap={4} align="center" justify="center" className="relative w-40 h-40">
+                                    <div className="flex-shrink-0 mx-auto md:mx-0 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 backdrop-blur-sm">
+                                        <div className="relative w-40 h-40 flex items-center justify-center">
                                             <svg className="w-full h-full transform -rotate-90 drop-shadow-lg">
                                                 <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-200 dark:text-slate-700/50" />
                                                 <circle cx="80" cy="80" r="70" stroke="currentColor" strokeWidth="12" fill="transparent" 
@@ -181,7 +181,7 @@ const ComparisonsPage: React.FC = () => {
                                                     strokeLinecap="round"
                                                 />
                                             </svg>
-                                            <Stack direction="col" gap={4} align="center" justify="center" className="absolute inset-0">
+                                            <div className="absolute inset-0 flex flex-col items-center justify-center">
                                                 <div className="text-4xl font-extrabold text-slate-900 dark:text-white">{selectedData.bottleneckScore}</div>
                                                 <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">Bottleneck</div>
                                             </div>
@@ -199,7 +199,7 @@ const ComparisonsPage: React.FC = () => {
                                       { icon: Lock, label: "Security", value: selectedData.securityLevel },
                                     ].map((metric, idx) => (
                                       <div key={idx} className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl hover:bg-white dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700 group">
-                                          <Stack direction="row" gap={2} align="center" className="text-xs font-bold text-slate-400 uppercase mb-2 group-hover:text-primary-500 transition-colors">
+                                          <div className="text-xs font-bold text-slate-400 uppercase mb-2 flex items-center gap-2 group-hover:text-primary-500 transition-colors">
                                             <metric.icon className="w-3.5 h-3.5" /> {metric.label}
                                           </div>
                                           <div className="font-bold text-slate-900 dark:text-white text-sm">{metric.value}</div>
@@ -211,9 +211,9 @@ const ComparisonsPage: React.FC = () => {
 
                         {/* 3. COMPARISON LIST (WIDE STACKED) */}
                         <Stack direction="col" gap={6}>
-                            <Stack direction="row" gap={4} align="center" justify="between" className="px-2">
+                            <div className="flex items-center justify-between px-2">
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><LayoutGrid className="w-5 h-5 text-primary-500" /> Detail Perbandingan</Typography>
-                            </Stack>
+                            </div>
 
                             {selectedData.points.map((point, idx) => (
                                 <div key={idx} className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 p-6 md:p-8 hover:shadow-xl hover:border-primary-500/20 transition-all duration-300 group relative overflow-hidden">
@@ -221,12 +221,12 @@ const ComparisonsPage: React.FC = () => {
                                         
                                         {/* Col 1: Feature & Limit */}
                                         <Stack direction="col" gap={4} className="md:col-span-4">
-                                            <Stack direction="row" gap={3} align="center">
-                                                <Stack direction="row" gap={4} align="center" justify="center" className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold text-sm">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold text-sm">
                                                    {idx + 1}
                                                 </div>
                                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{point.feature}</Typography>
-                                            </Stack>
+                                            </div>
                                             
                                             <div className={`p-4 rounded-xl border ${isBizOps ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-100 dark:border-blue-900/20' : 'bg-red-50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20'}`}>
                                                 <div className={`text-[10px] font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5 ${isBizOps ? 'text-blue-500' : 'text-red-500'}`}>
@@ -238,21 +238,21 @@ const ComparisonsPage: React.FC = () => {
                                         </Stack>
 
                                         {/* Arrow */}
-                                        <Stack direction="row" gap={4} justify="center" className="hidden md:col-span-1">
+                                        <div className="hidden md:flex md:col-span-1 justify-center">
                                             <ArrowRight className="w-6 h-6 text-slate-300 dark:text-slate-700" />
                                         </div>
 
                                         {/* Col 2: BizOps Solution */}
                                         <Grid cols={2} gap={6} className="md:col-span-7">
                                             <div className="bg-emerald-50 dark:bg-emerald-900/10 p-5 rounded-xl border border-emerald-100 dark:border-emerald-900/20 relative">
-                                                <Stack direction="row" gap={1} align="center" className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">
+                                                <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                                                     <CheckCircle2 className="w-3 h-3" /> {isBizOps ? 'BizOps Advantage' : 'BizOps Solution'}
                                                 </div>
                                                 <Typography variant="body" className="text-slate-900 dark:text-white leading-relaxed">{point.us}</Typography>
                                             </div>
                                             
-                                            <Stack direction="col" gap={4} justify="center" className="pl-4 border-l border-slate-100 dark:border-slate-800">
-                                                <Stack direction="row" gap={2} align="start">
+                                            <div className="flex flex-col justify-center pl-4 border-l border-slate-100 dark:border-slate-800">
+                                                <div className="flex gap-2 items-start">
                                                    <div className="mt-0.5">
                                                      <TrendingUp className="w-4 h-4 text-blue-500" />
                                                    </div>
@@ -260,8 +260,8 @@ const ComparisonsPage: React.FC = () => {
                                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Business Impact</div>
                                                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">"{point.impact}"</Typography>
                                                    </div>
-                                                </Stack>
-                                            </Stack>
+                                                </div>
+                                            </div>
                                         </Grid>
 
                                     </Grid>
@@ -292,7 +292,7 @@ const ComparisonsPage: React.FC = () => {
                                    <ul className="space-y-4">
                                       {selectedData.limitations.map((lim, idx) => (
                                           <li key={idx} className="flex gap-4 text-sm text-slate-200 items-start">
-                                              <Stack direction="row" gap={4} align="center" justify="center" className="w-6 h-6 rounded-full bg-red-500/20 mt-0.5">
+                                              <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <XCircle className="w-4 h-4 text-red-400" />
                                               </div>
                                               <span className="leading-relaxed font-medium">{lim}</span>

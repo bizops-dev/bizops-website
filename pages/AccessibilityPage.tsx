@@ -39,7 +39,7 @@ const AccessibilityPage: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-primary-50 dark:bg-slate-900 py-20 px-4 sm:px-6 lg:px-8 text-center border-b border-primary-100 dark:border-slate-800">
         <Container size="4xl">
-          <Stack direction="row" gap={4} align="center" justify="center" className="p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
+          <div className="inline-flex items-center justify-center p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
              <Accessibility className="w-8 h-8" />
           </div>
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white">Teknologi untuk <span className="text-primary-600">Semua Orang.</span></Typography>
@@ -52,7 +52,7 @@ const AccessibilityPage: React.FC = () => {
         <Grid cols={4} gap={8}>
           {features.map((feat, idx) => (
             <div key={idx} className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300 group">
-              <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600">
+              <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600">
                 <feat.icon className="w-7 h-7" />
               </div>
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
@@ -66,20 +66,20 @@ const AccessibilityPage: React.FC = () => {
               <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
               <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>
               <Typography variant="body" className="text-slate-600 dark:text-slate-300 leading-relaxed">Kami secara aktif mengaudit dan memperbarui antarmuka kami agar sesuai dengan pedoman Web Content Accessibility Guidelines (WCAG) yang diakui secara global.</Typography>
-              <Stack direction="row" gap={4}>
-                 <Stack direction="row" gap={2} align="center" className="text-sm text-slate-700 dark:text-slate-300">
+              <div className="flex flex-wrap gap-4">
+                 <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                     <CheckCircle className="w-5 h-5 text-green-500" /> Perceivable
-                 </Stack>
-                 <Stack direction="row" gap={2} align="center" className="text-sm text-slate-700 dark:text-slate-300">
+                 </div>
+                 <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                     <CheckCircle className="w-5 h-5 text-green-500" /> Operable
-                 </Stack>
-                 <Stack direction="row" gap={2} align="center" className="text-sm text-slate-700 dark:text-slate-300">
+                 </div>
+                 <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                     <CheckCircle className="w-5 h-5 text-green-500" /> Understandable
-                 </Stack>
-                 <Stack direction="row" gap={2} align="center" className="text-sm text-slate-700 dark:text-slate-300">
+                 </div>
+                 <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                     <CheckCircle className="w-5 h-5 text-green-500" /> Robust
-                 </Stack>
-              </Stack>
+                 </div>
+              </div>
            </div>
            <div className="md:w-1/2 bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl w-full">
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><MessageSquare className="w-5 h-5" /> Laporkan Masalah</Typography>

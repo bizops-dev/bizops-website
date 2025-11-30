@@ -46,9 +46,9 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
         }}
       />
       
-      <Stack direction="col" gap={4} className="relative h-full">
+      <div className="relative h-full flex flex-col lg:flex-row">
          {/* LEFT: Impact & Metrics (Dark Side) */}
-         <Stack direction="col" gap={4} justify="between" className="lg:w-[400px] bg-slate-900 text-white p-10 relative overflow-hidden">
+         <div className="lg:w-[400px] bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
             {/* Abstract Background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
                <div className="absolute -top-20 -left-20 w-60 h-60 bg-blue-500 rounded-full blur-[80px]"></div>
@@ -56,7 +56,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             </div>
 
             <div className="relative z-10">
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-16 h-16 bg-white text-slate-900 rounded-2xl font-bold text-xl shadow-lg mb-8">
+               <div className="w-16 h-16 bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
@@ -74,28 +74,28 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
          </div>
 
          {/* RIGHT: The Story (Light Side) */}
-         <Stack direction="col" gap={4} className="p-10 lg:p-14">
+         <div className="flex-1 p-10 lg:p-14 flex flex-col">
             <div className="mb-8">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
-               <Stack direction="row" gap={4} className="mb-8">
+               <div className="flex gap-4 mb-8">
                   <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0" />
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">{story.desc}</Typography>
-               </Stack>
+               </div>
             </div>
 
             {/* Transformation Grid */}
             <Grid cols={2} gap={6} className="mt-auto">
                <div className="bg-red-50 dark:bg-red-900/10 p-5 rounded-xl border border-red-100 dark:border-red-900/20">
-                  <Stack direction="row" gap={2} align="center" className="mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
+                  <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
                      <AlertTriangle className="w-4 h-4" /> Before BizOps
-                  </Stack>
+                  </div>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.chaos}</Typography>
                </div>
                <div className="bg-green-50 dark:bg-green-900/10 p-5 rounded-xl border border-green-100 dark:border-green-900/20">
-                  <Stack direction="row" gap={2} align="center" className="mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
+                  <div className="flex items-center gap-2 mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
                      <CheckCircle2 className="w-4 h-4" /> After BizOps
-                  </Stack>
+                  </div>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.solution}</Typography>
                </div>
             </Grid>
@@ -192,7 +192,7 @@ const CustomerPage: React.FC = () => {
          </Container>
          
          {/* Marquee Container */}
-         <Stack direction="row" gap={4} className="relative overflow-x-hidden w-full group">
+         <div className="relative flex overflow-x-hidden w-full group">
             {/* Gradient Fade Edges */}
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>
@@ -224,13 +224,13 @@ const CustomerPage: React.FC = () => {
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
-            <Stack direction="row" gap={4} justify="center">
+            <div className="flex justify-center gap-4">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 hover:bg-blue-50 font-bold shadow-xl">
                      Start Transformation
                   </Button>
                </Link>
-            </Stack>
+            </div>
          </Container>
       </section>
     </div>

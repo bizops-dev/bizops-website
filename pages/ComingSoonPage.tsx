@@ -7,7 +7,6 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
-import Stack from '../components/Stack';
 
 const ComingSoonPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +21,7 @@ const ComingSoonPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="col" gap={4} align="center" justify="center" className="min-h-screen text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
       <SEO title="Coming Soon | Fitur Dalam Pengembangan" />
       
       {/* Background Effects */}
@@ -69,7 +68,7 @@ const ComingSoonPage: React.FC = () => {
         >
            {subscribed ? (
              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-4">
-                <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full mx-auto mb-3 text-green-600 dark:text-green-400">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400">
                    <Bell className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3">Terima Kasih!</Typography>

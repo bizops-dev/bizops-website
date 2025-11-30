@@ -250,7 +250,7 @@ const UseCaseDetailPage: React.FC = () => {
     return (
       <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950">
         <SEO title="Use Case Not Found" noindex={true} />
-        <Stack direction="row" gap={4} align="center" justify="center" className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full mb-6 animate-pulse">
+        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse">
           <AlertTriangle className="w-10 h-10" />
         </div>
         <Typography variant="h1" as="h1">Case Study Not Found</Typography>
@@ -277,7 +277,7 @@ const UseCaseDetailPage: React.FC = () => {
       />
 
       {/* --- 1. HERO SECTION --- */}
-      <Stack direction="row" gap={4} align="center" justify="center" className="relative min-h-[90vh] overflow-hidden bg-[#0B1120]">
+      <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120]">
         {/* Animated Background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
@@ -338,15 +338,15 @@ const UseCaseDetailPage: React.FC = () => {
           >
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Location</div>
-                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
+                <div className="text-white font-medium flex items-center justify-center gap-2"><MapPin className="w-4 h-4" /> Indonesia</div>
              </div>
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Company Size</div>
-                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
+                <div className="text-white font-medium flex items-center justify-center gap-2"><Users2 className="w-4 h-4" /> Enterprise</div>
              </div>
              <div className="text-center">
                 <div className="text-slate-500 text-xs uppercase tracking-widest mb-2">Industry</div>
-                <Stack direction="row" gap={2} align="center" justify="center" className="text-white font-medium">
+                <div className="text-white font-medium flex items-center justify-center gap-2"><Building2 className="w-4 h-4" /> {data.industry}</div>
              </div>
           </motion.div>
 
@@ -368,9 +368,9 @@ const UseCaseDetailPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <Stack direction="row" gap={3} align="center" className="mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
+                <div className="flex items-center gap-3 mb-6 text-red-500 font-bold uppercase tracking-widest text-sm">
                   <span className="w-8 h-px bg-red-500"></span> The Challenge
-                </Stack>
+                </div>
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Problem Statement</Typography>
                 <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300">
                   <Typography variant="body-xl" className="leading-relaxed">{data.challenge}</Typography>
@@ -390,7 +390,7 @@ const UseCaseDetailPage: React.FC = () => {
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">BizOps Approach</Typography>
                 
                 <div className={`rounded-3xl p-8 border ${theme.border} ${theme.bgLight} ${theme.bgDark} mb-8`}>
-                  <Stack direction="row" gap={6} align="start">
+                  <div className="flex items-start gap-6">
                     <div className={`p-4 rounded-2xl bg-white dark:bg-black/20 text-slate-900 dark:text-white shadow-sm shrink-0`}>
                       <Icon className="w-8 h-8" />
                     </div>
@@ -398,7 +398,7 @@ const UseCaseDetailPage: React.FC = () => {
                       <Typography variant="h3" as="h3">Custom Implementation</Typography>
                       <Typography variant="body" className="text-slate-700 dark:text-slate-300 leading-relaxed">{data.solution}</Typography>
                     </div>
-                  </Stack>
+                  </div>
                 </div>
 
                 <div className="relative pl-8 border-l-4 border-slate-200 dark:border-slate-800 italic text-xl font-medium text-slate-700 dark:text-slate-300 my-12">
@@ -415,20 +415,20 @@ const UseCaseDetailPage: React.FC = () => {
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
                   <Typography variant="h3" as="h3" className="font-bold tracking-widest text-slate-400"><Code2 className="w-4 h-4" /> Tech Stack Used</Typography>
-                  <Stack direction="row" gap={2}>
+                  <div className="flex flex-wrap gap-2">
                     {data.techStack.map((tech, i) => (
                       <span key={i} className="px-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-slate-300 transition-colors cursor-default">
                         {tech}
                       </span>
                     ))}
-                  </Stack>
+                  </div>
                   <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-                    <Stack direction="row" gap={4} align="center" justify="between">
+                    <div className="flex items-center justify-between">
                        <Typography variant="caption" className="text-slate-500">Module Category</Typography>
                        <span className={`px-3 py-1 rounded-lg ${theme.bgLight} ${theme.bgDark} text-xs font-bold ${theme.primary} uppercase border ${theme.border}`}>
                           {data.category}
                        </span>
-                    </Stack>
+                    </div>
                   </div>
                 </div>
 
@@ -475,12 +475,12 @@ const UseCaseDetailPage: React.FC = () => {
       {relatedCases.length > 0 && (
         <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-24">
           <Container size="7xl">
-            <Stack direction="row" gap={4} align="center" justify="between" className="mb-12">
+            <div className="flex items-center justify-between mb-12">
               <Typography variant="h2" as="h2">More Success Stories</Typography>
               <Link to="/use-cases" className="text-primary-600 dark:text-primary-400 font-bold hover:underline flex items-center gap-1">
                 Lihat Semua <ArrowRight className="w-4 h-4" />
               </Link>
-            </Stack>
+            </div>
             
             <Grid cols={3} gap={8}>
               {relatedCases.map((item) => {
@@ -489,7 +489,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <Link key={item.id} to={`/use-cases/${item.id}`} className="group block">
                     <div className="aspect-[4/3] rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden relative mb-4 shadow-sm group-hover:shadow-md transition-all">
                       <div className={`absolute inset-0 bg-gradient-to-br ${itemTheme.gradientFrom} to-transparent opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                      <Stack direction="row" gap={4} align="center" justify="center" className="absolute inset-0">
+                      <div className="absolute inset-0 flex items-center justify-center">
                          <div className={`p-4 rounded-2xl ${itemTheme.bgLight} ${itemTheme.bgDark} ${itemTheme.primary} group-hover:scale-110 transition-transform duration-300`}>
                             <item.icon className="w-8 h-8" />
                          </div>
