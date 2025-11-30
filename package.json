@@ -23,6 +23,7 @@
     "percy:storybook": "percy storybook ./storybook-static",
     "percy:snapshot": "percy snapshot ./dist",
     "sync:figma": "node scripts/sync-figma-tokens.js",
+    "refactor:analyze": "node scripts/refactor-helper.js",
     "prepare": "husky install"
   },
   "dependencies": {
