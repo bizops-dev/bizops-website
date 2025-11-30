@@ -163,8 +163,8 @@ const PlatformPage: React.FC = () => {
                         <div className="text-sm font-bold">10x Faster</div>
                      </div>
                   </Stack>
-               </Stack>
-            </Stack>
+               </div>
+            </div>
             
             <div className="order-1 lg:order-2">
                <Badge className="mb-6 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">The Citizen Developer Era</Badge>
