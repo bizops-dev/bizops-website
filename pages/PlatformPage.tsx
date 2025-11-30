@@ -13,6 +13,8 @@ import Card from '../components/Card';
 import CardSlider from '../components/CardSlider';
 import { modulesData, capabilitiesData, integrationsData } from '../data/content';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const PlatformPage: React.FC = () => {
   
@@ -51,14 +53,14 @@ const PlatformPage: React.FC = () => {
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Satu Platform, <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span></Typography>
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.</Typography>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Stack direction="col" gap={4} className="justify-center">
              <Link to="/demo" className="w-full sm:w-auto">
                 <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
              </Link>
              <Link to="/docs" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/50 backdrop-blur-sm w-full">Baca Dokumentasi Teknis</Button>
              </Link>
-          </div>
+          </Stack>
 
           {/* Abstract Connection Visual */}
           <div className="mt-20 relative max-w-4xl mx-auto h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
@@ -114,7 +116,7 @@ const PlatformPage: React.FC = () => {
 
       {/* 2.5. LOW CODE REVOLUTION (NEW) */}
       <Section>
-         <div className="grid lg:grid-cols-2 gap-16 items-center">
+         <Grid cols={2} gap={16} className="items-center">
             <div className="order-2 lg:order-1 relative">
                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-[3rem] transform -rotate-3"></div>
                <div className="relative bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-800 shadow-2xl">
@@ -199,7 +201,7 @@ const PlatformPage: React.FC = () => {
                   </li>
                </ul>
             </div>
-         </div>
+         </Grid>
       </Section>
 
       {/* 3. MODULES GRID */}
@@ -249,7 +251,7 @@ const PlatformPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none"></div>
          
          <div className="relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
+            <Grid cols={2} gap={16} className="items-center mb-12">
                <div>
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">API-First Ecosystem. <br />
                      <span className="text-primary-400">Bukan Pulau Terisolasi.</span></Typography>
@@ -278,7 +280,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                   ))}
                </div>
-            </div>
+            </Grid>
          </div>
       </Section>
 
@@ -340,14 +342,14 @@ const PlatformPage: React.FC = () => {
          <div className="max-w-4xl mx-auto text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/demo">
                   <Button size="lg" className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
                </Link>
                <Link to="/contact">
                   <Button variant="outline" size="lg" className="h-16 px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
                </Link>
-            </div>
+            </Stack>
          </div>
       </Section>
     </div>

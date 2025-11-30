@@ -52,6 +52,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 type StepType = 'intro' | 'context' | 'tech-stack' | 'operational-context' | 'pain-points' | 'goals' | 'expectations' | 'analyzing' | 'result';
 
@@ -237,7 +239,7 @@ const NeedsAnalysisPage = () => {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px]" />
         
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20 pb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <Grid cols={2} gap={12} className="items-center">
             
             {/* Left Column: Headline & CTA */}
             <motion.div 
@@ -255,11 +257,11 @@ const NeedsAnalysisPage = () => {
               
               <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.</Typography>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <Stack direction="col" gap={4}>
                 <Button onClick={() => setStep('context')} size="lg" className="h-14 px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
                   Mulai Diagnosa Gratis <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-              </div>
+              </Stack>
 
               <div className="mt-8 flex items-center gap-6 text-sm text-slate-500">
                 <div className="flex items-center gap-2">
@@ -318,7 +320,7 @@ const NeedsAnalysisPage = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-blue-500/20 rounded-full -z-10 animate-[spin_60s_linear_infinite]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-emerald-500/20 rounded-full -z-10 animate-[spin_40s_linear_infinite_reverse]" />
             </motion.div>
-          </div>
+          </Grid>
         </div>
       </div>
     );
@@ -338,7 +340,7 @@ const NeedsAnalysisPage = () => {
         handleFinish={handleFinish}
       >
           <div className="space-y-5 bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
-            <div className="grid md:grid-cols-2 gap-5">
+            <Grid cols={2} gap={5}>
               <div>
                 <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</Typography>
                 <input 
@@ -360,9 +362,9 @@ const NeedsAnalysisPage = () => {
                   placeholder="cth. Budi Santoso"
                 />
               </div>
-            </div>
+            </Grid>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <Grid cols={2} gap={5}>
               <div>
                 <label className="block text-sm font-medium text-slate-400 mb-1.5 flex items-center gap-2">
                   <Mail className="w-4 h-4" /> Email Bisnis
@@ -387,11 +389,11 @@ const NeedsAnalysisPage = () => {
                   placeholder="0812..."
                 />
               </div>
-            </div>
+            </Grid>
 
             <div>
               <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-3">Industri</Typography>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <Grid cols={4} gap={3}>
                 {industries.map((ind) => (
                   <button
                     key={ind.id}
@@ -406,7 +408,7 @@ const NeedsAnalysisPage = () => {
                     <Typography variant="caption">{ind.label}</Typography>
                   </button>
                 ))}
-              </div>
+              </Grid>
             </div>
             <div>
               <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-2">Ukuran Tim</Typography>
@@ -491,7 +493,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="grid lg:grid-cols-3 gap-6">
+          <Grid cols={3} gap={6}>
             {/* COLUMN 1: PEOPLE */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Users className="w-5 h-5 text-blue-400" /> People & Culture</Typography>
@@ -541,7 +543,7 @@ const NeedsAnalysisPage = () => {
                     })}
                 </div>
             </div>
-          </div>
+          </Grid>
       </StepLayout>
     );
   }
@@ -559,7 +561,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="grid md:grid-cols-2 gap-4">
+          <Grid cols={2} gap={4}>
             {painPoints.map((item) => {
               const isSelected = selectedPainPoints.includes(item.id);
               return (
@@ -584,7 +586,7 @@ const NeedsAnalysisPage = () => {
                 </div>
               );
             })}
-          </div>
+          </Grid>
       </StepLayout>
     );
   }
@@ -602,7 +604,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="grid md:grid-cols-2 gap-4">
+          <Grid cols={2} gap={4}>
             {goals.map((item) => {
               const isSelected = selectedGoals.includes(item.id);
               return (
@@ -627,7 +629,7 @@ const NeedsAnalysisPage = () => {
                 </div>
               );
             })}
-          </div>
+          </Grid>
       </StepLayout>
     );
   }
@@ -651,7 +653,7 @@ const NeedsAnalysisPage = () => {
               <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
                 <Clock className="w-4 h-4" /> Target Go-Live
               </label>
-              <div className="grid md:grid-cols-3 gap-3">
+              <Grid cols={3} gap={3}>
                 {timelines.map((item) => (
                   <button
                     key={item.id}
@@ -666,7 +668,7 @@ const NeedsAnalysisPage = () => {
                     <div className="text-xs opacity-70">{item.desc}</div>
                   </button>
                 ))}
-              </div>
+              </Grid>
             </div>
 
             {/* Budget */}
@@ -674,7 +676,7 @@ const NeedsAnalysisPage = () => {
               <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
                 <Wallet className="w-4 h-4" /> Estimasi Budget Tahunan
               </label>
-              <div className="grid md:grid-cols-3 gap-3">
+              <Grid cols={3} gap={3}>
                 {budgets.map((item) => (
                   <button
                     key={item.id}
@@ -689,7 +691,7 @@ const NeedsAnalysisPage = () => {
                     <div className="text-xs opacity-70">{item.desc}</div>
                   </button>
                 ))}
-              </div>
+              </Grid>
             </div>
           </div>
       </StepLayout>
@@ -739,7 +741,7 @@ const NeedsAnalysisPage = () => {
              </div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8">
+          <Grid cols={12} gap={8}>
             
             {/* Left: Quick Context Summary */}
             <div className="lg:col-span-4 space-y-6">
@@ -829,7 +831,7 @@ const NeedsAnalysisPage = () => {
                   </div>
                </div>
 
-               <div className="grid md:grid-cols-2 gap-6">
+               <Grid cols={2} gap={6}>
                    {/* 2. TECHNOLOGY SOLUTIONS */}
                    <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Server className="w-4 h-4" /> Solusi Teknologi</Typography>
@@ -869,15 +871,15 @@ const NeedsAnalysisPage = () => {
                            )}
                        </div>
                    </div>
-               </div>
+               </Grid>
             </div>
-          </div>
+          </Grid>
           
            {/* NEXT STEPS / CROSS-SELL SECTION */}
            <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page">
               <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400" /> Langkah Selanjutnya</Typography>
               
-              <div className="grid md:grid-cols-3 gap-5">
+              <Grid cols={3} gap={5}>
                 {/* ROI Calculator */}
                 <div 
                   onClick={() => navigate('/tools/roi-calculator')}
@@ -922,7 +924,7 @@ const NeedsAnalysisPage = () => {
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
-              </div>
+              </Grid>
            </div>
 
            <div className="mt-12 text-center print:hidden">

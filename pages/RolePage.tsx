@@ -13,6 +13,9 @@ import { BouncyButton } from '../components/ui/motion-button';
 import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const RolePage: React.FC = () => {
   const { roleId } = useParams<{ roleId: string }>();
@@ -48,7 +51,7 @@ const RolePage: React.FC = () => {
         {/* Spotlight */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <Container size="7xl" className="relative z-10 text-center">
           <motion.div 
              initial={{ scale: 0.8, opacity: 0 }}
              animate={{ scale: 1, opacity: 1 }}
@@ -89,12 +92,12 @@ const RolePage: React.FC = () => {
                </div>
             </Link>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* 2. DASHBOARD PREVIEW */}
       <section className="py-12 lg:py-20 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-6 lg:p-10 shadow-2xl overflow-hidden relative">
                <div className="text-center mb-10 relative z-10">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-4 shadow-sm">
@@ -104,7 +107,7 @@ const RolePage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">{data.dashboardInsight}</Typography>
                   
                   {/* Dashboard Metrics Grid - Interactive */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
+                  <Grid cols={4} gap={3} className="max-w-5xl mx-auto">
                       {data.dashboardFeatures.map((feat: string, idx: number) => {
                         const isActive = activeFeature === idx;
                         return (
@@ -127,7 +130,7 @@ const RolePage: React.FC = () => {
                            </motion.button>
                         );
                       })}
-                  </div>
+                  </Grid>
                </div>
                
                {/* Abstract UI Representation - Premium Upgrade */}
@@ -248,7 +251,7 @@ const RolePage: React.FC = () => {
                   </div>
                </motion.div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* 3. PAIN VS GAIN (Evolution - Premium Upgrade) */}
@@ -260,7 +263,7 @@ const RolePage: React.FC = () => {
          <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px] pointer-events-none"></div>
          
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <Container size="7xl" className="relative z-10">
             <div className="text-center mb-12 md:mb-20">
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
                   <RefreshCw className="w-3 h-3" /> Transformation
@@ -319,7 +322,7 @@ const RolePage: React.FC = () => {
                   </motion.div>
                ))}
             </CardSlider>
-         </div>
+         </Container>
       </Section>
 
       {/* 4. CTA (Final Push - Premium Style) */}
@@ -352,7 +355,7 @@ const RolePage: React.FC = () => {
            
            <Typography variant="body-xl" className="text-slate-400">Bergabung dengan para pemimpin industri yang telah beralih ke BizOps. Setup cepat, hasil instan.</Typography>
 
-           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+           <Stack direction="col" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
                  <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Sekarang <ArrowRight className="w-5 h-5" />
@@ -363,7 +366,7 @@ const RolePage: React.FC = () => {
                     Hubungi Sales
                  </Button>
               </Link>
-           </div>
+           </Stack>
            
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
         </div>

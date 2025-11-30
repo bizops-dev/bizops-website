@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
 
 const TrustPage: React.FC = () => {
   return (
@@ -66,7 +67,7 @@ const TrustPage: React.FC = () => {
 
       {/* --- LIVE SYSTEM STATUS BAR --- */}
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+         <Container size="7xl" className="py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
                <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -79,10 +80,10 @@ const TrustPage: React.FC = () => {
                <span className="hidden sm:flex items-center gap-1"><RefreshCw className="w-3 h-3" /> Last Updated: Just now</span>
                <Link to="/status" className="text-emerald-600 hover:underline">View History &rarr;</Link>
             </div>
-         </div>
+         </Container>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-32">
+      <Container size="7xl" className="py-24 space-y-32">
         
         {/* --- COMPLIANCE BADGES --- */}
         <section>
@@ -356,7 +357,7 @@ const TrustPage: React.FC = () => {
            </Button>
         </section>
 
-      </div>
+      </Container>
     </div>
   );
 };

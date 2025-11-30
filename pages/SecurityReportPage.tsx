@@ -4,6 +4,7 @@ import { Shield, Lock, AlertTriangle, CheckCircle, FileText, Terminal, Copy } fr
 import Button from '../components/Button';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 const SecurityReportPage: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -58,7 +59,7 @@ mQINBF... (Truncated for display) ...
 
       {/* Scope Table */}
       <section className="py-20 px-4 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <Grid cols={2} gap={12}>
           {/* In Scope */}
           <div className="bg-slate-900/50 border border-green-900/30 rounded-2xl p-8 hover:border-green-700/50 transition-colors">
             <Typography variant="h3" as="h3" className="font-bold text-white"><div className="p-2 bg-green-900/30 rounded-lg text-green-400"><CheckCircle className="w-5 h-5" /></div>
@@ -84,7 +85,7 @@ mQINBF... (Truncated for display) ...
               ))}
             </ul>
           </div>
-        </div>
+        </Grid>
       </section>
 
       {/* Report Form & PGP */}
@@ -112,10 +113,10 @@ mQINBF... (Truncated for display) ...
             <div className="border-t border-slate-800 pt-8">
               <Typography variant="h4" as="h4">Laporan Cepat (Tanpa Enkripsi)</Typography>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Grid cols={2} gap={4}>
                   <input type="text" placeholder="Nama / Alias Peneliti" className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none" />
                   <input type="email" placeholder="Email Kontak" className="bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none" />
-                </div>
+                </Grid>
                 <textarea rows={4} placeholder="Deskripsi Kerentanan Singkat..." className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none"></textarea>
                 <Button className="bg-green-600 hover:bg-green-700 text-white border-none w-full md:w-auto">
                   Submit Report

@@ -5,6 +5,8 @@ import { Zap, GitMerge, BrainCircuit, ScanLine, ShieldAlert, ArrowRight } from '
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const AutomationAIPage: React.FC = () => {
   return (
@@ -13,7 +15,7 @@ const AutomationAIPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
@@ -22,13 +24,13 @@ const AutomationAIPage: React.FC = () => {
           <Link to="/demo">
              <Button size="lg" variant="white">Lihat Demo Otomatisasi</Button>
           </Link>
-        </div>
+        </Container>
       </section>
 
       {/* Workflow Automation */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
+         <Container size="7xl">
+            <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2">Workflow Automation (No-Code Logic)</Typography>
                   <div className="space-y-8">
@@ -78,15 +80,15 @@ const AutomationAIPage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* Applied AI */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2">Applied AI Capabilities</Typography>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8}>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
                   <BrainCircuit className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-6" />
                   <Typography variant="h3" as="h3">Smart Forecasting</Typography>
@@ -102,8 +104,8 @@ const AutomationAIPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Anomaly Detection</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sistem "satpam digital" yang mendeteksi pola transaksi mencurigakan secara dini, misal: pemberian diskon manual di luar kewajaran atau transaksi pembelian di jam yang tidak wajar.</Typography>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
     </div>
   );

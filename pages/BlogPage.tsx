@@ -16,6 +16,9 @@ import {
   Layers
 } from 'lucide-react';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- Spotlight Card Component ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(59, 130, 246, 0.1)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -151,7 +154,7 @@ const BlogPage: React.FC = () => {
 
       {/* --- CONTENT SECTION --- */}
       <div className="bg-slate-50 dark:bg-slate-950 min-h-screen relative z-20 border-t border-slate-200 dark:border-slate-800" id="blog-grid">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+         <Container size="7xl" className="py-12 lg:py-20">
             
             {/* FEATURED POST (Only on 'All' view and page 1) */}
             {!searchQuery && selectedCategory === 'All' && featuredPost && currentPage === 1 && (
@@ -203,7 +206,7 @@ const BlogPage: React.FC = () => {
                </div>
             )}
 
-            <div className="flex flex-col lg:flex-row gap-16">
+            <Stack direction="col" gap={16}>
                
                {/* --- LEFT SIDEBAR (Filter & Search) --- */}
                <div className="lg:w-72 flex-shrink-0">
@@ -285,7 +288,7 @@ const BlogPage: React.FC = () => {
 
                   {gridPosts.length > 0 ? (
                      <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <Grid cols={2} gap={8}>
                            <AnimatePresence mode='popLayout'>
                               {paginatedPosts.map((post, idx) => (
                                  <motion.div
@@ -340,7 +343,7 @@ const BlogPage: React.FC = () => {
                                  </motion.div>
                               ))}
                            </AnimatePresence>
-                        </div>
+                        </Grid>
 
                         {/* Pagination */}
                         <Pagination 
@@ -373,8 +376,8 @@ const BlogPage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </div>
     </div>
   );

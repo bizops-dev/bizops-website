@@ -17,6 +17,9 @@ import { blogPosts, useCasesData, eventsData } from '../data/content';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ResourcesPage = () => {
   // Data extraction
@@ -86,7 +89,7 @@ const ResourcesPage = () => {
           </motion.p>
 
           {/* Quick Category Nav */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+          <Grid cols={5} gap={4} className="max-w-5xl mx-auto">
             {resourceCategories.map((cat, idx) => (
               <motion.div
                 key={idx}
@@ -106,7 +109,7 @@ const ResourcesPage = () => {
                 </Link>
               </motion.div>
             ))}
-          </div>
+          </Grid>
         </div>
       </section>
 
@@ -122,7 +125,7 @@ const ResourcesPage = () => {
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <Grid cols={3} gap={8}>
           {/* Main Featured Post */}
           <div className="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all min-h-[400px]">
             <OptimizedImage 
@@ -158,18 +161,18 @@ const ResourcesPage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Grid>
       </section>
 
       {/* Featured Tool / Interactive */}
       <section className="bg-slate-900 text-white py-16 md:py-24 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <Container size="7xl" className="relative z-10">
+          <Grid cols={2} gap={12} className="items-center">
             <div>
               <Typography variant="h2" as="h2">Ukur Kesiapan Digital Anda</Typography>
               <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Apakah perusahaan Anda siap untuk transformasi digital? Gunakan alat asesmen gratis kami untuk mendapatkan skor maturitas dan rekomendasi personal dalam 5 menit.</Typography>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <Stack direction="col" gap={4}>
                 <Link to="/tools/assessment">
                   <Button size="lg" className="bg-primary-600 hover:bg-primary-500 border-none w-full sm:w-auto">
                     Mulai Assessment Gratis
@@ -180,7 +183,7 @@ const ResourcesPage = () => {
                     Hitung ROI Project
                   </Button>
                 </Link>
-              </div>
+              </Stack>
             </div>
             <div className="relative mt-8 md:mt-0">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 md:transform md:rotate-2 md:hover:rotate-0 transition-transform duration-500">
@@ -204,13 +207,13 @@ const ResourcesPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </Grid>
+        </Container>
       </section>
 
       {/* Success Stories & Events Grid */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <Grid cols={2} gap={16}>
           
           {/* Success Stories Preview */}
           <div>
@@ -264,7 +267,7 @@ const ResourcesPage = () => {
             </div>
           </div>
 
-        </div>
+        </Grid>
       </section>
 
     </div>

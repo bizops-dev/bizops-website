@@ -9,6 +9,9 @@ import OptimizedImage from '../components/OptimizedImage';
 import { partnerDirectoryData, industriesList, locationsList, PartnerProfile } from '../data/partnerDirectoryContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -73,25 +76,25 @@ const PartnerDirectoryPage: React.FC = () => {
         {/* Abstract Glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <Container size="7xl" className="relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
             <Globe className="w-3 h-3" /> Global Partner Network
           </div>
           <Typography variant="h1" as="h1">Find Your Perfect Partner</Typography>
           <Typography variant="body-lg" className="text-slate-300">Hubungkan bisnis Anda dengan konsultan implementasi, reseller, dan principal teknologi resmi yang terintegrasi dengan BizOps.</Typography>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Stack direction="col" gap={4} className="justify-center">
              <Link to="/partners/apply">
                 <Button variant="outline" className="border-slate-600 text-slate-300 hover:text-white hover:bg-white/10">
                    Become a Partner
                 </Button>
              </Link>
-          </div>
-        </div>
+          </Stack>
+        </Container>
       </div>
 
       <Section className="py-12 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Grid cols={4} gap={8}>
           
           {/* --- SIDEBAR FILTERS (Desktop) --- */}
           <div className="hidden lg:block lg:col-span-1 space-y-8 sticky top-24 h-fit">
@@ -234,13 +237,13 @@ const PartnerDirectoryPage: React.FC = () => {
 
              {filteredPartners.length > 0 ? (
                <div id="partner-grid">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  <Grid cols={2} gap={6} className="mb-12">
                      {paginatedPartners.map(partner => (
                         <div key={partner.id} className="h-full">
                            <PartnerCard partner={partner} />
                         </div>
                      ))}
-                  </div>
+                  </Grid>
                   <Pagination 
                      currentPage={currentPage} 
                      totalPages={totalPages} 
@@ -258,7 +261,7 @@ const PartnerDirectoryPage: React.FC = () => {
                </div>
              )}
           </div>
-        </div>
+        </Grid>
       </Section>
 
       {/* --- MOBILE DRAWER --- */}

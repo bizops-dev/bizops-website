@@ -11,6 +11,8 @@ import { ArrowRight, BookOpen, Filter, Search, X, Briefcase, Layers } from 'luci
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 // --- Reusing SpotlightCard Concept ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -169,8 +171,8 @@ const UseCasesPage: React.FC = () => {
 
       {/* Main Content with Sidebar Layout */}
       <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32" id="case-grid">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-12">
+         <Container size="7xl">
+            <Stack direction="col" gap={12}>
                
                {/* Sidebar Filter (Desktop) */}
                <div className="hidden lg:block w-72 flex-shrink-0">
@@ -364,14 +366,14 @@ const UseCasesPage: React.FC = () => {
                                              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 bg-${item.color}-50 dark:bg-${item.color}-900/20 ring-1 ring-${item.color}-100 dark:ring-${item.color}-900/50 shadow-sm`}>
                                                 <item.icon className="w-7 h-7" />
                                              </div>
-                                             <div className="flex flex-col items-end gap-2">
+                                             <Stack direction="col" gap={2} className="items-end">
                                                 <span className="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider border border-slate-200 dark:border-slate-700">
                                                    {item.industry}
                                                 </span>
                                                 <span className="text-[10px] font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2.5 py-0.5 rounded-full border border-primary-100 dark:border-primary-900/30">
                                                    {item.category}
                                                 </span>
-                                             </div>
+                                             </Stack>
                                           </div>
                                           
                                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 leading-tight">{item.title}</Typography>
@@ -400,8 +402,8 @@ const UseCasesPage: React.FC = () => {
                      </>
                   )}
                </div>
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </Section>
     </div>
   );

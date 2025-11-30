@@ -15,6 +15,9 @@ import CardSlider from '../components/CardSlider';
 import Card from '../components/Card';
 import Badge from '../components/Badge';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -173,7 +176,7 @@ const HomePage: React.FC = () => {
              style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}>
          </div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <Container size="7xl" className="relative z-10">
             <div className="max-w-3xl mx-auto text-center mb-16">
                 <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span></Typography>
                 <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
@@ -191,7 +194,7 @@ const HomePage: React.FC = () => {
                    </Card>
                 ))}
              </CardSlider>
-         </div>
+         </Container>
       </section>
 
       {/* 3. SOLUTIONS SECTION (The Fix) */}
@@ -200,7 +203,7 @@ const HomePage: React.FC = () => {
          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/20 via-slate-900 to-slate-950 pointer-events-none"></div>
          
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+            <Stack direction="col" gap={8} className="items-end justify-between mb-16">
                <div className="max-w-2xl">
                   <Badge variant="outline-white" className="mb-4">BizOps Platform</Badge>
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Satu Solusi, <br />
@@ -212,9 +215,9 @@ const HomePage: React.FC = () => {
                      Lihat Semua Modul <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                </Link>
-            </div>
+            </Stack>
 
-            <div className="grid lg:grid-cols-12 gap-8">
+            <Grid cols={12} gap={8}>
                {/* Navigation Tabs */}
                <div className="lg:col-span-4 space-y-3" role="tablist" aria-label="Solution categories">
                   {homeSolutions.map((sol) => (
@@ -268,7 +271,7 @@ const HomePage: React.FC = () => {
                            <Typography variant="body-xl" className="text-slate-300 leading-relaxed">"{activeSolution.impact}"</Typography>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <Grid cols={2} gap={8}>
                            <div>
                               <Typography variant="h4" as="h4">Fitur Utama</Typography>
                               <ul className="space-y-4">
@@ -290,11 +293,11 @@ const HomePage: React.FC = () => {
                                  <Button size="sm" variant="outline-white">Tonton Video</Button>
                               </Link>
                            </div>
-                        </div>
+                        </Grid>
                      </div>
                   </div>
                </div>
-            </div>
+            </Grid>
          </div>
       </section>
 
@@ -305,7 +308,7 @@ const HomePage: React.FC = () => {
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
          </div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeUVP.map((uvp, idx) => (
                   <div key={idx} className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
@@ -323,7 +326,7 @@ const HomePage: React.FC = () => {
                   </div>
                ))}
             </CardSlider>
-         </div>
+         </Container>
       </section>
 
       {/* 5. PRICING COMPARISON: The New Paradigm (Enhanced) */}
@@ -331,7 +334,7 @@ const HomePage: React.FC = () => {
          {/* Decorative Mesh Gradient */}
          <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 dark:via-slate-950/0 dark:to-slate-950/0 pointer-events-none"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <Container size="7xl" className="relative z-10">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight"><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                      Bandingkan Nilai Investasi Anda
@@ -340,7 +343,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* 5. PRICING COMPARISON - Bento Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
+            <Grid cols={12} gap={6} className="items-stretch">
                
                {/* LEFT COLUMN: The Problems (Span 5) */}
                <CardSlider 
@@ -454,14 +457,14 @@ const HomePage: React.FC = () => {
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
                         <div className="relative z-10">
-                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                           <Stack direction="col" gap={4} className="md:items-center justify-between mb-8">
                               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/20 w-fit">
                                  <CheckCircle2 className="w-3.5 h-3.5" /> The BizOps Way
                               </div>
                               <div className="text-left md:text-right">
                                  <Typography variant="body" className="tracking-widest">Best Value Choice</Typography>
                               </div>
-                           </div>
+                           </Stack>
 
                            <Typography variant="h3" as="h3" className="font-black text-white tracking-tight leading-tight">Satu Platform.<br/>
                               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Tanpa Batas User.</span></Typography>
@@ -486,7 +489,7 @@ const HomePage: React.FC = () => {
                            </div>
 
                            {/* Features Grid */}
-                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                           <Grid cols={2} gap={4}>
                                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
                                    <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
@@ -501,7 +504,7 @@ const HomePage: React.FC = () => {
                                        <Typography variant="body" className="text-slate-400">Server & Security Included.</Typography>
                                    </div>
                                </div>
-                           </div>
+                           </Grid>
                         </div>
 
                         <div className="mt-10 relative z-10">
@@ -515,8 +518,8 @@ const HomePage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* 6. PROCESS SECTION (How it works) */}
@@ -525,7 +528,7 @@ const HomePage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
          
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <Stack direction="col" gap={6} className="justify-between items-end mb-16">
                <div className="max-w-2xl">
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
@@ -533,7 +536,7 @@ const HomePage: React.FC = () => {
                <Link to="/services">
                   <Button variant="outline-white" className="border-white/20 hover:bg-white/10 text-white font-medium px-6">Pelajari Metodologi Kami</Button>
                </Link>
-            </div>
+            </Stack>
 
             <CardSlider desktopClassName="md:grid md:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeProcess.map((step, idx) => (
@@ -558,7 +561,7 @@ const HomePage: React.FC = () => {
 
       {/* 7. INDUSTRIES & ROLES */}
       <section aria-labelledby="industry-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Solusi Spesifik Industri</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
@@ -599,7 +602,7 @@ const HomePage: React.FC = () => {
                   </Link>
                ))}
             </CardSlider>
-         </div>
+         </Container>
       </section>
 
       {/* 8. INFRASTRUCTURE & SECURITY (Replaced Tech Validation) */}
@@ -607,8 +610,8 @@ const HomePage: React.FC = () => {
          {/* Subtle Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+         <Container size="7xl" className="relative z-10">
+            <Grid cols={2} gap={16} className="items-center mb-16">
                <div>
                   <Badge variant="outline-white" className="mb-4">Reliability & Security</Badge>
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight">Tenang, Data Anda Aman.</Typography>
@@ -686,8 +689,8 @@ const HomePage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* 9. INTEGRATIONS */}
@@ -725,7 +728,7 @@ const HomePage: React.FC = () => {
          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
             <Typography variant="h2" as="h2" className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Siap Mengubah Cara Anda Bekerja?</Typography>
             <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl font-bold w-full sm:w-auto shadow-2xl shadow-blue-900/20 bg-white text-blue-700 hover:bg-blue-50">
                      Hubungi Sales
@@ -736,7 +739,7 @@ const HomePage: React.FC = () => {
                      Lihat Harga
                   </Button>
                </Link>
-            </div>
+            </Stack>
             <Typography variant="caption" className="text-primary-200/60">14-day free trial available. No credit card required.</Typography>
          </div>
       </section>

@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { CheckCircle, Download, Video, Linkedin } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 const ThankYouPage: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ const ThankYouPage: React.FC = () => {
         
         <Typography variant="h3" as="h3">Sambil Menunggu, Para Pemimpin Bisnis Biasanya:</Typography>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+        <Grid cols={3} gap={4} className="text-left">
            <a href="#" className="p-4 rounded-xl border border-slate-200 hover:border-primary-200 hover:bg-primary-50 transition-all group">
               <Download className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
               <div className="font-bold text-slate-900 text-sm mb-1">Download E-Book</div>
@@ -39,7 +40,7 @@ const ThankYouPage: React.FC = () => {
               <div className="font-bold text-slate-900 text-sm mb-1">Follow LinkedIn</div>
               <div className="text-xs text-slate-500">Update industri harian</div>
            </a>
-        </div>
+        </Grid>
 
         <div className="mt-10">
            <Link to="/">

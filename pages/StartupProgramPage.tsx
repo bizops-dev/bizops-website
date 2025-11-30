@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const StartupProgramPage: React.FC = () => {
   return (
@@ -21,7 +24,7 @@ const StartupProgramPage: React.FC = () => {
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Container size="7xl" className="relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,12 +77,12 @@ const StartupProgramPage: React.FC = () => {
           >
             Trusted by 500+ High-Growth Startups in Indonesia
           </motion.p>
-        </div>
+        </Container>
       </section>
 
       {/* --- LOGO WALL (Social Proof) --- */}
       <section className="bg-[#0F172A] border-b border-slate-800 pb-16">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+         <Container size="7xl" className="overflow-hidden">
             <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500 flex-wrap">
                {/* Placeholder Logos */}
                <div className="text-xl font-bold text-white">ACME Corp</div>
@@ -88,12 +91,12 @@ const StartupProgramPage: React.FC = () => {
                <div className="text-xl font-bold text-white">HyperGrowth</div>
                <div className="text-xl font-bold text-white hidden md:block">Stark Industries</div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- THE PERKS (Bento Grid Style) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950 relative z-20">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">More Than Just Free Credits</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</Typography>
@@ -158,13 +161,13 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                </div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- WHY IT MATTERS (Split Layout) --- */}
       <section className="py-32 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-20 items-center">
+         <Container size="7xl">
+            <Grid cols={2} gap={20} className="items-center">
                <div className="order-2 lg:order-1">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      The Scaling Trap
@@ -242,13 +245,13 @@ const StartupProgramPage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* --- TRACKS (Comparison) --- */}
       <section className="py-32 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-20">
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                   Eligibility Criteria
@@ -464,12 +467,12 @@ const StartupProgramPage: React.FC = () => {
                   </Link>
                </div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- APPLICATION PROCESS --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="text-center">
             <Typography variant="h2" as="h2">Proses Aplikasi Seamless</Typography>
             
             <div className="md:hidden">
@@ -526,12 +529,12 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                </div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- FAQ (Accordion Style) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2">Founder's FAQ</Typography>
             <div className="space-y-4">
                {[
@@ -543,7 +546,7 @@ const StartupProgramPage: React.FC = () => {
                   <FAQAccordion key={idx} question={item.q} answer={item.a} />
                ))}
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- FINAL CTA --- */}
@@ -555,7 +558,7 @@ const StartupProgramPage: React.FC = () => {
          <div className="relative z-10 max-w-4xl mx-auto px-4">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight tracking-tight">Siap Membangun <br/>Unicorn Berikutnya?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Stack direction="col" gap={6} className="justify-center">
                <Link to="/partners/apply">
                   <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
                      Apply Now - It's Free <ArrowRight className="ml-2 w-5 h-5" />
@@ -564,7 +567,7 @@ const StartupProgramPage: React.FC = () => {
                <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
                   Talk to Founder Success
                </Button>
-            </div>
+            </Stack>
          </div>
       </section>
 

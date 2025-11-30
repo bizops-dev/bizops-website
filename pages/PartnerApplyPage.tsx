@@ -8,6 +8,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 const PartnerApplyPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -118,7 +119,7 @@ const PartnerApplyPage: React.FC = () => {
       </div>
 
       <Section className="py-16 -mt-10 relative z-20">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+         <Grid cols={12} gap={8}>
             
             {/* LEFT: FORM */}
             <div className="lg:col-span-8">
@@ -139,7 +140,7 @@ const PartnerApplyPage: React.FC = () => {
                   <form onSubmit={handleSubmit} className="space-y-8">
                      
                      {/* Company Details */}
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <Grid cols={2} gap={6}>
                         <Input label="Nama Perusahaan" name="company" placeholder="PT Teknologi Maju" required icon={<Building className="w-4 h-4" />} />
                         <Select 
                            label="Tipe Bisnis" 
@@ -153,27 +154,27 @@ const PartnerApplyPage: React.FC = () => {
                               { label: "Freelancer / Individual", value: "individual" },
                            ]} 
                         />
-                     </div>
+                     </Grid>
 
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <Grid cols={2} gap={6}>
                         <Input label="Website / LinkedIn" name="website" placeholder="https://" icon={<Globe className="w-4 h-4" />} />
                         <Input label="Lokasi (Kota)" name="city" placeholder="Jakarta Selatan" required />
-                     </div>
+                     </Grid>
 
                      <hr className="border-slate-100 dark:border-slate-800" />
 
                      {/* Contact Person */}
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><User className="w-5 h-5 text-primary-600" /> Kontak PIC</Typography>
                      
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <Grid cols={2} gap={6}>
                         <Input label="Nama Lengkap" name="picName" placeholder="John Doe" required />
                         <Input label="Jabatan" name="picRole" placeholder="CEO / Business Owner" required />
-                     </div>
+                     </Grid>
 
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <Grid cols={2} gap={6}>
                         <Input label="Email Kerja" name="email" type="email" placeholder="john@company.com" required icon={<Mail className="w-4 h-4" />} />
                         <Input label="WhatsApp" name="phone" type="tel" placeholder="0812..." required icon={<Phone className="w-4 h-4" />} />
-                     </div>
+                     </Grid>
 
                      <hr className="border-slate-100 dark:border-slate-800" />
 
@@ -181,7 +182,7 @@ const PartnerApplyPage: React.FC = () => {
                      {!trackParam && (
                         <div>
                            <Typography variant="caption" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">Program yang Diminati</Typography>
-                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                           <Grid cols={2} gap={4}>
                               <label className={`flex items-start gap-3 p-4 border rounded-xl cursor-pointer transition-all ${selectedProgram === 'referral' ? 'bg-primary-50 border-primary-500 ring-1 ring-primary-500 dark:bg-primary-900/20' : 'border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
                                  <input 
                                     type="radio" name="program" value="referral" 
@@ -206,7 +207,7 @@ const PartnerApplyPage: React.FC = () => {
                                     <span className="block text-xs text-slate-500 mt-1">Margin besar + Jasa Setup & Training.</span>
                                  </div>
                               </label>
-                           </div>
+                           </Grid>
                         </div>
                      )}
 
@@ -310,7 +311,7 @@ const PartnerApplyPage: React.FC = () => {
                </div>
 
             </div>
-         </div>
+         </Grid>
       </Section>
     </div>
   );

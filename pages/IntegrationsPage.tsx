@@ -13,16 +13,16 @@ const IntegrationsPage: React.FC = () => {
       <SEO title="Integrations Library" description="Pustaka konektor BizOps untuk SAP, Odoo, Bank, dan E-Commerce." />
       
       {/* Hero */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
+      <Container size="7xl" className="mb-20 text-center">
         <div className="inline-flex p-3 bg-white rounded-xl shadow-sm mb-6 border border-slate-200">
            <Plug className="w-8 h-8 text-primary-600" />
         </div>
         <Typography variant="h1" as="h1">Ekosistem yang Saling Terhubung.</Typography>
         <Typography variant="body-xl" className="text-slate-600">Jangan buang waktu membangun integrasi dari nol. Gunakan pustaka konektor siap pakai (Plug-and-Play) kami untuk menghubungkan BizOps dengan aplikasi bisnis populer.</Typography>
-      </div>
+      </Container>
 
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
          <div className="grid grid-cols-1 gap-12">
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
@@ -54,16 +54,16 @@ const IntegrationsPage: React.FC = () => {
          <div className="mt-24 text-center bg-white p-12 rounded-2xl border border-slate-200 shadow-sm">
             <Typography variant="h2" as="h2">Butuh Integrasi Khusus?</Typography>
             <Typography variant="body" className="text-slate-600">Gunakan REST API standar kami untuk menghubungkan sistem legacy atau aplikasi custom internal Anda. Dokumentasi lengkap tersedia.</Typography>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/capabilities/integration">
                   <Button size="lg" variant="primary">Lihat Dokumentasi API</Button>
                </Link>
                <Link to="/contact">
                   <Button size="lg" variant="outline">Hubungi Tim Integrasi</Button>
                </Link>
-            </div>
+            </Stack>
          </div>
-      </div>
+      </Container>
     </div>
   );
 };

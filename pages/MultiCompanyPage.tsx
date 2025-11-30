@@ -5,6 +5,8 @@ import { Building, Network, Key, FileText, RefreshCw } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const MultiCompanyPage: React.FC = () => {
   return (
@@ -13,7 +15,7 @@ const MultiCompanyPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Network className="w-8 h-8 text-primary-400" />
           </div>
@@ -22,13 +24,13 @@ const MultiCompanyPage: React.FC = () => {
           <Link to="/demo?plan=enterprise">
              <Button size="lg" variant="white">Demo Struktur Holding</Button>
           </Link>
-        </div>
+        </Container>
       </section>
 
       {/* Key Features */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+         <Container size="7xl">
+            <Grid cols={3} gap={12}>
                
                <div className="text-center md:text-left">
                   <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 mx-auto md:mx-0">
@@ -54,8 +56,8 @@ const MultiCompanyPage: React.FC = () => {
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Otomatisasi transaksi internal. Saat PT A menjual barang ke PT B, sistem otomatis membuat <em>Sales Invoice</em> di pembukuan PT A dan <em>Purchase Invoice</em> di pembukuan PT B secara bersamaan. Hemat waktu input dan eliminasi selisih pencatatan.</Typography>
                </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
     </div>
   );

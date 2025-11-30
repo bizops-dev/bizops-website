@@ -7,6 +7,8 @@ import SEO from '../components/SEO';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 import CardSlider from '../components/CardSlider';
 
@@ -82,7 +84,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             </div>
 
             {/* Transformation Grid */}
-            <div className="grid md:grid-cols-2 gap-6 mt-auto">
+            <Grid cols={2} gap={6} className="mt-auto">
                <div className="bg-red-50 dark:bg-red-900/10 p-5 rounded-xl border border-red-100 dark:border-red-900/20">
                   <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
                      <AlertTriangle className="w-4 h-4" /> Before BizOps
@@ -95,7 +97,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                   </div>
                   <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.solution}</Typography>
                </div>
-            </div>
+            </Grid>
          </div>
       </div>
     </motion.div>
@@ -161,7 +163,7 @@ const CustomerPage: React.FC = () => {
 
       {/* --- STORIES LIST --- */}
       <div className="relative z-20 -mt-20">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+         <Container size="7xl" className="pb-32">
             {/* Mobile Slider */}
             <div className="md:hidden">
                <CardSlider 
@@ -179,14 +181,14 @@ const CustomerPage: React.FC = () => {
                   <StoryCard key={idx} story={story} idx={idx} />
                ))}
             </div>
-         </div>
+         </Container>
       </div>
       
       {/* --- INFINITE LOGO LOOP --- */}
       <div className="py-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+         <Container size="7xl" className="text-center mb-12">
             <Typography variant="caption" className="text-slate-500">Trusted by Industry Leaders</Typography>
-         </div>
+         </Container>
          
          {/* Marquee Container */}
          <div className="relative flex overflow-x-hidden w-full group">
@@ -218,7 +220,7 @@ const CustomerPage: React.FC = () => {
 
       {/* --- CTA SECTION --- */}
       <section className="bg-[#0B1120] py-24 relative overflow-hidden text-white">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+         <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">
@@ -228,7 +230,7 @@ const CustomerPage: React.FC = () => {
                   </Button>
                </Link>
             </div>
-         </div>
+         </Container>
       </section>
     </div>
   );

@@ -9,6 +9,9 @@ import { HelpCircle, ChevronRight, Check, Quote, ArrowRight, AlertTriangle, Play
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -164,7 +167,7 @@ const IndustryPage: React.FC = () => {
       {/* 2. METRICS (Impact) - Upgraded Design */}
       {data.metrics && (
          <section className="relative -mt-16 z-20 pb-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container size="7xl">
                <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {data.metrics.map((metric, idx) => {
                      const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
@@ -203,7 +206,7 @@ const IndustryPage: React.FC = () => {
                      );
                   })}
                </CardSlider>
-            </div>
+            </Container>
          </section>
       )}
 
@@ -297,18 +300,18 @@ const IndustryPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-primary-900/20 to-transparent pointer-events-none"></div>
          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
          
-         <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+         <Grid cols={2} gap={16} className="items-center relative z-10">
             <div>
                <Badge variant="outline-white" className="mb-6">Success Story</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-white">{data.caseStudyTitle}</Typography>
                <Typography variant="body-lg" className="text-slate-300 leading-relaxed">"{data.caseStudy}"</Typography>
-               <div className="flex flex-col sm:flex-row gap-4">
+               <Stack direction="col" gap={4}>
                   <Link to="/customers">
                      <Button variant="white" className="group">
                         Baca Studi Kasus Lengkap <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                      </Button>
                   </Link>
-               </div>
+               </Stack>
             </div>
             
             {/* Visual Abstract */}
@@ -337,13 +340,13 @@ const IndustryPage: React.FC = () => {
                   </div>
                </div>
             </motion.div>
-         </div>
+         </Grid>
       </Section>
 
       {/* 6. FAQ */}
       {data.faqs && (
          <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container size="7xl">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</Typography>
@@ -353,7 +356,7 @@ const IndustryPage: React.FC = () => {
                      <FAQItem key={i} question={faq.question} answer={faq.answer} />
                   ))}
                </div>
-            </div>
+            </Container>
          </Section>
       )}
 
@@ -387,7 +390,7 @@ const IndustryPage: React.FC = () => {
            
            <Typography variant="body-xl" className="text-slate-400">Jangan biarkan software generik memperlambat Anda. Bergabung dengan pemimpin industri yang menggunakan BizOps.</Typography>
 
-           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+           <Stack direction="col" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
                  <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Free Trial <ArrowRight className="w-5 h-5" />
@@ -398,7 +401,7 @@ const IndustryPage: React.FC = () => {
                     Hubungi Sales
                  </Button>
               </Link>
-           </div>
+           </Stack>
            
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Full akses ke semua modul.</Typography>
         </div>

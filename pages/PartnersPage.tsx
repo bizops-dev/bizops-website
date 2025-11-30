@@ -7,6 +7,8 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const PartnersPage: React.FC = () => {
   // Calculator State
@@ -66,8 +68,8 @@ const PartnersPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-primary-900/30 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
+        <Container size="7xl" className="relative z-10">
+          <Grid cols={2} gap={16} className="items-center">
              <div>
                 <motion.div 
                    initial={{ opacity: 0, y: 20 }}
@@ -157,8 +159,8 @@ const PartnersPage: React.FC = () => {
                    </div>
                 </div>
              </motion.div>
-          </div>
-        </div>
+          </Grid>
+        </Container>
       </section>
 
       {/* --- PARTNER TYPES (Modified: Removed Whitelabel) --- */}
@@ -282,14 +284,14 @@ const PartnersPage: React.FC = () => {
       {/* --- PROFIT CALCULATOR (Adjusted Context) --- */}
       <section id="calculator" className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Container size="7xl" className="relative z-10">
           
           <div className="text-center mb-16">
              <Typography variant="h2" as="h2">Simulasi Potensi Bisnis</Typography>
              <Typography variant="body" className="text-slate-300">Hitung potensi pendapatan Anda sebagai Implementation Partner. Gabungkan margin penjualan lisensi dan pendapatan jasa implementasi.</Typography>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
+          <Grid cols={12} gap={8} className="items-start">
             
             {/* Controls */}
             <div className="lg:col-span-5 space-y-8 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
@@ -375,7 +377,7 @@ const PartnersPage: React.FC = () => {
                
                <div className="mb-8">
                   <Typography variant="h3" as="h3">Snapshot Profitabilitas</Typography>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Grid cols={2} gap={6}>
                      <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
                         <div className="text-sm text-slate-500 mb-1">Margin Lisensi (Recurring)</div>
                         <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
@@ -388,7 +390,7 @@ const PartnersPage: React.FC = () => {
                            {formatCurrency(currentMonthlyProfit)} <span className="text-xs text-slate-400 font-normal">/bln</span>
                         </div>
                      </div>
-                  </div>
+                  </Grid>
                </div>
 
                <div>
@@ -446,8 +448,8 @@ const PartnersPage: React.FC = () => {
                   </div>
                </div>
             </div>
-          </div>
-        </div>
+          </Grid>
+        </Container>
       </section>
 
       {/* --- BENEFITS ICONS --- */}

@@ -11,6 +11,8 @@ import {
 import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -73,7 +75,7 @@ const EventDetailPage: React.FC = () => {
             ]} className="text-slate-400" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-end">
+          <Grid cols={2} gap={12} className="items-end">
             <div>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -121,13 +123,13 @@ const EventDetailPage: React.FC = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
+          </Grid>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 pb-24">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <Container size="7xl" className="-mt-10 relative z-20 pb-24">
+        <Grid cols={3} gap={8}>
           
           {/* Main Info */}
           <div className="lg:col-span-2 space-y-8">
@@ -170,7 +172,7 @@ const EventDetailPage: React.FC = () => {
             {/* Speakers */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Pembicara</Typography>
-              <div className="grid md:grid-cols-2 gap-6">
+              <Grid cols={2} gap={6}>
                 {event.speakers?.map((speaker, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
                     <OptimizedImage 
@@ -186,7 +188,7 @@ const EventDetailPage: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </Grid>
             </div>
           </div>
 
@@ -289,8 +291,8 @@ const EventDetailPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </div>
   );
 };

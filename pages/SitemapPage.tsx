@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { Layers, Briefcase, BookOpen, Shield, Users, Wrench, Globe, HelpCircle, Code, DollarSign, FileText } from 'lucide-react';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const SitemapPage: React.FC = () => {
   const sitemapData = [
@@ -146,13 +148,13 @@ const SitemapPage: React.FC = () => {
     <div className="pt-24 pb-24 bg-white dark:bg-slate-950 min-h-screen transition-colors">
       <SEO title="Sitemap" description="Complete overview of BizOps website structure." />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         <div className="text-center mb-16">
           <Typography variant="h1" as="h1">Sitemap</Typography>
           <Typography variant="body" className="text-slate-600 dark:text-slate-400">Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.</Typography>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Grid cols={3} gap={8}>
           {sitemapData.map((section, idx) => (
             <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 bg-white dark:bg-slate-900">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${section.color}`}>
@@ -171,8 +173,8 @@ const SitemapPage: React.FC = () => {
               </ul>
             </div>
           ))}
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </div>
   );
 };

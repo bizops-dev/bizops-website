@@ -7,6 +7,9 @@ import { Heart, Coffee, Zap, MapPin, Clock, GitMerge, BookOpen, Monitor, Award, 
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const CareersPage: React.FC = () => {
   return (
@@ -19,7 +22,7 @@ const CareersPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Container size="7xl" className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
              <Globe className="w-3 h-3" /> Part of Divistant Ecosystem
           </div>
@@ -33,13 +36,13 @@ const CareersPage: React.FC = () => {
                 </Button>
              </a>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* --- PHOTO GRID (CULTURE SNAPSHOT) --- */}
       <div className="bg-[#0F172A] pb-24 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
+         <Container size="7xl">
+            <Grid cols={4} gap={4} className="h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
                <div className="bg-slate-800 rounded-3xl overflow-hidden relative group">
                   <OptimizedImage src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
                </div>
@@ -52,13 +55,13 @@ const CareersPage: React.FC = () => {
                <div className="bg-slate-800 rounded-3xl overflow-hidden relative group md:mt-4">
                   <OptimizedImage src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Code review" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </div>
 
       {/* --- ENGINEERING CULTURE --- */}
       <Section className="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Engineering First Culture</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.</Typography>
@@ -113,12 +116,12 @@ const CareersPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                </div>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* --- BENEFITS / PERKS --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2">The Total Rewards</Typography>
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
@@ -199,7 +202,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </div>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* --- OPEN POSITIONS CTA --- */}
@@ -208,23 +211,23 @@ const CareersPage: React.FC = () => {
          {/* Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+         <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2">Ready to Join Us?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.</Typography>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Stack direction="col" gap={6} className="justify-center">
                <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all rounded-2xl w-full sm:w-auto">
                      Explore Careers at Divistant <ExternalLink className="ml-2 w-5 h-5" />
                   </Button>
                </a>
-            </div>
+            </Stack>
             
             <div className="mt-12 pt-8 border-t border-slate-800 flex justify-center items-center gap-2 text-slate-500 text-sm">
                <CheckCircle className="w-4 h-4" /> 
                <span>Kami membalas setiap lamaran dalam 3-5 hari kerja.</span>
             </div>
-         </div>
+         </Container>
       </section>
 
     </div>

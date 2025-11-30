@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { searchMockData } from '../data/content';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
 
 const SearchPage: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -34,7 +35,7 @@ const SearchPage: React.FC = () => {
     <div className="pt-24 pb-24 bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors">
       <SEO title="Search Results | BizOps" description="Cari modul, fitur, panduan, dan artikel di seluruh ekosistem BizOps." />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         
         {/* Search Header */}
         <div className="mb-12 text-center">
@@ -109,7 +110,7 @@ const SearchPage: React.FC = () => {
            )}
         </div>
 
-      </div>
+      </Container>
     </div>
   );
 };

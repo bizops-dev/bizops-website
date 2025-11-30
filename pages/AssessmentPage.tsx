@@ -36,6 +36,9 @@ import { MethodologyReference } from '../components/MethodologyReference';
 import { useNavigate } from 'react-router-dom';
 import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- TYPES ---
 type ViewState = 'intro' | 'lead-form' | 'assessment' | 'analyzing' | 'results';
@@ -266,7 +269,7 @@ const AssessmentPage = () => {
           <div className="absolute bottom-[-10%] right-[-10%] w-[60%] md:w-[40%] h-[40%] bg-indigo-900/20 rounded-full blur-[80px] md:blur-[120px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-20 pb-12">
+        <Container size="7xl" className="w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-20 pb-12">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -368,7 +371,7 @@ const AssessmentPage = () => {
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-500/30 rounded-full blur-[60px]" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/30 rounded-full blur-[60px]" />
           </motion.div>
-        </div>
+        </Container>
         
         {/* Mobile Methodology Modal (if needed) */}
         {showMethodology && (
@@ -411,7 +414,7 @@ const AssessmentPage = () => {
             </div>
 
             <form onSubmit={handleLeadSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-5">
+              <Grid cols={2} gap={5}>
                 <div>
                   <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</Typography>
                   <input 
@@ -435,9 +438,9 @@ const AssessmentPage = () => {
                     placeholder="Nama PT"
                   />
                 </div>
-              </div>
+              </Grid>
 
-              <div className="grid md:grid-cols-2 gap-5">
+              <Grid cols={2} gap={5}>
                 <div>
                   <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
                     <Mail className="w-3 h-3" /> Email Bisnis
@@ -471,7 +474,7 @@ const AssessmentPage = () => {
                     placeholder="0812..."
                   />
                 </div>
-              </div>
+              </Grid>
 
               <div>
                 <Typography variant="caption" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</Typography>
@@ -536,7 +539,7 @@ const AssessmentPage = () => {
         <div className="max-w-6xl mx-auto">
           {/* --- REPORT HEADER (Formal) --- */}
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <Stack direction="col" gap={6} className="justify-between items-start md:items-center">
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-800 text-green-400 text-xs font-bold uppercase tracking-wider print:hidden">
@@ -576,10 +579,10 @@ const AssessmentPage = () => {
                   <span>{assessmentDate}</span>
                 </div>
               </div>
-            </div>
+            </Stack>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12 print:mb-6">
+          <Grid cols={12} gap={8} className="mb-12 print:mb-6">
             
             {/* LEFT: Executive Summary & Score */}
             <div className="lg:col-span-4 space-y-6">
@@ -672,7 +675,7 @@ const AssessmentPage = () => {
                 <Typography variant="h3" as="h3" className="font-bold text-white"><Crosshair className="w-6 h-6 mr-3 text-secondary-500 print:text-black" />
                   Rekomendasi Strategis</Typography>
                 
-                <div className="grid md:grid-cols-2 gap-6">
+                <Grid cols={2} gap={6}>
                   {Object.entries(results.categoryScores).map(([cat, data]) => {
                     const score = data.count > 0 ? data.total / data.count : 0;
                     const level = getRecommendationLevel(score);
@@ -707,16 +710,16 @@ const AssessmentPage = () => {
                       </div>
                     );
                   })}
-                </div>
+                </Grid>
               </div>
             </div>
-          </div>
+          </Grid>
           
           {/* NEXT STEPS / CROSS-SELL SECTION (New) */}
           <div className="mt-16 border-t border-white/10 pt-10 print:hidden break-before-page pb-24">
               <Typography variant="h3" as="h3" className="font-bold"><Lightbulb className="w-5 h-5 text-amber-400" /> Rekomendasi Tindak Lanjut</Typography>
               
-              <div className="grid md:grid-cols-3 gap-5">
+              <Grid cols={3} gap={5}>
                 {/* Solution Finder */}
                 <div 
                   onClick={() => navigate('/tools/needs-analysis')}
@@ -761,7 +764,7 @@ const AssessmentPage = () => {
                      Hubungi Kami <ChevronRight className="w-3 h-3 ml-1" />
                    </div>
                 </div>
-              </div>
+              </Grid>
            </div>
 
           {/* FLOATING ACTION BAR (Fixed Bottom) - Hidden when printing */}
@@ -822,7 +825,7 @@ const AssessmentPage = () => {
            </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+        <Grid cols={12} gap={8}>
           
           {/* LEFT: NAVIGATION SIDEBAR */}
           <div className="hidden lg:block lg:col-span-4 xl:col-span-3">
@@ -973,7 +976,7 @@ const AssessmentPage = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

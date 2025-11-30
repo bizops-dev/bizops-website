@@ -6,6 +6,8 @@ import { Home, FileText, HelpCircle, LogIn, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -43,7 +45,7 @@ const NotFoundPage: React.FC = () => {
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-500">"Cuti Di Luar Tanggungan"</span></Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa.</Typography>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Stack direction="col" gap={4} className="justify-center mb-16">
                <Link to="/">
                   <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg hover:shadow-primary-500/20 shadow-primary-500/10 text-lg">
                      Kembali ke Dashboard
@@ -52,9 +54,9 @@ const NotFoundPage: React.FC = () => {
                <Button size="lg" variant="outline" onClick={() => window.history.back()} className="h-14 px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
                   Kembali Sebelumnya
                </Button>
-            </div>
+            </Stack>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left max-w-4xl mx-auto">
+            <Grid cols={4} gap={4} className="text-left max-w-4xl mx-auto">
                <Link to="/platform" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-primary-50 dark:hover:bg-primary-900/10 border border-slate-200 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-800 transition-all group shadow-sm hover:shadow-md">
                   <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                      <Home className="w-5 h-5" />
@@ -91,7 +93,7 @@ const NotFoundPage: React.FC = () => {
                      Masuk akun <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                </Link>
-            </div>
+            </Grid>
          </motion.div>
       </div>
     </div>

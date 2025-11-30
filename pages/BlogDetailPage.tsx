@@ -21,6 +21,9 @@ import {
 } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -172,8 +175,8 @@ const BlogDetailPage: React.FC = () => {
 
       {/* --- CONTENT BODY --- */}
       <div className="relative z-30 bg-white dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+         <Container size="7xl" className="py-20">
+            <Grid cols={12} gap={12}>
                
                {/* LEFT: MAIN ARTICLE (8 cols) */}
                <div className="lg:col-span-8">
@@ -281,13 +284,13 @@ const BlogDetailPage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </div>
 
       {/* --- READ NEXT --- */}
       <div className="bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="flex items-center justify-between mb-12">
                <div>
                   <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>
@@ -298,7 +301,7 @@ const BlogDetailPage: React.FC = () => {
                </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8}>
                {relatedPosts.map((rp, idx) => (
                   <Link key={idx} to={`/blog/${rp.slug}`} className="group block h-full">
                      <div className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
@@ -324,8 +327,8 @@ const BlogDetailPage: React.FC = () => {
                      </div>
                   </Link>
                ))}
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </div>
 
       {/* --- CTA SECTION (Custom Implementation to fix color issues) --- */}
@@ -335,8 +338,8 @@ const BlogDetailPage: React.FC = () => {
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+         <Container size="7xl" className="relative z-10">
+            <Stack direction="col" gap={16} className="items-center justify-between">
                
                {/* Left: Copy */}
                <div className="max-w-2xl">
@@ -373,8 +376,8 @@ const BlogDetailPage: React.FC = () => {
                   </Link>
                </div>
 
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </section>
     </div>
   );

@@ -21,6 +21,9 @@ import {
   X
 } from 'lucide-react';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const RoadmapPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -91,8 +94,8 @@ const RoadmapPage: React.FC = () => {
       <div className="relative z-10 pt-24 pb-24">
         
         {/* COMPACT HERO */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-           <div className="flex flex-col md:flex-row items-end justify-between gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
+        <Container size="7xl" className="mb-12">
+           <Stack direction="col" gap={6} className="items-end justify-between border-b border-slate-200 dark:border-slate-800 pb-8">
               <div className="max-w-2xl">
                  <div className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold uppercase tracking-widest text-xs mb-3">
                     <Map className="w-4 h-4" /> Public Roadmap
@@ -117,11 +120,11 @@ const RoadmapPage: React.FC = () => {
                     <Plus className="w-4 h-4 mr-2" /> Request Fitur
                  </Button>
               </div>
-           </div>
-        </div>
+           </Stack>
+        </Container>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
+        <Container size="7xl">
+           <Stack direction="col" gap={8}>
               
               {/* SIDEBAR FILTER (Desktop Sticky) */}
               <div className="hidden md:block w-64 flex-shrink-0">
@@ -201,7 +204,7 @@ const RoadmapPage: React.FC = () => {
 
               {/* MAIN CONTENT - KANBAN */}
               <div className="flex-1 min-w-0">
-                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <Grid cols={3} gap={6}>
                     {roadmapData.map((column, idx) => (
                        <div key={idx} className="flex flex-col h-full bg-slate-100/50 dark:bg-slate-900/30 rounded-2xl p-2 border border-slate-200/50 dark:border-slate-800/50">
                           {/* Column Header */}
@@ -284,11 +287,11 @@ const RoadmapPage: React.FC = () => {
                           </div>
                        </div>
                     ))}
-                 </div>
+                 </Grid>
               </div>
 
-           </div>
-        </div>
+           </Stack>
+        </Container>
 
         {/* MODAL REQUEST FEATURE */}
         <AnimatePresence>

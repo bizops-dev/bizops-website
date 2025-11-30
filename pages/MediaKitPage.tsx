@@ -6,6 +6,9 @@ import { motion } from 'framer-motion';
 import OptimizedImage from '../components/OptimizedImage';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const MediaKitPage: React.FC = () => {
   const [copied, setCopied] = React.useState<string | null>(null);
@@ -75,7 +78,7 @@ const MediaKitPage: React.FC = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-32">
+      <Container size="7xl" className="py-24 space-y-32">
         
         {/* --- LOGO PACK --- */}
         <section>
@@ -89,7 +92,7 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+           <Grid cols={2} gap={8}>
               {/* Primary Logo */}
               <motion.div 
                  whileHover={{ y: -5 }}
@@ -144,10 +147,10 @@ const MediaKitPage: React.FC = () => {
                     </div>
                  </div>
               </motion.div>
-           </div>
+           </Grid>
 
            {/* Do's and Don'ts */}
-           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+           <Grid cols={4} gap={6} className="mt-8">
                <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/30 flex flex-col items-center text-center">
                   <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4">
                      <Check className="w-4 h-4" />
@@ -172,7 +175,7 @@ const MediaKitPage: React.FC = () => {
                   </div>
                   <Typography variant="body" className="dark:text-red-400">Jangan Menambah Efek</Typography>
                </div>
-           </div>
+           </Grid>
         </section>
 
         {/* --- COLOR PALETTE --- */}
@@ -406,7 +409,7 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+           <Grid cols={2} gap={8}>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
                  <div className="flex items-center justify-between mb-6">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500">~50 Words</Typography></Typography>
@@ -430,7 +433,7 @@ const MediaKitPage: React.FC = () => {
                     "{boilerplate.standard}"
                  </div>
               </div>
-           </div>
+           </Grid>
         </section>
 
         {/* --- PRESS CONTACT --- */}
@@ -442,14 +445,14 @@ const MediaKitPage: React.FC = () => {
               <div className="max-w-xl">
                  <Typography variant="h2" as="h2">Media Inquiries</Typography>
                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.</Typography>
-                 <div className="flex flex-col sm:flex-row gap-4">
+                 <Stack direction="col" gap={4}>
                     <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
                        <Mail className="w-4 h-4" /> Hubungi PR Team
                     </a>
                     <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/20 text-white rounded-xl font-bold hover:bg-white/10 transition-colors">
                        WhatsApp
                     </a>
-                 </div>
+                 </Stack>
               </div>
               
               <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-sm w-full">
@@ -472,7 +475,7 @@ const MediaKitPage: React.FC = () => {
            </div>
         </section>
 
-      </div>
+      </Container>
     </div>
   );
 };

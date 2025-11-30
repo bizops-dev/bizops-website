@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const teamMembers = [
   {
@@ -103,7 +105,7 @@ const AboutPage: React.FC = () => {
 
       {/* --- ORIGIN STORY TIMELINE (Refined) --- */}
       <section className="py-24 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-16 md:mb-24">
                <Typography variant="h2" as="h2">Our Origin Story</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
@@ -134,7 +136,7 @@ const AboutPage: React.FC = () => {
                  </motion.div>
                ))}
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- CORE VALUES (Glassmorphism) --- */}
@@ -144,7 +146,7 @@ const AboutPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <Container size="7xl" className="relative z-10">
             <div className="text-center mb-16 md:mb-20">
                <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span></Typography>
                <Typography variant="body-lg" className="text-slate-400">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</Typography>
@@ -197,12 +199,12 @@ const AboutPage: React.FC = () => {
                  </motion.div>
                ))}
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- TASK FORCE TEAM (Modern Grid) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-16 md:mb-20">
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" /> The Task Force
@@ -282,13 +284,13 @@ const AboutPage: React.FC = () => {
                   </motion.div>
                ))}
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- COMPANY INFO (Split Layout) --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-stretch">
+         <Container size="7xl">
+            <Grid cols={2} gap={16} className="items-stretch">
                <div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
                   <div className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 space-y-10 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
@@ -372,8 +374,8 @@ const AboutPage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
     </div>

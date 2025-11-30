@@ -29,6 +29,8 @@ import { StaggeredText } from '../components/ui/motion-text';
 import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS } from '../utils/animation';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const PricingPage: React.FC = () => {
   const [annual, setAnnual] = useState(true);
@@ -299,8 +301,8 @@ const PricingPage: React.FC = () => {
            <div className="text-center mb-12">
              <Typography variant="h2" as="h2">Standar Keamanan Enterprise</Typography>
            </div>
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+           <Container size="7xl">
+             <Grid cols={4} gap={6}>
                {[
                  { icon: Shield, title: "Secure Payment", desc: "Midtrans & Xendit Gateway", color: "text-green-500" },
                  { icon: Lock, title: "Data Encryption", desc: "AES-256 & TLS 1.3 Standards", color: "text-blue-500" },
@@ -315,8 +317,8 @@ const PricingPage: React.FC = () => {
                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
                  </div>
                ))}
-             </div>
-           </div>
+             </Grid>
+           </Container>
         </div>
 
         {/* --- COMPARISON TABLE --- */}
@@ -325,7 +327,7 @@ const PricingPage: React.FC = () => {
         </div>
 
         {/* --- FAQ & CONTACT --- */}
-        <div className="grid lg:grid-cols-12 gap-12 max-w-7xl mx-auto mb-24">
+        <Grid cols={12} gap={12} className="max-w-7xl mx-auto mb-24">
           <div className="lg:col-span-5">
              <div className="sticky top-24">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Frequently Asked Questions</Typography>
@@ -350,7 +352,7 @@ const PricingPage: React.FC = () => {
           <div className="lg:col-span-7">
             <FAQAccordion faqs={faqs} />
           </div>
-        </div>
+        </Grid>
 
       </Section>
     </div>

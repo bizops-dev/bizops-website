@@ -17,6 +17,9 @@ import Badge from '../components/Badge';
 import OptimizedImage from '../components/OptimizedImage';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- TYPES ---
 type ScenarioType = 'sales' | 'manager' | 'warehouse' | 'employee' | 'finance' | 'ceo';
@@ -129,9 +132,9 @@ const ProductTourPage: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       {/* MAIN INTERFACE CONTAINER */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-[calc(100vh-5rem)] flex flex-col justify-center py-8 lg:py-0">
+      <Container size="7xl" className="relative z-10 min-h-[calc(100vh-5rem)] flex flex-col justify-center py-8 lg:py-0">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 items-center">
+        <Grid cols={12} gap={12} className="items-center">
           
           {/* LEFT PANEL: CONTROLS (Span 4) */}
           <div className="lg:col-span-4 flex flex-col gap-8">
@@ -244,14 +247,14 @@ const ProductTourPage: React.FC = () => {
 
           </div>
 
-        </div>
-      </div>
+        </Grid>
+      </Container>
 
       {/* SUPPORTING SECTIONS */}
       
       {/* 1. Benefits */}
       <section className="py-16 md:py-24 bg-slate-950/50 border-t border-slate-900 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Container size="7xl" className="relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <Typography variant="h2" as="h2">Mengapa Kami Buat Simulasi Ini?</Typography>
             <Typography variant="body" className="text-slate-400">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</Typography>
@@ -280,7 +283,7 @@ const ProductTourPage: React.FC = () => {
               <Typography variant="caption" className="text-slate-400">Lihat bagaimana data dari Sales (Mobile) langsung terhubung ke Finance (Web) dan Gudang tanpa jeda.</Typography>
             </div>
           </CardSlider>
-        </div>
+        </Container>
       </section>
 
       {/* 2. CTA Final */}
@@ -288,11 +291,11 @@ const ProductTourPage: React.FC = () => {
         <div className="absolute inset-0 bg-primary-900/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <Container size="7xl" className="text-center relative z-10">
           <Badge variant="outline" className="mb-6 border-primary-500/30 text-primary-300 bg-primary-500/10">Ready for the real thing?</Badge>
           <Typography variant="h2" as="h2" className="font-extrabold text-white tracking-tight font-sans">Bawa Efisiensi Ini ke <span className="text-primary-400">Bisnis Anda.</span></Typography>
           <Typography variant="body-xl" className="text-slate-400">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Stack direction="col" gap={4} className="justify-center">
             <Link to="/demo">
               <Button size="lg" className="h-14 px-10 text-lg font-bold bg-primary-600 hover:bg-primary-500 border-none shadow-[0_0_40px_rgba(14,165,233,0.3)] w-full sm:w-auto group">
                 Mulai Trial Gratis <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -303,8 +306,8 @@ const ProductTourPage: React.FC = () => {
                   Cek Estimasi Harga
                </Button>
             </Link>
-          </div>
-        </div>
+          </Stack>
+        </Container>
       </section>
 
     </div>
@@ -407,14 +410,14 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             </div>
             <Typography variant="h3" as="h3">Task Completed!</Typography>
             <Typography variant="caption" className="text-slate-400 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
-            <div className="flex flex-col gap-3 w-full max-w-xs">
+            <Stack direction="col" gap={3} className="w-full max-w-xs">
                <Link to="/demo" className="w-full">
                   <Button fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
                </Link>
                <button onClick={onReset} className="text-sm text-slate-500 hover:text-white transition-colors flex items-center justify-center gap-2 py-2 group">
                   <RefreshCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" /> Ulangi Simulasi
                </button>
-            </div>
+            </Stack>
          </div>
       );
    }
@@ -725,7 +728,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
 
             {step === 1 && (
                <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 space-y-6">
-                  <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+                  <Stack direction="col" gap={4} className="items-center">
                      <div className="p-4 md:p-6 bg-blue-900/20 border border-blue-500/50 rounded-2xl text-center w-full sm:w-48">
                         <div className="text-[10px] md:text-xs text-blue-400 mb-2 font-bold">BANK TRF</div>
                         <div className="text-lg md:text-xl font-bold text-white">45.500.000</div>
@@ -737,7 +740,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <div className="text-[10px] md:text-xs text-purple-400 mb-2 font-bold">INVOICE #005</div>
                         <div className="text-lg md:text-xl font-bold text-white">45.500.000</div>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <div className="max-w-md text-center">
                      <Typography variant="h3" as="h3">AI Suggestion Found</Typography>

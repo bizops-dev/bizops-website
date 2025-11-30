@@ -20,6 +20,8 @@ import {
   MapPin
 } from 'lucide-react';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 // --- COLOR SYSTEM MAPPING (FIX FOR TAILWIND DYNAMIC CLASSES) ---
 const COLOR_THEMES: Record<string, {
@@ -352,9 +354,9 @@ const UseCaseDetailPage: React.FC = () => {
 
       {/* --- 2. MAIN CONTENT AREA --- */}
       <div className="relative z-20 bg-white dark:bg-slate-950 rounded-t-[3rem] -mt-20 shadow-[0_-20px_60px_rgba(0,0,0,0.3)] min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+        <Container size="7xl" className="py-20 lg:py-24">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+          <Grid cols={12} gap={12}>
             
             {/* LEFT CONTENT (Story) */}
             <div className="lg:col-span-7 space-y-20">
@@ -446,7 +448,7 @@ const UseCaseDetailPage: React.FC = () => {
               </div>
             </div>
 
-          </div>
+          </Grid>
 
           {/* --- 3. IMPACT SECTION (Metrics) --- */}
           <div className="mt-24 lg:mt-32 pt-12 border-t border-slate-100 dark:border-slate-800">
@@ -458,20 +460,20 @@ const UseCaseDetailPage: React.FC = () => {
               <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Hasil nyata yang terukur setelah implementasi sistem BizOps.</Typography>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Grid cols={3} gap={6}>
               {data.results.map((result, i) => (
                 <MetricCard key={i} text={result} index={i} theme={theme} />
               ))}
-            </div>
+            </Grid>
           </div>
 
-        </div>
+        </Container>
       </div>
 
       {/* --- 4. RELATED CASES --- */}
       {relatedCases.length > 0 && (
         <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container size="7xl">
             <div className="flex items-center justify-between mb-12">
               <Typography variant="h2" as="h2">More Success Stories</Typography>
               <Link to="/use-cases" className="text-primary-600 dark:text-primary-400 font-bold hover:underline flex items-center gap-1">
@@ -479,7 +481,7 @@ const UseCaseDetailPage: React.FC = () => {
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8}>
               {relatedCases.map((item) => {
                  const itemTheme = COLOR_THEMES[item.color] || COLOR_THEMES['blue'];
                  return (
@@ -502,8 +504,8 @@ const UseCaseDetailPage: React.FC = () => {
                   </Link>
                 );
               })}
-            </div>
-          </div>
+            </Grid>
+          </Container>
         </div>
       )}
     </div>

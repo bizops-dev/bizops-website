@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 const ContactPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -115,7 +116,7 @@ const ContactPage: React.FC = () => {
       {/* --- CONTENT SECTION --- */}
       <section className="relative z-20 -mt-20 md:-mt-32 pb-24 px-4 sm:px-6 lg:px-8">
          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+            <Grid cols={12} gap={8}>
                
                {/* LEFT: CONTACT INFO (Bento Grid Style) */}
                <div className="lg:col-span-5 space-y-6">
@@ -247,7 +248,7 @@ const ContactPage: React.FC = () => {
                          </div>
                          
                          <form className="space-y-8" onSubmit={handleSubmit} noValidate>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <Grid cols={2} gap={8}>
                                <Input 
                                  id="name" name="name" label="Nama Lengkap" placeholder="Ex: Budi Santoso" 
                                  error={errors.name} 
@@ -258,7 +259,7 @@ const ContactPage: React.FC = () => {
                                  error={errors.email} 
                                  className="bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 h-12"
                                />
-                            </div>
+                            </Grid>
                             
                             <Select 
                                id="topic" 
@@ -309,7 +310,7 @@ const ContactPage: React.FC = () => {
                   </motion.div>
                </div>
 
-            </div>
+            </Grid>
          </div>
       </section>
     </div>

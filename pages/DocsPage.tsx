@@ -89,7 +89,7 @@ const DocsPage: React.FC = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20 pb-24">
+      <Container size="7xl" className="-mt-16 relative z-20 pb-24">
         
         {/* --- USER GUIDES --- */}
         <div className="mb-24">
@@ -176,7 +176,7 @@ const DocsPage: React.FC = () => {
 
                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.</Typography>
                  
-                 <div className="flex flex-col gap-3">
+                 <Stack direction="col" gap={3}>
                     <Link to="/docs/api">
                        <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 border-none font-bold">
                           Read API Docs
@@ -185,7 +185,7 @@ const DocsPage: React.FC = () => {
                     <Link to="/docs/changelog" className="text-slate-400 hover:text-white text-sm font-medium flex items-center gap-2 mt-2">
                        <Activity className="w-4 h-4" /> View Changelog
                     </Link>
-                 </div>
+                 </Stack>
               </div>
 
               {/* Code Preview */}
@@ -319,7 +319,7 @@ const DocsPage: React.FC = () => {
            </div>
         </div>
 
-      </div>
+      </Container>
     </div>
   );
 };

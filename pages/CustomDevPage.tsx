@@ -12,6 +12,8 @@ import {
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -106,7 +108,7 @@ const CustomDevPage: React.FC = () => {
               <Breadcrumbs items={[{ label: 'Services', path: '/services' }, { label: pageData.title, path: '/services/custom-dev' }]} />
            </div>
 
-           <div className="grid lg:grid-cols-2 gap-16 items-start">
+           <Grid cols={2} gap={16} className="items-start">
               {/* Left Column */}
               <motion.div initial="hidden" animate="visible" variants={STAGGER_CONTAINER}>
                  <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
@@ -163,14 +165,14 @@ const CustomDevPage: React.FC = () => {
                     </div>
                  </SpotlightCard>
               </motion.div>
-           </div>
+           </Grid>
         </div>
       </Section>
 
       {/* --- USE CASES (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <Stack direction="col" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Real World Impact</Typography>
                   <Typography variant="h3" as="h3">Solved by Custom Dev</Typography>
@@ -180,7 +182,7 @@ const CustomDevPage: React.FC = () => {
                     See All Case Studies <ArrowRight className="w-4 h-4" />
                  </Button>
                </Link>
-            </div>
+            </Stack>
 
             <div className="relative">
                {/* Vertical Line */}
@@ -235,7 +237,7 @@ const CustomDevPage: React.FC = () => {
                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Grid cols={2} gap={6}>
                  {pageData.deliverables.map((item, idx) => (
                     <motion.div 
                       key={idx}
@@ -254,7 +256,7 @@ const CustomDevPage: React.FC = () => {
                        </div>
                     </motion.div>
                  ))}
-              </div>
+              </Grid>
            </div>
       </Section>
 
@@ -273,7 +275,7 @@ const CustomDevPage: React.FC = () => {
            <div className="relative z-10 max-w-3xl mx-auto">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to Build <span className="text-blue-400">Unique Features?</span></Typography>
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.</Typography>
-             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+             <Stack direction="col" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Start Custom Project
@@ -284,7 +286,7 @@ const CustomDevPage: React.FC = () => {
                      Chat via WhatsApp
                   </Button>
                </a>
-             </div>
+             </Stack>
            </div>
         </motion.div>
       </Section>

@@ -7,6 +7,7 @@ import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, Hist
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 interface LegalPageProps {
   forcedDocId?: string;
@@ -243,7 +244,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              </AnimatePresence>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+          <Grid cols={12} gap={8}>
              
              {/* LEFT SIDEBAR NAV (Desktop) */}
              <div className="lg:col-span-3 hidden lg:block">
@@ -306,7 +307,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                             <Typography variant="h3" as="h3">Data Subject Access Rights (DSAR)</Typography>
                             <Typography variant="caption" className="leading-relaxed">Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").</Typography>
                          </div>
-                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                         <Grid cols={2} gap={6}>
                             <button 
                               onClick={() => setRequestType('export')}
                               className={`text-left border rounded-2xl p-6 transition-all flex flex-col group ${requestType === 'export' ? 'border-primary-500 bg-primary-50/10 ring-1 ring-primary-500' : 'border-slate-200 hover:border-primary-300 hover:shadow-md'}`}
@@ -327,7 +328,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                <Typography variant="h4" as="h4">Delete Account</Typography>
                                <Typography variant="caption" className="text-slate-600 leading-relaxed">Hapus permanen akun dan seluruh data pribadi Anda dari server kami.</Typography>
                             </button>
-                         </div>
+                         </Grid>
                          {requestType && (
                             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 animate-fade-in-up scroll-mt-24 relative overflow-hidden" id="request-form">
                                {requestStatus === 'loading' && (
@@ -489,7 +490,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                 </div>
              </div>
 
-          </div>
+          </Grid>
        </div>
     </div>
   );

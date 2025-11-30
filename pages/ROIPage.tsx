@@ -24,6 +24,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 // Pricing Tiers for Comparison
 const PRICING_TIERS = [
@@ -114,7 +116,7 @@ const ROIPage: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container size="7xl" className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -126,7 +128,7 @@ const ROIPage: React.FC = () => {
            <Typography variant="body-lg" className="text-slate-400">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
+        <Grid cols={12} gap={8} className="items-start">
            
            {/* LEFT: INPUTS */}
            <div className="lg:col-span-5 bg-slate-900/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
@@ -159,7 +161,7 @@ const ROIPage: React.FC = () => {
                  </div>
 
                  {/* 2. Salary & Efficiency */}
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 <Grid cols={2} gap={4}>
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Gaji Rata-rata</Typography>
                         <div className="relative group">
@@ -183,7 +185,7 @@ const ROIPage: React.FC = () => {
                         </div>
                         <Typography variant="body" className="text-slate-500">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
                     </div>
-                 </div>
+                 </Grid>
 
                  {/* 3. Overtime */}
                  <div>
@@ -255,7 +257,7 @@ const ROIPage: React.FC = () => {
            <div className="lg:col-span-7 space-y-6">
               
               {/* Savings Breakdown Cards - 2x2 Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Grid cols={2} gap={4}>
                  {/* Efficiency */}
                  <div className="bg-slate-900/50 backdrop-blur-sm p-5 rounded-2xl border border-white/5 hover:bg-slate-900 transition-all group">
                     <div className="flex justify-between items-start mb-2">
@@ -307,7 +309,7 @@ const ROIPage: React.FC = () => {
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
                     <Typography variant="body" className="text-slate-500">Biaya sistem lama yang dihapus.</Typography>
                  </div>
-              </div>
+              </Grid>
 
               {/* MAIN HERO RESULT */}
               <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden text-center md:text-left">
@@ -371,7 +373,7 @@ const ROIPage: React.FC = () => {
               </div>
 
            </div>
-        </div>
+        </Grid>
 
         {/* --- LEAD FORM MODAL --- */}
         <AnimatePresence>
@@ -464,7 +466,7 @@ const ROIPage: React.FC = () => {
           )}
         </AnimatePresence>
 
-      </div>
+      </Container>
     </div>
   );
 };

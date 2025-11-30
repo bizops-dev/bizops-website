@@ -15,6 +15,8 @@ import {
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -108,7 +110,7 @@ const ServiceDetailPage: React.FC = () => {
               ]} />
            </div>
 
-           <div className="grid lg:grid-cols-2 gap-16 items-start">
+           <Grid cols={2} gap={16} className="items-start">
               {/* Left Column: Title & Desc */}
               <motion.div 
                 initial="hidden"
@@ -191,20 +193,20 @@ const ServiceDetailPage: React.FC = () => {
                     </div>
                  </SpotlightCard>
               </motion.div>
-           </div>
+           </Grid>
         </div>
       </Section>
 
       {/* --- METHODOLOGY (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <Stack direction="col" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Our Methodology</Typography>
                   <Typography variant="h3" as="h3">Execution Roadmap</Typography>
                </div>
                <Typography variant="body" className="text-slate-500 dark:text-slate-400">Langkah-langkah terstruktur untuk memastikan keberhasilan proyek Anda dari awal hingga akhir.</Typography>
-            </div>
+            </Stack>
 
             <div className="relative">
                {/* Vertical Line for Desktop */}
@@ -292,7 +294,7 @@ const ServiceDetailPage: React.FC = () => {
            <div className="relative z-10 max-w-3xl mx-auto">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Start Your <span className="text-primary-400">{data.title}</span> Journey.</Typography>
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.</Typography>
-             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+             <Stack direction="col" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Book Free Consultation
@@ -303,7 +305,7 @@ const ServiceDetailPage: React.FC = () => {
                      Chat via WhatsApp
                   </Button>
                </a>
-             </div>
+             </Stack>
            </div>
         </motion.div>
       </Section>

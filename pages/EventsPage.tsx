@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const EventsPage: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -116,7 +118,7 @@ const EventsPage: React.FC = () => {
          </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20 pb-24 space-y-24">
+      <Container size="7xl" className="-mt-20 relative z-20 pb-24 space-y-24">
         
         {/* Upcoming Events Grid */}
         <div className="space-y-8">
@@ -238,7 +240,7 @@ const EventsPage: React.FC = () => {
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            
            <div className="relative z-10">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+              <Stack direction="col" gap={6} className="justify-between items-end mb-12">
                  <div>
                     <Typography variant="h2" as="h2">On-Demand Library</Typography>
                     <Typography variant="body-lg" className="text-slate-400">Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.</Typography>
@@ -246,7 +248,7 @@ const EventsPage: React.FC = () => {
                  <div className="flex items-center gap-2 text-sm text-primary-300 bg-primary-900/30 border border-primary-500/30 px-4 py-2 rounded-full font-medium">
                     <Users className="w-4 h-4" /> Exclusive for Members
                  </div>
-              </div>
+              </Stack>
 
               <div className="md:hidden">
                  <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -295,15 +297,15 @@ const EventsPage: React.FC = () => {
               <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
                  <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
-                 <div className="flex flex-col sm:flex-row justify-center gap-4">
+                 <Stack direction="col" gap={4} className="justify-center">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
                     <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>
-                 </div>
+                 </Stack>
               </div>
            </div>
         </div>
 
-      </div>
+      </Container>
     </div>
   );
 };

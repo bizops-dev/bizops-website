@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Grid from '../components/Grid';
 
 const AccessibilityPage: React.FC = () => {
   const features = [
@@ -46,7 +47,7 @@ const AccessibilityPage: React.FC = () => {
 
       {/* Standards & Features */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Grid cols={4} gap={8}>
           {features.map((feat, idx) => (
             <div key={idx} className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300 group">
               <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600">
@@ -56,7 +57,7 @@ const AccessibilityPage: React.FC = () => {
               <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feat.desc}</Typography>
             </div>
           ))}
-        </div>
+        </Grid>
 
         <div className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-xl">
            <div className="md:w-1/2">

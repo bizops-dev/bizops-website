@@ -5,6 +5,8 @@ import { BarChart2, PieChart, FileBarChart, Calendar, Filter } from 'lucide-reac
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const AnalyticsPage: React.FC = () => {
   return (
@@ -13,7 +15,7 @@ const AnalyticsPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <BarChart2 className="w-8 h-8 text-primary-400" />
           </div>
@@ -22,13 +24,13 @@ const AnalyticsPage: React.FC = () => {
           <Link to="/demo">
              <Button size="lg" variant="white">Coba Report Builder</Button>
           </Link>
-        </div>
+        </Container>
       </section>
 
       {/* Key Capabilities */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+         <Container size="7xl">
+            <Grid cols={3} gap={8}>
                
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-6">
@@ -54,8 +56,8 @@ const AnalyticsPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.</Typography>
                </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
     </div>
   );

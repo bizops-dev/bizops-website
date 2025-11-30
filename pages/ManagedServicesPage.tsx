@@ -13,6 +13,9 @@ import OptimizedImage from '../components/OptimizedImage'; // Added OptimizedIma
     import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ManagedServicesPage: React.FC = () => {
   return (
@@ -36,7 +39,7 @@ const ManagedServicesPage: React.FC = () => {
               ]} />
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-16">
+            <Stack direction="col" gap={16} className="items-center">
                <motion.div 
                  initial="hidden" 
                  animate="visible" 
@@ -101,7 +104,7 @@ const ManagedServicesPage: React.FC = () => {
                      </svg>
                   </div>
                </motion.div>
-            </div>
+            </Stack>
          </div>
       </Section>
 
@@ -155,8 +158,8 @@ const ManagedServicesPage: React.FC = () => {
 
       {/* --- PARTNER ECOSYSTEM --- */}
       <Section className="py-24 bg-white dark:bg-slate-900">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
+         <Container size="7xl">
+            <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Powered by <br/>
                      <span className="text-primary-600">Vetted Expert Network</span></Typography>
@@ -208,16 +211,16 @@ const ManagedServicesPage: React.FC = () => {
                       </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </Section>
 
       {/* --- CTA --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Siap Meng-upgrade Operasional Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-lg rounded-2xl shadow-xl shadow-primary-500/20">
                      Hubungi Kami
@@ -228,8 +231,8 @@ const ManagedServicesPage: React.FC = () => {
                      Lihat Estimasi Biaya
                   </Button>
                </Link>
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </Section>
     </div>
   );

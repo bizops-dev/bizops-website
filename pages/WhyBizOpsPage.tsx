@@ -9,6 +9,9 @@ import Card from '../components/Card';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const WhyBizOpsPage: React.FC = () => {
   return (
@@ -54,13 +57,13 @@ const WhyBizOpsPage: React.FC = () => {
 
       {/* --- THE SWEET SPOT (Visual Comparison) --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">The "Sweet Spot"</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.</Typography>
             </div>
             
-            <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <Stack direction="col" gap={16} className="items-center">
                {/* Quadrant Chart */}
                <div className="w-full lg:w-1/2 aspect-square max-w-[500px] relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8 mx-auto">
                   {/* Axes */}
@@ -164,13 +167,13 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </section>
 
       {/* --- 5 STRATEGIC REASONS --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white">5 Alasan Strategis Berinvestasi di BizOps</Typography>
             
             <div className="md:hidden">
@@ -226,7 +229,7 @@ const WhyBizOpsPage: React.FC = () => {
                   </Link>
                </div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- SUSTAINABILITY & EFFICIENCY --- */}
@@ -234,8 +237,8 @@ const WhyBizOpsPage: React.FC = () => {
          {/* Green accent bg */}
          <div className="absolute top-0 left-0 w-full h-full bg-green-50/50 dark:bg-green-900/5 pointer-events-none"></div>
          
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
+         <Container size="7xl" className="relative z-10">
+            <Grid cols={2} gap={16} className="items-center">
                <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency
@@ -316,8 +319,8 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* --- FINAL CTA --- */}
@@ -326,14 +329,14 @@ const WhyBizOpsPage: React.FC = () => {
          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Masa Depan Operasional Anda <br/>Dimulai Di Sini.</Typography>
             <Typography variant="body-xl" className="text-slate-300">Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.</Typography>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Stack direction="col" gap={6} className="justify-center">
                <Link to="/demo">
                   <Button size="lg" className="h-14 px-8 bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>
                </Link>
                <Link to="/needs-analysis">
                   <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 font-bold text-lg w-full sm:w-auto">Jadwalkan Audit Kebutuhan</Button>
                </Link>
-            </div>
+            </Stack>
          </div>
       </section>
 

@@ -6,6 +6,9 @@ import Button from '../components/Button';
 import { X, Check, XCircle, CheckCircle, ArrowRight, Layers, Smartphone, Server } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ComparePage: React.FC = () => {
   const { competitorId } = useParams<{ competitorId: string }>();
@@ -25,7 +28,7 @@ const ComparePage: React.FC = () => {
     <div className="pt-16 pb-24 bg-slate-50">
       <SEO title={`BizOps vs ${data.name}`} description={data.description} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         {/* Hero */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
@@ -39,11 +42,11 @@ const ComparePage: React.FC = () => {
         {data.points && data.points.length > 0 && (
           <>
             <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-16">
-              <div className="grid grid-cols-1 md:grid-cols-3 bg-slate-900 text-white font-bold text-lg">
+              <Grid cols={3} gap={6} className="bg-slate-900 text-white font-bold text-lg">
                 <div className="p-6 md:col-span-1 hidden md:block">Aspek</div>
                 <div className="p-6 text-slate-400 bg-slate-800/50">{data.name}</div>
                 <div className="p-6 text-primary-400 bg-primary-900/20">BizOps</div>
-              </div>
+              </Grid>
               
               <div className="divide-y divide-slate-100">
                 {data.points.map((row: any, idx: number) => (
@@ -102,7 +105,7 @@ const ComparePage: React.FC = () => {
 
         {/* LAYOUT 2: ANALYSIS CARDS (For Build vs Buy) */}
         {false && (
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+           <Grid cols={2} gap={8} className="mb-16">
               {[].map((scene: any, idx: number) => (
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
                     <div className="flex items-center gap-3 mb-6">
@@ -129,7 +132,7 @@ const ComparePage: React.FC = () => {
                     </ul>
                  </div>
               ))}
-           </div>
+           </Grid>
         )}
 
         {/* LAYOUT 3: COLUMNS (For SaaS Comparison) */}
@@ -159,16 +162,16 @@ const ComparePage: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
            <Typography variant="body-lg" className="text-slate-600 leading-relaxed">"{data.verdict}"</Typography>
-           <div className="flex flex-col sm:flex-row justify-center gap-4">
+           <Stack direction="col" gap={4} className="justify-center">
               <Link to="/demo">
                  <Button size="lg" className="shadow-lg">Jadwalkan Demo & Migrasi</Button>
               </Link>
               <Link to="/resources/roi">
                  <Button variant="outline" size="lg">Hitung ROI</Button>
               </Link>
-           </div>
+           </Stack>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

@@ -21,6 +21,9 @@ import {
   Info
 } from 'lucide-react';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const ComparisonsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -57,7 +60,7 @@ const ComparisonsPage: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container size="7xl" className="relative z-10">
         
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -72,7 +75,7 @@ const ComparisonsPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bandingkan arsitektur sistem Anda saat ini dengan <span className="text-slate-900 dark:text-white font-semibold">BizOps Evolution</span>. Lihat perbedaannya secara radikal.</Typography>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <Grid cols={12} gap={8} className="items-start">
             
             {/* SIDEBAR SELECTION */}
             <div className="lg:col-span-3 lg:sticky lg:top-28 space-y-6">
@@ -80,7 +83,7 @@ const ComparisonsPage: React.FC = () => {
                     <div className="px-4 py-3 text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
                         Select System
                     </div>
-                    <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 scrollbar-hide">
+                    <Stack direction="col" gap={2} className="overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide">
                         {Object.values(comparisonsData).map((item) => (
                             <button
                                 key={item.id}
@@ -108,7 +111,7 @@ const ComparisonsPage: React.FC = () => {
                                 </div>
                             </button>
                         ))}
-                    </div>
+                    </Stack>
                 </div>
                 
                 {/* CTA Mini */}
@@ -149,7 +152,7 @@ const ComparisonsPage: React.FC = () => {
                              <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] -mr-32 -mt-32 pointer-events-none opacity-20 ${getScoreBg(selectedData.bottleneckScore)}`}></div>
 
                             <div className="relative z-10">
-                                <div className="flex flex-col md:flex-row gap-10 items-start mb-12">
+                                <Stack direction="col" gap={10} className="items-start mb-12">
                                     <div className="flex-1">
                                         <div className="flex items-center gap-3 mb-6">
                                             <span className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border backdrop-blur-sm ${
@@ -184,10 +187,10 @@ const ComparisonsPage: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Stack>
                                 
                                 {/* 2. STRATEGIC METRICS GRID */}
-                                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 pt-10 border-t border-slate-100 dark:border-slate-800">
+                                <Grid cols={5} gap={4} className="pt-10 border-t border-slate-100 dark:border-slate-800">
                                     {[
                                       { icon: Clock, label: "Time to Value", value: selectedData.ttv },
                                       { icon: DollarSign, label: "3-Year TCO", value: selectedData.avgTCO },
@@ -202,7 +205,7 @@ const ComparisonsPage: React.FC = () => {
                                           <div className="font-bold text-slate-900 dark:text-white text-sm">{metric.value}</div>
                                       </div>
                                     ))}
-                                </div>
+                                </Grid>
                             </div>
                         </div>
 
@@ -214,7 +217,7 @@ const ComparisonsPage: React.FC = () => {
 
                             {selectedData.points.map((point, idx) => (
                                 <div key={idx} className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 p-6 md:p-8 hover:shadow-xl hover:border-primary-500/20 transition-all duration-300 group relative overflow-hidden">
-                                    <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
+                                    <Grid cols={12} gap={8} className="items-center relative z-10">
                                         
                                         {/* Col 1: Feature & Limit */}
                                         <div className="md:col-span-4 space-y-4">
@@ -261,7 +264,7 @@ const ComparisonsPage: React.FC = () => {
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </Grid>
                                 </div>
                             ))}
                         </div>
@@ -314,9 +317,9 @@ const ComparisonsPage: React.FC = () => {
                 </AnimatePresence>
             </div>
 
-        </div>
+        </Grid>
 
-      </div>
+      </Container>
     </div>
   );
 };

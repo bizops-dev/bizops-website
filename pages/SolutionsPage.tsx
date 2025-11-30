@@ -8,6 +8,8 @@ import { ArrowRight, LayoutGrid, Briefcase, Users, Check, TrendingUp, ChevronRig
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -42,7 +44,7 @@ const SolutionsPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none"></div>
          
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+         <Container size="7xl" className="text-center relative z-10">
             <motion.div 
                initial={{ opacity: 0, y: -20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -81,7 +83,7 @@ const SolutionsPage: React.FC = () => {
                   </Button>
                </Link>
             </motion.div>
-         </div>
+         </Container>
       </div>
 
       <Section className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 md:py-24">
@@ -170,17 +172,17 @@ const SolutionsPage: React.FC = () => {
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-20"></div>
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+         <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">Bisnis Anda Unik? <br/>Konsultan Kami Paham.</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/contact">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 border-none transition-all hover:scale-105">
                      Jadwalkan Audit Gratis
                   </BouncyButton>
                </Link>
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </section>
     </div>
   );

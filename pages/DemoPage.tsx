@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const DemoPage: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -127,8 +130,8 @@ const DemoPage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-600/20 rounded-full blur-[120px] pointer-events-none opacity-60"></div>
          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+         <Container size="7xl" className="relative z-10">
+            <Grid cols={12} gap={12}>
               
               {/* Left: Value Proposition */}
               <div className="lg:col-span-5 flex flex-col justify-center">
@@ -163,18 +166,18 @@ const DemoPage: React.FC = () => {
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
-                    <div className="flex flex-col gap-2">
+                    <Stack direction="col" gap={2}>
                        <Shield className="w-5 h-5 text-slate-500" />
                        <span className="text-xs font-bold text-slate-400 uppercase">ISO 27001<br/>Ready</span>
-                    </div>
-                    <div className="flex flex-col gap-2">
+                    </Stack>
+                    <Stack direction="col" gap={2}>
                        <Lock className="w-5 h-5 text-slate-500" />
                        <span className="text-xs font-bold text-slate-400 uppercase">TLS 1.3<br/>Encrypted</span>
-                    </div>
-                    <div className="flex flex-col gap-2">
+                    </Stack>
+                    <Stack direction="col" gap={2}>
                        <FileCheck className="w-5 h-5 text-slate-500" />
                        <span className="text-xs font-bold text-slate-400 uppercase">NDA<br/>Available</span>
-                    </div>
+                    </Stack>
                   </div>
                 </motion.div>
               </div>
@@ -193,7 +196,7 @@ const DemoPage: React.FC = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Grid cols={2} gap={6}>
                       <Input 
                         id="fullName" 
                         name="fullName" 
@@ -216,7 +219,7 @@ const DemoPage: React.FC = () => {
                         className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         labelClassName="text-slate-300"
                       />
-                    </div>
+                    </Grid>
 
                     <Input 
                       id="companyName" 
@@ -228,7 +231,7 @@ const DemoPage: React.FC = () => {
                       labelClassName="text-slate-300"
                     />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Grid cols={2} gap={6}>
                       <Input 
                         id="whatsapp" 
                         name="whatsapp"
@@ -254,7 +257,7 @@ const DemoPage: React.FC = () => {
                           { value: ">1000", label: "> 1000 Karyawan" }
                         ]}
                       />
-                    </div>
+                    </Grid>
                     
                     <Select 
                       id="industry" 
@@ -315,8 +318,8 @@ const DemoPage: React.FC = () => {
                 </motion.div>
               </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </div>
     </div>
   );

@@ -6,13 +6,15 @@ import { Search, BookOpen, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const GlossaryPage: React.FC = () => {
   return (
     <div className="pt-16 pb-24 bg-white">
       <SEO title="Kamus Istilah Bisnis, ERP & HR Indonesia | BizOps Wiki" description="Ensiklopedia lengkap istilah bisnis modern. Pelajari PPh 21 TER, Kurva-S, Safety Stock, dan lainnya." />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -34,7 +36,7 @@ const GlossaryPage: React.FC = () => {
         </div>
 
         {/* Glossary Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <Grid cols={2} gap={8} className="mb-16">
            {glossaryData.map((item, idx) => (
               <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-primary-100 transition-all group">
                  <div className="flex items-center gap-4 mb-4">
@@ -55,7 +57,7 @@ const GlossaryPage: React.FC = () => {
                  </div>
               </div>
            ))}
-        </div>
+        </Grid>
 
         {/* CTA */}
         <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
@@ -70,7 +72,7 @@ const GlossaryPage: React.FC = () => {
            </div>
         </div>
 
-      </div>
+      </Container>
     </div>
   );
 };

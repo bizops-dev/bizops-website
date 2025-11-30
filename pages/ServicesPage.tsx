@@ -12,6 +12,7 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
+import Stack from '../components/Stack';
 
 // --- COMPONENT: SPOTLIGHT CARD ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -135,13 +136,13 @@ const ServicesPage: React.FC = () => {
       {/* --- ENGAGEMENT MODEL (JOURNEY) --- */}
       <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20">
         <div className="max-w-7xl mx-auto">
-           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+           <Stack direction="col" gap={6} className="justify-between items-end mb-16">
               <div>
                 <Typography variant="h2" as="h2">How We Work</Typography>
                 <Typography variant="h3" as="h3">The Transformation Arc</Typography>
               </div>
               <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.</Typography>
-           </div>
+           </Stack>
 
            <div className="relative">
               {/* Connecting Line */}
@@ -337,13 +338,13 @@ const ServicesPage: React.FC = () => {
            <div className="relative z-10 max-w-3xl mx-auto">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span></Typography>
              <Typography variant="body-xl" className="text-slate-400">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
-             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+             <Stack direction="col" gap={4} className="items-center justify-center">
                <Link to="/contact">
                   <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 h-14 rounded-full border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-shadow duration-300">
                      Start Transformation
                   </Button>
                </Link>
-             </div>
+             </Stack>
            </div>
         </motion.div>
       </Section>

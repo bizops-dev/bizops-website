@@ -5,6 +5,8 @@ import { Globe, ShoppingBag, Truck, Users } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const PortalsPage: React.FC = () => {
   return (
@@ -13,19 +15,19 @@ const PortalsPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Berhenti Menjadi Admin<br/>untuk Klien Anda.</Typography>
           <Typography variant="body-xl" className="text-slate-300">Bebaskan tim CS, Sales Admin, dan Purchasing Anda dari pertanyaan berulang via WhatsApp. Berikan akses portal mandiri 24/7 kepada mitra bisnis Anda untuk melihat data yang mereka butuhkan sendiri.</Typography>
-        </div>
+        </Container>
       </section>
 
       {/* Portal Types */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+         <Container size="7xl">
+            <Grid cols={2} gap={12}>
                
                {/* Customer Portal */}
                <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group">
@@ -79,8 +81,8 @@ const PortalsPage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
     </div>
   );

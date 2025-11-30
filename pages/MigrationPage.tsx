@@ -34,6 +34,9 @@ import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 import CardSlider from '../components/CardSlider';
 
@@ -211,7 +214,7 @@ const MigrationPage: React.FC = () => {
       <div className="relative z-10 pt-32 pb-16 flex-grow">
         
         {/* 1. HERO SECTION */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <Container size="7xl" className="mb-24">
            <div className="text-center max-w-4xl mx-auto">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -267,15 +270,15 @@ const MigrationPage: React.FC = () => {
                  </Button>
               </motion.div>
            </div>
-        </div>
+        </Container>
 
         {/* 2. VISUAL PROCESS FLOW */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <Container size="7xl" className="mb-24">
            <div className="relative">
               {/* Connector Line */}
               <div className="hidden md:block absolute top-[45px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20"></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <Grid cols={3} gap={12}>
                  {[
                    { 
                      step: "01", 
@@ -323,9 +326,9 @@ const MigrationPage: React.FC = () => {
                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
                    </motion.div>
                  ))}
-              </div>
+              </Grid>
            </div>
-        </div>
+        </Container>
 
         {/* 3. INTERACTIVE TOOL: DATA ANALYZER */}
         <div id="analyzer" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-32">
@@ -334,7 +337,7 @@ const MigrationPage: React.FC = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-[2.5rem] blur opacity-20 dark:opacity-40"></div>
               
               <div className="relative bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
-                 <div className="grid lg:grid-cols-2">
+                 <Grid cols={2} gap={6}>
                     
                     {/* Left: Content */}
                     <div className="p-10 md:p-14 flex flex-col justify-center bg-slate-50 dark:bg-slate-900/50">
@@ -427,7 +430,7 @@ const MigrationPage: React.FC = () => {
                           </div>
                        </div>
                     </div>
-                 </div>
+                 </Grid>
               </div>
            </div>
         </div>
@@ -462,7 +465,7 @@ const MigrationPage: React.FC = () => {
 
               {/* Content Area */}
               <div className="flex-1 p-6 md:p-10 flex flex-col">
-                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                 <Stack direction="col" gap={4} className="justify-between items-start sm:items-center mb-8">
                     <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
                              <activeSample.icon className="w-6 h-6" />
@@ -473,7 +476,7 @@ const MigrationPage: React.FC = () => {
                     <Button variant="outline" onClick={handleDownloadTemplate} className="gap-2 border-slate-300 dark:border-slate-700">
                        <Download className="w-4 h-4" /> Download Template
                     </Button>
-                 </div>
+                 </Stack>
 
                  {/* Visual Table */}
                  <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-900/50 flex-grow">
@@ -655,7 +658,7 @@ const MigrationPage: React.FC = () => {
         </div>
 
         {/* 6. FAQ (Compact) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
            <div className="text-center mb-10">
               <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
            </div>
@@ -686,7 +689,7 @@ const MigrationPage: React.FC = () => {
                  </div>
               ))}
            </div>
-        </div>
+        </Container>
 
       </div>
 
@@ -706,7 +709,7 @@ const MigrationPage: React.FC = () => {
             <Typography variant="h2" as="h2">Siap untuk Berpindah?</Typography>
             <Typography variant="body-xl" className="text-slate-400">Setiap perusahaan memiliki kompleksitas data yang unik. Pilih pendekatan migrasi yang paling sesuai dengan sumber daya tim Anda.</Typography>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Grid cols={2} gap={8} className="max-w-4xl mx-auto">
                {/* Self-Managed Option */}
                <div className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-colors text-left flex flex-col">
                   <div className="w-14 h-14 bg-slate-700 rounded-2xl flex items-center justify-center mb-6">
@@ -755,7 +758,7 @@ const MigrationPage: React.FC = () => {
                      Konsultasi Migrasi <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                </div>
-            </div>
+            </Grid>
          </div>
       </div>
     </div>

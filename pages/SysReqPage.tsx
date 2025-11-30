@@ -6,13 +6,15 @@ import SEO from '../components/SEO';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const SysReqPage: React.FC = () => {
   return (
     <div className="pt-16 pb-24 bg-white">
       <SEO title="System Requirements | BizOps Documentation" description="Spesifikasi teknis hardware dan software untuk deployment BizOps Self-Hosted." />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         <div className="text-center mb-16">
            <Typography variant="h1" as="h1">Spesifikasi Teknis</Typography>
            <Typography variant="body-lg" className="text-slate-600">Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.</Typography>
@@ -46,7 +48,7 @@ const SysReqPage: React.FC = () => {
         <div className="mb-16">
            <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Monitor className="w-6 h-6 text-slate-600" /></div>
               Client Requirements (End-User)</Typography>
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <Grid cols={3} gap={6}>
               {sysReqData.client.map((req, idx) => (
                  <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
@@ -58,7 +60,7 @@ const SysReqPage: React.FC = () => {
                     )}
                  </div>
               ))}
-           </div>
+           </Grid>
         </div>
 
         {/* Network */}
@@ -88,7 +90,7 @@ const SysReqPage: React.FC = () => {
            </Link>
         </div>
 
-      </div>
+      </Container>
     </div>
   );
 };

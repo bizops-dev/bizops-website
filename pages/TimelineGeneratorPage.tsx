@@ -22,6 +22,9 @@ import {
 } from 'lucide-react';
 import { calculateTimeline, TimelineInput } from '../data/timelineData';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const TimelineGeneratorPage: React.FC = () => {
   const [step, setStep] = useState<'input' | 'result'>('input');
@@ -65,7 +68,7 @@ const TimelineGeneratorPage: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container size="7xl" className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -85,7 +88,7 @@ const TimelineGeneratorPage: React.FC = () => {
               exit={{ opacity: 0, y: -20 }}
               className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl p-8 md:p-12 max-w-4xl mx-auto"
             >
-               <div className="grid md:grid-cols-2 gap-10">
+               <Grid cols={2} gap={10}>
                   {/* Col 1 */}
                   <div className="space-y-8">
                       <div>
@@ -185,7 +188,7 @@ const TimelineGeneratorPage: React.FC = () => {
                           </div>
                       </div>
                   </div>
-               </div>
+               </Grid>
 
                <div className="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-end">
                   <Button onClick={handleGenerate} size="lg" className="gap-2 shadow-lg shadow-primary-500/20">
@@ -202,7 +205,7 @@ const TimelineGeneratorPage: React.FC = () => {
               className="space-y-8"
             >
                {/* Summary Cards */}
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <Grid cols={3} gap={6}>
                   <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                      <div className="text-xs font-bold text-slate-400 uppercase mb-2">Total Durasi</div>
                      <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
@@ -228,7 +231,7 @@ const TimelineGeneratorPage: React.FC = () => {
                      </div>
                      <Typography variant="body">{result.riskFactor === 'high' ? 'Perbaiki data/tim untuk mengurangi risiko.' : 'Kondisi proyek optimal.'}</Typography>
                   </div>
-               </div>
+               </Grid>
 
                {/* INTERACTIVE GANTT CHART */}
                <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl p-8 overflow-hidden">
@@ -356,7 +359,7 @@ const TimelineGeneratorPage: React.FC = () => {
                </div>
 
                {/* Action Buttons */}
-               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+               <Stack direction="col" gap={4} className="justify-center pt-4">
                   <Button 
                      variant="outline"
                      onClick={() => setStep('input')}
@@ -370,13 +373,13 @@ const TimelineGeneratorPage: React.FC = () => {
                   >
                      <Download className="w-4 h-4" /> Download Proposal PDF
                   </Button>
-               </div>
+               </Stack>
 
             </motion.div>
           )}
         </AnimatePresence>
 
-      </div>
+      </Container>
     </div>
   );
 };

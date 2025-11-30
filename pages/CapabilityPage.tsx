@@ -6,6 +6,8 @@ import Button from '../components/Button';
 import { Check, Server, Smartphone, Share2, MessageSquare, Layers, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 const CapabilityPage: React.FC = () => {
   const { capabilityId } = useParams<{ capabilityId: string }>();
@@ -29,7 +31,7 @@ const CapabilityPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="text-center">
             <div className="inline-flex p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />
             </div>
@@ -38,14 +40,14 @@ const CapabilityPage: React.FC = () => {
             <Link to="/demo">
                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">Download Technical Sheet</Button>
             </Link>
-         </div>
+         </Container>
       </section>
 
       {/* Technical Features */}
       <section className="py-24 bg-white">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2">Technical Specifications</Typography>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Grid cols={2} gap={8}>
                {data.features.map((item: any, idx: number) => (
                   <div key={idx} className="flex gap-6 p-8 border border-slate-200 rounded-2xl bg-white hover:border-primary-200 hover:shadow-lg transition-all">
                      <div className="flex-shrink-0 mt-1">
@@ -59,14 +61,14 @@ const CapabilityPage: React.FC = () => {
                      </div>
                   </div>
                ))}
-            </div>
-         </div>
+            </Grid>
+         </Container>
       </section>
 
       {/* Extra Section (e.g. Sizing Guide Table) */}
       {data.extraSection && (
         <section className="py-24 bg-slate-50 border-t border-slate-200">
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <Container size="7xl">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 leading-tight">{data.extraSection.title}</Typography>
               
               {data.extraSection.type === 'table' && (
@@ -93,19 +95,19 @@ const CapabilityPage: React.FC = () => {
                     </div>
                  </div>
               )}
-           </div>
+           </Container>
         </section>
       )}
 
       {/* Specific CTA */}
       <section className="py-20 bg-white border-t border-slate-100 text-center">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <Typography variant="h2" as="h2">Need Deeper Technical Review?</Typography>
             <Typography variant="body" className="text-slate-600">Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.</Typography>
             <Link to="/contact">
                <Button variant="outline" size="lg">Hubungi Tim Engineering <ArrowRight className="ml-2 w-4 h-4" /></Button>
             </Link>
-         </div>
+         </Container>
       </section>
     </div>
   );

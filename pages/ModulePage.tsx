@@ -18,6 +18,9 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // Motion Components
 import { CounterUp } from '../components/ui/motion-scroll';
@@ -245,8 +248,8 @@ const ModulePage: React.FC = () => {
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
          <section className="relative mt-8 md:-mt-20 z-20 pb-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Container size="7xl">
+               <Grid cols={3} gap={6}>
                   {data.metrics.map((metric, idx) => {
                      // Parse value for CounterUp (remove %, +, etc)
                      const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
@@ -282,16 +285,16 @@ const ModulePage: React.FC = () => {
                        </motion.div>
                      );
                   })}
-               </div>
-            </div>
+               </Grid>
+            </Container>
          </section>
       )}
 
       {/* 3. Problem & Solution (New) */}
       {data.problems && (
          <section className="py-24 bg-white dark:bg-slate-950">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Container size="7xl">
+               <Grid cols={2} gap={16} className="items-center">
                   <div>
                      <Badge variant="outline" className="mb-6">The Challenge</Badge>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Tantangan {data.title} Tradisional</Typography>
@@ -336,14 +339,14 @@ const ModulePage: React.FC = () => {
                         ))}
                      </ul>
                   </motion.div>
-               </div>
-            </div>
+               </Grid>
+            </Container>
          </section>
       )}
 
       {/* 4. Features Grid */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
@@ -371,29 +374,29 @@ const ModulePage: React.FC = () => {
                );
             })}
           </CardSlider>
-        </div>
+        </Container>
       </section>
 
       {/* 5. Mobile Advantage (Conditional) */}
       {data.mobileAdvantage && (
          <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container size="7xl">
                <div className="bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl">
                   {/* Background decoration */}
                   <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-900/40 to-transparent pointer-events-none"></div>
                   
-                  <div className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16 relative z-10">
+                  <Grid cols={2} gap={12} className="items-center p-8 lg:p-16 relative z-10">
                      <div>
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
                            <Smartphone className="w-4 h-4" /> Mobile Native
                         </div>
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
                         <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <Stack direction="col" gap={4}>
                            <Button variant="white" className="gap-2">
                               Download App <ArrowRight className="w-4 h-4" />
                            </Button>
-                        </div>
+                        </Stack>
                      </div>
                      {/* Phone Mockup (CSS only) */}
                      <motion.div 
@@ -426,15 +429,15 @@ const ModulePage: React.FC = () => {
                            </div>
                         </div>
                      </motion.div>
-                  </div>
+                  </Grid>
                </div>
-            </div>
+            </Container>
          </section>
       )}
 
       {/* 6. Integration / Connections */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-16">
                <Badge variant="outline" className="mb-4">Ecosystem</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
@@ -482,7 +485,7 @@ const ModulePage: React.FC = () => {
                   {/* Connectors Visual */}
                   <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 -z-10"></div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <Grid cols={3} gap={8}>
                      {data.connections?.map((conn, idx) => (
                         <motion.div 
                            key={idx}
@@ -502,15 +505,15 @@ const ModulePage: React.FC = () => {
                            </div>
                         </motion.div>
                      ))}
-                  </div>
+                  </Grid>
                </div>
             )}
-         </div>
+         </Container>
       </section>
 
       {/* 7. Testimonial (Re-ordered above FAQ) */}
       <section className="py-24 bg-white dark:bg-slate-950">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="text-center">
             <Quote className="w-12 h-12 text-primary-200 dark:text-primary-900 mx-auto mb-8" />
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{testimonial.quote}"</Typography>
             <div className="flex items-center justify-center gap-4">
@@ -526,13 +529,13 @@ const ModulePage: React.FC = () => {
                   <div className="text-sm text-slate-500 dark:text-slate-400">{testimonial.role}</div>
                </div>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* 8. FAQ */}
       {data.faqs && (
          <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container size="7xl">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
                </div>
@@ -541,13 +544,13 @@ const ModulePage: React.FC = () => {
                      <FAQItem key={i} question={faq.question} answer={faq.answer} />
                   ))}
                </div>
-            </div>
+            </Container>
          </section>
       )}
 
       {/* 9. Related Modules (Carousel Style) */}
       <section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl">
             <div className="text-center mb-12">
                <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
                <Typography variant="body" className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
@@ -583,15 +586,15 @@ const ModulePage: React.FC = () => {
                   );
                })}
             </CardSlider>
-         </div>
+         </Container>
       </section>
 
       {/* 10. CTA Final */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+         <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.cta?.text || "Siap untuk transformasi digital?"}</Typography>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Stack direction="col" gap={4} className="justify-center">
                <Link to="/demo">
                   <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none text-white">
                      {data.cta?.buttonLabel || "Mulai Sekarang"}
@@ -600,8 +603,8 @@ const ModulePage: React.FC = () => {
                <Link to="/contact">
                   <Button variant="outline-white" size="lg" className="h-16 px-10 text-xl">Hubungi Sales</Button>
                </Link>
-            </div>
-         </div>
+            </Stack>
+         </Container>
       </section>
 
     </div>

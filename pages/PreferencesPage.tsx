@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { Mail, Shield, Bell, XCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
 
 const PreferencesPage: React.FC = () => {
   const [saved, setSaved] = useState(false);
@@ -18,7 +19,7 @@ const PreferencesPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="Email Preferences" description="Manage your email subscription settings." />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container size="7xl">
         <div className="text-center mb-12">
            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
@@ -120,7 +121,7 @@ const PreferencesPage: React.FC = () => {
               </Button>
            </div>
         </form>
-      </div>
+      </Container>
     </div>
   );
 };
