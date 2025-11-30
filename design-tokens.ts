@@ -124,3 +124,18 @@ export const sectionPadding = {
   spacious: 'py-24 md:py-32 lg:py-40',
 } as const;
 
+// Gradient patterns
+export const gradients = {
+  primary: 'bg-gradient-to-r from-primary-600 to-primary-500',
+  primaryVertical: 'bg-gradient-to-b from-primary-600 to-primary-700',
+  accent: 'bg-gradient-to-r from-amber-500 to-orange-500',
+  success: 'bg-gradient-to-r from-green-500 to-emerald-500',
+  danger: 'bg-gradient-to-r from-red-500 to-rose-500',
+  dark: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+  darkBlue: 'bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900',
+  glow: 'bg-gradient-to-tr from-primary-500/20 to-blue-500/20',
+  glowAccent: 'bg-gradient-to-tr from-amber-500/20 to-orange-500/20',
+  subtle: 'bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950',
+  hero: 'bg-gradient-to-br from-primary-600 via-primary-500 to-blue-500',
+} as const;
+

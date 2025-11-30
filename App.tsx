@@ -128,11 +128,18 @@ function App() {
       <ThemeProvider>
         <LanguageProvider>
           <Router>
+            {/* Skip to main content link for accessibility */}
+            <a 
+              href="#main-content" 
+              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 font-semibold transition-all"
+            >
+              Skip to main content
+            </a>
             <ScrollToTop />
             <SessionTracker />
             <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
           <Navbar />
-          <main className="flex-grow">
+          <main id="main-content" className="flex-grow">
             <Suspense fallback={<Loading />}>
               <RouteErrorBoundary>
                 <Routes>
