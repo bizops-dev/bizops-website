@@ -309,7 +309,7 @@ const BlogPage: React.FC = () => {
                                                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                              />
                                              <div className="absolute top-4 left-4">
-                                                <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-white dark:text-white dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
+                                                <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
                                                    {post.category}
                                                 </span>
                                              </div>

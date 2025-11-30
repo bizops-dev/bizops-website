@@ -357,7 +357,7 @@ const RolePage: React.FC = () => {
 
            <Stack direction="vertical" gap={5} className="justify-center items-center">
               <Link to="/demo" className="w-full sm:w-auto">
-                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 dark:text-slate-900 dark:text-white border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
+                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 dark:text-white border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Sekarang <ArrowRight className="w-5 h-5" />
                  </BouncyButton>
               </Link>

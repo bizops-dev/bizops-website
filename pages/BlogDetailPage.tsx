@@ -312,7 +312,7 @@ const BlogDetailPage: React.FC = () => {
                               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                            />
                            <div className="absolute top-4 left-4">
-                              <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-white dark:text-white dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
+                              <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700 shadow-sm">
                                  {rp.category}
                               </span>
                            </div>
@@ -365,7 +365,7 @@ const BlogDetailPage: React.FC = () => {
                {/* Right: Actions */}
                <Stack direction="vertical" gap={4} className="w-full lg:w-auto">
                   <Link to="/demo" className="w-full sm:w-auto">
-                     <Button size="lg" className="w-full bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
+                     <Button size="lg" className="w-full bg-white text-slate-900 dark:text-white hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
                         Book a Live Demo
                      </Button>
                   </Link>

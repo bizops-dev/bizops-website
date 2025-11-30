@@ -39,7 +39,7 @@ const CapabilityPage: React.FC = () => {
             <Typography variant="h1" as="h1" className="font-bold leading-tight">{data.subtitle}</Typography>
             <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{data.description}</Typography>
             <Link to="/demo">
-               <Button size="lg" className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100">Download Technical Sheet</Button>
+               <Button size="lg" className="bg-white text-slate-900 dark:text-white hover:bg-slate-100">Download Technical Sheet</Button>
             </Link>
          </Container>
       </section>

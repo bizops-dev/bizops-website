@@ -198,7 +198,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
                      <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
                      <Link to="/demo" className="relative z-10 w-full mt-auto">
-                        <Button fullWidth className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
+                        <Button fullWidth className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                      </Link>
                   </div>
                </CardSlider>
@@ -225,7 +225,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
                   <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
                   <Link to="/demo" className="relative z-10 w-full mt-auto">
-                     <Button fullWidth className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
+                     <Button fullWidth className="bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                   </Link>
                </div>
             </Grid>
@@ -331,7 +331,7 @@ const WhyBizOpsPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-300">Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.</Typography>
             <Stack direction="vertical" gap={6} className="justify-center">
                <Link to="/demo">
-                  <Button size="lg" className="h-14 px-8 bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>
+                  <Button size="lg" className="h-14 px-8 bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>
                </Link>
                <Link to="/needs-analysis">
                   <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-slate-900 dark:text-white hover:bg-white/10 font-bold text-lg w-full sm:w-auto">Jadwalkan Audit Kebutuhan</Button>

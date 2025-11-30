@@ -179,7 +179,7 @@ const ManagedServicesPage: React.FC = () => {
                      ))}
                   </ul>
                   
-                  <Button className=" bg-slate-900 dark: bg-white  text-white dark:text-white dark:text-white dark: text-white hover:bg-slate-800 dark:hover:bg-slate-100 rounded-xl px-8 h-12">
+                  <Button className="bg-slate-900 dark: bg-white text-slate-900 dark:text-white text-white hover:bg-slate-800 dark:hover:bg-slate-100 rounded-xl px-8 h-12">
                      Pelajari Standar Kualitas Kami
                   </Button>
                </div>

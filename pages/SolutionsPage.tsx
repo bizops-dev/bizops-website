@@ -177,7 +177,7 @@ const SolutionsPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-400">Jangan buang waktu menebak. Diskusikan kompleksitas alur bisnis Anda dengan spesialis industri kami (Bukan sekadar sales).</Typography>
             <Stack direction="vertical" gap={4} className="justify-center">
                <Link to="/contact">
-                  <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 dark:text-slate-900 dark:text-white border-none transition-all hover:scale-105">
+                  <BouncyButton className="h-16 px-10 text-xl shadow-xl shadow-white/5 bg-white hover:bg-slate-200 text-slate-900 dark:text-white border-none transition-all hover:scale-105">
                      Jadwalkan Audit Gratis
                   </BouncyButton>
                </Link>

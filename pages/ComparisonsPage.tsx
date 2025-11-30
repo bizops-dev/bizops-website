@@ -280,7 +280,7 @@ const ComparisonsPage: React.FC = () => {
                                    <Typography variant="body" className="text-slate-400 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
                                    <Button 
                                       onClick={() => navigate('/tools/roi-calculator')}
-                                      className="bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"
+                                      className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"
                                       size="lg"
                                    >
                                       <Calculator className="w-4 h-4 mr-2" /> Hitung Nominal Kerugian

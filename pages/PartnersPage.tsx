@@ -374,7 +374,7 @@ const PartnersPage: React.FC = () => {
             </Stack>
 
             {/* Results */}
-            <div className="lg:col-span-7  bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark: text-slate-900 dark:text-slate-900 dark:text-white ">
+            <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark: dark:text-white">
                
                <div className="mb-8">
                   <Typography variant="h3" as="h3">Snapshot Profitabilitas</Typography>

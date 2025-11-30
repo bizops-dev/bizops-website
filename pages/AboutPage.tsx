@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <a href="https://divistant.com/our-profile" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
                 Lihat Profil Lengkap Divistant <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
             </a>

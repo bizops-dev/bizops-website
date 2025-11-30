@@ -56,7 +56,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             </div>
 
             <div className="relative z-10">
-               <div className="w-16 h-16 bg-white text-slate-900 dark:text-slate-900 dark:text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
+               <div className="w-16 h-16 bg-white text-slate-900 dark:text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
@@ -226,7 +226,7 @@ const CustomerPage: React.FC = () => {
             <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">
                <Link to="/demo">
-                  <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-blue-50 font-bold shadow-xl">
+                  <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-slate-900 dark:text-white hover:bg-blue-50 font-bold shadow-xl">
                      Start Transformation
                   </Button>
                </Link>

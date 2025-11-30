@@ -244,7 +244,7 @@ const UseCasesPage: React.FC = () => {
                         <Typography variant="h4" as="h4">Custom Solution?</Typography>
                         <Typography variant="caption" className="text-slate-400">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</Typography>
                         <Link to="/contact" className="relative z-10">
-                           <Button size="sm" className="w-full bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">
+                           <Button size="sm" className="w-full bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none font-bold">
                               Konsultasi Gratis
                            </Button>
                         </Link>

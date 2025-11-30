@@ -958,7 +958,7 @@ const AssessmentPage = () => {
                     <Button 
                       variant="primary"
                       onClick={() => setCurrentStep(prev => prev + 1)}
-                      className="ml-auto bg-white text-slate-900 dark:text-slate-900 dark:text-white hover:bg-slate-200 border-0"
+                      className="ml-auto bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-0"
                     >
                       Next Question <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
