@@ -153,7 +153,7 @@ const EventDetailPage: React.FC = () => {
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
                     <div className="w-16 flex-shrink-0 pt-1">
-                      <span className="font-mono text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors">
+                      <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors">
                         {item.time}
                       </span>
                     </div>

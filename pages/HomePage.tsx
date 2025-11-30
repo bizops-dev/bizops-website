@@ -149,7 +149,7 @@ const HomePage: React.FC = () => {
                   />
                   
                   {/* Overlay UI Badge - retained for context */}
-                  <div className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 font-mono flex items-center gap-2 shadow-lg">
+                  <div className="absolute top-4 left-4 z-30 px-3 py-1 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-md text-[10px] text-slate-300 flex items-center gap-2 shadow-lg">
                     <Lock className="w-3 h-3 text-green-400" /> bizops.id/dashboard
                   </div>
                </div>
@@ -407,7 +407,7 @@ const HomePage: React.FC = () => {
                      <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold uppercase tracking-wider">
                         Old Way #2
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Global ERP / Odoo</h3>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Global / Legacy ERP</h3>
                      <p className="text-sm text-slate-500 mb-6">Model lisensi per user. Makin banyak karyawan, makin mahal.</p>
 
                      <div className="space-y-3 mb-6">
@@ -416,12 +416,12 @@ const HomePage: React.FC = () => {
                              <span className="font-mono font-bold">~Rp 210rb<span className="text-[10px] font-normal">/user</span></span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
-                             <span className="font-semibold">Implementation</span>
-                             <span className="font-mono font-bold">$$$</span>
+                             <span className="font-semibold">Implementation Service</span>
+                             <span className="font-mono font-bold">$$$ (Extra)</span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
-                             <span className="font-semibold">Dengan Rp 3 Jt</span>
-                             <span className="font-mono font-bold">Hanya ~14 User</span>
+                             <span className="font-semibold">Maintenance</span>
+                             <span className="font-mono font-bold">~20% / year</span>
                          </div>
                      </div>
                   </div>
@@ -429,6 +429,7 @@ const HomePage: React.FC = () => {
                   <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
                      <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Total Cost for 50 Users:</p>
                      <p className="text-2xl font-bold text-slate-700 dark:text-slate-300">Rp 10.500.000<span className="text-sm font-normal text-slate-500">/bln</span></p>
+                     <p className="text-[10px] text-slate-400 mt-1">*Belum termasuk biaya implementasi & maintenance.</p>
                   </div>
                </div>
 
@@ -639,18 +640,18 @@ const HomePage: React.FC = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                               </span>
-                              <span className="text-white font-mono font-bold">All Systems Operational</span>
+                              <span className="text-white font-bold">All Systems Operational</span>
                            </div>
                         </div>
                         <div className="text-right">
                            <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">Uptime (30 Hari)</div>
-                           <div className="text-white font-mono font-bold">99.98%</div>
+                           <div className="text-white font-bold">99.98%</div>
                         </div>
                      </div>
                      
                      {/* Mock Activity Graph */}
                      <div className="space-y-4">
-                        <div className="flex justify-between text-xs text-slate-500 font-mono">
+                        <div className="flex justify-between text-xs text-slate-500">
                            <span>00:00</span>
                            <span>06:00</span>
                            <span>12:00</span>

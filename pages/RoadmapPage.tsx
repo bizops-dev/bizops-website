@@ -220,7 +220,7 @@ const RoadmapPage: React.FC = () => {
                                    {column.items.length}
                                 </span>
                              </div>
-                             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
                                 <Clock className="w-3 h-3" /> {column.period}
                              </div>
                           </div>

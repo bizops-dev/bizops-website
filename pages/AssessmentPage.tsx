@@ -930,7 +930,7 @@ const AssessmentPage = () => {
                       {categoryIcons[currentCategory]}
                       {categoryLabels[currentCategory]}
                     </span>
-                    <span className="text-slate-500 text-sm font-mono">
+                    <span className="text-slate-500 text-sm">
                       {currentStep + 1} / {totalQuestions}
                     </span>
                   </div>

@@ -80,11 +80,11 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
             {/* DEBUG MODE: Show Error Details */}
             {this.state.error && (
               <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-950 rounded-lg text-left overflow-auto max-h-60 border border-slate-200 dark:border-slate-800 w-full">
-                <p className="text-xs font-mono text-red-600 dark:text-red-400 font-bold mb-2 break-words">
+                <p className="text-xs text-red-600 dark:text-red-400 font-bold mb-2 break-words">
                   {this.state.error.toString()}
                 </p>
                 {this.state.error.stack && (
-                  <pre className="text-[10px] font-mono text-slate-500 whitespace-pre-wrap break-all">
+                  <pre className="text-[10px] text-slate-500 whitespace-pre-wrap break-all">
                     {this.state.error.stack}
                   </pre>
                 )}

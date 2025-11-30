@@ -310,7 +310,7 @@ const MigrationPage: React.FC = () => {
                      transition={{ delay: idx * 0.2 }}
                      className={`group relative bg-white dark:bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 dark:border-slate-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${item.border}`}
                    >
-                      <div className="absolute top-0 right-0 p-6 text-6xl font-bold text-slate-100 dark:text-slate-800/50 -z-10 select-none font-mono">
+                      <div className="absolute top-0 right-0 p-6 text-6xl font-bold text-slate-100 dark:text-slate-800/50 -z-10 select-none">
                         {item.step}
                       </div>
                       <div className={`w-16 h-16 ${item.bg} ${item.color} rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm`}>
@@ -403,7 +403,7 @@ const MigrationPage: React.FC = () => {
                                 <div className="py-12">
                                    <Loader2 className="w-12 h-12 text-blue-500 animate-spin mx-auto mb-6" />
                                    <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2 animate-pulse">Menganalisis Struktur...</h3>
-                                   <p className="text-sm text-slate-500 mb-6 font-mono bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded inline-block">
+                                   <p className="text-sm text-slate-500 mb-6 bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded inline-block">
                                       {fileName}
                                    </p>
                                    <div className="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -506,7 +506,7 @@ const MigrationPage: React.FC = () => {
                           <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
                              {activeSample.columns.map((col, idx) => (
                                 <tr key={idx} className="hover:bg-white dark:hover:bg-slate-800/50 transition-colors">
-                                   <td className="px-6 py-4 font-mono text-slate-700 dark:text-slate-300 font-semibold">
+                                   <td className="px-6 py-4 text-slate-700 dark:text-slate-300 font-semibold">
                                       {col.name}
                                    </td>
                                    <td className="px-6 py-4">
