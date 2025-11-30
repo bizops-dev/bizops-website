@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Card from './Card';
+import OptimizedImage from './OptimizedImage'; // Imported OptimizedImage
 
 const meta = {
   title: 'Components/Card',
@@ -73,10 +74,12 @@ export const NoPadding: Story = {
   args: {
     padding: 'none',
     children: (
-      <img 
+      <OptimizedImage 
         src="https://via.placeholder.com/400x200" 
         alt="Placeholder" 
         className="w-full h-auto"
+        width={400}
+        height={200}
       />
     ),
   },

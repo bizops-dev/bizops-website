@@ -3,6 +3,7 @@ import { X, Send, CheckCircle, Calendar, MessageSquare, Video, Shield, Users, Bu
 import Button from './Button';
 import { Input, Select, TextArea } from './Form';
 import { motion, AnimatePresence } from 'framer-motion';
+import OptimizedImage from './OptimizedImage'; // Imported OptimizedImage
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -132,7 +133,13 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   <div className="flex -space-x-3 mb-3">
                      {[1,2,3,4].map(i => (
                         <div key={i} className="w-8 h-8 rounded-full border-2 border-slate-50 dark:border-slate-900 bg-slate-200">
-                           <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" className="w-full h-full rounded-full" />
+                           <OptimizedImage 
+                              src={`https://i.pravatar.cc/100?img=${i+10}`} 
+                              alt="User" 
+                              className="w-full h-full rounded-full" 
+                              width={32}
+                              height={32}
+                           />
                         </div>
                      ))}
                      <div className="w-8 h-8 rounded-full border-2 border-slate-50 dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">

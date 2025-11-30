@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { comparisonsData } from '../data/content';
+import { comparisonsData } from '../data/comparisonData';
 import Button from '../components/Button';
 import { X, Check, XCircle, CheckCircle, ArrowRight, Layers, Smartphone, Server } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -22,31 +22,30 @@ const ComparePage: React.FC = () => {
 
   return (
     <div className="pt-16 pb-24 bg-slate-50">
-      <SEO title={data.title} description={data.subtitle} />
+      <SEO title={`BizOps vs ${data.name}`} description={data.description} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
-            BizOps vs {data.competitorName}
+            BizOps vs {data.name}
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.subtitle}</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">{data.verdict}</h1>
           <p className="text-xl text-slate-600">{data.description}</p>
         </div>
 
         {/* LAYOUT 1: MATRIX (For Odoo) */}
-        {data.type === 'matrix' && (
+        {data.points && data.points.length > 0 && (
           <>
             <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-16">
-              <div className="grid grid-cols-1 md:grid-cols-4 bg-slate-900 text-white font-bold text-lg">
+              <div className="grid grid-cols-1 md:grid-cols-3 bg-slate-900 text-white font-bold text-lg">
                 <div className="p-6 md:col-span-1 hidden md:block">Aspek</div>
-                <div className="p-6 text-slate-400 bg-slate-800/50">{data.headers[1]}</div>
-                <div className="p-6 text-primary-400 bg-primary-900/20">{data.headers[2]}</div>
-                <div className="p-6 text-slate-300 bg-slate-800/50 hidden md:block">{data.headers[3]}</div>
+                <div className="p-6 text-slate-400 bg-slate-800/50">{data.name}</div>
+                <div className="p-6 text-primary-400 bg-primary-900/20">BizOps</div>
               </div>
               
               <div className="divide-y divide-slate-100">
-                {data.rows.map((row: any, idx: number) => (
+                {data.points.map((row: any, idx: number) => (
                   <div key={idx} className="grid grid-cols-1 md:grid-cols-4 p-6 items-center gap-4 hover:bg-slate-50 transition-colors">
                     <div className="font-bold text-slate-900 md:col-span-1">{row.feature}</div>
                     
@@ -72,18 +71,25 @@ const ComparePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Strategy Section (Two-Tier) */}
-            {data.strategy && (
+            {/* Verdict Section */}
+            {data.verdict && (
                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden">
                   <div className="relative z-10 max-w-3xl">
                      <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
                         <Layers className="w-6 h-6 text-primary-400" />
-                        {data.strategy.title}
+                        Verdict
                      </h2>
-                     <p className="text-lg text-slate-300 mb-8">{data.strategy.scenario}</p>
+                     <p className="text-lg text-slate-300 mb-8">{data.verdict}</p>
                      <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-6">
-                        <h3 className="font-bold text-primary-400 mb-2">The BizOps Solution:</h3>
-                        <p className="leading-relaxed">{data.strategy.solution}</p>
+                        <h3 className="font-bold text-primary-400 mb-2">Key Takeaways:</h3>
+                        <ul className="space-y-2 leading-relaxed">
+                          {data.limitations?.map((lim: string, i: number) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary-400">•</span>
+                              <span>{lim}</span>
+                            </li>
+                          ))}
+                        </ul>
                      </div>
                   </div>
                   {/* Decor */}
@@ -96,9 +102,9 @@ const ComparePage: React.FC = () => {
         )}
 
         {/* LAYOUT 2: ANALYSIS CARDS (For Build vs Buy) */}
-        {data.type === 'analysis' && (
+        {false && (
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {data.scenarios.map((scene: any, idx: number) => (
+              {[].map((scene: any, idx: number) => (
                  <div key={idx} className={`rounded-2xl p-8 border-2 ${scene.color} bg-white shadow-sm relative overflow-hidden`}>
                     <div className="flex items-center gap-3 mb-6">
                        <scene.icon className={`w-8 h-8 ${scene.iconColor}`} />
@@ -128,15 +134,15 @@ const ComparePage: React.FC = () => {
         )}
 
         {/* LAYOUT 3: COLUMNS (For SaaS Comparison) */}
-        {data.type === 'columns' && (
+        {false && (
            <div className="space-y-6 mb-16">
-              {data.features.map((feat: any, idx: number) => (
+              {[].map((feat: any, idx: number) => (
                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0">
                        <h3 className="text-lg font-bold text-slate-900">{feat.title}</h3>
                     </div>
                     <div className="md:col-span-1">
-                       <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data.competitorName}</div>
+                       <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
                        <div className="text-red-500 font-bold mb-2 flex items-center gap-2"><XCircle className="w-4 h-4" /> {feat.them}</div>
                        <p className="text-sm text-slate-600">{feat.themDesc}</p>
                     </div>

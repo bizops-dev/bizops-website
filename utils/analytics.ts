@@ -1,19 +1,31 @@
 
+import { logger } from './logger';
+
+type WebVitalMetric = {
+  name: string;
+  value: number;
+  id: string;
+};
+
+type PerformanceEntry = {
+  name?: string;
+  value?: number;
+  entryType?: string;
+};
+
 // Performance monitoring utility using PerformanceObserver
 // This helps in auditing Web Vitals (LCP, CLS, FID, INP) in real-time.
 
-export const reportWebVitals = (onPerfEntry?: (metric: any) => void) => {
+export const reportWebVitals = (onPerfEntry?: (metric: WebVitalMetric) => void) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     try {
       // Basic observers for core metrics if the browser supports it
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          // @ts-ignore
-          const metricName = entry.name;
-          // @ts-ignore
-          const value = entry.value;
-          // @ts-ignore
-          const type = entry.entryType;
+          const perfEntry = entry as PerformanceEntry;
+          const metricName = perfEntry.name;
+          const value = perfEntry.value ?? 0;
+          const type = perfEntry.entryType ?? '';
           
           onPerfEntry({
             name: type === 'largest-contentful-paint' ? 'LCP' : 
@@ -31,28 +43,26 @@ export const reportWebVitals = (onPerfEntry?: (metric: any) => void) => {
       // observer.observe({ type: 'paint', buffered: true }); // FCP
     } catch (e) {
       // Browser doesn't support PerformanceObserver
-      console.warn("BizOps Analytics: PerformanceObserver not supported");
+      logger.warn("Analytics: PerformanceObserver not supported", e);
     }
   }
 };
 
-export const logToConsole = (metric: any) => {
+export const logToConsole = (metric: WebVitalMetric) => {
   // Only log in development mode
-  if (process.env.NODE_ENV !== 'development') return;
-  
-  // Simple logger for development "Audit"
-  const thresholds = {
+  const thresholds: Record<string, number> = {
     LCP: 2500,
     FID: 100,
     CLS: 0.1,
   };
 
-  const name = metric.name as keyof typeof thresholds;
+  const name = metric.name;
   const val = metric.value;
-  const rating = val <= (thresholds[name] || 9999) ? 'Good' : 'Needs Improvement';
+  const threshold = thresholds[name] ?? 9999;
+  const rating = val <= threshold ? 'Good' : 'Needs Improvement';
   
-  console.groupCollapsed(`[BizOps Performance] ${metric.name}`);
-  console.log(`Value: ${val}`);
-  console.log(`Rating: ${rating}`);
-  console.groupEnd();
+  logger.groupCollapsed(`[BizOps Performance] ${metric.name}`);
+  logger.log(`Value: ${val}`);
+  logger.log(`Rating: ${rating}`);
+  logger.groupEnd();
 };

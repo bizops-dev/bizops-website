@@ -37,5 +37,10 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public/sw.js"
+  ]
 }

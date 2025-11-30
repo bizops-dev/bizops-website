@@ -16,15 +16,16 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   helperText?: string;
   icon?: React.ReactNode;
+  labelClassName?: string;
 }
 
-export const Input: React.FC<InputProps> = memo(({ label, error, helperText, icon, className = "", ...props }) => {
+export const Input: React.FC<InputProps> = memo(({ label, error, helperText, icon, className = "", labelClassName = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
   return (
     <div className="w-full">
-      {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{label}</label>}
+      {label && <label htmlFor={id} className={`block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 ${labelClassName}`}>{label}</label>}
       <div className="relative">
         {icon && (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -61,15 +62,16 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   helperText?: string;
   options: { value: string; label: string }[];
   icon?: React.ReactNode;
+  labelClassName?: string;
 }
 
-export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, options, icon, className = "", ...props }) => {
+export const Select: React.FC<SelectProps> = memo(({ label, error, helperText, options, icon, className = "", labelClassName = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
   return (
     <div className="w-full">
-      {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{label}</label>}
+      {label && <label htmlFor={id} className={`block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 ${labelClassName}`}>{label}</label>}
       <div className="relative">
         {icon && (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -106,15 +108,16 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   label?: string;
   error?: string;
   helperText?: string;
+  labelClassName?: string;
 }
 
-export const TextArea: React.FC<TextAreaProps> = memo(({ label, error, helperText, className = "", ...props }) => {
+export const TextArea: React.FC<TextAreaProps> = memo(({ label, error, helperText, className = "", labelClassName = "", ...props }) => {
   const id = props.id || props.name;
   const { errorId, helperId, describedBy } = getAriaIds(id, !!error, !!helperText);
 
   return (
     <div className="w-full">
-      {label && <label htmlFor={id} className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{label}</label>}
+      {label && <label htmlFor={id} className={`block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 ${labelClassName}`}>{label}</label>}
       <textarea 
         className={`w-full px-4 py-2.5 rounded-lg border bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 disabled:opacity-50 disabled:cursor-not-allowed resize-y min-h-[120px] ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : 'border-slate-300 dark:border-slate-700'} ${className}`}
         aria-invalid={!!error}
@@ -135,9 +138,10 @@ TextArea.displayName = 'TextArea';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: React.ReactNode; 
+  labelClassName?: string;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = memo(({ label, className = "", ...props }) => (
+export const Checkbox: React.FC<CheckboxProps> = memo(({ label, className = "", labelClassName = "", ...props }) => (
   <label className="flex items-start gap-3 cursor-pointer group">
     <div className="relative flex items-center mt-0.5">
       <input 
@@ -149,7 +153,7 @@ export const Checkbox: React.FC<CheckboxProps> = memo(({ label, className = "", 
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
       </svg>
     </div>
-    <span className="text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors select-none">{label}</span>
+    <span className={`text-sm text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors select-none ${labelClassName}`}>{label}</span>
   </label>
 ));
 

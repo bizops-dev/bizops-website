@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
+import OptimizedImage from '../components/OptimizedImage';
 
 const EventsPage: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -124,7 +125,66 @@ const EventsPage: React.FC = () => {
               </h2>
            </div>
 
-           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div className="md:hidden">
+              <CardSlider>
+                 {filteredEvents.map((evt, idx) => (
+                    <motion.div 
+                       key={idx} 
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: idx * 0.1 }}
+                       className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full w-[85vw] sm:w-[350px]"
+                    >
+                       {/* Image Header */}
+                       <div className="relative h-48 overflow-hidden">
+                          <OptimizedImage src={evt.image} alt={evt.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
+                             <evt.icon className="w-3 h-3" /> {evt.type}
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-60"></div>
+                       </div>
+
+                       {/* Content */}
+                       <div className="p-6 flex-1 flex flex-col">
+                          <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-bold mb-3">
+                             <Calendar className="w-4 h-4" /> {evt.formattedDate}
+                          </div>
+                          
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                             <Link to={`/events/${evt.slug}`}>{evt.title}</Link>
+                          </h3>
+                          
+                          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                             {evt.desc}
+                          </p>
+
+                          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                             <div className="flex -space-x-2">
+                                {/* Dummy avatars for participants */}
+                                {[1,2,3].map(i => (
+                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500">
+                                      {String.fromCharCode(64 + i)}
+                                   </div>
+                                ))}
+                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                   +40
+                                </div>
+                             </div>
+                             
+                             <Link to={`/events/${evt.slug}`}>
+                                <Button size="sm" className="group-hover:bg-primary-600 transition-colors">
+                                   Daftar <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                             </Link>
+                          </div>
+                       </div>
+                    </motion.div>
+                 ))}
+              </CardSlider>
+           </div>
+
+           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredEvents.map((evt, idx) => (
                  <motion.div 
                     key={idx} 
@@ -136,7 +196,7 @@ const EventsPage: React.FC = () => {
                  >
                     {/* Image Header */}
                     <div className="relative h-48 overflow-hidden">
-                       <img src={evt.image} alt={evt.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                       <OptimizedImage src={evt.image} alt={evt.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                        <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold uppercase tracking-wider">
                           <evt.icon className="w-3 h-3" /> {evt.type}
                        </div>
@@ -179,7 +239,7 @@ const EventsPage: React.FC = () => {
                     </div>
                  </motion.div>
               ))}
-           </CardSlider>
+           </div>
         </div>
 
         {/* On-Demand Library Section */}
@@ -199,7 +259,32 @@ const EventsPage: React.FC = () => {
                  </div>
               </div>
 
-              <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="md:hidden">
+                 <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                    {eventsData.recordings.map((rec, idx) => (
+                       <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
+                          <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
+                             {/* Mock Thumbnail */}
+                             <div className="absolute inset-0 bg-slate-800"></div>
+                             <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />
+                             <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/70 rounded text-[10px] font-bold">
+                                {rec.duration}
+                             </div>
+                          </div>
+                          <h3 className="font-bold text-white mb-2 leading-snug group-hover:text-primary-400 transition-colors line-clamp-2">
+                             {rec.title}
+                          </h3>
+                          <div className="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                             <span>{rec.views} views</span>
+                             <span>•</span>
+                             <span>Webinar Recording</span>
+                          </div>
+                       </div>
+                    ))}
+                 </CardSlider>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-3 gap-6">
                  {eventsData.recordings.map((rec, idx) => (
                     <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
                        <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
@@ -220,7 +305,7 @@ const EventsPage: React.FC = () => {
                        </div>
                     </div>
                  ))}
-              </CardSlider>
+              </div>
               
               <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
                  <h3 className="text-xl font-bold mb-2">Unlock Full Access</h3>

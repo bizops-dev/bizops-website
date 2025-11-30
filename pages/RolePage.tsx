@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import { Activity, ArrowRight, TrendingUp, AlertTriangle, CheckCircle, BarChart2, Lock, PieChart, Users, DollarSign, RefreshCw } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
+import CardSlider from '../components/CardSlider'; // Imported CardSlider
 
 // Motion Components
 import { StaggeredText } from '../components/ui/motion-text';
@@ -38,7 +39,7 @@ const RolePage: React.FC = () => {
       <SEO title={data.metaTitle} description={data.metaDesc} />
 
       {/* 1. HERO (Dark Enterprise Style - Premium Upgrade) */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#020617] text-white overflow-hidden">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#020617] text-white overflow-hidden">
         {/* Dynamic Lighting */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-blue-900/20 to-transparent pointer-events-none"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -57,7 +58,7 @@ const RolePage: React.FC = () => {
               <span className="text-sm font-medium text-slate-200 tracking-wide uppercase">Role-Based Experience</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight font-sans drop-shadow-2xl">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight font-sans drop-shadow-2xl">
              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
                {data.heroHeadline}
              </span>
@@ -68,7 +69,7 @@ const RolePage: React.FC = () => {
              initial="hidden"
              animate="visible"
              transition={{ delay: 0.4 }}
-             className="text-xl md:text-3xl text-slate-400 mb-12 leading-relaxed max-w-3xl mx-auto font-light"
+             className="text-lg md:text-3xl text-slate-400 mb-12 leading-relaxed max-w-3xl mx-auto font-light"
           >
              "{data.heroSub}"
           </motion.p>
@@ -79,10 +80,10 @@ const RolePage: React.FC = () => {
              transition={{ delay: 0.6 }}
              className="flex flex-col sm:flex-row justify-center gap-6"
           >
-            <Link to="/demo">
+            <Link to="/demo" className="w-full sm:w-auto">
                <div className="group relative">
                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                 <button className="relative h-16 px-10 bg-slate-950 ring-1 ring-white/10 rounded-xl leading-none flex items-center">
+                 <button className="relative h-16 px-10 bg-slate-950 ring-1 ring-white/10 rounded-xl leading-none flex items-center justify-center w-full">
                    <span className="text-white font-bold text-lg">Jadwalkan Demo Personal</span>
                    <ArrowRight className="ml-3 w-5 h-5 text-primary-400 group-hover:translate-x-1 transition-transform" />
                  </button>
@@ -254,83 +255,86 @@ const RolePage: React.FC = () => {
       </section>
 
       {/* 3. PAIN VS GAIN (Evolution - Premium Upgrade) */}
-      <Section className="bg-[#0B1120] relative border-t border-white/5 py-24">
-         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/20 via-[#0B1120] to-[#0B1120] pointer-events-none"></div>
+      <Section className="relative border-t border-white/5 py-16 md:py-24 overflow-hidden">
+         {/* Cinematic Background */}
+         <div className="absolute inset-0 bg-[#020617]"></div>
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-[#020617] to-[#020617] pointer-events-none"></div>
+         {/* Dual Tone Ambient Glow */}
+         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+         <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px] pointer-events-none"></div>
          
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-20">
-               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="text-center mb-12 md:mb-20">
+               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
                   <RefreshCw className="w-3 h-3" /> Transformation
                </div>
                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-                  From Chaos to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]">Clarity</span>
+                  From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span>
                </h2>
                <p className="text-lg text-slate-400 max-w-2xl mx-auto">
                   Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.
                </p>
             </div>
             
-            <motion.div 
-               variants={STAGGER_CONTAINER}
-               initial="hidden"
-               whileInView="visible"
-               viewport={{ once: true }}
-               className="space-y-6 max-w-5xl mx-auto"
-            >
+            <CardSlider desktopClassName="md:block md:space-y-6" mobileItemWidth="w-[85vw] sm:w-[400px]">
                {data.challenges?.map((item: any, idx: number) => (
                   <motion.div 
                      key={idx}
                      variants={FADE_UP_VARIANTS}
-                     className="relative grid md:grid-cols-2 gap-0 bg-[#1E293B]/30 border border-white/5 rounded-3xl overflow-hidden group hover:border-white/10 transition-colors duration-500"
+                     className="relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden group transition-all duration-500 h-full shadow-2xl shadow-black/50 ring-1 ring-white/10 hover:ring-white/20"
                   >
                      {/* Connector Arrow (Desktop) */}
-                     <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#0B1120] border border-white/10 rounded-full items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                        <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+                     <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-[#0F172A] border-4 border-[#020617] rounded-full items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <ArrowRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
                      </div>
 
-                     {/* Pain Side (Left) */}
-                     <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-white/5 bg-gradient-to-br from-red-500/10 via-red-900/5 to-transparent relative overflow-hidden group-hover:from-red-500/20 transition-colors duration-500">
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/20 blur-[80px] -mr-10 -mt-10 rounded-full pointer-events-none mix-blend-screen"></div>
+                     {/* Pain Side (Left) - Darker, Red-tinted Chaos */}
+                     <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/5 bg-gradient-to-br from-[#1a0505] via-[#0f0303] to-[#050101] relative overflow-hidden group-hover:from-[#2b0a0a] transition-colors duration-500 h-full flex flex-col">
+                        {/* Chaos Noise/Texture */}
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/5 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
                         
-                        <div className="relative z-10">
+                        <div className="relative z-10 flex-grow">
                            <div className="flex items-center gap-3 mb-6">
-                              <div className="p-2 bg-red-500/20 border border-red-500/30 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-                                 <AlertTriangle className="w-5 h-5 text-red-400" />
+                              <div className="p-2 bg-red-500/10 border border-red-500/20 rounded-lg shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                                 <AlertTriangle className="w-5 h-5 text-red-500" />
                               </div>
-                              <span className="text-red-400 font-bold uppercase tracking-wider text-xs drop-shadow-md">The Problem</span>
+                              <span className="text-red-500/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
                            </div>
-                           <h3 className="text-xl md:text-2xl font-extrabold text-white mb-4 leading-snug group-hover:text-red-100 transition-colors drop-shadow-lg">"{item.pain}"</h3>
-                           <p className="text-slate-200 leading-relaxed text-sm font-medium drop-shadow-md">
+                           <h3 className="text-xl md:text-2xl font-extrabold text-red-50/90 mb-4 leading-snug group-hover:text-white transition-colors">"{item.pain}"</h3>
+                           <p className="text-red-200/50 leading-relaxed text-sm font-medium">
                               {item.context}
                            </p>
                         </div>
                      </div>
 
-                     {/* Gain Side (Right) */}
-                     <div className="p-8 md:p-10 bg-gradient-to-bl from-emerald-500/10 via-emerald-900/5 to-transparent relative overflow-hidden group-hover:from-emerald-500/20 transition-colors duration-500">
-                        <div className="absolute bottom-0 left-0 w-40 h-40 bg-emerald-500/20 blur-[80px] -ml-10 -mb-10 rounded-full pointer-events-none mix-blend-screen"></div>
+                     {/* Gain Side (Right) - Bright, Emerald-tinted Clarity */}
+                     <div className="p-8 md:p-12 bg-gradient-to-bl from-[#022c22] via-[#011c16] to-[#050101] relative overflow-hidden group-hover:from-[#033d2e] transition-colors duration-500 h-full flex flex-col">
+                        {/* Clarity Texture */}
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 to-transparent opacity-50"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] -ml-20 -mb-20 pointer-events-none"></div>
 
-                        <div className="relative z-10">
+                        <div className="relative z-10 flex-grow">
                            <div className="flex items-center gap-3 mb-6 justify-end md:justify-start">
-                              <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">The Solution</span>
-                              <div className="p-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg order-1 md:order-2 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                              <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs order-2 md:order-1 drop-shadow-md">After BizOps</span>
+                              <div className="p-2 bg-emerald-500/20 border border-emerald-500/30 rounded-lg order-1 md:order-2 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                                  <CheckCircle className="w-5 h-5 text-emerald-400" />
                               </div>
                            </div>
-                           <h3 className="text-xl md:text-2xl font-extrabold text-white mb-4 text-right md:text-left group-hover:text-emerald-100 transition-colors drop-shadow-lg">{item.gain}</h3>
-                           <p className="text-slate-200 leading-relaxed text-sm text-right md:text-left font-medium drop-shadow-md">
+                           <h3 className="text-xl md:text-2xl font-extrabold text-white mb-4 text-right md:text-left group-hover:text-emerald-50 transition-colors drop-shadow-lg">{item.gain}</h3>
+                           <p className="text-emerald-100/70 leading-relaxed text-sm text-right md:text-left font-medium">
                               {item.gainDesc}
                            </p>
                         </div>
                      </div>
                   </motion.div>
                ))}
-            </motion.div>
+            </CardSlider>
          </div>
       </Section>
 
       {/* 4. CTA (Final Push - Premium Style) */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-[#020617]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-[#020617]"></div>
@@ -364,13 +368,13 @@ const RolePage: React.FC = () => {
            </p>
 
            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Link to="/demo">
-                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2">
+              <Link to="/demo" className="w-full sm:w-auto">
+                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Sekarang <ArrowRight className="w-5 h-5" />
                  </BouncyButton>
               </Link>
-              <Link to="/contact">
-                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md">
+              <Link to="/contact" className="w-full sm:w-auto">
+                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
                     Hubungi Sales
                  </Button>
               </Link>

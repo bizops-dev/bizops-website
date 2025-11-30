@@ -1,4 +1,4 @@
-import { Wrench, Code, GraduationCap, Headphones, Compass, Lightbulb, Settings } from 'lucide-react';
+import { Wrench, Code, GraduationCap, Headphones, Compass, Lightbulb, Settings, Building } from 'lucide-react';
 import { ServiceData } from '../types';
 
 // --- SERVICES DATA ---
@@ -74,6 +74,30 @@ export const servicesData: Record<string, ServiceData> = {
       "Automated Test Scripts"
     ],
     cta: "Konsultasi Teknis Gratis"
+  },
+  'managed-business-services': {
+    title: "Enterprise Managed Services",
+    subtitle: "Your Virtual Head Office. Fokus pada Inti Bisnis.",
+    description: "Layanan pengelolaan operasional end-to-end yang didukung oleh jaringan konsultan ahli di bidang Finance, HR, Legal, dan IT. Kami tidak hanya menyediakan software, tapi juga SDM profesional untuk menjalankannya.",
+    icon: Building,
+    methodology: [
+      { title: "Needs Assessment", desc: "Audit mendalam kebutuhan operasional non-core Anda." },
+      { title: "Expert Matching", desc: "Menghubungkan Anda dengan Top Tier Partner (Konsultan Pajak, HR Firm, Legal) yang terverifikasi." },
+      { title: "Integrated Workflow", desc: "Partner bekerja langsung di atas platform BizOps Anda untuk transparansi total." },
+      { title: "Performance Review", desc: "Monitoring KPI operasional berkala oleh Account Manager BizOps." }
+    ],
+    benefits: [
+      { title: "Cost Efficiency", desc: "Ubah Fixed Cost (Gaji Staff Ahli) menjadi Variable Cost sesuai kebutuhan." },
+      { title: "Expertise on Demand", desc: "Akses ke CFO, CHRO, dan Legal Counsel berpengalaman tanpa harus merekrut full-time." },
+      { title: "Compliance Guarantee", desc: "Operasional yang selalu patuh pada regulasi terbaru berkat pantauan ahli." }
+    ],
+    deliverables: [
+      "Dedicated Account Manager",
+      "Monthly Financial/HR/Ops Reports",
+      "Quarterly Strategic Review",
+      "Access to Expert Network"
+    ],
+    cta: "Konsultasi Kebutuhan"
   },
   'training': {
     title: "Training & Change Management",

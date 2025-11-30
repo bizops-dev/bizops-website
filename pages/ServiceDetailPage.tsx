@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import CardSlider from '../components/CardSlider'; // Imported CardSlider
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { 
   ArrowLeft, AlertCircle, CheckCircle2, ShieldCheck, 
@@ -212,7 +213,7 @@ const ServiceDetailPage: React.FC = () => {
                {/* Vertical Line for Desktop */}
                <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 hidden md:block"></div>
 
-               <div className="space-y-12">
+               <CardSlider desktopClassName="md:block md:space-y-12" mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {data.methodology.map((item, idx) => {
                      const isEven = idx % 2 === 0;
                      return (
@@ -222,16 +223,16 @@ const ServiceDetailPage: React.FC = () => {
                            whileInView={{ opacity: 1, y: 0 }}
                            viewport={{ once: true }}
                            transition={{ delay: idx * 0.1 }}
-                           className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}
+                           className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''} h-full`}
                         >
                            {/* Content Side */}
-                           <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'}`}>
-                              <SpotlightCard className="p-8 rounded-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-colors">
+                           <div className={`flex-1 w-full ${isEven ? 'md:pl-16' : 'md:pr-16 md:text-right'} h-full`}>
+                              <SpotlightCard className="p-8 rounded-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-colors h-full flex flex-col">
                                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                                     <span className="text-primary-500 mr-2 md:hidden">Step {idx + 1}:</span>
                                     {item.title}
                                  </h4>
-                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                                     {item.desc}
                                  </p>
                               </SpotlightCard>
@@ -247,7 +248,7 @@ const ServiceDetailPage: React.FC = () => {
                         </motion.div>
                      );
                   })}
-               </div>
+               </CardSlider>
             </div>
          </div>
       </Section>
@@ -265,7 +266,7 @@ const ServiceDetailPage: React.FC = () => {
                  </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <CardSlider desktopClassName="md:grid md:grid-cols-2 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                  {data.deliverables.map((item, idx) => (
                     <motion.div 
                       key={idx}
@@ -273,7 +274,7 @@ const ServiceDetailPage: React.FC = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.05 }}
-                      className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300 group"
+                      className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300 group h-full"
                     >
                        <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                           <FileText className="w-6 h-6" />
@@ -281,13 +282,13 @@ const ServiceDetailPage: React.FC = () => {
                        <span className="font-bold text-slate-900 dark:text-white text-lg">{item}</span>
                     </motion.div>
                  ))}
-              </div>
+              </CardSlider>
            </div>
         </Section>
       )}
 
       {/* --- CTA SECTION (Consistent with ServicesPage) --- */}
-      <Section className="py-24 bg-white dark:bg-slate-950">
+      <Section className="py-16 md:py-24 bg-white dark:bg-slate-950">
         <motion.div 
            initial={{ opacity: 0, scale: 0.98 }}
            whileInView={{ opacity: 1, scale: 1 }}

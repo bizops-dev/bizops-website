@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
 
 const DownloadPage: React.FC = () => {
   return (
@@ -159,8 +160,42 @@ const DownloadPage: React.FC = () => {
                </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+            <div className="md:hidden">
+               <CardSlider
+                  mobileItemWidth="w-[85vw] sm:w-[350px]"
+               >
+                  <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
+                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+                        <WifiOff className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Offline-First Mode</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
+                     </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
+                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                        <Fingerprint className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Biometric Security</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
+                     </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
+                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                        <Bell className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Instant Push Notif</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.
+                     </p>
+                  </div>
+               </CardSlider>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-3 gap-8">
+               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
                      <WifiOff className="w-7 h-7" />
                   </div>
@@ -169,7 +204,7 @@ const DownloadPage: React.FC = () => {
                      Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.
                   </p>
                </div>
-               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                      <Fingerprint className="w-7 h-7" />
                   </div>
@@ -178,7 +213,7 @@ const DownloadPage: React.FC = () => {
                      Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.
                   </p>
                </div>
-               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+               <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
                      <Bell className="w-7 h-7" />
                   </div>

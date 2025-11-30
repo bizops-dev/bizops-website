@@ -7,6 +7,8 @@ import SEO from '../components/SEO';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import Section from '../components/Section';
 
+import CardSlider from '../components/CardSlider';
+
 // --- Enhanced Spotlight Card ---
 const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
   const mouseX = useMotionValue(0);
@@ -166,10 +168,24 @@ const CustomerPage: React.FC = () => {
 
       {/* --- STORIES LIST --- */}
       <div className="relative z-20 -mt-20">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 space-y-12">
-            {customerStories.map((story, idx) => (
-               <StoryCard key={idx} story={story} idx={idx} />
-            ))}
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+            {/* Mobile Slider */}
+            <div className="md:hidden">
+               <CardSlider 
+                  mobileItemWidth="w-[90vw] sm:w-[600px]"
+               >
+                  {customerStories.map((story, idx) => (
+                     <StoryCard key={idx} story={story} idx={idx} />
+                  ))}
+               </CardSlider>
+            </div>
+
+            {/* Desktop Stack */}
+            <div className="hidden md:block space-y-12">
+               {customerStories.map((story, idx) => (
+                  <StoryCard key={idx} story={story} idx={idx} />
+               ))}
+            </div>
          </div>
       </div>
       

@@ -3,6 +3,8 @@ import Button from '../components/Button';
 import { Copy, Check, FileText, Download, Type, Palette, Image as ImageIcon, Mail, ExternalLink, ArrowRight, X, Globe } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import OptimizedImage from '../components/OptimizedImage';
+import CardSlider from '../components/CardSlider';
 
 const MediaKitPage: React.FC = () => {
   const [copied, setCopied] = React.useState<string | null>(null);
@@ -184,8 +186,88 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
            
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              <motion.div whileHover={{ y: -5 }} className="group">
+           <div className="md:hidden">
+              <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                 <motion.div whileHover={{ y: -5 }} className="group h-full">
+                    <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
+                       <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
+                    </div>
+                    <div className="flex justify-between items-center px-2">
+                       <div>
+                          <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
+                          <div className="text-xs text-slate-500">Brand Primary</div>
+                       </div>
+                       <button 
+                         onClick={() => copyToClipboard('#2563EB', 'c1')} 
+                         className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                       >
+                          {copied === 'c1' ? <Check className="w-3 h-3 text-green-500" /> : '#2563EB'}
+                          {copied !== 'c1' && <Copy className="w-3 h-3" />}
+                       </button>
+                    </div>
+                 </motion.div>
+
+                 <motion.div whileHover={{ y: -5 }} className="group h-full">
+                    <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
+                        <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
+                    </div>
+                    <div className="flex justify-between items-center px-2">
+                       <div>
+                          <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
+                          <div className="text-xs text-slate-500">Backgrounds / Text</div>
+                       </div>
+                       <button 
+                         onClick={() => copyToClipboard('#0F172A', 'c2')} 
+                         className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                       >
+                          {copied === 'c2' ? <Check className="w-3 h-3 text-green-500" /> : '#0F172A'}
+                          {copied !== 'c2' && <Copy className="w-3 h-3" />}
+                       </button>
+                    </div>
+                 </motion.div>
+
+                 <motion.div whileHover={{ y: -5 }} className="group h-full">
+                    <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
+                        <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
+                    </div>
+                    <div className="flex justify-between items-center px-2">
+                       <div>
+                          <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
+                          <div className="text-xs text-slate-500">Positive Actions</div>
+                       </div>
+                       <button 
+                         onClick={() => copyToClipboard('#10B981', 'c3')} 
+                         className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                       >
+                          {copied === 'c3' ? <Check className="w-3 h-3 text-green-500" /> : '#10B981'}
+                          {copied !== 'c3' && <Copy className="w-3 h-3" />}
+                       </button>
+                    </div>
+                 </motion.div>
+
+                 <motion.div whileHover={{ y: -5 }} className="group h-full">
+                    <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
+                        <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
+                    </div>
+                    <div className="flex justify-between items-center px-2">
+                       <div>
+                          <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
+                          <div className="text-xs text-slate-500">Alerts / Attention</div>
+                       </div>
+                       <button 
+                         onClick={() => copyToClipboard('#F59E0B', 'c4')} 
+                         className="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center gap-2"
+                       >
+                          {copied === 'c4' ? <Check className="w-3 h-3 text-green-500" /> : '#F59E0B'}
+                          {copied !== 'c4' && <Copy className="w-3 h-3" />}
+                       </button>
+                    </div>
+                 </motion.div>
+              </CardSlider>
+           </div>
+           
+           <div className="hidden md:grid md:grid-cols-4 gap-8">
+              <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                  </div>
@@ -204,7 +286,7 @@ const MediaKitPage: React.FC = () => {
                  </div>
               </motion.div>
 
-              <motion.div whileHover={{ y: -5 }} className="group">
+              <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                  </div>
@@ -223,7 +305,7 @@ const MediaKitPage: React.FC = () => {
                  </div>
               </motion.div>
 
-              <motion.div whileHover={{ y: -5 }} className="group">
+              <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                  </div>
@@ -242,7 +324,7 @@ const MediaKitPage: React.FC = () => {
                  </div>
               </motion.div>
 
-              <motion.div whileHover={{ y: -5 }} className="group">
+              <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                  </div>
@@ -271,13 +353,13 @@ const MediaKitPage: React.FC = () => {
                     <Type className="w-6 h-6" />
                  </div>
                  <div>
-                    <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Typography</h2>
-                    <p className="text-slate-500 dark:text-slate-400">Inter (Google Fonts) untuk keterbacaan UI.</p>
-                 </div>
+                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Typography</h2>
+                 <p className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</p>
               </div>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-                 BizOps menggunakan typeface <strong>Inter</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.
-              </p>
+           </div>
+           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+              BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.
+           </p>
               <div className="space-y-6">
                  <div>
                     <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
@@ -381,7 +463,7 @@ const MediaKitPage: React.FC = () => {
               
               <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-sm w-full">
                  <div className="flex items-center gap-4 mb-6">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="PR Contact" className="w-16 h-16 rounded-full border-2 border-indigo-400" />
+                    <OptimizedImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="PR Contact" className="w-16 h-16 rounded-full border-2 border-indigo-400 object-cover" />
                     <div>
                        <div className="font-bold text-white text-lg">Sarah Jenkins</div>
                        <div className="text-indigo-300 text-sm">Head of Communications</div>

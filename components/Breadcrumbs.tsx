@@ -5,9 +5,10 @@ import { ChevronRight, Home } from 'lucide-react';
 
 interface BreadcrumbProps {
   items?: { label: string; path: string }[];
+  className?: string;
 }
 
-const Breadcrumbs: React.FC<BreadcrumbProps> = ({ items }) => {
+const Breadcrumbs: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
   const location = useLocation();
   
   // Default generation if no items provided
@@ -45,7 +46,7 @@ const Breadcrumbs: React.FC<BreadcrumbProps> = ({ items }) => {
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
-      <nav aria-label="Breadcrumb" className="flex mb-6 text-sm text-slate-500 animate-fade-in-up">
+      <nav aria-label="Breadcrumb" className={`flex mb-6 text-sm text-slate-500 animate-fade-in-up ${className}`}>
         <ol className="flex items-center space-x-2">
           <li>
             <Link to="/" className="hover:text-primary-600 flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500 rounded p-1">

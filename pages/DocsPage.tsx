@@ -93,7 +93,33 @@ const DocsPage: React.FC = () => {
         
         {/* --- USER GUIDES --- */}
         <div className="mb-24">
-           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="md:hidden">
+              <CardSlider>
+                 {docsData.categories.map((cat, idx) => (
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="h-full w-[85vw] sm:w-[350px]"
+                    >
+                      <Card className="h-full hover:border-primary-500/50 dark:hover:border-primary-500/50 group bg-white dark:bg-slate-900/80 backdrop-blur-sm" hoverEffect>
+                         <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-primary-500/30">
+                            <cat.icon className="w-6 h-6" />
+                         </div>
+                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cat.title}</h3>
+                         <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
+                         <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
+                            Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
+                         </div>
+                      </Card>
+                    </motion.div>
+                 ))}
+              </CardSlider>
+           </div>
+
+           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {docsData.categories.map((cat, idx) => (
                  <motion.div 
                    key={idx}
@@ -115,7 +141,7 @@ const DocsPage: React.FC = () => {
                    </Card>
                  </motion.div>
               ))}
-           </CardSlider>
+           </div>
         </div>
 
         {/* --- DEVELOPER PORTAL --- */}
@@ -222,7 +248,50 @@ const DocsPage: React.FC = () => {
              <p className="text-slate-600 dark:text-slate-400">Our support team and community are here for you.</p>
            </div>
            
-           <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div className="md:hidden">
+              <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                 <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
+                    <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
+                       <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                          <MessageSquare className="w-8 h-8" />
+                       </div>
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Developer Community</h3>
+                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
+                          Join 2,000+ developers. Discuss API integration, share custom scripts, and get help.
+                       </p>
+                       <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm">Join Discord &rarr;</span>
+                    </Card>
+                 </a>
+                 
+                 <Link to="/roadmap" className="block h-full">
+                    <Card className="h-full flex flex-col items-center text-center hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-300" hoverEffect>
+                       <div className="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                          <Zap className="w-8 h-8" />
+                       </div>
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Feature Requests</h3>
+                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
+                          Missing a feature? Submit a request or vote on our public roadmap.
+                       </p>
+                       <span className="text-amber-600 dark:text-amber-400 font-bold text-sm">View Roadmap &rarr;</span>
+                    </Card>
+                 </Link>
+                 
+                 <Link to="/contact" className="block h-full">
+                    <Card className="h-full flex flex-col items-center text-center hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300" hoverEffect>
+                       <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                          <Shield className="w-8 h-8" />
+                       </div>
+                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Premium Support</h3>
+                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-1">
+                          Priority support channel for Enterprise and Partner plans. 24/7 SLAs available.
+                       </p>
+                       <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
+                    </Card>
+                 </Link>
+              </CardSlider>
+           </div>
+
+           <div className="hidden md:grid md:grid-cols-3 gap-6">
               <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
                     <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
@@ -261,7 +330,7 @@ const DocsPage: React.FC = () => {
                     <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
                  </Card>
               </Link>
-           </CardSlider>
+           </div>
         </div>
 
       </div>

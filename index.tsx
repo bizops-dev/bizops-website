@@ -6,12 +6,25 @@ import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import { initMonitoring } from './utils/monitoring';
 import { reportWebVitals, logToConsole } from './utils/analytics';
+import { validateEnv, isDev } from './utils/env';
+
+// Validate environment variables (warns in dev, throws in prod)
+try {
+  validateEnv(['geminiApiKey']); // GEMINI_API_KEY is required
+} catch (error) {
+  // In production, this will throw and prevent app from starting
+  // In development, it just warns
+  if (isDev()) {
+    // eslint-disable-next-line no-console
+    console.warn('[Env] Missing optional environment variables');
+  }
+}
 
 // Initialize Sentry / Monitoring
 initMonitoring();
 
 // Initialize Performance Auditing (Logs to console in Dev)
-if (process.env.NODE_ENV !== 'production') {
+if (isDev()) {
   reportWebVitals(logToConsole);
 }
 

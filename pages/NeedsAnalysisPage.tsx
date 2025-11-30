@@ -50,6 +50,7 @@ import {
   serviceSolutions
 } from '../data/needsAnalysisData';
 import { useNavigate } from 'react-router-dom';
+import { logger } from '../utils/logger';
 
 type StepType = 'intro' | 'context' | 'tech-stack' | 'operational-context' | 'pain-points' | 'goals' | 'expectations' | 'analyzing' | 'result';
 
@@ -198,7 +199,7 @@ const NeedsAnalysisPage = () => {
 
   const handleFinish = () => {
     // Here you would typically send data to backend/CRM
-    console.log("Lead Data:", contextData); 
+    logger.log("Lead Data:", contextData); 
     setStep('analyzing');
     setTimeout(() => {
       setStep('result');
@@ -354,7 +355,7 @@ const NeedsAnalysisPage = () => {
                   value={contextData.company}
                   onChange={(e) => setContextData({...contextData, company: e.target.value})}
                   autoFocus
-                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                   placeholder="cth. PT Maju Bersama"
                 />
               </div>
@@ -364,7 +365,7 @@ const NeedsAnalysisPage = () => {
                   type="text" 
                   value={contextData.name}
                   onChange={(e) => setContextData({...contextData, name: e.target.value})}
-                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                   placeholder="cth. Budi Santoso"
                 />
               </div>
@@ -379,7 +380,7 @@ const NeedsAnalysisPage = () => {
                   type="email" 
                   value={contextData.email}
                   onChange={(e) => setContextData({...contextData, email: e.target.value})}
-                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                   placeholder="budi@perusahaan.com"
                 />
               </div>
@@ -391,7 +392,7 @@ const NeedsAnalysisPage = () => {
                   type="tel" 
                   value={contextData.phone}
                   onChange={(e) => setContextData({...contextData, phone: e.target.value})}
-                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none"
+                  className="w-full bg-slate-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-blue-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                   placeholder="0812..."
                 />
               </div>

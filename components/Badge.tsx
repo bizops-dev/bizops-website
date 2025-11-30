@@ -1,12 +1,25 @@
 
 import React, { memo } from 'react';
 
-interface BadgeProps {
+/**
+ * Badge component for labels, tags, and status indicators
+ * 
+ * @example
+ * ```tsx
+ * <Badge variant="success" size="sm">Active</Badge>
+ * <Badge variant="warning">Pending</Badge>
+ * ```
+ */
+type BadgeProps = {
+  /** Badge content */
   children: React.ReactNode;
+  /** Color variant */
   variant?: 'primary' | 'success' | 'warning' | 'danger' | 'neutral' | 'outline' | 'dark' | 'outline-white';
+  /** Additional CSS classes */
   className?: string;
+  /** Size of the badge */
   size?: 'sm' | 'md';
-}
+};
 
 const Badge: React.FC<BadgeProps> = memo(({ children, variant = 'neutral', className = '', size = 'sm' }) => {
   const variants = {

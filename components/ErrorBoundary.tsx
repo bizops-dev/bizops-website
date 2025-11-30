@@ -1,8 +1,11 @@
 
 import React, { ErrorInfo, ReactNode } from "react";
 import Button from "./Button";
-import { AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, RefreshCw, Home } from "lucide-react";
 import * as Sentry from "@sentry/react";
+import { logger } from "../utils/logger";
+import { trackError } from "../utils/tracking";
+import { isDev } from "../utils/env";
 
 interface ErrorBoundaryProps {
   children?: ReactNode;
@@ -24,7 +27,14 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
+    logger.error("Uncaught error:", error, errorInfo);
+    
+    // Track error
+    trackError(error, {
+      component_stack: errorInfo.componentStack,
+      error_boundary: 'root',
+    });
+    
     // Report to Sentry if available
     try {
       Sentry.captureException(error, {
@@ -34,14 +44,12 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
           },
         },
         tags: {
-          errorBoundary: true,
+          errorBoundary: 'root',
         },
       });
     } catch (sentryError) {
       // Silently fail if Sentry is not initialized
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Sentry error reporting failed:', sentryError);
-      }
+      logger.warn('Sentry error reporting failed:', sentryError);
     }
   }
 
@@ -69,26 +77,31 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
               >
                 <RefreshCw className="w-4 h-4" /> Reload Application
               </Button>
-              <button 
+              <Button
+                variant="ghost"
                 onClick={() => window.location.href = '/'}
-                className="text-sm text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 font-medium transition-colors"
+                className="flex items-center justify-center gap-2"
               >
+                <Home className="w-4 h-4" />
                 Return to Homepage
-              </button>
+              </Button>
             </div>
 
             {/* DEBUG MODE: Show Error Details */}
-            {this.state.error && (
-              <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-950 rounded-lg text-left overflow-auto max-h-60 border border-slate-200 dark:border-slate-800 w-full">
-                <p className="text-xs text-red-600 dark:text-red-400 font-bold mb-2 break-words">
-                  {this.state.error.toString()}
-                </p>
-                {this.state.error.stack && (
-                  <pre className="text-[10px] text-slate-500 whitespace-pre-wrap break-all">
-                    {this.state.error.stack}
-                  </pre>
-                )}
-              </div>
+            {this.state.error && isDev() && (
+              <details className="mt-8 p-4 bg-slate-100 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 w-full">
+                <summary className="text-xs font-semibold text-slate-600 dark:text-slate-400 cursor-pointer mb-2">
+                  Error Details (Development Only)
+                </summary>
+                <div className="text-xs text-red-600 dark:text-red-400 font-mono break-all">
+                  <p className="mb-2">{this.state.error.toString()}</p>
+                  {this.state.error.stack && (
+                    <pre className="text-[10px] text-slate-500 whitespace-pre-wrap overflow-auto max-h-40">
+                      {this.state.error.stack}
+                    </pre>
+                  )}
+                </div>
+              </details>
             )}
           </div>
         </div>
@@ -107,18 +120,47 @@ export class SectionErrorBoundary extends React.Component<ErrorBoundaryProps, Er
     return { hasError: true, error };
   }
 
+  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    logger.error('Section Error:', error, errorInfo);
+    
+    // Track error
+    trackError(error, {
+      component_stack: errorInfo.componentStack,
+      error_boundary: 'section',
+    });
+    
+    // Report to Sentry
+    try {
+      Sentry.captureException(error, {
+        contexts: {
+          react: {
+            componentStack: errorInfo.componentStack,
+          },
+        },
+        tags: {
+          errorBoundary: 'section',
+        },
+      });
+    } catch (sentryError) {
+      logger.warn('Sentry error reporting failed:', sentryError);
+    }
+  }
+
   public render() {
     if (this.state.hasError) {
       return (
         <div className="p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
           <AlertTriangle className="w-6 h-6 text-slate-400 mx-auto mb-2" />
-          <p className="text-sm text-slate-500 mb-3">Gagal memuat bagian ini.</p>
-          <button 
-            onClick={() => this.setState({ hasError: false })}
-            className="text-xs font-bold text-primary-600 hover:underline"
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+            Gagal memuat bagian ini.
+          </p>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => this.setState({ hasError: false, error: null })}
           >
             Coba Lagi
-          </button>
+          </Button>
         </div>
       );
     }

@@ -36,7 +36,7 @@ const SolutionsPage: React.FC = () => {
       <SEO title="Solutions Overview | Solusi ERP per Industri & Role" description="Solusi ERP yang dikontekstualisasikan untuk kebutuhan spesifik industri dan peran Anda. Konstruksi, Ritel, Manufaktur, dan lainnya." />
       
       {/* 1. HERO */}
-      <div className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950 border-b border-slate-900">
+      <div className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950 border-b border-slate-900">
          {/* Abstract Background */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none"></div>
@@ -60,7 +60,7 @@ const SolutionsPage: React.FC = () => {
                initial="hidden"
                animate="visible"
                transition={{ delay: 0.3 }}
-               className="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+               className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
             >
                Software ritel tidak akan bertahan sehari di proyek konstruksi. Kebanyakan ERP memaksa Anda mengubah cara kerja demi keterbatasan sistem. BizOps berbeda—kami berbicara bahasa industri Anda sejak hari pertama.
             </motion.p>
@@ -72,12 +72,12 @@ const SolutionsPage: React.FC = () => {
                className="flex flex-col sm:flex-row justify-center gap-4"
             >
                <Link to="/contact">
-                  <BouncyButton className="h-14 px-8 text-lg bg-primary-600 text-white border-none shadow-[0_0_30px_rgba(14,165,233,0.3)] hover:bg-primary-500">
+                  <BouncyButton className="h-14 px-8 text-lg bg-primary-600 text-white border-none shadow-[0_0_30px_rgba(14,165,233,0.3)] hover:bg-primary-500 w-full sm:w-auto">
                      Audit Alur Kerja Gratis
                   </BouncyButton>
                </Link>
                <Link to="/demo">
-                  <Button variant="outline-white" size="lg" className="h-14 px-8 text-lg">
+                  <Button variant="outline-white" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto">
                      Lihat Demo Industri
                   </Button>
                </Link>
@@ -85,10 +85,10 @@ const SolutionsPage: React.FC = () => {
          </div>
       </div>
 
-      <Section className="relative overflow-hidden bg-white dark:bg-slate-950">
+      <Section className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
            {/* Industry Section */}
-           <div className="text-center max-w-3xl mx-auto mb-20 pt-16">
+           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
                  Solusi Spesifik Industri
               </h2>
@@ -97,8 +97,8 @@ const SolutionsPage: React.FC = () => {
               </p>
            </div>
            
-           <div className="mb-32">
-             <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div className="mb-16 md:mb-32">
+             <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                 {industries.map((ind) => (
                    <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full block">
                       <motion.div 
@@ -108,14 +108,16 @@ const SolutionsPage: React.FC = () => {
                          viewport={{ once: true }}
                          className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col relative overflow-hidden"
                       >
-                         <div className={`w-16 h-16 ${getColor(ind.id)} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/5`}>
+                         <div className={`w-16 h-16 ${getColor(ind.id)} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/5 shrink-0`}>
                             <ind.icon className="w-8 h-8" />
                          </div>
-                         <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
-                         <p className="text-slate-600 dark:text-slate-400 text-base mb-8 leading-relaxed flex-grow">
-                            {ind.description}
-                         </p>
-                         <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all">
+                         <div className="flex-grow flex flex-col">
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{ind.title}</h3>
+                            <p className="text-slate-600 dark:text-slate-400 text-base mb-8 leading-relaxed flex-grow">
+                               {ind.description}
+                            </p>
+                         </div>
+                         <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto group-hover:gap-2 transition-all pt-4 shrink-0">
                             Pelajari Selengkapnya <ArrowRight className="w-4 h-4 ml-2" />
                          </div>
                       </motion.div>
@@ -125,7 +127,7 @@ const SolutionsPage: React.FC = () => {
            </div>
 
            {/* Social Proof Interstitial */}
-           <div className="mb-32 text-center">
+           <div className="mb-16 md:mb-32 text-center">
               <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8">
                  Dipercaya Pemimpin Industri
               </p>
@@ -141,8 +143,8 @@ const SolutionsPage: React.FC = () => {
                {/* Background Decor */}
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
                
-               <div className="relative z-10 px-8 py-20 md:p-24">
-                  <div className="text-center max-w-3xl mx-auto mb-16">
+               <div className="relative z-10 px-6 py-12 md:p-24">
+                  <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                      <Badge variant="outline" className="mb-4 bg-white dark:bg-slate-800">Role-Based Experience</Badge>
                      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
                         Satu Platform, Beda Perspektif.
@@ -152,7 +154,7 @@ const SolutionsPage: React.FC = () => {
                      </p>
                   </div>
 
-                  <CardSlider desktopClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                  <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[250px]">
                      {roles.map((role) => (
                         <Link key={role.id} to={`/role/${role.id}`} className="group h-full block">
                            <motion.div 
@@ -162,11 +164,13 @@ const SolutionsPage: React.FC = () => {
                               viewport={{ once: true }}
                               className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-lg transition-all text-center h-full flex flex-col items-center group-hover:-translate-y-1"
                            >
-                              <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm">
+                              <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 mb-4 group-hover:scale-110 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/20 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all shadow-sm shrink-0">
                                  <role.icon className="w-7 h-7" />
                               </div>
-                              <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{role.title}</h3>
-                              <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{role.subtitle}</p>
+                              <div className="flex-grow flex flex-col justify-center w-full">
+                                 <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{role.title}</h3>
+                                 <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{role.subtitle}</p>
+                              </div>
                            </motion.div>
                         </Link>
                      ))}
@@ -177,7 +181,7 @@ const SolutionsPage: React.FC = () => {
       </Section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
+      <section className="py-16 md:py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-20"></div>
          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">

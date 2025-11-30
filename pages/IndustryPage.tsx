@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { industriesData } from '../data/content';
 import Button from '../components/Button';
 import Badge from '../components/Badge';
+import CardSlider from '../components/CardSlider'; // Imported CardSlider
+import OptimizedImage from '../components/OptimizedImage'; // Imported OptimizedImage
 import { HelpCircle, ChevronRight, Check, Quote, ArrowRight, AlertTriangle, PlayCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
@@ -84,7 +86,7 @@ const IndustryPage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION - Premium Upgrade */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
          {/* Premium Background Effects */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
@@ -118,7 +120,7 @@ const IndustryPage: React.FC = () => {
                </div>
             </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-sans max-w-5xl mx-auto drop-shadow-sm">
+            <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1] font-sans max-w-5xl mx-auto drop-shadow-sm">
                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
                  {data.subtitle}
                </span>
@@ -140,10 +142,10 @@ const IndustryPage: React.FC = () => {
                transition={{ delay: 0.6 }}
                className="flex flex-col sm:flex-row gap-5 justify-center items-center"
             >
-               <Link to="/demo">
+               <Link to="/demo" className="w-full sm:w-auto">
                   <div className="group relative">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                    <button className="relative h-14 px-8 bg-slate-950 rounded-lg leading-none flex items-center divide-x divide-slate-600">
+                    <button className="relative h-14 px-8 bg-slate-950 rounded-lg leading-none flex items-center justify-center divide-x divide-slate-600 w-full">
                       <span className="flex items-center space-x-3">
                         <span className="text-white font-bold text-lg pr-4">Lihat Demo Live</span>
                       </span>
@@ -153,8 +155,8 @@ const IndustryPage: React.FC = () => {
                     </button>
                   </div>
                </Link>
-               <Link to="/contact">
-                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5">
+               <Link to="/contact" className="w-full sm:w-auto">
+                  <Button variant="ghost" size="lg" className="h-14 px-8 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 w-full">
                      Konsultasi Ahli <ChevronRight className="w-4 h-4 ml-1" />
                   </Button>
                </Link>
@@ -164,9 +166,9 @@ const IndustryPage: React.FC = () => {
 
       {/* 2. METRICS (Impact) - Upgraded Design */}
       {data.metrics && (
-         <section className="relative -mt-20 z-20 pb-16">
+         <section className="relative -mt-16 z-20 pb-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {data.metrics.map((metric, idx) => {
                      const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
                      const prefix = metric.value.match(/^[^0-9]*/) ? metric.value.match(/^[^0-9]*/)![0] : '';
@@ -180,7 +182,7 @@ const IndustryPage: React.FC = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 + idx * 0.1 }}
-                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden h-full"
                        >
                           {/* Top Highlight Line */}
                           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -188,73 +190,75 @@ const IndustryPage: React.FC = () => {
                           {/* Background Glow */}
                           <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           
-                          {isNumber ? (
-                            <div className="relative z-10">
-                              <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
-                            </div>
-                          ) : (
-                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-2 relative z-10 group-hover:scale-110 transition-transform duration-300">
-                               {metric.value}
-                            </div>
-                          )}
-                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10">{metric.label}</div>}
+                          <div className="flex-grow flex flex-col items-center justify-center w-full relative z-10">
+                             {isNumber ? (
+                               <div>
+                                 <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
+                               </div>
+                             ) : (
+                               <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-2 group-hover:scale-110 transition-transform duration-300">
+                                  {metric.value}
+                               </div>
+                             )}
+                             {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-2">{metric.label}</div>}
+                          </div>
                        </motion.div>
                      );
                   })}
-               </div>
+               </CardSlider>
             </div>
          </section>
       )}
 
       {/* 3. CHALLENGES (Pain Points) - Modernized UI */}
-      <Section className="bg-[#0B1120] relative border-t border-white/5">
-         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/20 via-[#0B1120] to-[#0B1120] pointer-events-none"></div>
+      <Section className="relative border-t border-white/5 py-16 md:py-24 overflow-hidden">
+         {/* Enhanced Background */}
+         <div className="absolute inset-0 bg-[#0B1120]"></div>
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#0B1120] to-transparent pointer-events-none"></div>
+         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
          
          <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-               Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_10px_rgba(248,113,113,0.4)]">Stuck?</span>
+               Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span>
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
                Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.
             </p>
          </div>
 
-         <motion.div 
-            variants={STAGGER_CONTAINER}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8 relative z-10"
-         >
+         <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.challenges.map((challenge, idx) => (
                <motion.div 
                   key={idx}
                   variants={FADE_UP_VARIANTS}
-                  className="bg-[#1E293B]/30 p-8 rounded-3xl border border-white/5 hover:border-red-500/30 shadow-lg transition-all duration-500 group relative overflow-hidden hover:-translate-y-1"
+                  className="bg-gradient-to-b from-[#1E293B]/60 to-[#0F172A]/60 p-8 rounded-3xl border border-white/5 hover:border-red-500/40 shadow-lg hover:shadow-red-900/10 transition-all duration-500 group relative overflow-hidden hover:-translate-y-1 h-full flex flex-col backdrop-blur-sm"
                >
-                  {/* Subtle Red Gradient Background */}
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 rounded-full blur-[60px] -mr-10 -mt-10 group-hover:bg-red-500/20 transition-colors duration-500 pointer-events-none"></div>
+                  {/* Enhanced Card Background Effects */}
+                  <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-600/5 rounded-full blur-[50px] -ml-10 -mb-10 group-hover:bg-orange-600/10 transition-colors duration-500 pointer-events-none"></div>
                   
-                  <div className="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl flex items-center justify-center mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
                      <span className="font-bold text-xl">0{idx + 1}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-200 transition-colors relative z-10">
-                    {challenge.title}
-                  </h3>
-                  <p className="text-slate-400 leading-relaxed text-sm relative z-10 group-hover:text-slate-300 transition-colors">
-                    {challenge.desc}
-                  </p>
+                  <div className="flex-grow relative z-10 flex flex-col">
+                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-200 transition-colors">
+                        {challenge.title}
+                     </h3>
+                     <p className="text-slate-400 leading-relaxed text-sm group-hover:text-slate-300 transition-colors">
+                        {challenge.desc}
+                     </p>
+                  </div>
                </motion.div>
             ))}
-         </motion.div>
+         </CardSlider>
       </Section>
 
       {/* 4. SOLUTIONS (Bento Grid) - High Contrast */}
-      <Section className="relative overflow-hidden bg-white dark:bg-slate-950">
+      <Section className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 md:py-24">
          {/* Background Decoration */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -270,43 +274,39 @@ const IndustryPage: React.FC = () => {
             </p>
          </div>
 
-         <motion.div 
-            variants={STAGGER_CONTAINER}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
-         >
+         <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.solutions.map((sol, idx) => {
                const SolIcon = sol.icon || Check;
                return (
                   <motion.div 
                      key={idx}
                      variants={FADE_UP_VARIANTS}
-                     className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 group shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2 relative overflow-hidden"
+                     className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 group shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2 relative overflow-hidden h-full flex flex-col"
                   >
                      {/* Dot Pattern Overlay */}
                      <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 via-primary-500/0 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                      
-                     <div className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30">
+                     <div className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
                         <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
                      </div>
                      
-                     <h3 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                        {sol.title}
-                     </h3>
-                     <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-                        {sol.desc}
-                     </p>
+                     <div className="flex-grow flex flex-col">
+                        <h3 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                           {sol.title}
+                        </h3>
+                        <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-base flex-grow">
+                           {sol.desc}
+                        </p>
+                     </div>
                   </motion.div>
                );
             })}
-         </motion.div>
+         </CardSlider>
          
          <div className="mt-16 text-center relative z-10">
             <Link to="/platform">
-               <Button variant="outline" size="lg" className="border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 h-14 text-lg">Lihat Semua Modul Platform</Button>
+               <Button variant="outline" size="lg" className="border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 h-14 text-lg w-full sm:w-auto">Lihat Semua Modul Platform</Button>
             </Link>
          </div>
       </Section>
@@ -348,7 +348,13 @@ const IndustryPage: React.FC = () => {
                </p>
                <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-slate-700 overflow-hidden ring-2 ring-primary-500/50">
-                     <img src={data.testimonial?.avatar || "https://ui-avatars.com/api/?name=User&background=random"} alt="User" className="w-full h-full object-cover" />
+                     <OptimizedImage 
+                        src={data.testimonial?.avatar || "https://ui-avatars.com/api/?name=User&background=random"} 
+                        alt="User" 
+                        className="w-full h-full object-cover" 
+                        width={56}
+                        height={56}
+                     />
                   </div>
                   <div>
                      <div className="font-bold text-white text-lg">{data.testimonial?.author || "Happy Client"}</div>
@@ -377,7 +383,7 @@ const IndustryPage: React.FC = () => {
       )}
 
       {/* 7. CTA (Final Push - Premium Style) */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-[#020617]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-[#020617]"></div>
@@ -411,13 +417,13 @@ const IndustryPage: React.FC = () => {
            </p>
 
            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Link to="/demo">
-                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2">
+              <Link to="/demo" className="w-full sm:w-auto">
+                 <BouncyButton className="h-16 px-12 text-lg bg-white text-slate-900 border-none shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-slate-200 hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
                     Mulai Free Trial <ArrowRight className="w-5 h-5" />
                  </BouncyButton>
               </Link>
-              <Link to="/contact">
-                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md">
+              <Link to="/contact" className="w-full sm:w-auto">
+                 <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white backdrop-blur-md w-full sm:w-auto">
                     Hubungi Sales
                  </Button>
               </Link>

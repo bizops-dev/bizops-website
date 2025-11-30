@@ -1,7 +1,7 @@
-import { Variants } from "framer-motion";
+import { Variants, Transition } from "framer-motion";
 
 // 1. Physics Configuration (The "Snappy" Feel)
-export const SPRING_TRANSITION = {
+export const SPRING_TRANSITION: Transition = {
   type: "spring",
   stiffness: 400,
   damping: 30, // Minimal overshoot

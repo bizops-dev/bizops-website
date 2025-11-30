@@ -9,6 +9,7 @@ import {
   ArrowLeft, Share2, Video, GraduationCap, Package
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import OptimizedImage from '../components/OptimizedImage';
 
 const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -59,7 +60,7 @@ const EventDetailPage: React.FC = () => {
       {/* Hero Section */}
       <div className="relative pt-24 pb-20 lg:pt-32 lg:pb-24 bg-[#0B1120] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-           <img src={event.image} alt="" className="w-full h-full object-cover blur-sm mix-blend-overlay" />
+           <OptimizedImage src={event.image} alt="" className="w-full h-full object-cover blur-sm mix-blend-overlay" />
            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/80 to-transparent"></div>
         </div>
         
@@ -173,7 +174,13 @@ const EventDetailPage: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 {event.speakers?.map((speaker, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-                    <img src={speaker.image} alt={speaker.name} className="w-16 h-16 rounded-full object-cover ring-2 ring-primary-500/20" />
+                    <OptimizedImage 
+                      src={speaker.image} 
+                      alt={speaker.name} 
+                      className="w-16 h-16 rounded-full object-cover ring-2 ring-primary-500/20" 
+                      width={64}
+                      height={64}
+                    />
                     <div>
                       <h4 className="font-bold text-slate-900 dark:text-white">{speaker.name}</h4>
                       <p className="text-sm text-slate-500 dark:text-slate-400">{speaker.role}</p>

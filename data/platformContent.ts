@@ -768,6 +768,55 @@ export const capabilitiesData: Record<string, any> = {
       }
     ]
   },
+  'low-code': {
+    title: "Low-Code Application Platform",
+    subtitle: "Ubah Ide Menjadi Aplikasi Enterprise dalam Hitungan Jam.",
+    description: "Berdayakan 'Citizen Developer' di perusahaan Anda. Buat form digital, alur persetujuan kompleks, dan laporan kustom dengan antarmuka Drag-and-Drop yang intuitif, tanpa perlu menulis baris kode yang rumit.",
+    icon: Layout,
+    features: [
+      { title: "Visual Form Builder", desc: "Desain formulir input data dengan drag-and-drop. Dukungan validasi logic, dependensi field, dan perhitungan otomatis.", icon: Layout },
+      { title: "Workflow Automation", desc: "Bangun logika bisnis (If-This-Then-That) untuk notifikasi, perubahan status, dan trigger aksi otomatis lintas modul.", icon: GitMerge },
+      { title: "Kanban & Calendar Views", desc: "Visualisasikan data dalam bentuk papan Kanban atau Kalender interaktif untuk manajemen tugas yang lebih baik.", icon: Layout },
+      { title: "Role-Based Permission", desc: "Atur siapa yang boleh melihat, mengedit, atau menghapus data dengan granularitas tinggi hingga level field.", icon: Lock }
+    ],
+    metrics: [
+      { value: "10x", label: "Faster Development" },
+      { value: "0", label: "Code Required" },
+      { value: "100%", label: "Mobile Ready" }
+    ],
+    problems: [
+      { title: "Antrian IT Panjang", desc: "Departemen bisnis butuh aplikasi sederhana tapi tim IT terlalu sibuk dengan proyek besar. Inovasi terhambat.", icon: Clock },
+      { title: "Shadow IT", desc: "Karyawan menggunakan aplikasi tidak resmi (Excel/SaaS liar) karena sistem kantor kaku, menimbulkan risiko keamanan data.", icon: AlertTriangle },
+      { title: "Biaya Vendor Mahal", desc: "Membayar vendor software mahal hanya untuk membuat satu form digital sederhana.", icon: DollarSign }
+    ],
+    mobileAdvantage: {
+      title: "Build Once, Run Everywhere",
+      desc: "Setiap aplikasi yang Anda buat di Low-Code Studio otomatis tersedia di aplikasi mobile BizOps (iOS/Android) tanpa perlu coding ulang. Mendukung offline mode."
+    },
+    connections: [
+      { target: "Core Modules", desc: "Aplikasi buatan Anda bisa membaca dan menulis data ke modul inti (HR, Finance, Inventory)." },
+      { target: "Automation", desc: "Trigger workflow otomatis saat data baru diinput melalui aplikasi low-code." },
+      { target: "API", desc: "Data dari aplikasi low-code otomatis terekspos via REST API standar." }
+    ],
+    cta: {
+      text: "Mulai bangun aplikasi bisnis Anda sendiri.",
+      buttonLabel: "Coba Low-Code Studio"
+    },
+    faqs: [
+      {
+        question: "Apakah benar-benar tanpa coding?",
+        answer: "Untuk 90% kebutuhan umum (Form, List, Approval), benar-benar tanpa coding. Namun kami juga menyediakan 'Scripting Layer' (Python/JS) untuk logika yang sangat kompleks."
+      },
+      {
+        question: "Apakah aman?",
+        answer: "Sangat aman. Aplikasi low-code berjalan di atas framework security yang sama dengan modul inti BizOps, mewarisi semua fitur enkripsi dan audit trail."
+      },
+      {
+        question: "Apakah bisa integrasi dengan sistem lain?",
+        answer: "Bisa. Anda bisa membuat 'Virtual DocType' yang mengambil data dari API eksternal dan menampilkannya seolah-olah data lokal."
+      }
+    ]
+  },
   'automation-ai': {
     title: "Automation & AI",
     subtitle: "Bekerja Lebih Cerdas, Bukan Lebih Keras.",

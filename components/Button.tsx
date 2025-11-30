@@ -3,17 +3,43 @@ import React, { memo } from 'react';
 import { Loader2 } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
-interface ButtonProps {
+/**
+ * Button component with multiple variants and sizes
+ * 
+ * @example
+ * ```tsx
+ * <Button variant="primary" size="lg" onClick={handleClick}>
+ *   Click Me
+ * </Button>
+ * ```
+ * 
+ * @example
+ * ```tsx
+ * <Button variant="outline" isLoading={isSubmitting}>
+ *   Submit
+ * </Button>
+ * ```
+ */
+type ButtonProps = {
+  /** Button content */
   children?: React.ReactNode;
+  /** Visual style variant */
   variant?: 'primary' | 'secondary' | 'accent' | 'white' | 'outline' | 'outline-white' | 'ghost' | 'link';
+  /** Size of the button */
   size?: 'sm' | 'md' | 'lg';
+  /** Make button full width */
   fullWidth?: boolean;
+  /** Show loading spinner */
   isLoading?: boolean;
+  /** Additional CSS classes */
   className?: string;
+  /** Disable button */
   disabled?: boolean;
+  /** Click handler */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Button type */
   type?: 'button' | 'submit' | 'reset';
-}
+};
 
 const Button: React.FC<ButtonProps> = memo(({ 
   children, 

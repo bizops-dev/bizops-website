@@ -19,6 +19,7 @@ import {
   Menu,
   Rocket
 } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -127,7 +128,7 @@ const BlogDetailPage: React.FC = () => {
       <div className="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-slate-900">
          <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover opacity-80" />
+            <OptimizedImage src={post.image} alt={post.title} className="w-full h-full object-cover opacity-80" />
          </motion.div>
 
          <div className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
@@ -307,7 +308,7 @@ const BlogDetailPage: React.FC = () => {
                   <Link key={idx} to={`/blog/${rp.slug}`} className="group block h-full">
                      <div className="bg-white dark:bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                         <div className="aspect-[16/10] overflow-hidden relative">
-                           <img 
+                           <OptimizedImage 
                               src={rp.image} 
                               alt={rp.title}
                               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"

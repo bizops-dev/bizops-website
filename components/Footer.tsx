@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Moon, Sun, ChevronRight, ShieldCheck, Signal, ArrowUpRight, Lock, Bug } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone, Moon, Sun, ChevronRight, ShieldCheck, Signal, ArrowUpRight, Lock, Bug, CheckCircle } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -13,20 +13,25 @@ const PlayStoreIcon = () => (
   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" role="img" aria-label="Google Play Logo"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.89l1.434 1.433 4.505-2.503a1 1 0 0 0 .003-1.737l-4.507-2.505-1.435 1.435zm-9.98 10.208l10.66-10.66 2.452 2.45-11.793 6.552a1 1 0 0 1-1.319-1.658zM4.52 1.088l11.795 6.553-2.454 2.45-10.66-10.66A1 1 0 0 1 4.52 1.088z" /></svg>
 );
 
-const FooterLink = ({ to, children, isExternal = false, icon: Icon }: { to: string, children: React.ReactNode, isExternal?: boolean, icon?: any }) => (
-  <li>
-    <Link 
-      to={to} 
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      className="group flex items-center gap-2 transition-colors text-[14px] py-1 text-slate-400 hover:text-white"
-    >
-      {Icon && <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-primary-400 transition-colors" />}
-      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block truncate">{children}</span>
-      {isExternal && <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-500" />}
-    </Link>
-  </li>
-);
+const FooterLink = ({ to, children, isExternal = false, icon: Icon }: { to: string, children: React.ReactNode, isExternal?: boolean, icon?: any }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  
+  return (
+    <li>
+      <Link 
+        to={to} 
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={`group flex items-center gap-2 transition-colors text-[14px] py-1 ${isActive ? 'text-white font-medium' : 'text-slate-400 hover:text-white'}`}
+      >
+        {Icon && <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-primary-400' : 'text-slate-500 group-hover:text-primary-400'} transition-colors`} />}
+        <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block truncate">{children}</span>
+        {isExternal && <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-500" />}
+      </Link>
+    </li>
+  );
+};
 
 const SocialLink = ({ href, icon: Icon, label }: { href: string, icon: any, label: string }) => (
   <a 
@@ -64,10 +69,19 @@ const FooterLinkGroup = ({ title, children }: { title: string, children: React.R
 const Footer: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Terima kasih! Anda telah terdaftar di newsletter kami.");
+    if (email) {
+      // Simulate API call
+      setSubscribed(true);
+      setTimeout(() => {
+        setSubscribed(false);
+        setEmail('');
+      }, 3000);
+    }
   };
 
   return (
@@ -165,23 +179,33 @@ const Footer: React.FC = () => {
           <div className="md:col-span-5 lg:col-span-3 space-y-8">
             
             {/* Newsletter */}
-            <div className="space-y-4 bg-slate-900/50 p-5 rounded-xl border border-slate-800/50 backdrop-blur-sm">
+            <div className="space-y-4 bg-slate-900/50 p-5 rounded-xl border border-slate-800/50 backdrop-blur-sm relative overflow-hidden">
               <h3 className="text-sm font-bold text-white">Stay Updated</h3>
-              <form onSubmit={handleSubscribe} className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Email kerja..." 
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-3 pr-10 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600/50 transition-all"
-                  required
-                />
-                <button 
-                  type="submit"
-                  aria-label="Subscribe"
-                  className="absolute right-1.5 top-1.5 p-1 bg-slate-800 hover:bg-primary-600 text-slate-400 hover:text-white rounded-md transition-all"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </form>
+              
+              {subscribed ? (
+                <div className="flex items-center gap-3 bg-green-500/10 border border-green-500/20 text-green-400 p-3 rounded-lg animate-fade-in-up">
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-sm">Subscribed successfully!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="relative">
+                  <input 
+                    type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email kerja..." 
+                    className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-3 pr-10 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600/50 transition-all"
+                    required
+                  />
+                  <button 
+                    type="submit"
+                    aria-label="Subscribe"
+                    className="absolute right-1.5 top-1.5 p-1 bg-slate-800 hover:bg-primary-600 text-slate-400 hover:text-white rounded-md transition-all"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
             </div>
 
             {/* Mobile Apps - Compact */}

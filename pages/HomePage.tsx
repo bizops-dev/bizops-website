@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, CheckCircle2, Lock, 
-  PlayCircle, ArrowUpRight, ChevronRight
+  PlayCircle, ArrowUpRight, ChevronRight, Calculator
 } from 'lucide-react';
 import Button from '../components/Button';
 import { 
@@ -90,7 +90,7 @@ const HomePage: React.FC = () => {
             
             {/* Main Headline with Staggered Animation */}
             <div className="mb-8 max-w-5xl mx-auto">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
                 <StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 dark:from-primary-400 dark:via-blue-400 dark:to-purple-400">
                   Seluruh Operasional Bisnis.
@@ -104,7 +104,7 @@ const HomePage: React.FC = () => {
               initial="hidden"
               animate="visible"
               transition={{ delay: 0.5 }}
-              className="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-3xl mx-auto"
             >
               Tinggalkan spreadsheet yang terpisah-pisah. BizOps menyatukan HR, Finance, dan Supply Chain dalam satu platform yang aman, cepat, dan siap scale-up.
             </motion.p>
@@ -116,14 +116,14 @@ const HomePage: React.FC = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
             >
-              <Link to="/demo">
-                <BouncyButton className="h-14 px-8 text-lg w-full sm:w-auto shadow-xl shadow-primary-500/20">
+              <Link to="/demo" className="w-full sm:w-auto">
+                <BouncyButton className="h-14 px-8 text-lg w-full shadow-xl shadow-primary-500/20">
                   Mulai Demo Gratis
                 </BouncyButton>
               </Link>
-              <Link to="/pricing-calculator">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800">
-                  <CalculatorIcon className="mr-2 w-5 h-5 text-slate-500" /> Simulasi Harga
+              <Link to="/pricing-calculator" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg w-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800">
+                  <Calculator className="mr-2 w-5 h-5 text-slate-500" /> Simulasi Harga
                 </Button>
               </Link>
             </motion.div>
@@ -170,7 +170,7 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* 2. PROBLEMS SECTION (Pain Points) */}
-      <section aria-labelledby="problems-heading" className="py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
+      <section aria-labelledby="problems-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
          {/* Subtle Pattern Background */}
          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
              style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}>
@@ -186,7 +186,7 @@ const HomePage: React.FC = () => {
                 </p>
             </div>
              
-             <div className="grid md:grid-cols-3 gap-8">
+             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                 {homeProblems.map((prob, idx) => (
                    <Card key={idx} className="h-full border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900" padding="lg">
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${prob.bg} ring-1 ring-inset ring-black/5 dark:ring-white/10`}>
@@ -199,12 +199,12 @@ const HomePage: React.FC = () => {
                       </p>
                    </Card>
                 ))}
-             </div>
+             </CardSlider>
          </div>
       </section>
 
       {/* 3. SOLUTIONS SECTION (The Fix) */}
-      <section aria-labelledby="solutions-heading" className="py-24 bg-slate-900 relative overflow-hidden">
+      <section aria-labelledby="solutions-heading" className="py-16 md:py-24 bg-slate-900 relative overflow-hidden">
          {/* Abstract BG */}
          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/20 via-slate-900 to-slate-950 pointer-events-none"></div>
          
@@ -316,7 +316,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 4. VALUE PROPOSITION (UVP) */}
-      <section aria-labelledby="uvp-heading" className="py-24 bg-white dark:bg-slate-950">
+      <section aria-labelledby="uvp-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
          <div className="text-center max-w-3xl mx-auto mb-16 px-4">
             <h2 id="uvp-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
                Bukan Sekadar ERP Biasa
@@ -327,9 +327,9 @@ const HomePage: React.FC = () => {
          </div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8">
+            <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeUVP.map((uvp, idx) => (
-                  <div key={idx} className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div key={idx} className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
                      <div className="absolute top-8 right-8 text-slate-200 dark:text-slate-800 group-hover:text-primary-100 dark:group-hover:text-primary-900/20 transition-colors">
                         <uvp.icon className="w-24 h-24 opacity-20 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500" aria-hidden="true" />
                      </div>
@@ -350,7 +350,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 5. PRICING COMPARISON: The New Paradigm (Enhanced) */}
-      <section aria-labelledby="pricing-heading" className="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden border-t border-slate-200 dark:border-slate-800">
+      <section aria-labelledby="pricing-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden border-t border-slate-200 dark:border-slate-800">
          {/* Decorative Mesh Gradient */}
          <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 dark:via-slate-950/0 dark:to-slate-950/0 pointer-events-none"></div>
 
@@ -370,10 +370,16 @@ const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                
                {/* LEFT COLUMN: The Problems (Span 5) */}
-               <div className="lg:col-span-5 flex flex-col gap-6">
+               <CardSlider 
+                  breakpoint="lg" 
+                  className="lg:col-span-5 h-full"
+                  desktopClassName="lg:grid lg:grid-cols-1 gap-6 h-full"
+                  mobileItemWidth="w-full"
+                  desktopItemWidth="lg:w-full"
+               >
                   
                   {/* Card 1: Fragmented Stack */}
-                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 flex-1">
+                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/10 flex-1 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-red-50 dark:bg-red-900/20 rounded-xl text-red-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
@@ -419,7 +425,7 @@ const HomePage: React.FC = () => {
                   </div>
 
                   {/* Card 2: Legacy ERP */}
-                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 flex-1">
+                  <div className="group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-900/50 transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/10 flex-1 h-full">
                      <div className="absolute top-0 right-0 p-4">
                          <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-500">
                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
@@ -464,7 +470,7 @@ const HomePage: React.FC = () => {
                      </div>
                   </div>
 
-               </div>
+               </CardSlider>
 
                {/* RIGHT COLUMN: The Solution (Span 7) */}
                <div className="lg:col-span-7">
@@ -549,7 +555,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 6. PROCESS SECTION (How it works) */}
-      <section aria-labelledby="process-heading" className="py-24 bg-[#0B1120] overflow-hidden relative">
+      <section aria-labelledby="process-heading" className="py-16 md:py-24 bg-[#0B1120] overflow-hidden relative">
          {/* Background Grid */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
          
@@ -568,9 +574,9 @@ const HomePage: React.FC = () => {
                </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <CardSlider desktopClassName="md:grid md:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeProcess.map((step, idx) => (
-                  <div key={idx} className="relative group">
+                  <div key={idx} className="relative group h-full">
                      {/* Connector Line */}
                      {idx < homeProcess.length - 1 && (
                         <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-slate-800/50 -ml-4 z-0">
@@ -585,19 +591,19 @@ const HomePage: React.FC = () => {
                      </div>
                   </div>
                ))}
-            </div>
+            </CardSlider>
          </div>
       </section>
 
       {/* 7. INDUSTRIES & ROLES */}
-      <section aria-labelledby="industry-heading" className="py-24 bg-white dark:bg-slate-950">
+      <section aria-labelledby="industry-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                <h2 id="industry-heading" className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Solusi Spesifik Industri</h2>
                <p className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</p>
             </div>
             
-            <CardSlider desktopClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" className="mb-16">
+            <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]" className="mb-16">
                {industries.map((ind) => (
                   <Link key={ind.id} to={`/solutions/${ind.id}`} className="group h-full">
                      <Card className="h-full border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" padding="lg">
@@ -621,7 +627,7 @@ const HomePage: React.FC = () => {
                <p className="text-slate-600 dark:text-slate-400">Dashboard yang relevan untuk setiap pemangku kepentingan.</p>
             </div>
 
-            <CardSlider desktopClassName="grid grid-cols-2 lg:grid-cols-5 gap-4">
+            <CardSlider desktopClassName="md:grid md:grid-cols-3 lg:grid-cols-5 gap-4" mobileItemWidth="w-[85vw] sm:w-[250px]">
                {roles.map((role) => (
                   <Link key={role.id} to={`/role/${role.id}`} className="group h-full">
                      <Card className="h-full text-center border border-slate-100 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all duration-300" padding="md">
@@ -640,7 +646,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 8. INFRASTRUCTURE & SECURITY (Replaced Tech Validation) */}
-      <section aria-labelledby="security-heading" className="py-24 bg-slate-900 border-t border-slate-800/50 relative overflow-hidden">
+      <section aria-labelledby="security-heading" className="py-16 md:py-24 bg-slate-900 border-t border-slate-800/50 relative overflow-hidden">
          {/* Subtle Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -732,7 +738,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 9. INTEGRATIONS */}
-      <section aria-labelledby="integration-heading" className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+      <section aria-labelledby="integration-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <div className="max-w-4xl mx-auto text-center mb-12 px-4">
             <h2 id="integration-heading" className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Terhubung dengan Ekosistem</h2>
             <p className="text-slate-600 dark:text-slate-400">
@@ -759,7 +765,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* 10. CTA / FOOTER PREVIEW */}
-      <section aria-labelledby="cta-heading" className="py-24 relative overflow-hidden">
+      <section aria-labelledby="cta-heading" className="py-16 md:py-24 relative overflow-hidden">
          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-slate-900 z-0"></div>
          {/* Decorative Circles */}
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none"></div>
@@ -793,20 +799,5 @@ const HomePage: React.FC = () => {
     </div>
   );
 };
-
-// Helper Icon for Calculator Button
-function CalculatorIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 2H17C19.2091 2 21 3.79086 21 6V18C21 20.2091 19.2091 22 17 22H7C4.79086 22 3 20.2091 3 18V6C3 3.79086 4.79086 2 7 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 6H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 10H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 14H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 18H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M15 14H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M15 18H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
 
 export default HomePage;

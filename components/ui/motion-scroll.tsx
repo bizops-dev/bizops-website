@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent, useSpring, useTransform, useInView } from 'framer-motion';
+import OptimizedImage from '../OptimizedImage'; // Imported OptimizedImage
 
 // 1. Sticky Header Reveal
 export const StickyHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
@@ -74,7 +75,7 @@ export const ParallaxImage: React.FC<{ src: string; alt: string; className?: str
   return (
     <div ref={ref} className={`overflow-hidden rounded-2xl relative ${className}`}>
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
+        <OptimizedImage src={src} alt={alt} className="w-full h-full" objectFit="cover" />
       </motion.div>
     </div>
   );

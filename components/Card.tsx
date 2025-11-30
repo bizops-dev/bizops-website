@@ -1,14 +1,31 @@
 
 import React, { memo } from 'react';
 
-interface CardProps {
+/**
+ * Card component for displaying content in a contained box
+ * 
+ * @example
+ * ```tsx
+ * <Card variant="default" padding="md" hoverEffect>
+ *   <h3>Card Title</h3>
+ *   <p>Card content</p>
+ * </Card>
+ * ```
+ */
+type CardProps = {
+  /** Card content */
   children: React.ReactNode;
+  /** Additional CSS classes */
   className?: string;
+  /** Enable hover elevation effect */
   hoverEffect?: boolean;
+  /** Visual style variant */
   variant?: 'default' | 'outline' | 'flat' | 'dark';
+  /** Click handler */
   onClick?: () => void;
+  /** Padding size */
   padding?: 'none' | 'sm' | 'md' | 'lg';
-}
+};
 
 const Card: React.FC<CardProps> = memo(({ 
   children, 

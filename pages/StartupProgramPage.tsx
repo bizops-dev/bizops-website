@@ -4,6 +4,7 @@ import { Rocket, CheckCircle, Zap, ShieldCheck, TrendingUp, Code, Server, Users,
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
 
 const StartupProgramPage: React.FC = () => {
   return (
@@ -55,11 +56,11 @@ const StartupProgramPage: React.FC = () => {
              className="flex flex-col sm:flex-row justify-center gap-4"
           >
              <Link to="/partners/apply">
-                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1">
+                <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
                    Apply for Credits <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
              </Link>
-             <Button size="lg" variant="outline" className="h-14 px-10 border-slate-700 text-white hover:bg-white/10 font-medium">
+             <Button size="lg" variant="outline" className="h-14 px-10 border-slate-700 text-white hover:bg-white/10 font-medium w-full sm:w-auto">
                 <Play className="w-4 h-4 mr-2 fill-current" /> Watch Founder Stories
              </Button>
           </motion.div>
@@ -78,7 +79,7 @@ const StartupProgramPage: React.FC = () => {
       {/* --- LOGO WALL (Social Proof) --- */}
       <section className="bg-[#0F172A] border-b border-slate-800 pb-16">
          <div className="max-w-7xl mx-auto px-4 overflow-hidden">
-            <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-70 transition-opacity duration-500 flex-wrap">
                {/* Placeholder Logos */}
                <div className="text-xl font-bold text-white">ACME Corp</div>
                <div className="text-xl font-bold text-white">Nebula AI</div>
@@ -90,43 +91,80 @@ const StartupProgramPage: React.FC = () => {
       </section>
 
       {/* --- THE PERKS (Bento Grid Style) --- */}
-      <section className="py-32 bg-slate-50 dark:bg-slate-950 relative z-20">
+      <section className="py-24 bg-slate-50 dark:bg-slate-950 relative z-20">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">More Than Just Free Credits</h2>
                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                  {/* Card 1 */}
+                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
+                     <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <DollarSign className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Up to $5,000 Credits</h3>
+                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
+                     </p>
+                  </div>
+
+                  {/* Card 2 */}
+                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col">
+                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <Code className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Technical Mentorship</h3>
+                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
+                     </p>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
+                     <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <Users className="w-7 h-7" />
+                     </div>
+                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Founder Community</h3>
+                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
+                     </p>
+                  </div>
+               </CardSlider>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-3 gap-8">
                {/* Card 1 */}
-               <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
                   <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <DollarSign className="w-7 h-7" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Up to $5,000 Credits</h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
                   </p>
                </div>
 
                {/* Card 2 */}
-               <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group md:-mt-8 flex flex-col">
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Code className="w-7 h-7" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Technical Mentorship</h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
                   </p>
                </div>
 
                {/* Card 3 */}
-               <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
                   <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                      <Users className="w-7 h-7" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Founder Community</h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
                      Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
                   </p>
                </div>
@@ -240,9 +278,114 @@ const StartupProgramPage: React.FC = () => {
                </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
+                  {/* Bootstrap Track */}
+                  <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
+                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
+                     
+                     <div className="flex items-center gap-5 mb-10">
+                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner">
+                           <Zap className="w-8 h-8" />
+                        </div>
+                        <div>
+                           <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Bootstrap</h3>
+                           <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Pre-Seed / Angel Round</p>
+                        </div>
+                     </div>
+                     
+                     <div className="mb-10 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-700/50">
+                        <div className="flex items-baseline gap-2 mb-2">
+                           <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
+                           <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-300 font-medium">Selama 12 bulan pertama.</p>
+                     </div>
+                     
+                     <div className="space-y-5 mb-12 flex-grow">
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           </div>
+                           <span className="text-slate-700 dark:text-slate-300 font-medium">Total Funding <span className="text-slate-900 dark:text-white font-bold">&lt; $1M</span></span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           </div>
+                           <span className="text-slate-700 dark:text-slate-300 font-medium">Usia &lt; 2 tahun</span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                           </div>
+                           <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
+                        </div>
+                     </div>
+                     
+                     <Link to="/partners/apply?track=bootstrap" className="mt-auto">
+                        <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
+                           Apply Bootstrap Track
+                        </Button>
+                     </Link>
+                  </div>
+
+                  {/* Scale-Up Track */}
+                  <div className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden flex flex-col text-white transform md:-translate-y-4">
+                     <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
+                     <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
+                     
+                     <div className="flex items-center gap-5 mb-10 mt-4">
+                        <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-300 shadow-inner border border-purple-500/30">
+                           <TrendingUp className="w-8 h-8" />
+                        </div>
+                        <div>
+                           <h3 className="text-3xl font-bold text-white">Scale-Up</h3>
+                           <p className="text-purple-200 font-medium mt-1">Seed / Series A+</p>
+                        </div>
+                     </div>
+                     
+                     <div className="mb-10 p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
+                        <div className="flex items-baseline gap-2 mb-2">
+                           <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
+                           <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
+                        </div>
+                        <p className="text-slate-300 font-medium">Selama 24 bulan berturut-turut.</p>
+                     </div>
+                     
+                     <div className="space-y-5 mb-12 flex-grow">
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                           </div>
+                           <span className="text-slate-200 font-medium">Total Funding <span className="text-white font-bold">&gt; $1M</span></span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                           </div>
+                           <span className="text-slate-200 font-medium">Priority Support (SLA 4 Jam)</span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                           <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="w-4 h-4 text-purple-400" />
+                           </div>
+                           <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
+                        </div>
+                     </div>
+                     
+                     <Link to="/partners/apply?track=scaleup" className="mt-auto">
+                        <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
+                           Apply Scale-Up Track
+                        </Button>
+                     </Link>
+                  </div>
+               </CardSlider>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                {/* Bootstrap Track */}
-               <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
+               <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
                   
                   <div className="flex items-center gap-5 mb-10">
@@ -284,7 +427,7 @@ const StartupProgramPage: React.FC = () => {
                      </div>
                   </div>
                   
-                  <Link to="/partners/apply?track=bootstrap">
+                  <Link to="/partners/apply?track=bootstrap" className="mt-auto">
                      <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
                         Apply Bootstrap Track
                      </Button>
@@ -292,7 +435,7 @@ const StartupProgramPage: React.FC = () => {
                </div>
 
                {/* Scale-Up Track */}
-               <div className="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden flex flex-col text-white transform md:-translate-y-4">
+               <div className="h-full bg-slate-900 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl hover:border-purple-500 transition-all group relative overflow-hidden flex flex-col text-white transform md:-translate-y-4">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-colors"></div>
                   <div className="absolute top-0 left-8 bg-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-b-xl shadow-lg">MOST POPULAR</div>
                   
@@ -335,7 +478,7 @@ const StartupProgramPage: React.FC = () => {
                      </div>
                   </div>
                   
-                  <Link to="/partners/apply?track=scaleup">
+                  <Link to="/partners/apply?track=scaleup" className="mt-auto">
                      <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
                         Apply Scale-Up Track
                      </Button>
@@ -346,30 +489,57 @@ const StartupProgramPage: React.FC = () => {
       </section>
 
       {/* --- APPLICATION PROCESS --- */}
-      <section className="py-32 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+      <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-20">Proses Aplikasi Seamless</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-               {/* Connecting Line (Desktop) */}
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
+                  <div className="flex flex-col items-center group h-full">
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
+                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Submit Form</h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
+                  </div>
+                  <div className="flex flex-col items-center group h-full">
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
+                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Verification</h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
+                  </div>
+                  <div className="flex flex-col items-center group h-full">
+                     <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
+                     <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Approval</h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
+                  </div>
+                  <div className="flex flex-col items-center group h-full">
+                     <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
+                        <CheckCircle className="w-8 h-8" />
+                     </div>
+                     <h3 className="font-bold text-lg mb-3 text-emerald-600 dark:text-emerald-400">Onboarding</h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Setup akun Enterprise Anda dan mulai scaling.</p>
+                  </div>
+               </CardSlider>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-4 gap-12 relative">
+               {/* Connecting Line (Desktop Only) */}
                <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
 
-               <div className="flex flex-col items-center group">
+               <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 z-10">1</div>
                   <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Submit Form</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Isi formulir aplikasi online. Hanya butuh 5 menit.</p>
                </div>
-               <div className="flex flex-col items-center group">
+               <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-100 z-10">2</div>
                   <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Verification</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Tim kami memverifikasi profil startup Anda (LinkedIn/Pitch Deck).</p>
                </div>
-               <div className="flex flex-col items-center group">
+               <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-slate-400 group-hover:border-purple-500 group-hover:text-purple-500 transition-colors duration-500 delay-200 z-10">3</div>
                   <h3 className="font-bold text-lg mb-3 text-slate-900 dark:text-white">Approval</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">Terima email konfirmasi & kode promo dalam 48 jam.</p>
                </div>
-               <div className="flex flex-col items-center group">
+               <div className="flex flex-col items-center group h-full">
                   <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 border-4 border-emerald-100 dark:border-emerald-900/50 rounded-full flex items-center justify-center mb-8 text-xl font-bold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/20 z-10">
                      <CheckCircle className="w-8 h-8" />
                   </div>
@@ -381,7 +551,7 @@ const StartupProgramPage: React.FC = () => {
       </section>
 
       {/* --- FAQ (Accordion Style) --- */}
-      <section className="py-32 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-16 text-slate-900 dark:text-white">Founder's FAQ</h2>
             <div className="space-y-4">
@@ -410,11 +580,11 @@ const StartupProgramPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
                <Link to="/partners/apply">
-                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl">
+                  <Button size="lg" className="h-16 px-12 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 border-none shadow-2xl hover:shadow-white/20 transition-all transform hover:-translate-y-1 rounded-2xl w-full sm:w-auto">
                      Apply Now - It's Free <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                </Link>
-               <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-white hover:bg-white/10 rounded-2xl">
+               <Button size="lg" variant="outline" className="h-16 px-10 text-lg border-slate-700 text-white hover:bg-white/10 rounded-2xl w-full sm:w-auto">
                   Talk to Founder Success
                </Button>
             </div>

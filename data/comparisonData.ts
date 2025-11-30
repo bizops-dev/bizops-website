@@ -29,9 +29,9 @@ export interface ComparisonData {
   
   // NEW STRATEGIC VARIABLES
   ttv: string; // Time to Value
-  maintenance: 'Low' | 'Medium' | 'High' | 'Very High';
-  customizability: 'None' | 'Low' | 'Medium' | 'High';
-  securityLevel: 'Low' | 'Medium' | 'High' | 'Enterprise';
+  maintenance: string; // 'Low' | 'Medium' | 'High' | 'Very High' | 'Low (Managed)' | etc.
+  customizability: string; // 'None' | 'Low' | 'Medium' | 'High' | 'High (Low-Code)' | 'Low (Expensive Change Request)' | etc.
+  securityLevel: string; // 'Low' | 'Medium' | 'High' | 'Enterprise' | 'Enterprise (ISO 27001)' | etc.
   avgTCO: string; // Estimasi Total Cost 3 Tahun
 
   points: ComparisonPoint[];

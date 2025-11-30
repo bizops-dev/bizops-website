@@ -44,7 +44,7 @@ const SearchPage: React.FC = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Cari 'HRIS', 'Integrasi API', atau 'Harga'..." 
-                className="w-full pl-14 pr-4 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xl shadow-slate-200/20 dark:shadow-none focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 outline-none text-lg transition-all"
+                className="w-full pl-14 pr-4 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xl shadow-slate-200/20 dark:shadow-none focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 outline-none text-lg transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                 autoFocus
                 aria-label="Search query"
               />

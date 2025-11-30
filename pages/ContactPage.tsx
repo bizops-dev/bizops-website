@@ -89,7 +89,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* --- CONTENT SECTION --- */}
-      <section className="relative z-20 -mt-32 pb-24 px-4 sm:px-6 lg:px-8">
+      <section className="relative z-20 -mt-20 md:-mt-32 pb-24 px-4 sm:px-6 lg:px-8">
          <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                

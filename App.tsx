@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,8 +8,14 @@ import NPSModal from './components/NPSModal';
 import SessionTracker from './components/SessionTracker';
 import SEORoute from './components/SEORoute';
 import ErrorBoundary from './components/ErrorBoundary';
+import RouteErrorBoundary from './components/RouteErrorBoundary';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
+import OfflineFallback from './components/OfflineFallback';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { initializePWA, isOnline } from './utils/pwa';
+import { initTracking } from './utils/tracking';
 
 // Lazy load pages for performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -64,19 +70,72 @@ const AccessibilityPage = lazy(() => import('./pages/AccessibilityPage'));
 const SecurityReportPage = lazy(() => import('./pages/SecurityReportPage'));
 const PricingCalculatorPage = lazy(() => import('./pages/PricingCalculatorPage'));
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
+const MaintenancePage = lazy(() => import('./pages/MaintenancePage'));
+const AccessDeniedPage = lazy(() => import('./pages/AccessDeniedPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+const ManagedServicesPage = lazy(() => import('./pages/ManagedServicesPage'));
 
 function App() {
+  const [isOffline, setIsOffline] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    // Check initial online status
+    if (typeof window !== 'undefined') {
+      setIsOffline(!isOnline());
+    }
+
+    // Initialize PWA
+    if (typeof window !== 'undefined') {
+      initializePWA().catch((error) => {
+        console.error('Failed to initialize PWA:', error);
+      });
+    }
+
+    // Initialize tracking
+    if (typeof window !== 'undefined') {
+      initTracking();
+    }
+
+    setIsInitialized(true);
+
+    // Listen for online/offline events
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('online', handleOnline);
+      window.addEventListener('offline', handleOffline);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('online', handleOnline);
+        window.removeEventListener('offline', handleOffline);
+      }
+    };
+  }, []);
+
+  // Show offline fallback if offline (only after initialization)
+  if (isInitialized && isOffline) {
+    return <OfflineFallback />;
+  }
+
   return (
     <ErrorBoundary>
       <ThemeProvider>
         <LanguageProvider>
           <Router>
-        <SessionTracker />
-        <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+            <ScrollToTop />
+            <SessionTracker />
+            <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
           <Navbar />
           <main className="flex-grow">
             <Suspense fallback={<Loading />}>
-              <Routes>
+              <RouteErrorBoundary>
+                <Routes>
                 <Route path="/" element={<SEORoute component={HomePage} title="Home" />} />
                 
                 {/* Platform Routes */}
@@ -93,6 +152,7 @@ function App() {
 
                 {/* Services Routes */}
                 <Route path="/services" element={<SEORoute component={ServicesPage} title="Services" />} />
+                <Route path="/services/managed-business-services" element={<SEORoute component={ManagedServicesPage} title="Enterprise Managed Services" />} />
                 <Route path="/services/:serviceId" element={<SEORoute component={ServiceDetailPage} title="Service Detail" />} />
 
                 {/* Company Routes */}
@@ -154,23 +214,21 @@ function App() {
                 <Route path="/legal/:docId" element={<SEORoute component={LegalPage} title="Legal" />} />
                 <Route path="/accessibility" element={<SEORoute component={AccessibilityPage} title="Accessibility" />} />
                 <Route path="/security/report" element={<SEORoute component={SecurityReportPage} title="Report Vulnerability" />} />
+                <Route path="/coming-soon" element={<SEORoute component={ComingSoonPage} title="Coming Soon" />} />
+                <Route path="/maintenance" element={<SEORoute component={MaintenancePage} title="System Maintenance" />} />
+                <Route path="/403" element={<SEORoute component={AccessDeniedPage} title="Access Denied" />} />
+                <Route path="/500" element={<SEORoute component={ErrorPage} title="Error" props={{ isDemo: true }} />} />
 
                 {/* 404 Fallback */}
-                <Route path="*" element={
-                  <div className="min-h-screen flex items-center justify-center text-slate-600 dark:text-slate-400">
-                    <div className="text-center">
-                      <h1 className="text-4xl font-bold mb-4">404</h1>
-                      <p>Page not found</p>
-                      <Link to="/" className="text-primary-600 hover:underline mt-4 block">Back to Home</Link>
-                    </div>
-                  </div>
-                } />
-              </Routes>
+                <Route path="*" element={<SEORoute component={NotFoundPage} title="404 Not Found" />} />
+                </Routes>
+              </RouteErrorBoundary>
             </Suspense>
           </main>
           <Footer />
           <CookieConsent />
           <NPSModal />
+          <PWAInstallPrompt />
         </div>
           </Router>
         </LanguageProvider>

@@ -22,6 +22,7 @@ import Section from '../components/Section';
 import Badge from '../components/Badge';
 import PricingFeatureTable from '../components/PricingFeatureTable';
 import FAQAccordion from '../components/FAQAccordion';
+import CardSlider from '../components/CardSlider'; // Imported CardSlider
 
 // Motion Imports
 import { StaggeredText } from '../components/ui/motion-text';
@@ -115,161 +116,163 @@ const PricingPage: React.FC = () => {
 
       <Section className="-mt-12 pt-0 relative z-20">
         {/* --- PRICING CARDS --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto mb-24">
-           
-           {/* Plan 1: Business */}
-           <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-             <div className="mb-6">
-               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Business</h3>
-               <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Pondasi digital yang kuat untuk startup & bisnis berkembang.</p>
-             </div>
+        <div className="mb-24">
+           <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12">
              
-             <div className="mb-8">
-               <div className="flex items-baseline gap-1">
-                 <span className="text-sm font-semibold text-slate-500 mb-auto mt-2">IDR</span>
-                 <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                   {annual ? '2.5' : '3'}
-                 </span>
-                 <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
+             {/* Plan 1: Business */}
+             <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+               <div className="mb-6">
+                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Business</h3>
+                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Pondasi digital yang kuat untuk startup & bisnis berkembang.</p>
                </div>
-               <div className="flex items-center justify-between mt-3 text-sm">
-                 <span className="text-slate-500">/ bulan</span>
-                 {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
-               </div>
-               <p className="text-xs text-slate-400 mt-2">
-                 {annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}
-               </p>
-             </div>
-
-             <div className="mb-8">
-               <Link to="/demo?plan=business">
-                  <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white font-bold transition-all hover:shadow-md">
-                    Mulai Trial Gratis
-                  </Button>
-               </Link>
-             </div>
-
-             <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
-               <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Fitur Utama:</p>
-               {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
-                 <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
-                   <div className="mt-0.5 min-w-[18px]">
-                     <Check className="w-4.5 h-4.5 text-slate-400 group-hover:text-primary-600 transition-colors" />
-                   </div>
-                   <span>{f}</span>
+               
+               <div className="mb-8">
+                 <div className="flex items-baseline gap-1">
+                   <span className="text-sm font-semibold text-slate-500 mb-auto mt-2">IDR</span>
+                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                     {annual ? '2.5' : '3'}
+                   </span>
+                   <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
                  </div>
-               ))}
-             </div>
-           </div>
-
-           {/* Plan 2: Growth (Popular) */}
-           <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 flex flex-col h-full border-2 border-primary-600 dark:border-primary-500 relative transform lg:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
-             <div className="absolute -top-5 left-0 right-0 flex justify-center">
-               <div className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 tracking-wide uppercase">
-                 <Zap className="w-3.5 h-3.5 fill-current" />
-                 Most Popular
+                 <div className="flex items-center justify-between mt-3 text-sm">
+                   <span className="text-slate-500">/ bulan</span>
+                   {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
+                 </div>
+                 <p className="text-xs text-slate-400 mt-2">
+                   {annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}
+                 </p>
                </div>
-             </div>
-             
-             <div className="mb-6 mt-2">
-               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Growth</h3>
-               <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
-             </div>
 
-             <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
-               <div className="flex items-baseline gap-1">
-                 <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
-                 <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                   {annual ? '7.5' : '9'}
-                 </span>
-                 <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
+               <div className="mb-8">
+                 <Link to="/demo?plan=business" className="w-full block">
+                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white font-bold transition-all hover:shadow-md w-full">
+                      Mulai Trial Gratis
+                    </Button>
+                 </Link>
                </div>
-               <div className="flex items-center justify-between mt-3 text-sm">
-                 <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
-                 {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
-               </div>
-             </div>
 
-             <div className="mb-8">
-               <Link to="/demo?plan=growth">
-                 <Button fullWidth variant="primary" size="lg" className="h-14 text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40">
-                   Pilih Paket Growth
-                 </Button>
-               </Link>
-             </div>
-
-             <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
-               <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-4">Semua di Business, plus:</p>
-               {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
-                 <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
-                   <div className="mt-0.5 min-w-[18px]">
-                     <div className="bg-primary-100 dark:bg-primary-500/20 rounded-full p-0.5">
-                       <Check className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
+               <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
+                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Fitur Utama:</p>
+                 {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
+                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                     <div className="mt-0.5 min-w-[18px]">
+                       <Check className="w-4.5 h-4.5 text-slate-400 group-hover:text-primary-600 transition-colors" />
                      </div>
+                     <span>{f}</span>
                    </div>
-                   <span>{f}</span>
+                 ))}
+               </div>
+             </div>
+
+             {/* Plan 2: Growth (Popular) */}
+             <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 flex flex-col h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
+               <div className="absolute -top-5 left-0 right-0 flex justify-center">
+                 <div className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 tracking-wide uppercase">
+                   <Zap className="w-3.5 h-3.5 fill-current" />
+                   Most Popular
                  </div>
-               ))}
-             </div>
-           </div>
-
-           {/* Plan 3: Enterprise */}
-           <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
-             {/* Subtle Texture */}
-             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
-
-             <div className="mb-6 relative z-10">
-               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                 Enterprise
-                 <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span>
-               </h3>
-               <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Infrastruktur dedicated & kontrol penuh untuk korporasi.</p>
-             </div>
-             
-             <div className="mb-8 relative z-10">
-               <div className="flex items-baseline gap-1">
-                 <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                   Custom
-                 </span>
                </div>
-               <div className="flex items-center justify-between mt-3 text-sm">
-                  <span className="text-slate-500">Sesuai Kebutuhan</span>
+               
+               <div className="mb-6 mt-2">
+                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Growth</h3>
+                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
                </div>
-               <p className="text-xs text-slate-400 mt-2">
-                 Negosiasi kontrak tahunan & SLA
-               </p>
-             </div>
 
-             <div className="mb-8 relative z-10">
-               <Link to="/contact">
-                  <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 font-bold transition-all">
-                    Hubungi Sales Team
-                  </Button>
-               </Link>
-             </div>
+               <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
+                 <div className="flex items-baseline gap-1">
+                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-auto mt-2">IDR</span>
+                   <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                     {annual ? '7.5' : '9'}
+                   </span>
+                   <span className="text-xl font-bold text-slate-900 dark:text-white">Jt</span>
+                 </div>
+                 <div className="flex items-center justify-between mt-3 text-sm">
+                   <span className="text-slate-500 dark:text-slate-400">/ bulan</span>
+                   {annual && <span className="text-primary-700 dark:text-primary-300 font-medium bg-primary-100 dark:bg-primary-900/50 px-2 py-0.5 rounded border border-primary-200 dark:border-primary-500/30">Hemat 18 Jt/thn</span>}
+                 </div>
+               </div>
 
-             <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
-               <p className="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mb-4">Enterprise Exclusive:</p>
-               {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
-                 <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
-                   <div className="mt-0.5 min-w-[18px]">
-                     <Check className="w-4.5 h-4.5 text-amber-500" />
+               <div className="mb-8">
+                 <Link to="/demo?plan=growth" className="w-full block">
+                   <Button fullWidth variant="primary" size="lg" className="h-14 text-lg shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 w-full">
+                     Pilih Paket Growth
+                   </Button>
+                 </Link>
+               </div>
+
+               <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
+                 <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-4">Semua di Business, plus:</p>
+                 {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
+                   <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
+                     <div className="mt-0.5 min-w-[18px]">
+                       <div className="bg-primary-100 dark:bg-primary-500/20 rounded-full p-0.5">
+                         <Check className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
+                       </div>
+                     </div>
+                     <span>{f}</span>
                    </div>
-                   <span>{f}</span>
-                 </div>
-               ))}
+                 ))}
+               </div>
              </div>
-           </div>
+
+             {/* Plan 3: Enterprise */}
+             <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-amber-400/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden">
+               {/* Subtle Texture */}
+               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
+
+               <div className="mb-6 relative z-10">
+                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                   Enterprise
+                   <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span>
+                 </h3>
+                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Infrastruktur dedicated & kontrol penuh untuk korporasi.</p>
+               </div>
+               
+               <div className="mb-8 relative z-10">
+                 <div className="flex items-baseline gap-1">
+                   <span className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                     Custom
+                   </span>
+                 </div>
+                 <div className="flex items-center justify-between mt-3 text-sm">
+                    <span className="text-slate-500">Sesuai Kebutuhan</span>
+                 </div>
+                 <p className="text-xs text-slate-400 mt-2">
+                   Negosiasi kontrak tahunan & SLA
+                 </p>
+               </div>
+
+               <div className="mb-8 relative z-10">
+                 <Link to="/contact" className="w-full block">
+                    <Button fullWidth variant="outline" className="h-12 border-slate-300 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 font-bold transition-all w-full">
+                      Hubungi Sales Team
+                    </Button>
+                 </Link>
+               </div>
+
+               <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
+                 <p className="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mb-4">Enterprise Exclusive:</p>
+                 {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
+                   <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                     <div className="mt-0.5 min-w-[18px]">
+                       <Check className="w-4.5 h-4.5 text-amber-500" />
+                     </div>
+                     <span>{f}</span>
+                   </div>
+                 ))}
+               </div>
+             </div>
+           </CardSlider>
         </div>
 
         {/* --- CALCULATOR BANNER --- */}
-        <div className="max-w-6xl mx-auto mb-32">
+        <div className="max-w-6xl mx-auto mb-24 md:mb-32">
           <div className="relative rounded-[2.5rem] overflow-hidden bg-slate-900 dark:bg-slate-800 shadow-2xl">
             {/* Background Effects */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
             
-            <div className="relative z-10 flex flex-col lg:flex-row items-center p-10 lg:p-16 gap-12">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center p-8 md:p-16 gap-8 md:gap-12">
               <div className="flex-1 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20 backdrop-blur-md">
                   <Calculator className="w-3.5 h-3.5" />
@@ -279,11 +282,11 @@ const PricingPage: React.FC = () => {
                   Butuh Spesifikasi Khusus? <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span>
                 </h3>
-                <p className="text-slate-300 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-slate-300 text-base md:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.
                 </p>
-                <Link to="/pricing-calculator">
-                  <Button variant="white" size="lg" className="h-14 px-8 text-lg font-bold shadow-xl shadow-blue-900/50 hover:shadow-blue-900/70 hover:scale-105 transition-all duration-300">
+                <Link to="/pricing-calculator" className="w-full md:w-auto block">
+                  <Button variant="white" size="lg" className="h-14 px-8 text-lg font-bold shadow-xl shadow-blue-900/50 hover:shadow-blue-900/70 hover:scale-105 transition-all duration-300 w-full md:w-auto">
                     Buka Pricing Calculator <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>

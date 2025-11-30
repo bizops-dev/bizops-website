@@ -34,6 +34,7 @@ import Button from '../components/Button';
 import { assessmentQuestions, maturityLevels, recommendations } from '../data/assessmentQuestions';
 import { MethodologyReference } from '../components/MethodologyReference';
 import { useNavigate } from 'react-router-dom';
+import { logger } from '../utils/logger';
 
 // --- TYPES ---
 type ViewState = 'intro' | 'lead-form' | 'assessment' | 'analyzing' | 'results';
@@ -76,7 +77,7 @@ const AssessmentPage = () => {
   // Ensure currentQuestion exists before accessing properties
   const currentCategory = currentQuestion?.category as CategoryKey || 'strategy';
 
-  const categoryIcons: Record<CategoryKey, JSX.Element> = {
+  const categoryIcons: Record<CategoryKey, React.ReactElement> = {
     strategy: <Lightbulb className="w-5 h-5" />,
     customer: <Heart className="w-5 h-5" />,
     operations: <Settings className="w-5 h-5" />,
@@ -167,7 +168,7 @@ const AssessmentPage = () => {
       return;
     }
 
-    console.log("Lead Captured:", leadForm); // Simulate Lead Gen Capture
+    logger.log("Lead Captured:", leadForm); // Simulate Lead Gen Capture
     setViewState('assessment');
   };
 
@@ -421,7 +422,7 @@ const AssessmentPage = () => {
                   <input 
                     type="text" 
                     required
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                     value={leadForm.name}
                     onChange={e => setLeadForm({...leadForm, name: e.target.value})}
                     placeholder="Nama Anda"
@@ -433,7 +434,7 @@ const AssessmentPage = () => {
                   <input 
                     type="text" 
                     required
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                     value={leadForm.company}
                     onChange={e => setLeadForm({...leadForm, company: e.target.value})}
                     placeholder="Nama PT"
@@ -449,7 +450,7 @@ const AssessmentPage = () => {
                   <input 
                     type="email" 
                     required
-                    className={`w-full bg-slate-950 border rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:ring-1 transition-all ${
+                    className={`w-full bg-slate-950 border rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:ring-1 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white ${
                       emailError ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary-500 focus:ring-primary-500'
                     }`}
                     value={leadForm.email}
@@ -471,7 +472,7 @@ const AssessmentPage = () => {
                   </label>
                   <input 
                     type="tel" 
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                     value={leadForm.phone}
                     onChange={e => setLeadForm({...leadForm, phone: e.target.value})}
                     placeholder="0812..."
@@ -483,7 +484,7 @@ const AssessmentPage = () => {
                 <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</label>
                 <input 
                   type="text" 
-                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                   value={leadForm.role}
                   onChange={e => setLeadForm({...leadForm, role: e.target.value})}
                   placeholder="Manager IT / Ops"

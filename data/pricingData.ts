@@ -32,7 +32,7 @@ export interface ServiceAddon {
   price: number;
   unit: string;
   availableFor: string[];
-  category: 'infrastructure' | 'implementation' | 'support' | 'integration';
+  category: 'infrastructure' | 'implementation' | 'support' | 'integration' | 'managed-services';
   recommended?: boolean;
   tooltip?: string;
 }
@@ -283,6 +283,58 @@ export const addOns: ServiceAddon[] = [
     availableFor: ['growth', 'enterprise'],
     category: 'integration',
     tooltip: 'Desain ulang format Invoice, PO, atau Laporan Management khusus.'
+  },
+
+  // Enterprise Managed Services
+  {
+    id: 'ms-finance-bookkeeper',
+    name: 'Managed Finance - Bookkeeping',
+    description: 'Jurnal harian, rekonsiliasi bank & laporan keuangan bulanan standar',
+    price: 4500000,
+    unit: 'per bulan',
+    availableFor: ['growth', 'enterprise'],
+    category: 'managed-services',
+    tooltip: 'Staff akuntan virtual untuk menangani pembukuan rutin (s/d 100 transaksi).'
+  },
+  {
+    id: 'ms-finance-tax',
+    name: 'Managed Finance - Tax Specialist',
+    description: 'Kepatuhan pajak bulanan (PPN, PPh 21/23) & pelaporan SPT Masa',
+    price: 3500000,
+    unit: 'per bulan',
+    availableFor: ['growth', 'enterprise'],
+    category: 'managed-services',
+    tooltip: 'Konsultan pajak tersertifikasi untuk memastikan kepatuhan regulasi.'
+  },
+  {
+    id: 'ms-hr-payroll',
+    name: 'Managed HR - Payroll Specialist',
+    description: 'Proses penggajian, perhitungan PPh 21 & administrasi BPJS',
+    price: 3000000,
+    unit: 'per bulan',
+    availableFor: ['growth', 'enterprise'],
+    category: 'managed-services',
+    tooltip: 'Pengelolaan payroll end-to-end yang akurat dan tepat waktu (s/d 50 karyawan).'
+  },
+  {
+    id: 'ms-it-devops',
+    name: 'Managed IT - DevOps Support',
+    description: 'Maintenance server, monitoring keamanan 24/7 & backup management',
+    price: 5000000,
+    unit: 'per bulan',
+    availableFor: ['growth', 'enterprise'],
+    category: 'managed-services',
+    tooltip: 'Tim teknis untuk memastikan uptime dan performa infrastruktur server Anda.'
+  },
+  {
+    id: 'ms-legal-retainer',
+    name: 'Managed Legal - Retainer',
+    description: 'Review kontrak bisnis, konsultasi hukum korporasi & perizinan',
+    price: 5000000,
+    unit: 'per bulan',
+    availableFor: ['growth', 'enterprise'],
+    category: 'managed-services',
+    tooltip: 'Akses ke konsultan hukum untuk kebutuhan legal operasional sehari-hari.'
   }
 ];
 

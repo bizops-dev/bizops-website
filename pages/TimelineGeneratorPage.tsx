@@ -248,7 +248,7 @@ const TimelineGeneratorPage: React.FC = () => {
                      </div>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative overflow-x-auto pb-4">
                      <div className="min-w-[800px]">
                         {/* Weeks Header */}
                         <div className="flex border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">

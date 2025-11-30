@@ -8,10 +8,11 @@ import {
 import { Resource } from '@opentelemetry/resources';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 import { trace, context, Span, SpanStatusCode } from '@opentelemetry/api';
+import { logger } from './logger';
+import { getEnvConfig } from './env';
 
 // --- Configuration ---
 const SERVICE_NAME = 'bizops-frontend-v1';
-const ENV = process.env.NODE_ENV || 'development';
 
 // Singleton reference
 let provider: WebTracerProvider | null = null;
@@ -24,11 +25,13 @@ export const initTelemetry = () => {
   if (provider) return; // Prevent double init
 
   try {
+    const envConfig = getEnvConfig();
+    
     // 1. Create Provider with Service Resource
     provider = new WebTracerProvider({
       resource: new Resource({
         [SemanticResourceAttributes.SERVICE_NAME]: SERVICE_NAME,
-        [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: ENV,
+        [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: envConfig.environment,
         'browser.platform': typeof navigator !== 'undefined' ? navigator.platform : 'unknown',
         'browser.user_agent': typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown',
       }),
@@ -48,14 +51,10 @@ export const initTelemetry = () => {
     // 4. Auto-Instrument Network Requests (Fetch Monkey Patch)
     instrumentFetch();
 
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`[BizOps Telemetry] OTel Initialized for ${SERVICE_NAME}`);
-    }
+    logger.info(`Telemetry: OTel Initialized for ${SERVICE_NAME}`);
   } catch (e) {
     // Always log errors, but use proper error reporting in production
-    if (process.env.NODE_ENV === 'development') {
-      console.error('[BizOps Telemetry] Failed to init:', e);
-    }
+    logger.error('Telemetry: Failed to init', e);
   }
 };
 
@@ -70,25 +69,26 @@ const instrumentFetch = () => {
   try {
     const originalFetch = window.fetch;
     
-    const wrappedFetch = async (...args: any[]) => {
+    type FetchArgs = [RequestInfo | URL, RequestInit?];
+    
+    const wrappedFetch = async (...args: FetchArgs): Promise<Response> => {
       const url = args[0] ? args[0].toString() : 'unknown';
       // Skip telemetry requests to avoid loops (if we had a real collector)
       if (url.includes('/v1/traces')) {
-        // @ts-ignore
-        return originalFetch.apply(window, args);
+        return originalFetch(...args);
       }
 
       const tracer = trace.getTracer('bizops-network-instrumentation');
+      const method = args[1]?.method || 'GET';
       
-      return tracer.startActiveSpan(`HTTP ${args[1]?.method || 'GET'} ${url}`, async (span) => {
+      return tracer.startActiveSpan(`HTTP ${method} ${url}`, async (span) => {
         try {
           // Add Request Attributes
           span.setAttribute('http.url', url);
-          span.setAttribute('http.method', args[1]?.method || 'GET');
+          span.setAttribute('http.method', method);
           span.setAttribute('component', 'http-client');
 
-          // @ts-ignore
-          const response = await originalFetch.apply(window, args);
+          const response = await originalFetch(...args);
 
           // Add Response Attributes
           span.setAttribute('http.status_code', response.status);
@@ -101,9 +101,12 @@ const instrumentFetch = () => {
           }
 
           return response;
-        } catch (error: any) {
-          span.setStatus({ code: SpanStatusCode.ERROR, message: error.message });
-          span.recordException(error);
+        } catch (error) {
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          span.setStatus({ code: SpanStatusCode.ERROR, message: errorMessage });
+          if (error instanceof Error) {
+            span.recordException(error);
+          }
           throw error;
         } finally {
           span.end();
@@ -113,21 +116,23 @@ const instrumentFetch = () => {
 
     // Attempt to overwrite fetch
     // In some environments, this property is read-only.
-    window.fetch = wrappedFetch as any;
+    window.fetch = wrappedFetch as typeof window.fetch;
   } catch (e) {
-    console.warn('[BizOps Telemetry] Could not auto-instrument window.fetch (likely read-only):', e);
+    logger.warn('Telemetry: Could not auto-instrument window.fetch (likely read-only)', e);
   }
 };
+
+type SpanAttributes = Record<string, string | number | boolean>;
 
 /**
  * Start a manual span for critical user actions (e.g., "Checkout", "Submit Lead").
  * Useful for Funnel Analysis.
  */
-export const startSpan = (name: string, attributes: Record<string, any> = {}) => {
+export const startSpan = (name: string, attributes: SpanAttributes = {}): Span => {
   const tracer = trace.getTracer('bizops-user-interaction');
   const span = tracer.startSpan(name);
   Object.entries(attributes).forEach(([key, val]) => {
-    span.setAttribute(key, val);
+    span.setAttribute(key, String(val));
   });
   return span;
 };
@@ -138,18 +143,21 @@ export const startSpan = (name: string, attributes: Record<string, any> = {}) =>
 export const traceAction = async <T>(
   name: string, 
   action: () => Promise<T>, 
-  attributes: Record<string, any> = {}
+  attributes: SpanAttributes = {}
 ): Promise<T> => {
   const tracer = trace.getTracer('bizops-action');
   return tracer.startActiveSpan(name, async (span) => {
     try {
-      Object.entries(attributes).forEach(([k, v]) => span.setAttribute(k, v));
+      Object.entries(attributes).forEach(([k, v]) => span.setAttribute(k, String(v)));
       const result = await action();
       span.setStatus({ code: SpanStatusCode.OK });
       return result;
-    } catch (err: any) {
-      span.setStatus({ code: SpanStatusCode.ERROR, message: err.message });
-      span.recordException(err);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: errorMessage });
+      if (err instanceof Error) {
+        span.recordException(err);
+      }
       throw err;
     } finally {
       span.end();

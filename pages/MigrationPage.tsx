@@ -34,6 +34,8 @@ import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
+import CardSlider from '../components/CardSlider';
+
 // --- DATA DEFINITIONS FOR SAMPLES ---
 // Ordered by Implementation Sequence
 const sampleStructures = [
@@ -549,7 +551,79 @@ const MigrationPage: React.FC = () => {
               </p>
            </div>
            
-           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+           {/* Mobile Slider */}
+           <div className="lg:hidden">
+              <CardSlider
+                 mobileItemWidth="w-[85vw] sm:w-[350px]"
+                 breakpoint="lg"
+              >
+                 {migrationData.map((item, idx) => (
+                    <motion.div 
+                       key={idx}
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true, margin: "-100px" }}
+                       transition={{ delay: idx * 0.1 }}
+                       className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-2xl transition-all duration-300 h-full"
+                    >
+                       {/* Header */}
+                       <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
+                          <div className="flex items-center gap-4 mb-4">
+                             <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm">
+                                <item.icon className="w-6 h-6" />
+                             </div>
+                             <div>
+                                <h3 className="font-bold text-slate-900 dark:text-white text-lg leading-tight">{item.title}</h3>
+                                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mt-1">{item.desc}</p>
+                             </div>
+                          </div>
+                       </div>
+                       
+                       {/* Content */}
+                       <div className="p-8 flex-grow space-y-6">
+                          <div className="flex gap-4">
+                             <div className="flex-shrink-0 mt-1">
+                                <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
+                                   <Info className="w-3.5 h-3.5" />
+                                </div>
+                             </div>
+                             <div>
+                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Tantangan Utama</h4>
+                                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                   {item.challenge}
+                                </p>
+                             </div>
+                          </div>
+
+                          <div className="flex gap-4">
+                             <div className="flex-shrink-0 mt-1">
+                                <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-500 flex items-center justify-center">
+                                   <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                                </div>
+                             </div>
+                             <div>
+                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Solusi BizOps</h4>
+                                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                   {item.solution}
+                                </p>
+                             </div>
+                          </div>
+                       </div>
+
+                       <div className="px-8 pb-8 pt-0 mt-auto">
+                          <div className="h-px w-full bg-slate-100 dark:bg-slate-800 mb-6"></div>
+                          <p className="text-xs text-slate-400 flex items-center gap-2">
+                             <span className="w-2 h-2 rounded-full bg-primary-500"></span>
+                             Support migrasi penuh tersedia
+                          </p>
+                       </div>
+                    </motion.div>
+                 ))}
+              </CardSlider>
+           </div>
+
+           {/* Desktop Grid */}
+           <div className="hidden lg:grid lg:grid-cols-3 gap-8">
               {migrationData.map((item, idx) => (
                  <motion.div 
                     key={idx}
@@ -557,7 +631,7 @@ const MigrationPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-2xl transition-all duration-300"
+                    className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-2xl transition-all duration-300 h-full"
                  >
                     {/* Header */}
                     <div className="p-8 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
@@ -603,7 +677,7 @@ const MigrationPage: React.FC = () => {
                        </div>
                     </div>
 
-                    <div className="px-8 pb-8 pt-0">
+                    <div className="px-8 pb-8 pt-0 mt-auto">
                        <div className="h-px w-full bg-slate-100 dark:bg-slate-800 mb-6"></div>
                        <p className="text-xs text-slate-400 flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-primary-500"></span>

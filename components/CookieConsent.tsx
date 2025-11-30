@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { Shield, Cookie, X, Settings } from 'lucide-react';
+import { logger } from '../utils/logger';
 
 const CookieConsent: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -25,7 +26,7 @@ const CookieConsent: React.FC = () => {
         const parsed = JSON.parse(consent);
         setPreferences(parsed);
       } catch (e) {
-        console.error("Error parsing cookie consent", e);
+        logger.error("Error parsing cookie consent", e);
       }
     }
 
@@ -48,11 +49,9 @@ const CookieConsent: React.FC = () => {
     setShowBanner(false);
     setShowSettings(false);
     
-    // Apply logic based on consent (Mock implementation)
-    if (process.env.NODE_ENV === 'development') {
-      if (prefs.analytics) console.log("[BizOps] Analytics Cookies Enabled");
-      if (prefs.marketing) console.log("[BizOps] Marketing Cookies Enabled");
-    }
+    // Apply logic based on consent
+    if (prefs.analytics) logger.debug("Analytics Cookies Enabled");
+    if (prefs.marketing) logger.debug("Marketing Cookies Enabled");
   };
 
   const handleAcceptAll = () => {

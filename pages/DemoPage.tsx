@@ -188,7 +188,8 @@ const DemoPage: React.FC = () => {
                         label="Nama Lengkap" 
                         placeholder="John Doe" 
                         error={errors.fullName}
-                        className="bg-black/40 border-white/10 focus:border-primary-500 text-white placeholder:text-slate-600"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        labelClassName="text-slate-300"
                       />
                       <Input 
                         id="workEmail" 
@@ -199,7 +200,8 @@ const DemoPage: React.FC = () => {
                         placeholder="john@company.com" 
                         helperText="Gunakan email korporat untuk prioritas."
                         error={errors.workEmail}
-                        className="bg-black/40 border-white/10 focus:border-primary-500 text-white placeholder:text-slate-600"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        labelClassName="text-slate-300"
                       />
                     </div>
 
@@ -209,7 +211,8 @@ const DemoPage: React.FC = () => {
                       required 
                       label="Nama Perusahaan" 
                       error={errors.companyName}
-                      className="bg-black/40 border-white/10 focus:border-primary-500 text-white"
+                      className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                      labelClassName="text-slate-300"
                     />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -222,13 +225,15 @@ const DemoPage: React.FC = () => {
                         placeholder="+62..." 
                         helperText="Kami akan mengirimkan konfirmasi jadwal via WA."
                         error={errors.whatsapp}
-                        className="bg-black/40 border-white/10 focus:border-primary-500 text-white placeholder:text-slate-600"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white placeholder:!text-slate-600 [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        labelClassName="text-slate-300"
                       />
                       <Select 
                         id="employeeCount" 
                         name="employeeCount" 
                         label="Jumlah Karyawan"
-                        className="bg-black/40 border-white/10 focus:border-primary-500 text-white"
+                        className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                        labelClassName="text-slate-300"
                         options={[
                           { value: "<50", label: "< 50 Karyawan" },
                           { value: "50-200", label: "50 - 200 Karyawan" },
@@ -243,7 +248,8 @@ const DemoPage: React.FC = () => {
                       name="industry" 
                       label="Industri Utama"
                       helperText="Membantu kami menyiapkan demo case study yang relevan."
-                      className="bg-black/40 border-white/10 focus:border-primary-500 text-white"
+                      className="!bg-black/40 !border-white/10 focus:!border-primary-500 !text-white [&:-webkit-autofill]:shadow-[0_0_0_100px_#1e293b_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
+                      labelClassName="text-slate-300"
                       options={[
                         { value: "Construction", label: "Konstruksi / Kontraktor" },
                         { value: "Professional Services", label: "Jasa Profesional / Outsourcing" },
@@ -258,12 +264,12 @@ const DemoPage: React.FC = () => {
                     <div className="p-5 bg-white/5 rounded-xl border border-white/10">
                        <span className="block text-sm font-bold text-white mb-4 flex items-center gap-2"><Zap className="w-4 h-4 text-amber-400" /> Kebutuhan Utama</span>
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          <Checkbox label="Integrasi HR & Payroll" name="feature_hr" />
-                          <Checkbox label="Kontrol Proyek & Biaya" name="feature_project" />
-                          <Checkbox label="Manajemen Inventori" name="feature_inv" />
-                          <Checkbox label="Sales & CRM" name="feature_crm" />
-                          <Checkbox label="Finance & Accounting" name="feature_finance" />
-                          <Checkbox label="Minat Partner / OEM" name="feature_partner" />
+                          <Checkbox label="Integrasi HR & Payroll" name="feature_hr" labelClassName="text-slate-300 group-hover:text-white" />
+                          <Checkbox label="Kontrol Proyek & Biaya" name="feature_project" labelClassName="text-slate-300 group-hover:text-white" />
+                          <Checkbox label="Manajemen Inventori" name="feature_inv" labelClassName="text-slate-300 group-hover:text-white" />
+                          <Checkbox label="Sales & CRM" name="feature_crm" labelClassName="text-slate-300 group-hover:text-white" />
+                          <Checkbox label="Finance & Accounting" name="feature_finance" labelClassName="text-slate-300 group-hover:text-white" />
+                          <Checkbox label="Minat Partner / OEM" name="feature_partner" labelClassName="text-slate-300 group-hover:text-white" />
                        </div>
                     </div>
 

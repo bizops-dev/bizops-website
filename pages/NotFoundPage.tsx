@@ -2,61 +2,100 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
-import { Home, FileText, HelpCircle, LogIn } from 'lucide-react';
+import { Home, FileText, HelpCircle, LogIn, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-4 bg-white relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
       <SEO title="404 Not Found" description="Halaman tidak ditemukan." />
       
       {/* Abstract Background */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-         <div className="absolute top-10 left-10 w-64 h-64 bg-slate-900 rounded-full blur-3xl"></div>
-         <div className="absolute bottom-10 right-10 w-64 h-64 bg-primary-600 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px]"></div>
+         <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
       </div>
 
-      <div className="relative z-10 max-w-2xl mx-auto">
-         <div className="text-[12rem] font-black text-slate-50 leading-none select-none">404</div>
-         <div className="w-24 h-24 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mx-auto -mt-20 mb-8 relative border-4 border-white shadow-xl">
-            <span className="text-4xl">😵‍💫</span>
-         </div>
+      <div className="relative z-10 max-w-3xl mx-auto">
+         <motion.div 
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-[10rem] md:text-[14rem] font-black text-slate-200 dark:text-slate-800 leading-none select-none tracking-tighter"
+         >
+            404
+         </motion.div>
          
-         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">
-            Oops! Halaman Ini Sedang "Cuti Di Luar Tanggungan".
-         </h1>
-         <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-            Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa. Tapi jangan khawatir, data operasional Anda tetap aman.
-         </p>
+         <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="relative -mt-16 md:-mt-24"
+         >
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border-4 border-slate-50 dark:border-slate-800 mb-8 relative z-10">
+                <span className="text-5xl animate-bounce">🤔</span>
+            </div>
+            
+            <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
+               Halaman Ini Sedang <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-500">"Cuti Di Luar Tanggungan"</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
+               Seperti karyawan yang butuh istirahat sejenak, halaman yang Anda cari sepertinya sedang tidak ada di tempat, telah dipindahkan, atau tautannya sudah kadaluarsa.
+            </p>
 
-         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to="/">
-               <Button size="lg" className="shadow-lg">Kembali ke Dashboard Utama</Button>
-            </Link>
-         </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+               <Link to="/">
+                  <Button size="lg" className="h-14 px-8 rounded-2xl shadow-lg hover:shadow-primary-500/20 shadow-primary-500/10 text-lg">
+                     Kembali ke Dashboard
+                  </Button>
+               </Link>
+               <Button size="lg" variant="outline" onClick={() => window.history.back()} className="h-14 px-8 rounded-2xl border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+                  Kembali Sebelumnya
+               </Button>
+            </div>
 
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-            <Link to="/platform" className="p-4 bg-slate-50 rounded-xl hover:bg-white hover:shadow-md border border-slate-100 transition-all group">
-               <Home className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-               <div className="font-bold text-slate-900 text-sm">Produk</div>
-               <div className="text-xs text-slate-500">Lihat solusi kami</div>
-            </Link>
-            <Link to="/blog" className="p-4 bg-slate-50 rounded-xl hover:bg-white hover:shadow-md border border-slate-100 transition-all group">
-               <FileText className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-               <div className="font-bold text-slate-900 text-sm">Blog</div>
-               <div className="text-xs text-slate-500">Baca wawasan</div>
-            </Link>
-            <Link to="/contact" className="p-4 bg-slate-50 rounded-xl hover:bg-white hover:shadow-md border border-slate-100 transition-all group">
-               <HelpCircle className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-               <div className="font-bold text-slate-900 text-sm">Support</div>
-               <div className="text-xs text-slate-500">Hubungi bantuan</div>
-            </Link>
-            <Link to="/login" className="p-4 bg-slate-50 rounded-xl hover:bg-white hover:shadow-md border border-slate-100 transition-all group">
-               <LogIn className="w-5 h-5 text-slate-400 mb-2 group-hover:text-primary-600" />
-               <div className="font-bold text-slate-900 text-sm">Login</div>
-               <div className="text-xs text-slate-500">Masuk akun</div>
-            </Link>
-         </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left max-w-4xl mx-auto">
+               <Link to="/platform" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-primary-50 dark:hover:bg-primary-900/10 border border-slate-200 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-800 transition-all group shadow-sm hover:shadow-md">
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                     <Home className="w-5 h-5" />
+                  </div>
+                  <div className="font-bold text-slate-900 dark:text-white mb-1">Produk</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                     Lihat solusi <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+               </Link>
+               <Link to="/blog" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-purple-50 dark:hover:bg-purple-900/10 border border-slate-200 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition-all group shadow-sm hover:shadow-md">
+                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                     <FileText className="w-5 h-5" />
+                  </div>
+                  <div className="font-bold text-slate-900 dark:text-white mb-1">Blog</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                     Baca wawasan <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+               </Link>
+               <Link to="/contact" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-900/10 border border-slate-200 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition-all group shadow-sm hover:shadow-md">
+                  <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                     <HelpCircle className="w-5 h-5" />
+                  </div>
+                  <div className="font-bold text-slate-900 dark:text-white mb-1">Support</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                     Hubungi kami <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+               </Link>
+               <Link to="/login" className="p-6 bg-white dark:bg-slate-900 rounded-2xl hover:bg-orange-50 dark:hover:bg-orange-900/10 border border-slate-200 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition-all group shadow-sm hover:shadow-md">
+                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                     <LogIn className="w-5 h-5" />
+                  </div>
+                  <div className="font-bold text-slate-900 dark:text-white mb-1">Login</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center">
+                     Masuk akun <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+               </Link>
+            </div>
+         </motion.div>
       </div>
     </div>
   );

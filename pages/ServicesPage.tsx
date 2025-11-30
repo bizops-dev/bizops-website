@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import CardSlider from '../components/CardSlider'; // Imported CardSlider
 import { ArrowRight, Compass, Settings, Users, Activity, Sparkles, MoveRight, Layers, Zap, Trophy, Globe, Clock } from 'lucide-react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils/animation';
@@ -46,7 +47,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 16
 
 // --- MAIN PAGE ---
 const ServicesPage: React.FC = () => {
-  const serviceOrder = ['consulting', 'implementation', 'custom-dev', 'training', 'support'];
+  const serviceOrder = ['consulting', 'implementation', 'custom-dev', 'managed-business-services', 'training', 'support'];
   
   const services = serviceOrder
     .filter(key => servicesData[key]) 
@@ -89,8 +90,8 @@ const ServicesPage: React.FC = () => {
               <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Accepting New Enterprise Partners</span>
            </motion.div>
 
-           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-8">
-             <span className="block text-slate-400 dark:text-slate-500 text-3xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
+           <h1 className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-8">
+             <span className="block text-slate-400 dark:text-slate-500 text-2xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-primary-800 to-slate-900 dark:from-white dark:via-primary-200 dark:to-white">
                <StaggeredText text="Beyond Software." />
              </span>
@@ -149,13 +150,7 @@ const ServicesPage: React.FC = () => {
               {/* Connecting Line */}
               <div className="hidden md:block absolute top-[28px] left-0 w-full h-[1px] bg-slate-200 dark:bg-slate-800 z-0"></div>
               
-              <motion.div 
-                variants={STAGGER_CONTAINER}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 md:grid-cols-4 gap-8"
-              >
+              <CardSlider desktopClassName="md:grid md:grid-cols-4 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                  {[
                     { step: '01', title: 'Consult', desc: 'Audit & Roadmap', icon: Compass, color: 'text-blue-500' },
                     { step: '02', title: 'Build', desc: 'Deploy & Config', icon: Layers, color: 'text-indigo-500' },
@@ -165,21 +160,23 @@ const ServicesPage: React.FC = () => {
                     <motion.div 
                       key={idx}
                       variants={FADE_UP_VARIANTS}
-                      className="relative z-10"
+                      className="relative z-10 h-full"
                     >
-                       <SpotlightCard className="rounded-2xl p-6 text-center md:text-left h-full hover:-translate-y-1 transition-transform duration-300">
-                           <div className={`w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-4 shadow-sm mx-auto md:mx-0 ${item.color}`}>
+                       <SpotlightCard className="rounded-2xl p-6 text-center md:text-left h-full flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                           <div className={`w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-4 shadow-sm mx-auto md:mx-0 ${item.color} shrink-0`}>
                               <item.icon className="w-6 h-6" />
                            </div>
-                           <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1 flex flex-col md:flex-row items-center md:items-start gap-2">
-                              {item.title}
-                              <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span>
-                           </h4>
-                           <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                           <div className="flex-grow">
+                              <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1 flex flex-col md:flex-row items-center md:items-start gap-2 justify-center md:justify-start">
+                                 {item.title}
+                                 <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span>
+                              </h4>
+                              <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                           </div>
                        </SpotlightCard>
                     </motion.div>
                  ))}
-              </motion.div>
+              </CardSlider>
            </div>
         </div>
       </Section>
@@ -192,13 +189,65 @@ const ServicesPage: React.FC = () => {
              <div className="h-1 w-20 bg-primary-500 rounded-full"></div>
           </div>
 
-          <motion.div 
-            variants={STAGGER_CONTAINER}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(380px,auto)]"
-          >
+          {/* MOBILE SLIDER (< md) */}
+          <div className="md:hidden">
+            <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+              {services.map((service, index) => {
+                  const isFeatured = index === 0;
+                  if (isFeatured) {
+                    return (
+                        <motion.div 
+                          key={service.id}
+                          variants={FADE_UP_VARIANTS}
+                          className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full"
+                        >
+                          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                          <div className="relative z-10 flex flex-col h-full">
+                              <div className="flex items-center gap-3 mb-6">
+                                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shrink-0">
+                                    <service.icon className="w-6 h-6 text-white" />
+                                </div>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
+                                    <Sparkles className="w-3 h-3" /> Top Pick
+                                </span>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                              <p className="text-slate-300 text-sm leading-relaxed mb-8 flex-grow">
+                                {service.description}
+                              </p>
+                              <div className="mt-auto">
+                                <Link to={`/services/${service.id}`} className="block w-full">
+                                  <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold px-8 w-full">
+                                      Explore
+                                  </Button>
+                                </Link>
+                              </div>
+                          </div>
+                        </motion.div>
+                    );
+                  }
+                  return (
+                    <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
+                        <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col">
+                          <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
+                              <service.icon className="w-6 h-6" />
+                          </div>
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
+                          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{service.description}</p>
+                          <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
+                              <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                                View Service <MoveRight className="w-4 h-4" />
+                              </Link>
+                          </div>
+                        </SpotlightCard>
+                    </motion.div>
+                  );
+              })}
+            </CardSlider>
+          </div>
+
+          {/* DESKTOP GRID (>= md) */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
              {services.map((service, index) => {
                 const isFeatured = index === 0;
                 
@@ -208,14 +257,14 @@ const ServicesPage: React.FC = () => {
                       <motion.div 
                         key={service.id}
                         variants={FADE_UP_VARIANTS}
-                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-10 rounded-[2.5rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500"
+                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-[#0F172A] text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500 h-full"
                       >
                          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700"></div>
                          
                          <div className="relative z-10 flex flex-col md:flex-row gap-8 h-full">
-                            <div className="flex-1">
+                            <div className="flex-1 flex flex-col">
                                <div className="flex items-center gap-3 mb-6">
-                                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center">
+                                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shrink-0">
                                      <service.icon className="w-6 h-6 text-white" />
                                   </div>
                                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 text-primary-200 text-xs font-bold uppercase tracking-wider border border-primary-500/30">
@@ -223,22 +272,22 @@ const ServicesPage: React.FC = () => {
                                   </span>
                                </div>
                                
-                               <h3 className="text-3xl font-bold mb-4">{service.title}</h3>
-                               <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
+                               <h3 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h3>
+                               <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-lg flex-grow">
                                   {service.description}
                                </p>
 
                                <div className="mt-auto">
-                                  <Link to={`/services/${service.id}`}>
-                                    <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold px-8">
+                                  <Link to={`/services/${service.id}`} className="block w-full md:w-auto">
+                                    <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold px-8 w-full md:w-auto">
                                        Explore Strategy
                                     </Button>
                                   </Link>
                                </div>
                             </div>
                             
-                            {/* Decorative List for Featured */}
-                            <div className="flex-1 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10">
+                            {/* Decorative List for Featured - Hidden on mobile small screens if needed, but better visible */}
+                            <div className="flex-1 bg-white/5 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hidden md:block">
                                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">What we analyze</h4>
                                <ul className="space-y-4">
                                   {service.methodology.map((item, i) => (
@@ -263,7 +312,7 @@ const ServicesPage: React.FC = () => {
                 return (
                   <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
                      <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
-                        <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700">
+                        <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                            <service.icon className="w-6 h-6" />
                         </div>
 
@@ -274,7 +323,7 @@ const ServicesPage: React.FC = () => {
                            {service.description}
                         </p>
 
-                        <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto">
+                        <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                            <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                               View Service <MoveRight className="w-4 h-4" />
                            </Link>
@@ -283,12 +332,12 @@ const ServicesPage: React.FC = () => {
                   </motion.div>
                 );
              })}
-          </motion.div>
+          </div>
         </div>
       </Section>
 
       {/* --- CTA SECTION --- */}
-      <Section className="py-24 bg-white dark:bg-slate-950">
+      <Section className="py-16 md:py-24 bg-white dark:bg-slate-950">
         <motion.div 
            initial={{ opacity: 0, scale: 0.98 }}
            whileInView={{ opacity: 1, scale: 1 }}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { X, MessageSquare, ThumbsUp } from 'lucide-react';
+import { logger } from '../utils/logger';
 
 const NPSModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const NPSModal: React.FC = () => {
     setStep('comment');
     // In a real app, send score to analytics endpoint here
     if (process.env.NODE_ENV === 'development') {
-      console.log(`[NPS] Score recorded: ${score}`);
+      logger.log(`[NPS] Score recorded: ${score}`);
     }
   };
 

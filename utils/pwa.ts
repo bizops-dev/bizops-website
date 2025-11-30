@@ -1,3 +1,11 @@
+import { logger } from './logger';
+
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+  preventDefault: () => void;
+};
+
 /**
  * PWA Utilities - Service Worker Registration
  * 
@@ -16,9 +24,7 @@ export const isServiceWorkerSupported = (): boolean => {
 // Register service worker
 export const registerServiceWorker = async (): Promise<ServiceWorkerRegistration | null> => {
   if (!isServiceWorkerSupported()) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('[PWA] Service Workers not supported in this browser');
-    }
+    logger.warn('PWA: Service Workers not supported in this browser');
     return null;
   }
 
@@ -27,9 +33,7 @@ export const registerServiceWorker = async (): Promise<ServiceWorkerRegistration
       scope: '/',
     });
 
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[PWA] Service Worker registered successfully');
-    }
+    logger.debug('PWA: Service Worker registered successfully');
 
     // Check for updates
     registration.addEventListener('updatefound', () => {
@@ -39,9 +43,7 @@ export const registerServiceWorker = async (): Promise<ServiceWorkerRegistration
         newWorker.addEventListener('statechange', () => {
           if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
             // New service worker is installed and waiting
-            if (process.env.NODE_ENV === 'development') {
-              console.log('[PWA] New version available! Reload to update.');
-            }
+            logger.info('PWA: New version available! Reload to update.');
             
             // Notify user about update
             showUpdateNotification();
@@ -52,9 +54,7 @@ export const registerServiceWorker = async (): Promise<ServiceWorkerRegistration
 
     return registration;
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error('[PWA] Service Worker registration failed:', error);
-    }
+    logger.error('PWA: Service Worker registration failed', error);
     return null;
   }
 };
@@ -70,19 +70,13 @@ export const unregisterServiceWorker = async (): Promise<boolean> => {
     
     if (registration) {
       const success = await registration.unregister();
-      
-      if (process.env.NODE_ENV === 'development') {
-        console.log('[PWA] Service Worker unregistered:', success);
-      }
-      
+      logger.debug('PWA: Service Worker unregistered', success);
       return success;
     }
     
     return false;
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error('[PWA] Service Worker unregister failed:', error);
-    }
+    logger.error('PWA: Service Worker unregister failed', error);
     return false;
   }
 };
@@ -110,9 +104,10 @@ export const skipWaiting = async (): Promise<void> => {
 
 // Check if app is running in standalone mode (installed PWA)
 export const isStandalone = (): boolean => {
+  const nav = window.navigator as Navigator & { standalone?: boolean };
   return (
     window.matchMedia('(display-mode: standalone)').matches ||
-    (window.navigator as any).standalone ||
+    nav.standalone === true ||
     document.referrer.includes('android-app://')
   );
 };
@@ -128,16 +123,12 @@ export const setupOnlineListener = (
   onOffline?: () => void
 ): (() => void) => {
   const handleOnline = () => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[PWA] Back online');
-    }
+    logger.debug('PWA: Back online');
     if (onOnline) onOnline();
   };
 
   const handleOffline = () => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[PWA] Gone offline');
-    }
+    logger.debug('PWA: Gone offline');
     if (onOffline) onOffline();
   };
 
@@ -152,7 +143,7 @@ export const setupOnlineListener = (
 };
 
 // PWA Install Prompt
-let deferredPrompt: any = null;
+let deferredPrompt: BeforeInstallPromptEvent | null = null;
 
 // Listen for beforeinstallprompt event
 export const setupInstallPrompt = (): void => {
@@ -161,11 +152,9 @@ export const setupInstallPrompt = (): void => {
     e.preventDefault();
     
     // Store the event so it can be triggered later
-    deferredPrompt = e;
+    deferredPrompt = e as BeforeInstallPromptEvent;
     
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[PWA] Install prompt available');
-    }
+    logger.debug('PWA: Install prompt available');
     
     // Dispatch custom event
     const event = new CustomEvent('pwa-installable');
@@ -174,9 +163,7 @@ export const setupInstallPrompt = (): void => {
 
   // Listen for app installed
   window.addEventListener('appinstalled', () => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[PWA] App installed successfully');
-    }
+    logger.info('PWA: App installed successfully');
     
     deferredPrompt = null;
     
@@ -189,21 +176,17 @@ export const setupInstallPrompt = (): void => {
 // Show install prompt
 export const showInstallPrompt = async (): Promise<boolean> => {
   if (!deferredPrompt) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('[PWA] Install prompt not available');
-    }
+    logger.warn('PWA: Install prompt not available');
     return false;
   }
 
   // Show the install prompt
-  deferredPrompt.prompt();
+  await deferredPrompt.prompt();
 
   // Wait for the user to respond to the prompt
   const { outcome } = await deferredPrompt.userChoice;
 
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`[PWA] User response: ${outcome}`);
-  }
+  logger.debug(`PWA: User response: ${outcome}`);
 
   // Clear the deferredPrompt
   deferredPrompt = null;
@@ -218,9 +201,7 @@ export const isInstallPromptAvailable = (): boolean => {
 
 // Initialize PWA
 export const initializePWA = async (): Promise<void> => {
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[PWA] Initializing...');
-  }
+  logger.debug('PWA: Initializing...');
 
   // Register service worker
   await registerServiceWorker();
@@ -246,11 +227,9 @@ export const initializePWA = async (): Promise<void> => {
     }
   );
 
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[PWA] Initialized successfully');
-    console.log('[PWA] Standalone mode:', isStandalone());
-    console.log('[PWA] Online status:', isOnline());
-  }
+  logger.info('PWA: Initialized successfully');
+  logger.debug('PWA: Standalone mode', isStandalone());
+  logger.debug('PWA: Online status', isOnline());
 };
 
 

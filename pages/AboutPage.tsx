@@ -4,6 +4,8 @@ import SEO from '../components/SEO';
 import { aboutContent } from '../data/content';
 import Button from '../components/Button';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
+import OptimizedImage from '../components/OptimizedImage';
 
 const teamMembers = [
   {
@@ -49,7 +51,7 @@ const AboutPage: React.FC = () => {
       <SEO title="Tentang Kami - PT Divistant Teknologi Indonesia" description="Profil perusahaan, visi kedaulatan digital, dan tim praktisi di balik BizOps." />
 
       {/* --- HERO SECTION (Cinematic) --- */}
-      <section className="relative pt-24 pb-24 lg:pt-48 lg:pb-40 bg-[#0B1120] text-white overflow-hidden">
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 bg-[#0B1120] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         {/* Animated Glow Orbs */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
@@ -69,17 +71,17 @@ const AboutPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]"
           >
             Bermitra dengan Praktisi yang <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-300">Mengerti Masalah Lapangan.</span>
           </motion.h1>
-
+          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12 font-light"
+            className="text-lg md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12 font-light"
           >
             {aboutContent.hero.subheadline}
           </motion.p>
@@ -90,7 +92,7 @@ const AboutPage: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <a href="https://divistant.com/our-profile" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-1">
+              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
                 Lihat Profil Lengkap Divistant <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -99,16 +101,16 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* --- ORIGIN STORY TIMELINE (Refined) --- */}
-      <section className="py-32 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
+      <section className="py-24 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-24">
+            <div className="text-center mb-16 md:mb-24">
                <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Our Origin Story</h2>
                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
                   Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.
                </p>
             </div>
             
-            <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8 space-y-20">
+            <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8 space-y-16 md:space-y-20">
                {aboutContent.timeline.map((item, idx) => (
                  <motion.div 
                    key={idx} 
@@ -127,7 +129,7 @@ const AboutPage: React.FC = () => {
                        </div>
                        <div className={`md:col-span-4 p-8 md:p-10 rounded-3xl border transition-all duration-500 hover:shadow-2xl ${idx === 1 ? 'bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900/10 dark:to-slate-900 border-indigo-100 dark:border-indigo-900 shadow-lg' : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'}`}>
                           <h3 className={`text-2xl font-bold mb-4 ${idx === 1 ? 'text-indigo-900 dark:text-indigo-100' : 'text-slate-900 dark:text-white'}`}>{item.title}</h3>
-                          <p className={`leading-relaxed text-lg font-light ${idx === 1 ? 'text-indigo-800/80 dark:text-indigo-200/70' : 'text-slate-600 dark:text-slate-400'}`}>
+                          <p className={`leading-relaxed text-base md:text-lg font-light ${idx === 1 ? 'text-indigo-800/80 dark:text-indigo-200/70' : 'text-slate-600 dark:text-slate-400'}`}>
                              {item.desc}
                           </p>
                        </div>
@@ -139,26 +141,54 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* --- CORE VALUES (Glassmorphism) --- */}
-      <section className="py-32 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
          {/* Background Shapes */}
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16 md:mb-20">
                <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
                   Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span>
                </h2>
                <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Mobile View: Slider */}
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
+                  {aboutContent.values.map((val, idx) => (
+                    <motion.div 
+                      key={idx}
+                      whileHover={{ y: -10 }}
+                      className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
+                    >
+                       <div className="w-16 h-16 bg-slate-800/80 rounded-2xl flex items-center justify-center mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
+                          {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
+                          {idx === 1 && <Search className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" />}
+                          {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
+                       </div>
+                       <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-200 transition-colors">{val.title}</h3>
+                       <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
+                          {val.manifesto}
+                       </p>
+                       <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
+                          <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
+                          <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
+                       </div>
+                    </motion.div>
+                  ))}
+               </CardSlider>
+            </div>
+
+            {/* Desktop View: Grid */}
+            <div className="hidden md:grid md:grid-cols-3 gap-8">
                {aboutContent.values.map((val, idx) => (
                  <motion.div 
                    key={idx}
                    whileHover={{ y: -10 }}
-                   className="group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60"
+                   className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
                  >
                     <div className="w-16 h-16 bg-slate-800/80 rounded-2xl flex items-center justify-center mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
                        {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
@@ -166,10 +196,10 @@ const AboutPage: React.FC = () => {
                        {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-200 transition-colors">{val.title}</h3>
-                    <p className="text-slate-400 mb-10 text-base leading-relaxed min-h-[100px]">
+                    <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
                        {val.manifesto}
                     </p>
-                    <div className={`bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
+                    <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
                        <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
                        <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
                     </div>
@@ -180,9 +210,9 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* --- TASK FORCE TEAM (Modern Grid) --- */}
-      <section className="py-32 bg-slate-50 dark:bg-slate-950">
+      <section className="py-24 bg-slate-50 dark:bg-slate-950">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16 md:mb-20">
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" /> The Task Force
                </div>
@@ -192,7 +222,47 @@ const AboutPage: React.FC = () => {
                </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Mobile View: Slider */}
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                  {teamMembers.map((member, idx) => (
+                     <motion.div 
+                       key={idx} 
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: idx * 0.1 }}
+                       className="h-full group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800"
+                     >
+                        <div className="aspect-[3/4] overflow-hidden bg-slate-200 relative">
+                           {/* Placeholder / Image */}
+                           <OptimizedImage 
+                              src={member.image} 
+                              alt={member.name} 
+                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                           />
+                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+                           
+                           {/* Overlay Content */}
+                           <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                              <div className="text-white">
+                                 <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
+                                 <h3 className="font-bold text-lg md:text-xl leading-tight mb-3">{member.name}</h3>
+                                 <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
+                                    <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
+                                       "{member.quote}"
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </motion.div>
+                  ))}
+               </CardSlider>
+            </div>
+
+            {/* Desktop View: Grid */}
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                {teamMembers.map((member, idx) => (
                   <motion.div 
                     key={idx} 
@@ -200,7 +270,7 @@ const AboutPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800"
+                    className="h-full group relative bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800"
                   >
                      <div className="aspect-[3/4] overflow-hidden bg-slate-200 relative">
                         {/* Placeholder / Image */}
@@ -215,7 +285,7 @@ const AboutPage: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                            <div className="text-white">
                               <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
-                              <h3 className="font-bold text-xl leading-tight mb-3">{member.name}</h3>
+                              <h3 className="font-bold text-lg md:text-xl leading-tight mb-3">{member.name}</h3>
                               <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
                                  <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
                                     "{member.quote}"
@@ -231,14 +301,14 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* --- COMPANY INFO (Split Layout) --- */}
-      <section className="py-32 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+      <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
                <div>
                   <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-10 flex items-center gap-4">
                      <Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity
                   </h2>
-                  <div className="bg-slate-50 dark:bg-slate-800/30 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 space-y-10 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500">
+                  <div className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 space-y-10 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
                      <div className="flex gap-6 items-start">
                         <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
                            <FileCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />

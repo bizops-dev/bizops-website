@@ -3,15 +3,15 @@ import React, { useState, memo } from 'react';
 interface OptimizedImageProps {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   className?: string;
   loading?: 'lazy' | 'eager';
   objectFit?: 'cover' | 'contain' | 'fill' | 'none';
   priority?: boolean; // For above-fold images
-  sizes?: string; // Responsive sizes
   onLoad?: () => void;
   onError?: () => void;
+  style?: React.CSSProperties;
 }
 
 /**
@@ -19,20 +19,12 @@ interface OptimizedImageProps {
  * 
  * Provides optimized image loading with:
  * - Lazy loading support
- * - WebP format with fallback
- * - Responsive sizes
  * - Blur placeholder
+ * - Smooth transition on load
  * - Error handling
  * 
- * @example
- * <OptimizedImage 
- *   src="/images/hero.jpg"
- *   alt="Hero image"
- *   width={1200}
- *   height={600}
- *   loading="lazy"
- *   sizes="(max-width: 768px) 100vw, 50vw"
- * />
+ * Note: This component currently does not generate responsive srcsets or webp sources automatically
+ * as we don't have an image optimization pipeline. It focuses on UX (loading states) and Performance (lazy loading).
  */
 const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
   src,
@@ -43,29 +35,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
   loading = 'lazy',
   objectFit = 'cover',
   priority = false,
-  sizes,
   onLoad,
   onError,
+  style,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  // Generate srcset for responsive images
-  const generateSrcSet = (baseSrc: string): string => {
-    // If already external URL, return as-is
-    if (baseSrc.startsWith('http://') || baseSrc.startsWith('https://')) {
-      return baseSrc;
-    }
-
-    // Generate multiple sizes
-    const widths = [400, 800, 1200, 1600];
-    const extension = baseSrc.split('.').pop();
-    const basePath = baseSrc.replace(`.${extension}`, '');
-
-    return widths
-      .map((w) => `${basePath}-${w}.webp ${w}w`)
-      .join(', ');
-  };
 
   // Handle image load
   const handleLoad = () => {
@@ -77,18 +52,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
   const handleError = () => {
     setHasError(true);
     if (onError) onError();
-  };
-
-  // Generate WebP source with PNG/JPG fallback
-  const getWebPSrc = (originalSrc: string): string => {
-    // If external URL, return as-is
-    if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://')) {
-      return originalSrc;
-    }
-
-    // Convert extension to webp
-    const extension = originalSrc.split('.').pop();
-    return originalSrc.replace(`.${extension}`, '.webp');
   };
 
   const objectFitClass = {
@@ -103,11 +66,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
     return (
       <div 
         className={`flex items-center justify-center bg-slate-100 dark:bg-slate-800 ${className}`}
-        style={{ width, height }}
+        style={{ width, height, ...style }}
       >
         <div className="text-center p-4">
           <svg 
-            className="w-12 h-12 mx-auto text-slate-400 dark:text-slate-600 mb-2" 
+            className="w-8 h-8 mx-auto text-slate-400 dark:text-slate-600 mb-2" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -119,52 +82,34 @@ const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" 
             />
           </svg>
-          <p className="text-xs text-slate-500 dark:text-slate-400">Failed to load image</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`relative overflow-hidden ${className}`} style={{ width, height }}>
+    <div className={`relative overflow-hidden ${className}`} style={{ width, height, ...style }}>
       {/* Blur placeholder while loading */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 animate-pulse" />
+        <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 animate-pulse z-10" />
       )}
 
-      {/* Picture element for WebP with fallback */}
-      <picture>
-        {/* WebP source for modern browsers */}
-        <source 
-          type="image/webp" 
-          srcSet={generateSrcSet(src)}
-          sizes={sizes}
-        />
-        
-        {/* Fallback for browsers that don't support WebP */}
-        <img
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          loading={priority ? 'eager' : loading}
-          decoding={priority ? 'sync' : 'async'}
-          className={`${objectFitClass} w-full h-full transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoad={handleLoad}
-          onError={handleError}
-          // Add fetchpriority for LCP images
-          {...(priority && { fetchPriority: 'high' as any })}
-        />
-      </picture>
-
-      {/* Loading indicator */}
-      {!isLoaded && !hasError && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full animate-spin" />
-        </div>
-      )}
+      <img
+        src={src}
+        alt={alt}
+        width={typeof width === 'number' ? width : undefined}
+        height={typeof height === 'number' ? height : undefined}
+        loading={priority ? 'eager' : loading}
+        decoding={priority ? 'sync' : 'async'}
+        className={`${objectFitClass} w-full h-full transition-all duration-500 ${
+          isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+        }`}
+        onLoad={handleLoad}
+        onError={handleError}
+        // Add fetchpriority for LCP images
+        // @ts-ignore - fetchPriority is standard but not yet in React types
+        fetchpriority={priority ? 'high' : 'auto'}
+      />
     </div>
   );
 });
@@ -172,5 +117,3 @@ const OptimizedImage: React.FC<OptimizedImageProps> = memo(({
 OptimizedImage.displayName = 'OptimizedImage';
 
 export default OptimizedImage;
-
-

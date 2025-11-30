@@ -5,7 +5,7 @@ export interface PartnerProfile {
   name: string;
   slug: string;
   logo: string; // URL placeholder
-  type: 'implementation' | 'referral' | 'technology';
+  type: 'implementation' | 'referral' | 'technology' | 'managed-service';
   tier: 'platinum' | 'gold' | 'silver' | 'registered' | 'official' | 'applying'; // Added official/applying
   industries: string[];
   location: string;
@@ -16,6 +16,50 @@ export interface PartnerProfile {
 }
 
 export const partnerDirectoryData: PartnerProfile[] = [
+  // --- MANAGED SERVICE PARTNERS (NEW) ---
+  {
+    id: 'msp-1',
+    name: "Optima Bisnis Solusi",
+    slug: "optima-bisnis",
+    logo: "https://ui-avatars.com/api/?name=OB&background=0ea5e9&color=fff&size=128",
+    type: "managed-service",
+    tier: "platinum",
+    industries: ["Finance", "Accounting"],
+    location: "Jakarta, Indonesia",
+    description: "Mitra layanan akuntansi dan pajak end-to-end. Kami menjalankan operasional keuangan Anda menggunakan BizOps, sehingga Anda terima beres laporan jadi.",
+    website: "https://example.com",
+    certified: true,
+    partnershipStatus: "Virtual CFO Partner"
+  },
+  {
+    id: 'msp-2',
+    name: "Talenta Human Capital",
+    slug: "talenta-hc",
+    logo: "https://ui-avatars.com/api/?name=TH&background=ec4899&color=fff&size=128",
+    type: "managed-service",
+    tier: "gold",
+    industries: ["HR", "Outsourcing"],
+    location: "Surabaya, Indonesia",
+    description: "Jasa pengelolaan payroll dan administrasi HRD profesional. Kami menangani perhitungan gaji, pajak, dan BPJS karyawan Anda via BizOps.",
+    website: "https://example.com",
+    certified: true,
+    partnershipStatus: "Managed HR Partner"
+  },
+  {
+    id: 'msp-3',
+    name: "Logistik Pro",
+    slug: "logistik-pro",
+    logo: "https://ui-avatars.com/api/?name=LP&background=f97316&color=fff&size=128",
+    type: "managed-service",
+    tier: "silver",
+    industries: ["Logistics", "Supply Chain"],
+    location: "Semarang, Indonesia",
+    description: "Layanan manajemen gudang dan distribusi. Tim kami yang mengoperasikan sistem inventory BizOps untuk memastikan akurasi stok fisik Anda.",
+    website: "https://example.com",
+    certified: true,
+    partnershipStatus: "3PL Partner"
+  },
+
   // --- TECHNOLOGY PARTNERS (PRINCIPALS) ---
   {
     id: 'tech-1',

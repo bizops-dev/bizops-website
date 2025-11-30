@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Badge from '../components/Badge';
 import Button from '../components/Button';
+import CardSlider from '../components/CardSlider';
 import { Link } from 'react-router-dom';
 import { 
   Server, Database, Globe, Cpu, Layers, ShieldCheck, 
@@ -20,7 +21,7 @@ const TechnologyPage: React.FC = () => {
       />
 
       {/* HERO */}
-      <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0B1120]">
+      <div className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0B1120]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         
@@ -468,9 +469,9 @@ const TechnologyPage: React.FC = () => {
                </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {/* AI Ready */}
-               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500 transition-colors group">
+               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500 transition-colors group h-full">
                   <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-6 h-6 text-purple-400" />
                   </div>
@@ -481,7 +482,7 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                {/* IoT Ready */}
-               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group">
+               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group h-full">
                   <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Network className="w-6 h-6 text-blue-400" />
                   </div>
@@ -492,7 +493,7 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                {/* High Security */}
-               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+               <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group h-full">
                   <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Lock className="w-6 h-6 text-emerald-400" />
                   </div>
@@ -501,7 +502,7 @@ const TechnologyPage: React.FC = () => {
                      Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.
                   </p>
                </div>
-            </div>
+            </CardSlider>
          </div>
       </Section>
 

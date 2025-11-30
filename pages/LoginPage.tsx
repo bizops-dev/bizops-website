@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, ArrowRight, ShieldCheck, Lock, Users, Briefcase, Handshake } from 'lucide-react';
 import Button from '../components/Button';
 import { Input, Checkbox } from '../components/Form';
@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 type LoginType = 'employee' | 'admin' | 'partner';
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
   const [loginType, setLoginType] = useState<LoginType>('employee');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,8 +23,9 @@ const LoginPage: React.FC = () => {
     // Simulate login delay
     await new Promise(r => setTimeout(r, 1500));
     setIsLoading(false);
-    // In real app, redirect or show error
-    alert(`Simulasi Login ${loginType.toUpperCase()} berhasil. Backend belum terhubung.`);
+    
+    // Redirect to Coming Soon as backend is not ready
+    navigate('/coming-soon');
   };
 
   const getLoginTitle = () => {

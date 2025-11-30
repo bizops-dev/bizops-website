@@ -15,6 +15,7 @@ import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { blogPosts, useCasesData, eventsData } from '../data/content';
 import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ResourcesPage = () => {
   // Data extraction
@@ -65,7 +66,7 @@ const ResourcesPage = () => {
       <SEO title="Resource Center" description="Pusat pengetahuan dan perangkat bantu untuk pertumbuhan bisnis Anda." />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -109,7 +110,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Featured Insight (Blog) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Latest Insights</h2>
@@ -122,24 +123,24 @@ const ResourcesPage = () => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Featured Post */}
-          <div className="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all">
-            <img 
+          <div className="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all min-h-[400px]">
+            <OptimizedImage 
               src={latestBlogs[0].image} 
               alt={latestBlogs[0].title} 
               className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-8">
+            <div className="absolute bottom-0 left-0 p-6 md:p-8">
               <span className="inline-block px-3 py-1 bg-primary-600 text-white text-xs font-bold rounded-full mb-3">
                 {latestBlogs[0].category}
               </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary-200 transition-colors">
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary-200 transition-colors">
                 <Link to={`/blog/${latestBlogs[0].slug}`}>{latestBlogs[0].title}</Link>
               </h3>
-              <p className="text-slate-300 line-clamp-2 mb-4 max-w-2xl">
+              <p className="text-slate-300 line-clamp-2 mb-4 max-w-2xl text-sm md:text-base">
                 {latestBlogs[0].summary}
               </p>
-              <div className="flex items-center gap-4 text-slate-300 text-sm">
+              <div className="flex items-center gap-4 text-slate-300 text-xs md:text-sm">
                 <span>{latestBlogs[0].date}</span>
                 <span>•</span>
                 <span>{latestBlogs[0].author}</span>
@@ -168,10 +169,10 @@ const ResourcesPage = () => {
       </section>
 
       {/* Featured Tool / Interactive */}
-      <section className="bg-slate-900 text-white py-20 overflow-hidden relative">
+      <section className="bg-slate-900 text-white py-16 md:py-24 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">Ukur Kesiapan Digital Anda</h2>
               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
@@ -179,19 +180,19 @@ const ResourcesPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/tools/assessment">
-                  <Button size="lg" className="bg-primary-600 hover:bg-primary-500 border-none">
+                  <Button size="lg" className="bg-primary-600 hover:bg-primary-500 border-none w-full sm:w-auto">
                     Mulai Assessment Gratis
                   </Button>
                 </Link>
                 <Link to="/tools/roi-calculator">
-                  <Button size="lg" variant="outline" className="text-white border-slate-600 hover:bg-white/10">
+                  <Button size="lg" variant="outline" className="text-white border-slate-600 hover:bg-white/10 w-full sm:w-auto">
                     Hitung ROI Project
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="relative mt-8 md:mt-0">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 md:transform md:rotate-2 md:hover:rotate-0 transition-transform duration-500">
                 <div className="flex items-center justify-between mb-8">
                   <div className="text-sm font-bold text-slate-400">YOUR SCORE</div>
                   <div className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold">EXCELLENT</div>
@@ -217,7 +218,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Success Stories & Events Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
           
           {/* Success Stories Preview */}

@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Check, ArrowRight, Layers, Smartphone, 
   Server, Share2, MessageSquare, ShieldCheck, Zap, Database, Globe,
-  Users, DollarSign, Briefcase, TrendingUp
+  Users, DollarSign, Briefcase, TrendingUp, Layout, GitBranch
 } from 'lucide-react';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
+import CardSlider from '../components/CardSlider';
 import { modulesData, capabilitiesData, integrationsData } from '../data/content';
 
 const PlatformPage: React.FC = () => {
@@ -39,7 +40,7 @@ const PlatformPage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION */}
-      <div className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+      <div className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent dark:from-primary-900/20 pointer-events-none"></div>
@@ -54,11 +55,11 @@ const PlatformPage: React.FC = () => {
             BizOps bukan sekadar kumpulan aplikasi. Ini adalah infrastruktur digital yang menyatukan setiap aspek operasional—dari absensi staf lapangan hingga laporan keuangan di meja direksi.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-             <Link to="/demo">
-                <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30">Lihat Demo Platform</Button>
+             <Link to="/demo" className="w-full sm:w-auto">
+                <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20 hover:shadow-primary-500/30 w-full">Lihat Demo Platform</Button>
              </Link>
-             <Link to="/docs">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/50 backdrop-blur-sm">Baca Dokumentasi Teknis</Button>
+             <Link to="/docs" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/50 backdrop-blur-sm w-full">Baca Dokumentasi Teknis</Button>
              </Link>
           </div>
 
@@ -83,7 +84,7 @@ const PlatformPage: React.FC = () => {
             </p>
          </div>
 
-         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {capabilities.map((cap) => {
                // Updated Link to New Path Structure
                const linkUrl = `/platform/capabilities/${cap.id}`;
@@ -115,6 +116,106 @@ const PlatformPage: React.FC = () => {
                   </Link>
                );
             })}
+         </CardSlider>
+      </Section>
+
+      {/* 2.5. LOW CODE REVOLUTION (NEW) */}
+      <Section>
+         <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-[3rem] transform -rotate-3"></div>
+               <div className="relative bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-800 shadow-2xl">
+                  {/* Visual Representation of Low Code Builder */}
+                  <div className="flex items-center justify-between mb-6 border-b border-slate-700 pb-4">
+                     <div className="flex items-center gap-3">
+                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span className="text-xs text-slate-400 ml-2">App Builder Studio</span>
+                     </div>
+                     <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase">Drag & Drop Mode</div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                     {/* Form Builder Simulation */}
+                     <div className="flex gap-4">
+                        <div className="w-1/3 space-y-3">
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Input Text</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Dropdown</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Date Picker</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Signature</div>
+                        </div>
+                        <div className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 flex flex-col justify-center items-center text-center">
+                           <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
+                              <div className="text-[10px] text-blue-400 mb-1">Field Label</div>
+                              <div className="h-6 bg-slate-800 rounded w-full"></div>
+                           </div>
+                           <div className="w-full bg-slate-900 rounded-lg p-3 text-left">
+                              <div className="text-[10px] text-blue-400 mb-1">Options</div>
+                              <div className="h-6 bg-slate-800 rounded w-full"></div>
+                           </div>
+                           <div className="mt-4 text-xs text-slate-500">Preview Form Layout</div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
+                     <div className="bg-blue-100 dark:bg-white/20 p-2 rounded-lg"><Zap className="w-5 h-5 text-blue-600 dark:text-white" /></div>
+                     <div>
+                        <div className="text-xs opacity-80">Development Time</div>
+                        <div className="text-sm font-bold">10x Faster</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+               <Badge className="mb-6 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">The Citizen Developer Era</Badge>
+               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                  Buat Aplikasi Enterprise <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Tanpa Koding.</span>
+               </h2>
+               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                  Berdayakan tim operasional Anda untuk menjadi <b>Citizen Developer</b>. Dengan BizOps Studio, siapa pun bisa membuat form digital, workflow approval, dan laporan kustom hanya dengan drag-and-drop.
+               </p>
+               
+               <ul className="space-y-6">
+                  <li className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <Layout className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Visual Form Builder</h4>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                           Desain form input data kompleks dengan validasi logic, perhitungan otomatis, dan relasi antar data tanpa menulis satu baris kode pun.
+                        </p>
+                     </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <GitBranch className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Workflow Automation</h4>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                           Atur alur persetujuan (approval) bertingkat, notifikasi email/WA otomatis, dan trigger aksi berdasarkan perubahan status dokumen.
+                        </p>
+                     </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                     </div>
+                     <div>
+                        <h4 className="font-bold text-slate-900 dark:text-white text-lg">Instant Mobile App</h4>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                           Setiap aplikasi yang Anda buat otomatis tersedia di mobile app (iOS/Android) dengan dukungan offline mode untuk pekerja lapangan.
+                        </p>
+                     </div>
+                  </li>
+               </ul>
+            </div>
          </div>
       </Section>
 
@@ -128,13 +229,13 @@ const PlatformPage: React.FC = () => {
            </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
           {modules.map((mod) => (
             <Link 
               key={mod.id} 
               // Updated Link to New Path Structure
               to={`/platform/modules/${mod.id}`}
-              className="group h-full"
+              className="group h-full block"
             >
               <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50" hoverEffect>
                 <div className="flex items-start justify-between mb-8">
@@ -159,7 +260,7 @@ const PlatformPage: React.FC = () => {
               </Card>
             </Link>
           ))}
-        </div>
+        </CardSlider>
       </Section>
 
       {/* 4. INTEGRATION ECOSYSTEM */}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, TrendingUp, Shield, Code, DollarSign, Users, ArrowRight, Zap, RefreshCw, Layers, Monitor, Phone, Gift, Sliders } from 'lucide-react';
+import { CheckCircle, TrendingUp, Shield, Code, DollarSign, Users, ArrowRight, Zap, RefreshCw, Layers, Monitor, Phone, Gift, Sliders, Briefcase } from 'lucide-react';
 import Button from '../components/Button';
 import { partnerContent } from '../data/content';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
 
 const PartnersPage: React.FC = () => {
   // Calculator State
@@ -44,7 +45,6 @@ const PartnersPage: React.FC = () => {
        totalY2 += monthlyRec + monthlySetup;
     }
     setYear2Profit(totalY2);
-
   }, [sellingPrice, partnerCost, setupFee, activeClients, growthRate]);
 
   const formatCurrency = (val: number) => {
@@ -98,12 +98,12 @@ const PartnersPage: React.FC = () => {
                    className="flex flex-col sm:flex-row gap-4"
                 >
                    <Link to="/partners/apply">
-                      <Button size="lg" className="h-14 px-8 bg-blue-600 hover:bg-blue-700 text-white border-none font-bold shadow-lg shadow-blue-600/20">
+                      <Button size="lg" className="h-14 px-8 bg-blue-600 hover:bg-blue-700 text-white border-none font-bold shadow-lg shadow-blue-600/20 w-full sm:w-auto">
                          Gabung Partner Network
                       </Button>
                    </Link>
-                   <a href="#calculator" onClick={(e) => { e.preventDefault(); document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                      <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10">
+                   <a href="#calculator" onClick={(e) => { e.preventDefault(); document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' }); }} className="w-full sm:w-auto">
+                      <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 w-full">
                          Simulasi Profit
                       </Button>
                    </a>
@@ -161,45 +161,118 @@ const PartnersPage: React.FC = () => {
       </section>
 
       {/* --- PARTNER TYPES (Modified: Removed Whitelabel) --- */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Pilih Model Kemitraan Anda</h2>
             <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami menawarkan fleksibilitas sesuai dengan model bisnis Anda.</p>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+         <div className="md:hidden">
+            <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
+               {/* Referral Partner */}
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group flex flex-col">
+                  <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Gift className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Referral Partner</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Tidak perlu tim teknis atau sertifikasi</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Cocok untuk Freelancer & Influencer B2B</li>
+                  </ul>
+                  <Link to="/partners/apply?program=referral" className="mt-auto">
+                     <Button fullWidth variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50">Daftar Referral</Button>
+                  </Link>
+               </div>
+
+               {/* Implementation Partner */}
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10 flex flex-col">
+                  <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">POPULAR</div>
+                  <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
+                     <Code className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Implementation Partner</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> 100% Revenue dari Jasa Implementasi & Support</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Dedicated Partner Manager & Tech Support</li>
+                  </ul>
+                  <Link to="/partners/apply?program=implementation" className="mt-auto">
+                     <Button fullWidth variant="primary">Apply Partner</Button>
+                  </Link>
+               </div>
+
+               {/* Managed Services Partner */}
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group flex flex-col">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <Briefcase className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Services Partner</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Recurring Revenue dari Retainer Fee</li>
+                     <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Akses ke Tools & Dashboard Khusus Partner</li>
+                  </ul>
+                  <Link to="/partners/apply?program=managed-services" className="mt-auto">
+                     <Button fullWidth variant="outline" className="border-purple-200 text-purple-600 hover:bg-purple-50">Daftar Managed Services</Button>
+                  </Link>
+               </div>
+            </CardSlider>
+         </div>
+
+         <div className="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Referral Partner */}
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group">
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group flex flex-col">
                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Gift className="w-7 h-7" />
                </div>
                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Referral Partner</h3>
                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Cukup referensikan leads potensial, kami yang mengurus penjualan, demo, & implementasi.</p>
-               <ul className="space-y-3 mb-8">
+               <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Komisi hingga 20% dari nilai kontrak tahun pertama</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Tidak perlu tim teknis atau sertifikasi</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-blue-500 shrink-0" /> Cocok untuk Freelancer & Influencer B2B</li>
                </ul>
-               <Link to="/partners/apply?program=referral">
+               <Link to="/partners/apply?program=referral" className="mt-auto">
                   <Button fullWidth variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50">Daftar Referral</Button>
                </Link>
             </div>
 
             {/* Implementation Partner */}
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10">
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10 flex flex-col">
                <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">POPULAR</div>
                <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
                   <Code className="w-7 h-7" />
                </div>
                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Implementation Partner</h3>
                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Anda memegang kendali penuh atas hubungan klien, implementasi, training, dan support.</p>
-               <ul className="space-y-3 mb-8">
+               <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Reseller Margin untuk Lisensi (Recurring)</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> 100% Revenue dari Jasa Implementasi & Support</li>
                   <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-primary-500 shrink-0" /> Dedicated Partner Manager & Tech Support</li>
                </ul>
-               <Link to="/partners/apply?program=implementation">
+               <Link to="/partners/apply?program=implementation" className="mt-auto">
                   <Button fullWidth variant="primary">Apply Partner</Button>
+               </Link>
+            </div>
+
+            {/* Managed Services Partner */}
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group flex flex-col">
+               <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Briefcase className="w-7 h-7" />
+               </div>
+               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Services Partner</h3>
+               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 min-h-[40px]">Untuk konsultan profesional (HR, Finance, Legal) yang ingin membundling jasa dengan sistem ERP.</p>
+               <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Bundling Jasa + Software (High Value)</li>
+                  <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Recurring Revenue dari Retainer Fee</li>
+                  <li className="flex gap-2 text-sm text-slate-700 dark:text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500 shrink-0" /> Akses ke Tools & Dashboard Khusus Partner</li>
+               </ul>
+               <Link to="/partners/apply?program=managed-services" className="mt-auto">
+                  <Button fullWidth variant="outline" className="border-purple-200 text-purple-600 hover:bg-purple-50">Daftar Managed Services</Button>
                </Link>
             </div>
          </div>
@@ -220,7 +293,7 @@ const PartnersPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Controls */}
-            <div className="lg:col-span-5 space-y-8 bg-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-700">
+            <div className="lg:col-span-5 space-y-8 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
                
                <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold uppercase tracking-wider text-xs">
                   <Sliders className="w-4 h-4" /> Konfigurasi Bisnis
@@ -229,7 +302,7 @@ const PartnersPage: React.FC = () => {
                {/* Selling Price */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Harga Lisensi ke Klien (Per Bulan)</label>
+                     <label className="text-sm font-medium text-slate-300">Harga Lisensi (Bulan)</label>
                      <span className="text-sm font-bold text-white">{formatCurrency(sellingPrice)}</span>
                   </div>
                   <input 
@@ -243,7 +316,7 @@ const PartnersPage: React.FC = () => {
                {/* Setup Fee */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Biaya Implementasi Anda (One-time)</label>
+                     <label className="text-sm font-medium text-slate-300">Biaya Setup (One-time)</label>
                      <span className="text-sm font-bold text-white">{formatCurrency(setupFee)}</span>
                   </div>
                   <input 
@@ -251,7 +324,7 @@ const PartnersPage: React.FC = () => {
                      value={setupFee} onChange={(e) => setSetupFee(Number(e.target.value))}
                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500 hover:accent-primary-400"
                   />
-                  <p className="text-xs text-slate-500 mt-2">Nilai jasa setup, training, dan migrasi data yang Anda charge ke klien.</p>
+                  <p className="text-xs text-slate-500 mt-2">Nilai jasa setup, training, dan migrasi data.</p>
                </div>
 
                <hr className="border-slate-700" />
@@ -259,7 +332,7 @@ const PartnersPage: React.FC = () => {
                {/* Partner Cost */}
                <div>
                   <div className="flex justify-between mb-2">
-                     <label className="text-sm font-medium text-slate-300">Harga Dasar Partner (Net Price)</label>
+                     <label className="text-sm font-medium text-slate-300">Harga Dasar Partner</label>
                      <span className="text-sm font-bold text-slate-400">{formatCurrency(partnerCost)}</span>
                   </div>
                   <input 
@@ -267,7 +340,7 @@ const PartnersPage: React.FC = () => {
                      value={partnerCost} onChange={(e) => setPartnerCost(Number(e.target.value))}
                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-slate-500"
                   />
-                  <p className="text-xs text-slate-500 mt-2">Harga spesial partner yang Anda bayarkan ke BizOps. (Selisih adalah margin Anda)</p>
+                  <p className="text-xs text-slate-500 mt-2">Harga spesial partner ke BizOps (Cost of Goods Sold).</p>
                </div>
 
                <hr className="border-slate-700" />
@@ -280,7 +353,7 @@ const PartnersPage: React.FC = () => {
                         <input 
                            type="number" 
                            value={activeClients} onChange={(e) => setActiveClients(Number(e.target.value))}
-                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
+                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
                         />
                      </div>
                   </div>
@@ -290,9 +363,8 @@ const PartnersPage: React.FC = () => {
                         <input 
                            type="number" 
                            value={growthRate} onChange={(e) => setGrowthRate(Number(e.target.value))}
-                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
+                           className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-primary-500 focus:outline-none"
                         />
-                        <span className="absolute right-3 top-2.5 text-xs text-slate-500">+ klien</span>
                      </div>
                   </div>
                </div>
@@ -300,7 +372,7 @@ const PartnersPage: React.FC = () => {
             </div>
 
             {/* Results */}
-            <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark:text-white">
+            <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark:text-white">
                
                <div className="mb-8">
                   <h3 className="text-lg font-bold text-slate-500 mb-4 uppercase tracking-widest text-xs">Snapshot Profitabilitas</h3>
@@ -381,9 +453,23 @@ const PartnersPage: React.FC = () => {
 
       {/* --- BENEFITS ICONS --- */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+         <div className="md:hidden">
+            <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+               {partnerContent.benefits.map((benefit, idx) => (
+                  <div key={idx} className="flex flex-col items-start h-full p-4 md:p-0 bg-white dark:bg-slate-900/50 md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none border border-slate-100 dark:border-slate-800 md:border-none">
+                     <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
+                        <benefit.icon className="w-6 h-6" />
+                     </div>
+                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-2">{benefit.title}</h3>
+                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</p>
+                  </div>
+               ))}
+            </CardSlider>
+         </div>
+
+         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {partnerContent.benefits.map((benefit, idx) => (
-               <div key={idx} className="flex flex-col items-start">
+               <div key={idx} className="flex flex-col items-start h-full p-4 md:p-0 bg-white dark:bg-slate-900/50 md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none border border-slate-100 dark:border-slate-800 md:border-none">
                   <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
                      <benefit.icon className="w-6 h-6" />
                   </div>

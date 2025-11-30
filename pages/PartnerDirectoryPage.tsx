@@ -1,12 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, MapPin, Filter, Briefcase, Award, CheckCircle, ExternalLink, Globe, ChevronRight, X, Info } from 'lucide-react';
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
-import CardSlider from '../components/CardSlider'; // Import CardSlider
+import Pagination from '../components/Pagination';
+import OptimizedImage from '../components/OptimizedImage';
 import { partnerDirectoryData, industriesList, locationsList, PartnerProfile } from '../data/partnerDirectoryContent';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const ITEMS_PER_PAGE = 6;
 
 const PartnerDirectoryPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +17,7 @@ const PartnerDirectoryPage: React.FC = () => {
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Filter Logic
   const filteredPartners = useMemo(() => {
@@ -31,6 +35,10 @@ const PartnerDirectoryPage: React.FC = () => {
     });
   }, [searchQuery, selectedType, selectedIndustry, selectedLocation]);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedType, selectedIndustry, selectedLocation]);
+
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedType(null);
@@ -39,6 +47,17 @@ const PartnerDirectoryPage: React.FC = () => {
   };
 
   const hasActiveFilters = searchQuery || selectedType || selectedIndustry || selectedLocation;
+
+  const totalPages = Math.ceil(filteredPartners.length / ITEMS_PER_PAGE);
+  const paginatedPartners = filteredPartners.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    document.getElementById('partner-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors font-sans">
@@ -94,7 +113,7 @@ const PartnerDirectoryPage: React.FC = () => {
             <div>
               <h3 className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 mb-4 tracking-wider">Partner Type</h3>
               <div className="space-y-2">
-                {['implementation', 'referral', 'technology'].map(type => (
+                {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                   <div key={type}>
                      <label className="flex items-center gap-3 cursor-pointer group">
                         <div className={`w-4 h-4 rounded border flex items-center justify-center transition-all ${selectedType === type ? 'bg-primary-600 border-primary-600' : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 group-hover:border-primary-400'}`}>
@@ -109,9 +128,15 @@ const PartnerDirectoryPage: React.FC = () => {
                            onClick={() => setSelectedType(selectedType === type ? null : type)}
                         />
                         <span className="text-sm text-slate-600 dark:text-slate-300 capitalize group-hover:text-primary-600 transition-colors">
-                           {type} Partner
+                           {type.replace('-', ' ')} Partner
                         </span>
                      </label>
+                     {/* Info Text for Managed Service */}
+                     {type === 'managed-service' && (
+                        <div className="ml-7 mt-1 text-[10px] text-slate-400 leading-tight">
+                           Mitra operasional outsourcing (Finance, HR, dll)
+                        </div>
+                     )}
                      {/* Info Text for Technology Partner */}
                      {type === 'technology' && (
                         <div className="ml-7 mt-1 text-[10px] text-slate-400 leading-tight">
@@ -211,13 +236,20 @@ const PartnerDirectoryPage: React.FC = () => {
              </div>
 
              {filteredPartners.length > 0 ? (
-               <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {filteredPartners.map(partner => (
-                     <div key={partner.id} className="h-full">
-                        <PartnerCard partner={partner} />
-                     </div>
-                  ))}
-               </CardSlider>
+               <div id="partner-grid">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                     {paginatedPartners.map(partner => (
+                        <div key={partner.id} className="h-full">
+                           <PartnerCard partner={partner} />
+                        </div>
+                     ))}
+                  </div>
+                  <Pagination 
+                     currentPage={currentPage} 
+                     totalPages={totalPages} 
+                     onPageChange={handlePageChange} 
+                  />
+               </div>
              ) : (
                <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800">
                   <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
@@ -258,10 +290,10 @@ const PartnerDirectoryPage: React.FC = () => {
                  <div>
                     <h4 className="font-bold text-slate-900 dark:text-white mb-3">Type</h4>
                     <div className="space-y-3">
-                       {['implementation', 'referral', 'technology'].map(type => (
+                       {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                           <label key={type} className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
                              <div>
-                                <span className="capitalize text-slate-700 dark:text-slate-300 block">{type}</span>
+                                <span className="capitalize text-slate-700 dark:text-slate-300 block">{type.replace('-', ' ')}</span>
                                 {type === 'technology' && <span className="text-[10px] text-slate-400">Principal & Official Tech</span>}
                              </div>
                              <input 
@@ -310,6 +342,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
          case 'implementation': return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
          case 'referral': return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300';
          case 'technology': return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+         case 'managed-service': return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
          default: return 'bg-slate-100 text-slate-700';
       }
    };
@@ -339,7 +372,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
          <div className="flex justify-between items-start mb-6">
             <div className="flex items-center gap-4">
                <div className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 dark:border-slate-800 flex items-center justify-center shadow-sm">
-                   <img src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
+                   <OptimizedImage src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" />
                </div>
                <div>
                   <h3 className="font-bold text-slate-900 dark:text-white text-lg leading-tight group-hover:text-primary-500 transition-colors">

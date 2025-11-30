@@ -1010,12 +1010,14 @@ const PricingCalculator: React.FC = () => {
     const implementationAddons = addOns.filter(a => a.category === 'implementation');
     const supportAddons = addOns.filter(a => a.category === 'support');
     const integrationAddons = addOns.filter(a => a.category === 'integration');
+    const managedServicesAddons = addOns.filter(a => a.category === 'managed-services');
 
     const sections = [
         { title: 'Infrastructure & Hardware', icon: Server, color: 'text-blue-400', items: infrastructureAddons },
         { title: 'Implementation Services', icon: Rocket, color: 'text-emerald-400', items: implementationAddons },
         { title: 'Support & Maintenance', icon: Headphones, color: 'text-amber-400', items: supportAddons },
         { title: 'Integrations & Customization', icon: Plug, color: 'text-purple-400', items: integrationAddons },
+        { title: 'Enterprise Managed Services', icon: Briefcase, color: 'text-rose-400', items: managedServicesAddons },
     ];
 
     return (

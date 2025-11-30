@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import { motion } from 'framer-motion';
+import CardSlider from '../components/CardSlider';
 
 const WhyBizOpsPage: React.FC = () => {
   return (
@@ -78,7 +79,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <div className="w-4 h-4 bg-slate-400 rounded-full mx-auto mb-2 group-hover:scale-125 transition-transform"></div>
                      <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Legacy ERP<br/>(SAP/Oracle)</span>
                   </div>
-
+                  
                   <div className="absolute bottom-[25%] right-[25%] transform -translate-x-1/2 -translate-y-1/2 text-center opacity-70 group cursor-help">
                      <div className="w-4 h-4 bg-slate-400 rounded-full mx-auto mb-2 group-hover:scale-125 transition-transform"></div>
                      <span className="text-xs font-bold text-slate-600 dark:text-slate-400">SaaS Lokal<br/>(Accounting App)</span>
@@ -97,39 +98,81 @@ const WhyBizOpsPage: React.FC = () => {
                </div>
 
                {/* Explanation */}
-               <div className="w-full lg:w-1/2 space-y-6">
-                  <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
-                     <div className="flex gap-4">
-                        <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
-                        <div>
-                           <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">Legacy ERP (Kiri Atas)</h3>
-                           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                              Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.
-                           </p>
+               <div className="w-full lg:w-1/2">
+                  <div className="lg:hidden">
+                     <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
+                        <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
+                           <div className="flex gap-4">
+                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
+                              <div>
+                                 <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">Legacy ERP (Kiri Atas)</h3>
+                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.
+                                 </p>
+                              </div>
+                           </div>
                         </div>
-                     </div>
+                        
+                        <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all h-full">
+                           <div className="flex gap-4">
+                              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
+                              <div>
+                                 <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">SaaS Lokal (Kanan Bawah)</h3>
+                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div className="relative p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-slate-900 rounded-3xl border border-primary-100 dark:border-primary-800 shadow-lg h-full">
+                           <div className="flex gap-5">
+                              <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
+                              <div>
+                                 <h3 className="font-bold text-primary-900 dark:text-white text-xl mb-2">The BizOps Way (Kanan Atas)</h3>
+                                 <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                    Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </CardSlider>
                   </div>
                   
-                  <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
-                     <div className="flex gap-4">
-                        <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
-                        <div>
-                           <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">SaaS Lokal (Kanan Bawah)</h3>
-                           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                              Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.
-                           </p>
+                  <div className="hidden lg:block space-y-6">
+                     <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
+                        <div className="flex gap-4">
+                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
+                           <div>
+                              <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">Legacy ERP (Kiri Atas)</h3>
+                              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                 Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.
+                              </p>
+                           </div>
                         </div>
                      </div>
-                  </div>
+                     
+                     <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
+                        <div className="flex gap-4">
+                           <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
+                           <div>
+                              <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-1">SaaS Lokal (Kanan Bawah)</h3>
+                              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                 Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
 
-                  <div className="relative p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-slate-900 rounded-3xl border border-primary-100 dark:border-primary-800 shadow-lg">
-                     <div className="flex gap-5">
-                        <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
-                        <div>
-                           <h3 className="font-bold text-primary-900 dark:text-white text-xl mb-2">The BizOps Way (Kanan Atas)</h3>
-                           <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-                              Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.
-                           </p>
+                     <div className="relative p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-slate-900 rounded-3xl border border-primary-100 dark:border-primary-800 shadow-lg">
+                        <div className="flex gap-5">
+                           <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
+                           <div>
+                              <h3 className="font-bold text-primary-900 dark:text-white text-xl mb-2">The BizOps Way (Kanan Atas)</h3>
+                              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                 Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.
+                              </p>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -145,9 +188,37 @@ const WhyBizOpsPage: React.FC = () => {
                5 Alasan Strategis Berinvestasi di BizOps
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="md:hidden">
+               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
+                  {whyBizOpsContent.reasons.map((reason, idx) => (
+                     <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
+                        <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
+                           {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
+                           {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
+                           {idx === 2 && <LinkIcon className="w-7 h-7 text-amber-500" />}
+                           {idx === 3 && <Code className="w-7 h-7 text-purple-500" />}
+                           {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{reason.title}</h3>
+                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
+                     </Card>
+                  ))}
+                  
+                  {/* CTA Card */}
+                  <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
+                     <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                     <h3 className="text-2xl font-bold mb-4 relative z-10">Siap Bertransformasi?</h3>
+                     <p className="text-slate-300 mb-8 text-sm relative z-10">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</p>
+                     <Link to="/demo" className="relative z-10 w-full mt-auto">
+                        <Button fullWidth className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
+                     </Link>
+                  </div>
+               </CardSlider>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                {whyBizOpsContent.reasons.map((reason, idx) => (
-                  <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800">
+                  <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
                      <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
                         {idx === 0 && <Smartphone className="w-7 h-7 text-blue-500" />}
                         {idx === 1 && <Shield className="w-7 h-7 text-green-500" />}
@@ -156,16 +227,16 @@ const WhyBizOpsPage: React.FC = () => {
                         {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                      </div>
                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{reason.title}</h3>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">{reason.desc}</p>
+                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
                   </Card>
                ))}
                
                {/* CTA Card */}
-               <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group">
+               <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <h3 className="text-2xl font-bold mb-4 relative z-10">Siap Bertransformasi?</h3>
                   <p className="text-slate-300 mb-8 text-sm relative z-10">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</p>
-                  <Link to="/demo" className="relative z-10 w-full">
+                  <Link to="/demo" className="relative z-10 w-full mt-auto">
                      <Button fullWidth className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                   </Link>
                </div>
@@ -278,10 +349,10 @@ const WhyBizOpsPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
                <Link to="/demo">
-                  <Button size="lg" className="h-14 px-8 bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all">Mulai Transformasi Digital</Button>
+                  <Button size="lg" className="h-14 px-8 bg-white text-slate-900 hover:bg-slate-100 border-none font-bold text-lg shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto">Mulai Transformasi Digital</Button>
                </Link>
                <Link to="/needs-analysis">
-                  <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 font-bold text-lg">Jadwalkan Audit Kebutuhan</Button>
+                  <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 font-bold text-lg w-full sm:w-auto">Jadwalkan Audit Kebutuhan</Button>
                </Link>
             </div>
          </div>

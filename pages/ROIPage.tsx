@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { logger } from '../utils/logger';
 
 // Pricing Tiers for Comparison
 const PRICING_TIERS = [
@@ -96,7 +97,7 @@ const ROIPage: React.FC = () => {
   // --- HANDLERS ---
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("ROI Lead Captured:", { ...leadData, roiPercentage, annualSavings });
+    logger.log("ROI Lead Captured:", { ...leadData, roiPercentage, annualSavings });
     setShowLeadForm(false);
     window.print(); // Trigger print dialog as "Download" action
   };
@@ -171,7 +172,7 @@ const ROIPage: React.FC = () => {
                           <input 
                             type="number" value={salary} 
                             onChange={(e) => setSalary(parseInt(e.target.value))}
-                            className="w-full pl-8 pr-2 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                            className="w-full pl-8 pr-2 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                           />
                         </div>
                     </div>
@@ -211,7 +212,7 @@ const ROIPage: React.FC = () => {
                           <input 
                             type="number" value={losses} 
                             onChange={(e) => setLosses(parseInt(e.target.value))}
-                            className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none"
+                            className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                           />
                         </div>
                     </div>
@@ -223,7 +224,7 @@ const ROIPage: React.FC = () => {
                           <input 
                             type="number" value={existingTechCost} 
                             onChange={(e) => setExistingTechCost(parseInt(e.target.value))}
-                            className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
+                            className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                           />
                         </div>
                         <p className="text-xs text-slate-500 mt-2">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</p>
@@ -414,7 +415,7 @@ const ROIPage: React.FC = () => {
                         type="text" 
                         value={leadData.name}
                         onChange={e => setLeadData({...leadData, name: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none"
+                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         placeholder="Nama Anda"
                       />
                     </div>
@@ -428,7 +429,7 @@ const ROIPage: React.FC = () => {
                         type="text" 
                         value={leadData.company}
                         onChange={e => setLeadData({...leadData, company: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none"
+                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         placeholder="Nama PT"
                       />
                     </div>
@@ -442,7 +443,7 @@ const ROIPage: React.FC = () => {
                         type="email" 
                         value={leadData.email}
                         onChange={e => setLeadData({...leadData, email: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none"
+                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         placeholder="email@kantor.com"
                       />
                     </div>
@@ -455,7 +456,7 @@ const ROIPage: React.FC = () => {
                         type="tel" 
                         value={leadData.phone}
                         onChange={e => setLeadData({...leadData, phone: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none"
+                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                         placeholder="0812..."
                       />
                     </div>

@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import { legalContent } from '../data/content';
 import Button from '../components/Button';
-import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, History, Lock, BrainCircuit, Phone, Printer, Share2, ChevronRight, CheckCircle, Menu, X } from 'lucide-react';
+import { Shield, FileText, Scale, Cookie, Save, Database, Download, Trash2, History, Lock, BrainCircuit, Phone, Printer, Share2, ChevronRight, CheckCircle, Menu, X, List } from 'lucide-react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -31,6 +31,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
 
   // Mobile Nav State
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isMobileTOCOpen, setIsMobileTOCOpen] = useState(false); // New: Mobile TOC state
 
   // State for Cookie Preferences Logic
   const [preferences, setPreferences] = useState({
@@ -76,6 +77,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
     setRequestStatus('idle');
     setEmail('');
     setIsMobileNavOpen(false); // Close mobile nav on change
+    setIsMobileTOCOpen(false); // Close mobile TOC on change
   }, [activeDocId]);
 
   const handleSaveCookies = () => {
@@ -153,10 +155,11 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
        
        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* MOBILE NAV (Drawer/Dropdown) - Visible only on mobile */}
-          <div className="lg:hidden mb-8 relative z-30">
+          {/* MOBILE NAV CONTROLS */}
+          <div className="lg:hidden mb-6 flex flex-col gap-3 relative z-30">
+             {/* 1. Document Switcher */}
              <button 
-                onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+                onClick={() => { setIsMobileNavOpen(!isMobileNavOpen); setIsMobileTOCOpen(false); }}
                 className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform"
              >
                 <div className="flex items-center gap-3">
@@ -171,13 +174,25 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                 <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isMobileNavOpen ? 'rotate-90' : ''}`} />
              </button>
 
+             {/* 2. Mobile Table of Contents Toggle */}
+             {headings.length > 0 && (
+                <button 
+                  onClick={() => { setIsMobileTOCOpen(!isMobileTOCOpen); setIsMobileNavOpen(false); }}
+                  className="w-full bg-white border border-slate-200 rounded-xl p-3 flex items-center justify-center gap-2 shadow-sm text-sm font-medium text-slate-600 hover:text-primary-600 active:scale-[0.99] transition-all"
+                >
+                   <List className="w-4 h-4" /> 
+                   {isMobileTOCOpen ? 'Hide Table of Contents' : 'Show Table of Contents'}
+                </button>
+             )}
+
+             {/* Document Drawer */}
              <AnimatePresence>
                 {isMobileNavOpen && (
                    <motion.div 
                       initial={{ opacity: 0, y: -10, height: 0 }}
                       animate={{ opacity: 1, y: 0, height: 'auto' }}
                       exit={{ opacity: 0, y: -10, height: 0 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden"
+                      className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden z-40"
                    >
                       <div className="max-h-[60vh] overflow-y-auto p-2">
                          {LEGAL_LINKS.map((link) => (
@@ -192,6 +207,35 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                {activeDocId === link.id && <CheckCircle className="w-4 h-4 ml-auto text-primary-600" />}
                             </Link>
                          ))}
+                      </div>
+                   </motion.div>
+                )}
+             </AnimatePresence>
+
+             {/* TOC Drawer */}
+             <AnimatePresence>
+                {isMobileTOCOpen && headings.length > 0 && (
+                   <motion.div 
+                      initial={{ opacity: 0, y: -10, height: 0 }}
+                      animate={{ opacity: 1, y: 0, height: 'auto' }}
+                      exit={{ opacity: 0, y: -10, height: 0 }}
+                      className="bg-slate-50 rounded-xl border border-slate-200 shadow-inner overflow-hidden"
+                   >
+                      <div className="p-4 max-h-[40vh] overflow-y-auto">
+                         <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Jump to Section</h4>
+                         <ul className="space-y-2">
+                            {headings.map((h) => (
+                              <li key={h.id}>
+                                 <a 
+                                    href={`#${h.id}`} 
+                                    onClick={() => setIsMobileTOCOpen(false)}
+                                    className="block text-sm text-slate-600 hover:text-primary-600 py-1"
+                                 >
+                                    {h.text}
+                                 </a>
+                              </li>
+                            ))}
+                         </ul>
                       </div>
                    </motion.div>
                 )}
@@ -254,7 +298,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                 </div>
                 
                 {/* Document Body */}
-                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 sm:p-12 min-h-[500px]">
+                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-12 min-h-[500px]">
                   
                    {/* SPECIAL INTERACTIVE UI: DATA RIGHTS */}
                    {activeDocId === 'data-rights' && (
@@ -405,6 +449,12 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       .legal-content a { color: #2563EB; text-decoration: none; font-weight: 500; }
                       .legal-content a:hover { text-decoration: underline; }
                       .legal-content blockquote { border-left: 4px solid #3B82F6; background-color: #F8FAFC; padding: 1rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 0.5rem 0.5rem 0; font-style: normal; color: #334155; }
+                      
+                      @media (max-width: 640px) {
+                        .legal-content h2 { font-size: 1.25rem; margin-top: 2rem; }
+                        .legal-content h3 { font-size: 1.1rem; }
+                        .legal-content p, .legal-content li { font-size: 0.95rem; line-height: 1.6; }
+                      }
                    `}</style>
                    
                    <div 

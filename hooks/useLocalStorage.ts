@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { logger } from '../utils/logger';
 
 /**
  * Custom hook for managing localStorage with error handling
@@ -25,9 +26,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       // If error also return initialValue
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(`Error reading localStorage key "${key}":`, error);
-      }
+      logger.warn(`Error reading localStorage key "${key}":`, error);
       return initialValue;
     }
   });
@@ -48,9 +47,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
       }
     } catch (error) {
       // A more advanced implementation would handle the error case
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(`Error setting localStorage key "${key}":`, error);
-      }
+      logger.warn(`Error setting localStorage key "${key}":`, error);
     }
   };
 
@@ -61,9 +58,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
         try {
           setStoredValue(JSON.parse(e.newValue));
         } catch (error) {
-          if (process.env.NODE_ENV === 'development') {
-            console.warn(`Error parsing storage change for key "${key}":`, error);
-          }
+          logger.warn(`Error parsing storage change for key "${key}":`, error);
         }
       }
     };

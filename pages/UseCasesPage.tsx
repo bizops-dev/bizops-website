@@ -5,8 +5,9 @@ import Button from '../components/Button';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Pagination from '../components/Pagination';
 import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Filter, Search, X, Briefcase, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Filter, Search, X, Briefcase, Layers } from 'lucide-react';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 
@@ -403,40 +404,11 @@ const UseCasesPage: React.FC = () => {
 
                         {/* Pagination Controls */}
                         {totalPages > 1 && (
-                           <div className="mt-12 flex justify-center items-center gap-4">
-                              <button
-                                 onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                                 disabled={currentPage === 1}
-                                 className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
-                              >
-                                 <ChevronLeft className="w-5 h-5" />
-                              </button>
-                              
-                              <div className="flex gap-2">
-                                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                    <button
-                                       key={page}
-                                       onClick={() => handlePageChange(page)}
-                                       className={`
-                                          w-10 h-10 rounded-xl text-sm font-bold transition-all shadow-sm
-                                          ${currentPage === page 
-                                             ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 scale-110' 
-                                             : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}
-                                       `}
-                                    >
-                                       {page}
-                                    </button>
-                                 ))}
-                              </div>
-
-                              <button
-                                 onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-                                 disabled={currentPage === totalPages}
-                                 className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
-                              >
-                                 <ChevronRight className="w-5 h-5" />
-                              </button>
-                           </div>
+                           <Pagination 
+                              currentPage={currentPage}
+                              totalPages={totalPages}
+                              onPageChange={handlePageChange}
+                           />
                         )}
                      </>
                   )}

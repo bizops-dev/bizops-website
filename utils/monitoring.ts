@@ -1,31 +1,41 @@
 
 import * as Sentry from "@sentry/react";
+import { logger } from './logger';
+
+const getEnvVar = (key: string): string => {
+  try {
+    // @ts-ignore
+    if (typeof import.meta !== 'undefined' && import.meta.env) {
+      // @ts-ignore
+      return import.meta.env[key] || '';
+    }
+  } catch {
+    // Ignore
+  }
+  
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      return process.env[key] || '';
+    }
+  } catch {
+    // Ignore
+  }
+  
+  return '';
+};
+
+const getEnvironment = (): string => {
+  try {
+    // @ts-ignore
+    return import.meta.env?.MODE || process.env?.NODE_ENV || 'production';
+  } catch {
+    return 'production';
+  }
+};
 
 export const initMonitoring = () => {
   // Attempt to get DSN from standard environment variables
-  let dsn = "";
-  
-  try {
-    // Check for Vite env vars
-    // @ts-ignore
-    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_SENTRY_DSN) {
-      // @ts-ignore
-      dsn = import.meta.env.VITE_SENTRY_DSN;
-    }
-  } catch (e) {
-    // Ignore errors accessing import.meta
-  }
-
-  if (!dsn) {
-    try {
-      // Check for CRA/Node env vars
-      if (typeof process !== 'undefined' && process.env && process.env.REACT_APP_SENTRY_DSN) {
-        dsn = process.env.REACT_APP_SENTRY_DSN;
-      }
-    } catch (e) {
-      // Ignore errors accessing process.env
-    }
-  }
+  const dsn = getEnvVar('VITE_SENTRY_DSN') || getEnvVar('REACT_APP_SENTRY_DSN');
 
   // Only initialize if DSN is present (user has configured .env)
   if (dsn) {
@@ -40,16 +50,11 @@ export const initMonitoring = () => {
       // Session Replay
       replaysSessionSampleRate: 0.1, // Sample rate for all sessions (10%)
       replaysOnErrorSampleRate: 1.0, // Sample rate for sessions with errors (100%)
-      // @ts-ignore
-      environment: import.meta.env?.MODE || process.env?.NODE_ENV || 'production',
+      environment: getEnvironment(),
     });
-    if (process.env.NODE_ENV === 'development') {
-      console.log("BizOps Monitoring Initialized");
-    }
+    logger.info("Monitoring Initialized");
   } else {
-    if (process.env.NODE_ENV === 'development') {
-      console.log("BizOps Monitoring: No DSN found, skipping initialization.");
-    }
+    logger.debug("Monitoring: No DSN found, skipping initialization.");
   }
 };
 
@@ -57,13 +62,13 @@ export const initHeatmap = () => {
   // Placeholder for Hotjar/FullStory integration.
   // In production, this would inject the script tag based on an ENV variable ID.
   
-  if (process.env.NODE_ENV === 'production') {
+  const hotjarId = getEnvVar('VITE_HOTJAR_ID') || getEnvVar('REACT_APP_HOTJAR_ID');
+  
+  if (hotjarId) {
     // Example Logic:
-    // const HOTJAR_ID = process.env.REACT_APP_HOTJAR_ID;
-    // if (HOTJAR_ID) {
-    //    (function(h,o,t,j,a,r){ ... })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    // }
-  } else if (process.env.NODE_ENV === 'development') {
-    console.log("BizOps Heatmap: Analytics Ready (Script injection skipped in mock env)");
+    // (function(h,o,t,j,a,r){ ... })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    logger.debug("Heatmap: Analytics Ready (Script injection configured)");
+  } else {
+    logger.debug("Heatmap: Analytics Ready (Script injection skipped - no ID provided)");
   }
 };

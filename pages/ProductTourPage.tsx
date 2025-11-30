@@ -14,6 +14,8 @@ import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Badge from '../components/Badge';
+import OptimizedImage from '../components/OptimizedImage';
+import CardSlider from '../components/CardSlider';
 
 // --- TYPES ---
 type ScenarioType = 'sales' | 'manager' | 'warehouse' | 'employee' | 'finance' | 'ceo';
@@ -138,7 +140,7 @@ const ProductTourPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-primary-300 text-[10px] font-bold uppercase tracking-wider mb-4 ring-1 ring-white/5">
                 <MousePointer className="w-3 h-3 animate-bounce" /> Interactive Demo
               </div>
-              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight tracking-tight font-sans">
+              <h1 className="text-3xl md:text-5xl font-extrabold mb-3 leading-tight tracking-tight font-sans">
                 Pilih Peran,<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Rasakan Bedanya.</span>
               </h1>
@@ -147,8 +149,33 @@ const ProductTourPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Vertical Scenario Menu */}
-            <div className="flex flex-col gap-2 animate-fade-in-up delay-100">
+            {/* Mobile Scenario Selector (Horizontal Scroll) */}
+            <div className="lg:hidden w-full overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+              <div className="flex gap-3 min-w-max">
+                {scenarios.map((sc) => (
+                   <button
+                   key={sc.id}
+                   onClick={() => switchScenario(sc.id)}
+                   className={`group relative px-4 py-3 rounded-xl border flex items-center gap-3 transition-all duration-300 text-left min-w-[200px] ${
+                     activeId === sc.id 
+                       ? 'bg-white/10 border-primary-500/50 shadow-lg shadow-primary-900/20 ring-1 ring-primary-500/50' 
+                       : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-400 hover:text-white'
+                   }`}
+                 >
+                   <div className={`p-2 rounded-lg transition-colors shrink-0 ${activeId === sc.id ? 'bg-primary-500 text-white shadow-md' : 'bg-slate-800 text-slate-400 group-hover:text-white'}`}>
+                     <sc.icon className="w-5 h-5" />
+                   </div>
+                   <div className="flex-1 min-w-0">
+                     <div className={`text-sm font-bold truncate ${activeId === sc.id ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{sc.label}</div>
+                     <div className="text-[10px] text-slate-500 group-hover:text-slate-400 truncate">{sc.role}</div>
+                   </div>
+                 </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Vertical Scenario Menu */}
+            <div className="hidden lg:flex flex-col gap-2 animate-fade-in-up delay-100">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 px-2">Select Scenario</label>
               {scenarios.map((sc) => (
                 <button
@@ -185,12 +212,12 @@ const ProductTourPage: React.FC = () => {
           </div>
 
           {/* RIGHT PANEL: MAIN STAGE (Span 8) */}
-          <div className="lg:col-span-8 relative min-h-[600px] flex items-start justify-center lg:pt-8">
+          <div className="lg:col-span-8 relative min-h-[600px] flex flex-col items-center lg:block lg:pt-8 w-full">
              
              {/* Mobile Info (Visible only on small screens) */}
-             <div className="block lg:hidden mb-8 text-center w-full">
-                <h2 className="text-2xl font-bold text-white mb-2">{currentScenario.title}</h2>
-                <p className="text-slate-400 text-sm">{currentScenario.desc}</p>
+             <div className="block lg:hidden mb-4 text-center w-full px-4 relative z-20">
+                <h2 className="text-2xl font-bold text-white mb-1 leading-tight">{currentScenario.title}</h2>
+                <p className="text-slate-400 text-sm max-w-xs mx-auto leading-snug">{currentScenario.desc}</p>
              </div>
 
              {/* Loading Overlay */}
@@ -204,13 +231,13 @@ const ProductTourPage: React.FC = () => {
              {/* Device Frame */}
              <div className="w-full flex justify-center transform transition-all duration-500">
                 {currentScenario.device === 'mobile' ? (
-                  <div className="transform scale-[0.85] sm:scale-95 md:scale-100 lg:scale-90 xl:scale-100 origin-center">
+                  <div className="transform scale-[0.85] sm:scale-95 md:scale-100 lg:scale-90 xl:scale-100 origin-top md:origin-center">
                     <MobileFrame>
                        <ScenarioContent id={activeId} step={step} onNext={nextStep} onReset={() => switchScenario(activeId)} />
                     </MobileFrame>
                   </div>
                 ) : (
-                  <div className="w-full transform scale-[0.55] sm:scale-[0.75] md:scale-90 lg:scale-90 xl:scale-100 origin-center -mt-12 sm:-mt-0">
+                  <div className="w-full transform scale-[0.55] sm:scale-[0.75] md:scale-90 lg:scale-90 xl:scale-100 origin-top md:origin-center -mt-4 md:-mt-0">
                     <DesktopFrame role={currentScenario.role}>
                        <ScenarioContent id={activeId} step={step} onNext={nextStep} onReset={() => switchScenario(activeId)} />
                     </DesktopFrame>
@@ -226,15 +253,15 @@ const ProductTourPage: React.FC = () => {
       {/* SUPPORTING SECTIONS */}
       
       {/* 1. Benefits */}
-      <section className="py-24 bg-slate-950/50 border-t border-slate-900 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-slate-950/50 border-t border-slate-900 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Mengapa Kami Buat Simulasi Ini?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-primary-500/30 transition-colors">
+          <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
+            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-primary-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5 ring-1 ring-blue-500/30">
                  <Zap className="w-6 h-6 text-blue-400" />
               </div>
@@ -243,7 +270,7 @@ const ProductTourPage: React.FC = () => {
                 Tidak perlu menunggu tim IT melakukan instalasi server. Cukup klik dan rasakan pengalamannya langsung di browser.
               </p>
             </div>
-            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-colors">
+            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-purple-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5 ring-1 ring-purple-500/30">
                  <ShieldCheck className="w-6 h-6 text-purple-400" />
               </div>
@@ -252,7 +279,7 @@ const ProductTourPage: React.FC = () => {
                 Skenario yang Anda jalankan adalah 100% alur kerja asli yang digunakan oleh klien-klien enterprise kami setiap hari.
               </p>
             </div>
-            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
+            <div className="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-colors h-full">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5 ring-1 ring-emerald-500/30">
                  <Globe className="w-6 h-6 text-emerald-400" />
               </div>
@@ -261,7 +288,7 @@ const ProductTourPage: React.FC = () => {
                 Lihat bagaimana data dari Sales (Mobile) langsung terhubung ke Finance (Web) dan Gudang tanpa jeda.
               </p>
             </div>
-          </div>
+          </CardSlider>
         </div>
       </section>
 
@@ -635,7 +662,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         </div>
                      </div>
                   </div>
-                  <div className="hidden" ref={(el) => el && setTimeout(onNext, 2000)}></div>
+                  <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 2000); }}></div>
                </div>
             )}
          </div>
@@ -742,7 +769,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <div className="font-bold text-lg">Reconciled!</div>
                      <div className="text-sm opacity-90">Payment status updated to "Paid"</div>
                   </div>
-                  <div className="hidden" ref={(el) => el && setTimeout(onNext, 2000)}></div>
+                  <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 2000); }}></div>
                </div>
             )}
          </div>
@@ -759,7 +786,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="font-bold text-base md:text-lg text-white">Dashboard</div>
                </div>
                <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-600">
-                  <img src="https://ui-avatars.com/api/?name=CEO&background=random" alt="CEO" />
+                  <OptimizedImage src="https://ui-avatars.com/api/?name=CEO&background=random" alt="CEO" />
                </div>
             </div>
 
@@ -852,7 +879,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   <h3 className="font-bold text-white text-lg">Report Downloaded</h3>
                   <p className="text-sm text-slate-500 mb-6">Financial_Report_Oct.pdf saved to device.</p>
-                  <div className="hidden" ref={(el) => el && setTimeout(onNext, 1500)}></div>
+                  <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
          </div>
@@ -926,7 +953,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                    </div>
                    <h3 className="text-2xl font-bold text-white">Stock Updated</h3>
                    <p className="text-slate-400 mt-2 mb-8">Inventory Level: 150 PCS</p>
-                   <div className="hidden" ref={(el) => el && setTimeout(onNext, 1500)}></div>
+                   <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
          </div>
@@ -996,7 +1023,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
             {step === 1 && (
                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-slate-950 relative overflow-hidden">
                   <div className="w-40 h-40 rounded-full border-4 border-pink-500 p-1 mb-6 relative z-10">
-                     <img src="https://ui-avatars.com/api/?name=Andi+Pratama&background=random" alt="Face" className="w-full h-full rounded-full object-cover opacity-80" />
+                     <OptimizedImage src="https://ui-avatars.com/api/?name=Andi+Pratama&background=random" alt="Face" className="w-full h-full rounded-full object-cover opacity-80" />
                      <div className="absolute inset-0 rounded-full border-4 border-t-transparent border-pink-500 animate-spin"></div>
                      <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-full h-0.5 bg-pink-500 shadow-[0_0_10px_#ec4899] animate-[scan_1.5s_ease-in-out_infinite]"></div>
@@ -1004,7 +1031,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Verifying Face ID...</h3>
                   <p className="text-sm text-slate-500">Please look at the camera</p>
-                  <div className="hidden" ref={(el) => el && setTimeout(onNext, 2000)}></div>
+                  <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 2000); }}></div>
                </div>
             )}
 
@@ -1018,7 +1045,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="bg-slate-900 px-4 py-2 rounded-full text-xs font-bold text-slate-300 flex items-center gap-2 border border-slate-800">
                      <MapPin className="w-3 h-3 text-pink-500" /> Head Office, Jakarta
                   </div>
-                  <div className="hidden" ref={(el) => el && setTimeout(onNext, 1500)}></div>
+                  <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
 

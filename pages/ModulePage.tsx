@@ -24,6 +24,8 @@ import { BouncyButton } from '../components/ui/motion-button';
 import { motion } from 'framer-motion';
 import { FADE_UP_VARIANTS } from '../utils/animation';
 
+import OptimizedImage from '../components/OptimizedImage';
+
 // Generic Fallback Components
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -161,7 +163,7 @@ const ModulePage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION (Standardized Premium Style) */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
          {/* Premium Background Effects */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
@@ -174,19 +176,19 @@ const ModulePage: React.FC = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="flex items-center justify-center gap-2 text-sm font-medium tracking-wide uppercase mb-10 text-slate-400"
+              className="flex items-center justify-start md:justify-center gap-2 text-xs md:text-sm font-medium tracking-wide uppercase mb-8 md:mb-10 text-slate-300 overflow-x-auto whitespace-nowrap pb-2 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
             >
-               <Link to="/" className="hover:text-white transition-colors">Home</Link>
-               <ChevronRight className="w-3 h-3 text-slate-600" />
-               <Link to="/platform" className="hover:text-white transition-colors">Platform</Link>
+               <Link to="/" className="hover:text-white transition-colors flex-shrink-0">Home</Link>
+               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
+               <Link to="/platform" className="hover:text-white transition-colors flex-shrink-0">Platform</Link>
                {categoryLabel !== 'Platform' && (
                   <>
-                     <ChevronRight className="w-3 h-3 text-slate-600" />
-                     <Link to={categoryPath} className="hover:text-white transition-colors">{categoryLabel}</Link>
+                     <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
+                     <Link to={categoryPath} className="hover:text-white transition-colors flex-shrink-0">{categoryLabel}</Link>
                   </>
                )}
-               <ChevronRight className="w-3 h-3 text-slate-600" />
-               <span className="text-primary-400">{data.title}</span>
+               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
+               <span className="text-primary-400 flex-shrink-0">{data.title}</span>
             </motion.div>
 
             {/* Icon - Visual Anchor */}
@@ -194,10 +196,10 @@ const ModulePage: React.FC = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="relative inline-flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-8 shadow-2xl group"
+              className="relative inline-flex items-center justify-center p-4 md:p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-6 md:mb-8 shadow-2xl group"
             >
                <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-               <Icon className="w-12 h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
+               <Icon className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
             </motion.div>
             
             <motion.h1 
@@ -205,7 +207,7 @@ const ModulePage: React.FC = () => {
               initial="hidden"
               animate="visible"
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 tracking-tight leading-tight drop-shadow-sm font-sans"
+              className="text-3xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 md:mb-8 tracking-tight leading-tight drop-shadow-sm font-sans"
             >
                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
                  {data.subtitle}
@@ -216,7 +218,7 @@ const ModulePage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-base md:text-2xl text-slate-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light"
             >
                {data.description}
             </motion.p>
@@ -225,15 +227,15 @@ const ModulePage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center"
             >
-               <Link to="/demo">
-                  <BouncyButton className="h-16 px-10 text-lg font-bold shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.4)] transition-all bg-primary-600 hover:bg-primary-500 border-none text-white">
+               <Link to="/demo" className="w-full sm:w-auto">
+                  <BouncyButton className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-bold shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.4)] transition-all bg-primary-600 hover:bg-primary-500 border-none text-white w-full sm:w-auto">
                      {data.cta?.buttonLabel || "Jadwalkan Demo Live"}
                   </BouncyButton>
                </Link>
-               <Link to="/pricing-calculator">
-                  <Button variant="outline-white" size="lg" className="h-16 px-10 text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white bg-transparent">
+               <Link to="/pricing-calculator" className="w-full sm:w-auto">
+                  <Button variant="outline-white" size="lg" className="h-14 md:h-16 px-8 md:px-10 text-base md:text-lg font-medium border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-300 hover:text-white bg-transparent w-full sm:w-auto">
                      Hitung Estimasi
                   </Button>
                </Link>
@@ -243,7 +245,7 @@ const ModulePage: React.FC = () => {
 
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
-         <section className="relative -mt-20 z-20 pb-12">
+         <section className="relative mt-8 md:-mt-20 z-20 pb-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {data.metrics.map((metric, idx) => {
@@ -352,7 +354,7 @@ const ModulePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.features.map((feature, index) => {
                const FeatureIcon = feature.icon || Check;
                return (
@@ -363,7 +365,7 @@ const ModulePage: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     whileHover={{ y: -5 }}
-                    className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group"
+                    className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group h-full"
                   >
                      <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
                         <FeatureIcon className="w-6 h-6" />
@@ -375,7 +377,7 @@ const ModulePage: React.FC = () => {
                   </motion.div>
                );
             })}
-          </div>
+          </CardSlider>
         </div>
       </section>
 
@@ -471,9 +473,9 @@ const ModulePage: React.FC = () => {
                      </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                      {integrationsData.map((cat, idx) => (
-                        <div key={idx} className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <div key={idx} className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 h-full">
                            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                               <Layers className="w-5 h-5 text-primary-500" />
                               {cat.category}
@@ -491,7 +493,7 @@ const ModulePage: React.FC = () => {
                            </ul>
                         </div>
                      ))}
-                  </div>
+                  </CardSlider>
                </div>
             ) : (
                // CIRCUIT VIEW (Standard)
@@ -535,10 +537,12 @@ const ModulePage: React.FC = () => {
                "{testimonial.quote}"
             </h2>
             <div className="flex items-center justify-center gap-4">
-               <img 
+               <OptimizedImage 
                   src={testimonial.avatar} 
                   alt={testimonial.author} 
                   className="w-12 h-12 rounded-full border-2 border-primary-500"
+                  width={48}
+                  height={48}
                />
                <div className="text-left">
                   <div className="font-bold text-slate-900 dark:text-white">{testimonial.author}</div>
@@ -572,7 +576,7 @@ const ModulePage: React.FC = () => {
                <p className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</p>
             </div>
             
-            <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {relatedModules.map((mod, idx) => {
                   // NEW LOGIC FOR RELATED LINKS
                   let linkPath = '';
