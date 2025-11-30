@@ -82,9 +82,9 @@ const HomePage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 hover:scale-105 hover:border-primary-200 dark:hover:border-primary-900 transition-all cursor-default backdrop-blur-sm"
             >
-               <span className="relative flex h-2 w-2">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+               <span className="relative flex h-2 w-2 gap-4">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75 gap-4"></span>
+                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 gap-4"></span>
                </span>
                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
                  New: AI-Powered Inventory Forecasting
@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
             
             {/* Main Headline with Staggered Animation */}
             <Container size="5xl" className="mb-8">
-              <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]"><StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2" />
+              <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]"><StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2 gap-4" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 dark:from-primary-400 dark:via-blue-400 dark:to-purple-400">
                   Seluruh Operasional Bisnis.
                 </span></Typography>
@@ -259,7 +259,7 @@ const HomePage: React.FC = () => {
                      role="tabpanel"
                      id={`panel-${activeTab}`}
                      aria-labelledby={`tab-${activeTab}`}
-                     className="h-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col relative overflow-hidden transition-all duration-500 animate-fade-in"
+                     className="h-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col relative overflow-hidden transition-all duration-500 animate-fade-in gap-4"
                   >
                      {/* Glow Effect */}
                      <div className={`absolute top-0 right-0 w-64 h-64 ${activeSolution.bg} blur-[80px] rounded-full opacity-20 pointer-events-none`}></div>
@@ -308,7 +308,7 @@ const HomePage: React.FC = () => {
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
          </Container>
 
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {homeUVP.map((uvp, idx) => (
                   <div key={idx} className="relative group p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
@@ -561,7 +561,7 @@ const HomePage: React.FC = () => {
 
       {/* 7. INDUSTRIES & ROLES */}
       <section aria-labelledby="industry-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Solusi Spesifik Industri</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
@@ -644,9 +644,9 @@ const HomePage: React.FC = () => {
                         <div>
                            <div className="text-sm text-slate-400 uppercase tracking-wider font-bold mb-1">System Status</div>
                            <Stack direction="horizontal" gap={2} align="center">
-                              <span className="relative flex h-3 w-3">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                              <span className="relative flex h-3 w-3 gap-4">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 gap-4"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500 gap-4"></span>
                               </span>
                               <span className="text-white font-bold">All Systems Operational</span>
                            </Stack>
@@ -676,7 +676,7 @@ const HomePage: React.FC = () => {
                                     whileInView={{ scaleY: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.02 }}
-                                    className="flex-1 bg-blue-500/30 hover:bg-blue-500/80 transition-colors rounded-t-sm origin-bottom"
+                                    className="flex-1 bg-blue-500/30 hover:bg-blue-500/80 transition-colors rounded-t-sm origin-bottom gap-4"
                                     style={{ height: `${height}%` }}
                                  ></motion.div>
                               )
@@ -712,7 +712,7 @@ const HomePage: React.FC = () => {
          </div>
          
          <div className="text-center mt-10">
-            <Link to="/platform/technologies/integration" className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center transition-colors">
+            <Link to="/platform/technologies/integration" className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center transition-colors gap-4">
                Lihat 50+ Integrasi Lainnya <ArrowUpRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
          </div>

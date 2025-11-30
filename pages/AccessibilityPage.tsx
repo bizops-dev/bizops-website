@@ -38,8 +38,8 @@ const AccessibilityPage: React.FC = () => {
 
       {/* Hero Section */}
       <section className="bg-primary-50 dark:bg-slate-900 py-20 px-4 sm:px-6 lg:px-8 text-center border-b border-primary-100 dark:border-slate-800">
-        <Container size="4xl">
-          <div className="inline-flex items-center justify-center p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
+        <Container className="px-4 md:px-6 lg:px-8" size="4xl">
+          <div className="inline-flex items-center justify-center p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6 gap-4">
              <Accessibility className="w-8 h-8" />
           </div>
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white">Teknologi untuk <span className="text-primary-600">Semua Orang.</span></Typography>
@@ -52,7 +52,7 @@ const AccessibilityPage: React.FC = () => {
         <Grid cols={4} gap={8}>
           {features.map((feat, idx) => (
             <div key={idx} className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300 group">
-              <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600">
+              <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform text-primary-600 gap-4">
                 <feat.icon className="w-7 h-7" />
               </div>
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>

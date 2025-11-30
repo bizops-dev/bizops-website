@@ -36,7 +36,7 @@ const SearchPage: React.FC = () => {
     <div className="pt-24 pb-24 bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors">
       <SEO title="Search Results | BizOps" description="Cari modul, fitur, panduan, dan artikel di seluruh ekosistem BizOps." />
       
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         
         {/* Search Header */}
         <div className="mb-12 text-center">

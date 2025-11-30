@@ -28,7 +28,7 @@ const ComparePage: React.FC = () => {
     <div className="pt-16 pb-24 bg-slate-50">
       <SEO title={`BizOps vs ${data.name}`} description={data.description} />
 
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         {/* Hero */}
         <Container size="4xl" className="text-center mb-16">
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
@@ -55,13 +55,13 @@ const ComparePage: React.FC = () => {
                     
                     {/* Them */}
                     <Stack direction="horizontal" gap={3} align="start" className="text-slate-600">
-                       <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
+                       <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-1 gap-4" />
                        <Typography variant="caption">{row.them}</Typography>
                     </div>
 
                     {/* Us */}
                     <Stack direction="horizontal" gap={3} align="start" className="text-slate-900 dark:text-white font-medium bg-primary-50 rounded-lg p-3">
-                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 gap-4" />
                        <Typography variant="caption">{row.us}</Typography>
                     </div>
 
@@ -115,7 +115,7 @@ const ComparePage: React.FC = () => {
 
                     <Stack direction="vertical" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (
-                          <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
+                          <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0 gap-4">
                              <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
                              <span className="font-bold text-slate-900 dark:text-white">{m.val}</span>
                           </div>

@@ -106,7 +106,7 @@ const DemoPage: React.FC = () => {
       <Stack direction="vertical" gap={4} align="center" justify="center" className="min-h-screen bg-[#0B0F19] text-center px-4">
         <motion.div 
           initial={{ scale: 0 }} animate={{ scale: 1 }}
-          className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-8 ring-1 ring-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.3)]"
+          className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-8 ring-1 ring-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.3)] gap-4"
         >
           <CheckCircle className="w-10 h-10 text-emerald-500" aria-hidden="true" />
         </motion.div>

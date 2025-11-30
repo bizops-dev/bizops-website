@@ -37,7 +37,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
     <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
+        className="w-full flex items-center justify-between py-6 text-left focus:outline-none group gap-4"
       >
         <Typography variant="body-lg" className="text-slate-900 dark:text-white group-hover:text-primary-600">{question}</Typography>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
@@ -180,17 +180,17 @@ const ModulePage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="flex items-center justify-start md:justify-center gap-2 text-xs md:text-sm font-medium tracking-wide uppercase mb-8 md:mb-10 text-slate-300 overflow-x-auto whitespace-nowrap pb-2 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
             >
-               <Link to="/" className="hover:text-white transition-colors flex-shrink-0">Home</Link>
-               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
-               <Link to="/platform" className="hover:text-white transition-colors flex-shrink-0">Platform</Link>
+               <Link to="/" className="hover:text-white transition-colors flex-shrink-0 gap-4">Home</Link>
+               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+               <Link to="/platform" className="hover:text-white transition-colors flex-shrink-0 gap-4">Platform</Link>
                {categoryLabel !== 'Platform' && (
                   <>
-                     <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
-                     <Link to={categoryPath} className="hover:text-white transition-colors flex-shrink-0">{categoryLabel}</Link>
+                     <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+                     <Link to={categoryPath} className="hover:text-white transition-colors flex-shrink-0 gap-4">{categoryLabel}</Link>
                   </>
                )}
-               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0" />
-               <span className="text-primary-400 flex-shrink-0">{data.title}</span>
+               <ChevronRight className="w-3 h-3 text-slate-500 flex-shrink-0 gap-4" />
+               <span className="text-primary-400 flex-shrink-0 gap-4">{data.title}</span>
             </motion.div>
 
             {/* Icon - Visual Anchor */}
@@ -198,7 +198,7 @@ const ModulePage: React.FC = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="relative inline-flex items-center justify-center p-4 md:p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-6 md:mb-8 shadow-2xl group"
+              className="relative inline-flex items-center justify-center p-4 md:p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-6 md:mb-8 shadow-2xl group gap-4"
             >
                <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                <Icon className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
@@ -248,7 +248,7 @@ const ModulePage: React.FC = () => {
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
          <section className="relative mt-8 md:-mt-20 z-20 pb-12 py-16 md:py-24">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <Grid cols={3} gap={6}>
                   {data.metrics.map((metric, idx) => {
                      // Parse value for CounterUp (remove %, +, etc)
@@ -264,7 +264,7 @@ const ModulePage: React.FC = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 + idx * 0.1 }}
-                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden gap-4"
                        >
                           {/* Top Highlight Line */}
                           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -293,7 +293,7 @@ const ModulePage: React.FC = () => {
       {/* 3. Problem & Solution (New) */}
       {data.problems && (
          <section className="py-24 bg-white dark:bg-slate-950">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <Grid cols={2} gap={16} className="items-center">
                   <div>
                      <Badge variant="outline" className="mb-6">The Challenge</Badge>
@@ -333,7 +333,7 @@ const ModulePage: React.FC = () => {
                      <ul className="space-y-4 relative z-10">
                         {data.features.slice(0, 4).map((feat, i) => (
                            <li key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
-                              <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                              <Check className="w-5 h-5 text-green-500 flex-shrink-0 gap-4" />
                               <span className="font-medium text-slate-700 dark:text-slate-300">{feat.title}</span>
                            </li>
                         ))}
@@ -346,7 +346,7 @@ const ModulePage: React.FC = () => {
 
       {/* 4. Features Grid */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <Container size="3xl" className="text-center mb-16">
             <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
@@ -380,7 +380,7 @@ const ModulePage: React.FC = () => {
       {/* 5. Mobile Advantage (Conditional) */}
       {data.mobileAdvantage && (
          <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <div className="bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl">
                   {/* Background decoration */}
                   <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-900/40 to-transparent pointer-events-none"></div>
@@ -404,7 +404,7 @@ const ModulePage: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="relative flex justify-center lg:justify-end"
+                        className="relative flex justify-center lg:justify-end gap-4"
                      >
                         <div className="relative w-72 h-[500px] bg-slate-950 rounded-[3rem] border-8 border-slate-800 shadow-2xl overflow-hidden ring-1 ring-white/10">
                            {/* Notch */}
@@ -437,7 +437,7 @@ const ModulePage: React.FC = () => {
 
       {/* 6. Integration / Connections */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16">
                <Badge variant="outline" className="mb-4">Ecosystem</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
@@ -535,7 +535,7 @@ const ModulePage: React.FC = () => {
       {/* 8. FAQ */}
       {data.faqs && (
          <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
                </div>
@@ -550,7 +550,7 @@ const ModulePage: React.FC = () => {
 
       {/* 9. Related Modules (Carousel Style) */}
       <section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-12">
                <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
                <Typography variant="body" className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>

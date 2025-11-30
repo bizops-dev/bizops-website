@@ -9,7 +9,7 @@ const PricingCalculatorPage: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden flex flex-col font-sans">
+    <div className="min-h-screen bg-[#0B0F19] text-white selection:bg-primary-500/30 overflow-hidden flex flex-col font-sans gap-4">
       <SEO
         title="Enterprise Pricing Estimator | BizOps"
         description="Kalkulasi investasi sistem ERP BizOps secara presisi. Sesuaikan modul, user, dan infrastruktur dengan kebutuhan enterprise Anda."
@@ -24,7 +24,7 @@ const PricingCalculatorPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.4, ease: "easeInOut" } }}
-            className="relative h-screen flex flex-col justify-center items-center overflow-hidden px-6"
+            className="relative h-screen flex flex-col justify-center items-center overflow-hidden px-6 gap-4"
           >
             {/* Background Atmosphere */}
             <div className="absolute inset-0 pointer-events-none">
@@ -33,7 +33,7 @@ const PricingCalculatorPage: React.FC = () => {
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
             </div>
 
-            <Container size="5xl" className="relative z-10 text-center flex flex-col items-center justify-center h-full pb-20">
+            <Container size="5xl" className="relative z-10 text-center flex flex-col items-center justify-center h-full pb-20 gap-4">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -105,10 +105,10 @@ const PricingCalculatorPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0.98, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex flex-col h-screen overflow-hidden bg-[#0B0F19]"
+            className="flex flex-col h-screen overflow-hidden bg-[#0B0F19] gap-4"
           >
             {/* Minimal Header */}
-            <div className="flex-shrink-0 px-6 h-16 border-b border-white/5 flex items-center justify-between bg-[#0B0F19]/80 backdrop-blur-md z-20">
+            <div className="flex-shrink-0 px-6 h-16 border-b border-white/5 flex items-center justify-between bg-[#0B0F19]/80 backdrop-blur-md z-20 gap-4">
                <button 
                  onClick={() => setIsStarted(false)} 
                  className="flex items-center gap-2 text-slate-400 hover:text-slate-900 dark:text-white transition-colors group text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-white/5"
@@ -126,7 +126,7 @@ const PricingCalculatorPage: React.FC = () => {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-grow overflow-hidden relative">
+            <div className="flex-grow overflow-hidden relative gap-4">
               <PricingCalculator />
             </div>
           </motion.div>

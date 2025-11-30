@@ -103,7 +103,7 @@ const PlatformPage: React.FC = () => {
                         <ul className="space-y-3">
                            {cap.features.slice(0, 3).map((feat: any, i: number) => (
                               <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-500 dark:text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
-                                 <Check className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                                 <Check className="w-4 h-4 text-primary-500 flex-shrink-0 gap-4" />
                                  <span>{feat.title}</span>
                               </li>
                            ))}
@@ -136,10 +136,10 @@ const PlatformPage: React.FC = () => {
                      {/* Form Builder Simulation */}
                      <Stack direction="horizontal" gap={4}>
                         <Stack direction="vertical" gap={3} className="w-1/3">
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📝 Text Field</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📅 Date Picker</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">✅ Checkbox</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📊 Dropdown</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📝 Text Field</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📅 Date Picker</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">✅ Checkbox</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📊 Dropdown</div>
                         </Stack>
                         <Stack direction="vertical" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
@@ -221,7 +221,7 @@ const PlatformPage: React.FC = () => {
               to={`/platform/modules/${mod.id}`}
               className="group h-full block"
             >
-              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50 shadow-lg hover:shadow-xl transition-shadow" hoverEffect>
+              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50 shadow-lg hover:shadow-xl transition-shadow gap-4" hoverEffect>
                 <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-8">
                    <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
                      <mod.icon className="w-8 h-8" />

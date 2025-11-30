@@ -22,7 +22,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors gap-4">
       <SEO title="Error | Something Went Wrong" />
       
       {/* Background Effects */}
@@ -37,7 +37,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetErrorBoundary, isDemo
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-24 h-24 bg-red-100 dark:bg-red-900/30 rounded-[2rem] flex items-center justify-center mb-8 mx-auto shadow-xl border border-red-200 dark:border-red-900/50"
+          className="w-24 h-24 bg-red-100 dark:bg-red-900/30 rounded-[2rem] flex items-center justify-center mb-8 mx-auto shadow-xl border border-red-200 dark:border-red-900/50 gap-4"
         >
           <AlertTriangle className="w-10 h-10 text-red-600 dark:text-red-400" />
         </motion.div>

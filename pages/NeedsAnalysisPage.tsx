@@ -92,7 +92,7 @@ const StepLayout = ({
 }: any) => (
   <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4">
     <ProgressBar step="context" displayStep={displayStep} totalSteps={totalSteps} />
-    <Container size="4xl">
+    <Container className="px-4 md:px-6 lg:px-8" size="4xl">
       <div className="mb-8">
          <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">Step {displayStep} of {totalSteps}</div>
          <Typography variant="h2" as="h2" className="font-bold">{title}</Typography>
@@ -724,7 +724,7 @@ const NeedsAnalysisPage = () => {
 
     return (
       <div className="min-h-screen bg-slate-950 text-slate-900 dark:text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
-        <Container size="6xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="6xl">
           {/* Header */}
           <Stack direction="vertical" gap={4} align="start" justify="between" className="mb-10 border-b border-white/10 pb-8 print:border-gray-300">
              <div>

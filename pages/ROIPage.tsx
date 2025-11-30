@@ -180,7 +180,7 @@ const ROIPage: React.FC = () => {
                           <input 
                             type="range" min="10" max="90" step="5" value={efficiencyRate}
                             onChange={(e) => setEfficiencyRate(parseInt(e.target.value))}
-                            className="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                            className="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500 gap-4"
                           />
                           <Typography variant="caption" className="text-emerald-400">{efficiencyRate}%</Typography>
                         </Stack>

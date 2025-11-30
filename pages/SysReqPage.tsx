@@ -15,7 +15,7 @@ const SysReqPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="System Requirements | BizOps Documentation" description="Spesifikasi teknis hardware dan software untuk deployment BizOps Self-Hosted." />
       
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         <div className="text-center mb-16">
            <Typography variant="h1" as="h1">Spesifikasi Teknis</Typography>
            <Typography variant="body-lg" className="text-slate-600">Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.</Typography>

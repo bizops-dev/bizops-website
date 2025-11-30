@@ -87,9 +87,9 @@ const ServicesPage: React.FC = () => {
              animate="visible"
              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm mb-8 mx-auto"
            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              <span className="relative flex h-2 w-2 gap-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 gap-4"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 gap-4"></span>
               </span>
               <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Accepting New Enterprise Partners</Typography>
            </motion.div>
@@ -137,7 +137,7 @@ const ServicesPage: React.FC = () => {
 
       {/* --- ENGAGEMENT MODEL (JOURNEY) --- */}
       <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
            <Stack direction="vertical" gap={6} className="justify-between items-end mb-16">
               <div>
                 <Typography variant="h2" as="h2">How We Work</Typography>
@@ -162,7 +162,7 @@ const ServicesPage: React.FC = () => {
                       variants={FADE_UP_VARIANTS}
                       className="relative z-10 h-full"
                     >
-                       <SpotlightCard className="rounded-2xl p-6 text-center md:text-left h-full flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                       <SpotlightCard className="rounded-2xl p-6 text-center md:text-left h-full flex flex-col hover:-translate-y-1 transition-transform duration-300 gap-4">
                            <div className={`w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-4 shadow-sm mx-auto md:mx-0 ${item.color} shrink-0`}>
                               <item.icon className="w-6 h-6" />
                            </div>
@@ -181,7 +181,7 @@ const ServicesPage: React.FC = () => {
 
       {/* --- SERVICES BENTO GRID --- */}
       <Section className="bg-slate-50 dark:bg-slate-900/50">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <div className="mb-12">
              <Typography variant="h2" as="h2">Capability Matrix</Typography>
              <div className="h-1 w-20 bg-primary-500 rounded-full"></div>
@@ -197,7 +197,7 @@ const ServicesPage: React.FC = () => {
                         <motion.div 
                           key={service.id}
                           variants={FADE_UP_VARIANTS}
-                          className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full"
+                          className="relative group flex flex-col p-8 rounded-[2rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 h-full gap-4"
                         >
                           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                           <Stack direction="vertical" gap={4} className="relative z-10 h-full">
@@ -224,7 +224,7 @@ const ServicesPage: React.FC = () => {
                   }
                   return (
                     <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
-                        <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col">
+                        <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col gap-4">
                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                               <service.icon className="w-6 h-6" />
                           </Stack>
@@ -253,7 +253,7 @@ const ServicesPage: React.FC = () => {
                       <motion.div 
                         key={service.id}
                         variants={FADE_UP_VARIANTS}
-                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500 h-full"
+                        className="md:col-span-2 lg:col-span-2 relative group flex flex-col p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 text-white shadow-2xl shadow-slate-900/20 ring-1 ring-white/10 hover:shadow-primary-900/20 transition-all duration-500 h-full gap-4"
                       >
                          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700"></div>
                          
@@ -305,7 +305,7 @@ const ServicesPage: React.FC = () => {
                 // Render Standard Card (Spotlight)
                 return (
                   <motion.div key={service.id} variants={FADE_UP_VARIANTS} className="h-full">
-                     <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                     <SpotlightCard className="rounded-[2rem] p-8 h-full flex flex-col hover:shadow-xl transition-shadow duration-300 gap-4">
                         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-8 border border-slate-100 dark:border-slate-700 shrink-0">
                            <service.icon className="w-6 h-6" />
                         </Stack>

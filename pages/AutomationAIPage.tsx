@@ -16,7 +16,7 @@ const AutomationAIPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
@@ -30,7 +30,7 @@ const AutomationAIPage: React.FC = () => {
 
       {/* Workflow Automation */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2">Workflow Automation (No-Code Logic)</Typography>
@@ -87,7 +87,7 @@ const AutomationAIPage: React.FC = () => {
 
       {/* Applied AI */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Typography variant="h2" as="h2">Applied AI Capabilities</Typography>
             <Grid cols={3} gap={8}>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">

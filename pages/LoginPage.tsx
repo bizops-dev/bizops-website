@@ -202,7 +202,7 @@ const LoginPage: React.FC = () => {
                   {loginType === 'employee' && (
                      <div className="bg-slate-800/50 backdrop-blur-md p-6 rounded-2xl border border-slate-700 shadow-2xl text-left transform rotate-[-2deg]">
                         <div className="flex items-center gap-4 mb-4 border-b border-slate-700 pb-4">
-                           <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">JD</div>
+                           <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold gap-4">JD</div>
                            <div>
                               <div className="text-white font-bold">John Doe</div>
                               <div className="text-slate-400 text-xs">Senior Engineer</div>
@@ -233,7 +233,7 @@ const LoginPage: React.FC = () => {
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
                         <div className="space-y-2">
-                           <div className="flex justify-between text-sm text-indigo-200">
+                           <div className="flex justify-between text-sm text-indigo-200 gap-4">
                               <span>Active Clients</span>
                               <span className="font-bold text-white">14</span>
                            </div>

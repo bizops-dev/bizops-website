@@ -536,7 +536,7 @@ const AssessmentPage = () => {
   if (viewState === 'results' && results) {
     return (
       <div className="min-h-screen bg-slate-950 text-slate-900 dark:text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 print:bg-white print:pt-0 print:pb-0 print:text-black">
-        <Container size="6xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="6xl">
           {/* --- REPORT HEADER (Formal) --- */}
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
             <Stack direction="vertical" gap={6} className="justify-between items-start md:items-center">
@@ -812,7 +812,7 @@ const AssessmentPage = () => {
   // 5. ACTIVE ASSESSMENT (SPLIT LAYOUT)
   return (
     <div className="min-h-screen bg-slate-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 text-white">
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         
         {/* Mobile Nav Toggle / Progress */}
         <div className="lg:hidden mb-8 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-md p-4 -mx-4 border-b border-white/10">
@@ -896,7 +896,7 @@ const AssessmentPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-slate-900/50 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl min-h-[500px] flex flex-col relative overflow-hidden"
+                className="bg-slate-900/50 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl min-h-[500px] flex flex-col relative overflow-hidden gap-4"
               >
                 {/* Background glow for card */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-500/10 rounded-full blur-[80px] pointer-events-none" />
@@ -915,7 +915,7 @@ const AssessmentPage = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentQuestion?.question}</Typography>
                 </div>
 
-                <Stack direction="vertical" gap={4} className="flex-grow relative z-10">
+                <Stack direction="vertical" gap={4} className="flex-grow relative z-10 gap-4">
                   {currentQuestion?.options.map((option, index) => {
                     const isSelected = answers[currentQuestion.id] === option.score;
                     return (

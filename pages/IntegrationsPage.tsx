@@ -22,7 +22,7 @@ const IntegrationsPage: React.FC = () => {
       </Container>
 
       {/* Grid */}
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
          <Grid cols={1} gap={12}>
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">

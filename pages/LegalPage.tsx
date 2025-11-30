@@ -127,8 +127,8 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
 
   if (!data) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-slate-50">
-        <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mb-4">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-slate-50 gap-4">
+        <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mb-4 gap-4">
             <FileText className="w-8 h-8 text-slate-400" />
         </div>
         <Typography variant="h1" as="h1">Document Not Found</Typography>
@@ -157,14 +157,14 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
     <div className="pt-24 pb-24 bg-slate-50 min-h-screen font-sans">
        <SEO title={data.title} description={data.subtitle} />
        
-       <Container>
+       <Container className="px-4 md:px-6 lg:px-8">
           
           {/* MOBILE NAV CONTROLS */}
           <Stack direction="vertical" gap={3} className="lg:hidden mb-6 relative z-30">
              {/* 1. Document Switcher */}
              <button 
                 onClick={() => { setIsMobileNavOpen(!isMobileNavOpen); setIsMobileTOCOpen(false); }}
-                className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform"
+                className="w-full bg-white border border-slate-200 rounded-xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-transform gap-4"
              >
                 <Stack direction="horizontal" gap={3} align="center">
                    <div className="bg-primary-50 p-2 rounded-lg text-primary-600">
@@ -314,7 +314,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                               onClick={() => setRequestType('export')}
                               className={`text-left border rounded-2xl p-6 transition-all flex flex-col group ${requestType === 'export' ? 'border-primary-500 bg-primary-50/10 ring-1 ring-primary-500' : 'border-slate-200 hover:border-primary-300 hover:shadow-md'}`}
                             >
-                               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform gap-4">
                                   <Download className="w-6 h-6" />
                                </div>
                                <Typography variant="h4" as="h4">Export My Data</Typography>
@@ -324,7 +324,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                               onClick={() => setRequestType('delete')}
                               className={`text-left border rounded-2xl p-6 transition-all flex flex-col group ${requestType === 'delete' ? 'border-red-500 bg-red-50/10 ring-1 ring-red-500' : 'border-slate-200 hover:border-red-300 hover:shadow-md'}`}
                             >
-                               <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                               <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform gap-4">
                                   <Trash2 className="w-6 h-6" />
                                </div>
                                <Typography variant="h4" as="h4">Delete Account</Typography>
@@ -334,14 +334,14 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          {requestType && (
                             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 animate-fade-in-up scroll-mt-24 relative overflow-hidden" id="request-form">
                                {requestStatus === 'loading' && (
-                                  <div className="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center z-10">
+                                  <div className="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 gap-4">
                                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
                                   </div>
                                )}
                                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{requestType === 'export' ? 'Konfirmasi Export Data' : 'Konfirmasi Penghapusan Akun'}</Typography>
                                {requestStatus === 'success' ? (
                                   <Stack direction="horizontal" gap={4} align="center" className="text-green-800 bg-green-50 p-4 rounded-xl border border-green-200">
-                                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="w-5 h-5 text-green-600" /></div>
+                                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 gap-4"><CheckCircle className="w-5 h-5 text-green-600" /></div>
                                      <div>
                                         <div className="font-bold text-lg">Permintaan Diterima</div>
                                         <div className="text-sm mt-1">Nomor Tiket <strong>DSAR-#8821</strong> telah dibuat. Cek email Anda untuk verifikasi.</div>
@@ -384,20 +384,20 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          <Stack direction="vertical" gap={6}>
                             <Stack direction="horizontal" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Shield className="w-5 h-5 text-green-600" /></div>
-                               <div className="flex-grow">
+                               <div className="flex-grow gap-4">
                                   <Stack direction="horizontal" gap={3} align="center" className="mb-1">
                                      <Typography variant="h4" as="h4">Strictly Necessary</Typography>
                                      <span className="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded border border-green-200">REQUIRED</span>
                                   </Stack>
                                   <Typography variant="caption" className="text-slate-600">Wajib agar website berfungsi (login session, keamanan, load balancing).</Typography>
                                </div>
-                               <div className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 cursor-not-allowed opacity-50">
+                               <div className="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 cursor-not-allowed opacity-50 gap-4">
                                   <span className="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition" />
                                </div>
                             </Stack>
                             <Stack direction="horizontal" gap={4} align="start" className="pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Cookie className="w-5 h-5 text-blue-600" /></div>
-                               <div className="flex-grow">
+                               <div className="flex-grow gap-4">
                                   <Typography variant="h4" as="h4">Analytics & Performance</Typography>
                                   <Typography variant="caption" className="text-slate-600">Membantu kami memahami statistik kunjungan (Google Analytics) secara anonim.</Typography>
                                </div>
@@ -410,7 +410,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                             </Stack>
                             <Stack direction="horizontal" gap={4} align="start">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Share2 className="w-5 h-5 text-amber-600" /></div>
-                               <div className="flex-grow">
+                               <div className="flex-grow gap-4">
                                   <Typography variant="h4" as="h4">Marketing & Targeting</Typography>
                                   <Typography variant="caption" className="text-slate-600">Untuk personalisasi konten iklan yang relevan (Meta Pixel, LinkedIn Insight).</Typography>
                                </div>
@@ -421,7 +421,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   <span className={`${preferences.marketing ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition shadow-sm`} />
                                </button>
                             </Stack>
-                            <div className="pt-6 mt-4 flex justify-end">
+                            <div className="pt-6 mt-4 flex justify-end gap-4">
                                <Button onClick={handleSaveCookies} disabled={saved} size="lg" className="w-full sm:w-auto">
                                   {saved ? 'Preferensi Disimpan' : 'Simpan Perubahan'}
                                </Button>

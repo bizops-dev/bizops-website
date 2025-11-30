@@ -106,7 +106,7 @@ const AboutPage: React.FC = () => {
 
       {/* --- ORIGIN STORY TIMELINE (Refined) --- */}
       <section className="py-24 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16 md:mb-24">
                <Typography variant="h2" as="h2">Our Origin Story</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
@@ -160,7 +160,7 @@ const AboutPage: React.FC = () => {
                     <motion.div 
                       key={idx}
                       whileHover={{ y: -10 }}
-                      className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
+                      className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col gap-4"
                     >
                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
                           {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
@@ -184,7 +184,7 @@ const AboutPage: React.FC = () => {
                  <motion.div 
                    key={idx}
                    whileHover={{ y: -10 }}
-                   className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col"
+                   className="h-full group bg-slate-800/40 backdrop-blur-md rounded-[2rem] p-8 md:p-10 border border-slate-700/50 hover:border-indigo-500/30 transition-all hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:bg-slate-800/60 flex flex-col gap-4"
                  >
                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-800/80 rounded-2xl mb-8 shadow-lg border border-slate-700 group-hover:scale-110 transition-transform duration-300 group-hover:bg-slate-800">
                        {idx === 0 && <Wrench className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />}
@@ -205,7 +205,7 @@ const AboutPage: React.FC = () => {
 
       {/* --- TASK FORCE TEAM (Modern Grid) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16 md:mb-20">
                <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" /> The Task Force
@@ -290,7 +290,7 @@ const AboutPage: React.FC = () => {
 
       {/* --- COMPANY INFO (Split Layout) --- */}
       <section className="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={2} gap={16} className="items-stretch">
                <div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
@@ -363,7 +363,7 @@ const AboutPage: React.FC = () => {
                         <Stack direction="horizontal" gap={6} align="center" className="pt-8 border-t border-white/10">
                            <Stack direction="horizontal" gap={4} className="-space-x-4">
                               {[1,2,3,4].map(i => (
-                                 <div key={i} className="w-12 h-12 rounded-full bg-slate-700 border-4 border-slate-800 flex items-center justify-center text-[10px] font-bold shadow-lg">
+                                 <div key={i} className="w-12 h-12 rounded-full bg-slate-700 border-4 border-slate-800 flex items-center justify-center text-[10px] font-bold shadow-lg gap-4">
                                     <User className="w-5 h-5 text-slate-400" />
                                  </div>
                               ))}

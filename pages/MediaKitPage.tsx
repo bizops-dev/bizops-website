@@ -83,7 +83,7 @@ const MediaKitPage: React.FC = () => {
         {/* --- LOGO PACK --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 gap-4">
                  <ImageIcon className="w-6 h-6" />
               </div>
               <div>
@@ -96,18 +96,18 @@ const MediaKitPage: React.FC = () => {
               {/* Primary Logo */}
               <motion.div 
                  whileHover={{ y: -5 }}
-                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all"
+                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all gap-4"
               >
-                 <div className="flex-grow flex items-center justify-center w-full mb-10 min-h-[160px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-50">
+                 <div className="flex-grow flex items-center justify-center w-full mb-10 min-h-[160px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-50 gap-4">
                     <div className="flex items-center gap-3 scale-150 transform">
-                       <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30">
+                       <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30 gap-4">
                           <div className="w-5 h-5 bg-white rounded-md transform rotate-45"></div>
                        </div>
                        <Typography variant="body" className="text-3xl text-slate-900 dark:text-white">BizOps</Typography>
                     </div>
                  </div>
                  <div className="w-full border-t border-slate-100 dark:border-slate-800 pt-6">
-                    <div className="flex justify-between items-end mb-4">
+                    <div className="flex justify-between items-end mb-4 gap-4">
                        <div>
                           <Typography variant="h3" as="h3">Primary Logo</Typography>
                           <Typography variant="caption" className="text-slate-500">Gunakan pada background terang/putih.</Typography>
@@ -123,19 +123,19 @@ const MediaKitPage: React.FC = () => {
               {/* Inverse/Dark Logo */}
               <motion.div 
                  whileHover={{ y: -5 }}
-                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all relative overflow-hidden"
+                 className="p-10 border border-slate-200 dark:border-slate-800 rounded-3xl bg-slate-900 flex flex-col shadow-sm hover:shadow-xl transition-all relative overflow-hidden gap-4"
               >
                  <div className="absolute inset-0 bg-slate-800/50 mix-blend-overlay"></div>
-                 <div className="relative z-10 flex-grow flex items-center justify-center w-full mb-10 min-h-[160px]">
+                 <div className="relative z-10 flex-grow flex items-center justify-center w-full mb-10 min-h-[160px] gap-4">
                     <div className="flex items-center gap-3 scale-150 transform">
-                       <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                       <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg gap-4">
                           <div className="w-5 h-5 bg-slate-900 rounded-md transform rotate-45"></div>
                        </div>
                        <Typography variant="body" className="text-3xl text-white">BizOps</Typography>
                     </div>
                  </div>
                  <div className="relative z-10 w-full border-t border-slate-700/50 pt-6">
-                    <div className="flex justify-between items-end mb-4">
+                    <div className="flex justify-between items-end mb-4 gap-4">
                        <div>
                           <Typography variant="h3" as="h3">Monochrome (Inverse)</Typography>
                           <Typography variant="caption" className="text-slate-400">Gunakan pada background gelap/foto.</Typography>
@@ -151,26 +151,26 @@ const MediaKitPage: React.FC = () => {
 
            {/* Do's and Don'ts */}
            <Grid cols={4} gap={6} className="mt-8">
-               <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/30 flex flex-col items-center text-center">
-                  <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4">
+               <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/30 flex flex-col items-center text-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4 gap-4">
                      <Check className="w-4 h-4" />
                   </div>
                   <Typography variant="body" className="dark:text-green-400">Gunakan Space yang Cukup</Typography>
                </div>
-               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
                   <Typography variant="body" className="dark:text-red-400">Jangan Mengubah Proporsi</Typography>
                </div>
-               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
                   <Typography variant="body" className="dark:text-red-400">Jangan Mengganti Warna</Typography>
                </div>
-               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
-                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
+               <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4 gap-4">
                      <X className="w-4 h-4" />
                   </div>
                   <Typography variant="body" className="dark:text-red-400">Jangan Menambah Efek</Typography>
@@ -181,7 +181,7 @@ const MediaKitPage: React.FC = () => {
         {/* --- COLOR PALETTE --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 gap-4">
                  <Palette className="w-6 h-6" />
               </div>
               <div>
@@ -193,10 +193,10 @@ const MediaKitPage: React.FC = () => {
            <div className="md:hidden">
               <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
-                    <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
+                    <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow gap-4">
                        <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
                           <div className="text-xs text-slate-500">Brand Primary</div>
@@ -212,10 +212,10 @@ const MediaKitPage: React.FC = () => {
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
-                    <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
+                    <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800 gap-4">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
                           <div className="text-xs text-slate-500">Backgrounds / Text</div>
@@ -231,10 +231,10 @@ const MediaKitPage: React.FC = () => {
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
-                    <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
+                    <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow gap-4">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
                           <div className="text-xs text-slate-500">Positive Actions</div>
@@ -250,10 +250,10 @@ const MediaKitPage: React.FC = () => {
                  </motion.div>
 
                  <motion.div whileHover={{ y: -5 }} className="group h-full">
-                    <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
+                    <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow gap-4">
                         <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                     </div>
-                    <div className="flex justify-between items-center px-2">
+                    <div className="flex justify-between items-center px-2 gap-4">
                        <div>
                           <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
                           <div className="text-xs text-slate-500">Alerts / Attention</div>
@@ -272,10 +272,10 @@ const MediaKitPage: React.FC = () => {
            
            <Grid cols={4} gap={8} className="hidden">
               <motion.div whileHover={{ y: -5 }} className="group h-full">
-                 <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
+                 <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow gap-4">
                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Electric Blue</div>
                        <div className="text-xs text-slate-500">Brand Primary</div>
@@ -291,10 +291,10 @@ const MediaKitPage: React.FC = () => {
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
-                 <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800">
+                 <div className="h-40 bg-slate-900 rounded-3xl shadow-lg mb-4 flex items-center justify-center border border-slate-800 gap-4">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Neutral</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Deep Space</div>
                        <div className="text-xs text-slate-500">Backgrounds / Text</div>
@@ -310,10 +310,10 @@ const MediaKitPage: React.FC = () => {
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
-                 <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow">
+                 <div className="h-40 bg-emerald-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-emerald-500/30 transition-shadow gap-4">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Success</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Signal Green</div>
                        <div className="text-xs text-slate-500">Positive Actions</div>
@@ -329,10 +329,10 @@ const MediaKitPage: React.FC = () => {
               </motion.div>
 
               <motion.div whileHover={{ y: -5 }} className="group h-full">
-                 <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow">
+                 <div className="h-40 bg-amber-500 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-amber-500/30 transition-shadow gap-4">
                      <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Warning</span>
                  </div>
-                 <div className="flex justify-between items-center px-2">
+                 <div className="flex justify-between items-center px-2 gap-4">
                     <div>
                        <div className="font-bold text-slate-900 dark:text-white">Safety Orange</div>
                        <div className="text-xs text-slate-500">Alerts / Attention</div>
@@ -353,7 +353,7 @@ const MediaKitPage: React.FC = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16 md:py-24">
            <div>
               <div className="flex items-center gap-4 mb-8">
-                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400">
+                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 gap-4">
                     <Type className="w-6 h-6" />
                  </div>
                  <div>
@@ -400,7 +400,7 @@ const MediaKitPage: React.FC = () => {
         {/* --- BOILERPLATE --- */}
         <section>
            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400">
+              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 gap-4">
                  <FileText className="w-6 h-6" />
               </div>
               <div>
@@ -411,7 +411,7 @@ const MediaKitPage: React.FC = () => {
 
            <Grid cols={2} gap={8}>
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
-                 <div className="flex items-center justify-between mb-6">
+                 <div className="flex items-center justify-between mb-6 gap-4">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Short Bio <Typography variant="caption" className="text-slate-500">~50 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.short, 'short')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'short' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}
@@ -423,7 +423,7 @@ const MediaKitPage: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
-                 <div className="flex items-center justify-between mb-6">
+                 <div className="flex items-center justify-between mb-6 gap-4">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Standard Bio <Typography variant="caption" className="text-slate-500">~100 Words</Typography></Typography>
                     <button onClick={() => copyToClipboard(boilerplate.standard, 'standard')} className="text-primary-600 hover:text-primary-700 font-bold text-sm flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
                        {copied === 'standard' ? <><Check className="w-4 h-4" /> Copied</> : <><Copy className="w-4 h-4" /> Copy Text</>}

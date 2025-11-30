@@ -13,7 +13,7 @@ import Stack from '../components/Stack';
 
 const CareersPage: React.FC = () => {
   return (
-    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors font-sans">
+    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors font-sans gap-4">
       <SEO title="Karir di BizOps (Divistant) | Build The Future of ERP" description="Bergabunglah dengan tim engineering BizOps yang berada di bawah naungan Divistant. Budaya Remote-First, Open Source, dan Inovasi tanpa batas." />
 
       {/* --- HERO SECTION --- */}
@@ -29,7 +29,7 @@ const CareersPage: React.FC = () => {
           <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight">Build Software that <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Runs The World.</span></Typography>
           <Typography variant="body-xl" className="text-slate-300">BizOps adalah produk unggulan dari Divistant. Kami mencari engineer, desainer, dan pemikir kreatif yang ingin mendefinisikan ulang bagaimana perusahaan beroperasi di era digital.</Typography>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-4">
              <a href="https://divistant.com/career" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="h-14 px-10 text-lg font-bold bg-white text-slate-900 dark:text-white hover:bg-slate-100 border-none shadow-xl hover:shadow-indigo-500/20 transition-all rounded-full">
                    View Open Roles <ArrowRight className="ml-2 w-5 h-5" />
@@ -41,7 +41,7 @@ const CareersPage: React.FC = () => {
 
       {/* --- PHOTO GRID (CULTURE SNAPSHOT) --- */}
       <div className="bg-slate-900 pb-24 overflow-hidden">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={4} gap={4} className="h-64 md:h-80 opacity-80 hover:opacity-100 transition-opacity duration-500">
                <div className="bg-slate-800 rounded-3xl overflow-hidden relative group">
                   <OptimizedImage src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaboration" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
@@ -61,7 +61,7 @@ const CareersPage: React.FC = () => {
 
       {/* --- ENGINEERING CULTURE --- */}
       <Section className="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Engineering First Culture</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.</Typography>
@@ -70,21 +70,21 @@ const CareersPage: React.FC = () => {
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <GitMerge className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Open Source DNA</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <Zap className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                     <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                     <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                         <BookOpen className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Continuous Learning</Typography>
@@ -95,21 +95,21 @@ const CareersPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <GitMerge className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Open Source DNA</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <Zap className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
-                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                      <BookOpen className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Continuous Learning</Typography>
@@ -121,12 +121,12 @@ const CareersPage: React.FC = () => {
 
       {/* --- BENEFITS / PERKS --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Typography variant="h2" as="h2">The Total Rewards</Typography>
             <div className="md:hidden">
                <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
+                     <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0 gap-4">
                         <Coffee className="w-6 h-6" />
                      </div>
                      <div>
@@ -135,7 +135,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
+                     <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0 gap-4">
                         <Monitor className="w-6 h-6" />
                      </div>
                      <div>
@@ -144,7 +144,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
+                     <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0 gap-4">
                         <Heart className="w-6 h-6" />
                      </div>
                      <div>
@@ -153,7 +153,7 @@ const CareersPage: React.FC = () => {
                      </div>
                   </div>
                   <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                     <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
+                     <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0 gap-4">
                         <Award className="w-6 h-6" />
                      </div>
                      <div>
@@ -166,7 +166,7 @@ const CareersPage: React.FC = () => {
 
             <Grid cols={2} gap={6} className="hidden">
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0 gap-4">
                      <Coffee className="w-6 h-6" />
                   </div>
                   <div>
@@ -175,7 +175,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-500 flex-shrink-0 gap-4">
                      <Monitor className="w-6 h-6" />
                   </div>
                   <div>
@@ -184,7 +184,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 flex-shrink-0 gap-4">
                      <Heart className="w-6 h-6" />
                   </div>
                   <div>
@@ -193,7 +193,7 @@ const CareersPage: React.FC = () => {
                   </div>
                </div>
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
-                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-500 flex-shrink-0 gap-4">
                      <Award className="w-6 h-6" />
                   </div>
                   <div>

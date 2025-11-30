@@ -92,7 +92,7 @@ const EventsPage: React.FC = () => {
                transition={{ delay: 0.3 }}
                className="max-w-2xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-2xl flex flex-col sm:flex-row items-center gap-2 shadow-2xl"
             >
-               <div className="relative flex-1 w-full">
+               <div className="relative flex-1 w-full gap-4">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <input 
                      type="text" 
@@ -123,7 +123,7 @@ const EventsPage: React.FC = () => {
         
         {/* Upcoming Events Grid */}
         <Stack direction="vertical" gap={8}>
-           <div className="flex items-center justify-between">
+           <div className="flex items-center justify-between gap-4">
               <Typography variant="h2" as="h2" className="font-bold text-white"><Calendar className="w-6 h-6 text-primary-400" /> Upcoming Live Sessions</Typography>
            </div>
 
@@ -136,7 +136,7 @@ const EventsPage: React.FC = () => {
                        whileInView={{ opacity: 1, y: 0 }}
                        viewport={{ once: true }}
                        transition={{ delay: idx * 0.1 }}
-                       className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full w-[85vw] sm:w-[350px]"
+                       className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full w-[85vw] sm:w-[350px] gap-4"
                     >
                        {/* Image Header */}
                        <div className="relative h-48 overflow-hidden">
@@ -148,7 +148,7 @@ const EventsPage: React.FC = () => {
                        </div>
 
                        {/* Content */}
-                       <div className="p-6 flex-1 flex flex-col">
+                       <div className="p-6 flex-1 flex flex-col gap-4">
                           <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-bold mb-3">
                              <Calendar className="w-4 h-4" /> {evt.formattedDate}
                           </div>
@@ -157,15 +157,15 @@ const EventsPage: React.FC = () => {
                           
                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
-                          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                             <div className="flex -space-x-2">
+                          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+                             <div className="flex -space-x-2 gap-4">
                                 {/* Dummy avatars for participants */}
                                 {[1,2,3].map(i => (
-                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500">
+                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 gap-4">
                                       {String.fromCharCode(64 + i)}
                                    </div>
                                 ))}
-                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 gap-4">
                                    +40
                                 </div>
                              </div>
@@ -190,7 +190,7 @@ const EventsPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                    className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full gap-4"
                  >
                     {/* Image Header */}
                     <div className="relative h-48 overflow-hidden">
@@ -202,7 +202,7 @@ const EventsPage: React.FC = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col">
+                    <div className="p-6 flex-1 flex flex-col gap-4">
                        <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-bold mb-3">
                           <Calendar className="w-4 h-4" /> {evt.formattedDate}
                        </div>
@@ -211,15 +211,15 @@ const EventsPage: React.FC = () => {
                        
                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
-                       <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                          <div className="flex -space-x-2">
+                       <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+                          <div className="flex -space-x-2 gap-4">
                              {/* Dummy avatars for participants */}
                              {[1,2,3].map(i => (
-                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500">
+                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 gap-4">
                                    {String.fromCharCode(64 + i)}
                                 </div>
                              ))}
-                             <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                             <div className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-500 gap-4">
                                 +40
                              </div>
                           </div>
@@ -255,7 +255,7 @@ const EventsPage: React.FC = () => {
                  <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                     {eventsData.recordings.map((rec, idx) => (
                        <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
-                          <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
+                          <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow gap-4">
                              {/* Mock Thumbnail */}
                              <div className="absolute inset-0 bg-slate-800"></div>
                              <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />
@@ -277,7 +277,7 @@ const EventsPage: React.FC = () => {
               <Grid cols={3} gap={6} className="hidden">
                  {eventsData.recordings.map((rec, idx) => (
                     <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
-                       <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
+                       <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow gap-4">
                           {/* Mock Thumbnail */}
                           <div className="absolute inset-0 bg-slate-800"></div>
                           <PlayCircle className="w-12 h-12 text-white/50 group-hover:text-primary-500 group-hover:scale-110 transition-all relative z-10" />

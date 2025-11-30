@@ -19,7 +19,7 @@ const DownloadPage: React.FC = () => {
 
       {/* --- HERO SECTION --- */}
       <section className="pt-32 pb-20 overflow-hidden py-16 md:py-24">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <Grid cols={2} gap={16} className="items-center">
             
             {/* Left Content */}
@@ -55,7 +55,7 @@ const DownloadPage: React.FC = () => {
               <div className="flex items-center gap-6">
                  <div className="hidden sm:block p-2 bg-white rounded-xl shadow-md border border-slate-100">
                     {/* Mock QR Code */}
-                    <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] p-1 text-center leading-tight">
+                    <div className="w-20 h-20 bg-slate-900 flex items-center justify-center text-white text-[8px] p-1 text-center leading-tight gap-4">
                        SCAN TO<br/>DOWNLOAD
                     </div>
                  </div>
@@ -87,7 +87,7 @@ const DownloadPage: React.FC = () => {
                      {/* Screen */}
                      <div className="bg-white dark:bg-slate-950 rounded-[2.5rem] overflow-hidden h-[600px] relative">
                         {/* Status Bar */}
-                        <div className="h-8 bg-slate-900 flex justify-between items-center px-6">
+                        <div className="h-8 bg-slate-900 flex justify-between items-center px-6 gap-4">
                            <span className="text-[10px] text-white font-bold">9:41</span>
                            <div className="flex gap-1">
                               <div className="w-3 h-3 bg-white rounded-full opacity-20"></div>
@@ -97,7 +97,7 @@ const DownloadPage: React.FC = () => {
                         
                         {/* App Header */}
                         <div className="bg-slate-900 p-6 pb-8 text-white rounded-b-[2rem] shadow-lg relative z-10">
-                           <div className="flex justify-between items-center mb-6">
+                           <div className="flex justify-between items-center mb-6 gap-4">
                               <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500"></div>
                               <Bell className="w-5 h-5 text-slate-300" />
                            </div>
@@ -109,13 +109,13 @@ const DownloadPage: React.FC = () => {
                         <Stack direction="vertical" gap={4} className="p-4 -mt-6 relative z-20">
                            {/* Stats Card */}
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
-                              <div className="flex justify-between items-center mb-4">
+                              <div className="flex justify-between items-center mb-4 gap-4">
                                  <Typography variant="h3" as="h3">Today's Approval</Typography>
                                  <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">3 Pending</span>
                               </div>
                               <div className="flex gap-3 overflow-x-auto pb-2">
                                  {[1,2,3].map(i => (
-                                    <div key={i} className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-white dark:border-slate-700"></div>
+                                    <div key={i} className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-white dark:border-slate-700 gap-4"></div>
                                  ))}
                               </div>
                            </div>
@@ -139,7 +139,7 @@ const DownloadPage: React.FC = () => {
                         </Stack>
 
                         {/* Floating Action */}
-                        <div className="absolute bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <div className="absolute bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 flex items-center justify-center text-white hover:scale-110 transition-transform gap-4">
                            <Download className="w-6 h-6" />
                         </div>
                      </div>
@@ -152,7 +152,7 @@ const DownloadPage: React.FC = () => {
 
       {/* --- FEATURES GRID --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Container size="3xl" className="text-center mb-16">
                <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
@@ -163,21 +163,21 @@ const DownloadPage: React.FC = () => {
                   mobileItemWidth="w-[85vw] sm:w-[350px]"
                >
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+                     <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6 gap-4">
                         <WifiOff className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                     <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6 gap-4">
                         <Fingerprint className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Biometric Security</Typography>
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                     <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6 gap-4">
                         <Bell className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Instant Push Notif</Typography>
@@ -188,21 +188,21 @@ const DownloadPage: React.FC = () => {
 
             <Grid cols={3} gap={8} className="hidden">
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+                  <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6 gap-4">
                      <WifiOff className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Offline-First Mode</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Input order atau stock opname di gudang bawah tanah tanpa sinyal. Data tersimpan lokal dan auto-sync begitu kembali online.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 mb-6 gap-4">
                      <Fingerprint className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Biometric Security</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Login cepat dalam 0.5 detik menggunakan FaceID atau Fingerprint. Keamanan enterprise-grade tanpa ribet password.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
-                  <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
+                  <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 mb-6 gap-4">
                      <Bell className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Instant Push Notif</Typography>

@@ -46,7 +46,7 @@ const CapabilityPage: React.FC = () => {
 
       {/* Technical Features */}
       <section className="py-24 bg-white">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Typography variant="h2" as="h2">Technical Specifications</Typography>
             <Grid cols={2} gap={8}>
                {data.features.map((item: any, idx: number) => (
@@ -69,7 +69,7 @@ const CapabilityPage: React.FC = () => {
       {/* Extra Section (e.g. Sizing Guide Table) */}
       {data.extraSection && (
         <section className="py-24 bg-slate-50 border-t border-slate-200">
-           <Container size="7xl">
+           <Container className="px-4 md:px-6 lg:px-8" size="7xl">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">{data.extraSection.title}</Typography>
               
               {data.extraSection.type === 'table' && (
@@ -102,7 +102,7 @@ const CapabilityPage: React.FC = () => {
 
       {/* Specific CTA */}
       <section className="py-20 bg-white border-t border-slate-100 text-center">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Typography variant="h2" as="h2">Need Deeper Technical Review?</Typography>
             <Typography variant="body" className="text-slate-600">Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.</Typography>
             <Link to="/contact">

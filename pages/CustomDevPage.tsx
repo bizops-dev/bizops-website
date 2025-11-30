@@ -172,7 +172,7 @@ const CustomDevPage: React.FC = () => {
 
       {/* --- USE CASES (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="vertical" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Real World Impact</Typography>
@@ -232,7 +232,7 @@ const CustomDevPage: React.FC = () => {
 
       {/* --- DELIVERABLES (Previously Tech Stack) --- */}
       <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
-           <Container size="5xl">
+           <Container className="px-4 md:px-6 lg:px-8" size="5xl">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Key Deliverables</Typography>
                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>

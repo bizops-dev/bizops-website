@@ -301,7 +301,7 @@ const BlogPage: React.FC = () => {
                                     className="h-full"
                                  >
                                     <Link to={`/blog/${post.slug}`} className="h-full block">
-                                       <SpotlightCard className="h-full rounded-[2rem] flex flex-col hover:shadow-2xl transition-all duration-300 group">
+                                       <SpotlightCard className="h-full rounded-[2rem] flex flex-col hover:shadow-2xl transition-all duration-300 group gap-4">
                                           <div className="aspect-[16/10] overflow-hidden border-b border-slate-100 dark:border-slate-800 relative">
                                              <OptimizedImage 
                                                 src={post.image} 

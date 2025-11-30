@@ -148,7 +148,7 @@ const SitemapPage: React.FC = () => {
     <div className="pt-24 pb-24 bg-white dark:bg-slate-950 min-h-screen transition-colors">
       <SEO title="Sitemap" description="Complete overview of BizOps website structure." />
       
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         <div className="text-center mb-16">
           <Typography variant="h1" as="h1">Sitemap</Typography>
           <Typography variant="body" className="text-slate-600 dark:text-slate-400">Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.</Typography>

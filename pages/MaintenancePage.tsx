@@ -9,7 +9,7 @@ import Container from '../components/Container';
 
 const MaintenancePage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#0B1120] text-white relative overflow-hidden font-sans">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#0B1120] text-white relative overflow-hidden font-sans gap-4">
       <SEO title="Maintenance | System Update" />
       
       {/* Background Effects */}
@@ -23,7 +23,7 @@ const MaintenancePage: React.FC = () => {
           initial={{ rotate: -10, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring" }}
-          className="w-28 h-28 bg-white/10 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center mb-10 mx-auto shadow-2xl border border-white/10"
+          className="w-28 h-28 bg-white/10 backdrop-blur-md rounded-[2.5rem] flex items-center justify-center mb-10 mx-auto shadow-2xl border border-white/10 gap-4"
         >
           <Hammer className="w-12 h-12 text-blue-400" />
         </motion.div>
@@ -64,19 +64,19 @@ const MaintenancePage: React.FC = () => {
            <Typography variant="h3" as="h3">Need urgent help?</Typography>
            <div className="flex justify-center gap-4">
               <a href="mailto:support@bizops.id" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 dark:text-white transition-all">
+                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Mail className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">Email</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#1DA1F2] group-hover:text-slate-900 dark:text-white transition-all">
+                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#1DA1F2] group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Twitter className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">Twitter</Typography>
               </a>
               <a href="#" className="flex flex-col items-center gap-2 group">
-                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-slate-900 dark:text-white transition-all">
+                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-slate-900 dark:text-white transition-all gap-4">
                     <Linkedin className="w-5 h-5" />
                  </div>
                  <Typography variant="caption" className="text-slate-400">LinkedIn</Typography>

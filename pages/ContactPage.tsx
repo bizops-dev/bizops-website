@@ -117,7 +117,7 @@ const ContactPage: React.FC = () => {
 
       {/* --- CONTENT SECTION --- */}
       <section className="relative z-20 -mt-20 md:-mt-32 pb-24 px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={12} gap={8}>
                
                {/* LEFT: CONTACT INFO (Bento Grid Style) */}
@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
                         </Stack>
                         
                         <div className="mt-8 pt-6 border-t border-slate-800">
-                           <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-sm font-medium text-slate-300 hover:text-white group">
+                           <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-sm font-medium text-slate-300 hover:text-white group gap-4">
                               <span>View on Google Maps</span>
                               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </a>
@@ -228,13 +228,13 @@ const ContactPage: React.FC = () => {
                      initial={{ opacity: 0, y: 20 }}
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
-                     className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-center"
+                     className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-center gap-4"
                   >
                      {isSent ? (
                        <Stack direction="vertical" gap={4} align="center" justify="center" className="text-center py-12">
                           <motion.div 
                              initial={{ scale: 0 }} animate={{ scale: 1 }}
-                             className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 shadow-lg"
+                             className="w-24 h-24 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-8 shadow-lg gap-4"
                           >
                              <CheckCircle className="w-12 h-12" />
                           </motion.div>

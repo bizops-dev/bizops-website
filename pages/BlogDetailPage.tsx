@@ -135,7 +135,7 @@ const BlogDetailPage: React.FC = () => {
             <OptimizedImage src={post.image} alt={post.title} className="w-full h-full object-cover opacity-80" />
          </motion.div>
 
-         <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full">
+         <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full gap-4">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
                <Stack direction="horizontal" gap={3} align="center" className="mb-8">
                   <Link to="/blog" className="flex items-center gap-2 text-slate-900 dark:text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
@@ -290,7 +290,7 @@ const BlogDetailPage: React.FC = () => {
 
       {/* --- READ NEXT --- */}
       <div className="bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-200 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-12">
                <div>
                   <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Keep Reading</span>

@@ -30,7 +30,7 @@ const EventDetailPage: React.FC = () => {
 
   if (!event) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center gap-4">
         <Typography variant="h1" as="h1">Event Tidak Ditemukan</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</Typography>
         <Link to="/events">
@@ -143,7 +143,7 @@ const EventDetailPage: React.FC = () => {
                 <ul className="space-y-3 list-none pl-0">
                   {event.benefits?.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5 gap-4" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -157,12 +157,12 @@ const EventDetailPage: React.FC = () => {
               <Stack direction="vertical" gap={6}>
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
-                    <div className="w-16 flex-shrink-0 pt-1">
+                    <div className="w-16 flex-shrink-0 pt-1 gap-4">
                       <span className="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 transition-colors">
                         {item.time}
                       </span>
                     </div>
-                    <div className="flex-1 pb-6 border-b border-slate-100 dark:border-slate-800 last:border-0 last:pb-0">
+                    <div className="flex-1 pb-6 border-b border-slate-100 dark:border-slate-800 last:border-0 last:pb-0 gap-4">
                       <Typography variant="h4" as="h4" className="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{item.activity}</Typography>
                     </div>
                   </div>
@@ -259,7 +259,7 @@ const EventDetailPage: React.FC = () => {
                   </>
                 ) : (
                   <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce gap-4">
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Pendaftaran Berhasil!</Typography>

@@ -20,7 +20,7 @@ const PreferencesPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="Email Preferences" description="Manage your email subscription settings." />
       
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         <div className="text-center mb-12">
            <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />

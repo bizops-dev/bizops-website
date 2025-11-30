@@ -46,9 +46,9 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
         }}
       />
       
-      <div className="relative h-full flex flex-col lg:flex-row">
+      <div className="relative h-full flex flex-col lg:flex-row gap-4">
          {/* LEFT: Impact & Metrics (Dark Side) */}
-         <div className="lg:w-[400px] bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
+         <div className="lg:w-[400px] bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden gap-4">
             {/* Abstract Background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
                <div className="absolute -top-20 -left-20 w-60 h-60 bg-blue-500 rounded-full blur-[80px]"></div>
@@ -56,7 +56,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
             </div>
 
             <div className="relative z-10">
-               <div className="w-16 h-16 bg-white text-slate-900 dark:text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8">
+               <div className="w-16 h-16 bg-white text-slate-900 dark:text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg mb-8 gap-4">
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
@@ -74,12 +74,12 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
          </div>
 
          {/* RIGHT: The Story (Light Side) */}
-         <div className="flex-1 p-10 lg:p-14 flex flex-col">
+         <div className="flex-1 p-10 lg:p-14 flex flex-col gap-4">
             <div className="mb-8">
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{story.title}"</Typography>
                
                <div className="flex gap-4 mb-8">
-                  <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0" />
+                  <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0 gap-4" />
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">{story.desc}</Typography>
                </div>
             </div>
@@ -192,7 +192,7 @@ const CustomerPage: React.FC = () => {
          </Container>
          
          {/* Marquee Container */}
-         <div className="relative flex overflow-x-hidden w-full group">
+         <div className="relative flex overflow-x-hidden w-full group gap-4">
             {/* Gradient Fade Edges */}
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>

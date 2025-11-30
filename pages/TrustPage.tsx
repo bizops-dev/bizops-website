@@ -71,9 +71,9 @@ const TrustPage: React.FC = () => {
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
          <Container size="7xl" className="py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-               <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+               <div className="relative flex h-3 w-3 gap-4">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 gap-4"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 gap-4"></span>
                </div>
                <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">All Systems Operational</span>
             </div>
@@ -97,8 +97,8 @@ const TrustPage: React.FC = () => {
            <div className="md:hidden">
               <CardSlider mobileItemWidth="w-[60vw] sm:w-[250px]">
                  {/* ISO 27001 */}
-                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                        <Shield className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-emerald-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">ISO 27001</Typography>
@@ -109,8 +109,8 @@ const TrustPage: React.FC = () => {
                  </div>
 
                  {/* GDPR / UU PDP */}
-                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                        <Globe className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-blue-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">GDPR & UU PDP</Typography>
@@ -121,8 +121,8 @@ const TrustPage: React.FC = () => {
                  </div>
 
                  {/* PSE Kominfo */}
-                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-red-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-red-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                        <FileCheck className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-red-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">PSE Kominfo</Typography>
@@ -133,8 +133,8 @@ const TrustPage: React.FC = () => {
                  </div>
 
                  {/* SOC 2 Type II */}
-                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center opacity-75">
-                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                 <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center opacity-75 gap-4">
+                    <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 gap-4">
                        <Lock className="w-8 h-8 text-slate-400" />
                     </div>
                     <Typography variant="h3" as="h3">SOC 2 Type II</Typography>
@@ -148,8 +148,8 @@ const TrustPage: React.FC = () => {
 
            <Grid cols={4} gap={8} className="hidden">
               {/* ISO 27001 */}
-              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                     <Shield className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-emerald-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">ISO 27001</Typography>
@@ -160,8 +160,8 @@ const TrustPage: React.FC = () => {
               </div>
 
               {/* GDPR / UU PDP */}
-              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                     <Globe className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-blue-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">GDPR & UU PDP</Typography>
@@ -172,8 +172,8 @@ const TrustPage: React.FC = () => {
               </div>
 
               {/* PSE Kominfo */}
-              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-red-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
-                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-red-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center gap-4">
+                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform gap-4">
                     <FileCheck className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-red-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">PSE Kominfo</Typography>
@@ -184,8 +184,8 @@ const TrustPage: React.FC = () => {
               </div>
 
               {/* SOC 2 Type II */}
-              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center opacity-75">
-                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6">
+              <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center opacity-75 gap-4">
+                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 gap-4">
                     <Lock className="w-8 h-8 text-slate-400" />
                  </div>
                  <Typography variant="h3" as="h3">SOC 2 Type II</Typography>
@@ -209,7 +209,7 @@ const TrustPage: React.FC = () => {
               <div className="lg:hidden">
                  <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]" breakpoint="lg">
                     <div className="flex gap-4 p-4 border border-transparent hover:border-emerald-500/30 rounded-xl transition-colors">
-                       <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600">
+                       <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600 gap-4">
                           <Database className="w-5 h-5" />
                        </div>
                        <div>
@@ -218,7 +218,7 @@ const TrustPage: React.FC = () => {
                        </div>
                     </div>
                     <div className="flex gap-4 p-4 border border-transparent hover:border-blue-500/30 rounded-xl transition-colors">
-                       <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600">
+                       <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600 gap-4">
                           <Server className="w-5 h-5" />
                        </div>
                        <div>
@@ -227,7 +227,7 @@ const TrustPage: React.FC = () => {
                        </div>
                     </div>
                     <div className="flex gap-4 p-4 border border-transparent hover:border-amber-500/30 rounded-xl transition-colors">
-                       <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0 text-amber-600">
+                       <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0 text-amber-600 gap-4">
                           <Eye className="w-5 h-5" />
                        </div>
                        <div>
@@ -240,7 +240,7 @@ const TrustPage: React.FC = () => {
 
               <Stack direction="vertical" gap={6} className="hidden lg:block">
                  <div className="flex gap-4 p-4 border border-transparent hover:border-emerald-500/30 rounded-xl transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600 gap-4">
                        <Database className="w-5 h-5" />
                     </div>
                     <div>
@@ -249,7 +249,7 @@ const TrustPage: React.FC = () => {
                     </div>
                  </div>
                  <div className="flex gap-4 p-4 border border-transparent hover:border-blue-500/30 rounded-xl transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 text-blue-600 gap-4">
                        <Server className="w-5 h-5" />
                     </div>
                     <div>
@@ -258,7 +258,7 @@ const TrustPage: React.FC = () => {
                     </div>
                  </div>
                  <div className="flex gap-4 p-4 border border-transparent hover:border-amber-500/30 rounded-xl transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0 text-amber-600">
+                    <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0 text-amber-600 gap-4">
                        <Eye className="w-5 h-5" />
                     </div>
                     <div>
@@ -275,25 +275,25 @@ const TrustPage: React.FC = () => {
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-emerald-500/20 rounded-full blur-[80px] animate-pulse"></div>
                   
                   <Stack direction="vertical" gap={4} className="relative z-10 h-full justify-center">
-                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between">
+                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between gap-4">
                          <div className="flex items-center gap-3 text-emerald-400 text-xs">
                             <Globe className="w-4 h-4" /> Cloudflare WAF
                          </div>
                          <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
                       </div>
-                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-4 sm:ml-8">
+                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-4 sm:ml-8 gap-4">
                          <div className="flex items-center gap-3 text-blue-400 text-xs">
                             <Server className="w-4 h-4" /> Load Balancer
                          </div>
                          <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
                       </div>
-                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-8 sm:ml-16">
+                      <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between ml-8 sm:ml-16 gap-4">
                          <div className="flex items-center gap-3 text-purple-400 text-xs">
                             <Lock className="w-4 h-4" /> App Server (Pod)
                          </div>
                          <div className="h-2 w-2 rounded-full bg-purple-500 animate-pulse"></div>
                       </div>
-                      <div className="bg-emerald-900/50 backdrop-blur border border-emerald-500/30 p-4 rounded-xl flex items-center justify-between ml-12 sm:ml-24 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                      <div className="bg-emerald-900/50 backdrop-blur border border-emerald-500/30 p-4 rounded-xl flex items-center justify-between ml-12 sm:ml-24 shadow-[0_0_30px_rgba(16,185,129,0.2)] gap-4">
                          <div className="flex items-center gap-3 text-white text-xs font-bold">
                             <Database className="w-4 h-4" /> Encrypted DB
                          </div>
@@ -308,7 +308,7 @@ const TrustPage: React.FC = () => {
 
         {/* --- TRANSPARENCY & DATA --- */}
         <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 py-16 md:py-24">
-           <Container size="4xl">
+           <Container className="px-4 md:px-6 lg:px-8" size="4xl">
                <Typography variant="h2" as="h2">Data Sub-processors</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.</Typography>
 

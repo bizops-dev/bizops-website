@@ -124,7 +124,7 @@ const UseCasesPage: React.FC = () => {
       />
 
       {/* Hero Section - Full Height & No Search Bar */}
-      <div className="relative min-h-[60vh] flex items-center justify-center bg-[#0B1120] overflow-hidden border-b border-white/5 pt-20">
+      <div className="relative min-h-[60vh] flex items-center justify-center bg-[#0B1120] overflow-hidden border-b border-white/5 pt-20 gap-4">
         {/* Abstract Background Mesh */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         
@@ -171,11 +171,11 @@ const UseCasesPage: React.FC = () => {
 
       {/* Main Content with Sidebar Layout */}
       <Section className="bg-slate-50 dark:bg-slate-950/50 pt-16 pb-32" id="case-grid">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Stack direction="vertical" gap={12}>
                
                {/* Sidebar Filter (Desktop) */}
-               <div className="hidden lg:block w-72 flex-shrink-0">
+               <div className="hidden lg:block w-72 flex-shrink-0 gap-4">
                   <Stack direction="vertical" gap={10} className="sticky top-28">
                      
                      {/* Filter by Category/Function */}
@@ -295,13 +295,13 @@ const UseCasesPage: React.FC = () => {
                </Stack>
 
                {/* Grid Content */}
-               <div className="flex-1 min-h-[600px]">
+               <div className="flex-1 min-h-[600px] gap-4">
                   {/* Search Bar & Result Info Moved Here */}
                   <Stack direction="vertical" gap={6} className="mb-8">
                      {/* Search Bar */}
                      <div className="relative group max-w-lg">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
-                        <div className="relative bg-white dark:bg-slate-900 rounded-xl flex items-center border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors">
+                        <div className="relative bg-white dark:bg-slate-900 rounded-xl flex items-center border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 transition-colors gap-4">
                            <Search className="absolute left-4 w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
                            <input 
                               type="text" 
@@ -335,7 +335,7 @@ const UseCasesPage: React.FC = () => {
 
                   {filteredCases.length === 0 ? (
                      <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-300 dark:border-slate-700">
-                        <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400">
+                        <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-400 gap-4">
                            <Search className="w-10 h-10" />
                         </div>
                         <Typography variant="h3" as="h3">No Results Found</Typography>
@@ -361,8 +361,8 @@ const UseCasesPage: React.FC = () => {
                                     transition={{ duration: 0.3 }}
                                  >
                                     <Link to={`/use-cases/${item.id}`} className="block h-full">
-                                       <SpotlightCard className="rounded-3xl p-8 h-full flex flex-col hover:shadow-2xl transition-all duration-300 group border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
-                                          <div className="flex items-start justify-between mb-6">
+                                       <SpotlightCard className="rounded-3xl p-8 h-full flex flex-col hover:shadow-2xl transition-all duration-300 group border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 gap-4">
+                                          <div className="flex items-start justify-between mb-6 gap-4">
                                              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 bg-${item.color}-50 dark:bg-${item.color}-900/20 ring-1 ring-${item.color}-100 dark:ring-${item.color}-900/50 shadow-sm`}>
                                                 <item.icon className="w-7 h-7" />
                                              </div>
@@ -381,7 +381,7 @@ const UseCasesPage: React.FC = () => {
                                           <div className="h-px w-10 bg-slate-200 dark:bg-slate-700 mb-4"></div>
                                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
 
-                                          <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800">
+                                          <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800 gap-4">
                                              Read Full Story <ArrowRight className="w-4 h-4 ml-2 text-primary-500" />
                                           </div>
                                        </SpotlightCard>

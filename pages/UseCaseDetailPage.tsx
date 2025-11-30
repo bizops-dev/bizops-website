@@ -248,9 +248,9 @@ const UseCaseDetailPage: React.FC = () => {
 
   if (!data) {
     return (
-      <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950">
+      <Section className="min-h-screen flex flex-col items-center justify-center text-center bg-slate-50 dark:bg-slate-950 gap-4">
         <SEO title="Use Case Not Found" noindex={true} />
-        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse">
+        <div className="w-24 h-24 bg-red-50 dark:bg-red-900/10 text-red-500 rounded-full flex items-center justify-center mb-6 animate-pulse gap-4">
           <AlertTriangle className="w-10 h-10" />
         </div>
         <Typography variant="h1" as="h1">Case Study Not Found</Typography>
@@ -277,7 +277,7 @@ const UseCaseDetailPage: React.FC = () => {
       />
 
       {/* --- 1. HERO SECTION --- */}
-      <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120]">
+      <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0B1120] gap-4">
         {/* Animated Background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
@@ -423,7 +423,7 @@ const UseCaseDetailPage: React.FC = () => {
                     ))}
                   </div>
                   <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-4">
                        <Typography variant="caption" className="text-slate-500">Module Category</Typography>
                        <span className={`px-3 py-1 rounded-lg ${theme.bgLight} ${theme.bgDark} text-xs font-bold ${theme.primary} uppercase border ${theme.border}`}>
                           {data.category}
@@ -474,8 +474,8 @@ const UseCaseDetailPage: React.FC = () => {
       {/* --- 4. RELATED CASES --- */}
       {relatedCases.length > 0 && (
         <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-24">
-          <Container size="7xl">
-            <div className="flex items-center justify-between mb-12">
+          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
+            <div className="flex items-center justify-between mb-12 gap-4">
               <Typography variant="h2" as="h2">More Success Stories</Typography>
               <Link to="/use-cases" className="text-primary-600 dark:text-primary-400 font-bold hover:underline flex items-center gap-1">
                 Lihat Semua <ArrowRight className="w-4 h-4" />
@@ -489,7 +489,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <Link key={item.id} to={`/use-cases/${item.id}`} className="group block">
                     <div className="aspect-[4/3] rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden relative mb-4 shadow-sm group-hover:shadow-md transition-all">
                       <div className={`absolute inset-0 bg-gradient-to-br ${itemTheme.gradientFrom} to-transparent opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute inset-0 flex items-center justify-center gap-4">
                          <div className={`p-4 rounded-2xl ${itemTheme.bgLight} ${itemTheme.bgDark} ${itemTheme.primary} group-hover:scale-110 transition-transform duration-300`}>
                             <item.icon className="w-8 h-8" />
                          </div>

@@ -68,14 +68,14 @@ const PricingPage: React.FC = () => {
 
         <Container size="7xl" className="relative z-10 text-center">
           <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-             <span className="relative flex h-2 w-2">
-               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+             <span className="relative flex h-2 w-2 gap-4">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 gap-4"></span>
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 gap-4"></span>
              </span>
              <Typography variant="caption" className="text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</Typography>
           </Stack>
 
-          <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />
+          <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2 gap-4" />
             <motion.span 
               variants={FADE_UP_VARIANTS}
               initial="hidden"
@@ -149,7 +149,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 gap-4">
                  <Typography variant="body" className="text-slate-400 tracking-wider">Fitur Utama:</Typography>
                  {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
@@ -198,7 +198,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8 gap-4">
                  <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wider">Semua di Business, plus:</Typography>
                  {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
@@ -244,7 +244,7 @@ const PricingPage: React.FC = () => {
                  </Link>
                </div>
 
-               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
+               <Stack direction="vertical" gap={4} className="flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10 gap-4">
                  <Typography variant="body" className="dark:text-amber-500 tracking-wider">Enterprise Exclusive:</Typography>
                  {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
@@ -302,7 +302,7 @@ const PricingPage: React.FC = () => {
            <div className="text-center mb-12">
              <Typography variant="h2" as="h2">Standar Keamanan Enterprise</Typography>
            </div>
-           <Container size="7xl">
+           <Container className="px-4 md:px-6 lg:px-8" size="7xl">
              <Grid cols={4} gap={6}>
                {[
                  { icon: Shield, title: "Secure Payment", desc: "Midtrans & Xendit Gateway", color: "text-green-500" },
@@ -310,7 +310,7 @@ const PricingPage: React.FC = () => {
                  { icon: Server, title: "99.9% Uptime SLA", desc: "Redundant Cloud Infrastructure", color: "text-purple-500" },
                  { icon: RefreshCw, title: "14-Day Guarantee", desc: "Money Back Policy", color: "text-amber-500" },
                ].map((item, i) => (
-                 <div key={i} className="flex flex-col items-center text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                 <div key={i} className="flex flex-col items-center text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors gap-4">
                    <div className={`p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm mb-4 ${item.color}`}>
                      <item.icon className="w-8 h-8" />
                    </div>

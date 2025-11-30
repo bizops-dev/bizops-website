@@ -16,7 +16,7 @@ const MultiCompanyPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
           <Stack direction="horizontal" gap={4} className="p-3 bg-slate-800 rounded-2xl mb-6">
              <Network className="w-8 h-8 text-primary-400" />
           </div>
@@ -30,7 +30,7 @@ const MultiCompanyPage: React.FC = () => {
 
       {/* Key Features */}
       <section className="py-24 bg-white dark:bg-slate-950 transition-colors">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={3} gap={12}>
                
                <div className="text-center md:text-left">

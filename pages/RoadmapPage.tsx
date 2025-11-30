@@ -115,7 +115,7 @@ const RoadmapPage: React.FC = () => {
 
                  <Button 
                    onClick={() => setShowRequestForm(true)} 
-                   className="flex-1 md:flex-none shadow-lg shadow-primary-500/20 whitespace-nowrap"
+                   className="flex-1 md:flex-none shadow-lg shadow-primary-500/20 whitespace-nowrap gap-4"
                  >
                     <Plus className="w-4 h-4 mr-2" /> Request Fitur
                  </Button>
@@ -123,11 +123,11 @@ const RoadmapPage: React.FC = () => {
            </Stack>
         </Container>
 
-        <Container size="7xl">
+        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
            <Stack direction="vertical" gap={8}>
               
               {/* SIDEBAR FILTER (Desktop Sticky) */}
-              <div className="hidden md:block w-64 flex-shrink-0">
+              <div className="hidden md:block w-64 flex-shrink-0 gap-4">
                  <Stack direction="vertical" gap={8} className="sticky top-28">
                     <div>
                        <Typography variant="h3" as="h3">Filter by Category</Typography>
@@ -203,10 +203,10 @@ const RoadmapPage: React.FC = () => {
               </AnimatePresence>
 
               {/* MAIN CONTENT - KANBAN */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 gap-4">
                  <Grid cols={3} gap={6}>
                     {roadmapData.map((column, idx) => (
-                       <div key={idx} className="flex flex-col h-full bg-slate-100/50 dark:bg-slate-900/30 rounded-2xl p-2 border border-slate-200/50 dark:border-slate-800/50">
+                       <div key={idx} className="flex flex-col h-full bg-slate-100/50 dark:bg-slate-900/30 rounded-2xl p-2 border border-slate-200/50 dark:border-slate-800/50 gap-4">
                           {/* Column Header */}
                           <div className={`
                              mb-4 p-4 bg-white dark:bg-slate-900 rounded-xl shadow-sm border-t-4
@@ -224,7 +224,7 @@ const RoadmapPage: React.FC = () => {
                           </div>
 
                           {/* Items List */}
-                          <Stack direction="vertical" gap={3} className="flex-1">
+                          <Stack direction="vertical" gap={3} className="flex-1 gap-4">
                              <AnimatePresence mode='popLayout'>
                                 {column.items
                                    .filter(item => activeFilter === 'All' || item.tag === activeFilter)
@@ -259,7 +259,7 @@ const RoadmapPage: React.FC = () => {
                                             <ThumbsUp className={`w-3.5 h-3.5 ${userVoted[item.id] ? 'fill-current' : ''}`} />
                                             <span>{12 + (votes[item.id] || 0)}</span>
                                          </button>
-                                         <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+                                         <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 gap-4">
                                             <item.icon className="w-3 h-3" />
                                          </div>
                                       </Stack>
@@ -272,7 +272,7 @@ const RoadmapPage: React.FC = () => {
                                 <motion.div 
                                    initial={{ opacity: 0 }} 
                                    animate={{ opacity: 1 }}
-                                   className="h-32 flex flex-col items-center justify-center text-center p-4 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50/50 dark:bg-slate-800/50"
+                                   className="h-32 flex flex-col items-center justify-center text-center p-4 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50/50 dark:bg-slate-800/50 gap-4"
                                 >
                                    <Sparkles className="w-6 h-6 text-slate-300 mb-2" />
                                    <Typography variant="body" className="text-slate-400">Tidak ada item.</Typography>
@@ -296,14 +296,14 @@ const RoadmapPage: React.FC = () => {
         {/* MODAL REQUEST FEATURE */}
         <AnimatePresence>
           {showRequestForm && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm gap-4">
                <motion.div
                   initial={{ opacity: 0, scale: 0.95, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                  className="bg-white dark:bg-slate-900 rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden flex flex-col"
+                  className="bg-white dark:bg-slate-900 rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden flex flex-col gap-4"
                >
-                  <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
+                  <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50 gap-4">
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Lightbulb className="w-5 h-5 text-primary-500" /> Request Fitur</Typography>
                      <button 
                         onClick={() => setShowRequestForm(false)}
@@ -360,7 +360,7 @@ const RoadmapPage: React.FC = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           className="text-center py-8"
                        >
-                          <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 gap-4">
                              <CheckCircle2 className="w-8 h-8" />
                           </div>
                           <Typography variant="h3" as="h3">Request Terkirim!</Typography>

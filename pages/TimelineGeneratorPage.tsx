@@ -256,7 +256,7 @@ const TimelineGeneratorPage: React.FC = () => {
                            <div className="w-1/4 font-bold text-xs text-slate-400 uppercase">Phase & Detail</div>
                            <Stack direction="horizontal" gap={4} className="w-3/4 relative">
                               {Array.from({ length: result.totalWeeks + 2 }).map((_, i) => (
-                                 <div key={i} className="flex-1 text-center text-[10px] text-slate-400 border-l border-dashed border-slate-100 dark:border-slate-800">
+                                 <div key={i} className="flex-1 text-center text-[10px] text-slate-400 border-l border-dashed border-slate-100 dark:border-slate-800 gap-4">
                                     W{i+1}
                                  </div>
                               ))}
@@ -268,7 +268,7 @@ const TimelineGeneratorPage: React.FC = () => {
                            {result.phases.map((phase) => (
                               <div key={phase.id} className="group">
                                  <div 
-                                    className="flex items-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg p-2 -mx-2 transition-colors"
+                                    className="flex items-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg p-2 -mx-2 transition-colors gap-4"
                                     onClick={() => togglePhase(phase.id)}
                                  >
                                     <div className="w-1/4 pr-4">
@@ -334,7 +334,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                                 <ul className="space-y-1">
                                                    {phase.deliverables.map((item, i) => (
                                                       <li key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2">
-                                                         <CheckSquare className="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0" /> {item}
+                                                         <CheckSquare className="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0 gap-4" /> {item}
                                                       </li>
                                                    ))}
                                                 </ul>
@@ -346,7 +346,7 @@ const TimelineGeneratorPage: React.FC = () => {
                                                 <ul className="space-y-1">
                                                    {phase.risks.map((item, i) => (
                                                       <li key={i} className="text-xs text-amber-700 dark:text-amber-400 flex items-start gap-2">
-                                                         <AlertTriangle className="w-3 h-3 flex-shrink-0 mt-0.5" /> {item}
+                                                         <AlertTriangle className="w-3 h-3 flex-shrink-0 mt-0.5 gap-4" /> {item}
                                                       </li>
                                                    ))}
                                                 </ul>

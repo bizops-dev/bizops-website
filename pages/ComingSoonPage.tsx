@@ -21,7 +21,7 @@ const ComingSoonPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-slate-950 relative overflow-hidden font-sans transition-colors gap-4">
       <SEO title="Coming Soon | Fitur Dalam Pengembangan" />
       
       {/* Background Effects */}
@@ -36,7 +36,7 @@ const ComingSoonPage: React.FC = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-24 h-24 bg-gradient-to-br from-primary-100 to-indigo-100 dark:from-primary-900/30 dark:to-indigo-900/30 rounded-[2rem] flex items-center justify-center mb-10 mx-auto shadow-xl border border-white/50 dark:border-white/10"
+          className="w-24 h-24 bg-gradient-to-br from-primary-100 to-indigo-100 dark:from-primary-900/30 dark:to-indigo-900/30 rounded-[2rem] flex items-center justify-center mb-10 mx-auto shadow-xl border border-white/50 dark:border-white/10 gap-4"
         >
           <Construction className="w-10 h-10 text-primary-600 dark:text-primary-400" />
         </motion.div>
@@ -68,7 +68,7 @@ const ComingSoonPage: React.FC = () => {
         >
            {subscribed ? (
              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-4">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-green-600 dark:text-green-400 gap-4">
                    <Bell className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3">Terima Kasih!</Typography>

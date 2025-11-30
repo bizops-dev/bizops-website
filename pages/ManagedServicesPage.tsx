@@ -44,7 +44,7 @@ const ManagedServicesPage: React.FC = () => {
                  initial="hidden" 
                  animate="visible" 
                  variants={STAGGER_CONTAINER}
-                 className="flex-1 text-center lg:text-left"
+                 className="flex-1 text-center lg:text-left gap-4"
                >
                   <motion.div variants={FADE_UP_VARIANTS} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
                      <Building className="w-4 h-4 text-primary-500" />
@@ -75,11 +75,11 @@ const ManagedServicesPage: React.FC = () => {
                  initial={{ opacity: 0, scale: 0.9 }}
                  animate={{ opacity: 1, scale: 1 }}
                  transition={{ duration: 0.8 }}
-                 className="flex-1 relative hidden md:block"
+                 className="flex-1 relative hidden md:block gap-4"
                >
                   <Container className="relative w-full aspect-square">
                     {/* Central Hub */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden gap-4">
                         <OptimizedImage src="/logo-icon.svg" alt="BizOps" className="w-16 h-16 opacity-80" onError={() => {}} />
                     </div>
                      
@@ -125,7 +125,7 @@ const ManagedServicesPage: React.FC = () => {
                   { title: "IT & Security", desc: "Managed DevOps, Security Monitoring, Tech Support.", icon: Laptop, color: "text-orange-500" },
                ].map((service, idx) => (
                   <div key={idx} className="h-full">
-                     <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 h-full flex flex-col">
+                     <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 h-full flex flex-col gap-4">
                         <div className={`w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center mb-6 ${service.color}`}>
                            <service.icon className="w-7 h-7" />
                         </div>
@@ -158,7 +158,7 @@ const ManagedServicesPage: React.FC = () => {
 
       {/* --- PARTNER ECOSYSTEM --- */}
       <Section className="py-24 bg-white dark:bg-slate-900">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Powered by <br/>
@@ -173,7 +173,7 @@ const ManagedServicesPage: React.FC = () => {
                         "Certified Ethical Hackers & DevOps"
                      ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3">
-                           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 gap-4" />
                            <span className="text-slate-700 dark:text-slate-300 font-medium">{item}</span>
                         </li>
                      ))}
@@ -195,7 +195,7 @@ const ManagedServicesPage: React.FC = () => {
                             { name: "Legal Corp", type: "Legal Partner", logo: "Briefcase" },
                          ].map((partner, idx) => (
                             <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm text-center border border-slate-100 dark:border-slate-800">
-                               <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400">
+                               <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 gap-4">
                                   <Handshake className="w-6 h-6" />
                                </div>
                                <div className="font-bold text-slate-900 dark:text-white text-sm">{partner.name}</div>

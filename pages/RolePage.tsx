@@ -85,7 +85,7 @@ const RolePage: React.FC = () => {
             <Link to="/demo" className="w-full sm:w-auto">
                <div className="group relative">
                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                 <button className="relative h-16 px-10 bg-slate-950 ring-1 ring-white/10 rounded-xl leading-none flex items-center justify-center w-full">
+                 <button className="relative h-16 px-10 bg-slate-950 ring-1 ring-white/10 rounded-xl leading-none flex items-center justify-center w-full gap-4">
                    <span className="text-white font-bold text-lg">Jadwalkan Demo Personal</span>
                    <ArrowRight className="ml-3 w-5 h-5 text-primary-400 group-hover:translate-x-1 transition-transform" />
                  </button>
@@ -97,7 +97,7 @@ const RolePage: React.FC = () => {
 
       {/* 2. DASHBOARD PREVIEW */}
       <section className="py-12 lg:py-20 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-         <Container size="7xl">
+         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
             <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-6 lg:p-10 shadow-2xl overflow-hidden relative">
                <div className="text-center mb-10 relative z-10">
                   <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-4 shadow-sm">
@@ -155,7 +155,7 @@ const RolePage: React.FC = () => {
                         <div className="w-2.5 h-2.5 rounded-full bg-[#28C840] shadow-sm"></div>
                      </Stack>
                      <Stack direction="horizontal" gap={2} align="center" className="ml-4 max-w-md px-3 py-1.5 bg-slate-900/50 border border-slate-700/50 rounded-lg text-[10px] text-slate-400 overflow-hidden shadow-inner transition-all duration-300">
-                        <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500" /> 
+                        <Lock className="w-2.5 h-2.5 flex-shrink-0 text-emerald-500 gap-4" /> 
                         <span className="opacity-50">https://</span>app.bizops.id/dashboard/<span className="text-white truncate">{data.title.toLowerCase().split(' ')[0]}/{data.dashboardFeatures[activeFeature].toLowerCase().replace(/\s+/g, '-')}</span>
                      </Stack>
                   </Stack>
@@ -178,7 +178,7 @@ const RolePage: React.FC = () => {
                         {/* Top Cards - Dynamic Numbers */}
                         <Grid cols={3} gap={4} className="col-span-3">
                            {[1,2,3].map((i) => (
-                              <div key={i} className="h-28 bg-slate-800 rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg group/card relative overflow-hidden">
+                              <div key={i} className="h-28 bg-slate-800 rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg group/card relative overflow-hidden gap-4">
                                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
                                  <Stack direction="horizontal" gap={4} align="start" justify="between">
                                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="h-8 w-8 bg-slate-800 rounded-lg border border-slate-700">
@@ -240,7 +240,7 @@ const RolePage: React.FC = () => {
                                  <div className={`h-7 w-7 rounded-full border border-slate-700 transition-colors duration-500 ${
                                     activeFeature === i-1 ? 'bg-white/10' : 'bg-slate-800'
                                  }`}></div>
-                                 <Stack direction="vertical" gap={1} className="flex-1">
+                                 <Stack direction="vertical" gap={1} className="flex-1 gap-4">
                                     <div className="h-2.5 w-3/4 bg-slate-700 rounded"></div>
                                     <div className="h-1.5 w-1/2 bg-slate-800 rounded"></div>
                                  </Stack>
@@ -344,9 +344,9 @@ const RolePage: React.FC = () => {
              viewport={{ once: true }}
              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary-300 text-sm font-medium mb-8 backdrop-blur-sm"
            >
-             <span className="relative flex h-2 w-2">
-               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+             <span className="relative flex h-2 w-2 gap-4">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75 gap-4"></span>
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 gap-4"></span>
              </span>
              Ready to deploy?
            </motion.div>

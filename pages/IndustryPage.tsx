@@ -27,7 +27,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
     <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-6 text-left focus:outline-none group"
+        className="w-full flex items-center justify-between py-6 text-left focus:outline-none group gap-4"
       >
         <Typography variant="body-lg" className="text-slate-900 dark:text-white group-hover:text-primary-600">{question}</Typography>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-primary-600 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30'}`}>
@@ -101,7 +101,7 @@ const IndustryPage: React.FC = () => {
                initial={{ scale: 0.8, opacity: 0 }}
                animate={{ scale: 1, opacity: 1 }}
                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-               className="relative inline-flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-8 shadow-2xl group"
+               className="relative inline-flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl mb-8 shadow-2xl group gap-4"
             >
                <div className="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                <Icon className="w-12 h-12 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] relative z-10" />
@@ -112,7 +112,7 @@ const IndustryPage: React.FC = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="flex items-center justify-center mb-8"
+              className="flex items-center justify-center mb-8 gap-4"
             >
                <Stack direction="horizontal" gap={2} align="center" justify="center" className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium tracking-wide text-primary-300 shadow-[0_0_15px_rgba(14,165,233,0.15)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
@@ -145,8 +145,8 @@ const IndustryPage: React.FC = () => {
                <Link to="/demo" className="w-full sm:w-auto">
                   <div className="group relative">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-                    <button className="relative h-14 px-8 bg-slate-950 rounded-lg leading-none flex items-center justify-center divide-x divide-slate-600 w-full">
-                      <span className="flex items-center space-x-3">
+                    <button className="relative h-14 px-8 bg-slate-950 rounded-lg leading-none flex items-center justify-center divide-x divide-slate-600 w-full gap-4">
+                      <span className="flex items-center space-x-3 gap-4">
                         <span className="text-white font-bold text-lg pr-4">Lihat Demo Live</span>
                       </span>
                       <span className="pl-4 text-primary-400 group-hover:text-primary-300 transition duration-200">
@@ -167,7 +167,7 @@ const IndustryPage: React.FC = () => {
       {/* 2. METRICS (Impact) - Upgraded Design */}
       {data.metrics && (
          <section className="relative -mt-16 z-20 pb-16 py-16 md:py-24">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {data.metrics.map((metric, idx) => {
                      const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
@@ -182,7 +182,7 @@ const IndustryPage: React.FC = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 + idx * 0.1 }}
-                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden h-full"
+                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden h-full gap-4"
                        >
                           {/* Top Highlight Line */}
                           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -230,7 +230,7 @@ const IndustryPage: React.FC = () => {
                <motion.div 
                   key={idx}
                   variants={FADE_UP_VARIANTS}
-                  className="bg-gradient-to-b from-slate-800/60 to-slate-900/60 p-8 rounded-3xl border border-white/5 hover:border-red-500/40 shadow-lg hover:shadow-red-900/10 transition-all duration-500 group relative overflow-hidden hover:-translate-y-1 h-full flex flex-col backdrop-blur-sm"
+                  className="bg-gradient-to-b from-slate-800/60 to-slate-900/60 p-8 rounded-3xl border border-white/5 hover:border-red-500/40 shadow-lg hover:shadow-red-900/10 transition-all duration-500 group relative overflow-hidden hover:-translate-y-1 h-full flex flex-col backdrop-blur-sm gap-4"
                >
                   {/* Enhanced Card Background Effects */}
                   <div className="absolute top-0 right-0 w-56 h-56 bg-red-600/5 rounded-full blur-[60px] -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500 pointer-events-none"></div>
@@ -269,7 +269,7 @@ const IndustryPage: React.FC = () => {
                   <motion.div 
                      key={idx}
                      variants={FADE_UP_VARIANTS}
-                     className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 group shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2 relative overflow-hidden h-full flex flex-col"
+                     className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 group shadow-lg hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-2 relative overflow-hidden h-full flex flex-col gap-4"
                   >
                      {/* Dot Pattern Overlay */}
                      <div className="absolute inset-0 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -346,7 +346,7 @@ const IndustryPage: React.FC = () => {
       {/* 6. FAQ */}
       {data.faqs && (
          <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-            <Container size="7xl">
+            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</Typography>
@@ -379,9 +379,9 @@ const IndustryPage: React.FC = () => {
              viewport={{ once: true }}
              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary-300 text-sm font-medium mb-8 backdrop-blur-sm"
            >
-             <span className="relative flex h-2 w-2">
-               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+             <span className="relative flex h-2 w-2 gap-4">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75 gap-4"></span>
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 gap-4"></span>
              </span>
              Market Leader Choice
            </motion.div>

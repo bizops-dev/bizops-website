@@ -15,7 +15,7 @@ const GlossaryPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="Kamus Istilah Bisnis, ERP & HR Indonesia | BizOps Wiki" description="Ensiklopedia lengkap istilah bisnis modern. Pelajari PPh 21 TER, Kurva-S, Safety Stock, dan lainnya." />
 
-      <Container size="7xl">
+      <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         
         {/* Hero */}
         <Container size="3xl" className="text-center mb-16">

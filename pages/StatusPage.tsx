@@ -31,7 +31,7 @@ const StatusPage: React.FC = () => {
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="w-24 h-24 mx-auto bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-8 relative"
+              className="w-24 h-24 mx-auto bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-8 relative gap-4"
             >
                <div className="absolute inset-0 bg-green-500 rounded-full opacity-20 animate-ping"></div>
                <CheckCircle className="w-12 h-12 text-green-600 dark:text-green-400 relative z-10" />
@@ -56,7 +56,7 @@ const StatusPage: React.FC = () => {
         
         {/* --- UPTIME HISTORY --- */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
-           <div className="flex justify-between items-end mb-6">
+           <div className="flex justify-between items-end mb-6 gap-4">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white"><BarChart3 className="w-5 h-5 text-slate-400" /> Uptime History <Typography variant="caption" className="text-slate-500">90 Days</Typography></Typography>
               <span className="text-green-600 dark:text-green-400 font-bold text-lg">99.99%</span>
            </div>
@@ -75,7 +75,7 @@ const StatusPage: React.FC = () => {
                  ></div>
               ))}
            </div>
-           <div className="flex justify-between text-xs text-slate-400 font-medium">
+           <div className="flex justify-between text-xs text-slate-400 font-medium gap-4">
               <span>90 days ago</span>
               <span>Today</span>
            </div>
@@ -87,12 +87,12 @@ const StatusPage: React.FC = () => {
            
            {/* Core Services */}
            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+              <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center gap-4">
                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><Server className="w-4 h-4 text-slate-500" /> Platform Services</Typography>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.systems.map((sys, idx) => (
-                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors gap-4">
                        <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <div>
@@ -116,7 +116,7 @@ const StatusPage: React.FC = () => {
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
                  {statusData.thirdParty.map((sys, idx) => (
-                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                    <div key={idx} className="p-5 flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors gap-4">
                        <div className="flex items-center gap-4">
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
@@ -161,7 +161,7 @@ const StatusPage: React.FC = () => {
                     <input 
                        type="email" 
                        placeholder="user@company.com" 
-                       className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm"
+                       className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm gap-4"
                     />
                     <Button onClick={() => setSubscribed(true)} size="sm" className="whitespace-nowrap">Subscribe</Button>
                  </div>
