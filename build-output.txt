@@ -1,0 +1,8 @@
+
+> bizops-os@0.0.0 build
+> vite build
+
+vite v4.5.14 building for production...
+transforming...
+✓ 2213 modules transformed.
+✓ built in 2.05s

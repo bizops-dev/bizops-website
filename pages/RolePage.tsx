@@ -32,7 +32,7 @@ const RolePage: React.FC = () => {
         <SEO title="Role Not Found" />
         <Typography variant="h1" as="h1">Role Not Found</Typography>
         <Link to="/"><Button>Back Home</Button></Link>
-      </div>
+      </Stack>
     );
   }
 
@@ -103,7 +103,7 @@ const RolePage: React.FC = () => {
                   <Stack direction="row" gap={2} align="center" className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-4 shadow-sm">
                      <BarChart2 className="w-4 h-4" />
                      Live Dashboard Preview
-                  </div>
+                  </Stack>
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">{data.dashboardInsight}</Typography>
                   
                   {/* Dashboard Metrics Grid - Interactive */}

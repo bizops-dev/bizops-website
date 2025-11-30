@@ -80,7 +80,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">ERPNext</div>
                            <div className="text-xs text-slate-500">Finance & Supply Chain</div>
                         </div>
-                     </div>
+                     </Stack>
                      {/* Frappe HR */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Users className="w-5 h-5 text-emerald-500" /> 
@@ -88,7 +88,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">Frappe HR</div>
                            <div className="text-xs text-slate-500">Modern HRMS & Payroll</div>
                         </div>
-                     </div>
+                     </Stack>
                      {/* Frappe CRM */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Share2 className="w-5 h-5 text-emerald-500" /> 
@@ -96,7 +96,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">Frappe CRM</div>
                            <div className="text-xs text-slate-500">Sales & Pipeline</div>
                         </div>
-                     </div>
+                     </Stack>
                      {/* Frappe Insights */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Activity className="w-5 h-5 text-emerald-500" /> 
@@ -104,7 +104,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">Insights</div>
                            <div className="text-xs text-slate-500">Business Intelligence</div>
                         </div>
-                     </div>
+                     </Stack>
                      {/* LMS / Learning */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <BookOpen className="w-5 h-5 text-emerald-500" /> 
@@ -112,7 +112,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">LMS</div>
                            <div className="text-xs text-slate-500">Learning Management</div>
                         </div>
-                     </div>
+                     </Stack>
                      {/* Helpdesk */}
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Headphones className="w-5 h-5 text-emerald-500" /> 
@@ -120,7 +120,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">Helpdesk</div>
                            <div className="text-xs text-slate-500">Customer Support</div>
                         </div>
-                     </div>
+                     </Stack>
                   </Grid>
                </Grid>
 
@@ -138,21 +138,21 @@ const TechnologyPage: React.FC = () => {
                            <div className="font-bold dark:text-white">Python Backend</div>
                            <div className="text-xs text-slate-500">Business Logic & Controller</div>
                         </div>
-                     </div>
+                     </Stack>
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <FileJson className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Metadata Engine</div>
                            <div className="text-xs text-slate-500">DocType & Data Modeling</div>
                         </div>
-                     </div>
+                     </Stack>
                      <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Network className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">REST & RPC API</div>
                            <div className="text-xs text-slate-500">Auto-generated Endpoints</div>
                         </div>
-                     </div>
+                     </Stack>
                   </Grid>
                </Grid>
 
@@ -179,11 +179,11 @@ const TechnologyPage: React.FC = () => {
                         <Typography variant="caption" className="text-slate-500">Realtime</Typography>
                         <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
                      </Stack>
-                  </Grid>
-               </Grid>
+                  </Stack>
+               </Stack>
             </Stack>
-         </Container>
-      </Section>
+         </Stack>
+      </Grid>
 
       {/* 2. DEEP DIVE: FRAPPE FRAMEWORK */}
       <Section>
@@ -202,21 +202,21 @@ const TechnologyPage: React.FC = () => {
                         <Typography variant="h4" as="h4">Metadata Driven (DocTypes)</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Struktur database, tampilan form, dan permission didefinisikan dalam JSON (DocTypes). Perubahan skema database terjadi otomatis tanpa migrasi manual yang rumit.</Typography>
                      </div>
-                  </div>
+                  </Stack>
                   <Stack direction="row" gap={4}>
                      <div className="mt-1"><Settings className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Low-Code Customization</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.</Typography>
                      </div>
-                  </div>
+                  </Stack>
                   <Stack direction="row" gap={4}>
                      <div className="mt-1"><Lock className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Granular Permission System</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Sistem Role-Based Access Control (RBAC) yang mendalam hingga level field. Mendukung User Permissions untuk pembatasan data berbasis wilayah atau departemen.</Typography>
                      </div>
-                  </div>
+                  </Stack>
                </Stack>
             </div>
             <div className="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
@@ -225,7 +225,7 @@ const TechnologyPage: React.FC = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   <span className="ml-2 text-xs text-slate-500">sales_invoice.json (DocType)</span>
-               </div>
+               </Stack>
                <pre className="text-xs text-blue-300 overflow-x-auto">
 {`{
   "doctype": "DocType",
@@ -335,7 +335,7 @@ const TechnologyPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h3" as="h3">Webhooks & Events</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.</Typography>
-               </Stack>
+               </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl mb-6 text-emerald-600 dark:text-emerald-400">
@@ -343,7 +343,7 @@ const TechnologyPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h3" as="h3">Virtual DocType</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.</Typography>
-               </Stack>
+               </div>
             </Grid>
          </Container>
       </Section>
@@ -363,21 +363,21 @@ const TechnologyPage: React.FC = () => {
                         <div>
                            <Typography variant="h4" as="h4">Background Workers</Typography>
                            <Typography variant="caption" className="text-slate-400">Tugas berat seperti generate laporan PDF, email bulk, dan posting akuntansi diproses di background (via Redis Queue/BullMQ) agar UI tetap responsif.</Typography>
-                        </Stack>
+                        </div>
                      </Stack>
                      <Stack direction="row" gap={4}>
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Intelligent Caching</Typography>
                            <Typography variant="caption" className="text-slate-400">Konfigurasi sistem, permission, dan metadata disimpan di Redis Cache untuk akses super cepat (sub-millisecond).</Typography>
-                        </Stack>
+                        </div>
                      </Stack>
                      <Stack direction="row" gap={4}>
                         <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
                         <div>
                            <Typography variant="h4" as="h4">Socket.io Realtime</Typography>
                            <Typography variant="caption" className="text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</Typography>
-                        </Stack>
+                        </div>
                      </Stack>
                   </Stack>
                </Stack>
@@ -387,7 +387,7 @@ const TechnologyPage: React.FC = () => {
                      <Stack direction="row" gap={2}>
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse"></div>
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse delay-75"></div>
-                     </div>
+                     </Stack>
                   </div>
                   <Stack direction="col" gap={8}>
                      <div>
@@ -428,9 +428,9 @@ const TechnologyPage: React.FC = () => {
                      </div>
                   </Stack>
                </div>
-            </Grid>
-         </Container>
-      </Section>
+            </Stack>
+         </Stack>
+      </div>
 
       {/* 6. FUTURE READY MODULES (RESTORED) */}
       <Section dark className="bg-[#0f172a]">
@@ -449,7 +449,7 @@ const TechnologyPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h3" as="h3">AI & ML Integration</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.</Typography>
-               </Stack>
+               </div>
 
                {/* IoT Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group h-full">
@@ -458,7 +458,7 @@ const TechnologyPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.</Typography>
-               </Stack>
+               </div>
 
                {/* High Security */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group h-full">
@@ -467,7 +467,7 @@ const TechnologyPage: React.FC = () => {
                   </Stack>
                   <Typography variant="h3" as="h3">Enterprise Security</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.</Typography>
-               </Stack>
+               </div>
             </CardSlider>
          </Container>
       </Section>
@@ -488,7 +488,7 @@ const TechnologyPage: React.FC = () => {
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Isolated Environments</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Easy Versioning</li>
                   </ul>
-               </Stack>
+               </div>
 
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
                   <Stack direction="row" gap={4} align="center" className="mb-6">
@@ -500,7 +500,7 @@ const TechnologyPage: React.FC = () => {
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> No Vendor Lock-in</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Horizontal Scaling</li>
                   </ul>
-               </Stack>
+               </div>
             </Grid>
          </Container>
       </Section>
@@ -521,7 +521,7 @@ const TechnologyPage: React.FC = () => {
          </Container>
       </Section>
 
-    </Stack>
+    </Grid>
   );
 };
 

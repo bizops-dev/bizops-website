@@ -136,10 +136,10 @@ const PlatformPage: React.FC = () => {
                      {/* Form Builder Simulation */}
                      <Stack direction="row" gap={4}>
                         <Stack direction="col" gap={3} className="w-1/3">
-                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
-                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
-                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
-                           <Stack direction="row" gap={4} align="center" className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📝 Text Field</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📅 Date Picker</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">✅ Checkbox</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center">📊 Dropdown</div>
                         </Stack>
                         <Stack direction="col" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">

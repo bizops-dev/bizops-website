@@ -56,7 +56,7 @@ const IndustryPage: React.FC = () => {
         <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
         <Typography variant="body" className="text-slate-600 dark:text-slate-400">The solution you are looking for does not exist or has been moved.</Typography>
         <Link to="/solutions"><Button>Back to Solutions</Button></Link>
-      </div>
+      </Stack>
     );
   }
 
@@ -119,7 +119,7 @@ const IndustryPage: React.FC = () => {
                   <span>Industry Solution</span>
                   <span className="text-slate-500 mx-1">/</span>
                   <span className="text-white">{data.title}</span>
-               </div>
+               </Stack>
             </motion.div>
             
             <Typography variant="h1" as="h1" className="font-extrabold text-white tracking-tight leading-[1.1] font-sans"><span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
@@ -201,7 +201,7 @@ const IndustryPage: React.FC = () => {
                                </div>
                              )}
                              {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-2">{metric.label}</div>}
-                          </div>
+                          </Stack>
                        </motion.div>
                      );
                   })}
@@ -220,7 +220,7 @@ const IndustryPage: React.FC = () => {
          <Container size="3xl" className="text-center mb-16 relative z-10">
             <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
-            </div>
+            </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
             <Typography variant="body-lg" className="text-slate-400">Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.</Typography>
          </Container>
@@ -238,12 +238,12 @@ const IndustryPage: React.FC = () => {
                   
                   <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl mb-6 text-red-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.1)] relative z-10 shrink-0">
                      <span className="font-bold text-xl">0{idx + 1}</span>
-                  </div>
+                  </Stack>
                   
                   <Stack direction="col" gap={4} className="relative z-10">
                      <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
                      <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
-                  </div>
+                  </Stack>
                </motion.div>
             ))}
          </CardSlider>
@@ -257,7 +257,7 @@ const IndustryPage: React.FC = () => {
          <Container size="3xl" className="text-center mb-16 relative z-10">
             <Stack direction="row" gap={2} align="center" className="px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <Check className="w-3 h-3" /> The Solution
-            </div>
+            </Stack>
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.</Typography>
          </Container>
@@ -277,12 +277,12 @@ const IndustryPage: React.FC = () => {
                      
                      <Stack direction="row" gap={4} align="center" justify="center" className="relative z-10 w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mb-6 text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 shadow-inner group-hover:shadow-lg group-hover:shadow-primary-500/30 shrink-0">
                         <SolIcon className="w-8 h-8 transition-transform duration-500 group-hover:scale-110" />
-                     </div>
+                     </Stack>
                      
                      <Stack direction="col" gap={4}>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
                         <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{sol.desc}</Typography>
-                     </div>
+                     </Stack>
                   </motion.div>
                );
             })}
