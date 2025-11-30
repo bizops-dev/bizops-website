@@ -28,7 +28,7 @@ const IntegrationsPage: React.FC = () => {
                <div key={idx} className="animate-fade-in-up">
                   <div className="flex items-end gap-4 mb-6 border-b border-slate-200 pb-4">
                       <Typography variant="h2" as="h2" className="font-bold text-slate-900">{cat.category}</Typography>
-                      <p className="text-slate-500 pb-1">{cat.desc}</p>
+                      <Typography variant="body" className="text-slate-500">{cat.desc}</Typography>
                   </div>
                   
                   <CardSlider desktopClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -43,9 +43,7 @@ const IntegrationsPage: React.FC = () => {
                               </div>
                            </div>
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 group-hover:text-primary-600">{app.name}</Typography>
-                           <p className="text-sm text-slate-600 leading-snug">
-                              {app.desc}
-                           </p>
+                           <Typography variant="caption" className="text-slate-600 leading-snug">{app.desc}</Typography>
                         </div>
                      ))}
                   </CardSlider>
@@ -55,9 +53,7 @@ const IntegrationsPage: React.FC = () => {
          
          <div className="mt-24 text-center bg-white p-12 rounded-2xl border border-slate-200 shadow-sm">
             <Typography variant="h2" as="h2">Butuh Integrasi Khusus?</Typography>
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-               Gunakan REST API standar kami untuk menghubungkan sistem legacy atau aplikasi custom internal Anda. Dokumentasi lengkap tersedia.
-            </p>
+            <Typography variant="body" className="text-slate-600">Gunakan REST API standar kami untuk menghubungkan sistem legacy atau aplikasi custom internal Anda. Dokumentasi lengkap tersedia.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                <Link to="/capabilities/integration">
                   <Button size="lg" variant="primary">Lihat Dokumentasi API</Button>

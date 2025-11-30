@@ -179,9 +179,7 @@ const BlogPage: React.FC = () => {
                         
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{featuredPost.title}</Typography>
                         
-                        <p className="text-lg md:text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed font-light line-clamp-2 md:line-clamp-none">
-                           {featuredPost.summary}
-                        </p>
+                        <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{featuredPost.summary}</Typography>
                         
                         <div className="flex flex-wrap items-center gap-8 text-sm text-slate-300 font-medium border-t border-white/10 pt-8">
                            <div className="flex items-center gap-3">
@@ -264,7 +262,7 @@ const BlogPage: React.FC = () => {
                      <div className="bg-[#0B1120] rounded-2xl p-6 text-white relative overflow-hidden group border border-slate-800 hidden lg:block">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition-all"></div>
                         <Typography variant="h4" as="h4">Weekly Digest</Typography>
-                        <p className="text-slate-400 text-xs mb-4 relative z-10">Get strategic insights delivered to your inbox every Monday.</p>
+                        <Typography variant="body" className="text-slate-400">Get strategic insights delivered to your inbox every Monday.</Typography>
                         <form onSubmit={(e) => e.preventDefault()} className="relative z-10 space-y-2">
                            <input type="email" placeholder="Email" className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none text-xs">Subscribe</Button>
@@ -279,9 +277,7 @@ const BlogPage: React.FC = () => {
                   
                   {/* Results Header */}
                   <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
-                     <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {searchQuery ? `Search Results: "${searchQuery}"` : (selectedCategory === 'All' ? 'Latest Articles' : selectedCategory)}
-                     </h2>
+                     <Typography variant="h2" as="h2" className="text-2xl font-bold text-slate-900 dark:text-white">{searchQuery ? `Search Results: "${searchQuery}"` : (selectedCategory === 'All' ? 'Latest Articles' : selectedCategory)}</Typography>
                      <span className="text-sm font-medium text-slate-500">
                         Showing {paginatedPosts.length} of {gridPosts.length}
                      </span>
@@ -325,9 +321,7 @@ const BlogPage: React.FC = () => {
                                              
                                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{post.title}</Typography>
                                              
-                                             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
-                                                {post.summary}
-                                             </p>
+                                             <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{post.summary}</Typography>
                                              
                                              <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
                                                 <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
@@ -361,9 +355,7 @@ const BlogPage: React.FC = () => {
                            <Search className="w-8 h-8 text-slate-400" />
                         </div>
                         <Typography variant="h3" as="h3">No articles found</Typography>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm">
-                           Try adjusting your search or category filter.
-                        </p>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Try adjusting your search or category filter.</Typography>
                         <button 
                            onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                            className="mt-4 text-blue-600 text-sm font-bold hover:underline"
@@ -376,7 +368,7 @@ const BlogPage: React.FC = () => {
                   {/* Mobile Newsletter (Visible only on small screens where sidebar widget is hidden) */}
                   <div className="mt-16 lg:hidden bg-[#0B1120] rounded-2xl p-8 text-white text-center border border-slate-800">
                      <Typography variant="h3" as="h3">Weekly Digest</Typography>
-                     <p className="text-slate-400 text-sm mb-6">Get strategic insights delivered to your inbox.</p>
+                     <Typography variant="caption" className="text-slate-400">Get strategic insights delivered to your inbox.</Typography>
                      <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-500 border-none font-bold">Subscribe Free</Button>
                   </div>
                </div>

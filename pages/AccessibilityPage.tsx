@@ -53,9 +53,7 @@ const AccessibilityPage: React.FC = () => {
                 <feat.icon className="w-7 h-7" />
               </div>
               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feat.title}</Typography>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                {feat.desc}
-              </p>
+              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feat.desc}</Typography>
             </div>
           ))}
         </div>
@@ -64,9 +62,7 @@ const AccessibilityPage: React.FC = () => {
            <div className="md:w-1/2">
               <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
               <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>
-              <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                 Kami secara aktif mengaudit dan memperbarui antarmuka kami agar sesuai dengan pedoman Web Content Accessibility Guidelines (WCAG) yang diakui secara global.
-              </p>
+              <Typography variant="body" className="text-slate-600 dark:text-slate-300 leading-relaxed">Kami secara aktif mengaudit dan memperbarui antarmuka kami agar sesuai dengan pedoman Web Content Accessibility Guidelines (WCAG) yang diakui secara global.</Typography>
               <div className="flex flex-wrap gap-4">
                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                     <CheckCircle className="w-5 h-5 text-green-500" /> Perceivable

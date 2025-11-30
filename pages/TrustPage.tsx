@@ -88,7 +88,7 @@ const TrustPage: React.FC = () => {
         <section>
            <div className="text-center mb-16">
               <Typography variant="h2" as="h2">Standar Kepatuhan Global</Typography>
-              <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami diaudit secara berkala oleh pihak ketiga independen untuk memastikan standar keamanan tertinggi.</p>
+              <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami diaudit secara berkala oleh pihak ketiga independen untuk memastikan standar keamanan tertinggi.</Typography>
            </div>
            
            <div className="md:hidden">
@@ -99,7 +99,7 @@ const TrustPage: React.FC = () => {
                        <Shield className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-emerald-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">ISO 27001</Typography>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Information Security Management</p>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Information Security Management</Typography>
                     <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-wide">
                        Certified
                     </span>
@@ -111,7 +111,7 @@ const TrustPage: React.FC = () => {
                        <Globe className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-blue-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">GDPR & UU PDP</Typography>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Data Privacy Compliance</p>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Data Privacy Compliance</Typography>
                     <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wide">
                        Compliant
                     </span>
@@ -123,7 +123,7 @@ const TrustPage: React.FC = () => {
                        <FileCheck className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-red-500 transition-colors" />
                     </div>
                     <Typography variant="h3" as="h3">PSE Kominfo</Typography>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Terdaftar Resmi</p>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Terdaftar Resmi</Typography>
                     <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-[10px] font-bold uppercase tracking-wide">
                        Registered
                     </span>
@@ -135,7 +135,7 @@ const TrustPage: React.FC = () => {
                        <Lock className="w-8 h-8 text-slate-400" />
                     </div>
                     <Typography variant="h3" as="h3">SOC 2 Type II</Typography>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Security Controls</p>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Security Controls</Typography>
                     <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase tracking-wide">
                        In Progress
                     </span>
@@ -150,7 +150,7 @@ const TrustPage: React.FC = () => {
                     <Shield className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-emerald-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">ISO 27001</Typography>
-                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Information Security Management</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Information Security Management</Typography>
                  <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-wide">
                     Certified
                  </span>
@@ -162,7 +162,7 @@ const TrustPage: React.FC = () => {
                     <Globe className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-blue-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">GDPR & UU PDP</Typography>
-                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Data Privacy Compliance</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Data Privacy Compliance</Typography>
                  <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wide">
                     Compliant
                  </span>
@@ -174,7 +174,7 @@ const TrustPage: React.FC = () => {
                     <FileCheck className="w-8 h-8 text-slate-700 dark:text-slate-300 group-hover:text-red-500 transition-colors" />
                  </div>
                  <Typography variant="h3" as="h3">PSE Kominfo</Typography>
-                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Terdaftar Resmi</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Terdaftar Resmi</Typography>
                  <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-[10px] font-bold uppercase tracking-wide">
                     Registered
                  </span>
@@ -186,7 +186,7 @@ const TrustPage: React.FC = () => {
                     <Lock className="w-8 h-8 text-slate-400" />
                  </div>
                  <Typography variant="h3" as="h3">SOC 2 Type II</Typography>
-                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Security Controls</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Security Controls</Typography>
                  <span className="mt-auto inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase tracking-wide">
                     In Progress
                  </span>
@@ -201,9 +201,7 @@ const TrustPage: React.FC = () => {
                  <Layers className="w-3 h-3" /> Defense in Depth
               </div>
               <Typography variant="h2" as="h2">Arsitektur Keamanan Berlapis</Typography>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-lg">
-                 Kami tidak hanya mengandalkan satu kunci pintu. Data Anda dilindungi oleh berbagai lapisan keamanan mulai dari fisik, jaringan, aplikasi, hingga level data itu sendiri.
-              </p>
+              <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami tidak hanya mengandalkan satu kunci pintu. Data Anda dilindungi oleh berbagai lapisan keamanan mulai dari fisik, jaringan, aplikasi, hingga level data itu sendiri.</Typography>
               
               <div className="lg:hidden">
                  <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]" breakpoint="lg">
@@ -309,9 +307,7 @@ const TrustPage: React.FC = () => {
         <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800">
            <div className="max-w-4xl mx-auto">
                <Typography variant="h2" as="h2">Data Sub-processors</Typography>
-               <p className="text-slate-600 dark:text-slate-400 text-center mb-12">
-                  Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.
-               </p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.</Typography>
 
                <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
                   <div className="overflow-x-auto">

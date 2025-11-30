@@ -181,7 +181,7 @@ const ROIPage: React.FC = () => {
                           />
                           <span className="text-sm font-bold text-emerald-400 w-10">{efficiencyRate}%</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-2">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</p>
+                        <Typography variant="body" className="text-slate-500">Persentase waktu yang dihemat staf admin setelah tugas rutin diotomatisasi (Contoh: Input data, rekap laporan).</Typography>
                     </div>
                  </div>
 
@@ -222,7 +222,7 @@ const ROIPage: React.FC = () => {
                             className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
                           />
                         </div>
-                        <p className="text-xs text-slate-500 mt-2">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</p>
+                        <Typography variant="body" className="text-slate-500">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</Typography>
                     </div>
                  </div>
 
@@ -246,7 +246,7 @@ const ROIPage: React.FC = () => {
                         </button>
                       ))}
                     </div>
-                    <p className="text-xs text-slate-500 mt-2 text-right">Biaya: {formatCurrency(subscriptionCost)}/bulan</p>
+                    <Typography variant="body" className="text-slate-500">Biaya: {formatCurrency(subscriptionCost)}/bulan</Typography>
                  </div>
               </div>
            </div>
@@ -266,7 +266,7 @@ const ROIPage: React.FC = () => {
                     </div>
                     <Typography variant="h3" as="h3">Nilai Produktivitas</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(efficiencySavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <p className="text-xs text-slate-500 mt-2">Efisiensi {efficiencyRate}% dari {adminCount} staf.</p>
+                    <Typography variant="body" className="text-slate-500">Efisiensi {efficiencyRate}% dari {adminCount} staf.</Typography>
                  </div>
                  
                  {/* Overtime */}
@@ -279,7 +279,7 @@ const ROIPage: React.FC = () => {
                     </div>
                     <Typography variant="h3" as="h3">Penghematan Lembur</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(overtimeSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <p className="text-xs text-slate-500 mt-2">Mengurangi 90% lembur manual.</p>
+                    <Typography variant="body" className="text-slate-500">Mengurangi 90% lembur manual.</Typography>
                  </div>
 
                  {/* Fraud */}
@@ -292,7 +292,7 @@ const ROIPage: React.FC = () => {
                     </div>
                     <Typography variant="h3" as="h3">Loss Prevention</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(monthlyLossSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <p className="text-xs text-slate-500 mt-2">Mengurangi 80% risiko kebocoran.</p>
+                    <Typography variant="body" className="text-slate-500">Mengurangi 80% risiko kebocoran.</Typography>
                  </div>
 
                  {/* Tech Cost Savings (New) */}
@@ -305,7 +305,7 @@ const ROIPage: React.FC = () => {
                     </div>
                     <Typography variant="h3" as="h3">Tech Cost Reduction</Typography>
                     <div className="text-xl font-bold text-white">{formatCompactCurrency(techSavings)}<span className="text-xs text-slate-500 font-normal">/bln</span></div>
-                    <p className="text-xs text-slate-500 mt-2">Biaya sistem lama yang dihapus.</p>
+                    <Typography variant="body" className="text-slate-500">Biaya sistem lama yang dihapus.</Typography>
                  </div>
               </div>
 
@@ -366,9 +366,7 @@ const ROIPage: React.FC = () => {
                   </div>
                   <div>
                      <Typography variant="h4" as="h4">Catatan Analis</Typography>
-                     <p className="text-sm text-slate-500 mt-1 leading-relaxed">
-                        Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.
-                     </p>
+                     <Typography variant="caption" className="text-slate-500 leading-relaxed">Perhitungan ini adalah estimasi konservatif (asumsi efisiensi 30%). Banyak klien kami melaporkan <strong>Intangible Benefits</strong> yang lebih besar seperti kepuasan karyawan, akurasi data real-time, dan kecepatan pengambilan keputusan strategis.</Typography>
                   </div>
               </div>
 

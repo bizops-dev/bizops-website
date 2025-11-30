@@ -149,9 +149,7 @@ const SitemapPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Typography variant="h1" as="h1">Sitemap</Typography>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.
-          </p>
+          <Typography variant="body" className="text-slate-600 dark:text-slate-400">Jelajahi seluruh halaman dan fitur yang tersedia di ekosistem BizOps.</Typography>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

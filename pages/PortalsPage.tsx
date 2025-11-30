@@ -13,7 +13,7 @@ const PortalsPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Globe className="w-8 h-8 text-primary-400" />
           </div>
@@ -34,9 +34,7 @@ const PortalsPage: React.FC = () => {
                      <Typography variant="h3" as="h3">B2B Customer Portal</Typography>
                   </div>
                   <div className="p-8">
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Memberikan pengalaman layaknya e-commerce B2B kepada klien Anda.
-                     </p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Memberikan pengalaman layaknya e-commerce B2B kepada klien Anda.</Typography>
                      <ul className="space-y-3 text-slate-700 dark:text-slate-300 mb-8">
                         <li className="flex items-start gap-3">
                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></div>
@@ -62,9 +60,7 @@ const PortalsPage: React.FC = () => {
                      <Typography variant="h3" as="h3">Supplier / Vendor Portal</Typography>
                   </div>
                   <div className="p-8">
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Mendigitalisasi interaksi dengan supplier untuk transparansi pengadaan.
-                     </p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mendigitalisasi interaksi dengan supplier untuk transparansi pengadaan.</Typography>
                      <ul className="space-y-3 text-slate-700 dark:text-slate-300 mb-8">
                         <li className="flex items-start gap-3">
                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2"></div>

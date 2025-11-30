@@ -129,7 +129,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
             <FileText className="w-8 h-8 text-slate-400" />
         </div>
         <Typography variant="h1" as="h1">Document Not Found</Typography>
-        <p className="text-slate-500 mb-6">The legal document you are looking for does not exist.</p>
+        <Typography variant="body" className="text-slate-500">The legal document you are looking for does not exist.</Typography>
         <Link to="/legal/privacy"><Button>Go to Privacy Policy</Button></Link>
       </div>
     );
@@ -262,9 +262,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       <div className="flex items-center gap-2 mb-2 text-red-700 font-bold text-xs uppercase tracking-wide">
                          <Phone className="w-4 h-4" /> Security Incident
                       </div>
-                      <p className="text-xs text-red-600 mb-3 leading-relaxed">
-                         Untuk pelaporan insiden keamanan kritis atau pelanggaran data.
-                      </p>
+                      <Typography variant="body" className="leading-relaxed">Untuk pelaporan insiden keamanan kritis atau pelanggaran data.</Typography>
                       <a href="mailto:security@bizops.id" className="text-xs font-bold text-red-700 hover:underline flex items-center gap-1">
                          security@bizops.id <ChevronRight className="w-3 h-3" />
                       </a>
@@ -285,7 +283,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          <span>Last Updated: {data.updated}</span>
                       </div>
                       <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight tracking-tight">{data.title}</Typography>
-                      <p className="text-lg text-slate-600 leading-relaxed">{data.subtitle}</p>
+                      <Typography variant="body-lg" className="text-slate-600 leading-relaxed">{data.subtitle}</Typography>
                    </div>
                    
                    <div className="absolute top-8 right-8 hidden sm:flex gap-2">
@@ -306,9 +304,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                       <div className="space-y-8 animate-fade-in-up mb-12">
                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                             <Typography variant="h3" as="h3">Data Subject Access Rights (DSAR)</Typography>
-                            <p className="text-blue-800 text-sm leading-relaxed">
-                               Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").
-                            </p>
+                            <Typography variant="caption" className="leading-relaxed">Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").</Typography>
                          </div>
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <button 
@@ -319,9 +315,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   <Download className="w-6 h-6" />
                                </div>
                                <Typography variant="h4" as="h4">Export My Data</Typography>
-                               <p className="text-slate-600 text-sm flex-grow leading-relaxed">
-                                  Unduh salinan lengkap profil, riwayat aktivitas, dan log akses Anda dalam format JSON/CSV.
-                               </p>
+                               <Typography variant="caption" className="text-slate-600 leading-relaxed">Unduh salinan lengkap profil, riwayat aktivitas, dan log akses Anda dalam format JSON/CSV.</Typography>
                             </button>
                             <button 
                               onClick={() => setRequestType('delete')}
@@ -331,9 +325,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   <Trash2 className="w-6 h-6" />
                                </div>
                                <Typography variant="h4" as="h4">Delete Account</Typography>
-                               <p className="text-slate-600 text-sm flex-grow leading-relaxed">
-                                  Hapus permanen akun dan seluruh data pribadi Anda dari server kami.
-                               </p>
+                               <Typography variant="caption" className="text-slate-600 leading-relaxed">Hapus permanen akun dan seluruh data pribadi Anda dari server kami.</Typography>
                             </button>
                          </div>
                          {requestType && (
@@ -354,9 +346,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   </div>
                                ) : (
                                   <form onSubmit={handleDataRequest} className="space-y-4 max-w-md">
-                                     <p className="text-slate-600 text-sm">
-                                        Untuk keamanan, kami perlu memverifikasi kepemilikan akun. Masukkan email terdaftar Anda.
-                                     </p>
+                                     <Typography variant="caption" className="text-slate-600">Untuk keamanan, kami perlu memverifikasi kepemilikan akun. Masukkan email terdaftar Anda.</Typography>
                                      <div>
                                         <Typography variant="caption" className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">Email Terdaftar</Typography>
                                         <input 
@@ -467,7 +457,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    />
 
                    <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                      <p>© 2024 BizOps Inc. All rights reserved.</p>
+                      <Typography variant="body">© 2024 BizOps Inc. All rights reserved.</Typography>
                       <div className="flex gap-6">
                          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); }} className="hover:text-primary-600 transition-colors">Back to top</a>
                          <Link to="/contact" className="hover:text-primary-600 transition-colors">Contact Legal Team</Link>

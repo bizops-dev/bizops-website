@@ -95,9 +95,7 @@ mQINBF... (Truncated for display) ...
           <div className="space-y-8">
             <div>
               <Typography variant="h4" as="h4">Via Email Terenkripsi</Typography>
-              <p className="text-slate-400 text-sm mb-4">
-                Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.
-              </p>
+              <Typography variant="caption" className="text-slate-400">Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.</Typography>
               
               <div className="relative bg-black rounded-xl p-4 border border-slate-800 text-xs text-slate-500 overflow-x-auto">
                 <button 

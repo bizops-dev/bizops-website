@@ -108,9 +108,7 @@ const DemoPage: React.FC = () => {
           <CheckCircle className="w-10 h-10 text-emerald-500" aria-hidden="true" />
         </motion.div>
         <Typography variant="h2" as="h2">Mengalihkan ke WhatsApp...</Typography>
-        <p className="text-slate-400 max-w-md mx-auto mb-10 text-lg">
-          Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.
-        </p>
+        <Typography variant="body-lg" className="text-slate-400">Jika WhatsApp tidak terbuka otomatis, silakan klik tombol di bawah ini. Tim kami akan segera merespons chat Anda.</Typography>
         <Button variant="primary" onClick={() => window.location.href = '/'}>Kembali ke Beranda</Button>
       </div>
     );
@@ -158,7 +156,7 @@ const DemoPage: React.FC = () => {
                         </div>
                         <div>
                           <Typography variant="h4" as="h4" className="font-bold text-white">{item.title}</Typography>
-                          <p className="text-sm text-slate-400 mt-1 leading-relaxed">{item.desc}</p>
+                          <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>
                         </div>
                       </div>
                     ))}
@@ -191,7 +189,7 @@ const DemoPage: React.FC = () => {
                 >
                   <div className="mb-8">
                     <Typography variant="h3" as="h3">Jadwalkan Sesi</Typography>
-                    <p className="text-slate-400 text-sm">Isi detail di bawah untuk terhubung langsung dengan expert kami.</p>
+                    <Typography variant="caption" className="text-slate-400">Isi detail di bawah untuk terhubung langsung dengan expert kami.</Typography>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
@@ -300,9 +298,7 @@ const DemoPage: React.FC = () => {
                         required
                       />
                       {errors.consent && (
-                        <p className="text-red-400 text-xs mt-2 flex items-center gap-1 pl-7" role="alert">
-                          <Shield className="w-3 h-3" /> {errors.consent}
-                        </p>
+                        <Typography variant="body"><Shield className="w-3 h-3" /> {errors.consent}</Typography>
                       )}
                     </div>
 

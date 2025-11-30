@@ -91,12 +91,10 @@ const ServicesPage: React.FC = () => {
               <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">Accepting New Enterprise Partners</span>
            </motion.div>
 
-           <h1 className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-8">
-             <span className="block text-slate-400 dark:text-slate-500 text-2xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
+           <Typography variant="h1" as="h1" className="text-4xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><span className="block text-slate-400 dark:text-slate-500 text-2xl md:text-4xl font-medium mb-2 tracking-normal">Engineering Business Success</span>
              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-primary-800 to-slate-900 dark:from-white dark:via-primary-200 dark:to-white">
                <StaggeredText text="Beyond Software." />
-             </span>
-           </h1>
+             </span></Typography>
            
            <motion.p 
              variants={FADE_UP_VARIANTS}
@@ -142,9 +140,7 @@ const ServicesPage: React.FC = () => {
                 <Typography variant="h2" as="h2">How We Work</Typography>
                 <Typography variant="h3" as="h3">The Transformation Arc</Typography>
               </div>
-              <p className="text-slate-500 dark:text-slate-400 max-w-md text-right md:text-left text-sm leading-relaxed">
-                 Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.
-              </p>
+              <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Metodologi standar global yang menjamin transparansi dan hasil terukur di setiap fase proyek.</Typography>
            </div>
 
            <div className="relative">
@@ -170,7 +166,7 @@ const ServicesPage: React.FC = () => {
                            <div className="flex-grow">
                               <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}
                                  <span className="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">{item.step}</span></Typography>
-                              <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                              <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
                            </div>
                        </SpotlightCard>
                     </motion.div>
@@ -211,9 +207,7 @@ const ServicesPage: React.FC = () => {
                                 </span>
                               </div>
                               <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
-                              <p className="text-slate-300 text-sm leading-relaxed mb-8 flex-grow">
-                                {service.description}
-                              </p>
+                              <Typography variant="caption" className="text-slate-300 leading-relaxed">{service.description}</Typography>
                               <div className="mt-auto">
                                 <Link to={`/services/${service.id}`} className="block w-full">
                                   <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold px-8 w-full">
@@ -232,7 +226,7 @@ const ServicesPage: React.FC = () => {
                               <service.icon className="w-6 h-6" />
                           </div>
                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{service.description}</p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>
                           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                               <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
                                 View Service <MoveRight className="w-4 h-4" />
@@ -272,9 +266,7 @@ const ServicesPage: React.FC = () => {
                                </div>
                                
                                <Typography variant="h3" as="h3" className="font-bold">{service.title}</Typography>
-                               <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-lg flex-grow">
-                                  {service.description}
-                               </p>
+                               <Typography variant="body-lg" className="text-slate-300 leading-relaxed">{service.description}</Typography>
 
                                <div className="mt-auto">
                                   <Link to={`/services/${service.id}`} className="block w-full md:w-auto">
@@ -316,9 +308,7 @@ const ServicesPage: React.FC = () => {
                         </div>
 
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                           {service.description}
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</Typography>
 
                         <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto shrink-0">
                            <Link to={`/services/${service.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">

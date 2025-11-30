@@ -72,8 +72,7 @@ const PricingPage: React.FC = () => {
              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Special Offer: Save 20% on Annual Plans</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
-            <StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />
+          <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]"><StaggeredText text="Investasi Cerdas untuk" className="flex w-full justify-center mb-2" />
             <motion.span 
               variants={FADE_UP_VARIANTS}
               initial="hidden"
@@ -82,8 +81,7 @@ const PricingPage: React.FC = () => {
               className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400"
             >
               Pertumbuhan Bisnis.
-            </motion.span>
-          </h1>
+            </motion.span></Typography>
           
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Transparansi penuh. Tanpa biaya tersembunyi. Pilih paket yang sesuai dengan fase bisnis Anda hari ini.</Typography>
           
@@ -122,7 +120,7 @@ const PricingPage: React.FC = () => {
              <div className="bg-white dark:bg-slate-900/80 backdrop-blur-sm rounded-3xl p-8 flex flex-col h-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
                <div className="mb-6">
                  <Typography variant="h3" as="h3">Business</Typography>
-                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Pondasi digital yang kuat untuk startup & bisnis berkembang.</p>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Pondasi digital yang kuat untuk startup & bisnis berkembang.</Typography>
                </div>
                
                <div className="mb-8">
@@ -137,9 +135,7 @@ const PricingPage: React.FC = () => {
                    <span className="text-slate-500">/ bulan</span>
                    {annual && <span className="text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Hemat 6 Jt/thn</span>}
                  </div>
-                 <p className="text-xs text-slate-400 mt-2">
-                   {annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}
-                 </p>
+                 <Typography variant="body" className="text-slate-400">{annual ? 'Ditagih Rp 30 Jt per tahun' : 'Ditagih bulanan, bisa cancel kapan saja'}</Typography>
                </div>
 
                <div className="mb-8">
@@ -151,7 +147,7 @@ const PricingPage: React.FC = () => {
                </div>
 
                <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8">
-                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Fitur Utama:</p>
+                 <Typography variant="body" className="text-slate-400 tracking-wider">Fitur Utama:</Typography>
                  {['50 Recommended Users', 'Core ERP (HR, Finance, Sales)', 'Mobile App (Basic)', 'Shared Cloud Hosting', 'Email Support (48h SLA)'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                      <div className="mt-0.5 min-w-[18px]">
@@ -174,7 +170,7 @@ const PricingPage: React.FC = () => {
                
                <div className="mb-6 mt-2">
                  <Typography variant="h3" as="h3">Growth</Typography>
-                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Solusi All-in-One untuk scaling tanpa batasan fitur.</p>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Solusi All-in-One untuk scaling tanpa batasan fitur.</Typography>
                </div>
 
                <div className="mb-8 p-4 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
@@ -200,7 +196,7 @@ const PricingPage: React.FC = () => {
                </div>
 
                <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-700/50 pt-8">
-                 <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-4">Semua di Business, plus:</p>
+                 <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wider">Semua di Business, plus:</Typography>
                  {['200 Recommended Users', 'Manufacturing, Asset & Project', 'Advanced Mobile App (GPS)', 'Dedicated VPS Performance', 'Priority Chat Support (12h SLA)', 'Assisted Implementation'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
                      <div className="mt-0.5 min-w-[18px]">
@@ -222,7 +218,7 @@ const PricingPage: React.FC = () => {
                <div className="mb-6 relative z-10">
                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Enterprise
                    <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Custom</span></Typography>
-                 <p className="text-slate-500 dark:text-slate-400 text-sm h-10">Infrastruktur dedicated & kontrol penuh untuk korporasi.</p>
+                 <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Infrastruktur dedicated & kontrol penuh untuk korporasi.</Typography>
                </div>
                
                <div className="mb-8 relative z-10">
@@ -234,9 +230,7 @@ const PricingPage: React.FC = () => {
                  <div className="flex items-center justify-between mt-3 text-sm">
                     <span className="text-slate-500">Sesuai Kebutuhan</span>
                  </div>
-                 <p className="text-xs text-slate-400 mt-2">
-                   Negosiasi kontrak tahunan & SLA
-                 </p>
+                 <Typography variant="body" className="text-slate-400">Negosiasi kontrak tahunan & SLA</Typography>
                </div>
 
                <div className="mb-8 relative z-10">
@@ -248,7 +242,7 @@ const PricingPage: React.FC = () => {
                </div>
 
                <div className="space-y-4 flex-grow border-t border-slate-100 dark:border-slate-800 pt-8 relative z-10">
-                 <p className="text-xs font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mb-4">Enterprise Exclusive:</p>
+                 <Typography variant="body" className="dark:text-amber-500 tracking-wider">Enterprise Exclusive:</Typography>
                  {['Unlimited Users Capacity', 'Private / On-Premise Server', 'Custom Module Development', 'Full Database Access', 'Whitelabel Mobile App', 'Dedicated Account Manager'].map((f, i) => (
                    <div key={i} className="flex gap-3 text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                      <div className="mt-0.5 min-w-[18px]">
@@ -277,9 +271,7 @@ const PricingPage: React.FC = () => {
                 </div>
                 <Typography variant="h3" as="h3" className="font-extrabold text-white leading-tight">Butuh Spesifikasi Khusus? <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Hitung Sendiri di Sini.</span></Typography>
-                <p className="text-slate-300 text-base md:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.
-                </p>
+                <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Gunakan kalkulator interaktif kami untuk menyesuaikan jumlah user, lokasi server, dan modul spesifik yang Anda butuhkan. Dapatkan estimasi penawaran instan.</Typography>
                 <Link to="/pricing-calculator" className="w-full md:w-auto block">
                   <Button variant="white" size="lg" className="h-14 px-8 text-lg font-bold shadow-xl shadow-blue-900/50 hover:shadow-blue-900/70 hover:scale-105 transition-all duration-300 w-full md:w-auto">
                     Buka Pricing Calculator <ArrowRight className="w-5 h-5 ml-2" />
@@ -320,7 +312,7 @@ const PricingPage: React.FC = () => {
                      <item.icon className="w-8 h-8" />
                    </div>
                    <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
-                   <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.desc}</Typography>
                  </div>
                ))}
              </div>

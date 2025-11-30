@@ -208,14 +208,14 @@ const TimelineGeneratorPage: React.FC = () => {
                      <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
                         {formatWeeks(result.totalDays)}
                      </div>
-                     <p className="text-xs text-slate-500 mt-1">Estimasi Go-Live realistis.</p>
+                     <Typography variant="body" className="text-slate-500">Estimasi Go-Live realistis.</Typography>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                      <div className="text-xs font-bold text-slate-400 uppercase mb-2">Tingkat Kompleksitas</div>
                      <div className="text-3xl font-extrabold capitalize text-primary-600 dark:text-primary-400">
                         {result.complexity}
                      </div>
-                     <p className="text-xs text-slate-500 mt-1">Berdasarkan skala & kustomisasi.</p>
+                     <Typography variant="body" className="text-slate-500">Berdasarkan skala & kustomisasi.</Typography>
                   </div>
                   <div className={`p-6 rounded-2xl border shadow-sm ${
                      result.riskFactor === 'high' 
@@ -226,9 +226,7 @@ const TimelineGeneratorPage: React.FC = () => {
                      <div className={`text-3xl font-extrabold capitalize ${result.riskFactor === 'high' ? 'text-red-700 dark:text-red-300' : 'text-emerald-700 dark:text-emerald-300'}`}>
                         {result.riskFactor === 'high' ? 'Tinggi' : 'Rendah'}
                      </div>
-                     <p className={`text-xs mt-1 ${result.riskFactor === 'high' ? 'text-red-600/80' : 'text-emerald-600/80'}`}>
-                        {result.riskFactor === 'high' ? 'Perbaiki data/tim untuk mengurangi risiko.' : 'Kondisi proyek optimal.'}
-                     </p>
+                     <Typography variant="body">{result.riskFactor === 'high' ? 'Perbaiki data/tim untuk mengurangi risiko.' : 'Kondisi proyek optimal.'}</Typography>
                   </div>
                </div>
 

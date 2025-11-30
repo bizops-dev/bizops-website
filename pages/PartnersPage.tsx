@@ -165,7 +165,7 @@ const PartnersPage: React.FC = () => {
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div className="text-center mb-16">
             <Typography variant="h2" as="h2">Pilih Model Kemitraan Anda</Typography>
-            <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami menawarkan fleksibilitas sesuai dengan model bisnis Anda.</p>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami menawarkan fleksibilitas sesuai dengan model bisnis Anda.</Typography>
          </div>
 
          <div className="md:hidden">
@@ -286,9 +286,7 @@ const PartnersPage: React.FC = () => {
           
           <div className="text-center mb-16">
              <Typography variant="h2" as="h2">Simulasi Potensi Bisnis</Typography>
-             <p className="text-slate-300 max-w-2xl mx-auto">
-                Hitung potensi pendapatan Anda sebagai Implementation Partner. Gabungkan margin penjualan lisensi dan pendapatan jasa implementasi.
-             </p>
+             <Typography variant="body" className="text-slate-300">Hitung potensi pendapatan Anda sebagai Implementation Partner. Gabungkan margin penjualan lisensi dan pendapatan jasa implementasi.</Typography>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
@@ -311,7 +309,7 @@ const PartnersPage: React.FC = () => {
                      value={sellingPrice} onChange={(e) => setSellingPrice(Number(e.target.value))}
                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500 hover:accent-primary-400"
                   />
-                  <p className="text-xs text-slate-500 mt-2">Harga langganan SaaS BizOps standar.</p>
+                  <Typography variant="body" className="text-slate-500">Harga langganan SaaS BizOps standar.</Typography>
                </div>
 
                {/* Setup Fee */}
@@ -325,7 +323,7 @@ const PartnersPage: React.FC = () => {
                      value={setupFee} onChange={(e) => setSetupFee(Number(e.target.value))}
                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500 hover:accent-primary-400"
                   />
-                  <p className="text-xs text-slate-500 mt-2">Nilai jasa setup, training, dan migrasi data.</p>
+                  <Typography variant="body" className="text-slate-500">Nilai jasa setup, training, dan migrasi data.</Typography>
                </div>
 
                <hr className="border-slate-700" />
@@ -341,7 +339,7 @@ const PartnersPage: React.FC = () => {
                      value={partnerCost} onChange={(e) => setPartnerCost(Number(e.target.value))}
                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-slate-500"
                   />
-                  <p className="text-xs text-slate-500 mt-2">Harga spesial partner ke BizOps (Cost of Goods Sold).</p>
+                  <Typography variant="body" className="text-slate-500">Harga spesial partner ke BizOps (Cost of Goods Sold).</Typography>
                </div>
 
                <hr className="border-slate-700" />
@@ -401,7 +399,7 @@ const PartnersPage: React.FC = () => {
                      <div className="flex justify-between items-end mb-2">
                         <div>
                            <span className="font-bold text-lg">Tahun Pertama</span>
-                           <p className="text-xs text-slate-500">Total Profit Bersih (License Margin + Implementation Fees)</p>
+                           <Typography variant="body" className="text-slate-500">Total Profit Bersih (License Margin + Implementation Fees)</Typography>
                         </div>
                         <div className="text-right">
                            <span className="text-2xl font-extrabold text-slate-900 dark:text-white">{formatCurrency(year1Profit)}</span>
@@ -422,7 +420,7 @@ const PartnersPage: React.FC = () => {
                      <div className="flex justify-between items-end mb-2">
                         <div>
                            <span className="font-bold text-lg">Tahun Kedua</span>
-                           <p className="text-xs text-slate-500">Dengan akumulasi klien tahun sebelumnya</p>
+                           <Typography variant="body" className="text-slate-500">Dengan akumulasi klien tahun sebelumnya</Typography>
                         </div>
                         <div className="text-right">
                            <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">{formatCurrency(year2Profit)}</span>
@@ -462,7 +460,7 @@ const PartnersPage: React.FC = () => {
                         <benefit.icon className="w-6 h-6" />
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
                   </div>
                ))}
             </CardSlider>
@@ -475,7 +473,7 @@ const PartnersPage: React.FC = () => {
                      <benefit.icon className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
                </div>
             ))}
          </div>

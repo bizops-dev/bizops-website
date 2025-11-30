@@ -12,7 +12,7 @@ const SysReqPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="System Requirements | BizOps Documentation" description="Spesifikasi teknis hardware dan software untuk deployment BizOps Self-Hosted." />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
            <Typography variant="h1" as="h1">Spesifikasi Teknis</Typography>
            <Typography variant="body-lg" className="text-slate-600">Panduan wajib bagi tim IT sebelum instalasi BizOps Self-Hosted.</Typography>
@@ -50,7 +50,7 @@ const SysReqPage: React.FC = () => {
               {sysReqData.client.map((req, idx) => (
                  <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900">{req.item}</Typography>
-                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{req.spec}</p>
+                    <Typography variant="caption" className="text-slate-600 leading-relaxed">{req.spec}</Typography>
                     {req.note && (
                        <div className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded inline-flex items-center gap-1">
                           <AlertCircle className="w-3 h-3" /> {req.note}
@@ -74,7 +74,7 @@ const SysReqPage: React.FC = () => {
                        </div>
                        <div>
                           <div className="font-bold text-slate-900 text-sm mb-1">{net.dir}</div>
-                          <p className="text-sm text-slate-600">{net.desc}</p>
+                          <Typography variant="caption" className="text-slate-600">{net.desc}</Typography>
                        </div>
                     </div>
                  ))}

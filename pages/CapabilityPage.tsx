@@ -29,12 +29,12 @@ const CapabilityPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white">
-         <div className="max-w-4xl mx-auto px-4 text-center">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />
             </div>
             <Typography variant="h1" as="h1" className="font-bold leading-tight">{data.subtitle}</Typography>
-            <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-3xl mx-auto">{data.description}</p>
+            <Typography variant="body-xl" className="text-slate-300 leading-relaxed">{data.description}</Typography>
             <Link to="/demo">
                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">Download Technical Sheet</Button>
             </Link>
@@ -55,7 +55,7 @@ const CapabilityPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900">{item.title}</Typography>
-                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                        <Typography variant="body" className="text-slate-600 leading-relaxed">{item.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -99,11 +99,9 @@ const CapabilityPage: React.FC = () => {
 
       {/* Specific CTA */}
       <section className="py-20 bg-white border-t border-slate-100 text-center">
-         <div className="max-w-3xl mx-auto px-4">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Typography variant="h2" as="h2">Need Deeper Technical Review?</Typography>
-            <p className="text-slate-600 mb-8">
-               Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.
-            </p>
+            <Typography variant="body" className="text-slate-600">Jadwalkan sesi deep-dive dengan Solution Architect kami untuk membahas topologi dan integrasi spesifik di perusahaan Anda.</Typography>
             <Link to="/contact">
                <Button variant="outline" size="lg">Hubungi Tim Engineering <ArrowRight className="ml-2 w-4 h-4" /></Button>
             </Link>

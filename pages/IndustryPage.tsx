@@ -32,9 +32,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         </div>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-          {answer}
-        </p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{answer}</Typography>
       </div>
     </div>
   );
@@ -53,7 +51,7 @@ const IndustryPage: React.FC = () => {
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Solution Not Found" />
         <Typography variant="h1" as="h1">Industry Solution Not Found</Typography>
-        <p className="text-slate-600 dark:text-slate-400 mb-6">The solution you are looking for does not exist or has been moved.</p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400">The solution you are looking for does not exist or has been moved.</Typography>
         <Link to="/solutions"><Button>Back to Solutions</Button></Link>
       </div>
     );
@@ -241,9 +239,7 @@ const IndustryPage: React.FC = () => {
                   
                   <div className="flex-grow relative z-10 flex flex-col">
                      <Typography variant="h3" as="h3" className="font-bold text-white">{challenge.title}</Typography>
-                     <p className="text-slate-400 leading-relaxed text-sm group-hover:text-slate-300 transition-colors">
-                        {challenge.desc}
-                     </p>
+                     <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{challenge.desc}</Typography>
                   </div>
                </motion.div>
             ))}
@@ -282,9 +278,7 @@ const IndustryPage: React.FC = () => {
                      
                      <div className="flex-grow flex flex-col">
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{sol.title}</Typography>
-                        <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed text-base flex-grow">
-                           {sol.desc}
-                        </p>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{sol.desc}</Typography>
                      </div>
                   </motion.div>
                );
@@ -307,9 +301,7 @@ const IndustryPage: React.FC = () => {
             <div>
                <Badge variant="outline-white" className="mb-6">Success Story</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-white">{data.caseStudyTitle}</Typography>
-               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                  "{data.caseStudy}"
-               </p>
+               <Typography variant="body-lg" className="text-slate-300 leading-relaxed">"{data.caseStudy}"</Typography>
                <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/customers">
                      <Button variant="white" className="group">
@@ -328,9 +320,7 @@ const IndustryPage: React.FC = () => {
             >
                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-500/30 rounded-full blur-xl animate-pulse-slow"></div>
                <Quote className="w-12 h-12 text-primary-400 mb-6 opacity-50" />
-               <p className="text-xl font-medium text-white italic mb-8 leading-relaxed">
-                  "{data.testimonial?.quote || "BizOps memberikan visibilitas yang kami cari selama ini. Keputusan bisnis jadi lebih cepat dan akurat."}"
-               </p>
+               <Typography variant="body-xl" className="leading-relaxed">"{data.testimonial?.quote || "BizOps memberikan visibilitas yang kami cari selama ini. Keputusan bisnis jadi lebih cepat dan akurat."}"</Typography>
                <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-slate-700 overflow-hidden ring-2 ring-primary-500/50">
                      <OptimizedImage 
@@ -353,10 +343,10 @@ const IndustryPage: React.FC = () => {
       {/* 6. FAQ */}
       {data.faqs && (
          <Section className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
-                  <p className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Hal yang sering ditanyakan oleh pelaku industri {data.title}.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-8">
                   {data.faqs.map((faq, i) => (
@@ -410,9 +400,7 @@ const IndustryPage: React.FC = () => {
               </Link>
            </div>
            
-           <p className="mt-8 text-sm text-slate-500">
-              *Free trial 14 hari. Full akses ke semua modul.
-           </p>
+           <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Full akses ke semua modul.</Typography>
         </div>
       </section>
     </div>

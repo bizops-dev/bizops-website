@@ -253,7 +253,7 @@ const PartnerDirectoryPage: React.FC = () => {
                      <Search className="w-8 h-8" />
                   </div>
                   <Typography variant="h3" as="h3">No partners found</Typography>
-                  <p className="text-slate-500 dark:text-slate-400 mb-6">Try adjusting your filters or search terms.</p>
+                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">Try adjusting your filters or search terms.</Typography>
                   <Button variant="outline" onClick={clearFilters}>Clear Filters</Button>
                </div>
              )}
@@ -392,9 +392,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
             </div>
          </div>
 
-         <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-2 flex-grow">
-            {partner.description}
-         </p>
+         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
 
          <div className="space-y-3 mb-6">
             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">

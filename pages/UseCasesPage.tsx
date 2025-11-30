@@ -240,7 +240,7 @@ const UseCasesPage: React.FC = () => {
                      <div className="bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 rounded-3xl p-6 text-white text-center shadow-xl border border-slate-700/50 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-500/20 transition-all duration-500"></div>
                         <Typography variant="h4" as="h4">Custom Solution?</Typography>
-                        <p className="text-slate-400 text-sm mb-6 relative z-10">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</p>
+                        <Typography variant="caption" className="text-slate-400">Tim engineer kami siap membangun modul spesifik untuk bisnis Anda.</Typography>
                         <Link to="/contact" className="relative z-10">
                            <Button size="sm" className="w-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">
                               Konsultasi Gratis
@@ -317,9 +317,7 @@ const UseCasesPage: React.FC = () => {
                      </div>
 
                      <div className="flex justify-between items-center flex-wrap gap-4">
-                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                           Menampilkan <span className="font-bold text-slate-900 dark:text-white">{Math.min((currentPage - 1) * ITEMS_PER_PAGE + 1, filteredCases.length)} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredCases.length)}</span> dari <span className="font-bold text-slate-900 dark:text-white">{filteredCases.length}</span> studi kasus
-                        </p>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Menampilkan <span className="font-bold text-slate-900 dark:text-white">{Math.min((currentPage - 1) * ITEMS_PER_PAGE + 1, filteredCases.length)} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredCases.length)}</span> dari <span className="font-bold text-slate-900 dark:text-white">{filteredCases.length}</span> studi kasus</Typography>
                         
                         {/* Reset Filter Button */}
                         {(searchQuery || selectedIndustry !== 'All' || selectedCategory !== 'All') && (
@@ -339,9 +337,7 @@ const UseCasesPage: React.FC = () => {
                            <Search className="w-10 h-10" />
                         </div>
                         <Typography variant="h3" as="h3">No Results Found</Typography>
-                        <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto mb-8">
-                           We couldn't find any case studies matching your current filters. Try adjusting your search criteria.
-                        </p>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400">We couldn't find any case studies matching your current filters. Try adjusting your search criteria.</Typography>
                         <Button variant="outline" onClick={clearFilters}>
                            Clear Filters
                         </Button>
@@ -379,13 +375,9 @@ const UseCasesPage: React.FC = () => {
                                           </div>
                                           
                                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 leading-tight">{item.title}</Typography>
-                                          <p className="text-xs font-bold text-slate-400 dark:text-slate-500 mb-4 uppercase tracking-wide">
-                                             {item.subtitle}
-                                          </p>
+                                          <Typography variant="body" className="text-slate-400 dark:text-slate-500 tracking-wide">{item.subtitle}</Typography>
                                           <div className="h-px w-10 bg-slate-200 dark:bg-slate-700 mb-4"></div>
-                                          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-grow line-clamp-3">
-                                             {item.challenge}
-                                          </p>
+                                          <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.challenge}</Typography>
 
                                           <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800">
                                              Read Full Story <ArrowRight className="w-4 h-4 ml-2 text-primary-500" />

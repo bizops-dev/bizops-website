@@ -150,13 +150,9 @@ const EventsPage: React.FC = () => {
                              <Calendar className="w-4 h-4" /> {evt.formattedDate}
                           </div>
                           
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                             <Link to={`/events/${evt.slug}`}>{evt.title}</Link>
-                          </h3>
+                          <Typography variant="h3" as="h3" className="text-xl font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400"><Link to={`/events/${evt.slug}`}>{evt.title}</Link></Typography>
                           
-                          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                             {evt.desc}
-                          </p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
                           <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                              <div className="flex -space-x-2">
@@ -208,13 +204,9 @@ const EventsPage: React.FC = () => {
                           <Calendar className="w-4 h-4" /> {evt.formattedDate}
                        </div>
                        
-                       <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                          <Link to={`/events/${evt.slug}`}>{evt.title}</Link>
-                       </h3>
+                       <Typography variant="h3" as="h3" className="text-xl font-bold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400"><Link to={`/events/${evt.slug}`}>{evt.title}</Link></Typography>
                        
-                       <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                          {evt.desc}
-                       </p>
+                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{evt.desc}</Typography>
 
                        <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                           <div className="flex -space-x-2">
@@ -249,9 +241,7 @@ const EventsPage: React.FC = () => {
               <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                  <div>
                     <Typography variant="h2" as="h2">On-Demand Library</Typography>
-                    <p className="text-slate-400 max-w-xl text-lg">
-                       Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.
-                    </p>
+                    <Typography variant="body-lg" className="text-slate-400">Ketinggalan sesi live? Akses perpustakaan rekaman webinar premium kami kapan saja. Tonton strategi dari praktisi industri.</Typography>
                  </div>
                  <div className="flex items-center gap-2 text-sm text-primary-300 bg-primary-900/30 border border-primary-500/30 px-4 py-2 rounded-full font-medium">
                     <Users className="w-4 h-4" /> Exclusive for Members

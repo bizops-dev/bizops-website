@@ -85,7 +85,7 @@ const MediaKitPage: React.FC = () => {
               </div>
               <div>
                  <Typography variant="h2" as="h2">Brand Assets (Logo)</Typography>
-                 <p className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Gunakan logo sesuai konteks background.</Typography>
               </div>
            </div>
 
@@ -152,25 +152,25 @@ const MediaKitPage: React.FC = () => {
                   <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 text-green-600 flex items-center justify-center mb-4">
                      <Check className="w-4 h-4" />
                   </div>
-                  <p className="text-xs font-bold text-green-700 dark:text-green-400">Gunakan Space yang Cukup</p>
+                  <Typography variant="body" className="dark:text-green-400">Gunakan Space yang Cukup</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
                   <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Mengubah Proporsi</p>
+                  <Typography variant="body" className="dark:text-red-400">Jangan Mengubah Proporsi</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
                   <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Mengganti Warna</p>
+                  <Typography variant="body" className="dark:text-red-400">Jangan Mengganti Warna</Typography>
                </div>
                <div className="p-6 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/30 flex flex-col items-center text-center">
                   <div className="w-8 h-8 rounded-full bg-red-100 dark:bg-red-900 text-red-600 flex items-center justify-center mb-4">
                      <X className="w-4 h-4" />
                   </div>
-                  <p className="text-xs font-bold text-red-700 dark:text-red-400">Jangan Menambah Efek</p>
+                  <Typography variant="body" className="dark:text-red-400">Jangan Menambah Efek</Typography>
                </div>
            </div>
         </section>
@@ -183,7 +183,7 @@ const MediaKitPage: React.FC = () => {
               </div>
               <div>
                  <Typography variant="h2" as="h2">Color System</Typography>
-                 <p className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Klik HEX code untuk menyalin.</Typography>
               </div>
            </div>
            
@@ -355,12 +355,10 @@ const MediaKitPage: React.FC = () => {
                  </div>
                  <div>
                  <Typography variant="h2" as="h2">Typography</Typography>
-                 <p className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Plus Jakarta Sans (Google Fonts) untuk keterbacaan UI.</Typography>
               </div>
            </div>
-           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-              BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.
-           </p>
+           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
               <div className="space-y-6">
                  <div>
                     <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
@@ -390,9 +388,7 @@ const MediaKitPage: React.FC = () => {
                     <Typography variant="h1" as="h1">The Quick Brown Fox</Typography>
                     <Typography variant="h2" as="h2">Jumps Over The Lazy Dog</Typography>
                     <Typography variant="h3" as="h3">1234567890</Typography>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                       BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.
-                    </p>
+                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.</Typography>
                  </div>
               </div>
            </div>
@@ -406,7 +402,7 @@ const MediaKitPage: React.FC = () => {
               </div>
               <div>
                  <Typography variant="h2" as="h2">Company Boilerplate</Typography>
-                 <p className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</p>
+                 <Typography variant="body" className="text-slate-500 dark:text-slate-400">Deskripsi perusahaan standar untuk press release.</Typography>
               </div>
            </div>
 
@@ -445,9 +441,7 @@ const MediaKitPage: React.FC = () => {
            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
                  <Typography variant="h2" as="h2">Media Inquiries</Typography>
-                 <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                    Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.
-                 </p>
+                 <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.</Typography>
                  <div className="flex flex-col sm:flex-row gap-4">
                     <a href="mailto:pr@divistant.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors">
                        <Mail className="w-4 h-4" /> Hubungi PR Team

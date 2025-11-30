@@ -102,7 +102,7 @@ const ResourcesPage = () => {
                     <cat.icon className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cat.title}</Typography>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{cat.desc}</p>
+                  <Typography variant="body" className="text-slate-500 dark:text-slate-400">{cat.desc}</Typography>
                 </Link>
               </motion.div>
             ))}
@@ -115,7 +115,7 @@ const ResourcesPage = () => {
         <div className="flex justify-between items-end mb-10">
           <div>
             <Typography variant="h2" as="h2">Latest Insights</Typography>
-            <p className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</p>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400">Artikel dan panduan terbaru dari tim ahli kami.</Typography>
           </div>
           <Link to="/blog" className="hidden sm:flex items-center text-primary-600 font-bold hover:underline">
             View All Articles <ArrowRight className="w-4 h-4 ml-2" />
@@ -135,12 +135,8 @@ const ResourcesPage = () => {
               <span className="inline-block px-3 py-1 bg-primary-600 text-white text-xs font-bold rounded-full mb-3">
                 {latestBlogs[0].category}
               </span>
-              <h3 className="text-xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary-200 transition-colors">
-                <Link to={`/blog/${latestBlogs[0].slug}`}>{latestBlogs[0].title}</Link>
-              </h3>
-              <p className="text-slate-300 line-clamp-2 mb-4 max-w-2xl text-sm md:text-base">
-                {latestBlogs[0].summary}
-              </p>
+              <Typography variant="h3" as="h3" className="text-xl md:text-3xl font-bold text-white group-hover:text-primary-200"><Link to={`/blog/${latestBlogs[0].slug}`}>{latestBlogs[0].title}</Link></Typography>
+              <Typography variant="caption" className="text-slate-300">{latestBlogs[0].summary}</Typography>
               <div className="flex items-center gap-4 text-slate-300 text-xs md:text-sm">
                 <span>{latestBlogs[0].date}</span>
                 <span>•</span>
@@ -154,12 +150,8 @@ const ResourcesPage = () => {
             {latestBlogs.slice(1, 3).map((post, idx) => (
               <div key={idx} className="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:border-primary-300 transition-colors">
                 <span className="text-xs font-bold text-primary-600 mb-2">{post.category}</span>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 line-clamp-2 hover:text-primary-600">
-                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2 flex-grow">
-                  {post.summary}
-                </p>
+                <Typography variant="h3" as="h3" className="text-lg font-bold text-slate-900 dark:text-white hover:text-primary-600"><Link to={`/blog/${post.slug}`}>{post.title}</Link></Typography>
+                <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{post.summary}</Typography>
                 <div className="text-xs text-slate-500 mt-auto">
                   {post.date} • 5 min read
                 </div>
@@ -176,9 +168,7 @@ const ResourcesPage = () => {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <Typography variant="h2" as="h2">Ukur Kesiapan Digital Anda</Typography>
-              <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                Apakah perusahaan Anda siap untuk transformasi digital? Gunakan alat asesmen gratis kami untuk mendapatkan skor maturitas dan rekomendasi personal dalam 5 menit.
-              </p>
+              <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Apakah perusahaan Anda siap untuk transformasi digital? Gunakan alat asesmen gratis kami untuk mendapatkan skor maturitas dan rekomendasi personal dalam 5 menit.</Typography>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/tools/assessment">
                   <Button size="lg" className="bg-primary-600 hover:bg-primary-500 border-none w-full sm:w-auto">
@@ -234,9 +224,7 @@ const ResourcesPage = () => {
                   <featuredUseCase.icon className="w-6 h-6" />
                 </div>
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{featuredUseCase.title}</Typography>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
-                  {featuredUseCase.subtitle} - {featuredUseCase.industry}
-                </p>
+                <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{featuredUseCase.subtitle} - {featuredUseCase.industry}</Typography>
                 <div className="space-y-2 mb-6">
                   {featuredUseCase.results.slice(0, 2).map((res, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
@@ -268,10 +256,8 @@ const ResourcesPage = () => {
                     <span className="text-xs font-bold text-purple-600 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded-full mb-1 inline-block">
                       {event.type}
                     </span>
-                    <h3 className="font-bold text-slate-900 dark:text-white text-sm line-clamp-2 hover:text-primary-600 cursor-pointer">
-                      <Link to={`/events/${event.slug}`}>{event.title}</Link>
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-1">{event.time} • {event.location}</p>
+                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white text-sm hover:text-primary-600"><Link to={`/events/${event.slug}`}>{event.title}</Link></Typography>
+                    <Typography variant="body" className="text-slate-500">{event.time} • {event.location}</Typography>
                   </div>
                 </div>
               ))}

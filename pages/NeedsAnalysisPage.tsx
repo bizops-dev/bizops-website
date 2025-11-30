@@ -253,9 +253,7 @@ const NeedsAnalysisPage = () => {
               <Typography variant="h1" as="h1" className="font-bold leading-tight tracking-tight">Temukan Solusi BizOps <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Yang Paling Tepat.</span></Typography>
               
-              <p className="text-slate-400 text-lg mb-8 max-w-xl leading-relaxed">
-                Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.
-              </p>
+              <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Bingung mulai dari mana? Dapatkan <strong>Strategic Blueprint</strong> yang dipersonalisasi—mencakup rekomendasi software dan strategi implementasi (PPT) hanya dalam 2 menit.</Typography>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={() => setStep('context')} size="lg" className="h-14 px-8 text-lg bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-900/20 rounded-xl">
@@ -289,9 +287,7 @@ const NeedsAnalysisPage = () => {
                   </div>
                   <div>
                     <Typography variant="h3" as="h3">Holistic Diagnosis</Typography>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      Kami tidak hanya melihat software, tapi juga kesiapan tim (People) dan alur kerja (Process).
-                    </p>
+                    <Typography variant="caption" className="text-slate-400 leading-relaxed">Kami tidak hanya melihat software, tapi juga kesiapan tim (People) dan alur kerja (Process).</Typography>
                   </div>
                 </div>
 
@@ -302,9 +298,7 @@ const NeedsAnalysisPage = () => {
                   </div>
                   <div>
                     <Typography variant="h3" as="h3">Actionable Roadmap</Typography>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      Dapatkan timeline implementasi langkah demi langkah, dari Quick Win hingga Optimization.
-                    </p>
+                    <Typography variant="caption" className="text-slate-400 leading-relaxed">Dapatkan timeline implementasi langkah demi langkah, dari Quick Win hingga Optimization.</Typography>
                   </div>
                 </div>
 
@@ -315,9 +309,7 @@ const NeedsAnalysisPage = () => {
                   </div>
                   <div>
                     <Typography variant="h3" as="h3">Practical Solution</Typography>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      Berbeda dengan Maturity Assessment yang hanya memberi skor, kami memberi resep solusi.
-                    </p>
+                    <Typography variant="caption" className="text-slate-400 leading-relaxed">Berbeda dengan Maturity Assessment yang hanya memberi skor, kami memberi resep solusi.</Typography>
                   </div>
                 </div>
               </div>
@@ -469,8 +461,8 @@ const NeedsAnalysisPage = () => {
                     <Server className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className={`font-semibold mb-1 ${isSelected ? 'text-blue-100' : 'text-slate-200'}`}>{item.label}</h3>
-                    <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                    <Typography variant="h3" as="h3">{item.label}</Typography>
+                    <Typography variant="caption" className="text-slate-500 leading-snug">{item.desc}</Typography>
                   </div>
                   {isSelected && (
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-500">
@@ -585,8 +577,8 @@ const NeedsAnalysisPage = () => {
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className={`font-semibold mb-1 ${isSelected ? 'text-red-100' : 'text-slate-200'}`}>{item.label}</h3>
-                      <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                      <Typography variant="h3" as="h3">{item.label}</Typography>
+                      <Typography variant="caption" className="text-slate-500 leading-snug">{item.desc}</Typography>
                     </div>
                   </div>
                 </div>
@@ -628,8 +620,8 @@ const NeedsAnalysisPage = () => {
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className={`font-semibold mb-1 ${isSelected ? 'text-emerald-100' : 'text-slate-200'}`}>{item.label}</h3>
-                      <p className="text-sm text-slate-500 leading-snug">{item.desc}</p>
+                      <Typography variant="h3" as="h3">{item.label}</Typography>
+                      <Typography variant="caption" className="text-slate-500 leading-snug">{item.desc}</Typography>
                     </div>
                   </div>
                 </div>
@@ -715,7 +707,7 @@ const NeedsAnalysisPage = () => {
             <div className="w-20 h-20 rounded-full border-4 border-slate-800 border-t-blue-500" />
           </motion.div>
           <Typography variant="h2" as="h2">Mengkurasi Solusi...</Typography>
-          <p className="text-slate-400">Menghubungkan {selectedPainPoints.length} tantangan bisnis dengan solusi PPT kami.</p>
+          <Typography variant="body" className="text-slate-400">Menghubungkan {selectedPainPoints.length} tantangan bisnis dengan solusi PPT kami.</Typography>
       </div>
     );
   }
@@ -735,7 +727,7 @@ const NeedsAnalysisPage = () => {
              <div>
                 <div className="text-blue-400 font-bold tracking-widest text-xs uppercase mb-2">Confidential Report</div>
                 <Typography variant="h1" as="h1">Holistic Solution Blueprint</Typography>
-                <p className="text-slate-400 print:text-gray-600">Rekomendasi strategis untuk {contextData.company}.</p>
+                <Typography variant="body" className="text-slate-400">Rekomendasi strategis untuk {contextData.company}.</Typography>
              </div>
              <div className="mt-4 md:mt-0 flex gap-3 print:hidden">
                 <Button variant="outline-white" onClick={() => window.print()} className="gap-2">
@@ -849,7 +841,7 @@ const NeedsAnalysisPage = () => {
                                    </div>
                                    <div>
                                        <Typography variant="h4" as="h4" className="font-bold text-white">{mod.title}</Typography>
-                                       <p className="text-xs text-slate-400 mt-1 line-clamp-2">{mod.desc}</p>
+                                       <Typography variant="body" className="text-slate-400">{mod.desc}</Typography>
                                    </div>
                                </div>
                            ))}
@@ -867,7 +859,7 @@ const NeedsAnalysisPage = () => {
                                    </div>
                                    <div>
                                        <Typography variant="h4" as="h4" className="font-bold text-white">{svc.title}</Typography>
-                                       <p className="text-xs text-slate-400 mt-1 line-clamp-2">{svc.desc}</p>
+                                       <Typography variant="body" className="text-slate-400">{svc.desc}</Typography>
                                    </div>
                                </div>
                            )) : (

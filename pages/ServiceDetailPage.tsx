@@ -61,9 +61,7 @@ const ServiceDetailPage: React.FC = () => {
           <AlertCircle className="w-8 h-8" />
         </div>
         <Typography variant="h1" as="h1">Service Not Found</Typography>
-        <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-md">
-          Maaf, layanan yang Anda cari tidak ditemukan atau telah dipindahkan.
-        </p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400">Maaf, layanan yang Anda cari tidak ditemukan atau telah dipindahkan.</Typography>
         <Link to="/services">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" />
@@ -181,7 +179,7 @@ const ServiceDetailPage: React.FC = () => {
                              </div>
                              <div>
                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{benefit.title}</Typography>
-                                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
+                                <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
                              </div>
                           </div>
                        ))}
@@ -205,9 +203,7 @@ const ServiceDetailPage: React.FC = () => {
                   <Typography variant="h2" as="h2">Our Methodology</Typography>
                   <Typography variant="h3" as="h3">Execution Roadmap</Typography>
                </div>
-               <p className="text-slate-500 dark:text-slate-400 max-w-md">
-                  Langkah-langkah terstruktur untuk memastikan keberhasilan proyek Anda dari awal hingga akhir.
-               </p>
+               <Typography variant="body" className="text-slate-500 dark:text-slate-400">Langkah-langkah terstruktur untuk memastikan keberhasilan proyek Anda dari awal hingga akhir.</Typography>
             </div>
 
             <div className="relative">
@@ -231,9 +227,7 @@ const ServiceDetailPage: React.FC = () => {
                               <SpotlightCard className="p-8 rounded-2xl hover:border-primary-200 dark:hover:border-primary-800 transition-colors h-full flex flex-col">
                                  <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-primary-500 mr-2 md:hidden">Step {idx + 1}:</span>
                                     {item.title}</Typography>
-                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                                    {item.desc}
-                                 </p>
+                                 <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
                               </SpotlightCard>
                            </div>
 
@@ -258,9 +252,7 @@ const ServiceDetailPage: React.FC = () => {
            <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Tangible Deliverables</Typography>
-                 <p className="text-slate-600 dark:text-slate-400">
-                   Aset konkret yang akan menjadi milik perusahaan Anda selamanya.
-                 </p>
+                 <Typography variant="body" className="text-slate-600 dark:text-slate-400">Aset konkret yang akan menjadi milik perusahaan Anda selamanya.</Typography>
               </div>
               
               <CardSlider desktopClassName="md:grid md:grid-cols-2 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">

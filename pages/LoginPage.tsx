@@ -63,9 +63,7 @@ const LoginPage: React.FC = () => {
 
           <div className="mb-8">
             <Typography variant="h1" as="h1">Welcome back</Typography>
-            <p className="text-slate-500 dark:text-slate-400">
-              Please select your login type to continue.
-            </p>
+            <Typography variant="body" className="text-slate-500 dark:text-slate-400">Please select your login type to continue.</Typography>
           </div>
 
           {/* Login Type Switcher */}
@@ -104,7 +102,7 @@ const LoginPage: React.FC = () => {
                 </div>
                 <div>
                    <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{getLoginTitle()}</Typography>
-                   <p className="text-xs text-slate-500 dark:text-slate-400">{getLoginDesc()}</p>
+                   <Typography variant="body" className="text-slate-500 dark:text-slate-400">{getLoginDesc()}</Typography>
                 </div>
              </div>
 

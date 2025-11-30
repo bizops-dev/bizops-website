@@ -13,14 +13,12 @@ const AnalyticsPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <BarChart2 className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Laporan Anda, Cara Anda.<br/>Tanpa Coding.</Typography>
-          <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-            Setiap bisnis punya cara unik melihat data. Jangan terpaku pada laporan standar yang kaku. Dengan <em>Report Builder</em>, Anda menjadi analis data bagi perusahaan Anda sendiri.
-          </p>
+          <Typography variant="body-xl" className="text-slate-300 leading-relaxed">Setiap bisnis punya cara unik melihat data. Jangan terpaku pada laporan standar yang kaku. Dengan <em>Report Builder</em>, Anda menjadi analis data bagi perusahaan Anda sendiri.</Typography>
           <Link to="/demo">
              <Button size="lg" variant="white">Coba Report Builder</Button>
           </Link>
@@ -37,9 +35,7 @@ const AnalyticsPage: React.FC = () => {
                      <PieChart className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Real-time Dashboard</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Widget visual (Grafik Batang, Pie Chart, KPI Card, Heatmap) yang dapat dikustomisasi dan diperbarui detik demi detik. Pantau kesehatan bisnis dalam satu pandangan.</Typography>
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
@@ -47,9 +43,7 @@ const AnalyticsPage: React.FC = () => {
                      <Filter className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Drag-and-Drop Report Builder</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Antarmuka intuitif untuk membuat laporan tabular. Pilih kolom data yang diinginkan (misal: "Nama Sales", "Wilayah", "Total Omzet"), tarik ke kanvas, terapkan filter kompleks, dan lihat hasilnya seketika.</Typography>
                </div>
 
                <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
@@ -57,9 +51,7 @@ const AnalyticsPage: React.FC = () => {
                      <Calendar className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Auto-Schedule Email</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Buat laporan sekali, lalu jadwalkan pengiriman otomatis. "Kirim laporan Penjualan Mingguan ini ke Email Direksi setiap Senin pagi jam 08:00." Sistem akan menjalankannya secara disiplin.</Typography>
                </div>
 
             </div>

@@ -17,9 +17,7 @@ const ThankYouPage: React.FC = () => {
         </div>
         
         <Typography variant="h1" as="h1">Terima Kasih! Langkah Pertama Transformasi Dimulai.</Typography>
-        <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-           Tim Solution Architect kami telah menerima data permintaan Anda. Kami sedang menganalisis profil bisnis Anda dan akan menghubungi Anda via WhatsApp atau Email dalam waktu maksimal <strong>24 Jam Kerja</strong> (Senin-Jumat) untuk menjadwalkan sesi.
-        </p>
+        <Typography variant="body-lg" className="text-slate-600 leading-relaxed">Tim Solution Architect kami telah menerima data permintaan Anda. Kami sedang menganalisis profil bisnis Anda dan akan menghubungi Anda via WhatsApp atau Email dalam waktu maksimal <strong>24 Jam Kerja</strong> (Senin-Jumat) untuk menjadwalkan sesi.</Typography>
         
         <div className="h-px bg-slate-100 w-full my-8"></div>
         

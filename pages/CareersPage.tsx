@@ -61,9 +61,7 @@ const CareersPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Engineering First Culture</Typography>
-               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                  Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.
-               </p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Di BizOps (Divistant), engineer bukan sekadar "tukang coding". Anda adalah arsitek solusi.</Typography>
             </div>
 
             <div className="md:hidden">
@@ -73,27 +71,21 @@ const CareersPage: React.FC = () => {
                         <GitMerge className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Open Source DNA</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                        Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
                      <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Zap className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                        Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
                      <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <BookOpen className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Continuous Learning</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                        Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -104,27 +96,21 @@ const CareersPage: React.FC = () => {
                      <GitMerge className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Open Source DNA</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                     Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kami berkontribusi aktif pada ekosistem Open Source (Frappe/ERPNext). Kode Anda tidak hanya dipakai klien, tapi juga komunitas global.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Autonomy & Speed</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                     Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Minim birokrasi. Kami menerapkan CI/CD ketat dan deployment otomatis. Ship features, get feedback, iterate fast.</Typography>
                </div>
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <BookOpen className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Continuous Learning</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                     Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                </div>
             </div>
          </div>
@@ -222,7 +208,7 @@ const CareersPage: React.FC = () => {
          {/* Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none"></div>
 
-         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <Typography variant="h2" as="h2">Ready to Join Us?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Seluruh proses rekrutmen BizOps dikelola secara terpusat melalui portal karir Divistant. Cek posisi yang tersedia dan lamar sekarang.</Typography>
             

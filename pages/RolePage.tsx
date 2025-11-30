@@ -48,7 +48,7 @@ const RolePage: React.FC = () => {
         {/* Spotlight */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div 
              initial={{ scale: 0.8, opacity: 0 }}
              animate={{ scale: 1, opacity: 1 }}
@@ -265,9 +265,7 @@ const RolePage: React.FC = () => {
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
                   <RefreshCw className="w-3 h-3" /> Transformation
                </div>
-               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-                  From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span>
-               </h2>
+               <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-bold text-white leading-tight">From <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-orange-600">Chaos</span> to <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">Clarity</span></Typography>
                <Typography variant="body-lg" className="text-slate-400">Lihat bagaimana BizOps mengubah frustrasi operasional harian menjadi keunggulan strategis yang nyata.</Typography>
             </div>
             
@@ -297,9 +295,7 @@ const RolePage: React.FC = () => {
                               <span className="text-red-500/80 font-bold uppercase tracking-wider text-xs drop-shadow-md">Before BizOps</span>
                            </div>
                            <Typography variant="h3" as="h3" className="font-extrabold leading-snug group-hover:text-white">"{item.pain}"</Typography>
-                           <p className="text-red-200/50 leading-relaxed text-sm font-medium">
-                              {item.context}
-                           </p>
+                           <Typography variant="caption" className="leading-relaxed">{item.context}</Typography>
                         </div>
                      </div>
 
@@ -317,9 +313,7 @@ const RolePage: React.FC = () => {
                               </div>
                            </div>
                            <Typography variant="h3" as="h3" className="font-extrabold text-white">{item.gain}</Typography>
-                           <p className="text-emerald-100/70 leading-relaxed text-sm text-right md:text-left font-medium">
-                              {item.gainDesc}
-                           </p>
+                           <Typography variant="caption" className="leading-relaxed">{item.gainDesc}</Typography>
                         </div>
                      </div>
                   </motion.div>
@@ -371,9 +365,7 @@ const RolePage: React.FC = () => {
               </Link>
            </div>
            
-           <p className="mt-8 text-sm text-slate-500">
-              *Free trial 14 hari. Tidak butuh kartu kredit.
-           </p>
+           <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
         </div>
       </section>
     </div>

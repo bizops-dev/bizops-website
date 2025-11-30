@@ -69,9 +69,7 @@ const ComparisonsPage: React.FC = () => {
                 <LayoutGrid className="w-4 h-4" /> System Architecture Comparison
             </motion.div>
             <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">Upgrade Your <br/> Business Engine.</Typography>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              Bandingkan arsitektur sistem Anda saat ini dengan <span className="text-slate-900 dark:text-white font-semibold">BizOps Evolution</span>. Lihat perbedaannya secara radikal.
-            </p>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bandingkan arsitektur sistem Anda saat ini dengan <span className="text-slate-900 dark:text-white font-semibold">BizOps Evolution</span>. Lihat perbedaannya secara radikal.</Typography>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -121,7 +119,7 @@ const ComparisonsPage: React.FC = () => {
                           <Calculator className="w-6 h-6 text-white" />
                       </div>
                       <Typography variant="h3" as="h3">Hitung Kerugian</Typography>
-                      <p className="text-xs text-blue-100 mb-6 leading-relaxed">Lihat berapa banyak biaya yang terbuang karena inefisiensi sistem lama.</p>
+                      <Typography variant="body" className="leading-relaxed">Lihat berapa banyak biaya yang terbuang karena inefisiensi sistem lama.</Typography>
                       <Button 
                           size="sm" 
                           fullWidth 
@@ -165,9 +163,7 @@ const ComparisonsPage: React.FC = () => {
                                             </span>
                                         </div>
                                         <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">"{selectedData.verdict}"</Typography>
-                                        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-4 border-slate-200 dark:border-slate-800 pl-6">
-                                            {selectedData.description}
-                                        </p>
+                                        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">{selectedData.description}</Typography>
                                     </div>
 
                                     {/* Score Meter */}
@@ -234,9 +230,7 @@ const ComparisonsPage: React.FC = () => {
                                                     {isBizOps ? <Info className="w-3 h-3" /> : <XCircle className="w-3 h-3" />} 
                                                     {isBizOps ? 'Standard Capability' : 'Current Limit'}
                                                 </div>
-                                                <p className="text-slate-700 dark:text-slate-300 text-sm font-medium leading-relaxed">
-                                                    {point.them}
-                                                </p>
+                                                <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{point.them}</Typography>
                                             </div>
                                         </div>
 
@@ -251,9 +245,7 @@ const ComparisonsPage: React.FC = () => {
                                                 <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                                                     <CheckCircle2 className="w-3 h-3" /> {isBizOps ? 'BizOps Advantage' : 'BizOps Solution'}
                                                 </div>
-                                                <p className="text-slate-900 dark:text-white font-bold text-base leading-relaxed">
-                                                    {point.us}
-                                                </p>
+                                                <Typography variant="body" className="text-slate-900 dark:text-white leading-relaxed">{point.us}</Typography>
                                             </div>
                                             
                                             <div className="flex flex-col justify-center pl-4 border-l border-slate-100 dark:border-slate-800">
@@ -263,9 +255,7 @@ const ComparisonsPage: React.FC = () => {
                                                    </div>
                                                    <div>
                                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Business Impact</div>
-                                                       <p className="text-sm text-slate-600 dark:text-slate-400 italic leading-relaxed">
-                                                          "{point.impact}"
-                                                       </p>
+                                                       <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">"{point.impact}"</Typography>
                                                    </div>
                                                 </div>
                                             </div>
@@ -284,9 +274,7 @@ const ComparisonsPage: React.FC = () => {
                              <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                                 <div>
                                    <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500" /> Why Upgrade Now?</Typography>
-                                   <p className="text-slate-400 mb-8 leading-relaxed">
-                                     Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.
-                                   </p>
+                                   <Typography variant="body" className="text-slate-400 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
                                    <Button 
                                       onClick={() => navigate('/tools/roi-calculator')}
                                       className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"

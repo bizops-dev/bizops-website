@@ -109,7 +109,7 @@ const DocsPage: React.FC = () => {
                             <cat.icon className="w-6 h-6" />
                          </div>
                          <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
-                         <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
+                         <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{cat.desc}</Typography>
                          <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                             Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                          </div>
@@ -134,7 +134,7 @@ const DocsPage: React.FC = () => {
                          <cat.icon className="w-6 h-6" />
                       </div>
                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">{cat.desc}</p>
+                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{cat.desc}</Typography>
                       <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link">
                          Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                       </div>
@@ -174,9 +174,7 @@ const DocsPage: React.FC = () => {
                     <span className="text-sm text-slate-400">All systems operational</span>
                  </div>
 
-                 <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.
-                 </p>
+                 <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Integrasikan BizOps dengan aplikasi pihak ketiga Anda. Dokumentasi lengkap untuk REST API, Webhooks, dan SDK tersedia.</Typography>
                  
                  <div className="flex flex-col gap-3">
                     <Link to="/docs/api">
@@ -245,7 +243,7 @@ const DocsPage: React.FC = () => {
         <div>
            <div className="text-center mb-12">
              <Typography variant="h2" as="h2">Still need help?</Typography>
-             <p className="text-slate-600 dark:text-slate-400">Our support team and community are here for you.</p>
+             <Typography variant="body" className="text-slate-600 dark:text-slate-400">Our support team and community are here for you.</Typography>
            </div>
            
            <div className="md:hidden">

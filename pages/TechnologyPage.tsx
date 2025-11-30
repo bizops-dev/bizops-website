@@ -39,7 +39,7 @@ const TechnologyPage: React.FC = () => {
          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">The Full Stack View</Typography>
-               <p className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</Typography>
             </div>
 
             <div className="grid gap-6 relative z-10">
@@ -190,9 +190,7 @@ const TechnologyPage: React.FC = () => {
                   <Cpu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                </div>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
-               <p className="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                  Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
                <div className="space-y-6">
                   <div className="flex gap-4">
@@ -206,9 +204,7 @@ const TechnologyPage: React.FC = () => {
                      <div className="mt-1"><Settings className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Low-Code Customization</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                           Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.</Typography>
                      </div>
                   </div>
                   <div className="flex gap-4">
@@ -269,28 +265,26 @@ const TechnologyPage: React.FC = () => {
                   <div className="relative grid grid-cols-2 gap-4">
                      <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors">
                         <div className="text-blue-400 font-bold mb-2">Financial Kernel</div>
-                        <p className="text-xs text-slate-400">Double-entry ledger, multi-currency, cost centers, budgeting engine.</p>
+                        <Typography variant="body" className="text-slate-400">Double-entry ledger, multi-currency, cost centers, budgeting engine.</Typography>
                      </div>
                      <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-purple-500 transition-colors">
                         <div className="text-purple-400 font-bold mb-2">Supply Chain</div>
-                        <p className="text-xs text-slate-400">Stock ledger, serial/batch tracking, UOM conversion, auto-reorder.</p>
+                        <Typography variant="body" className="text-slate-400">Stock ledger, serial/batch tracking, UOM conversion, auto-reorder.</Typography>
                      </div>
                      <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-pink-500 transition-colors">
                         <div className="text-pink-400 font-bold mb-2">HR & Payroll</div>
-                        <p className="text-xs text-slate-400">Payroll processing, tax rules, shift management, attendance linking.</p>
+                        <Typography variant="body" className="text-slate-400">Payroll processing, tax rules, shift management, attendance linking.</Typography>
                      </div>
                      <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-emerald-500 transition-colors">
                         <div className="text-emerald-400 font-bold mb-2">CRM & Selling</div>
-                        <p className="text-xs text-slate-400">Lead pipeline, opportunity scoring, quotation versioning.</p>
+                        <Typography variant="body" className="text-slate-400">Lead pipeline, opportunity scoring, quotation versioning.</Typography>
                      </div>
                   </div>
                </div>
                <div className="order-1 md:order-2">
                   <Badge variant="outline" className="mb-6 border-blue-500/30 text-blue-300 bg-blue-500/10">The Monolith Core</Badge>
                   <Typography variant="h2" as="h2" className="font-bold text-white">ERPNext: The Business Kernel</Typography>
-                  <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                     BizOps memanfaatkan kekuatan <b>ERPNext</b> sebagai inti logika bisnis. ERPNext adalah salah satu platform ERP paling komprehensif di dunia, mencakup ribuan fitur standar industri yang siap pakai.
-                  </p>
+                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">BizOps memanfaatkan kekuatan <b>ERPNext</b> sebagai inti logika bisnis. ERPNext adalah salah satu platform ERP paling komprehensif di dunia, mencakup ribuan fitur standar industri yang siap pakai.</Typography>
                   <ul className="space-y-4">
                      <li className="flex items-start gap-3">
                         <Check className="w-6 h-6 text-green-500 mt-0.5" />
@@ -317,9 +311,7 @@ const TechnologyPage: React.FC = () => {
          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Integration Architecture</Typography>
-               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                  BizOps didesain dengan filosofi <b>API-First</b>. Setiap fitur yang Anda lihat di UI tersedia juga melalui API untuk integrasi pihak ketiga.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">BizOps didesain dengan filosofi <b>API-First</b>. Setiap fitur yang Anda lihat di UI tersedia juga melalui API untuk integrasi pihak ketiga.</Typography>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -328,9 +320,7 @@ const TechnologyPage: React.FC = () => {
                      <Share2 className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">REST API Generik</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
-                     Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.</Typography>
                   <div className="bg-slate-100 dark:bg-slate-900 p-3 rounded text-xs text-slate-600 dark:text-slate-400">
                      GET /api/resource/Invoice?filters=[["status","=","Overdue"]]
                   </div>
@@ -341,9 +331,7 @@ const TechnologyPage: React.FC = () => {
                      <Workflow className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Webhooks & Events</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                     Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.</Typography>
                </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
@@ -351,9 +339,7 @@ const TechnologyPage: React.FC = () => {
                      <Puzzle className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3">Virtual DocType</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                     Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.</Typography>
                </div>
             </div>
          </div>
@@ -366,9 +352,7 @@ const TechnologyPage: React.FC = () => {
                <div>
                   <Badge variant="outline" className="mb-6 border-emerald-500/30 text-emerald-300 bg-emerald-500/10">Performance Engineering</Badge>
                   <Typography variant="h2" as="h2" className="font-bold text-white">Didesain untuk Skala Enterprise.</Typography>
-                  <p className="text-slate-400 text-lg mb-8">
-                     Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.
-                  </p>
+                  <Typography variant="body-lg" className="text-slate-400">Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.</Typography>
                   
                   <div className="space-y-6">
                      <div className="flex gap-4">
@@ -451,9 +435,7 @@ const TechnologyPage: React.FC = () => {
             <div className="mb-16 text-center">
                <Badge variant="outline" className="mb-4 border-blue-500/30 text-blue-300 bg-blue-500/10">Scalability First</Badge>
                <Typography variant="h2" as="h2">Siap untuk Teknologi Masa Depan</Typography>
-               <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                  Arsitektur modular kami memungkinkan penambahan kemampuan baru tanpa mengganggu operasional inti.
-               </p>
+               <Typography variant="body-lg" className="text-slate-400">Arsitektur modular kami memungkinkan penambahan kemampuan baru tanpa mengganggu operasional inti.</Typography>
             </div>
 
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -463,9 +445,7 @@ const TechnologyPage: React.FC = () => {
                      <Zap className="w-6 h-6 text-purple-400" />
                   </div>
                   <Typography variant="h3" as="h3">AI & ML Integration</Typography>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                     Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.
-                  </p>
+                  <Typography variant="caption" className="text-slate-400 leading-relaxed">Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.</Typography>
                </div>
 
                {/* IoT Ready */}
@@ -474,9 +454,7 @@ const TechnologyPage: React.FC = () => {
                      <Network className="w-6 h-6 text-blue-400" />
                   </div>
                   <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                     Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.
-                  </p>
+                  <Typography variant="caption" className="text-slate-400 leading-relaxed">Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.</Typography>
                </div>
 
                {/* High Security */}
@@ -485,9 +463,7 @@ const TechnologyPage: React.FC = () => {
                      <Lock className="w-6 h-6 text-emerald-400" />
                   </div>
                   <Typography variant="h3" as="h3">Enterprise Security</Typography>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                     Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.
-                  </p>
+                  <Typography variant="caption" className="text-slate-400 leading-relaxed">Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.</Typography>
                </div>
             </CardSlider>
          </div>
@@ -504,9 +480,7 @@ const TechnologyPage: React.FC = () => {
                      <Box className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Containerized (Docker)</Typography>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                     Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Isolated Environments</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Easy Versioning</li>
@@ -518,9 +492,7 @@ const TechnologyPage: React.FC = () => {
                      <HardDrive className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Platform Agnostic</Typography>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                     Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> No Vendor Lock-in</li>
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Horizontal Scaling</li>
@@ -534,9 +506,7 @@ const TechnologyPage: React.FC = () => {
       <Section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <div className="max-w-4xl mx-auto text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Diskusikan Kebutuhan Teknis Anda</Typography>
-            <p className="text-slate-600 dark:text-slate-400 mb-10 text-lg max-w-2xl mx-auto">
-               Tim engineer kami siap menjelaskan lebih dalam tentang bagaimana arsitektur BizOps dapat beradaptasi dengan ekosistem IT perusahaan Anda.
-            </p>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim engineer kami siap menjelaskan lebih dalam tentang bagaimana arsitektur BizOps dapat beradaptasi dengan ekosistem IT perusahaan Anda.</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Link to="/docs">
                   <Button size="lg" className="shadow-xl shadow-primary-500/20">Buka Dokumentasi Developer</Button>

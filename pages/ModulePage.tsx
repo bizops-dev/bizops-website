@@ -42,9 +42,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         </div>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-          {answer}
-        </p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{answer}</Typography>
       </div>
     </div>
   );
@@ -120,7 +118,7 @@ const ModulePage: React.FC = () => {
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-slate-950">
         <SEO title="Content Not Found" />
         <Typography variant="h1" as="h1">Content Not Found</Typography>
-        <p className="text-slate-600 dark:text-slate-400 mb-4">The requested page could not be found.</p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400">The requested page could not be found.</Typography>
         <Link to="/platform"><Button>Back to Platform</Button></Link>
       </div>
     );
@@ -314,7 +312,7 @@ const ModulePage: React.FC = () => {
                                  </div>
                                  <div>
                                     <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
-                                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</p>
+                                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
                                  </div>
                               </motion.div>
                            );
@@ -368,9 +366,7 @@ const ModulePage: React.FC = () => {
                         <FeatureIcon className="w-6 h-6" />
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                        {feature.desc}
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{feature.desc}</Typography>
                   </motion.div>
                );
             })}
@@ -392,9 +388,7 @@ const ModulePage: React.FC = () => {
                            <Smartphone className="w-4 h-4" /> Mobile Native
                         </div>
                         <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
-                        <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                           {data.mobileAdvantage.desc}
-                        </p>
+                        <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
                         <div className="flex flex-col sm:flex-row gap-4">
                            <Button variant="white" className="gap-2">
                               Download App <ArrowRight className="w-4 h-4" />
@@ -444,11 +438,9 @@ const ModulePage: React.FC = () => {
             <div className="text-center mb-16">
                <Badge variant="outline" className="mb-4">Ecosystem</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
-               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                  {moduleId === 'integration' 
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">{moduleId === 'integration' 
                      ? 'Jelajahi berbagai aplikasi dan layanan yang sudah terhubung dengan ekosistem BizOps.'
-                     : 'Data mengalir otomatis antar modul. Hilangkan duplikasi input dan rekonsiliasi manual.'}
-               </p>
+                     : 'Data mengalir otomatis antar modul. Hilangkan duplikasi input dan rekonsiliasi manual.'}</Typography>
             </div>
 
             {moduleId === 'integration' ? (
@@ -460,9 +452,7 @@ const ModulePage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm">
-                           Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
                      </div>
                   </div>
                   
@@ -478,7 +468,7 @@ const ModulePage: React.FC = () => {
                                        <span className="font-bold text-slate-700 dark:text-slate-300">{app.name}</span>
                                        <Badge size="sm" variant="outline" className="text-[10px] py-0 h-5">Managed</Badge>
                                     </div>
-                                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{app.desc}</p>
+                                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">{app.desc}</Typography>
                                  </li>
                               ))}
                            </ul>
@@ -508,9 +498,7 @@ const ModulePage: React.FC = () => {
                            <div className="mt-6 text-center">
                               <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
                               <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
-                              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                 {conn.desc}
-                              </p>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{conn.desc}</Typography>
                            </div>
                         </motion.div>
                      ))}
@@ -522,7 +510,7 @@ const ModulePage: React.FC = () => {
 
       {/* 7. Testimonial (Re-ordered above FAQ) */}
       <section className="py-24 bg-white dark:bg-slate-950">
-         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Quote className="w-12 h-12 text-primary-200 dark:text-primary-900 mx-auto mb-8" />
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{testimonial.quote}"</Typography>
             <div className="flex items-center justify-center gap-4">
@@ -544,7 +532,7 @@ const ModulePage: React.FC = () => {
       {/* 8. FAQ */}
       {data.faqs && (
          <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                <div className="text-center mb-12">
                   <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
                </div>
@@ -562,7 +550,7 @@ const ModulePage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
                <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
-               <p className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</p>
+               <Typography variant="body" className="text-slate-500 dark:text-slate-400">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
             </div>
             
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -586,9 +574,7 @@ const ModulePage: React.FC = () => {
                            <ModIcon className="w-6 h-6" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
-                        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                           {mod.description}
-                        </p>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{mod.description}</Typography>
                         <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Lihat Detail <ArrowRight className="w-4 h-4 ml-1" />
                         </div>
@@ -603,7 +589,7 @@ const ModulePage: React.FC = () => {
       {/* 10. CTA Final */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
-         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.cta?.text || "Siap untuk transformasi digital?"}</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Link to="/demo">

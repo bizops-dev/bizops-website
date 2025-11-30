@@ -18,15 +18,13 @@ const PreferencesPage: React.FC = () => {
     <div className="pt-16 pb-24 bg-white">
       <SEO title="Email Preferences" description="Manage your email subscription settings." />
       
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-600">
               <Mail className="w-8 h-8" />
            </div>
            <Typography variant="h1" as="h1">Kendalikan Isi Inbox Anda</Typography>
-           <p className="text-slate-600">
-              Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.
-           </p>
+           <Typography variant="body" className="text-slate-600">Kami ingin mengirimkan konten yang bermanfaat, bukan gangguan. Pilih topik apa yang relevan bagi Anda.</Typography>
         </div>
 
         <form onSubmit={handleSave} className="space-y-8">
@@ -51,7 +49,7 @@ const PreferencesPage: React.FC = () => {
                        <label htmlFor="pref_updates" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Shield className="w-4 h-4 text-green-600" aria-hidden="true" /> Product Updates & Alerts
                        </label>
-                       <p id="pref_updates_desc" className="text-slate-500">Info fitur baru, jadwal maintenance, dan patch keamanan. (Disarankan)</p>
+                       <Typography variant="body" className="text-slate-500">Info fitur baru, jadwal maintenance, dan patch keamanan. (Disarankan)</Typography>
                     </div>
                  </div>
                  
@@ -70,7 +68,7 @@ const PreferencesPage: React.FC = () => {
                        <label htmlFor="pref_digest" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Mail className="w-4 h-4 text-blue-600" aria-hidden="true" /> BizOps Digest
                        </label>
-                       <p id="pref_digest_desc" className="text-slate-500">Artikel blog pilihan, tips manajemen, dan regulasi terbaru (Weekly).</p>
+                       <Typography variant="body" className="text-slate-500">Artikel blog pilihan, tips manajemen, dan regulasi terbaru (Weekly).</Typography>
                     </div>
                  </div>
 
@@ -88,7 +86,7 @@ const PreferencesPage: React.FC = () => {
                        <label htmlFor="pref_promo" className="font-bold text-slate-900 flex items-center gap-2 cursor-pointer">
                           <Bell className="w-4 h-4 text-amber-600" aria-hidden="true" /> Marketing Promo
                        </label>
-                       <p id="pref_promo_desc" className="text-slate-500">Undangan webinar eksklusif dan penawaran diskon khusus.</p>
+                       <Typography variant="body" className="text-slate-500">Undangan webinar eksklusif dan penawaran diskon khusus.</Typography>
                     </div>
                  </div>
 

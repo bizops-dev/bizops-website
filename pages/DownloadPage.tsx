@@ -62,7 +62,7 @@ const DownloadPage: React.FC = () => {
                        {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
                        <span className="text-sm font-bold text-slate-900 dark:text-white ml-2">4.8</span>
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Based on 1,200+ reviews from verified users.</p>
+                    <Typography variant="body" className="text-slate-500 dark:text-slate-400">Based on 1,200+ reviews from verified users.</Typography>
                  </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const DownloadPage: React.FC = () => {
                               <Bell className="w-5 h-5 text-slate-300" />
                            </div>
                            <Typography variant="h2" as="h2">Good Morning,</Typography>
-                           <p className="text-slate-400">Site Manager - Jakarta</p>
+                           <Typography variant="body" className="text-slate-400">Site Manager - Jakarta</Typography>
                         </div>
 
                         {/* App Body */}
@@ -152,9 +152,7 @@ const DownloadPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
                <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
-               <p className="text-slate-600 dark:text-slate-400">
-                  Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.
-               </p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
             </div>
 
             <div className="md:hidden">
@@ -214,11 +212,9 @@ const DownloadPage: React.FC = () => {
       {/* --- ENTERPRISE SIDELOAD --- */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
-         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <Typography variant="h2" as="h2">Enterprise Deployment?</Typography>
-            <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
-               Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.
-            </p>
+            <Typography variant="body" className="text-slate-400">Untuk penggunaan di perangkat industri (Zebra, Honeywell) tanpa Google Mobile Services (GMS), atau deployment via MDM (Mobile Device Management) internal.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 gap-2">
                   <FileCode className="w-4 h-4" /> Download APK (v4.2.1)

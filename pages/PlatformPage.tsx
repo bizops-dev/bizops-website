@@ -95,9 +95,7 @@ const PlatformPage: React.FC = () => {
                         </div>
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cap.title}</Typography>
-                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-3">
-                        {cap.description}
-                     </p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{cap.description}</Typography>
                      <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
                         <ul className="space-y-3">
                            {cap.features.slice(0, 3).map((feat: any, i: number) => (
@@ -169,9 +167,7 @@ const PlatformPage: React.FC = () => {
                <Badge className="mb-6 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">The Citizen Developer Era</Badge>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Buat Aplikasi Enterprise <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Tanpa Koding.</span></Typography>
-               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                  Berdayakan tim operasional Anda untuk menjadi <b>Citizen Developer</b>. Dengan BizOps Studio, siapa pun bisa membuat form digital, workflow approval, dan laporan kustom hanya dengan drag-and-drop.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Berdayakan tim operasional Anda untuk menjadi <b>Citizen Developer</b>. Dengan BizOps Studio, siapa pun bisa membuat form digital, workflow approval, dan laporan kustom hanya dengan drag-and-drop.</Typography>
                
                <ul className="space-y-6">
                   <li className="flex items-start gap-4">
@@ -180,9 +176,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h4" as="h4">Visual Form Builder</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                           Desain form input data kompleks dengan validasi logic, perhitungan otomatis, dan relasi antar data tanpa menulis satu baris kode pun.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Desain form input data kompleks dengan validasi logic, perhitungan otomatis, dan relasi antar data tanpa menulis satu baris kode pun.</Typography>
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -191,9 +185,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h4" as="h4">Workflow Automation</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                           Atur alur persetujuan (approval) bertingkat, notifikasi email/WA otomatis, dan trigger aksi berdasarkan perubahan status dokumen.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Atur alur persetujuan (approval) bertingkat, notifikasi email/WA otomatis, dan trigger aksi berdasarkan perubahan status dokumen.</Typography>
                      </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -202,9 +194,7 @@ const PlatformPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h4" as="h4">Instant Mobile App</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                           Setiap aplikasi yang Anda buat otomatis tersedia di mobile app (iOS/Android) dengan dukungan offline mode untuk pekerja lapangan.
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Setiap aplikasi yang Anda buat otomatis tersedia di mobile app (iOS/Android) dengan dukungan offline mode untuk pekerja lapangan.</Typography>
                      </div>
                   </li>
                </ul>
@@ -237,9 +227,7 @@ const PlatformPage: React.FC = () => {
                 </div>
                 
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{mod.title}</Typography>
-                <p className="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed flex-grow">
-                  {mod.subtitle}
-                </p>
+                <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{mod.subtitle}</Typography>
                 
                 <div className="flex flex-wrap gap-2 mt-auto">
                    {mod.features.slice(0, 3).map((f: any, idx: number) => (
@@ -265,9 +253,7 @@ const PlatformPage: React.FC = () => {
                <div>
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">API-First Ecosystem. <br />
                      <span className="text-primary-400">Bukan Pulau Terisolasi.</span></Typography>
-                  <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-lg">
-                     BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.
-                  </p>
+                  <Typography variant="body-lg" className="text-slate-400 leading-relaxed">BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.</Typography>
                   <Link to="/platform/technologies/integration">
                      <Button variant="white" size="lg">Jelajahi Library Integrasi</Button>
                   </Link>

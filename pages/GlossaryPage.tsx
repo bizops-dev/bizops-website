@@ -46,11 +46,11 @@ const GlossaryPage: React.FC = () => {
                  <div className="space-y-4">
                     <div>
                        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Definisi</span>
-                       <p className="text-slate-700 text-sm leading-relaxed">{item.def}</p>
+                       <Typography variant="caption" className="text-slate-700 leading-relaxed">{item.def}</Typography>
                     </div>
                     <div className="pt-4 border-t border-slate-200">
                        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Why It Matters</span>
-                       <p className="text-slate-600 text-sm leading-relaxed italic">"{item.context}"</p>
+                       <Typography variant="caption" className="text-slate-600 leading-relaxed">"{item.context}"</Typography>
                     </div>
                  </div>
               </div>
@@ -61,9 +61,7 @@ const GlossaryPage: React.FC = () => {
         <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
            <div className="relative z-10 max-w-2xl mx-auto">
               <Typography variant="h2" as="h2">Ingin Menerapkan Konsep Ini Secara Otomatis?</Typography>
-              <p className="text-slate-300 mb-8">
-                 BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.
-              </p>
+              <Typography variant="body" className="text-slate-300">BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.</Typography>
               <Link to="/demo">
                  <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none">
                     Coba Gratis BizOps <ArrowRight className="ml-2 w-4 h-4" />

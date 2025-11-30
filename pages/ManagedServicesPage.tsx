@@ -127,9 +127,7 @@ const ManagedServicesPage: React.FC = () => {
                            <service.icon className="w-7 h-7" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                           {service.desc}
-                        </p>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -149,9 +147,7 @@ const ManagedServicesPage: React.FC = () => {
                      <service.icon className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{service.title}</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                     {service.desc}
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.desc}</Typography>
                </div>
             ))}
          </div>
@@ -218,7 +214,7 @@ const ManagedServicesPage: React.FC = () => {
 
       {/* --- CTA --- */}
       <Section className="py-24 bg-slate-50 dark:bg-slate-950">
-         <div className="max-w-4xl mx-auto px-4 text-center">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Siap Meng-upgrade Operasional Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan sesi konsultasi gratis untuk memetakan kebutuhan operasional bisnis Anda.</Typography>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

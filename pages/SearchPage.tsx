@@ -34,7 +34,7 @@ const SearchPage: React.FC = () => {
     <div className="pt-24 pb-24 bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors">
       <SEO title="Search Results | BizOps" description="Cari modul, fitur, panduan, dan artikel di seluruh ekosistem BizOps." />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Search Header */}
         <div className="mb-12 text-center">
@@ -103,9 +103,7 @@ const SearchPage: React.FC = () => {
                        <span>{res.tag}</span>
                     </div>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{res.title}</Typography>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                       {res.snippet}
-                    </p>
+                    <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{res.snippet}</Typography>
                  </Link>
               ))
            )}

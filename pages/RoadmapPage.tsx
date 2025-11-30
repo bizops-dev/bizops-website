@@ -152,9 +152,7 @@ const RoadmapPage: React.FC = () => {
                        <div className="relative z-10">
                           <Rocket className="w-8 h-8 text-blue-400 mb-4" />
                           <Typography variant="h3" as="h3">Punya Ide Liar?</Typography>
-                          <p className="text-slate-400 text-xs mb-4 leading-relaxed">
-                             Jangan ragu sampaikan kebutuhan unik bisnis Anda.
-                          </p>
+                          <Typography variant="body" className="text-slate-400 leading-relaxed">Jangan ragu sampaikan kebutuhan unik bisnis Anda.</Typography>
                           <button 
                              onClick={() => setShowRequestForm(true)}
                              className="text-xs font-bold bg-white/10 hover:bg-white/20 transition-colors px-3 py-2 rounded-lg w-full"
@@ -243,9 +241,7 @@ const RoadmapPage: React.FC = () => {
                                          <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-400">{item.title}</Typography>
                                       </div>
                                       
-                                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-4 min-h-[3em]">
-                                         {item.desc}
-                                      </p>
+                                      <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
 
                                       <div className="flex items-center justify-between pt-3 border-t border-slate-50 dark:border-slate-800">
                                          <button 
@@ -276,7 +272,7 @@ const RoadmapPage: React.FC = () => {
                                    className="h-32 flex flex-col items-center justify-center text-center p-4 border border-dashed border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50/50 dark:bg-slate-800/50"
                                 >
                                    <Sparkles className="w-6 h-6 text-slate-300 mb-2" />
-                                   <p className="text-xs text-slate-400">Tidak ada item.</p>
+                                   <Typography variant="body" className="text-slate-400">Tidak ada item.</Typography>
                                    <button 
                                       onClick={() => setShowRequestForm(true)}
                                       className="mt-2 text-[10px] font-bold text-primary-600 hover:underline"

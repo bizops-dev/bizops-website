@@ -91,12 +91,10 @@ const HomePage: React.FC = () => {
             
             {/* Main Headline with Staggered Animation */}
             <div className="mb-8 max-w-5xl mx-auto">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                <StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2" />
+              <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]"><StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 dark:from-primary-400 dark:via-blue-400 dark:to-purple-400">
                   Seluruh Operasional Bisnis.
-                </span>
-              </h1>
+                </span></Typography>
             </div>
 
             {/* Subheadline */}
@@ -177,9 +175,7 @@ const HomePage: React.FC = () => {
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mx-auto text-center mb-16">
-                <h2 id="problems-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
-                   Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span>
-                </h2>
+                <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span></Typography>
                 <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
             </div>
              
@@ -191,9 +187,7 @@ const HomePage: React.FC = () => {
                       </div>
                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
                       <p className="text-xs font-bold text-red-500 dark:text-red-400 mb-4 uppercase tracking-wide">{prob.subtitle}</p>
-                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                         {prob.desc}
-                      </p>
+                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{prob.desc}</Typography>
                    </Card>
                 ))}
              </CardSlider>
@@ -209,13 +203,9 @@ const HomePage: React.FC = () => {
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
                <div className="max-w-2xl">
                   <Badge variant="outline-white" className="mb-4">BizOps Platform</Badge>
-                  <h2 id="solutions-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                     Satu Solusi, <br />
-                     <span className="text-primary-400">Tak Terbatas Kemungkinan.</span>
-                  </h2>
-                  <p className="text-slate-400 text-lg">
-                     Modul yang saling berbicara satu sama lain. Input di satu tempat, terupdate di mana-mana.
-                  </p>
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Satu Solusi, <br />
+                     <span className="text-primary-400">Tak Terbatas Kemungkinan.</span></Typography>
+                  <Typography variant="body-lg" className="text-slate-400">Modul yang saling berbicara satu sama lain. Input di satu tempat, terupdate di mana-mana.</Typography>
                </div>
                <Link to="/platform">
                   <Button variant="white" className="group">
@@ -273,13 +263,9 @@ const HomePage: React.FC = () => {
                      
                      <div className="relative z-10">
                         <div className="mb-10">
-                           <h3 className={`text-2xl md:text-3xl font-bold text-white mb-4 flex items-center gap-3`}>
-                              <activeSolution.icon className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
-                              {activeSolution.label}
-                           </h3>
-                           <p className="text-xl text-slate-300 leading-relaxed font-light">
-                              "{activeSolution.impact}"
-                           </p>
+                           <Typography variant="h3" as="h3"><activeSolution.icon className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
+                              {activeSolution.label}</Typography>
+                           <Typography variant="body-xl" className="text-slate-300 leading-relaxed">"{activeSolution.impact}"</Typography>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
@@ -299,7 +285,7 @@ const HomePage: React.FC = () => {
                                  <PlayCircle className={`w-8 h-8 ${activeSolution.color}`} aria-hidden="true" />
                               </div>
                               <Typography variant="h5" as="h5">Lihat Demo Modul Ini</Typography>
-                              <p className="text-xs text-slate-400 mb-4">Video singkat 2 menit penjelasan fitur.</p>
+                              <Typography variant="body" className="text-slate-400">Video singkat 2 menit penjelasan fitur.</Typography>
                               <Link to={`/platform`}>
                                  <Button size="sm" variant="outline-white">Tonton Video</Button>
                               </Link>
@@ -315,9 +301,7 @@ const HomePage: React.FC = () => {
       {/* 4. VALUE PROPOSITION (UVP) */}
       <section aria-labelledby="uvp-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
          <div className="text-center max-w-3xl mx-auto mb-16 px-4">
-            <h2 id="uvp-heading" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
-               Bukan Sekadar ERP Biasa
-            </h2>
+            <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Bukan Sekadar ERP Biasa</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
          </div>
 
@@ -333,10 +317,8 @@ const HomePage: React.FC = () => {
                            <uvp.icon className="w-7 h-7" aria-hidden="true" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{uvp.title}</Typography>
-                        <p className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-4">{uvp.subtitle}</p>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                           {uvp.desc}
-                        </p>
+                        <Typography variant="body" className="text-primary-600 dark:text-primary-400 tracking-wide">{uvp.subtitle}</Typography>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{uvp.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -351,14 +333,10 @@ const HomePage: React.FC = () => {
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-20">
-               <h2 id="pricing-heading" className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
+               <Typography variant="h2" as="h2" className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight"><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                      Bandingkan Nilai Investasi Anda
-                  </span>
-               </h2>
-               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                  BizOps bukan hanya soal "lebih murah". Ini soal <span className="font-semibold text-slate-900 dark:text-white">efisiensi total</span>. Bandingkan kompleksitas, waktu implementasi, dan hidden cost.
-               </p>
+                  </span></Typography>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps bukan hanya soal "lebih murah". Ini soal <span className="font-semibold text-slate-900 dark:text-white">efisiensi total</span>. Bandingkan kompleksitas, waktu implementasi, dan hidden cost.</Typography>
             </div>
 
             {/* 5. PRICING COMPARISON - Bento Grid Layout */}
@@ -384,9 +362,7 @@ const HomePage: React.FC = () => {
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #1</span>
                      </div>
                      <Typography variant="h3" as="h3">Fragmented Stack</Typography>
-                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
-                        Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span>
-                     </p>
+                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
                      <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
@@ -430,9 +406,7 @@ const HomePage: React.FC = () => {
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Problem #2</span>
                      </div>
                      <Typography variant="h3" as="h3">Legacy / Global ERP</Typography>
-                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium leading-relaxed">
-                        Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span>
-                     </p>
+                     <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
                      <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
@@ -485,7 +459,7 @@ const HomePage: React.FC = () => {
                                  <CheckCircle2 className="w-3.5 h-3.5" /> The BizOps Way
                               </div>
                               <div className="text-left md:text-right">
-                                 <p className="text-xs text-blue-200 uppercase tracking-widest font-extrabold">Best Value Choice</p>
+                                 <Typography variant="body" className="tracking-widest">Best Value Choice</Typography>
                               </div>
                            </div>
 
@@ -498,15 +472,15 @@ const HomePage: React.FC = () => {
                                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-green-400 to-emerald-600 rounded-l-3xl"></div>
                                <div className="grid grid-cols-2 gap-8">
                                    <div>
-                                       <p className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Flat Monthly Cost</p>
+                                       <Typography variant="body" className="text-slate-400 tracking-wider">Flat Monthly Cost</Typography>
                                        <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
-                                       <p className="text-[10px] text-slate-500 mt-1">Paket Business (50 User)</p>
+                                       <Typography variant="body" className="text-slate-500">Paket Business (50 User)</Typography>
                                    </div>
                                    <div className="flex flex-col justify-center items-end text-right">
                                        <div className="bg-green-500/20 text-green-400 px-3 py-1 rounded-lg text-sm font-bold mb-1 border border-green-500/30">
                                            HEMAT 85%
                                        </div>
-                                       <p className="text-[10px] text-slate-400">vs Fragmented Stack</p>
+                                       <Typography variant="body" className="text-slate-400">vs Fragmented Stack</Typography>
                                    </div>
                                </div>
                            </div>
@@ -517,14 +491,14 @@ const HomePage: React.FC = () => {
                                    <div className="mt-1 text-green-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Local Compliance</Typography>
-                                       <p className="text-[10px] text-slate-400 mt-0.5">Pajak, BPJS, Kasbon Ready.</p>
+                                       <Typography variant="body" className="text-slate-400">Pajak, BPJS, Kasbon Ready.</Typography>
                                    </div>
                                </div>
                                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 flex items-start gap-3">
                                    <div className="mt-1 text-blue-400"><CheckCircle2 className="w-5 h-5" /></div>
                                    <div>
                                        <Typography variant="h4" as="h4">Managed Infrastructure</Typography>
-                                       <p className="text-[10px] text-slate-400 mt-0.5">Server & Security Included.</p>
+                                       <Typography variant="body" className="text-slate-400">Server & Security Included.</Typography>
                                    </div>
                                </div>
                            </div>
@@ -553,12 +527,8 @@ const HomePage: React.FC = () => {
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                <div className="max-w-2xl">
-                  <h2 id="process-heading" className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight text-white drop-shadow-sm">
-                     Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span>
-                  </h2>
-                  <p className="text-slate-300 text-lg leading-relaxed font-light">
-                     Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.
-                  </p>
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
+                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Metodologi implementasi "Sprint" kami memangkas waktu setup hingga 70%. <strong className="text-white font-medium">Tanpa drama</strong>, tanpa biaya konsultan yang membengkak.</Typography>
                </div>
                <Link to="/services">
                   <Button variant="outline-white" className="border-white/20 hover:bg-white/10 text-white font-medium px-6">Pelajari Metodologi Kami</Button>
@@ -578,7 +548,7 @@ const HomePage: React.FC = () => {
                      <div className="relative z-10 bg-slate-900/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700/50 h-full hover:bg-slate-800 hover:border-primary-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-900/20 group-hover:-translate-y-1">
                         <div className="text-5xl font-black text-slate-800 group-hover:text-primary-500/20 transition-colors duration-500 mb-6">{step.step}</div>
                         <Typography variant="h3" as="h3" className="font-bold text-white group-hover:text-primary-400">{step.title}</Typography>
-                        <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors text-sm">{step.desc}</p>
+                        <Typography variant="caption" className="text-slate-400 leading-relaxed group-hover:text-slate-300">{step.desc}</Typography>
                      </div>
                   </div>
                ))}
@@ -590,8 +560,8 @@ const HomePage: React.FC = () => {
       <section aria-labelledby="industry-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-               <h2 id="industry-heading" className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Solusi Spesifik Industri</h2>
-               <p className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</p>
+               <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Solusi Spesifik Industri</Typography>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada solusi "Satu Ukuran untuk Semua".</Typography>
             </div>
             
             <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]" className="mb-16">
@@ -602,9 +572,7 @@ const HomePage: React.FC = () => {
                            <ind.icon className="w-6 h-6" aria-hidden="true" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{ind.title}</Typography>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
-                           {ind.description}
-                        </p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{ind.description}</Typography>
                         <div className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                            Explore <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
                         </div>
@@ -615,7 +583,7 @@ const HomePage: React.FC = () => {
 
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Didesain untuk Peran Anda</Typography>
-               <p className="text-slate-600 dark:text-slate-400">Dashboard yang relevan untuk setiap pemangku kepentingan.</p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Dashboard yang relevan untuk setiap pemangku kepentingan.</Typography>
             </div>
 
             <CardSlider desktopClassName="md:grid md:grid-cols-3 lg:grid-cols-5 gap-4" mobileItemWidth="w-[85vw] sm:w-[250px]">
@@ -626,9 +594,7 @@ const HomePage: React.FC = () => {
                            <role.icon className="w-5 h-5" aria-hidden="true" />
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{role.title}</Typography>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-                           {role.subtitle}
-                        </p>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-400">{role.subtitle}</Typography>
                      </Card>
                   </Link>
                ))}
@@ -645,12 +611,8 @@ const HomePage: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
                <div>
                   <Badge variant="outline-white" className="mb-4">Reliability & Security</Badge>
-                  <h2 id="security-heading" className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-                     Tenang, Data Anda Aman.
-                  </h2>
-                  <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                     Fokuslah mengembangkan bisnis, biarkan kami menjaga infrastruktur Anda. BizOps menjamin keamanan data setara standar perbankan.
-                  </p>
+                  <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight">Tenang, Data Anda Aman.</Typography>
+                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Fokuslah mengembangkan bisnis, biarkan kami menjaga infrastruktur Anda. BizOps menjamin keamanan data setara standar perbankan.</Typography>
                   
                   <div className="space-y-6">
                      {[
@@ -664,7 +626,7 @@ const HomePage: React.FC = () => {
                            </div>
                            <div>
                               <Typography variant="h3" as="h3" className="text-white font-bold">{item.title}</Typography>
-                              <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                              <Typography variant="caption" className="text-slate-400 leading-relaxed">{item.desc}</Typography>
                            </div>
                         </div>
                      ))}
@@ -731,10 +693,8 @@ const HomePage: React.FC = () => {
       {/* 9. INTEGRATIONS */}
       <section aria-labelledby="integration-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
          <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-            <h2 id="integration-heading" className="text-3xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Terhubung dengan Ekosistem</h2>
-            <p className="text-slate-600 dark:text-slate-400">
-               Open API kami memudahkan integrasi dengan bank, pajak, dan marketplace.
-            </p>
+            <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Terhubung dengan Ekosistem</Typography>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400">Open API kami memudahkan integrasi dengan bank, pajak, dan marketplace.</Typography>
          </div>
          
          <div className="max-w-full overflow-hidden">
@@ -763,9 +723,7 @@ const HomePage: React.FC = () => {
          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
 
          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-            <h2 id="cta-heading" className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-               Siap Mengubah Cara Anda Bekerja?
-            </h2>
+            <Typography variant="h2" as="h2" className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Siap Mengubah Cara Anda Bekerja?</Typography>
             <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                <Link to="/contact">
@@ -779,9 +737,7 @@ const HomePage: React.FC = () => {
                   </Button>
                </Link>
             </div>
-            <p className="mt-8 text-sm text-primary-200/60">
-               14-day free trial available. No credit card required.
-            </p>
+            <Typography variant="caption" className="text-primary-200/60">14-day free trial available. No credit card required.</Typography>
          </div>
       </section>
 

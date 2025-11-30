@@ -175,19 +175,15 @@ const ContactPage: React.FC = () => {
                         <div className="space-y-6">
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">
                               <Typography variant="h3" as="h3">Jakarta HQ</Typography>
-                              <p className="text-slate-400 text-sm mt-1 leading-relaxed">
-                                 Eco-S Sahid Sudirman Residence<br />
+                              <Typography variant="caption" className="text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br />
                                  Jl. Jenderal Sudirman No.86, Karet Tengsin<br />
-                                 Tanah Abang, Jakarta 10250
-                              </p>
+                                 Tanah Abang, Jakarta 10250</Typography>
                            </div>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-purple-500 transition-colors">
                               <Typography variant="h3" as="h3">Yogyakarta R&D</Typography>
-                              <p className="text-slate-400 text-sm mt-1 leading-relaxed">
-                                 Jl. Ampel No.23, Demangan Baru<br />
+                              <Typography variant="caption" className="text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru<br />
                                  Caturtunggal, Kec. Depok, Sleman<br />
-                                 DI Yogyakarta 55281
-                              </p>
+                                 DI Yogyakarta 55281</Typography>
                            </div>
                         </div>
                         
@@ -211,7 +207,7 @@ const ContactPage: React.FC = () => {
                      <div className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full flex items-center justify-between gap-4">
                         <div>
                            <Typography variant="h3" as="h3">Join Developer Community</Typography>
-                           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Chat with 500+ peers on Discord.</p>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400">Chat with 500+ peers on Discord.</Typography>
                         </div>
                         <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer">
                            <Button size="sm" variant="secondary" className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-300 rounded-xl">
@@ -240,18 +236,14 @@ const ContactPage: React.FC = () => {
                              <CheckCircle className="w-12 h-12" />
                           </motion.div>
                           <Typography variant="h2" as="h2">Pesan Diterima!</Typography>
-                          <p className="text-slate-600 dark:text-slate-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
-                             Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.
-                          </p>
+                          <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Terima kasih telah menghubungi kami. Representative kami akan menghubungi Anda melalui email atau WhatsApp dalam waktu <strong>1x24 jam</strong>.</Typography>
                           <Button variant="outline" onClick={() => setIsSent(false)}>Kirim Pesan Lain</Button>
                        </div>
                      ) : (
                        <>
                          <div className="mb-10">
                             <Typography variant="h2" as="h2">Send a Message</Typography>
-                            <p className="text-slate-500 dark:text-slate-400 text-lg">
-                               Isi formulir di bawah ini dan kami akan menghubungkan Anda dengan expert yang tepat.
-                            </p>
+                            <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Isi formulir di bawah ini dan kami akan menghubungkan Anda dengan expert yang tepat.</Typography>
                          </div>
                          
                          <form className="space-y-8" onSubmit={handleSubmit} noValidate>
@@ -301,16 +293,12 @@ const ContactPage: React.FC = () => {
                                   required
                                />
                                {errors.consent && (
-                                  <p className="text-red-500 text-xs mt-2 flex items-center gap-1 pl-7 font-medium" role="alert">
-                                     <Shield className="w-3 h-3" /> {errors.consent}
-                                  </p>
+                                  <Typography variant="body"><Shield className="w-3 h-3" /> {errors.consent}</Typography>
                                )}
                             </div>
 
                             <div className="pt-4 flex items-center justify-between gap-4 flex-wrap">
-                               <p className="text-xs text-slate-400 max-w-xs">
-                                  Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.
-                               </p>
+                               <Typography variant="body" className="text-slate-400">Situs ini dilindungi oleh reCAPTCHA dan Kebijakan Privasi Google berlaku.</Typography>
                                <Button size="lg" type="submit" isLoading={isLoading} className="h-14 px-8 text-lg shadow-xl shadow-indigo-500/20 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white w-full sm:w-auto">
                                   {isLoading ? 'Mengirim...' : 'Kirim Pesan'} <Send className="w-4 h-4 ml-2" />
                                </Button>

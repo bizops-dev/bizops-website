@@ -143,9 +143,7 @@ const ProductTourPage: React.FC = () => {
               </div>
               <Typography variant="h1" as="h1" className="font-extrabold leading-tight tracking-tight font-sans">Pilih Peran,<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Rasakan Bedanya.</span></Typography>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Simulasi hands-on bagaimana BizOps mempermudah pekerjaan setiap departemen.
-              </p>
+              <Typography variant="caption" className="text-slate-400 leading-relaxed">Simulasi hands-on bagaimana BizOps mempermudah pekerjaan setiap departemen.</Typography>
             </div>
 
             {/* Mobile Scenario Selector (Horizontal Scroll) */}
@@ -205,7 +203,7 @@ const ProductTourPage: React.FC = () => {
                  Current Mission
                </div>
                <Typography variant="h3" as="h3" className="font-bold text-white">{currentScenario.title}</Typography>
-               <p className="text-sm text-slate-400 leading-relaxed">{currentScenario.desc}</p>
+               <Typography variant="caption" className="text-slate-400 leading-relaxed">{currentScenario.desc}</Typography>
             </div>
 
           </div>
@@ -216,7 +214,7 @@ const ProductTourPage: React.FC = () => {
              {/* Mobile Info (Visible only on small screens) */}
              <div className="block lg:hidden mb-4 text-center w-full px-4 relative z-20">
                 <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentScenario.title}</Typography>
-                <p className="text-slate-400 text-sm max-w-xs mx-auto leading-snug">{currentScenario.desc}</p>
+                <Typography variant="caption" className="text-slate-400 leading-snug">{currentScenario.desc}</Typography>
              </div>
 
              {/* Loading Overlay */}
@@ -256,7 +254,7 @@ const ProductTourPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <Typography variant="h2" as="h2">Mengapa Kami Buat Simulasi Ini?</Typography>
-            <p className="text-slate-400 max-w-2xl mx-auto">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</p>
+            <Typography variant="body" className="text-slate-400">Kami percaya pada transparansi. Anda berhak tahu persis apa yang Anda beli sebelum mengeluarkan biaya sepeser pun.</Typography>
           </div>
           
           <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -290,7 +288,7 @@ const ProductTourPage: React.FC = () => {
         <div className="absolute inset-0 bg-primary-900/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Badge variant="outline" className="mb-6 border-primary-500/30 text-primary-300 bg-primary-500/10">Ready for the real thing?</Badge>
           <Typography variant="h2" as="h2" className="font-extrabold text-white tracking-tight font-sans">Bawa Efisiensi Ini ke <span className="text-primary-400">Bisnis Anda.</span></Typography>
           <Typography variant="body-xl" className="text-slate-400">Coba full version dengan data perusahaan Anda sendiri. Gratis 14 hari, tanpa komitmen.</Typography>
@@ -408,9 +406,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <Check className="w-10 h-10 md:w-12 md:h-12 text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
             </div>
             <Typography variant="h3" as="h3">Task Completed!</Typography>
-            <p className="text-slate-400 mb-8 max-w-xs mx-auto text-sm leading-relaxed">
-               Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.
-            </p>
+            <Typography variant="caption" className="text-slate-400 leading-relaxed">Bayangkan efisiensi ini dikalikan dengan ribuan transaksi.</Typography>
             <div className="flex flex-col gap-3 w-full max-w-xs">
                <Link to="/demo" className="w-full">
                   <Button fullWidth className="shadow-xl shadow-primary-500/20 bg-primary-600 hover:bg-primary-500 border-none h-12 text-base">Mulai Trial Gratis</Button>
@@ -667,7 +663,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <div className="flex justify-between items-end">
                      <div>
                         <Typography variant="h2" as="h2">Bank Reconciliation</Typography>
-                        <p className="text-slate-400 text-xs md:text-sm">Match bank statements with system vouchers.</p>
+                        <Typography variant="caption" className="text-slate-400">Match bank statements with system vouchers.</Typography>
                      </div>
                      <div className="text-right">
                         <div className="text-[10px] md:text-xs text-slate-500 font-bold uppercase">Unreconciled</div>
@@ -745,7 +741,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   
                   <div className="max-w-md text-center">
                      <Typography variant="h3" as="h3">AI Suggestion Found</Typography>
-                     <p className="text-slate-400 text-xs md:text-sm mb-6">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</p>
+                     <Typography variant="caption" className="text-slate-400">Sistem mendeteksi nominal dan nama pengirim yang cocok dengan Invoice tertunggak.</Typography>
                      <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 h-12 shadow-lg shadow-emerald-900/50 border-none">Confirm Match</Button>
                   </div>
                </div>
@@ -896,7 +892,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </div>
                   <div>
                      <Typography variant="h3" as="h3">Ready to Receive</Typography>
-                     <p className="text-slate-400 text-sm">Arahkan kamera ke barcode barang masuk.</p>
+                     <Typography variant="caption" className="text-slate-400">Arahkan kamera ke barcode barang masuk.</Typography>
                   </div>
                </div>
             )}
@@ -941,7 +937,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                       <Check className="w-12 h-12 text-white" />
                    </div>
                    <Typography variant="h3" as="h3">Stock Updated</Typography>
-                   <p className="text-slate-400 mt-2 mb-8">Inventory Level: 150 PCS</p>
+                   <Typography variant="body" className="text-slate-400">Inventory Level: 150 PCS</Typography>
                    <div className="hidden" ref={(el) => { if (el) setTimeout(onNext, 1500); }}></div>
                </div>
             )}
@@ -1030,7 +1026,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                      <Check className="w-12 h-12 text-white" />
                   </div>
                   <Typography variant="h3" as="h3">Clock In Success!</Typography>
-                  <p className="text-slate-400 mb-6">Recorded: 08:46:12 AM</p>
+                  <Typography variant="body" className="text-slate-400">Recorded: 08:46:12 AM</Typography>
                   <div className="bg-slate-900 px-4 py-2 rounded-full text-xs font-bold text-slate-300 flex items-center gap-2 border border-slate-800">
                      <MapPin className="w-3 h-3 text-pink-500" /> Head Office, Jakarta
                   </div>

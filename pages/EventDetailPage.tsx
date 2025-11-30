@@ -29,7 +29,7 @@ const EventDetailPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 text-center">
         <Typography variant="h1" as="h1">Event Tidak Ditemukan</Typography>
-        <p className="text-slate-600 dark:text-slate-400 mb-8">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</p>
+        <Typography variant="body" className="text-slate-600 dark:text-slate-400">Maaf, event yang Anda cari tidak tersedia atau sudah berakhir.</Typography>
         <Link to="/events">
           <Button>Kembali ke Events</Button>
         </Link>
@@ -135,7 +135,7 @@ const EventDetailPage: React.FC = () => {
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Tentang Event Ini</Typography>
               <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
-                <p>Bergabunglah bersama kami dalam sesi eksklusif ini untuk mendalami strategi dan praktik terbaik dalam mengoptimalkan operasional bisnis Anda. Sesi ini dirancang khusus untuk para pemimpin bisnis, manajer operasional, dan profesional yang ingin meningkatkan efisiensi melalui teknologi.</p>
+                <Typography variant="body">Bergabunglah bersama kami dalam sesi eksklusif ini untuk mendalami strategi dan praktik terbaik dalam mengoptimalkan operasional bisnis Anda. Sesi ini dirancang khusus untuk para pemimpin bisnis, manajer operasional, dan profesional yang ingin meningkatkan efisiensi melalui teknologi.</Typography>
                 <Typography variant="h3" as="h3">Apa yang Akan Anda Pelajari:</Typography>
                 <ul className="space-y-3 list-none pl-0">
                   {event.benefits?.map((benefit, i) => (
@@ -182,7 +182,7 @@ const EventDetailPage: React.FC = () => {
                     />
                     <div>
                       <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{speaker.name}</Typography>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">{speaker.role}</p>
+                      <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{speaker.role}</Typography>
                     </div>
                   </div>
                 ))}
@@ -251,9 +251,7 @@ const EventDetailPage: React.FC = () => {
                         {isSubmitting ? 'Memproses...' : 'Daftar Sekarang - Gratis'}
                       </Button>
                       
-                      <p className="text-xs text-center text-slate-400 mt-4">
-                        Dengan mendaftar, Anda menyetujui Kebijakan Privasi kami.
-                      </p>
+                      <Typography variant="body" className="text-slate-400">Dengan mendaftar, Anda menyetujui Kebijakan Privasi kami.</Typography>
                     </form>
                   </>
                 ) : (
@@ -262,12 +260,10 @@ const EventDetailPage: React.FC = () => {
                       <CheckCircle className="w-8 h-8" />
                     </div>
                     <Typography variant="h3" as="h3">Pendaftaran Berhasil!</Typography>
-                    <p className="text-slate-600 dark:text-slate-400 mb-6">
-                      Terima kasih, {formState.name}.<br/>
-                      Tiket akses dan detail event telah dikirim ke <strong>{formState.email}</strong>.
-                    </p>
+                    <Typography variant="body" className="text-slate-600 dark:text-slate-400">Terima kasih, {formState.name}.<br/>
+                      Tiket akses dan detail event telah dikirim ke <strong>{formState.email}</strong>.</Typography>
                     <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6 text-sm text-left">
-                      <p className="font-bold text-slate-900 dark:text-white mb-1">Selanjutnya:</p>
+                      <Typography variant="body" className="text-slate-900 dark:text-white">Selanjutnya:</Typography>
                       <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
                         <li>Cek inbox/spam folder Anda</li>
                         <li>Tambahkan ke kalender Anda</li>

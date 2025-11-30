@@ -36,9 +36,7 @@ const StatusPage: React.FC = () => {
             </motion.div>
             
             <Typography variant="h1" as="h1" className="font-bold text-slate-900 dark:text-white">{statusData.currentStatus}</Typography>
-            <p className="text-slate-500 dark:text-slate-400 text-lg mb-8">
-               All systems are running smoothly. No incidents reported today.
-            </p>
+            <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">All systems are running smoothly. No incidents reported today.</Typography>
 
             <div className="inline-flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700">
                <span className="flex items-center gap-2">
@@ -52,7 +50,7 @@ const StatusPage: React.FC = () => {
          </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         
         {/* --- UPTIME HISTORY --- */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
@@ -97,7 +95,7 @@ const StatusPage: React.FC = () => {
                           <div className={`w-2 h-2 rounded-full ${sys.status === 'Operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-amber-500'}`}></div>
                           <div>
                              <Typography variant="h5" as="h5" className="font-semibold text-slate-900 dark:text-white">{sys.name}</Typography>
-                             <p className="text-xs text-slate-500 dark:text-slate-400">{sys.desc}</p>
+                             <Typography variant="body" className="text-slate-500 dark:text-slate-400">{sys.desc}</Typography>
                           </div>
                        </div>
                        <div className="text-right">
@@ -138,9 +136,7 @@ const StatusPage: React.FC = () => {
                        <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><AlertTriangle className="w-4 h-4 text-amber-500" /> {inc.title}</Typography>
                        <span className="text-xs text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{inc.date}</span>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 pl-6 border-l-2 border-slate-200 dark:border-slate-800 ml-2">
-                       {inc.desc}
-                    </p>
+                    <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{inc.desc}</Typography>
                     <div className="flex items-center gap-4 pl-6 ml-2">
                        <span className="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded border border-green-100 dark:border-green-900/30">Resolved</span>
                        <span className="text-xs text-slate-500">Duration: {inc.duration}</span>
@@ -156,9 +152,7 @@ const StatusPage: React.FC = () => {
            <div className="relative z-10 max-w-lg mx-auto">
               <Bell className="w-8 h-8 mx-auto mb-4 text-primary-400" />
               <Typography variant="h3" as="h3">Get Status Updates</Typography>
-              <p className="text-slate-400 text-sm mb-6">
-                 Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.
-              </p>
+              <Typography variant="caption" className="text-slate-400">Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.</Typography>
               
               {!subscribed ? (
                  <div className="flex gap-2">

@@ -57,7 +57,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                   {story.logo}
                </div>
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
-               <p className="text-slate-400 font-medium uppercase tracking-wider text-xs mb-8">{story.industry}</p>
+               <Typography variant="body" className="text-slate-400 tracking-wider">{story.industry}</Typography>
                
                <div className="space-y-6 pt-8 border-t border-white/10">
                   {story.metrics.map((m: any, i: number) => (
@@ -77,9 +77,7 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                
                <div className="flex gap-4 mb-8">
                   <Quote className="w-10 h-10 text-blue-200 dark:text-blue-900 flex-shrink-0" />
-                  <p className="text-lg text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                     {story.desc}
-                  </p>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">{story.desc}</Typography>
                </div>
             </div>
 
@@ -89,17 +87,13 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                   <div className="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold text-xs uppercase tracking-wider">
                      <AlertTriangle className="w-4 h-4" /> Before BizOps
                   </div>
-                  <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                     {story.chaos}
-                  </p>
+                  <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.chaos}</Typography>
                </div>
                <div className="bg-green-50 dark:bg-green-900/10 p-5 rounded-xl border border-green-100 dark:border-green-900/20">
                   <div className="flex items-center gap-2 mb-2 text-green-700 dark:text-green-400 font-bold text-xs uppercase tracking-wider">
                      <CheckCircle2 className="w-4 h-4" /> After BizOps
                   </div>
-                  <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                     {story.solution}
-                  </p>
+                  <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{story.solution}</Typography>
                </div>
             </div>
          </div>
@@ -224,7 +218,7 @@ const CustomerPage: React.FC = () => {
 
       {/* --- CTA SECTION --- */}
       <section className="bg-[#0B1120] py-24 relative overflow-hidden text-white">
-         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <Typography variant="h2" as="h2">Join the Revolution</Typography>
             <Typography variant="body-xl" className="text-slate-400">Jangan biarkan inefisiensi menahan pertumbuhan Anda. Bergabunglah dengan ratusan perusahaan yang telah beralih ke BizOps.</Typography>
             <div className="flex justify-center gap-4">

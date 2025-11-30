@@ -57,9 +57,7 @@ const WhyBizOpsPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">The "Sweet Spot"</Typography>
-               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                  Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.
-               </p>
+               <Typography variant="body" className="text-slate-600 dark:text-slate-400">Mengapa bisnis Indonesia sering gagal implementasi ERP? Karena dipaksa memilih antara fleksibilitas atau kemudahan. Kami memberikan keduanya.</Typography>
             </div>
             
             <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -107,9 +105,7 @@ const WhyBizOpsPage: React.FC = () => {
                               <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
                               <div>
                                  <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
-                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                    Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.
-                                 </p>
+                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
                               </div>
                            </div>
                         </div>
@@ -119,9 +115,7 @@ const WhyBizOpsPage: React.FC = () => {
                               <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
                               <div>
                                  <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
-                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                    Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.
-                                 </p>
+                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
                               </div>
                            </div>
                         </div>
@@ -131,9 +125,7 @@ const WhyBizOpsPage: React.FC = () => {
                               <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
                               <div>
                                  <Typography variant="h3" as="h3">The BizOps Way (Kanan Atas)</Typography>
-                                 <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-                                    Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.
-                                 </p>
+                                 <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.</Typography>
                               </div>
                            </div>
                         </div>
@@ -146,9 +138,7 @@ const WhyBizOpsPage: React.FC = () => {
                            <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
                            <div>
                               <Typography variant="h3" as="h3">Legacy ERP (Kiri Atas)</Typography>
-                              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                 Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.
-                              </p>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sangat powerful dan fleksibel, tapi UX sangat rumit ("kliky"). Butuh konsultan mahal dan training berbulan-bulan. Tidak ramah mobile.</Typography>
                            </div>
                         </div>
                      </div>
@@ -158,9 +148,7 @@ const WhyBizOpsPage: React.FC = () => {
                            <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">2</div>
                            <div>
                               <Typography variant="h3" as="h3">SaaS Lokal (Kanan Bawah)</Typography>
-                              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                 Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.
-                              </p>
+                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Mudah dipakai dan murah, tapi fiturnya kaku (Take it or leave it). Sulit dikustomisasi untuk proses bisnis unik. Data terkunci di vendor.</Typography>
                            </div>
                         </div>
                      </div>
@@ -170,9 +158,7 @@ const WhyBizOpsPage: React.FC = () => {
                            <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 font-bold text-xl shadow-lg shadow-primary-500/30">3</div>
                            <div>
                               <Typography variant="h3" as="h3">The BizOps Way (Kanan Atas)</Typography>
-                              <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-                                 Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.
-                              </p>
+                              <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">Kami menggabungkan <strong>Open Source Flexibility</strong> (basis Frappe Framework) dengan <strong>Consumer-Grade UX</strong>. Anda mendapatkan sistem yang bisa dimodifikasi sesuka hati, namun tetap mudah digunakan oleh staff gudang sekalipun.</Typography>
                            </div>
                         </div>
                      </div>
@@ -199,7 +185,7 @@ const WhyBizOpsPage: React.FC = () => {
                            {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                         </div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
+                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason.desc}</Typography>
                      </Card>
                   ))}
                   
@@ -207,7 +193,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                      <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
-                     <p className="text-slate-300 mb-8 text-sm relative z-10">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</p>
+                     <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
                      <Link to="/demo" className="relative z-10 w-full mt-auto">
                         <Button fullWidth className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                      </Link>
@@ -226,7 +212,7 @@ const WhyBizOpsPage: React.FC = () => {
                         {idx === 4 && <FileCheck className="w-7 h-7 text-teal-500" />}
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{reason.title}</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm flex-grow">{reason.desc}</p>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason.desc}</Typography>
                   </Card>
                ))}
                
@@ -234,7 +220,7 @@ const WhyBizOpsPage: React.FC = () => {
                <div className="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center h-full shadow-xl relative overflow-hidden group min-h-[300px]">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <Typography variant="h3" as="h3">Siap Bertransformasi?</Typography>
-                  <p className="text-slate-300 mb-8 text-sm relative z-10">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</p>
+                  <Typography variant="caption" className="text-slate-300">Jadwalkan demo gratis 30 menit untuk melihat langsung perbedaannya.</Typography>
                   <Link to="/demo" className="relative z-10 w-full mt-auto">
                      <Button fullWidth className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                   </Link>
@@ -255,9 +241,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <Leaf className="w-3 h-3" /> Sustainability & Efficiency
                   </div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
-                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                     Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.
-                  </p>
+                  <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.</Typography>
                   
                   <div className="space-y-6">
                      <div className="flex gap-4 items-start">
@@ -286,7 +270,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <div className="flex justify-between items-end border-b border-slate-100 dark:border-slate-800 pb-6 mb-8">
                      <div>
                         <Typography variant="h4" as="h4">Server Resource Usage</Typography>
-                        <p className="text-xs text-slate-500">Benchmark: 50 Concurrent Users</p>
+                        <Typography variant="body" className="text-slate-500">Benchmark: 50 Concurrent Users</Typography>
                      </div>
                      <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">-75% Usage</span>
                   </div>

@@ -156,7 +156,7 @@ const CustomDevPage: React.FC = () => {
                              </div>
                              <div>
                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
-                                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{benefit.desc}</p>
+                                <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
                              </div>
                           </div>
                        ))}
@@ -204,9 +204,7 @@ const CustomDevPage: React.FC = () => {
                                 <SpotlightCard className="p-8 rounded-2xl hover:border-blue-200 dark:hover:border-blue-800 transition-colors">
                                   <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white"><span className="text-blue-500 mr-2 md:hidden">Case {idx + 1}:</span>
                                       {item.title}</Typography>
-                                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                      {item.desc}
-                                  </p>
+                                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
                                   <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 justify-end md:justify-start">
                                      Read Full Story <ArrowRight className="w-4 h-4" />
                                   </span>
@@ -234,9 +232,7 @@ const CustomDevPage: React.FC = () => {
            <div className="max-w-5xl mx-auto">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Key Deliverables</Typography>
-                 <p className="text-slate-600 dark:text-slate-400">
-                   Output konkrit yang akan Anda terima dari proyek custom development ini.
-                 </p>
+                 <Typography variant="body" className="text-slate-600 dark:text-slate-400">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -254,7 +250,7 @@ const CustomDevPage: React.FC = () => {
                        </div>
                        <div>
                           <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{item.title}</Typography>
-                          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                          <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</Typography>
                        </div>
                     </motion.div>
                  ))}

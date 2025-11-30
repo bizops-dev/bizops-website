@@ -13,14 +13,12 @@ const AutomationAIPage: React.FC = () => {
 
       {/* Hero */}
       <section className="bg-slate-900 py-24 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex p-3 bg-slate-800 rounded-2xl mb-6">
              <Zap className="w-8 h-8 text-primary-400" />
           </div>
           <Typography variant="h1" as="h1" className="font-bold leading-tight">Biarkan Sistem yang Bekerja,<br/>Bukan Anda.</Typography>
-          <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-            Kurangi pekerjaan manual yang repetitif dan membosankan hingga 80%. BizOps dilengkapi dengan mesin Otomatisasi (<em>Workflow Builder</em>) dan Kecerdasan Buatan (<em>Applied AI</em>) yang praktis untuk membuat bisnis Anda berjalan secara autopilot.
-          </p>
+          <Typography variant="body-xl" className="text-slate-300 leading-relaxed">Kurangi pekerjaan manual yang repetitif dan membosankan hingga 80%. BizOps dilengkapi dengan mesin Otomatisasi (<em>Workflow Builder</em>) dan Kecerdasan Buatan (<em>Applied AI</em>) yang praktis untuk membuat bisnis Anda berjalan secara autopilot.</Typography>
           <Link to="/demo">
              <Button size="lg" variant="white">Lihat Demo Otomatisasi</Button>
           </Link>
@@ -40,7 +38,7 @@ const AutomationAIPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Visual Builder</Typography>
-                           <p className="text-slate-600 dark:text-slate-400 text-sm">Antarmuka <em>drag-and-drop</em> intuitif untuk membuat aturan logika "Jika X maka Y" tanpa perlu menulis satu baris kode pun.</p>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Antarmuka <em>drag-and-drop</em> intuitif untuk membuat aturan logika "Jika X maka Y" tanpa perlu menulis satu baris kode pun.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4">
@@ -49,7 +47,7 @@ const AutomationAIPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Scenario Example</Typography>
-                           <p className="text-slate-600 dark:text-slate-400 text-sm">"Jika Stok Barang &lt; 10 unit, otomatis buat <em>Purchase Request</em> ke Vendor A, kirim email PO PDF ke vendor, dan kirim notifikasi WhatsApp ke Manajer Gudang."</p>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">"Jika Stok Barang &lt; 10 unit, otomatis buat <em>Purchase Request</em> ke Vendor A, kirim email PO PDF ke vendor, dan kirim notifikasi WhatsApp ke Manajer Gudang."</Typography>
                         </div>
                      </div>
                      <div className="flex gap-4">
@@ -58,7 +56,7 @@ const AutomationAIPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Auto-Assignment</Typography>
-                           <p className="text-slate-600 dark:text-slate-400 text-sm">Distribusi tugas otomatis berdasarkan aturan. Misal: "Setiap Lead baru yang berasal dari wilayah Jakarta Selatan otomatis di-<em>assign</em> ke Salesman Budi."</p>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Distribusi tugas otomatis berdasarkan aturan. Misal: "Setiap Lead baru yang berasal dari wilayah Jakarta Selatan otomatis di-<em>assign</em> ke Salesman Budi."</Typography>
                         </div>
                      </div>
                   </div>
@@ -92,23 +90,17 @@ const AutomationAIPage: React.FC = () => {
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
                   <BrainCircuit className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-6" />
                   <Typography variant="h3" as="h3">Smart Forecasting</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Algoritma prediktif yang menganalisis data penjualan historis 2 tahun terakhir dan tren musiman untuk merekomendasikan jumlah <em>restock</em> yang optimal bulan depan. Mencegah <em>Overstock</em> (uang mati) dan <em>Stockout</em> (hilang omzet).
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Algoritma prediktif yang menganalisis data penjualan historis 2 tahun terakhir dan tren musiman untuk merekomendasikan jumlah <em>restock</em> yang optimal bulan depan. Mencegah <em>Overstock</em> (uang mati) dan <em>Stockout</em> (hilang omzet).</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
                   <ScanLine className="w-12 h-12 text-blue-600 dark:text-blue-400 mb-6" />
                   <Typography variant="h3" as="h3">OCR Expense Scanner</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Karyawan cukup memfoto struk makan siang atau bensin. AI kami secara otomatis membaca dan mengekstrak nominal, tanggal, dan nama merchant untuk mengisi form Reimbursement. Akurasi pembacaan di atas 95%.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Karyawan cukup memfoto struk makan siang atau bensin. AI kami secara otomatis membaca dan mengekstrak nominal, tanggal, dan nama merchant untuk mengisi form Reimbursement. Akurasi pembacaan di atas 95%.</Typography>
                </div>
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
                   <ShieldAlert className="w-12 h-12 text-amber-600 dark:text-amber-400 mb-6" />
                   <Typography variant="h3" as="h3">Anomaly Detection</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                     Sistem "satpam digital" yang mendeteksi pola transaksi mencurigakan secara dini, misal: pemberian diskon manual di luar kewajaran atau transaksi pembelian di jam yang tidak wajar.
-                  </p>
+                  <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Sistem "satpam digital" yang mendeteksi pola transaksi mencurigakan secara dini, misal: pemberian diskon manual di luar kewajaran atau transaksi pembelian di jam yang tidak wajar.</Typography>
                </div>
             </div>
          </div>

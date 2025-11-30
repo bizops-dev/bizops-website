@@ -1,0 +1,192 @@
+[36m[34m🚀 Complete All Refactoring - 2,320 Opportunities[0m
+
+[36mProcessing 65 pages...[0m
+
+[32m✓ AboutPage.tsx[0m
+  [35m├─[0m 1 headings
+  [35m├─[0m 11 paragraphs
+  [35m├─[0m 4 containers
+[33m○ AccessDeniedPage.tsx[0m
+[32m✓ AccessibilityPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+[32m✓ AnalyticsPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ AssessmentPage.tsx[0m
+  [35m├─[0m 9 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ AutomationAIPage.tsx[0m
+  [35m├─[0m 7 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ BlogDetailPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ BlogPage.tsx[0m
+  [35m├─[0m 1 headings
+  [35m├─[0m 5 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ CapabilityPage.tsx[0m
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 4 containers
+[32m✓ CareersPage.tsx[0m
+  [35m├─[0m 7 paragraphs
+  [35m├─[0m 5 containers
+[33m○ ComingSoonPage.tsx[0m
+[32m✓ ComparePage.tsx[0m
+  [35m├─[0m 5 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ ComparisonsPage.tsx[0m
+  [35m├─[0m 7 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ ContactPage.tsx[0m
+  [35m├─[0m 7 paragraphs
+[32m✓ CustomDevPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+[32m✓ CustomerPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ DemoPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ DocsPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ DownloadPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 3 containers
+[33m○ ErrorPage.tsx[0m
+[32m✓ EventDetailPage.tsx[0m
+  [35m├─[0m 6 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ EventsPage.tsx[0m
+  [35m├─[0m 2 headings
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ GlossaryPage.tsx[0m
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ HomePage.tsx[0m
+  [35m├─[0m 11 headings
+  [35m├─[0m 25 paragraphs
+  [35m├─[0m 5 containers
+[32m✓ IndustryPage.tsx[0m
+  [35m├─[0m 8 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ IntegrationsPage.tsx[0m
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ LegalPage.tsx[0m
+  [35m├─[0m 8 paragraphs
+[32m✓ LoginPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+[33m○ MaintenancePage.tsx[0m
+[32m✓ ManagedServicesPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ MediaKitPage.tsx[0m
+  [35m├─[0m 11 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ MigrationPage.tsx[0m
+  [35m├─[0m 18 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ ModulePage.tsx[0m
+  [35m├─[0m 11 paragraphs
+  [35m├─[0m 9 containers
+[32m✓ MultiCompanyPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ NeedsAnalysisPage.tsx[0m
+  [35m├─[0m 3 headings
+  [35m├─[0m 11 paragraphs
+[33m○ NotFoundPage.tsx[0m
+[32m✓ PartnerApplyPage.tsx[0m
+  [35m├─[0m 8 paragraphs
+[32m✓ PartnerDirectoryPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ PartnersPage.tsx[0m
+  [35m├─[0m 9 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ PlatformPage.tsx[0m
+  [35m├─[0m 7 paragraphs
+[32m✓ PortalsPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ PreferencesPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 1 containers
+[33m○ PricingCalculatorPage.tsx[0m
+[32m✓ PricingPage.tsx[0m
+  [35m├─[0m 1 headings
+  [35m├─[0m 10 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ ProductTourPage.tsx[0m
+  [35m├─[0m 10 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ ROIPage.tsx[0m
+  [35m├─[0m 8 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ ResourcesPage.tsx[0m
+  [35m├─[0m 3 headings
+  [35m├─[0m 7 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ RoadmapPage.tsx[0m
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ RolePage.tsx[0m
+  [35m├─[0m 1 headings
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 3 containers
+[32m✓ SearchPage.tsx[0m
+  [35m├─[0m 1 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ SecurityReportPage.tsx[0m
+  [35m├─[0m 1 paragraphs
+[32m✓ ServiceDetailPage.tsx[0m
+  [35m├─[0m 5 paragraphs
+[32m✓ ServicesPage.tsx[0m
+  [35m├─[0m 1 headings
+  [35m├─[0m 6 paragraphs
+[32m✓ SitemapPage.tsx[0m
+  [35m├─[0m 1 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ SolutionsPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ StartupProgramPage.tsx[0m
+  [35m├─[0m 18 paragraphs
+  [35m├─[0m 7 containers
+[32m✓ StatusPage.tsx[0m
+  [35m├─[0m 4 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ SysReqPage.tsx[0m
+  [35m├─[0m 2 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ TechnologyPage.tsx[0m
+  [35m├─[0m 20 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ ThankYouPage.tsx[0m
+  [35m├─[0m 1 paragraphs
+[32m✓ TimelineGeneratorPage.tsx[0m
+  [35m├─[0m 3 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ TrustPage.tsx[0m
+  [35m├─[0m 11 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ UseCaseDetailPage.tsx[0m
+  [35m├─[0m 5 paragraphs
+  [35m├─[0m 2 containers
+[32m✓ UseCasesPage.tsx[0m
+  [35m├─[0m 5 paragraphs
+  [35m├─[0m 1 containers
+[32m✓ WhyBizOpsPage.tsx[0m
+  [35m├─[0m 13 paragraphs
+  [35m├─[0m 3 containers
+
+[32m[34m✨ Complete![0m
+[36mFiles changed: 59/65[0m
+[36mTotal changes: 503[0m
+  [35m├─[0m Headings: 24
+  [35m├─[0m Paragraphs: 375
+  [35m├─[0m Containers: 104
+  [35m└─[0m Flexboxes: 0

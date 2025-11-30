@@ -96,7 +96,7 @@ const StartupProgramPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
                <Typography variant="h2" as="h2">More Than Just Free Credits</Typography>
-               <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami berinvestasi pada kesuksesan jangka panjang Anda dengan ekosistem pendukung yang lengkap.</Typography>
             </div>
 
             <div className="md:hidden">
@@ -107,9 +107,7 @@ const StartupProgramPage: React.FC = () => {
                         <DollarSign className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                        Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
-                     </p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
                   </div>
 
                   {/* Card 2 */}
@@ -118,9 +116,7 @@ const StartupProgramPage: React.FC = () => {
                         <Code className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Technical Mentorship</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                        Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
-                     </p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
                   </div>
 
                   {/* Card 3 */}
@@ -129,9 +125,7 @@ const StartupProgramPage: React.FC = () => {
                         <Users className="w-7 h-7" />
                      </div>
                      <Typography variant="h3" as="h3">Founder Community</Typography>
-                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                        Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
-                     </p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                   </div>
                </CardSlider>
             </div>
@@ -143,9 +137,7 @@ const StartupProgramPage: React.FC = () => {
                      <DollarSign className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Up to $5,000 Credits</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                     Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Kredit penggunaan BizOps Cloud selama 12 bulan pertama. Cukup untuk meng-cover biaya operasional tim hingga 50 orang tanpa membebani cashflow awal Anda.</Typography>
                </div>
 
                {/* Card 2 */}
@@ -154,9 +146,7 @@ const StartupProgramPage: React.FC = () => {
                      <Code className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Technical Mentorship</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                     Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Akses langsung ("Red Phone") ke Solution Architect kami. Konsultasi desain sistem, integrasi API, dan *security best practices* agar produk Anda *scalable* sejak hari pertama.</Typography>
                </div>
 
                {/* Card 3 */}
@@ -165,9 +155,7 @@ const StartupProgramPage: React.FC = () => {
                      <Users className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Founder Community</Typography>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
-                     Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.
-                  </p>
+                  <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                </div>
             </div>
          </div>
@@ -191,9 +179,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Investor-Ready Reports</Typography>
-                           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                              Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.
-                           </p>
+                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Laporan keuangan, Burn Rate, dan MRR real-time untuk *due diligence* investor. Tidak perlu begadang menyusun laporan manual setiap akhir bulan.</Typography>
                         </div>
                      </div>
                      <div className="flex gap-5">
@@ -202,9 +188,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Enterprise-Grade Compliance</Typography>
-                           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                              Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.
-                           </p>
+                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.</Typography>
                         </div>
                      </div>
                   </div>
@@ -270,9 +254,7 @@ const StartupProgramPage: React.FC = () => {
                   Eligibility Criteria
                </div>
                <Typography variant="h2" as="h2">Choose Your Growth Track</Typography>
-               <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-                  Program kami disesuaikan dengan fase pertumbuhan startup Anda. Dari ide di garasi hingga ekspansi regional.
-               </p>
+               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Program kami disesuaikan dengan fase pertumbuhan startup Anda. Dari ide di garasi hingga ekspansi regional.</Typography>
             </div>
             
             <div className="md:hidden">
@@ -287,7 +269,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Bootstrap</Typography>
-                           <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Pre-Seed / Angel Round</p>
+                           <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
                         </div>
                      </div>
                      
@@ -296,7 +278,7 @@ const StartupProgramPage: React.FC = () => {
                            <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
                            <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-300 font-medium">Selama 12 bulan pertama.</p>
+                        <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                      </div>
                      
                      <div className="space-y-5 mb-12 flex-grow">
@@ -338,7 +320,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <div>
                            <Typography variant="h3" as="h3">Scale-Up</Typography>
-                           <p className="text-purple-200 font-medium mt-1">Seed / Series A+</p>
+                           <Typography variant="body">Seed / Series A+</Typography>
                         </div>
                      </div>
                      
@@ -347,7 +329,7 @@ const StartupProgramPage: React.FC = () => {
                            <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
                            <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
                         </div>
-                        <p className="text-slate-300 font-medium">Selama 24 bulan berturut-turut.</p>
+                        <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                      </div>
                      
                      <div className="space-y-5 mb-12 flex-grow">
@@ -391,7 +373,7 @@ const StartupProgramPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Bootstrap</Typography>
-                        <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Pre-Seed / Angel Round</p>
+                        <Typography variant="body" className="text-slate-500 dark:text-slate-400">Pre-Seed / Angel Round</Typography>
                      </div>
                   </div>
                   
@@ -400,7 +382,7 @@ const StartupProgramPage: React.FC = () => {
                         <span className="text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">90%</span>
                         <span className="text-xl font-bold text-slate-500 uppercase">OFF</span>
                      </div>
-                     <p className="text-slate-600 dark:text-slate-300 font-medium">Selama 12 bulan pertama.</p>
+                     <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                   </div>
                   
                   <div className="space-y-5 mb-12 flex-grow">
@@ -442,7 +424,7 @@ const StartupProgramPage: React.FC = () => {
                      </div>
                      <div>
                         <Typography variant="h3" as="h3">Scale-Up</Typography>
-                        <p className="text-purple-200 font-medium mt-1">Seed / Series A+</p>
+                        <Typography variant="body">Seed / Series A+</Typography>
                      </div>
                   </div>
                   
@@ -451,7 +433,7 @@ const StartupProgramPage: React.FC = () => {
                         <span className="text-5xl font-extrabold text-white tracking-tight">50%</span>
                         <span className="text-xl font-bold text-slate-400 uppercase">OFF</span>
                      </div>
-                     <p className="text-slate-300 font-medium">Selama 24 bulan berturut-turut.</p>
+                     <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                   </div>
                   
                   <div className="space-y-5 mb-12 flex-grow">
@@ -549,7 +531,7 @@ const StartupProgramPage: React.FC = () => {
 
       {/* --- FAQ (Accordion Style) --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Typography variant="h2" as="h2">Founder's FAQ</Typography>
             <div className="space-y-4">
                {[

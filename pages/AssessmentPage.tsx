@@ -266,7 +266,7 @@ const AssessmentPage = () => {
           <div className="absolute bottom-[-10%] right-[-10%] w-[60%] md:w-[40%] h-[40%] bg-indigo-900/20 rounded-full blur-[80px] md:blur-[120px]" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-20 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-20 pb-12">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -280,9 +280,7 @@ const AssessmentPage = () => {
             <Typography variant="h1" as="h1" className="font-bold text-white leading-tight tracking-tight">Unlock Your <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-indigo-400">Digital Potential</span></Typography>
             
-            <p className="text-slate-400 text-lg mb-10 leading-relaxed max-w-xl">
-              Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.
-            </p>
+            <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.</Typography>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
@@ -409,9 +407,7 @@ const AssessmentPage = () => {
                 <Users className="w-8 h-8 text-primary-400" />
               </div>
               <Typography variant="h2" as="h2">Profil Penilai</Typography>
-              <p className="text-slate-400 text-sm">
-                Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.
-              </p>
+              <Typography variant="caption" className="text-slate-400">Laporan detail dan benchmark industri akan dikirimkan ke kontak yang Anda daftarkan.</Typography>
             </div>
 
             <form onSubmit={handleLeadSubmit} className="space-y-6">
@@ -460,9 +456,7 @@ const AssessmentPage = () => {
                     placeholder="name@company.com"
                   />
                   {emailError && (
-                    <p className="text-red-400 text-xs mt-1 ml-1 flex items-center">
-                      <AlertCircle className="w-3 h-3 mr-1" /> {emailError}
-                    </p>
+                    <Typography variant="body"><AlertCircle className="w-3 h-3 mr-1" /> {emailError}</Typography>
                   )}
                 </div>
                 <div>
@@ -529,7 +523,7 @@ const AssessmentPage = () => {
             </div>
           </motion.div>
           <Typography variant="h2" as="h2">Memproses Hasil Assessment...</Typography>
-          <p className="text-slate-400">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</p>
+          <Typography variant="body" className="text-slate-400">Sistem sedang mengkalkulasi skor dan menyusun rekomendasi strategis Anda.</Typography>
         </div>
       </div>
     );
@@ -560,9 +554,7 @@ const AssessmentPage = () => {
                 </div>
 
                 <Typography variant="h1" as="h1" className="font-bold text-white">Laporan Digital Maturity</Typography>
-                <p className="text-slate-400 text-sm mt-1 print:text-gray-500">
-                  ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}
-                </p>
+                <Typography variant="caption" className="text-slate-400">ID Dokumen: {`RPT-${new Date().getFullYear()}${Math.floor(Math.random() * 1000)}`}</Typography>
               </div>
               
               {/* User Details Grid */}
@@ -622,11 +614,9 @@ const AssessmentPage = () => {
               {/* Executive Summary Text */}
               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 print:bg-white print:border-gray-300">
                 <Typography variant="h3" as="h3">Executive Summary</Typography>
-                <p className="text-slate-300 text-sm leading-relaxed print:text-gray-700 mb-4">
-                  Perusahaan Anda berada pada tahap <strong>{results.maturityLevel.title}</strong>. {results.maturityLevel.description}
+                <Typography variant="caption" className="text-slate-300 leading-relaxed">Perusahaan Anda berada pada tahap <strong>{results.maturityLevel.title}</strong>. {results.maturityLevel.description}
                   <br/><br/>
-                  Untuk mencapai level berikutnya, fokus utama Anda harus pada integrasi lintas fungsi dan pemanfaatan data yang lebih strategis.
-                </p>
+                  Untuk mencapai level berikutnya, fokus utama Anda harus pada integrasi lintas fungsi dan pemanfaatan data yang lebih strategis.</Typography>
                 {/* Methodology Button Moved Here */}
                 <button 
                   onClick={() => setShowMethodology(!showMethodology)}
@@ -705,8 +695,8 @@ const AssessmentPage = () => {
                             {score < 3 ? 'Priority' : 'On Track'}
                           </span>
                         </div>
-                        <p className="text-white text-lg font-bold mb-3 print:text-black">{rec.title}</p>
-                        <p className="text-slate-400 text-sm mb-5 leading-relaxed print:text-gray-700">{rec.advice}</p>
+                        <Typography variant="body-lg">{rec.title}</Typography>
+                        <Typography variant="caption" className="text-slate-400 leading-relaxed">{rec.advice}</Typography>
                         <div className="flex flex-wrap gap-2">
                           {rec.modules.map((m: string) => (
                             <span key={m} className="text-[10px] font-medium bg-slate-950 text-slate-300 px-3 py-1.5 rounded-lg border border-white/10 group-hover:border-white/20 print:bg-white print:text-black print:border-gray-400">
@@ -805,7 +795,7 @@ const AssessmentPage = () => {
                 </button>
                 <div className="mb-6">
                   <Typography variant="h3" as="h3">Referensi Metodologi</Typography>
-                  <p className="text-slate-400 text-sm">Dasar penilaian skor maturity Anda.</p>
+                  <Typography variant="caption" className="text-slate-400">Dasar penilaian skor maturity Anda.</Typography>
                 </div>
                 <MethodologyReference />
               </div>

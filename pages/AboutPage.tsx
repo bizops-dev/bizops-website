@@ -127,10 +127,8 @@ const AboutPage: React.FC = () => {
                           <span className={`text-sm font-bold uppercase tracking-widest transition-colors ${idx === 1 ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300'}`}>{item.year}</span>
                        </div>
                        <div className={`md:col-span-4 p-8 md:p-10 rounded-3xl border transition-all duration-500 hover:shadow-2xl ${idx === 1 ? 'bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900/10 dark:to-slate-900 border-indigo-100 dark:border-indigo-900 shadow-lg' : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'}`}>
-                          <h3 className={`text-2xl font-bold mb-4 ${idx === 1 ? 'text-indigo-900 dark:text-indigo-100' : 'text-slate-900 dark:text-white'}`}>{item.title}</h3>
-                          <p className={`leading-relaxed text-base md:text-lg font-light ${idx === 1 ? 'text-indigo-800/80 dark:text-indigo-200/70' : 'text-slate-600 dark:text-slate-400'}`}>
-                             {item.desc}
-                          </p>
+                          <Typography variant="h3" as="h3">{item.title}</Typography>
+                          <Typography variant="body">{item.desc}</Typography>
                        </div>
                     </div>
                  </motion.div>
@@ -149,7 +147,7 @@ const AboutPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16 md:mb-20">
                <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Core Values: <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">The OS of Our Culture</span></Typography>
-               <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</p>
+               <Typography variant="body-lg" className="text-slate-400">Prinsip-prinsip yang tertanam dalam setiap baris kode yang kami tulis.</Typography>
             </div>
             
             {/* Mobile View: Slider */}
@@ -167,9 +165,7 @@ const AboutPage: React.FC = () => {
                           {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
                        </div>
                        <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
-                       <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
-                          {val.manifesto}
-                       </p>
+                       <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                        <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
                           <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
                           <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
@@ -193,9 +189,7 @@ const AboutPage: React.FC = () => {
                        {idx === 2 && <ShieldCheck className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors" />}
                     </div>
                     <Typography variant="h3" as="h3" className="font-bold text-white">{val.title}</Typography>
-                    <p className="text-slate-400 mb-10 text-base leading-relaxed flex-grow">
-                       {val.manifesto}
-                    </p>
+                    <Typography variant="body" className="text-slate-400 leading-relaxed">{val.manifesto}</Typography>
                     <div className={`mt-auto bg-slate-900/50 p-6 rounded-xl border-l-4 ${idx === 0 ? 'border-blue-500' : idx === 1 ? 'border-emerald-500' : 'border-amber-500'}`}>
                        <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-emerald-400' : 'text-amber-400'}`}>Bukti Nyata</span>
                        <span className="text-xs md:text-sm text-slate-300 leading-snug block">{val.proof}</span>
@@ -241,12 +235,10 @@ const AboutPage: React.FC = () => {
                            {/* Overlay Content */}
                            <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                               <div className="text-white">
-                                 <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
+                                 <Typography variant="body" className="tracking-widest">{member.role}</Typography>
                                  <Typography variant="h3" as="h3" className="font-bold leading-tight">{member.name}</Typography>
                                  <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
-                                    <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
-                                       "{member.quote}"
-                                    </p>
+                                    <Typography variant="body" className="text-slate-200 leading-relaxed">"{member.quote}"</Typography>
                                  </div>
                               </div>
                            </div>
@@ -279,12 +271,10 @@ const AboutPage: React.FC = () => {
                         {/* Overlay Content */}
                         <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                            <div className="text-white">
-                              <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest mb-2">{member.role}</p>
+                              <Typography variant="body" className="tracking-widest">{member.role}</Typography>
                               <Typography variant="h3" as="h3" className="font-bold leading-tight">{member.name}</Typography>
                               <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
-                                 <p className="text-xs text-slate-200 italic opacity-0 group-hover:opacity-100 transition-opacity delay-100 leading-relaxed border-l-2 border-indigo-500 pl-3">
-                                    "{member.quote}"
-                                 </p>
+                                 <Typography variant="body" className="text-slate-200 leading-relaxed">"{member.quote}"</Typography>
                               </div>
                            </div>
                         </div>
@@ -338,21 +328,17 @@ const AboutPage: React.FC = () => {
                            <div className="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-bold">
                               <MapPin className="w-5 h-5 text-indigo-500" /> HQ (Jakarta)
                            </div>
-                           <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                              Eco-S Sahid Sudirman Residence<br/>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br/>
                               Jl. Jenderal Sudirman No.86,<br/>
                               Karet Tengsin, Tanah Abang,<br/>
-                              Jakarta 10250.
-                           </p>
+                              Jakarta 10250.</Typography>
                         </div>
                         <div>
                            <div className="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-bold">
                               <Code className="w-5 h-5 text-purple-500" /> R&D (Yogyakarta)
                            </div>
-                           <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                              Jl. Ampel No.23, Demangan Baru,<br/>
-                              Sleman, DIY 55281.
-                           </p>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru,<br/>
+                              Sleman, DIY 55281.</Typography>
                         </div>
                      </div>
                   </div>
@@ -368,11 +354,9 @@ const AboutPage: React.FC = () => {
                            <Target className="w-8 h-8 text-red-400" />
                         </div>
                         <Typography variant="h3" as="h3">Engineering First DNA</Typography>
-                        <p className="text-slate-300 mb-10 text-lg leading-relaxed font-light">
-                           Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
+                        <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Kami bukan sekadar perusahaan penjualan. <strong className="text-white font-semibold">70% dari total tim kami</strong> adalah Product, Engineering, & QA. 
                            <br/><br/>
-                           Ini memastikan fokus utama perusahaan adalah inovasi produk dan stabilitas sistem, bukan sekadar operasi marketing yang agresif. Kami berinvestasi pada kode, bukan hanya pada iklan.
-                        </p>
+                           Ini memastikan fokus utama perusahaan adalah inovasi produk dan stabilitas sistem, bukan sekadar operasi marketing yang agresif. Kami berinvestasi pada kode, bukan hanya pada iklan.</Typography>
                         <div className="flex items-center gap-6 pt-8 border-t border-white/10">
                            <div className="flex -space-x-4">
                               {[1,2,3,4].map(i => (

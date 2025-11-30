@@ -273,7 +273,7 @@ const BlogDetailPage: React.FC = () => {
                         <div className="relative z-10">
                            <BookOpen className="w-8 h-8 text-blue-400 mb-4" />
                            <Typography variant="h3" as="h3">Weekly Intelligence</Typography>
-                           <p className="text-slate-400 text-sm mb-6">Strategic insights for leaders.</p>
+                           <Typography variant="caption" className="text-slate-400">Strategic insights for leaders.</Typography>
                            <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none rounded-xl font-bold">Subscribe</Button>
                         </div>
@@ -316,9 +316,7 @@ const BlogDetailPage: React.FC = () => {
                         </div>
                         <div className="p-8 flex flex-col flex-1">
                            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white leading-tight">{rp.title}</Typography>
-                           <p className="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-6 flex-grow">
-                              {rp.summary}
-                           </p>
+                           <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{rp.summary}</Typography>
                            <div className="flex items-center text-sm font-bold text-blue-600 group-hover:translate-x-2 transition-transform mt-auto">
                               Read Article <ArrowRight className="w-4 h-4 ml-2" />
                            </div>

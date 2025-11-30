@@ -227,9 +227,7 @@ const MetricCard = ({ text, index, theme }: { text: string; index: number; theme
              <CheckCircle2 className="w-6 h-6" />
           </div>
         )}
-        <p className="text-slate-700 dark:text-slate-300 font-medium text-lg leading-relaxed">
-          {description}
-        </p>
+        <Typography variant="body-lg" className="text-slate-700 dark:text-slate-300 leading-relaxed">{description}</Typography>
       </div>
     </motion.div>
   );
@@ -372,9 +370,7 @@ const UseCaseDetailPage: React.FC = () => {
                 </div>
                 <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Problem Statement</Typography>
                 <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300">
-                  <p className="text-xl leading-relaxed font-light">
-                    {data.challenge}
-                  </p>
+                  <Typography variant="body-xl" className="leading-relaxed">{data.challenge}</Typography>
                   <Typography variant="body" className="text-slate-500">Hambatan ini berdampak signifikan pada efisiensi operasional dan potensi pertumbuhan pendapatan perusahaan dalam jangka panjang, sehingga membutuhkan intervensi strategis segera.</Typography>
                 </div>
               </motion.div>
@@ -397,9 +393,7 @@ const UseCaseDetailPage: React.FC = () => {
                     </div>
                     <div>
                       <Typography variant="h3" as="h3">Custom Implementation</Typography>
-                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                        {data.solution}
-                      </p>
+                      <Typography variant="body" className="text-slate-700 dark:text-slate-300 leading-relaxed">{data.solution}</Typography>
                     </div>
                   </div>
                 </div>
@@ -440,9 +434,7 @@ const UseCaseDetailPage: React.FC = () => {
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary-500 to-indigo-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   
                   <Typography variant="h3" as="h3" className="font-bold">Hadapi Tantangan Serupa?</Typography>
-                  <p className="text-slate-400 mb-8 leading-relaxed relative z-10 text-sm">
-                    Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.
-                  </p>
+                  <Typography variant="caption" className="text-slate-400 leading-relaxed">Jangan biarkan inefisiensi menghambat pertumbuhan bisnis Anda. Konsultasikan kebutuhan {data.industry} Anda sekarang.</Typography>
                   
                   <Link to="/contact" className="relative z-10 block">
                     <Button className="w-full bg-white text-slate-900 hover:bg-slate-100 border-none font-bold h-12">
@@ -506,9 +498,7 @@ const UseCaseDetailPage: React.FC = () => {
                       </div>
                     </div>
                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{item.title}</Typography>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
-                      {item.subtitle}
-                    </p>
+                    <Typography variant="caption" className="text-slate-500 dark:text-slate-400">{item.subtitle}</Typography>
                   </Link>
                 );
               })}

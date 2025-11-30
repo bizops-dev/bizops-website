@@ -32,7 +32,7 @@ const ComparePage: React.FC = () => {
             BizOps vs {data.name}
           </div>
           <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight">{data.verdict}</Typography>
-          <p className="text-xl text-slate-600">{data.description}</p>
+          <Typography variant="body-xl" className="text-slate-600">{data.description}</Typography>
         </div>
 
         {/* LAYOUT 1: MATRIX (For Odoo) */}
@@ -78,7 +78,7 @@ const ComparePage: React.FC = () => {
                   <div className="relative z-10 max-w-3xl">
                      <Typography variant="h2" as="h2" className="font-bold"><Layers className="w-6 h-6 text-primary-400" />
                         Verdict</Typography>
-                     <p className="text-lg text-slate-300 mb-8">{data.verdict}</p>
+                     <Typography variant="body-lg" className="text-slate-300">{data.verdict}</Typography>
                      <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-6">
                         <Typography variant="h3" as="h3">Key Takeaways:</Typography>
                         <ul className="space-y-2 leading-relaxed">
@@ -143,12 +143,12 @@ const ComparePage: React.FC = () => {
                     <div className="md:col-span-1">
                        <div className="text-xs font-bold text-slate-400 uppercase mb-2">{data?.name || 'Competitor'}</div>
                        <div className="text-red-500 font-bold mb-2 flex items-center gap-2"><XCircle className="w-4 h-4" /> {feat.them}</div>
-                       <p className="text-sm text-slate-600">{feat.themDesc}</p>
+                       <Typography variant="caption" className="text-slate-600">{feat.themDesc}</Typography>
                     </div>
                     <div className="md:col-span-1 bg-primary-50 -m-4 p-4 rounded-xl">
                        <div className="text-xs font-bold text-primary-600 uppercase mb-2">BizOps</div>
                        <div className="text-slate-900 font-bold mb-2 flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> {feat.us}</div>
-                       <p className="text-sm text-slate-700">{feat.usDesc}</p>
+                       <Typography variant="caption" className="text-slate-700">{feat.usDesc}</Typography>
                     </div>
                  </div>
               ))}
@@ -158,7 +158,7 @@ const ComparePage: React.FC = () => {
         {/* Verdict & CTA */}
         <div className="max-w-4xl mx-auto text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
-           <p className="text-lg text-slate-600 mb-8 italic leading-relaxed">"{data.verdict}"</p>
+           <Typography variant="body-lg" className="text-slate-600 leading-relaxed">"{data.verdict}"</Typography>
            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/demo">
                  <Button size="lg" className="shadow-lg">Jadwalkan Demo & Migrasi</Button>
