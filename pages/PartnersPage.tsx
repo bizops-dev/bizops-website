@@ -56,7 +56,7 @@ const PartnersPage: React.FC = () => {
   };
 
   return (
-    <Stack direction="col" gap={4} className="bg-slate-50 dark:bg-slate-950 transition-colors">
+    <div className="flex flex-col bg-slate-50 dark:bg-slate-950 transition-colors">
       <SEO 
         title="Program Partner Implementasi & Reseller ERP Indonesia" 
         description="Peluang bisnis bagi Konsultan & Software House. Dapatkan recurring revenue dan fee implementasi dengan menjadi partner resmi BizOps."
@@ -123,37 +123,37 @@ const PartnersPage: React.FC = () => {
              >
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 rounded-full blur-[60px]"></div>
                 <div className="relative bg-slate-800/50 backdrop-blur-md border border-slate-700 p-8 rounded-3xl shadow-2xl">
-                   <Stack direction="row" gap={4} align="center" className="mb-8 border-b border-slate-700 pb-6">
-                      <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-white rounded-lg shadow-lg">
+                   <div className="flex items-center gap-4 mb-8 border-b border-slate-700 pb-6">
+                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
                          <TrendingUp className="w-6 h-6 text-blue-600" />
-                      </Stack>
+                      </div>
                       <div>
                          <div className="text-sm text-slate-400">Partner Dashboard</div>
                          <div className="font-bold text-white text-xl">Revenue Overview</div>
                       </div>
-                   </Stack>
+                   </div>
                    <Stack direction="col" gap={4}>
-                      <Stack direction="row" gap={4} align="center" justify="between" className="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
-                         <Stack direction="row" gap={3} align="center">
+                      <div className="flex justify-between items-center p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                         <div className="flex items-center gap-3">
                             <Code className="w-5 h-5 text-emerald-400" />
                             <div>
                                <div className="text-slate-300 font-bold">Implementation Fee</div>
                                <div className="text-xs text-slate-500">Project: PT Maju Jaya</div>
                             </div>
-                         </Stack>
+                         </div>
                          <span className="text-emerald-400 text-sm">+ Rp 150.000.000</span>
-                      </Stack>
-                      <Stack direction="row" gap={4} align="center" justify="between" className="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
-                         <Stack direction="row" gap={3} align="center">
+                      </div>
+                      <div className="flex justify-between items-center p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                         <div className="flex items-center gap-3">
                             <RefreshCw className="w-5 h-5 text-blue-400" />
                             <div>
                                <div className="text-slate-300 font-bold">Recurring Commission</div>
                                <div className="text-xs text-slate-500">Q3 2024 Payout</div>
                             </div>
-                         </Stack>
+                         </div>
                          <span className="text-blue-400 text-sm">+ Rp 45.000.000</span>
-                      </Stack>
-                      <Stack direction="row" gap={4} align="center" justify="between" className="mt-6 pt-4 border-t border-slate-700">
+                      </div>
+                      <div className="mt-6 pt-4 border-t border-slate-700 flex justify-between items-center">
                          <span className="text-slate-400 font-medium">Total Partner Earnings</span>
                          <Typography variant="body" className="text-2xl text-white">Rp 195.000.000</Typography>
                       </div>
@@ -174,8 +174,8 @@ const PartnersPage: React.FC = () => {
          <div className="md:hidden">
             <CardSlider mobileItemWidth="w-[85vw] sm:w-[400px]">
                {/* Referral Partner */}
-               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group flex flex-col">
+                  <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Gift className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Referral Partner</Typography>
@@ -191,9 +191,9 @@ const PartnersPage: React.FC = () => {
                </div>
 
                {/* Implementation Partner */}
-               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10 flex flex-col">
                   <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">POPULAR</div>
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
+                  <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
                      <Code className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Implementation Partner</Typography>
@@ -209,8 +209,8 @@ const PartnersPage: React.FC = () => {
                </div>
 
                {/* Managed Services Partner */}
-               <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+               <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group flex flex-col">
+                  <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Briefcase className="w-7 h-7" />
                   </div>
                   <Typography variant="h3" as="h3">Managed Services Partner</Typography>
@@ -229,8 +229,8 @@ const PartnersPage: React.FC = () => {
 
          <Container size="6xl" className="hidden md:grid md:grid-cols-3 gap-8">
             {/* Referral Partner */}
-            <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group">
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group flex flex-col">
+               <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Gift className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Referral Partner</Typography>
@@ -246,9 +246,9 @@ const PartnersPage: React.FC = () => {
             </div>
 
             {/* Implementation Partner */}
-            <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10">
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-primary-500 shadow-xl relative z-10 flex flex-col">
                <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">POPULAR</div>
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
+               <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center mb-6">
                   <Code className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Implementation Partner</Typography>
@@ -264,8 +264,8 @@ const PartnersPage: React.FC = () => {
             </div>
 
             {/* Managed Services Partner */}
-            <Stack direction="col" gap={4} className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group">
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+            <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 transition-all group flex flex-col">
+               <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Briefcase className="w-7 h-7" />
                </div>
                <Typography variant="h3" as="h3">Managed Services Partner</Typography>
@@ -297,16 +297,16 @@ const PartnersPage: React.FC = () => {
             {/* Controls */}
             <Stack direction="col" gap={8} className="lg:col-span-5 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
                
-               <Stack direction="row" gap={2} align="center" className="mb-2 text-blue-400 font-bold uppercase tracking-wider text-xs">
+               <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold uppercase tracking-wider text-xs">
                   <Sliders className="w-4 h-4" /> Konfigurasi Bisnis
-               </Stack>
+               </div>
 
                {/* Selling Price */}
                <div>
-                  <Stack direction="row" gap={4} justify="between" className="mb-2">
+                  <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Lisensi (Bulan)</Typography>
                      <Typography variant="caption" className="text-white">{formatCurrency(sellingPrice)}</Typography>
-                  </Stack>
+                  </div>
                   <input 
                      type="range" min="1000000" max="10000000" step="500000"
                      value={sellingPrice} onChange={(e) => setSellingPrice(Number(e.target.value))}
@@ -317,10 +317,10 @@ const PartnersPage: React.FC = () => {
 
                {/* Setup Fee */}
                <div>
-                  <Stack direction="row" gap={4} justify="between" className="mb-2">
+                  <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Biaya Setup (One-time)</Typography>
                      <Typography variant="caption" className="text-white">{formatCurrency(setupFee)}</Typography>
-                  </Stack>
+                  </div>
                   <input 
                      type="range" min="5000000" max="100000000" step="1000000"
                      value={setupFee} onChange={(e) => setSetupFee(Number(e.target.value))}
@@ -333,10 +333,10 @@ const PartnersPage: React.FC = () => {
 
                {/* Partner Cost */}
                <div>
-                  <Stack direction="row" gap={4} justify="between" className="mb-2">
+                  <div className="flex justify-between mb-2">
                      <Typography variant="caption" className="text-sm font-medium text-slate-300">Harga Dasar Partner</Typography>
                      <Typography variant="caption" className="text-slate-400">{formatCurrency(partnerCost)}</Typography>
-                  </Stack>
+                  </div>
                   <input 
                      type="range" min="200000" max="9000000" step="100000"
                      value={partnerCost} onChange={(e) => setPartnerCost(Number(e.target.value))}
@@ -399,7 +399,7 @@ const PartnersPage: React.FC = () => {
                   
                   {/* Year 1 Bar */}
                   <div className="mb-6">
-                     <Stack direction="row" gap={4} align="end" justify="between" className="mb-2">
+                     <div className="flex justify-between items-end mb-2">
                         <div>
                            <span className="font-bold text-lg">Tahun Pertama</span>
                            <Typography variant="body" className="text-slate-500">Total Profit Bersih (License Margin + Implementation Fees)</Typography>
@@ -407,7 +407,7 @@ const PartnersPage: React.FC = () => {
                         <div className="text-right">
                            <Typography variant="body" className="text-2xl text-slate-900 dark:text-white">{formatCurrency(year1Profit)}</Typography>
                         </div>
-                     </Stack>
+                     </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-4 overflow-hidden">
                         <motion.div 
                            initial={{ width: 0 }}
@@ -420,7 +420,7 @@ const PartnersPage: React.FC = () => {
 
                   {/* Year 2 Bar */}
                   <div className="mb-8">
-                     <Stack direction="row" gap={4} align="end" justify="between" className="mb-2">
+                     <div className="flex justify-between items-end mb-2">
                         <div>
                            <span className="font-bold text-lg">Tahun Kedua</span>
                            <Typography variant="body" className="text-slate-500">Dengan akumulasi klien tahun sebelumnya</Typography>
@@ -428,7 +428,7 @@ const PartnersPage: React.FC = () => {
                         <div className="text-right">
                            <Typography variant="body" className="text-3xl text-transparent">{formatCurrency(year2Profit)}</Typography>
                         </div>
-                     </Stack>
+                     </div>
                      <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-6 overflow-hidden">
                         <motion.div 
                            initial={{ width: 0 }}
@@ -441,7 +441,7 @@ const PartnersPage: React.FC = () => {
                      </div>
                   </div>
 
-                  <Stack direction="row" gap={3} align="start" className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800 text-sm text-blue-900 dark:text-blue-300 leading-relaxed">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800 text-sm text-blue-900 dark:text-blue-300 leading-relaxed flex items-start gap-3">
                      <Users className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                      <div>
                         <strong className="font-bold">Strategi Reseller:</strong> Fokus pada volume dan retensi klien. Semakin lama klien berlangganan, semakin besar akumulasi profit pasif Anda tanpa perlu effort penjualan ulang.
@@ -459,7 +459,7 @@ const PartnersPage: React.FC = () => {
             <CardSlider mobileItemWidth="w-[85vw] sm:w-[350px]">
                {partnerContent.benefits.map((benefit, idx) => (
                   <div key={idx} className="flex flex-col items-start h-full p-4 md:p-0 bg-white dark:bg-slate-900/50 md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none border border-slate-100 dark:border-slate-800 md:border-none">
-                     <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-900 dark:text-white mb-4">
+                     <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
                         <benefit.icon className="w-6 h-6" />
                      </div>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
@@ -472,7 +472,7 @@ const PartnersPage: React.FC = () => {
          <Grid cols={4} gap={8} className="hidden">
             {partnerContent.benefits.map((benefit, idx) => (
                <div key={idx} className="flex flex-col items-start h-full p-4 md:p-0 bg-white dark:bg-slate-900/50 md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none border border-slate-100 dark:border-slate-800 md:border-none">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-900 dark:text-white mb-4">
+                  <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
                      <benefit.icon className="w-6 h-6" />
                   </div>
                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{benefit.title}</Typography>
@@ -482,7 +482,7 @@ const PartnersPage: React.FC = () => {
          </Grid>
       </section>
 
-    </Stack>
+    </div>
   );
 };
 
