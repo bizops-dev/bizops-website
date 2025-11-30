@@ -83,6 +83,23 @@ export default defineConfig(({ mode }) => {
         treeshake: {
           moduleSideEffects: false,
         },
+        // Test configuration
+        test: {
+          globals: true,
+          environment: 'jsdom',
+          setupFiles: './tests/setup.ts',
+          coverage: {
+            provider: 'v8',
+            reporter: ['text', 'json', 'html'],
+            exclude: [
+              'node_modules/',
+              'tests/',
+              '**/*.stories.tsx',
+              '**/*.test.tsx',
+              'dist/',
+            ],
+          },
+        },
         // Target modern browsers for smaller bundles
         target: 'es2022',
       },

@@ -1,0 +1,64 @@
+# Percy Configuration
+# Visual regression testing for BizOps Website
+
+version: 2
+
+# Storybook configuration
+storybook:
+  # Wait for assets to load
+  waitForTimeout: 30000
+  waitForSelector: '.sb-show-main'
+  
+  # Responsive breakpoints
+  widths:
+    - 375   # Mobile
+    - 768   # Tablet
+    - 1280  # Desktop
+    - 1920  # Large Desktop
+
+# Snapshot configuration
+snapshot:
+  # Percy CSS to hide dynamic content
+  percyCSS: |
+    /* Hide dynamic timestamps */
+    [data-testid="timestamp"] { visibility: hidden; }
+    
+    /* Hide animations for consistent snapshots */
+    * {
+      animation-duration: 0s !important;
+      transition-duration: 0s !important;
+    }
+  
+  # Minimum height for snapshots
+  minHeight: 1024
+  
+  # Enable JavaScript
+  enableJavaScript: true
+
+# Discovery configuration
+discovery:
+  # Allowed hostnames
+  allowedHostnames:
+    - localhost
+    - 127.0.0.1
+  
+  # Network idle timeout
+  networkIdleTimeout: 750
+
+# Static configuration (for static sites)
+static:
+  # Include/exclude patterns
+  include:
+    - "**/*.html"
+  exclude:
+    - "node_modules/**"
+    - "dist/stats.html"
+
+# CI/CD configuration
+ci:
+  # Auto-approve on main branch
+  autoApproveOnMain: false
+  
+  # Required approvals
+  requiredApprovals: 1
+
