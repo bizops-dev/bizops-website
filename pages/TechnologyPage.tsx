@@ -45,187 +45,187 @@ const TechnologyPage: React.FC = () => {
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</Typography>
             </div>
 
-            <Grid cols={3} gap={6} className="relative z-10">
+            <div className="grid gap-6 relative z-10">
                {/* Layer: Client */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
+                  <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-2">Presentation Layer</Badge>
                      <Typography variant="h3" as="h3">Client Apps</Typography>
-                  </Stack>
+                  </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">SPA Desk (Vue/React)</Typography>
-                     </Stack>
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     </div>
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Smartphone className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Mobile App (Flutter)</Typography>
-                     </Stack>
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     </div>
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Public Portal (Jinja)</Typography>
-                     </Stack>
+                     </div>
                   </Grid>
                </Grid>
 
                {/* Layer: Business Applications (NEW) */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden">
                   <div className="absolute left-0 top-0 w-1 h-full bg-emerald-500"></div>
-                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
+                  <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 mb-2">Business Applications</Badge>
                      <Typography variant="h3" as="h3">Integrated Modules</Typography>
-                  </Stack>
+                  </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
                      {/* ERPNext */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Box className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">ERPNext</div>
                            <div className="text-xs text-slate-500">Finance & Supply Chain</div>
                         </div>
-                     </Stack>
+                     </div>
                      {/* Frappe HR */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Users className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Frappe HR</div>
                            <div className="text-xs text-slate-500">Modern HRMS & Payroll</div>
                         </div>
-                     </Stack>
+                     </div>
                      {/* Frappe CRM */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Share2 className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Frappe CRM</div>
                            <div className="text-xs text-slate-500">Sales & Pipeline</div>
                         </div>
-                     </Stack>
+                     </div>
                      {/* Frappe Insights */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Activity className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Insights</div>
                            <div className="text-xs text-slate-500">Business Intelligence</div>
                         </div>
-                     </Stack>
+                     </div>
                      {/* LMS / Learning */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <BookOpen className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">LMS</div>
                            <div className="text-xs text-slate-500">Learning Management</div>
                         </div>
-                     </Stack>
+                     </div>
                      {/* Helpdesk */}
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Headphones className="w-5 h-5 text-emerald-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Helpdesk</div>
                            <div className="text-xs text-slate-500">Customer Support</div>
                         </div>
-                     </Stack>
+                     </div>
                   </Grid>
                </Grid>
 
                {/* Layer: Application Logic (Frappe) */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden">
                   <div className="absolute left-0 top-0 w-1 h-full bg-primary-500"></div>
-                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
+                  <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mb-2">Application Core</Badge>
                      <Typography variant="h3" as="h3">Frappe Framework</Typography>
-                  </Stack>
+                  </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Code className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Python Backend</div>
                            <div className="text-xs text-slate-500">Business Logic & Controller</div>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     </div>
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <FileJson className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">Metadata Engine</div>
                            <div className="text-xs text-slate-500">DocType & Data Modeling</div>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={3} align="center" className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
+                     </div>
+                     <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Network className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
                            <div className="font-bold dark:text-white">REST & RPC API</div>
                            <div className="text-xs text-slate-500">Auto-generated Endpoints</div>
                         </div>
-                     </Stack>
+                     </div>
                   </Grid>
                </Grid>
 
                {/* Layer: Services */}
                <Grid cols={12} gap={6} className="items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <Stack direction="col" gap={4} align="start" className="md:col-span-3">
+                  <div className="md:col-span-3 flex flex-col items-start">
                      <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-2">Infrastructure Services</Badge>
                      <Typography variant="h3" as="h3">Data & Processing</Typography>
-                  </Stack>
+                  </div>
                   <Grid cols={1} gap={4} className="md:col-span-9">
-                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Database</Typography>
-                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </Stack>
-                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                        <div className="flex items-center gap-2 font-bold dark:text-white"><Database className="w-4 h-4 text-purple-500"/> MariaDB</div>
+                     </div>
+                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Caching</Typography>
-                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </Stack>
-                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                        <div className="flex items-center gap-2 font-bold dark:text-white"><Zap className="w-4 h-4 text-purple-500"/> Redis</div>
+                     </div>
+                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Queue</Typography>
-                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </Stack>
-                     <Stack direction="col" gap={4} className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                        <div className="flex items-center gap-2 font-bold dark:text-white"><Layers className="w-4 h-4 text-purple-500"/> BullMQ / RQ</div>
+                     </div>
+                     <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Realtime</Typography>
-                        <Stack direction="row" gap={2} align="center" className="font-bold dark:text-white">
-                     </Stack>
-                  </Stack>
-               </Stack>
-            </Stack>
-         </Stack>
-      </Grid>
+                        <div className="flex items-center gap-2 font-bold dark:text-white"><Activity className="w-4 h-4 text-purple-500"/> Node.js / Socket.io</div>
+                     </div>
+                  </Grid>
+               </Grid>
+            </div>
+         </Container>
+      </Section>
 
       {/* 2. DEEP DIVE: FRAPPE FRAMEWORK */}
       <Section>
          <Grid cols={2} gap={16} className="items-center">
             <div>
-               <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl mb-6">
+               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-6">
                   <Cpu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-               </Stack>
+               </div>
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
                <Stack direction="col" gap={6}>
-                  <Stack direction="row" gap={4}>
+                  <div className="flex gap-4">
                      <div className="mt-1"><FileJson className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Metadata Driven (DocTypes)</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Struktur database, tampilan form, dan permission didefinisikan dalam JSON (DocTypes). Perubahan skema database terjadi otomatis tanpa migrasi manual yang rumit.</Typography>
                      </div>
-                  </Stack>
-                  <Stack direction="row" gap={4}>
+                  </div>
+                  <div className="flex gap-4">
                      <div className="mt-1"><Settings className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Low-Code Customization</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Kustomisasi alur kerja dengan <i>Server Scripts</i> (Python) dan <i>Client Scripts</i> (JS) langsung dari browser, tanpa perlu restart server atau redeploy.</Typography>
                      </div>
-                  </Stack>
-                  <Stack direction="row" gap={4}>
+                  </div>
+                  <div className="flex gap-4">
                      <div className="mt-1"><Lock className="w-5 h-5 text-primary-500" /></div>
                      <div>
                         <Typography variant="h4" as="h4">Granular Permission System</Typography>
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Sistem Role-Based Access Control (RBAC) yang mendalam hingga level field. Mendukung User Permissions untuk pembatasan data berbasis wilayah atau departemen.</Typography>
                      </div>
-                  </Stack>
+                  </div>
                </Stack>
             </div>
             <div className="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
-               <Stack direction="row" gap={2} align="center" className="mb-4 border-b border-slate-800 pb-4">
+               <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-4">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   <span className="ml-2 text-xs text-slate-500">sales_invoice.json (DocType)</span>
-               </Stack>
+               </div>
                <pre className="text-xs text-blue-300 overflow-x-auto">
 {`{
   "doctype": "DocType",
@@ -319,9 +319,9 @@ const TechnologyPage: React.FC = () => {
 
             <Grid cols={3} gap={8}>
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl mb-6 text-blue-600 dark:text-blue-400">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
                      <Share2 className="w-6 h-6" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">REST API Generik</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Otomatis tersedia CRUD API untuk setiap entitas data (DocType). Mendukung filter kompleks, sorting, dan pagination.</Typography>
                   <div className="bg-slate-100 dark:bg-slate-900 p-3 rounded text-xs text-slate-600 dark:text-slate-400">
@@ -330,17 +330,17 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl mb-6 text-purple-600 dark:text-purple-400">
+                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400">
                      <Workflow className="w-6 h-6" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">Webhooks & Events</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Trigger aksi ke sistem eksternal saat data berubah di BizOps (On Create, On Submit, On Cancel, dll). Real-time synchronization.</Typography>
                </div>
 
                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl mb-6 text-emerald-600 dark:text-emerald-400">
+                  <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
                      <Puzzle className="w-6 h-6" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">Virtual DocType</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.</Typography>
                </div>
@@ -358,79 +358,79 @@ const TechnologyPage: React.FC = () => {
                   <Typography variant="body-lg" className="text-slate-400">Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.</Typography>
                   
                   <Stack direction="col" gap={6}>
-                     <Stack direction="row" gap={4}>
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
+                     <div className="flex gap-4">
+                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">1</div>
                         <div>
                            <Typography variant="h4" as="h4">Background Workers</Typography>
                            <Typography variant="caption" className="text-slate-400">Tugas berat seperti generate laporan PDF, email bulk, dan posting akuntansi diproses di background (via Redis Queue/BullMQ) agar UI tetap responsif.</Typography>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={4}>
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
+                     </div>
+                     <div className="flex gap-4">
+                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">2</div>
                         <div>
                            <Typography variant="h4" as="h4">Intelligent Caching</Typography>
                            <Typography variant="caption" className="text-slate-400">Konfigurasi sistem, permission, dan metadata disimpan di Redis Cache untuk akses super cepat (sub-millisecond).</Typography>
                         </div>
-                     </Stack>
-                     <Stack direction="row" gap={4}>
-                        <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 font-bold text-white">
+                     </div>
+                     <div className="flex gap-4">
+                        <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">3</div>
                         <div>
                            <Typography variant="h4" as="h4">Socket.io Realtime</Typography>
                            <Typography variant="caption" className="text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</Typography>
                         </div>
-                     </Stack>
+                     </div>
                   </Stack>
-               </Stack>
+               </div>
                
                <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative">
                   <div className="absolute top-0 right-0 p-4">
-                     <Stack direction="row" gap={2}>
+                     <div className="flex gap-2">
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse"></div>
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse delay-75"></div>
-                     </Stack>
+                     </div>
                   </div>
                   <Stack direction="col" gap={8}>
                      <div>
-                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
+                        <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
                            <span className="text-green-400">Active</span>
-                        </Stack>
+                        </div>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-blue-500 w-3/4 animate-pulse"></div>
                         </div>
                      </div>
                      <div>
-                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
+                        <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Background Workers (Default/Short/Long)</span>
                            <span className="text-green-400">Processing</span>
-                        </Stack>
+                        </div>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-purple-500 w-1/2"></div>
                         </div>
                      </div>
                      <div>
-                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
+                        <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Socket.io Service</span>
                            <span className="text-green-400">Connected: 1,240</span>
-                        </Stack>
+                        </div>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-emerald-500 w-full"></div>
                         </div>
                      </div>
                      <div>
-                        <Stack direction="row" gap={4} justify="between" className="text-sm text-slate-400 mb-2">
+                        <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Redis Cache Hit Rate</span>
                            <span className="text-green-400">98.5%</span>
-                        </Stack>
+                        </div>
                         <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                            <div className="h-full bg-amber-500 w-[98%]"></div>
                         </div>
                      </div>
                   </Stack>
                </div>
-            </Stack>
-         </Stack>
-      </div>
+            </Grid>
+         </Container>
+      </Section>
 
       {/* 6. FUTURE READY MODULES (RESTORED) */}
       <Section dark className="bg-[#0f172a]">
@@ -444,27 +444,27 @@ const TechnologyPage: React.FC = () => {
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                {/* AI Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-purple-500 transition-colors group h-full">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-purple-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Zap className="w-6 h-6 text-purple-400" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">AI & ML Integration</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Layer data terstruktur siap dikonsumsi oleh model Machine Learning untuk forecasting dan anomaly detection. Integrasi LLM untuk asisten cerdas.</Typography>
                </div>
 
                {/* IoT Ready */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition-colors group h-full">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-blue-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Network className="w-6 h-6 text-blue-400" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">IoT Gateway Ready</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Mendukung protokol MQTT dan Webhook untuk koneksi langsung dengan sensor mesin pabrik, timbangan digital, dan perangkat IoT lainnya.</Typography>
                </div>
 
                {/* High Security */}
                <div className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group h-full">
-                  <Stack direction="row" gap={4} align="center" justify="center" className="w-12 h-12 bg-emerald-500/20 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <Lock className="w-6 h-6 text-emerald-400" />
-                  </Stack>
+                  </div>
                   <Typography variant="h3" as="h3">Enterprise Security</Typography>
                   <Typography variant="caption" className="text-slate-400 leading-relaxed">Role-Based Access Control (RBAC) granular, enkripsi data at-rest dan in-transit, serta audit log lengkap untuk compliance standar industri.</Typography>
                </div>
@@ -479,10 +479,10 @@ const TechnologyPage: React.FC = () => {
             
             <Grid cols={2} gap={8} className="text-left">
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" className="mb-6">
+                  <div className="flex items-center gap-4 mb-6">
                      <Box className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Containerized (Docker)</Typography>
-                  </Stack>
+                  </div>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Seluruh aplikasi dibungkus dalam container standar, memastikan konsistensi dari development hingga production. Eliminasi masalah "it works on my machine".</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> Isolated Environments</li>
@@ -491,10 +491,10 @@ const TechnologyPage: React.FC = () => {
                </div>
 
                <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <Stack direction="row" gap={4} align="center" className="mb-6">
+                  <div className="flex items-center gap-4 mb-6">
                      <HardDrive className="w-10 h-10 text-primary-600" />
                      <Typography variant="h3" as="h3">Platform Agnostic</Typography>
-                  </Stack>
+                  </div>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Jalankan di mana saja. Dari server On-Premise fisik, Private Cloud, hingga Kubernetes Cluster di AWS/GCP/Azure. Anda memegang kendali penuh atas data.</Typography>
                   <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-500">
                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500"/> No Vendor Lock-in</li>
@@ -521,7 +521,7 @@ const TechnologyPage: React.FC = () => {
          </Container>
       </Section>
 
-    </Grid>
+    </div>
   );
 };
 
