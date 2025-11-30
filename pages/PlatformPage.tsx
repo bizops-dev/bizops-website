@@ -202,8 +202,8 @@ const PlatformPage: React.FC = () => {
                   </li>
                </ul>
             </div>
-         </Stack>
-      </Stack>
+         </Grid>
+      </Section>
 
       {/* 3. MODULES GRID */}
       <Section>
