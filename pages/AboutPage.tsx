@@ -388,9 +388,9 @@ const AboutPage: React.FC = () => {
                                  </div>
                               ))}
                            </div>
-                           <a href="/careers" className="text-base font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2 group">
+                           <Link to="/careers" className="text-base font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2 group">
                               Join our growing team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                           </a>
+                           </Link>
                         </div>
                      </div>
                   </div>

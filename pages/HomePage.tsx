@@ -758,7 +758,7 @@ const HomePage: React.FC = () => {
          </div>
          
          <div className="text-center mt-10">
-            <Link to="/integrations" className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center transition-colors">
+            <Link to="/platform/technologies/integration" className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center transition-colors">
                Lihat 50+ Integrasi Lainnya <ArrowUpRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
          </div>

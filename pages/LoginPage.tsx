@@ -151,9 +151,9 @@ const LoginPage: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                    <Checkbox label="Remember me" name="remember" />
-                   <Link to="/forgot-password" className="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline">
-                      Forgot password?
-                   </Link>
+                  <Link to="/coming-soon" className="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline">
+                     Forgot password?
+                  </Link>
                 </div>
 
                 <Button fullWidth size="lg" type="submit" isLoading={isLoading} className="h-12 text-base shadow-lg shadow-primary-500/20">
