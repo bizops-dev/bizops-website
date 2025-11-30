@@ -29,17 +29,17 @@ const TechnologyPage: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container size="7xl" className="relative z-10 text-center">
           <Badge variant="outline-white" className="mb-8">Engineering & Architecture</Badge>
           <Typography variant="h1" as="h1" className="font-extrabold text-white tracking-tight leading-tight">Arsitektur Enterprise <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary-400">Tanpa Kompromi.</span></Typography>
           <Typography variant="body-lg" className="text-slate-300">BizOps dibangun di atas pondasi teknologi yang telah teruji mengelola jutaan transaksi global. Perpaduan fleksibilitas Frappe Framework dan kematangan ERPNext.</Typography>
-        </div>
+        </Container>
       </div>
 
       {/* 1. HIGH LEVEL STACK VISUALIZATION */}
       <Section className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
-         <div className="max-w-6xl mx-auto">
+         <Container size="6xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">The Full Stack View</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Lapisan teknologi terintegrasi untuk performa dan skalabilitas maksimal.</Typography>
@@ -52,7 +52,7 @@ const TechnologyPage: React.FC = () => {
                      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-2">Presentation Layer</Badge>
                      <Typography variant="h3" as="h3">Client Apps</Typography>
                   </div>
-                  <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <Grid cols={1} gap={4} className="md:col-span-9">
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">SPA Desk (Vue/React)</Typography>
                      </div>
@@ -62,7 +62,7 @@ const TechnologyPage: React.FC = () => {
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Globe className="w-5 h-5 text-blue-500" /> <Typography variant="caption" className="dark:text-slate-300">Public Portal (Jinja)</Typography>
                      </div>
-                  </div>
+                  </Grid>
                </Grid>
 
                {/* Layer: Business Applications (NEW) */}
@@ -72,7 +72,7 @@ const TechnologyPage: React.FC = () => {
                      <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 mb-2">Business Applications</Badge>
                      <Typography variant="h3" as="h3">Integrated Modules</Typography>
                   </div>
-                  <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <Grid cols={1} gap={4} className="md:col-span-9">
                      {/* ERPNext */}
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-emerald-100 dark:border-emerald-900/30">
                         <Box className="w-5 h-5 text-emerald-500" /> 
@@ -121,7 +121,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="text-xs text-slate-500">Customer Support</div>
                         </div>
                      </div>
-                  </div>
+                  </Grid>
                </Grid>
 
                {/* Layer: Application Logic (Frappe) */}
@@ -131,7 +131,7 @@ const TechnologyPage: React.FC = () => {
                      <Badge className="bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mb-2">Application Core</Badge>
                      <Typography variant="h3" as="h3">Frappe Framework</Typography>
                   </div>
-                  <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <Grid cols={1} gap={4} className="md:col-span-9">
                      <div className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-primary-100 dark:border-primary-900/30">
                         <Code className="w-5 h-5 text-primary-500" /> 
                         <div className="text-sm">
@@ -153,7 +153,7 @@ const TechnologyPage: React.FC = () => {
                            <div className="text-xs text-slate-500">Auto-generated Endpoints</div>
                         </div>
                      </div>
-                  </div>
+                  </Grid>
                </Grid>
 
                {/* Layer: Services */}
@@ -162,7 +162,7 @@ const TechnologyPage: React.FC = () => {
                      <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-2">Infrastructure Services</Badge>
                      <Typography variant="h3" as="h3">Data & Processing</Typography>
                   </div>
-                  <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-4 gap-4">
+                  <Grid cols={1} gap={4} className="md:col-span-9">
                      <div className="flex flex-col p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                         <Typography variant="caption" className="text-slate-500">Database</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Database className="w-4 h-4 text-purple-500"/> MariaDB</div>
@@ -179,10 +179,10 @@ const TechnologyPage: React.FC = () => {
                         <Typography variant="caption" className="text-slate-500">Realtime</Typography>
                         <div className="flex items-center gap-2 font-bold dark:text-white"><Activity className="w-4 h-4 text-purple-500"/> Node.js / Socket.io</div>
                      </div>
-                  </div>
+                  </Grid>
                </Grid>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* 2. DEEP DIVE: FRAPPE FRAMEWORK */}
@@ -195,7 +195,7 @@ const TechnologyPage: React.FC = () => {
                <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">The Engine: Frappe Framework</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Frappe adalah <i>Low-Code Framework</i> berbasis Python yang memungkinkan pengembangan aplikasi enterprise yang kompleks dengan kecepatan tinggi. Tidak seperti framework tradisional, Frappe bersifat <b>Metadata-Driven</b>.</Typography>
                
-               <div className="space-y-6">
+               <Stack direction="col" gap={6}>
                   <div className="flex gap-4">
                      <div className="mt-1"><FileJson className="w-5 h-5 text-primary-500" /></div>
                      <div>
@@ -217,7 +217,7 @@ const TechnologyPage: React.FC = () => {
                         <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Sistem Role-Based Access Control (RBAC) yang mendalam hingga level field. Mendukung User Permissions untuk pembatasan data berbasis wilayah atau departemen.</Typography>
                      </div>
                   </div>
-               </div>
+               </Stack>
             </div>
             <div className="bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-2xl">
                <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-4">
@@ -265,7 +265,7 @@ const TechnologyPage: React.FC = () => {
             <Grid cols={2} gap={16} className="items-center">
                <div className="order-2 md:order-1 relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl rounded-full"></div>
-                  <div className="relative grid grid-cols-2 gap-4">
+                  <Grid cols={2} gap={4} className="relative">
                      <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors">
                         <div className="text-blue-400 font-bold mb-2">Financial Kernel</div>
                         <Typography variant="body" className="text-slate-400">Double-entry ledger, multi-currency, cost centers, budgeting engine.</Typography>
@@ -282,7 +282,7 @@ const TechnologyPage: React.FC = () => {
                         <div className="text-emerald-400 font-bold mb-2">CRM & Selling</div>
                         <Typography variant="body" className="text-slate-400">Lead pipeline, opportunity scoring, quotation versioning.</Typography>
                      </div>
-                  </div>
+                  </Grid>
                </div>
                <div className="order-1 md:order-2">
                   <Badge variant="outline" className="mb-6 border-blue-500/30 text-blue-300 bg-blue-500/10">The Monolith Core</Badge>
@@ -311,7 +311,7 @@ const TechnologyPage: React.FC = () => {
 
       {/* 4. INTEGRATION & API */}
       <Section className="bg-slate-50 dark:bg-slate-900/50">
-         <div className="max-w-5xl mx-auto">
+         <Container size="5xl">
             <div className="text-center mb-16">
                <Typography variant="h2" as="h2">Integration Architecture</Typography>
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">BizOps didesain dengan filosofi <b>API-First</b>. Setiap fitur yang Anda lihat di UI tersedia juga melalui API untuk integrasi pihak ketiga.</Typography>
@@ -345,19 +345,19 @@ const TechnologyPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tampilkan data dari database eksternal (Postgres, MongoDB) seolah-olah berada di dalam BizOps tanpa duplikasi data.</Typography>
                </div>
             </Grid>
-         </div>
+         </Container>
       </Section>
 
       {/* 5. PERFORMANCE & SCALABILITY */}
       <Section dark className="bg-[#0f172a] border-t border-slate-800">
-         <div className="max-w-6xl mx-auto">
+         <Container size="6xl">
             <Grid cols={2} gap={12} className="items-center">
                <div>
                   <Badge variant="outline" className="mb-6 border-emerald-500/30 text-emerald-300 bg-emerald-500/10">Performance Engineering</Badge>
                   <Typography variant="h2" as="h2" className="font-bold text-white">Didesain untuk Skala Enterprise.</Typography>
                   <Typography variant="body-lg" className="text-slate-400">Bagaimana kami menangani ribuan transaksi per menit tanpa mengorbankan responsivitas UI? Jawabannya ada pada arsitektur <i>asynchronous</i> kami.</Typography>
                   
-                  <div className="space-y-6">
+                  <Stack direction="col" gap={6}>
                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 font-bold text-white">1</div>
                         <div>
@@ -379,7 +379,7 @@ const TechnologyPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-400">Update status dokumen, chat, dan notifikasi dikirim secara real-time ke browser client tanpa perlu refresh halaman.</Typography>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
                
                <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative">
@@ -389,7 +389,7 @@ const TechnologyPage: React.FC = () => {
                         <div className="w-2 h-2 rounded-full bg-slate-700 animate-pulse delay-75"></div>
                      </div>
                   </div>
-                  <div className="space-y-8">
+                  <Stack direction="col" gap={8}>
                      <div>
                         <div className="flex justify-between text-sm text-slate-400 mb-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
@@ -426,10 +426,10 @@ const TechnologyPage: React.FC = () => {
                            <div className="h-full bg-amber-500 w-[98%]"></div>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
             </Grid>
-         </div>
+         </Container>
       </Section>
 
       {/* 6. FUTURE READY MODULES (RESTORED) */}
@@ -474,7 +474,7 @@ const TechnologyPage: React.FC = () => {
 
       {/* 7. DEVOPS & INFRASTRUCTURE (RESTORED) */}
       <Section>
-         <div className="max-w-5xl mx-auto text-center">
+         <Container size="5xl" className="text-center">
             <Typography variant="h2" as="h2">Deployment Flexibility</Typography>
             
             <Grid cols={2} gap={8} className="text-left">
@@ -502,12 +502,12 @@ const TechnologyPage: React.FC = () => {
                   </ul>
                </div>
             </Grid>
-         </div>
+         </Container>
       </Section>
 
       {/* CTA */}
       <Section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <div className="max-w-4xl mx-auto text-center">
+         <Container size="4xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Diskusikan Kebutuhan Teknis Anda</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Tim engineer kami siap menjelaskan lebih dalam tentang bagaimana arsitektur BizOps dapat beradaptasi dengan ekosistem IT perusahaan Anda.</Typography>
             <Stack direction="col" gap={4} className="justify-center">
@@ -518,7 +518,7 @@ const TechnologyPage: React.FC = () => {
                   <Button variant="outline" size="lg">Konsultasi Arsitektur</Button>
                </Link>
             </Stack>
-         </div>
+         </Container>
       </Section>
 
     </div>

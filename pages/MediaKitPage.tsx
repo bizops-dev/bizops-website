@@ -33,7 +33,7 @@ const MediaKitPage: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <Container size="5xl" className="relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const MediaKitPage: React.FC = () => {
                Lihat Brand Guidelines <ExternalLink className="w-4 h-4 ml-2" />
              </Button>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       <Container size="7xl" className="py-24 space-y-32">
@@ -270,7 +270,7 @@ const MediaKitPage: React.FC = () => {
               </CardSlider>
            </div>
            
-           <div className="hidden md:grid md:grid-cols-4 gap-8">
+           <Grid cols={4} gap={8} className="hidden">
               <motion.div whileHover={{ y: -5 }} className="group h-full">
                  <div className="h-40 bg-primary-600 rounded-3xl shadow-lg mb-4 flex items-center justify-center group-hover:shadow-primary-500/30 transition-shadow">
                     <span className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">Primary</span>
@@ -346,7 +346,7 @@ const MediaKitPage: React.FC = () => {
                     </button>
                  </div>
               </motion.div>
-           </div>
+           </Grid>
         </section>
 
         {/* --- TYPOGRAPHY --- */}
@@ -362,12 +362,12 @@ const MediaKitPage: React.FC = () => {
               </div>
            </div>
            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps menggunakan typeface <strong>Plus Jakarta Sans</strong> untuk seluruh materi komunikasi digital. Font ini dipilih karena karakteristiknya yang modern, netral, dan memiliki keterbacaan tinggi pada layar mobile maupun desktop.</Typography>
-              <div className="space-y-6">
+              <Stack direction="col" gap={6}>
                  <div>
                     <span className="text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">Aa</span>
                     <span className="text-6xl font-normal text-slate-900 dark:text-white ml-4">Aa</span>
                  </div>
-                 <div className="grid grid-cols-3 gap-4">
+                 <Grid cols={3} gap={4}>
                     <div className="p-4 border border-slate-200 dark:border-slate-800 rounded-xl">
                        <div className="text-2xl font-bold mb-1">Bold</div>
                        <div className="text-xs text-slate-500">Headings</div>
@@ -380,19 +380,19 @@ const MediaKitPage: React.FC = () => {
                        <div className="text-2xl font-normal mb-1">Regular</div>
                        <div className="text-xs text-slate-500">Body Text</div>
                     </div>
-                 </div>
-              </div>
+                 </Grid>
+              </Stack>
            </div>
            
            <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-[2rem] blur-xl opacity-70"></div>
               <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl">
-                 <div className="space-y-4">
+                 <Stack direction="col" gap={4}>
                     <Typography variant="h1" as="h1">The Quick Brown Fox</Typography>
                     <Typography variant="h2" as="h2">Jumps Over The Lazy Dog</Typography>
                     <Typography variant="h3" as="h3">1234567890</Typography>
                     <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.</Typography>
-                 </div>
+                 </Stack>
               </div>
            </div>
         </section>
@@ -441,7 +441,7 @@ const MediaKitPage: React.FC = () => {
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
            
-           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+           <Stack direction="col" gap={12} className="relative z-10 items-center justify-between">
               <div className="max-w-xl">
                  <Typography variant="h2" as="h2">Media Inquiries</Typography>
                  <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Untuk permintaan wawancara, kutipan ahli, atau undangan sebagai pembicara, silakan hubungi tim komunikasi kami. Kami merespon dalam waktu 24 jam kerja.</Typography>
@@ -463,16 +463,16 @@ const MediaKitPage: React.FC = () => {
                        <div className="text-indigo-300 text-sm">Head of Communications</div>
                     </div>
                  </div>
-                 <div className="space-y-3 text-sm text-slate-300">
+                 <Stack direction="col" gap={3} className="text-sm text-slate-300">
                     <div className="flex items-center gap-3">
                        <Mail className="w-4 h-4 text-slate-400" /> pr@divistant.com
                     </div>
                     <div className="flex items-center gap-3">
                        <Globe className="w-4 h-4 text-slate-400" /> Jakarta, Indonesia
                     </div>
-                 </div>
+                 </Stack>
               </div>
-           </div>
+           </Stack>
         </section>
 
       </Container>

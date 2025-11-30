@@ -23,7 +23,7 @@ const IntegrationsPage: React.FC = () => {
 
       {/* Grid */}
       <Container size="7xl">
-         <div className="grid grid-cols-1 gap-12">
+         <Grid cols={1} gap={12}>
             {integrationsData.map((cat: any, idx: number) => (
                <div key={idx} className="animate-fade-in-up">
                   <div className="flex items-end gap-4 mb-6 border-b border-slate-200 pb-4">
@@ -49,7 +49,7 @@ const IntegrationsPage: React.FC = () => {
                   </CardSlider>
                </div>
             ))}
-         </div>
+         </Grid>
          
          <div className="mt-24 text-center bg-white p-12 rounded-2xl border border-slate-200 shadow-sm">
             <Typography variant="h2" as="h2">Butuh Integrasi Khusus?</Typography>

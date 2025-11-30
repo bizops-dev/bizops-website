@@ -133,7 +133,7 @@ const StartupProgramPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8} className="hidden">
                {/* Card 1 */}
                <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group flex flex-col">
                   <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
@@ -160,7 +160,7 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Founder Community</Typography>
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bergabung dengan jaringan eksklusif founder. Dapatkan kesempatan *co-marketing*, akses ke event networking privat, dan pengenalan ke partner investor kami.</Typography>
                </div>
-            </div>
+            </Grid>
          </Container>
       </section>
 
@@ -175,7 +175,7 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Jangan Biarkan "Admin Chaos" <br/>Membunuh Momentum.</Typography>
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Startup sering gagal bukan karena produknya, tapi karena operasional yang berantakan saat scaling. Spreadsheet yang tidak sinkron dan HR manual adalah "utang teknis" operasional yang berbahaya.</Typography>
                   
-                  <div className="space-y-8">
+                  <Stack direction="col" gap={8}>
                      <div className="flex gap-5">
                         <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 text-slate-700 dark:text-slate-300">
                            <Layout className="w-6 h-6" />
@@ -194,7 +194,7 @@ const StartupProgramPage: React.FC = () => {
                            <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">Siap untuk audit ISO 27001 dan GDPR tanpa perlu menyewa konsultan mahal. Amankan data pelanggan Anda dengan standar perbankan.</Typography>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
                <div className="order-1 lg:order-2 relative">
@@ -212,8 +212,8 @@ const StartupProgramPage: React.FC = () => {
                         <div className="px-3 py-1 bg-slate-200 dark:bg-slate-700 rounded-full text-[10px] text-slate-500 dark:text-slate-400">dashboard.bizops.id</div>
                      </div>
                      {/* Mockup Content */}
-                     <div className="space-y-6">
-                        <div className="grid grid-cols-2 gap-4">
+                     <Stack direction="col" gap={6}>
+                        <Grid cols={2} gap={4}>
                            <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                               <div className="text-xs text-slate-500 mb-2 uppercase tracking-wider font-bold">Runway</div>
                               <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">18 Mo</div>
@@ -224,7 +224,7 @@ const StartupProgramPage: React.FC = () => {
                               <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">$12k</div>
                               <div className="text-xs text-green-500 font-bold bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded-full w-fit">-5% vs Last Mo</div>
                            </div>
-                        </div>
+                        </Grid>
                         
                         <div className="p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
                            <div className="flex justify-between items-end mb-4">
@@ -242,7 +242,7 @@ const StartupProgramPage: React.FC = () => {
                               ))}
                            </div>
                         </div>
-                     </div>
+                     </Stack>
                   </div>
                </div>
             </Grid>
@@ -284,7 +284,7 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                      </div>
                      
-                     <div className="space-y-5 mb-12 flex-grow">
+                     <Stack direction="col" gap={5} className="mb-12 flex-grow">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -303,7 +303,7 @@ const StartupProgramPage: React.FC = () => {
                            </div>
                            <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <Link to="/partners/apply?track=bootstrap" className="mt-auto">
                         <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
@@ -335,7 +335,7 @@ const StartupProgramPage: React.FC = () => {
                         <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                      </div>
                      
-                     <div className="space-y-5 mb-12 flex-grow">
+                     <Stack direction="col" gap={5} className="mb-12 flex-grow">
                         <div className="flex items-center gap-4">
                            <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                               <CheckCircle className="w-4 h-4 text-purple-400" />
@@ -354,7 +354,7 @@ const StartupProgramPage: React.FC = () => {
                            </div>
                            <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <Link to="/partners/apply?track=scaleup" className="mt-auto">
                         <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
@@ -365,7 +365,7 @@ const StartupProgramPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <Container size="5xl" className="hidden md:grid md:grid-cols-2 gap-10">
                {/* Bootstrap Track */}
                <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
@@ -388,7 +388,7 @@ const StartupProgramPage: React.FC = () => {
                      <Typography variant="body" className="text-slate-600 dark:text-slate-300">Selama 12 bulan pertama.</Typography>
                   </div>
                   
-                  <div className="space-y-5 mb-12 flex-grow">
+                  <Stack direction="col" gap={5} className="mb-12 flex-grow">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -407,7 +407,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <span className="text-slate-700 dark:text-slate-300 font-medium">Produk/Website Aktif</span>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <Link to="/partners/apply?track=bootstrap" className="mt-auto">
                      <Button fullWidth variant="outline" className="border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 h-14 text-lg font-bold rounded-2xl group-hover:border-blue-500/50 group-hover:text-blue-600 transition-all">
@@ -439,7 +439,7 @@ const StartupProgramPage: React.FC = () => {
                      <Typography variant="body" className="text-slate-300">Selama 24 bulan berturut-turut.</Typography>
                   </div>
                   
-                  <div className="space-y-5 mb-12 flex-grow">
+                  <Stack direction="col" gap={5} className="mb-12 flex-grow">
                      <div className="flex items-center gap-4">
                         <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                            <CheckCircle className="w-4 h-4 text-purple-400" />
@@ -458,7 +458,7 @@ const StartupProgramPage: React.FC = () => {
                         </div>
                         <span className="text-slate-200 font-medium">Dedicated Success Manager</span>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <Link to="/partners/apply?track=scaleup" className="mt-auto">
                      <Button fullWidth className="bg-purple-600 hover:bg-purple-500 h-14 text-lg font-bold rounded-2xl shadow-lg shadow-purple-900/50 border-none transition-all hover:scale-[1.02]">
@@ -466,7 +466,7 @@ const StartupProgramPage: React.FC = () => {
                      </Button>
                   </Link>
                </div>
-            </div>
+            </Container>
          </Container>
       </section>
 
@@ -502,7 +502,7 @@ const StartupProgramPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-4 gap-12 relative">
+            <Grid cols={4} gap={12} className="hidden relative">
                {/* Connecting Line (Desktop Only) */}
                <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
 
@@ -528,7 +528,7 @@ const StartupProgramPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Onboarding</Typography>
                   <Typography variant="caption" className="text-slate-500 dark:text-slate-400">Setup akun Enterprise Anda dan mulai scaling.</Typography>
                </div>
-            </div>
+            </Grid>
          </Container>
       </section>
 
@@ -536,7 +536,7 @@ const StartupProgramPage: React.FC = () => {
       <section className="py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
          <Container size="7xl">
             <Typography variant="h2" as="h2">Founder's FAQ</Typography>
-            <div className="space-y-4">
+            <Stack direction="col" gap={4}>
                {[
                   { q: "Apakah ada biaya tersembunyi?", a: "Tidak ada. Diskon diberikan dimuka pada tagihan bulanan/tahunan. Setelah periode program berakhir (12 atau 24 bulan), tagihan akan kembali ke harga normal. Kami akan mengirimkan notifikasi 30 hari sebelumnya." },
                   { q: "Bagaimana jika kami belum punya badan hukum?", a: "Anda bisa mendaftar dengan nama tim sementara atau 'Stealth Mode'. Namun, untuk aktivasi lisensi komersial dan faktur pajak, kami memerlukan dokumen legalitas (NIB/SK Kemenkumham) dalam waktu 3 bulan setelah onboarding." },
@@ -545,7 +545,7 @@ const StartupProgramPage: React.FC = () => {
                ].map((item, idx) => (
                   <FAQAccordion key={idx} question={item.q} answer={item.a} />
                ))}
-            </div>
+            </Stack>
          </Container>
       </section>
 
@@ -555,7 +555,7 @@ const StartupProgramPage: React.FC = () => {
          {/* Glow */}
          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/30 rounded-full blur-[150px] pointer-events-none"></div>
          
-         <div className="relative z-10 max-w-4xl mx-auto px-4">
+         <Container size="4xl" className="relative z-10">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight tracking-tight">Siap Membangun <br/>Unicorn Berikutnya?</Typography>
             <Typography variant="body-xl" className="text-slate-300">Fokus pada inovasi produk Anda, biarkan kami yang menangani infrastruktur operasional yang membosankan (tapi krusial).</Typography>
             <Stack direction="col" gap={6} className="justify-center">
@@ -568,7 +568,7 @@ const StartupProgramPage: React.FC = () => {
                   Talk to Founder Success
                </Button>
             </Stack>
-         </div>
+         </Container>
       </section>
 
     </div>

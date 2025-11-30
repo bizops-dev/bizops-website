@@ -171,7 +171,7 @@ const ModulePage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             
             {/* Breadcrumbs (Visual) */}
             <motion.div 
@@ -242,7 +242,7 @@ const ModulePage: React.FC = () => {
                   </Button>
                </Link>
             </motion.div>
-         </div>
+         </Container>
       </section>
 
       {/* 2. Impact Metrics (New) */}
@@ -298,7 +298,7 @@ const ModulePage: React.FC = () => {
                   <div>
                      <Badge variant="outline" className="mb-6">The Challenge</Badge>
                      <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Tantangan {data.title} Tradisional</Typography>
-                     <div className="space-y-8">
+                     <Stack direction="col" gap={8}>
                         {data.problems.map((prob, idx) => {
                            const ProbIcon = prob.icon || AlertTriangle;
                            return (
@@ -320,7 +320,7 @@ const ModulePage: React.FC = () => {
                               </motion.div>
                            );
                         })}
-                     </div>
+                     </Stack>
                   </div>
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -347,10 +347,10 @@ const ModulePage: React.FC = () => {
       {/* 4. Features Grid */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
         <Container size="7xl">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <Container size="3xl" className="text-center mb-16">
             <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
-          </div>
+          </Container>
 
           <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.features.map((feature, index) => {
@@ -416,12 +416,12 @@ const ModulePage: React.FC = () => {
                                  <div className="text-white font-bold text-lg">{data.mobileAdvantage.title}</div>
                               </div>
                               {/* Body */}
-                              <div className="p-4 space-y-4">
+                              <Stack direction="col" gap={4} className="p-4">
                                  <div className="h-32 bg-slate-800 rounded-xl animate-pulse"></div>
                                  <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-75"></div>
                                  <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-100"></div>
                                  <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-150"></div>
-                              </div>
+                              </Stack>
                               {/* FAB */}
                               <div className="absolute bottom-6 right-6 w-14 h-14 bg-primary-600 rounded-full shadow-lg flex items-center justify-center">
                                  <Plus className="w-6 h-6 text-white" />
@@ -448,7 +448,7 @@ const ModulePage: React.FC = () => {
 
             {moduleId === 'integration' ? (
                // MARKETPLACE GRID VIEW
-               <div className="space-y-12">
+               <Stack direction="col" gap={12}>
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-2xl flex items-start gap-4 mb-12">
                      <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-lg text-blue-600 dark:text-blue-300">
                         <Handshake className="w-6 h-6" />
@@ -478,7 +478,7 @@ const ModulePage: React.FC = () => {
                         </div>
                      ))}
                   </CardSlider>
-               </div>
+               </Stack>
             ) : (
                // CIRCUIT VIEW (Standard)
                <div className="relative">

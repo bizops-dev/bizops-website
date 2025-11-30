@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const NotFoundPage: React.FC = () => {
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto">
+      <Container size="3xl" className="relative z-10">
          <motion.div 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -95,7 +96,7 @@ const NotFoundPage: React.FC = () => {
                </Link>
             </Grid>
          </motion.div>
-      </div>
+      </Container>
     </div>
   );
 };

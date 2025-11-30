@@ -3,6 +3,7 @@ import PricingCalculator from '../components/PricingCalculator';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Lock, Award, Users } from 'lucide-react';
+import Container from '../components/Container';
 
 const PricingCalculatorPage: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
@@ -32,7 +33,7 @@ const PricingCalculatorPage: React.FC = () => {
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
             </div>
 
-            <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center h-full pb-20">
+            <Container size="5xl" className="relative z-10 text-center flex flex-col items-center justify-center h-full pb-20">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -95,7 +96,7 @@ const PricingCalculatorPage: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
+            </Container>
           </motion.section>
         ) : (
           /* --- CALCULATOR SECTION --- */

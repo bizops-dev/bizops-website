@@ -13,6 +13,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -67,7 +68,7 @@ const EventDetailPage: React.FC = () => {
            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/80 to-transparent"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container size="7xl" className="relative z-10">
           <div className="mb-8">
             <Breadcrumbs items={[
               { label: 'Events', path: '/events' },
@@ -124,7 +125,7 @@ const EventDetailPage: React.FC = () => {
               </motion.div>
             </div>
           </Grid>
-        </div>
+        </Container>
       </div>
 
       {/* Content Section */}
@@ -132,7 +133,7 @@ const EventDetailPage: React.FC = () => {
         <Grid cols={3} gap={8}>
           
           {/* Main Info */}
-          <div className="lg:col-span-2 space-y-8">
+          <Stack direction="col" gap={8} className="lg:col-span-2">
             {/* About Event */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Tentang Event Ini</Typography>
@@ -153,7 +154,7 @@ const EventDetailPage: React.FC = () => {
             {/* Agenda */}
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-800">
               <Typography variant="h2" as="h2">Agenda Sesi</Typography>
-              <div className="space-y-6">
+              <Stack direction="col" gap={6}>
                 {event.agenda?.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
                     <div className="w-16 flex-shrink-0 pt-1">
@@ -166,7 +167,7 @@ const EventDetailPage: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </Stack>
             </div>
 
             {/* Speakers */}
@@ -190,11 +191,11 @@ const EventDetailPage: React.FC = () => {
                 ))}
               </Grid>
             </div>
-          </div>
+          </Stack>
 
           {/* Sidebar Registration */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
+            <Stack direction="col" gap={6} className="sticky top-24">
               <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-xl border border-slate-100 dark:border-slate-800 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-indigo-500"></div>
                 
@@ -289,7 +290,7 @@ const EventDetailPage: React.FC = () => {
                     ))}
                  </div>
               </div>
-            </div>
+            </Stack>
           </div>
         </Grid>
       </Container>

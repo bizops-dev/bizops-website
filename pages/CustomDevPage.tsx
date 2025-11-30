@@ -14,6 +14,7 @@ import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
 
 // --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -103,7 +104,7 @@ const CustomDevPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <Container size="7xl" className="relative z-10">
            <div className="mb-8">
               <Breadcrumbs items={[{ label: 'Services', path: '/services' }, { label: pageData.title, path: '/services/custom-dev' }]} />
            </div>
@@ -150,7 +151,7 @@ const CustomDevPage: React.FC = () => {
                        <Typography variant="h3" as="h3">Why Go Custom?</Typography>
                     </div>
                     
-                    <div className="space-y-6">
+                    <Stack direction="col" gap={6}>
                        {pageData.benefits.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
                              <div className="mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-200 dark:border-blue-800/50">
@@ -162,16 +163,16 @@ const CustomDevPage: React.FC = () => {
                              </div>
                           </div>
                        ))}
-                    </div>
+                    </Stack>
                  </SpotlightCard>
               </motion.div>
            </Grid>
-        </div>
+        </Container>
       </Section>
 
       {/* --- USE CASES (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
-         <div className="max-w-7xl mx-auto">
+         <Container size="7xl">
             <Stack direction="col" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Real World Impact</Typography>
@@ -188,7 +189,7 @@ const CustomDevPage: React.FC = () => {
                {/* Vertical Line */}
                <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 hidden md:block"></div>
 
-               <div className="space-y-12">
+               <Stack direction="col" gap={12}>
                   {pageData.useCases.map((item, idx) => {
                      const isEven = idx % 2 === 0;
                      return (
@@ -224,14 +225,14 @@ const CustomDevPage: React.FC = () => {
                         </motion.div>
                      );
                   })}
-               </div>
+               </Stack>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* --- DELIVERABLES (Previously Tech Stack) --- */}
       <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
-           <div className="max-w-5xl mx-auto">
+           <Container size="5xl">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Key Deliverables</Typography>
                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Output konkrit yang akan Anda terima dari proyek custom development ini.</Typography>
@@ -257,7 +258,7 @@ const CustomDevPage: React.FC = () => {
                     </motion.div>
                  ))}
               </Grid>
-           </div>
+           </Container>
       </Section>
 
       {/* --- CTA SECTION --- */}
@@ -272,7 +273,7 @@ const CustomDevPage: React.FC = () => {
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
            
-           <div className="relative z-10 max-w-3xl mx-auto">
+           <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to Build <span className="text-blue-400">Unique Features?</span></Typography>
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan teknis Anda dengan Solution Architect kami. Konsultasi awal gratis.</Typography>
              <Stack direction="col" gap={4} className="items-center justify-center">
@@ -287,7 +288,7 @@ const CustomDevPage: React.FC = () => {
                   </Button>
                </a>
              </Stack>
-           </div>
+           </Container>
         </motion.div>
       </Section>
     </div>

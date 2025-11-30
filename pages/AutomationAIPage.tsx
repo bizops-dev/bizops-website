@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const AutomationAIPage: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const AutomationAIPage: React.FC = () => {
             <Grid cols={2} gap={16} className="items-center">
                <div>
                   <Typography variant="h2" as="h2">Workflow Automation (No-Code Logic)</Typography>
-                  <div className="space-y-8">
+                  <Stack direction="col" gap={8}>
                      <div className="flex gap-4">
                         <div className="mt-1 p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg h-fit">
                            <GitMerge className="w-6 h-6 text-blue-600 dark:text-blue-400" />
@@ -61,7 +62,7 @@ const AutomationAIPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Distribusi tugas otomatis berdasarkan aturan. Misal: "Setiap Lead baru yang berasal dari wilayah Jakarta Selatan otomatis di-<em>assign</em> ke Salesman Budi."</Typography>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
                {/* Visual Placeholder */}
                <div className="bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 aspect-square flex items-center justify-center relative shadow-inner">
@@ -71,13 +72,13 @@ const AutomationAIPage: React.FC = () => {
                         <Typography variant="caption" className="text-slate-500">Logic Flow</Typography>
                         <div className="flex gap-1"><div className="w-2 h-2 bg-red-400 rounded-full"></div><div className="w-2 h-2 bg-yellow-400 rounded-full"></div><div className="w-2 h-2 bg-green-400 rounded-full"></div></div>
                      </div>
-                     <div className="space-y-3 text-xs">
+                     <Stack direction="col" gap={3} className="text-xs">
                         <div className="p-2 bg-slate-50 dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-bold">IF Stock &lt; 10</div>
                         <div className="flex justify-center"><ArrowRight className="w-4 h-4 text-slate-400 rotate-90" /></div>
                         <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-300 font-bold">THEN Create PR</div>
                         <div className="flex justify-center"><ArrowRight className="w-4 h-4 text-slate-400 rotate-90" /></div>
                         <div className="p-2 bg-green-50 dark:bg-green-900/30 rounded border border-green-100 dark:border-green-800 text-green-700 dark:text-green-300 font-bold">THEN Email Vendor</div>
-                     </div>
+                     </Stack>
                   </div>
                </div>
             </Grid>

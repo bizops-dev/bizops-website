@@ -285,7 +285,7 @@ const AssessmentPage = () => {
             
             <Typography variant="body-lg" className="text-slate-400 leading-relaxed">Evaluasi tingkat kematangan digital perusahaan Anda secara komprehensif. Dapatkan roadmap strategis yang dipersonalisasi dalam hitungan menit.</Typography>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <Grid cols={1} gap={4} className="mb-10">
               {[
                 { icon: Clock, text: "5-7 Menit", desc: "Waktu pengerjaan" },
                 { icon: Crosshair, text: "5 Dimensi", desc: "Analisis Holistik" },
@@ -302,7 +302,7 @@ const AssessmentPage = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </Grid>
 
             <Button onClick={handleStartIntro} size="lg" className="h-14 px-8 text-lg bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-500 hover:to-indigo-500 shadow-lg shadow-primary-900/20">
               Mulai Assessment Sekarang <ArrowRight className="w-5 h-5 ml-2" />
@@ -343,7 +343,7 @@ const AssessmentPage = () => {
                     <div className="w-3 h-3 rounded-full bg-green-500/50" />
                   </div>
                 </div>
-                <div className="space-y-4">
+                <Stack direction="col" gap={4}>
                   {Object.entries(categoryLabels).map(([key, label], idx) => (
                     <div key={key} className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary-500/30 transition-all">
                       <div className={`p-3 rounded-lg bg-slate-950 shadow-inner ${
@@ -363,7 +363,7 @@ const AssessmentPage = () => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </Stack>
               </div>
             )}
             
@@ -399,7 +399,7 @@ const AssessmentPage = () => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
         <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-primary-900/10 rounded-full blur-[100px]" />
 
-        <div className="max-w-2xl mx-auto w-full relative z-10">
+        <Container size="2xl" className="w-full relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -501,7 +501,7 @@ const AssessmentPage = () => {
               </div>
             </form>
           </motion.div>
-        </div>
+        </Container>
       </div>
     );
   }
@@ -536,7 +536,7 @@ const AssessmentPage = () => {
   if (viewState === 'results' && results) {
     return (
       <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 print:bg-white print:pt-0 print:pb-0 print:text-black">
-        <div className="max-w-6xl mx-auto">
+        <Container size="6xl">
           {/* --- REPORT HEADER (Formal) --- */}
           <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 mb-8 print:bg-transparent print:border-b-2 print:border-gray-200 print:rounded-none print:shadow-none print:mb-8 print:pb-8 relative">
             <Stack direction="col" gap={6} className="justify-between items-start md:items-center">
@@ -561,7 +561,7 @@ const AssessmentPage = () => {
               </div>
               
               {/* User Details Grid */}
-              <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-300 print:text-gray-800 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
+              <Grid cols={2} gap={6} className="text-sm text-slate-300 print:text-gray-800 bg-slate-950/50 p-4 rounded-xl border border-white/5 print:bg-gray-50 print:border-gray-200">
                 <div className="flex items-center gap-2">
                   <Building2 className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span className="font-semibold">{leadForm.company}</span>
@@ -578,14 +578,14 @@ const AssessmentPage = () => {
                   <Calendar className="w-4 h-4 text-primary-400 print:text-gray-600" />
                   <span>{assessmentDate}</span>
                 </div>
-              </div>
+              </Grid>
             </Stack>
           </div>
 
           <Grid cols={12} gap={8} className="mb-12 print:mb-6">
             
             {/* LEFT: Executive Summary & Score */}
-            <div className="lg:col-span-4 space-y-6">
+            <Stack direction="col" gap={6} className="lg:col-span-4">
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-1 border border-white/10 shadow-2xl print:bg-white print:border-gray-300 print:text-black h-fit">
                 <div className="bg-slate-900/80 rounded-[22px] p-8 flex flex-col items-center text-center relative overflow-hidden print:bg-white print:shadow-none print:p-0 print:pt-4">
                    <div className="relative w-40 h-40 mb-6 flex items-center justify-center">
@@ -628,16 +628,16 @@ const AssessmentPage = () => {
                   <Info className="w-3 h-3" /> Bagaimana skor ini dihitung?
                 </button>
               </div>
-            </div>
+            </Stack>
 
             {/* RIGHT: Detailed Analysis */}
-            <div className="lg:col-span-8 space-y-8">
+            <Stack direction="col" gap={8} className="lg:col-span-8">
               {/* Chart */}
               <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-white/10 print:bg-white print:border-gray-300 print:text-black print:break-inside-avoid">
                 <Typography variant="h3" as="h3" className="font-bold text-white"><BarChart className="w-6 h-6 mr-3 text-primary-500 print:text-black" />
                   Analisis per Dimensi</Typography>
                 
-                <div className="space-y-6">
+                <Stack direction="col" gap={6}>
                   {Object.entries(results.categoryScores).map(([cat, data]) => {
                     const score = data.count > 0 ? data.total / data.count : 0;
                     const percentage = (score / 5) * 100;
@@ -667,7 +667,7 @@ const AssessmentPage = () => {
                       </div>
                     );
                   })}
-                </div>
+                </Stack>
               </div>
 
               {/* Recommendations Grid */}
@@ -712,7 +712,7 @@ const AssessmentPage = () => {
                   })}
                 </Grid>
               </div>
-            </div>
+            </Stack>
           </Grid>
           
           {/* NEXT STEPS / CROSS-SELL SECTION (New) */}
@@ -769,7 +769,7 @@ const AssessmentPage = () => {
 
           {/* FLOATING ACTION BAR (Fixed Bottom) - Hidden when printing */}
           <div className="fixed bottom-0 left-0 right-0 p-4 bg-slate-950/80 backdrop-blur-lg border-t border-white/10 print:hidden z-40">
-            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <Container size="6xl" className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="text-sm text-slate-400 hidden sm:block">
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>
@@ -781,7 +781,7 @@ const AssessmentPage = () => {
                    Consultation <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-            </div>
+            </Container>
           </div>
           
           <div className="mb-8"></div>
@@ -804,7 +804,7 @@ const AssessmentPage = () => {
               </div>
             </div>
           )}
-        </div>
+        </Container>
       </div>
     );
   }
@@ -812,7 +812,7 @@ const AssessmentPage = () => {
   // 5. ACTIVE ASSESSMENT (SPLIT LAYOUT)
   return (
     <div className="min-h-screen bg-slate-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 text-white">
-      <div className="max-w-7xl mx-auto">
+      <Container size="7xl">
         
         {/* Mobile Nav Toggle / Progress */}
         <div className="lg:hidden mb-8 sticky top-20 z-30 bg-slate-950/90 backdrop-blur-md p-4 -mx-4 border-b border-white/10">
@@ -833,7 +833,7 @@ const AssessmentPage = () => {
                 <Typography variant="h3" as="h3" className="text-white font-bold"><LayoutDashboard className="w-5 h-5 mr-3 text-primary-500" />
                   Navigation</Typography>
                 
-                <div className="space-y-8 relative">
+                <Stack direction="col" gap={8} className="relative">
                   {/* Vertical Line */}
                   <div className="absolute left-[11px] top-4 bottom-4 w-px bg-white/10 z-0" />
 
@@ -845,7 +845,7 @@ const AssessmentPage = () => {
                         </div>
                         {categoryLabels[cat as CategoryKey]}
                       </div>
-                      <div className="grid grid-cols-5 gap-2 pl-8">
+                      <Grid cols={5} gap={2} className="pl-8">
                         {/* @ts-ignore */}
                         {questions.map((q) => {
                           const isAnswered = answers[q.id] !== undefined;
@@ -870,10 +870,10 @@ const AssessmentPage = () => {
                             </button>
                           );
                         })}
-                      </div>
+                      </Grid>
                     </div>
                   ))}
-                </div>
+                </Stack>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <div className="flex justify-between text-xs font-bold text-slate-500 mb-2 uppercase tracking-widest">
@@ -915,7 +915,7 @@ const AssessmentPage = () => {
                   <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{currentQuestion?.question}</Typography>
                 </div>
 
-                <div className="space-y-4 flex-grow relative z-10">
+                <Stack direction="col" gap={4} className="flex-grow relative z-10">
                   {currentQuestion?.options.map((option, index) => {
                     const isSelected = answers[currentQuestion.id] === option.score;
                     return (
@@ -942,7 +942,7 @@ const AssessmentPage = () => {
                       </button>
                     );
                   })}
-                </div>
+                </Stack>
 
                 <div className="mt-10 flex justify-between items-center pt-8 border-t border-white/10 relative z-10">
                   <Button 
@@ -977,7 +977,7 @@ const AssessmentPage = () => {
             </AnimatePresence>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 };

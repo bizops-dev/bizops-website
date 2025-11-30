@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const SysReqPage: React.FC = () => {
   return (
@@ -68,7 +69,7 @@ const SysReqPage: React.FC = () => {
            <Typography variant="h2" as="h2" className="font-bold text-slate-900"><div className="p-2 bg-slate-100 rounded-lg"><Globe className="w-6 h-6 text-slate-600" /></div>
               Network Configuration (Firewall)</Typography>
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-              <div className="space-y-4">
+              <Stack direction="col" gap={4}>
                  {sysReqData.network.map((net, idx) => (
                     <div key={idx} className="flex items-start gap-4 pb-4 border-b border-slate-100 last:border-0 last:pb-0">
                        <div className="bg-slate-100 px-3 py-1 rounded text-sm font-bold text-slate-700 min-w-[100px] text-center">
@@ -80,7 +81,7 @@ const SysReqPage: React.FC = () => {
                        </div>
                     </div>
                  ))}
-              </div>
+              </Stack>
            </div>
         </div>
 

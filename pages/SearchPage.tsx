@@ -40,7 +40,7 @@ const SearchPage: React.FC = () => {
         {/* Search Header */}
         <div className="mb-12 text-center">
            <Typography variant="h1" as="h1">Pencarian Global</Typography>
-           <div className="relative max-w-2xl mx-auto">
+           <Container size="2xl" className="relative">
               <input 
                 type="text" 
                 value={query}
@@ -51,7 +51,7 @@ const SearchPage: React.FC = () => {
                 aria-label="Search query"
               />
               <Search className="absolute left-5 top-5 text-slate-400 w-6 h-6" aria-hidden="true" />
-           </div>
+           </Container>
         </div>
 
         {/* Filters */}

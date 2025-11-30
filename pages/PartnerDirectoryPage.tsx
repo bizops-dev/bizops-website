@@ -97,7 +97,7 @@ const PartnerDirectoryPage: React.FC = () => {
         <Grid cols={4} gap={8}>
           
           {/* --- SIDEBAR FILTERS (Desktop) --- */}
-          <div className="hidden lg:block lg:col-span-1 space-y-8 sticky top-24 h-fit">
+          <Stack direction="col" gap={8} className="hidden lg:block lg:col-span-1 sticky top-24 h-fit">
             
             {/* Search */}
             <div className="relative">
@@ -114,7 +114,7 @@ const PartnerDirectoryPage: React.FC = () => {
             {/* Partner Type */}
             <div>
               <Typography variant="h3" as="h3">Partner Type</Typography>
-              <div className="space-y-2">
+              <Stack direction="col" gap={2}>
                 {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                   <div key={type}>
                      <label className="flex items-center gap-3 cursor-pointer group">
@@ -147,13 +147,13 @@ const PartnerDirectoryPage: React.FC = () => {
                      )}
                   </div>
                 ))}
-              </div>
+              </Stack>
             </div>
 
             {/* Industry */}
             <div>
               <Typography variant="h3" as="h3">Industry / Focus</Typography>
-              <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+              <Stack direction="col" gap={2} className="max-h-60 overflow-y-auto pr-2 custom-scrollbar">
                 {industriesList.map(industry => (
                   <label key={industry} className="flex items-center gap-3 cursor-pointer group">
                     <div className={`w-4 h-4 rounded border flex items-center justify-center transition-all ${selectedIndustry === industry ? 'bg-primary-600 border-primary-600' : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 group-hover:border-primary-400'}`}>
@@ -172,7 +172,7 @@ const PartnerDirectoryPage: React.FC = () => {
                     </span>
                   </label>
                 ))}
-              </div>
+              </Stack>
             </div>
 
              {/* Location */}
@@ -204,7 +204,7 @@ const PartnerDirectoryPage: React.FC = () => {
                </button>
             )}
 
-          </div>
+          </Stack>
 
           {/* --- MOBILE FILTER BUTTON --- */}
           <div className="lg:hidden col-span-1 mb-6">
@@ -285,11 +285,11 @@ const PartnerDirectoryPage: React.FC = () => {
                 </button>
               </div>
               
-              <div className="space-y-8 pb-20">
+              <Stack direction="col" gap={8} className="pb-20">
                  {/* Partner Type */}
                  <div>
                     <Typography variant="h4" as="h4">Type</Typography>
-                    <div className="space-y-3">
+                    <Stack direction="col" gap={3}>
                        {['implementation', 'referral', 'technology', 'managed-service'].map(type => (
                           <label key={type} className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
                              <div>
@@ -306,22 +306,22 @@ const PartnerDirectoryPage: React.FC = () => {
                              />
                           </label>
                        ))}
-                    </div>
+                    </Stack>
                  </div>
 
                  {/* Industry */}
                  <div>
                     <Typography variant="h4" as="h4">Industry</Typography>
-                    <div className="grid grid-cols-2 gap-3">
+                    <Grid cols={2} gap={3}>
                        {industriesList.map(industry => (
                           <label key={industry} className={`p-3 rounded-xl border text-sm text-center transition-all ${selectedIndustry === industry ? 'bg-primary-50 dark:bg-primary-900/20 border-primary-500 text-primary-700 dark:text-primary-300' : 'bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'}`}>
                              <input type="radio" name="mobileIndustry" className="hidden" checked={selectedIndustry === industry} onChange={() => setSelectedIndustry(industry)} onClick={() => setSelectedIndustry(selectedIndustry === industry ? null : industry)} />
                              {industry}
                           </label>
                        ))}
-                    </div>
+                    </Grid>
                  </div>
-              </div>
+              </Stack>
 
               <div className="fixed bottom-0 left-0 right-0 p-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex gap-4">
                  <Button variant="outline" fullWidth onClick={clearFilters}>Reset</Button>
@@ -397,7 +397,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
 
          <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{partner.description}</Typography>
 
-         <div className="space-y-3 mb-6">
+         <Stack direction="col" gap={3} className="mb-6">
             <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
                <MapPin className="w-3.5 h-3.5" /> {partner.location}
             </div>
@@ -413,7 +413,7 @@ const PartnerCard: React.FC<{ partner: PartnerProfile }> = ({ partner }) => {
                   </span>
                )}
             </div>
-         </div>
+         </Stack>
 
          <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-3">
             <a href={partner.website} target="_blank" rel="noopener noreferrer" className="w-full">

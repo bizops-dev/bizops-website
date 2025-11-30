@@ -106,7 +106,7 @@ const DownloadPage: React.FC = () => {
                         </div>
 
                         {/* App Body */}
-                        <div className="p-4 -mt-6 relative z-20 space-y-4">
+                        <Stack direction="col" gap={4} className="p-4 -mt-6 relative z-20">
                            {/* Stats Card */}
                            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800">
                               <div className="flex justify-between items-center mb-4">
@@ -121,7 +121,7 @@ const DownloadPage: React.FC = () => {
                            </div>
 
                            {/* Menu Grid */}
-                           <div className="grid grid-cols-2 gap-4">
+                           <Grid cols={2} gap={4}>
                               {[
                                  { icon: Layers, label: "Stock", color: "bg-blue-100 text-blue-600" },
                                  { icon: Zap, label: "Sales", color: "bg-amber-100 text-amber-600" },
@@ -135,8 +135,8 @@ const DownloadPage: React.FC = () => {
                                     <Typography variant="caption" className="text-slate-700 dark:text-slate-300">{item.label}</Typography>
                                  </div>
                               ))}
-                           </div>
-                        </div>
+                           </Grid>
+                        </Stack>
 
                         {/* Floating Action */}
                         <div className="absolute bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 flex items-center justify-center text-white hover:scale-110 transition-transform">
@@ -153,10 +153,10 @@ const DownloadPage: React.FC = () => {
       {/* --- FEATURES GRID --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
          <Container size="7xl">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <Container size="3xl" className="text-center mb-16">
                <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
-            </div>
+            </Container>
 
             <div className="md:hidden">
                <CardSlider
@@ -186,7 +186,7 @@ const DownloadPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8} className="hidden">
                <div className="bg-white dark:bg-slate-950 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow h-full">
                   <div className="w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
                      <WifiOff className="w-7 h-7" />
@@ -208,7 +208,7 @@ const DownloadPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Instant Push Notif</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Jangan jadi bottleneck. Terima notifikasi Purchase Approval atau Low Stock Alert secara real-time dan action langsung.</Typography>
                </div>
-            </div>
+            </Grid>
          </Container>
       </section>
 

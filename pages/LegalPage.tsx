@@ -8,6 +8,8 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 interface LegalPageProps {
   forcedDocId?: string;
@@ -155,10 +157,10 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
     <div className="pt-24 pb-24 bg-slate-50 min-h-screen font-sans">
        <SEO title={data.title} description={data.subtitle} />
        
-       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+       <Container>
           
           {/* MOBILE NAV CONTROLS */}
-          <div className="lg:hidden mb-6 flex flex-col gap-3 relative z-30">
+          <Stack direction="col" gap={3} className="lg:hidden mb-6 relative z-30">
              {/* 1. Document Switcher */}
              <button 
                 onClick={() => { setIsMobileNavOpen(!isMobileNavOpen); setIsMobileTOCOpen(false); }}
@@ -242,13 +244,13 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                    </motion.div>
                 )}
              </AnimatePresence>
-          </div>
+          </Stack>
 
           <Grid cols={12} gap={8}>
              
              {/* LEFT SIDEBAR NAV (Desktop) */}
              <div className="lg:col-span-3 hidden lg:block">
-                <div className="sticky top-28 space-y-8">
+                <Stack direction="col" gap={8} className="sticky top-28">
                    <div>
                       <Typography variant="h3" as="h3">Legal Center</Typography>
                       <nav className="space-y-1">
@@ -268,7 +270,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                          security@bizops.id <ChevronRight className="w-3 h-3" />
                       </a>
                    </div>
-                </div>
+                </Stack>
              </div>
 
              {/* MAIN CONTENT (7 Cols) */}
@@ -302,7 +304,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                   
                    {/* SPECIAL INTERACTIVE UI: DATA RIGHTS */}
                    {activeDocId === 'data-rights' && (
-                      <div className="space-y-8 animate-fade-in-up mb-12">
+                      <Stack direction="col" gap={8} className="animate-fade-in-up mb-12">
                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                             <Typography variant="h3" as="h3">Data Subject Access Rights (DSAR)</Typography>
                             <Typography variant="caption" className="leading-relaxed">Sesuai dengan UU PDP (Indonesia) dan GDPR (Eropa), Anda memiliki hak penuh untuk meminta salinan data digital Anda atau meminta penghapusan permanen ("Right to be Forgotten").</Typography>
@@ -369,7 +371,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                )}
                             </div>
                          )}
-                      </div>
+                      </Stack>
                    )}
 
                    {/* SPECIAL INTERACTIVE UI: COOKIES */}
@@ -379,7 +381,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                             <Typography variant="h3" as="h3">Pengaturan Preferensi</Typography>
                             {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-fade-in"><CheckCircle className="w-4 h-4" /> Tersimpan</span>}
                          </div>
-                         <div className="space-y-6">
+                         <Stack direction="col" gap={6}>
                             <div className="flex items-start gap-4 pb-6 border-b border-slate-200">
                                <div className="mt-1 bg-white p-2 rounded-lg border border-slate-200 shadow-sm"><Shield className="w-5 h-5 text-green-600" /></div>
                                <div className="flex-grow">
@@ -424,7 +426,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                                   {saved ? 'Preferensi Disimpan' : 'Simpan Perubahan'}
                                </Button>
                             </div>
-                         </div>
+                         </Stack>
                       </div>
                    )}
 
@@ -457,13 +459,13 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
                      }}
                    />
 
-                   <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                   <Stack direction="col" gap={4} className="mt-16 pt-8 border-t border-slate-100 justify-between items-center text-sm text-slate-500">
                       <Typography variant="body">© 2024 BizOps Inc. All rights reserved.</Typography>
                       <div className="flex gap-6">
                          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); }} className="hover:text-primary-600 transition-colors">Back to top</a>
                          <Link to="/contact" className="hover:text-primary-600 transition-colors">Contact Legal Team</Link>
                       </div>
-                   </div>
+                   </Stack>
                 </div>
              </div>
 
@@ -491,7 +493,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ forcedDocId }) => {
              </div>
 
           </Grid>
-       </div>
+       </Container>
     </div>
   );
 };

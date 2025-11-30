@@ -5,6 +5,8 @@ import Button from '../components/Button';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const SecurityReportPage: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -44,7 +46,7 @@ mQINBF... (Truncated for display) ...
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-900/20 rounded-full blur-[120px] pointer-events-none"></div>
         
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <Container size="5xl" className="text-center relative z-10">
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -54,7 +56,7 @@ mQINBF... (Truncated for display) ...
           </motion.div>
           <Typography variant="h1" as="h1" className="font-bold text-white tracking-tight">See Something, <span className="text-green-500">Say Something.</span></Typography>
           <Typography variant="body-xl" className="text-slate-400">Keamanan adalah prioritas #1 kami. Kami mengundang peneliti keamanan untuk membantu melindungi ekosistem BizOps melalui pengungkapan yang bertanggung jawab.</Typography>
-        </div>
+        </Container>
       </section>
 
       {/* Scope Table */}
@@ -93,7 +95,7 @@ mQINBF... (Truncated for display) ...
         <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12">
           <Typography variant="h2" as="h2">Cara Melaporkan</Typography>
           
-          <div className="space-y-8">
+          <Stack direction="col" gap={8}>
             <div>
               <Typography variant="h4" as="h4">Via Email Terenkripsi</Typography>
               <Typography variant="caption" className="text-slate-400">Kirim detail temuan Anda (PoC, Impact) ke <a href="mailto:security@bizops.id" className="text-green-400 hover:underline">security@bizops.id</a>. Gunakan PGP Key kami untuk informasi sensitif.</Typography>
@@ -123,7 +125,7 @@ mQINBF... (Truncated for display) ...
                 </Button>
               </form>
             </div>
-          </div>
+          </Stack>
         </div>
       </section>
     </div>

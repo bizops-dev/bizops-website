@@ -17,6 +17,7 @@ import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
 
 // --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -102,7 +103,7 @@ const ServiceDetailPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <Container size="7xl" className="relative z-10">
            <div className="mb-8">
               <Breadcrumbs items={[
                 { label: 'Services', path: '/services' },
@@ -173,7 +174,7 @@ const ServiceDetailPage: React.FC = () => {
                        <Typography variant="h3" as="h3">Why BizOps?</Typography>
                     </div>
                     
-                    <div className="space-y-6">
+                    <Stack direction="col" gap={6}>
                        {data.benefits?.map((benefit, idx) => (
                           <div key={idx} className="group flex gap-4">
                              <div className="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center shrink-0 border border-green-200 dark:border-green-800/50">
@@ -185,7 +186,7 @@ const ServiceDetailPage: React.FC = () => {
                              </div>
                           </div>
                        ))}
-                    </div>
+                    </Stack>
 
                     <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700/50 flex items-center gap-2 text-sm text-slate-400 font-medium">
                        <ShieldCheck className="w-4 h-4 text-primary-500" />
@@ -194,12 +195,12 @@ const ServiceDetailPage: React.FC = () => {
                  </SpotlightCard>
               </motion.div>
            </Grid>
-        </div>
+        </Container>
       </Section>
 
       {/* --- METHODOLOGY (Timeline Style) --- */}
       <Section className="bg-white dark:bg-slate-950 relative z-20">
-         <div className="max-w-7xl mx-auto">
+         <Container size="7xl">
             <Stack direction="col" gap={6} className="md:items-end justify-between mb-16">
                <div>
                   <Typography variant="h2" as="h2">Our Methodology</Typography>
@@ -245,13 +246,13 @@ const ServiceDetailPage: React.FC = () => {
                   })}
                </CardSlider>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* --- DELIVERABLES (Grid) --- */}
       {data.deliverables && (
         <Section id="deliverables" className="bg-slate-50 dark:bg-slate-900/50">
-           <div className="max-w-5xl mx-auto">
+           <Container size="5xl">
               <div className="text-center mb-16">
                  <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Tangible Deliverables</Typography>
                  <Typography variant="body" className="text-slate-600 dark:text-slate-400">Aset konkret yang akan menjadi milik perusahaan Anda selamanya.</Typography>
@@ -274,7 +275,7 @@ const ServiceDetailPage: React.FC = () => {
                     </motion.div>
                  ))}
               </CardSlider>
-           </div>
+           </Container>
         </Section>
       )}
 
@@ -291,7 +292,7 @@ const ServiceDetailPage: React.FC = () => {
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
            
-           <div className="relative z-10 max-w-3xl mx-auto">
+           <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Start Your <span className="text-primary-400">{data.title}</span> Journey.</Typography>
              <Typography variant="body-lg" className="text-slate-400">Diskusikan kebutuhan spesifik Anda dengan tim ahli kami. Kami siap memberikan asesmen awal.</Typography>
              <Stack direction="col" gap={4} className="items-center justify-center">
@@ -306,7 +307,7 @@ const ServiceDetailPage: React.FC = () => {
                   </Button>
                </a>
              </Stack>
-           </div>
+           </Container>
         </motion.div>
       </Section>
     </div>

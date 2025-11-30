@@ -161,22 +161,22 @@ const RolePage: React.FC = () => {
                   </div>
 
                   {/* Dashboard Content Mockup */}
-                  <div className="p-6 pt-16 grid grid-cols-12 gap-4 h-full bg-[#0F172A] relative">
+                  <Grid cols={12} gap={4} className="p-6 pt-16 h-full bg-[#0F172A] relative">
                      {/* Grid Background */}
                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:32px_32px] opacity-20 pointer-events-none"></div>
                      
                      {/* Left Sidebar */}
-                     <div className="col-span-2 hidden lg:flex flex-col gap-2 border-r border-slate-800 pr-4 relative z-10">
+                     <Stack direction="col" gap={2} className="col-span-2 hidden border-r border-slate-800 pr-4 relative z-10">
                         <div className={`h-8 bg-gradient-to-r rounded-md w-full mb-4 shadow-lg transition-all duration-500 ${
                            ['from-blue-600 to-blue-700', 'from-green-600 to-green-700', 'from-purple-600 to-purple-700', 'from-amber-600 to-amber-700'][activeFeature % 4]
                         }`}></div>
                         {[1,2,3,4,5].map(i => <div key={i} className="h-8 bg-slate-800/50 hover:bg-slate-800 transition-colors rounded-md w-full border border-transparent hover:border-slate-700"></div>)}
-                     </div>
+                     </Stack>
 
                      {/* Main Content */}
-                     <div className="col-span-12 lg:col-span-10 grid grid-cols-3 gap-4 relative z-10">
+                     <Grid cols={3} gap={4} className="col-span-12 lg:col-span-10 relative z-10">
                         {/* Top Cards - Dynamic Numbers */}
-                        <div className="col-span-3 grid grid-cols-3 gap-4">
+                        <Grid cols={3} gap={4} className="col-span-3">
                            {[1,2,3].map((i) => (
                               <div key={i} className="h-28 bg-[#1E293B] rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg group/card relative overflow-hidden">
                                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity"></div>
@@ -190,13 +190,13 @@ const RolePage: React.FC = () => {
                                        {i===1 ? '+12.5%' : ''}
                                     </div>
                                  </div>
-                                 <div className="space-y-2">
+                                 <Stack direction="col" gap={2}>
                                     <div className="h-6 w-2/3 bg-slate-700 rounded animate-pulse transition-all duration-500" style={{ width: `${60 + (activeFeature * 10) + (i * 5)}%` }}></div>
                                     <div className="h-3 w-1/3 bg-slate-800 rounded"></div>
-                                 </div>
+                                 </Stack>
                               </div>
                            ))}
-                        </div>
+                        </Grid>
 
                         {/* Chart Area - Dynamic Bars */}
                         <div className="col-span-2 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 relative overflow-hidden p-5 hover:border-slate-600 transition-colors">
@@ -233,22 +233,22 @@ const RolePage: React.FC = () => {
                         </div>
 
                         {/* Side Panel */}
-                        <div className="col-span-1 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 p-5 space-y-3 hover:border-slate-600 transition-colors">
+                        <Stack direction="col" gap={3} className="col-span-1 h-64 bg-[#1E293B] rounded-xl border border-slate-700/50 p-5 hover:border-slate-600 transition-colors">
                            <div className="h-5 w-1/2 bg-slate-700 rounded mb-4"></div>
                            {[1,2,3,4].map(i => (
                               <div key={i} className="flex items-center gap-3 p-1.5 rounded-lg hover:bg-slate-800/50 transition-colors">
                                  <div className={`h-7 w-7 rounded-full border border-slate-700 transition-colors duration-500 ${
                                     activeFeature === i-1 ? 'bg-white/10' : 'bg-slate-800'
                                  }`}></div>
-                                 <div className="flex-1 space-y-1.5">
+                                 <Stack direction="col" gap={1} className="flex-1">
                                     <div className="h-2.5 w-3/4 bg-slate-700 rounded"></div>
                                     <div className="h-1.5 w-1/2 bg-slate-800 rounded"></div>
-                                 </div>
+                                 </Stack>
                               </div>
                            ))}
-                        </div>
-                     </div>
-                  </div>
+                        </Stack>
+                     </Grid>
+                  </Grid>
                </motion.div>
             </div>
          </Container>
@@ -337,7 +337,7 @@ const RolePage: React.FC = () => {
         {/* Glow Effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary-500/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <Container size="5xl" className="relative z-10 text-center">
            <motion.div
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +369,7 @@ const RolePage: React.FC = () => {
            </Stack>
            
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Tidak butuh kartu kredit.</Typography>
-        </div>
+        </Container>
       </section>
     </div>
   );

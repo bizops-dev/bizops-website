@@ -9,6 +9,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const teamMembers = [
   {
@@ -60,7 +61,7 @@ const AboutPage: React.FC = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
         
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <Container size="5xl" className="relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +101,7 @@ const AboutPage: React.FC = () => {
               </Button>
             </a>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* --- ORIGIN STORY TIMELINE (Refined) --- */}
@@ -111,7 +112,7 @@ const AboutPage: React.FC = () => {
                <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Perjalanan kami bukan tentang membuat software, tapi tentang memecahkan kebuntuan operasional.</Typography>
             </div>
             
-            <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8 space-y-16 md:space-y-20">
+            <Stack direction="col" gap={16} className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 md:pl-8">
                {aboutContent.timeline.map((item, idx) => (
                  <motion.div 
                    key={idx} 
@@ -124,7 +125,7 @@ const AboutPage: React.FC = () => {
                     {/* Marker */}
                     <div className={`absolute -left-[25px] md:-left-[41px] top-0 w-6 h-6 rounded-full border-4 border-white dark:border-slate-950 z-10 transition-colors duration-500 ${idx === 1 ? 'bg-indigo-500 shadow-[0_0_0_4px_rgba(99,102,241,0.2)]' : 'bg-slate-300 dark:bg-slate-700 group-hover:bg-indigo-400'}`}></div>
                     
-                    <div className="md:grid md:grid-cols-5 md:gap-16">
+                    <Grid cols={5} gap={16}>
                        <div className="md:col-span-1 mb-4 md:mb-0 pt-1">
                           <span className={`text-sm font-bold uppercase tracking-widest transition-colors ${idx === 1 ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300'}`}>{item.year}</span>
                        </div>
@@ -132,10 +133,10 @@ const AboutPage: React.FC = () => {
                           <Typography variant="h3" as="h3">{item.title}</Typography>
                           <Typography variant="body">{item.desc}</Typography>
                        </div>
-                    </div>
+                    </Grid>
                  </motion.div>
                ))}
-            </div>
+            </Stack>
          </Container>
       </section>
 
@@ -178,7 +179,7 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* Desktop View: Grid */}
-            <div className="hidden md:grid md:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8} className="hidden">
                {aboutContent.values.map((val, idx) => (
                  <motion.div 
                    key={idx}
@@ -198,7 +199,7 @@ const AboutPage: React.FC = () => {
                     </div>
                  </motion.div>
                ))}
-            </div>
+            </Grid>
          </Container>
       </section>
 
@@ -251,7 +252,7 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* Desktop View: Grid */}
-            <div className="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <Grid cols={5} gap={6} className="hidden">
                {teamMembers.map((member, idx) => (
                   <motion.div 
                     key={idx} 
@@ -283,7 +284,7 @@ const AboutPage: React.FC = () => {
                      </div>
                   </motion.div>
                ))}
-            </div>
+            </Grid>
          </Container>
       </section>
 
@@ -293,7 +294,7 @@ const AboutPage: React.FC = () => {
             <Grid cols={2} gap={16} className="items-stretch">
                <div>
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white"><Building className="w-8 h-8 text-slate-400" /> Office & Legal Entity</Typography>
-                  <div className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 space-y-10 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
+                  <Stack direction="col" gap={10} className="bg-slate-50 dark:bg-slate-800/30 p-8 md:p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-900 transition-colors duration-500 h-full">
                      <div className="flex gap-6 items-start">
                         <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 dark:border-slate-700">
                            <FileCheck className="w-6 h-6 text-slate-500 dark:text-slate-300" />
@@ -301,14 +302,14 @@ const AboutPage: React.FC = () => {
                         <div>
                            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Legal Identity</div>
                            <div className="font-bold text-slate-900 dark:text-white text-xl mb-1">{aboutContent.entity.name}</div>
-                           <div className="text-sm text-slate-600 dark:text-slate-400 flex flex-col gap-1">
+                           <Stack direction="col" gap={1} className="text-sm text-slate-600 dark:text-slate-400">
                               <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1 group">
                                  <CheckCircle2 className="w-3 h-3 text-green-500" /> NIB: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </a>
                               <a href="https://divistant.com/media/legal" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1 group">
                                  <CheckCircle2 className="w-3 h-3 text-green-500" /> SK Kemenkumham: [Tersedia] <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </a>
-                           </div>
+                           </Stack>
                         </div>
                      </div>
                      
@@ -325,7 +326,7 @@ const AboutPage: React.FC = () => {
                         </div>
                      </div>
 
-                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-slate-700/50">
+                     <Grid cols={1} gap={8} className="pt-8 border-t border-slate-200 dark:border-slate-700/50">
                         <div>
                            <div className="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-bold">
                               <MapPin className="w-5 h-5 text-indigo-500" /> HQ (Jakarta)
@@ -342,8 +343,8 @@ const AboutPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-500 dark:text-slate-400 leading-relaxed">Jl. Ampel No.23, Demangan Baru,<br/>
                               Sleman, DIY 55281.</Typography>
                         </div>
-                     </div>
-                  </div>
+                     </Grid>
+                  </Stack>
                </div>
 
                <div className="flex flex-col justify-center h-full">

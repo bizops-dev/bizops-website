@@ -26,6 +26,7 @@ import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // Pricing Tiers for Comparison
 const PRICING_TIERS = [
@@ -119,14 +120,14 @@ const ROIPage: React.FC = () => {
       <Container size="7xl" className="relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Container size="3xl" className="text-center mb-16">
            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" /> ROI Calculator
            </div>
            <Typography variant="h1" as="h1" className="font-bold text-white leading-tight">Hitung Nilai Investasi <br/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Transformasi Digital</span></Typography>
            <Typography variant="body-lg" className="text-slate-400">Jangan hanya menebak. Gunakan data operasional Anda untuk mengestimasi penghematan biaya nyata dan waktu balik modal (BEP).</Typography>
-        </div>
+        </Container>
 
         <Grid cols={12} gap={8} className="items-start">
            
@@ -146,7 +147,7 @@ const ROIPage: React.FC = () => {
                 </button>
               </div>
               
-              <div className="space-y-8">
+              <Stack direction="col" gap={8}>
                  {/* 1. Admin Count */}
                  <div>
                     <div className="flex justify-between mb-2">
@@ -201,7 +202,7 @@ const ROIPage: React.FC = () => {
                  </div>
 
                  {/* 4. Losses & Existing Cost */}
-                 <div className="space-y-4">
+                 <Stack direction="col" gap={4}>
                     <div>
                         <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Estimasi Kebocoran (IDR/Tahun)</Typography>
                         <div className="relative">
@@ -226,14 +227,14 @@ const ROIPage: React.FC = () => {
                         </div>
                         <Typography variant="body" className="text-slate-500">Biaya maintenance, hosting, atau langganan aplikasi yang bisa dihentikan.</Typography>
                     </div>
-                 </div>
+                 </Stack>
 
                  <hr className="border-white/5" />
 
                  {/* Plan Selection */}
                  <div>
                     <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-3">Pilih Paket BizOps</Typography>
-                    <div className="grid grid-cols-3 gap-2">
+                    <Grid cols={3} gap={2}>
                       {PRICING_TIERS.map(plan => (
                         <button
                           key={plan.id}
@@ -247,14 +248,14 @@ const ROIPage: React.FC = () => {
                           {plan.name}
                         </button>
                       ))}
-                    </div>
+                    </Grid>
                     <Typography variant="body" className="text-slate-500">Biaya: {formatCurrency(subscriptionCost)}/bulan</Typography>
                  </div>
-              </div>
+              </Stack>
            </div>
 
            {/* RIGHT: RESULTS */}
-           <div className="lg:col-span-7 space-y-6">
+           <Stack direction="col" gap={6} className="lg:col-span-7">
               
               {/* Savings Breakdown Cards - 2x2 Grid */}
               <Grid cols={2} gap={4}>
@@ -313,7 +314,7 @@ const ROIPage: React.FC = () => {
 
               {/* MAIN HERO RESULT */}
               <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden text-center md:text-left">
-                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                 <Stack direction="col" gap={8} className="relative z-10 justify-between items-center">
                     <div className="flex-1">
                        <Typography variant="h2" as="h2">Total Penghematan Tahunan</Typography>
                        <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -338,7 +339,7 @@ const ROIPage: React.FC = () => {
                        </div>
                     </div>
 
-                    <div className="w-full md:w-auto flex flex-col gap-3 min-w-[200px]">
+                    <Stack direction="col" gap={3} className="w-full md:w-auto min-w-[200px]">
                        <Button 
                          onClick={() => setShowLeadForm(true)} 
                          size="lg"
@@ -353,8 +354,8 @@ const ROIPage: React.FC = () => {
                        >
                           Validasi Angka Ini
                        </Button>
-                    </div>
-                 </div>
+                    </Stack>
+                 </Stack>
                  
                  {/* Decor */}
                  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
@@ -372,7 +373,7 @@ const ROIPage: React.FC = () => {
                   </div>
               </div>
 
-           </div>
+           </Stack>
         </Grid>
 
         {/* --- LEAD FORM MODAL --- */}

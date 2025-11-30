@@ -147,7 +147,7 @@ const DemoPage: React.FC = () => {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyan-400">In Action.</span></Typography>
                   <Typography variant="body-lg" className="text-slate-400">Ini bukan sekadar demo fitur. Diskusikan arsitektur sistem yang tepat untuk masalah operasional spesifik perusahaan Anda dengan Solution Architect kami.</Typography>
 
-                  <div className="space-y-8 mb-12">
+                  <Stack direction="col" gap={8} className="mb-12">
                     {[
                       { icon: Calendar, title: 'Discovery Session (15m)', desc: "Kami akan membedah 'bottle-neck' operasional Anda saat ini." },
                       { icon: Video, title: 'Tailored Walkthrough (30m)', desc: 'Demo produk spesifik industri Anda. No generic features.' },
@@ -163,9 +163,9 @@ const DemoPage: React.FC = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </Stack>
 
-                  <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+                  <Grid cols={3} gap={4} className="border-t border-white/10 pt-8">
                     <Stack direction="col" gap={2}>
                        <Shield className="w-5 h-5 text-slate-500" />
                        <span className="text-xs font-bold text-slate-400 uppercase">ISO 27001<br/>Ready</span>
@@ -178,7 +178,7 @@ const DemoPage: React.FC = () => {
                        <FileCheck className="w-5 h-5 text-slate-500" />
                        <span className="text-xs font-bold text-slate-400 uppercase">NDA<br/>Available</span>
                     </Stack>
-                  </div>
+                  </Grid>
                 </motion.div>
               </div>
 
@@ -279,14 +279,14 @@ const DemoPage: React.FC = () => {
 
                     <div className="p-5 bg-white/5 rounded-xl border border-white/10">
                        <span className="block text-sm font-bold text-white mb-4 flex items-center gap-2"><Zap className="w-4 h-4 text-amber-400" /> Kebutuhan Utama</span>
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                       <Grid cols={1} gap={3}>
                           <Checkbox label="Integrasi HR & Payroll" name="feature_hr" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Kontrol Proyek & Biaya" name="feature_project" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Manajemen Inventori" name="feature_inv" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Sales & CRM" name="feature_crm" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Finance & Accounting" name="feature_finance" labelClassName="text-slate-300 group-hover:text-white" />
                           <Checkbox label="Minat Partner / OEM" name="feature_partner" labelClassName="text-slate-300 group-hover:text-white" />
-                       </div>
+                       </Grid>
                     </div>
 
                     {/* Compliance: Explicit Consent */}

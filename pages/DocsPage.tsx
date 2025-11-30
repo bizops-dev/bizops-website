@@ -34,7 +34,7 @@ const DocsPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-900/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <Container size="4xl" className="relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ const DocsPage: React.FC = () => {
              <Link to="/docs/api-keys" className="hover:text-white hover:underline decoration-primary-500 underline-offset-4 transition-all">Generate API Key</Link>
              <Link to="/docs/troubleshoot" className="hover:text-white hover:underline decoration-primary-500 underline-offset-4 transition-all">Connection Error 502</Link>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       <Container size="7xl" className="-mt-16 relative z-20 pb-24">
@@ -119,7 +119,7 @@ const DocsPage: React.FC = () => {
               </CardSlider>
            </div>
 
-           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <Grid cols={3} gap={6} className="hidden">
               {docsData.categories.map((cat, idx) => (
                  <motion.div 
                    key={idx}
@@ -141,7 +141,7 @@ const DocsPage: React.FC = () => {
                    </Card>
                  </motion.div>
               ))}
-           </div>
+           </Grid>
         </div>
 
         {/* --- DEVELOPER PORTAL --- */}
@@ -149,7 +149,7 @@ const DocsPage: React.FC = () => {
            {/* Abstract Decoration */}
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
            
-           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-16">
+           <Grid cols={5} gap={16} className="relative z-10">
               <div className="lg:col-span-2">
                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-900/30 border border-blue-800 text-blue-300 text-xs font-bold mb-6">
                     <Terminal className="w-3 h-3" /> DEVELOPER HUB
@@ -228,15 +228,15 @@ const DocsPage: React.FC = () => {
                     </div>
                  </div>
                  
-                 <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                 <Grid cols={4} gap={4} className="mt-6">
                     {['Authentication', 'Webhooks', 'Rate Limits', 'Errors'].map(item => (
                        <div key={item} className="bg-slate-800/50 hover:bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs font-medium text-slate-400 text-center cursor-pointer transition-colors">
                           {item}
                        </div>
                     ))}
-                 </div>
+                 </Grid>
               </div>
-           </div>
+           </Grid>
         </div>
 
         {/* --- COMMUNITY & SUPPORT --- */}
@@ -283,7 +283,7 @@ const DocsPage: React.FC = () => {
               </CardSlider>
            </div>
 
-           <div className="hidden md:grid md:grid-cols-3 gap-6">
+           <Grid cols={3} gap={6} className="hidden">
               <a href="https://discord.gg/bizops" target="_blank" rel="noopener noreferrer" className="block h-full">
                  <Card className="h-full flex flex-col items-center text-center hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300" hoverEffect>
                     <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
@@ -316,7 +316,7 @@ const DocsPage: React.FC = () => {
                     <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">Open Ticket &rarr;</span>
                  </Card>
               </Link>
-           </div>
+           </Grid>
         </div>
 
       </Container>

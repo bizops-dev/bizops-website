@@ -9,6 +9,8 @@ import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const PartnerApplyPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -110,12 +112,12 @@ const PartnerApplyPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="relative z-10 px-4 max-w-4xl mx-auto">
+         <Container size="4xl" className="relative z-10">
             <Typography variant="h1" as="h1" className="font-bold tracking-tight">{getPageTitle()}</Typography>
             <Typography variant="body-lg" className="text-slate-400 leading-relaxed">{trackParam 
                   ? "Bergabung dengan ratusan founder lain yang telah mengakselerasi pertumbuhan mereka dengan BizOps." 
                   : "Bergabung dengan ekosistem partner kami untuk memperluas portofolio layanan dan meningkatkan revenue bisnis Anda."}</Typography>
-         </div>
+         </Container>
       </div>
 
       <Section className="py-16 -mt-10 relative z-20">
@@ -243,14 +245,14 @@ const PartnerApplyPage: React.FC = () => {
             </div>
 
             {/* RIGHT: INFO SIDEBAR */}
-            <div className="lg:col-span-4 space-y-8">
+            <Stack direction="col" gap={8} className="lg:col-span-4">
                
                {/* Process Timeline */}
                <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl"></div>
                   <Typography variant="h3" as="h3">Next Steps</Typography>
                   
-                  <div className="space-y-8 relative z-10">
+                  <Stack direction="col" gap={8} className="relative z-10">
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center">
                            <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform">1</div>
@@ -280,7 +282,7 @@ const PartnerApplyPage: React.FC = () => {
                            <Typography variant="body" className="text-slate-500 leading-relaxed">Akses ke Partner Portal, Marketing Kit, dan Training Material.</Typography>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
                {/* Quick Contact */}
@@ -310,7 +312,7 @@ const PartnerApplyPage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
+            </Stack>
          </Grid>
       </Section>
     </div>

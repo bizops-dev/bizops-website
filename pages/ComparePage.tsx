@@ -30,13 +30,13 @@ const ComparePage: React.FC = () => {
 
       <Container size="7xl">
         {/* Hero */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <Container size="4xl" className="text-center mb-16">
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 mb-6 shadow-sm">
             BizOps vs {data.name}
           </div>
           <Typography variant="h1" as="h1" className="font-bold text-slate-900 leading-tight">{data.verdict}</Typography>
           <Typography variant="body-xl" className="text-slate-600">{data.description}</Typography>
-        </div>
+        </Container>
 
         {/* LAYOUT 1: MATRIX (For Odoo) */}
         {data.points && data.points.length > 0 && (
@@ -113,14 +113,14 @@ const ComparePage: React.FC = () => {
                        <Typography variant="h3" as="h3" className="font-bold text-slate-900">{scene.name}</Typography>
                     </div>
 
-                    <div className="space-y-4 mb-8">
+                    <Stack direction="col" gap={4} className="mb-8">
                        {scene.metrics.map((m: any, i: number) => (
                           <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
                              <Typography variant="caption" className="text-slate-500">{m.label}</Typography>
                              <span className="font-bold text-slate-900">{m.val}</span>
                           </div>
                        ))}
-                    </div>
+                    </Stack>
 
                     <ul className="space-y-3">
                        {scene.points.map((pt: string, i: number) => (
@@ -137,7 +137,7 @@ const ComparePage: React.FC = () => {
 
         {/* LAYOUT 3: COLUMNS (For SaaS Comparison) */}
         {false && (
-           <div className="space-y-6 mb-16">
+           <Stack direction="col" gap={6} className="mb-16">
               {[].map((feat: any, idx: number) => (
                  <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0">
@@ -155,11 +155,11 @@ const ComparePage: React.FC = () => {
                     </div>
                  </div>
               ))}
-           </div>
+           </Stack>
         )}
 
         {/* Verdict & CTA */}
-        <div className="max-w-4xl mx-auto text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
+        <Container size="4xl" className="text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
            <Typography variant="body-lg" className="text-slate-600 leading-relaxed">"{data.verdict}"</Typography>
            <Stack direction="col" gap={4} className="justify-center">
@@ -170,7 +170,7 @@ const ComparePage: React.FC = () => {
                  <Button variant="outline" size="lg">Hitung ROI</Button>
               </Link>
            </Stack>
-        </div>
+        </Container>
       </Container>
     </div>
   );

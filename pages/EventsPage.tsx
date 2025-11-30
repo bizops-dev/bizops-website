@@ -10,6 +10,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Stack from '../components/Stack';
+import Grid from '../components/Grid';
 
 const EventsPage: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -56,7 +57,7 @@ const EventsPage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-600/20 rounded-full blur-[120px] pointer-events-none"></div>
          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,13 +116,13 @@ const EventsPage: React.FC = () => {
                   ))}
                </div>
             </motion.div>
-         </div>
+         </Container>
       </div>
 
       <Container size="7xl" className="-mt-20 relative z-20 pb-24 space-y-24">
         
         {/* Upcoming Events Grid */}
-        <div className="space-y-8">
+        <Stack direction="col" gap={8}>
            <div className="flex items-center justify-between">
               <Typography variant="h2" as="h2" className="font-bold text-white"><Calendar className="w-6 h-6 text-primary-400" /> Upcoming Live Sessions</Typography>
            </div>
@@ -181,7 +182,7 @@ const EventsPage: React.FC = () => {
               </CardSlider>
            </div>
 
-           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <Grid cols={3} gap={8} className="hidden">
               {filteredEvents.map((evt, idx) => (
                  <motion.div 
                     key={idx} 
@@ -232,8 +233,8 @@ const EventsPage: React.FC = () => {
                     </div>
                  </motion.div>
               ))}
-           </div>
-        </div>
+           </Grid>
+        </Stack>
 
         {/* On-Demand Library Section */}
         <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden border border-slate-800">
@@ -273,7 +274,7 @@ const EventsPage: React.FC = () => {
                  </CardSlider>
               </div>
 
-              <div className="hidden md:grid md:grid-cols-3 gap-6">
+              <Grid cols={3} gap={6} className="hidden">
                  {eventsData.recordings.map((rec, idx) => (
                     <div key={idx} className="h-full group bg-slate-800/50 hover:bg-slate-800 rounded-2xl p-4 border border-slate-700/50 hover:border-primary-500/50 transition-all cursor-pointer">
                        <div className="aspect-video bg-slate-900 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group-hover:shadow-lg transition-shadow">
@@ -292,16 +293,16 @@ const EventsPage: React.FC = () => {
                        </div>
                     </div>
                  ))}
-              </div>
+              </Grid>
               
-              <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center max-w-3xl mx-auto border border-slate-700/50">
+              <Container size="3xl" className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
                  <Typography variant="caption" className="text-slate-400">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
                  <Stack direction="col" gap={4} className="justify-center">
                     <input type="email" placeholder="Email Kantor Anda" className="px-5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white w-full sm:w-72 focus:ring-2 focus:ring-primary-500 outline-none" />
                     <Button className="bg-white text-slate-900 hover:bg-slate-200 border-none font-bold">Akses Sekarang</Button>
                  </Stack>
-              </div>
+              </Container>
            </div>
         </div>
 

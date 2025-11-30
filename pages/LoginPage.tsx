@@ -6,6 +6,8 @@ import { Input, Checkbox } from '../components/Form';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typography from '../components/Typography';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 type LoginType = 'employee' | 'admin' | 'partner';
 
@@ -51,7 +53,7 @@ const LoginPage: React.FC = () => {
 
       {/* LEFT: FORM SECTION */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-24 py-12 relative z-10">
-        <div className="max-w-md w-full mx-auto">
+        <Container className="w-full">
           
           {/* Logo Mobile Only */}
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 w-fit">
@@ -176,7 +178,7 @@ const LoginPage: React.FC = () => {
              <span className="flex items-center gap-1"><Lock className="w-3 h-3" /> 256-bit SSL</span>
           </div>
 
-        </div>
+        </Container>
       </div>
 
       {/* RIGHT: VISUAL SECTION (Desktop Only) */}
@@ -207,14 +209,14 @@ const LoginPage: React.FC = () => {
                            </div>
                            <div className="ml-auto text-green-400 text-xs">● Active</div>
                         </div>
-                        <div className="space-y-3">
+                        <Stack direction="col" gap={3}>
                            <div className="h-2 w-3/4 bg-slate-700 rounded-full"></div>
                            <div className="h-2 w-1/2 bg-slate-700 rounded-full"></div>
                            <div className="mt-4 flex gap-2">
                               <span className="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">Payroll Ready</span>
                               <span className="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">Payslip Generated</span>
                            </div>
-                        </div>
+                        </Stack>
                      </div>
                   )}
                   {loginType === 'admin' && (
@@ -230,7 +232,7 @@ const LoginPage: React.FC = () => {
                         <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 mb-6">
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
-                        <div className="space-y-2">
+                        <Stack direction="col" gap={2}>
                            <div className="flex justify-between text-sm text-indigo-200">
                               <span>Active Clients</span>
                               <span className="font-bold text-white">14</span>
@@ -238,7 +240,7 @@ const LoginPage: React.FC = () => {
                            <div className="w-full bg-indigo-950 rounded-full h-2">
                               <div className="bg-indigo-400 h-2 rounded-full w-[70%]"></div>
                            </div>
-                        </div>
+                        </Stack>
                      </div>
                   )}
                </motion.div>

@@ -13,6 +13,8 @@ import { FADE_UP_VARIANTS, STAGGER_CONTAINER, SPRING_TRANSITION } from '../utils
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
 
 // --- COMPONENT: SPOTLIGHT CARD ---
 const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
@@ -74,7 +76,7 @@ const ServicesPage: React.FC = () => {
         {/* Hero Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary-500/10 rounded-[100%] blur-[100px] pointer-events-none animate-pulse-slow"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center px-4">
+        <Container size="5xl" className="relative z-10 text-center">
            <div className="flex justify-center mb-8">
               <Breadcrumbs />
            </div>
@@ -130,12 +132,12 @@ const ServicesPage: React.FC = () => {
                 </div>
               ))}
            </motion.div>
-        </div>
+        </Container>
       </Section>
 
       {/* --- ENGAGEMENT MODEL (JOURNEY) --- */}
       <Section className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative z-20">
-        <div className="max-w-7xl mx-auto">
+        <Container size="7xl">
            <Stack direction="col" gap={6} className="justify-between items-end mb-16">
               <div>
                 <Typography variant="h2" as="h2">How We Work</Typography>
@@ -174,12 +176,12 @@ const ServicesPage: React.FC = () => {
                  ))}
               </CardSlider>
            </div>
-        </div>
+        </Container>
       </Section>
 
       {/* --- SERVICES BENTO GRID --- */}
       <Section className="bg-slate-50 dark:bg-slate-900/50">
-        <div className="max-w-7xl mx-auto">
+        <Container size="7xl">
           <div className="mb-12">
              <Typography variant="h2" as="h2">Capability Matrix</Typography>
              <div className="h-1 w-20 bg-primary-500 rounded-full"></div>
@@ -241,7 +243,7 @@ const ServicesPage: React.FC = () => {
           </div>
 
           {/* DESKTOP GRID (>= md) */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <Grid cols={3} gap={6} className="hidden auto-rows-fr">
              {services.map((service, index) => {
                 const isFeatured = index === 0;
                 
@@ -255,7 +257,7 @@ const ServicesPage: React.FC = () => {
                       >
                          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700"></div>
                          
-                         <div className="relative z-10 flex flex-col md:flex-row gap-8 h-full">
+                         <Stack direction="col" gap={8} className="relative z-10 h-full">
                             <div className="flex-1 flex flex-col">
                                <div className="flex items-center gap-3 mb-6">
                                   <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shrink-0">
@@ -295,7 +297,7 @@ const ServicesPage: React.FC = () => {
                                   ))}
                                </ul>
                             </div>
-                         </div>
+                         </Stack>
                       </motion.div>
                    );
                 }
@@ -320,8 +322,8 @@ const ServicesPage: React.FC = () => {
                   </motion.div>
                 );
              })}
-          </div>
-        </div>
+          </Grid>
+        </Container>
       </Section>
 
       {/* --- CTA SECTION --- */}
@@ -335,7 +337,7 @@ const ServicesPage: React.FC = () => {
         >
            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.1),transparent_70%)] pointer-events-none"></div>
            
-           <div className="relative z-10 max-w-3xl mx-auto">
+           <Container size="3xl" className="relative z-10">
              <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Scale Up?</span></Typography>
              <Typography variant="body-xl" className="text-slate-400">Tanpa komitmen jangka panjang. Mulai dengan Discovery Call gratis untuk memvalidasi kebutuhan Anda.</Typography>
              <Stack direction="col" gap={4} className="items-center justify-center">
@@ -345,7 +347,7 @@ const ServicesPage: React.FC = () => {
                   </Button>
                </Link>
              </Stack>
-           </div>
+           </Container>
         </motion.div>
       </Section>
     </div>

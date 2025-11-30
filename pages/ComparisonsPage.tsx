@@ -63,7 +63,7 @@ const ComparisonsPage: React.FC = () => {
       <Container size="7xl" className="relative z-10">
         
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Container size="3xl" className="text-center mb-16">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,12 +73,12 @@ const ComparisonsPage: React.FC = () => {
             </motion.div>
             <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">Upgrade Your <br/> Business Engine.</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 leading-relaxed">Bandingkan arsitektur sistem Anda saat ini dengan <span className="text-slate-900 dark:text-white font-semibold">BizOps Evolution</span>. Lihat perbedaannya secara radikal.</Typography>
-        </div>
+        </Container>
 
         <Grid cols={12} gap={8} className="items-start">
             
             {/* SIDEBAR SELECTION */}
-            <div className="lg:col-span-3 lg:sticky lg:top-28 space-y-6">
+            <Stack direction="col" gap={6} className="lg:col-span-3 lg:sticky lg:top-28">
                 <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-200/60 dark:border-slate-800/60 p-3 shadow-xl shadow-slate-200/20 dark:shadow-black/20">
                     <div className="px-4 py-3 text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
                         Select System
@@ -133,7 +133,7 @@ const ComparisonsPage: React.FC = () => {
                       </Button>
                     </div>
                 </div>
-            </div>
+            </Stack>
 
             {/* MAIN CONTENT AREA */}
             <div className="lg:col-span-9">
@@ -210,7 +210,7 @@ const ComparisonsPage: React.FC = () => {
                         </div>
 
                         {/* 3. COMPARISON LIST (WIDE STACKED) */}
-                        <div className="space-y-6">
+                        <Stack direction="col" gap={6}>
                             <div className="flex items-center justify-between px-2">
                                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><LayoutGrid className="w-5 h-5 text-primary-500" /> Detail Perbandingan</Typography>
                             </div>
@@ -220,7 +220,7 @@ const ComparisonsPage: React.FC = () => {
                                     <Grid cols={12} gap={8} className="items-center relative z-10">
                                         
                                         {/* Col 1: Feature & Limit */}
-                                        <div className="md:col-span-4 space-y-4">
+                                        <Stack direction="col" gap={4} className="md:col-span-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 font-bold text-sm">
                                                    {idx + 1}
@@ -235,7 +235,7 @@ const ComparisonsPage: React.FC = () => {
                                                 </div>
                                                 <Typography variant="caption" className="text-slate-700 dark:text-slate-300 leading-relaxed">{point.them}</Typography>
                                             </div>
-                                        </div>
+                                        </Stack>
 
                                         {/* Arrow */}
                                         <div className="hidden md:flex md:col-span-1 justify-center">
@@ -243,7 +243,7 @@ const ComparisonsPage: React.FC = () => {
                                         </div>
 
                                         {/* Col 2: BizOps Solution */}
-                                        <div className="md:col-span-7 grid md:grid-cols-2 gap-6">
+                                        <Grid cols={2} gap={6} className="md:col-span-7">
                                             <div className="bg-emerald-50 dark:bg-emerald-900/10 p-5 rounded-xl border border-emerald-100 dark:border-emerald-900/20 relative">
                                                 <div className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                                                     <CheckCircle2 className="w-3 h-3" /> {isBizOps ? 'BizOps Advantage' : 'BizOps Solution'}
@@ -262,19 +262,19 @@ const ComparisonsPage: React.FC = () => {
                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Grid>
 
                                     </Grid>
                                 </div>
                             ))}
-                        </div>
+                        </Stack>
 
                         {/* 4. WHY UPGRADE CARD (Hide for BizOps) */}
                         {!isBizOps && (
                          <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden mt-12">
                              <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-[100px] pointer-events-none"></div>
                              
-                             <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                             <Grid cols={2} gap={12} className="relative z-10 items-center">
                                 <div>
                                    <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500" /> Why Upgrade Now?</Typography>
                                    <Typography variant="body" className="text-slate-400 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
@@ -300,7 +300,7 @@ const ComparisonsPage: React.FC = () => {
                                       ))}
                                   </ul>
                                 </div>
-                             </div>
+                             </Grid>
                          </div>
                         )}
 

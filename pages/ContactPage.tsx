@@ -9,6 +9,8 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const ContactPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -81,7 +83,7 @@ const ContactPage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
          <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -110,16 +112,16 @@ const ContactPage: React.FC = () => {
             >
                Apakah Anda startup yang sedang berkembang atau enterprise yang mapan, tim kami siap membantu merancang solusi operasional terbaik.
             </motion.p>
-         </div>
+         </Container>
       </section>
 
       {/* --- CONTENT SECTION --- */}
       <section className="relative z-20 -mt-20 md:-mt-32 pb-24 px-4 sm:px-6 lg:px-8">
-         <div className="max-w-7xl mx-auto">
+         <Container size="7xl">
             <Grid cols={12} gap={8}>
                
                {/* LEFT: CONTACT INFO (Bento Grid Style) */}
-               <div className="lg:col-span-5 space-y-6">
+               <Stack direction="col" gap={6} className="lg:col-span-5">
                   
                   {/* Primary Contact Card */}
                   <motion.div 
@@ -133,7 +135,7 @@ const ContactPage: React.FC = () => {
                      <div className="relative z-10">
                         <Typography variant="h2" as="h2">Direct Channels</Typography>
                         
-                        <div className="space-y-8">
+                        <Stack direction="col" gap={8}>
                            <a href="mailto:hello@bizops.id" className="flex items-start gap-5 group/item">
                               <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 transition-colors group-hover/item:bg-indigo-600 group-hover/item:text-white">
                                  <Mail className="w-6 h-6" />
@@ -157,7 +159,7 @@ const ContactPage: React.FC = () => {
                                  </div>
                               </div>
                            </a>
-                        </div>
+                        </Stack>
                      </div>
                   </motion.div>
 
@@ -173,7 +175,7 @@ const ContactPage: React.FC = () => {
                      <div className="relative z-10">
                         <Typography variant="h2" as="h2" className="font-bold"><Globe className="w-5 h-5 text-blue-400" /> Our Offices</Typography>
                         
-                        <div className="space-y-6">
+                        <Stack direction="col" gap={6}>
                            <div className="pl-4 border-l-2 border-slate-700 hover:border-blue-500 transition-colors">
                               <Typography variant="h3" as="h3">Jakarta HQ</Typography>
                               <Typography variant="caption" className="text-slate-400 leading-relaxed">Eco-S Sahid Sudirman Residence<br />
@@ -186,7 +188,7 @@ const ContactPage: React.FC = () => {
                                  Caturtunggal, Kec. Depok, Sleman<br />
                                  DI Yogyakarta 55281</Typography>
                            </div>
-                        </div>
+                        </Stack>
                         
                         <div className="mt-8 pt-6 border-t border-slate-800">
                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-sm font-medium text-slate-300 hover:text-white group">
@@ -218,7 +220,7 @@ const ContactPage: React.FC = () => {
                      </div>
                   </motion.div>
 
-               </div>
+               </Stack>
 
                {/* RIGHT: FORM CARD */}
                <div className="lg:col-span-7">
@@ -311,7 +313,7 @@ const ContactPage: React.FC = () => {
                </div>
 
             </Grid>
-         </div>
+         </Container>
       </section>
     </div>
   );

@@ -82,7 +82,7 @@ const StatusPage: React.FC = () => {
         </div>
 
         {/* --- SYSTEM COMPONENTS --- */}
-        <div className="space-y-6">
+        <Stack direction="col" gap={6}>
            <Typography variant="h3" as="h3">System Metrics</Typography>
            
            {/* Core Services */}
@@ -126,12 +126,12 @@ const StatusPage: React.FC = () => {
                  ))}
               </div>
            </div>
-        </div>
+        </Stack>
 
         {/* --- INCIDENTS --- */}
         <div>
            <Typography variant="h3" as="h3">Past Incidents</Typography>
-           <div className="space-y-4">
+           <Stack direction="col" gap={4}>
               {statusData.incidents.map((inc, idx) => (
                  <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-colors">
                     <Stack direction="col" gap={4} className="sm:items-center justify-between mb-3">
@@ -145,13 +145,13 @@ const StatusPage: React.FC = () => {
                     </div>
                  </div>
               ))}
-           </div>
+           </Stack>
         </div>
 
         {/* --- SUBSCRIBE CTA --- */}
         <div className="bg-slate-900 rounded-2xl p-8 text-center text-white relative overflow-hidden">
            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
-           <div className="relative z-10 max-w-lg mx-auto">
+           <Container className="relative z-10">
               <Bell className="w-8 h-8 mx-auto mb-4 text-primary-400" />
               <Typography variant="h3" as="h3">Get Status Updates</Typography>
               <Typography variant="caption" className="text-slate-400">Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.</Typography>
@@ -174,7 +174,7 @@ const StatusPage: React.FC = () => {
                     ✓ Subscribed successfully!
                  </motion.div>
               )}
-           </div>
+           </Container>
         </div>
 
       </Container>

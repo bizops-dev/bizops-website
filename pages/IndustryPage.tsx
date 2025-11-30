@@ -94,7 +94,7 @@ const IndustryPage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             
             {/* Icon - Moved to Top as Visual Anchor */}
             <motion.div 
@@ -161,7 +161,7 @@ const IndustryPage: React.FC = () => {
                   </Button>
                </Link>
             </motion.div>
-         </div>
+         </Container>
       </section>
 
       {/* 2. METRICS (Impact) - Upgraded Design */}
@@ -217,13 +217,13 @@ const IndustryPage: React.FC = () => {
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#0B1120] to-transparent pointer-events-none"></div>
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
          
-         <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+         <Container size="3xl" className="text-center mb-16 relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(220,38,38,0.15)] backdrop-blur-md">
               <AlertTriangle className="w-3 h-3" /> Operational Risks
             </div>
             <Typography variant="h2" as="h2" className="font-bold text-white tracking-tight leading-tight">Mengapa Bisnis {data.title} Sering <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-[0_0_15px_rgba(248,113,113,0.2)]">Stuck?</span></Typography>
             <Typography variant="body-lg" className="text-slate-400">Kenali gejala inefisiensi yang diam-diam menggerogoti margin keuntungan Anda.</Typography>
-         </div>
+         </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.challenges.map((challenge, idx) => (
@@ -254,13 +254,13 @@ const IndustryPage: React.FC = () => {
          {/* Background Decoration */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+         <Container size="3xl" className="text-center mb-16 relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-600 dark:text-primary-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
               <Check className="w-3 h-3" /> The Solution
             </div>
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white tracking-tight">Solusi Terintegrasi</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Modul dan fitur yang dirancang khusus untuk menjawab tantangan di atas.</Typography>
-         </div>
+         </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {data.solutions.map((sol, idx) => {
@@ -372,7 +372,7 @@ const IndustryPage: React.FC = () => {
         {/* Glow Effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary-500/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <Container size="5xl" className="relative z-10 text-center">
            <motion.div
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -404,7 +404,7 @@ const IndustryPage: React.FC = () => {
            </Stack>
            
            <Typography variant="caption" className="text-slate-500">*Free trial 14 hari. Full akses ke semua modul.</Typography>
-        </div>
+        </Container>
       </section>
     </div>
   );

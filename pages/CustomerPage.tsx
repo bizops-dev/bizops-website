@@ -9,6 +9,7 @@ import Section from '../components/Section';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 import CardSlider from '../components/CardSlider';
 
@@ -61,14 +62,14 @@ const StoryCard = ({ story, idx }: { story: any, idx: number }) => {
                <Typography variant="h3" as="h3" className="font-bold">{story.client}</Typography>
                <Typography variant="body" className="text-slate-400 tracking-wider">{story.industry}</Typography>
                
-               <div className="space-y-6 pt-8 border-t border-white/10">
+               <Stack direction="col" gap={6} className="pt-8 border-t border-white/10">
                   {story.metrics.map((m: any, i: number) => (
                      <div key={i}>
                         <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-1">{m.value}</div>
                         <div className="text-sm text-slate-400 font-medium">{m.label}</div>
                      </div>
                   ))}
-               </div>
+               </Stack>
             </div>
          </div>
 
@@ -119,7 +120,7 @@ const CustomerPage: React.FC = () => {
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -158,7 +159,7 @@ const CustomerPage: React.FC = () => {
                   </div>
                ))}
             </motion.div>
-         </div>
+         </Container>
       </section>
 
       {/* --- STORIES LIST --- */}
@@ -176,11 +177,11 @@ const CustomerPage: React.FC = () => {
             </div>
 
             {/* Desktop Stack */}
-            <div className="hidden md:block space-y-12">
+            <Stack direction="col" gap={12} className="hidden md:block">
                {customerStories.map((story, idx) => (
                   <StoryCard key={idx} story={story} idx={idx} />
                ))}
-            </div>
+            </Stack>
          </Container>
       </div>
       

@@ -118,7 +118,7 @@ const BlogPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3 mix-blend-screen"></div>
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4 mix-blend-screen"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ const BlogPage: React.FC = () => {
             >
                Analisis mendalam, strategi transformasi, dan panduan teknis untuk mengakselerasi pertumbuhan bisnis Anda di era digital.
             </motion.p>
-         </div>
+         </Container>
       </div>
 
       {/* --- CONTENT SECTION --- */}
@@ -210,7 +210,7 @@ const BlogPage: React.FC = () => {
                
                {/* --- LEFT SIDEBAR (Filter & Search) --- */}
                <div className="lg:w-72 flex-shrink-0">
-                  <div className="sticky top-28 space-y-8">
+                  <Stack direction="col" gap={8} className="sticky top-28">
                      
                      {/* Search */}
                      <div className="relative group">
@@ -235,7 +235,7 @@ const BlogPage: React.FC = () => {
                      {/* Categories */}
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Topics</Typography>
-                        <div className="space-y-1">
+                        <Stack direction="col" gap={1}>
                            {categories.map((cat) => (
                               <button
                                  key={cat}
@@ -258,7 +258,7 @@ const BlogPage: React.FC = () => {
                                  </span>
                               </button>
                            ))}
-                        </div>
+                        </Stack>
                      </div>
 
                      {/* Subscribe Mini Widget */}
@@ -272,7 +272,7 @@ const BlogPage: React.FC = () => {
                         </form>
                      </div>
 
-                  </div>
+                  </Stack>
                </div>
 
                {/* --- RIGHT CONTENT (Grid) --- */}

@@ -93,7 +93,7 @@ const CareersPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid grid-cols-3 gap-8">
+            <Grid cols={3} gap={8} className="hidden">
                <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/50 transition-colors group h-full">
                   <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                      <GitMerge className="w-7 h-7" />
@@ -115,7 +115,7 @@ const CareersPage: React.FC = () => {
                   <Typography variant="h3" as="h3">Continuous Learning</Typography>
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">Budget khusus untuk buku, course, dan sertifikasi. Sesi sharing mingguan ("Tech Talk") untuk membahas teknologi terbaru.</Typography>
                </div>
-            </div>
+            </Grid>
          </Container>
       </Section>
 
@@ -164,7 +164,7 @@ const CareersPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid grid-cols-2 gap-6">
+            <Grid cols={2} gap={6} className="hidden">
                <div className="flex gap-5 p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-500 flex-shrink-0">
                      <Coffee className="w-6 h-6" />
@@ -201,7 +201,7 @@ const CareersPage: React.FC = () => {
                      <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Bonus proyek dan THR. Opsi kepemilikan saham (ESOP) untuk karyawan kunci yang berkontribusi jangka panjang.</Typography>
                   </div>
                </div>
-            </div>
+            </Grid>
          </Container>
       </Section>
 

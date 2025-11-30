@@ -54,6 +54,7 @@ import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
 
 type StepType = 'intro' | 'context' | 'tech-stack' | 'operational-context' | 'pain-points' | 'goals' | 'expectations' | 'analyzing' | 'result';
 
@@ -91,7 +92,7 @@ const StepLayout = ({
 }: any) => (
   <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4">
     <ProgressBar step="context" displayStep={displayStep} totalSteps={totalSteps} />
-    <div className="max-w-4xl mx-auto">
+    <Container size="4xl">
       <div className="mb-8">
          <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">Step {displayStep} of {totalSteps}</div>
          <Typography variant="h2" as="h2" className="font-bold">{title}</Typography>
@@ -121,7 +122,7 @@ const StepLayout = ({
            {nextStep === handleFinish && <Search className="w-4 h-4 ml-2" />}
          </Button>
       </div>
-    </div>
+    </Container>
   </div>
 );
 
@@ -238,7 +239,7 @@ const NeedsAnalysisPage = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px]" />
         
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20 pb-12">
+        <Container size="7xl" className="w-full relative z-10 pt-20 pb-12">
           <Grid cols={2} gap={12} className="items-center">
             
             {/* Left Column: Headline & CTA */}
@@ -321,7 +322,7 @@ const NeedsAnalysisPage = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] border border-emerald-500/20 rounded-full -z-10 animate-[spin_40s_linear_infinite_reverse]" />
             </motion.div>
           </Grid>
-        </div>
+        </Container>
       </div>
     );
   }
@@ -339,7 +340,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="space-y-5 bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+          <Stack direction="col" gap={5} className="bg-slate-900/50 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
             <Grid cols={2} gap={5}>
               <div>
                 <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-1.5">Nama Perusahaan</Typography>
@@ -412,7 +413,7 @@ const NeedsAnalysisPage = () => {
             </div>
             <div>
               <Typography variant="caption" className="block text-sm font-medium text-slate-400 mb-2">Ukuran Tim</Typography>
-              <div className="grid grid-cols-4 gap-2">
+              <Grid cols={4} gap={2}>
                 {['< 50', '50-200', '200-1k', '> 1k'].map(size => (
                   <button
                     key={size}
@@ -426,9 +427,9 @@ const NeedsAnalysisPage = () => {
                     {size}
                   </button>
                 ))}
-              </div>
+              </Grid>
             </div>
-          </div>
+          </Stack>
       </StepLayout>
     );
   }
@@ -446,7 +447,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="grid grid-cols-1 gap-3">
+          <Grid cols={1} gap={3}>
             {techStackOptions.map((item) => {
               const isSelected = contextData.techStack === item.id;
               return (
@@ -474,7 +475,7 @@ const NeedsAnalysisPage = () => {
                 </div>
               );
             })}
-          </div>
+          </Grid>
       </StepLayout>
     );
   }
@@ -497,7 +498,7 @@ const NeedsAnalysisPage = () => {
             {/* COLUMN 1: PEOPLE */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Users className="w-5 h-5 text-blue-400" /> People & Culture</Typography>
-                <div className="space-y-3">
+                <Stack direction="col" gap={3}>
                     {holisticIssues.people.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -508,13 +509,13 @@ const NeedsAnalysisPage = () => {
                             </div>
                         );
                     })}
-                </div>
+                </Stack>
             </div>
 
             {/* COLUMN 2: PROCESS */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><GitMerge className="w-5 h-5 text-emerald-400" /> Process & SOP</Typography>
-                <div className="space-y-3">
+                <Stack direction="col" gap={3}>
                     {holisticIssues.process.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -525,13 +526,13 @@ const NeedsAnalysisPage = () => {
                             </div>
                         );
                     })}
-                </div>
+                </Stack>
             </div>
 
             {/* COLUMN 3: TECHNOLOGY */}
             <div className="bg-slate-900/30 rounded-2xl p-6 border border-white/5">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-200"><Settings className="w-5 h-5 text-amber-400" /> Technology</Typography>
-                <div className="space-y-3">
+                <Stack direction="col" gap={3}>
                     {techQuestions.map((item) => {
                         const isSelected = selectedHolisticIssues.includes(item.id);
                         return (
@@ -541,7 +542,7 @@ const NeedsAnalysisPage = () => {
                             </div>
                         );
                     })}
-                </div>
+                </Stack>
             </div>
           </Grid>
       </StepLayout>
@@ -647,7 +648,7 @@ const NeedsAnalysisPage = () => {
         totalSteps={totalSteps}
         handleFinish={handleFinish}
       >
-          <div className="space-y-8">
+          <Stack direction="col" gap={8}>
             {/* Timeline */}
             <div>
               <label className="block text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
@@ -693,7 +694,7 @@ const NeedsAnalysisPage = () => {
                 ))}
               </Grid>
             </div>
-          </div>
+          </Stack>
       </StepLayout>
     );
   }
@@ -723,7 +724,7 @@ const NeedsAnalysisPage = () => {
 
     return (
       <div className="min-h-screen bg-slate-950 text-white pt-24 pb-12 px-4 print:bg-white print:pt-0 print:text-black">
-        <div className="max-w-6xl mx-auto">
+        <Container size="6xl">
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start mb-10 border-b border-white/10 pb-8 print:border-gray-300">
              <div>
@@ -744,12 +745,12 @@ const NeedsAnalysisPage = () => {
           <Grid cols={12} gap={8}>
             
             {/* Left: Quick Context Summary */}
-            <div className="lg:col-span-4 space-y-6">
+            <Stack direction="col" gap={6} className="lg:col-span-4">
               <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
                 <Typography variant="h3" as="h3" className="font-bold text-slate-500 tracking-widest"><Activity className="w-4 h-4" /> Snapshot Diagnosa</Typography>
                 
                 {/* Visual Radar Logic (Simplified) */}
-                <div className="space-y-4 mb-6">
+                <Stack direction="col" gap={4} className="mb-6">
                     <div className="bg-slate-800/50 p-4 rounded-xl">
                         <div className="flex justify-between text-xs text-slate-400 mb-1">
                             <span>People Maturity Gap</span>
@@ -768,9 +769,9 @@ const NeedsAnalysisPage = () => {
                              <div className={`h-full ${selectedHolisticIssues.some(i => holisticIssues.process.find(p => p.id === i)) ? 'w-[75%] bg-amber-500' : 'w-[30%] bg-emerald-500'}`}></div>
                         </div>
                     </div>
-                </div>
+                </Stack>
 
-                <div className="space-y-2 text-sm text-slate-300">
+                <Stack direction="col" gap={2} className="text-sm text-slate-300">
                     <div className="flex justify-between border-b border-white/5 pb-2">
                         <span className="text-slate-500">Contact</span>
                         <span>{contextData.name}</span>
@@ -787,19 +788,19 @@ const NeedsAnalysisPage = () => {
                         <span className="text-slate-500">Timeline</span>
                         <span>{timelineLabel}</span>
                     </div>
-                </div>
+                </Stack>
               </div>
-            </div>
+            </Stack>
 
             {/* Right: Recommendations */}
-            <div className="lg:col-span-8 space-y-8">
+            <Stack direction="col" gap={8} className="lg:col-span-8">
                
                {/* 1. VISUAL ROADMAP */}
                <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-6">
                   <Typography variant="h2" as="h2" className="font-bold"><Calendar className="w-5 h-5 text-blue-500" /> Rencana Implementasi (Roadmap)</Typography>
                   <div className="relative pt-6 pb-2 px-2">
                       <div className="absolute top-8 left-0 w-full h-1 bg-slate-800 rounded-full"></div>
-                      <div className="grid grid-cols-3 gap-4 relative z-10">
+                      <Grid cols={3} gap={4} className="relative z-10">
                           {/* Phase 1 */}
                           <div className="text-center">
                               <div className="w-4 h-4 bg-blue-500 rounded-full mx-auto border-4 border-slate-900 mb-3 shadow-[0_0_10px_rgba(59,130,246,0.6)]"></div>
@@ -827,7 +828,7 @@ const NeedsAnalysisPage = () => {
                                   <div className="text-slate-400 text-xs">Full Automation & Dashboarding</div>
                               </div>
                           </div>
-                      </div>
+                      </Grid>
                   </div>
                </div>
 
@@ -835,7 +836,7 @@ const NeedsAnalysisPage = () => {
                    {/* 2. TECHNOLOGY SOLUTIONS */}
                    <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Server className="w-4 h-4" /> Solusi Teknologi</Typography>
-                       <div className="space-y-3">
+                       <Stack direction="col" gap={3}>
                            {recommended.map((mod, idx) => (
                                <div key={mod.id} className="bg-slate-900 border border-white/10 p-4 rounded-xl flex items-start gap-3">
                                    <div className="mt-1 p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
@@ -847,13 +848,13 @@ const NeedsAnalysisPage = () => {
                                    </div>
                                </div>
                            ))}
-                       </div>
+                       </Stack>
                    </div>
 
                    {/* 3. SERVICE SOLUTIONS (NEW) */}
                    <div>
                        <Typography variant="h3" as="h3" className="font-bold text-slate-400 tracking-widest"><Users className="w-4 h-4" /> Pendampingan (Services)</Typography>
-                       <div className="space-y-3">
+                       <Stack direction="col" gap={3}>
                            {recommendedServices.length > 0 ? recommendedServices.map((svc) => (
                                <div key={svc.id} className="bg-gradient-to-br from-emerald-900/20 to-slate-900 border border-emerald-500/20 p-4 rounded-xl flex items-start gap-3">
                                    <div className="mt-1 p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
@@ -869,10 +870,10 @@ const NeedsAnalysisPage = () => {
                                    Tidak ada rekomendasi service khusus diperlukan.
                                </div>
                            )}
-                       </div>
+                       </Stack>
                    </div>
                </Grid>
-            </div>
+            </Stack>
           </Grid>
           
            {/* NEXT STEPS / CROSS-SELL SECTION */}
@@ -935,7 +936,7 @@ const NeedsAnalysisPage = () => {
                 <RefreshCw className="w-3 h-3" /> Ulangi Diagnosa
               </button>
            </div>
-        </div>
+        </Container>
       </div>
     );
   }

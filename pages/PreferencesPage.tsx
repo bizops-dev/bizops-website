@@ -5,6 +5,7 @@ import { Mail, Shield, Bell, XCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const PreferencesPage: React.FC = () => {
   const [saved, setSaved] = useState(false);
@@ -32,7 +33,7 @@ const PreferencesPage: React.FC = () => {
            
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <Typography variant="h3" as="h3">Jenis Email</Typography>
-              <div className="space-y-6">
+              <Stack direction="col" gap={6}>
                  
                  {/* Explicit accessible checkbox structure */}
                  <div className="relative flex items-start">
@@ -91,7 +92,7 @@ const PreferencesPage: React.FC = () => {
                     </div>
                  </div>
 
-              </div>
+              </Stack>
            </div>
 
            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">

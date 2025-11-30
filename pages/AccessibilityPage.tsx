@@ -5,6 +5,8 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
+import Container from '../components/Container';
+import Stack from '../components/Stack';
 
 const AccessibilityPage: React.FC = () => {
   const features = [
@@ -36,13 +38,13 @@ const AccessibilityPage: React.FC = () => {
 
       {/* Hero Section */}
       <section className="bg-primary-50 dark:bg-slate-900 py-20 px-4 sm:px-6 lg:px-8 text-center border-b border-primary-100 dark:border-slate-800">
-        <div className="max-w-4xl mx-auto">
+        <Container size="4xl">
           <div className="inline-flex items-center justify-center p-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl mb-6">
              <Accessibility className="w-8 h-8" />
           </div>
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white">Teknologi untuk <span className="text-primary-600">Semua Orang.</span></Typography>
           <Typography variant="body-xl" className="text-slate-600 dark:text-slate-300">BizOps berkomitmen membangun platform yang inklusif. Kami percaya bahwa hambatan fisik tidak boleh menjadi penghalang produktivitas bisnis.</Typography>
-        </div>
+        </Container>
       </section>
 
       {/* Standards & Features */}
@@ -59,7 +61,7 @@ const AccessibilityPage: React.FC = () => {
           ))}
         </Grid>
 
-        <div className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-xl">
+        <Stack direction="col" gap={12} className="mt-20 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 items-center shadow-xl">
            <div className="md:w-1/2">
               <span className="text-green-600 font-bold tracking-wider text-sm uppercase mb-2 block">Standar Kepatuhan</span>
               <Typography variant="h2" as="h2">WCAG 2.1 Level AA</Typography>
@@ -96,7 +98,7 @@ const AccessibilityPage: React.FC = () => {
                  <Button fullWidth>Kirim Laporan</Button>
               </form>
            </div>
-        </div>
+        </Stack>
       </section>
     </div>
   );

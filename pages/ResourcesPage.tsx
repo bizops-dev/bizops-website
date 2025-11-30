@@ -71,7 +71,7 @@ const ResourcesPage = () => {
       
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto text-center">
+        <Container size="7xl" className="text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ const ResourcesPage = () => {
               </motion.div>
             ))}
           </Grid>
-        </div>
+        </Container>
       </section>
 
       {/* Featured Insight (Blog) */}
@@ -149,7 +149,7 @@ const ResourcesPage = () => {
           </div>
 
           {/* Side Posts */}
-          <div className="space-y-8 flex flex-col">
+          <Stack direction="col" gap={8} className="flex flex-col">
             {latestBlogs.slice(1, 3).map((post, idx) => (
               <div key={idx} className="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:border-primary-300 transition-colors">
                 <Typography variant="caption" className="text-primary-600">{post.category}</Typography>
@@ -160,7 +160,7 @@ const ResourcesPage = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Stack>
         </Grid>
       </section>
 
@@ -195,7 +195,7 @@ const ResourcesPage = () => {
                 <div className="w-full bg-slate-700 h-2 rounded-full mb-6">
                   <div className="bg-green-500 w-[85%] h-2 rounded-full"></div>
                 </div>
-                <div className="space-y-3">
+                <Stack direction="col" gap={3}>
                   <div className="flex justify-between text-sm">
                     <span>Process Automation</span>
                     <span className="font-bold">90%</span>
@@ -204,7 +204,7 @@ const ResourcesPage = () => {
                     <span>Data Integration</span>
                     <span className="font-bold">75%</span>
                   </div>
-                </div>
+                </Stack>
               </div>
             </div>
           </Grid>
@@ -228,13 +228,13 @@ const ResourcesPage = () => {
                 </div>
                 <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{featuredUseCase.title}</Typography>
                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400">{featuredUseCase.subtitle} - {featuredUseCase.industry}</Typography>
-                <div className="space-y-2 mb-6">
+                <Stack direction="col" gap={2} className="mb-6">
                   {featuredUseCase.results.slice(0, 2).map((res, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
                       <span className="text-green-500 mt-1">✓</span> {res}
                     </div>
                   ))}
-                </div>
+                </Stack>
               </div>
               <Link to={`/use-cases/${featuredUseCase.id}`}>
                 <Button variant="outline" fullWidth>Baca Studi Kasus</Button>
@@ -248,7 +248,7 @@ const ResourcesPage = () => {
               <Typography variant="h2" as="h2">Upcoming Events</Typography>
               <Link to="/events" className="text-primary-600 text-sm font-bold hover:underline">View Calendar</Link>
             </div>
-            <div className="space-y-4">
+            <Stack direction="col" gap={4}>
               {upcomingEvents.map((event, idx) => (
                 <div key={idx} className="flex gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow">
                   <div className="flex-shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-lg flex flex-col items-center justify-center text-center">
@@ -264,7 +264,7 @@ const ResourcesPage = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </Stack>
           </div>
 
         </Grid>

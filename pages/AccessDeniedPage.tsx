@@ -4,6 +4,7 @@ import { ShieldAlert, ArrowLeft, Lock } from 'lucide-react';
 import Button from '../components/Button';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
+import Container from '../components/Container';
 
 const AccessDeniedPage: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const AccessDeniedPage: React.FC = () => {
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
       </div>
 
-      <div className="relative z-10 max-w-2xl mx-auto w-full">
+      <Container size="2xl" className="relative z-10 w-full">
         <motion.div 
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -67,7 +68,7 @@ const AccessDeniedPage: React.FC = () => {
             </Button>
           </Link>
         </motion.div>
-      </div>
+      </Container>
     </div>
   );
 };

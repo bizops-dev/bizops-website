@@ -9,6 +9,7 @@ import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const PartnersPage: React.FC = () => {
   // Calculator State
@@ -131,7 +132,7 @@ const PartnersPage: React.FC = () => {
                          <div className="font-bold text-white text-xl">Revenue Overview</div>
                       </div>
                    </div>
-                   <div className="space-y-4">
+                   <Stack direction="col" gap={4}>
                       <div className="flex justify-between items-center p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
                          <div className="flex items-center gap-3">
                             <Code className="w-5 h-5 text-emerald-400" />
@@ -156,7 +157,7 @@ const PartnersPage: React.FC = () => {
                          <span className="text-slate-400 font-medium">Total Partner Earnings</span>
                          <Typography variant="body" className="text-2xl text-white">Rp 195.000.000</Typography>
                       </div>
-                   </div>
+                   </Stack>
                 </div>
              </motion.div>
           </Grid>
@@ -226,7 +227,7 @@ const PartnersPage: React.FC = () => {
             </CardSlider>
          </div>
 
-         <div className="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+         <Container size="6xl" className="hidden md:grid md:grid-cols-3 gap-8">
             {/* Referral Partner */}
             <div className="h-full bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition-all group flex flex-col">
                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -278,7 +279,7 @@ const PartnersPage: React.FC = () => {
                   <Button fullWidth variant="outline" className="border-purple-200 text-purple-600 hover:bg-purple-50">Daftar Managed Services</Button>
                </Link>
             </div>
-         </div>
+         </Container>
       </section>
 
       {/* --- PROFIT CALCULATOR (Adjusted Context) --- */}
@@ -294,7 +295,7 @@ const PartnersPage: React.FC = () => {
           <Grid cols={12} gap={8} className="items-start">
             
             {/* Controls */}
-            <div className="lg:col-span-5 space-y-8 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
+            <Stack direction="col" gap={8} className="lg:col-span-5 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700">
                
                <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold uppercase tracking-wider text-xs">
                   <Sliders className="w-4 h-4" /> Konfigurasi Bisnis
@@ -347,7 +348,7 @@ const PartnersPage: React.FC = () => {
                <hr className="border-slate-700" />
 
                {/* Clients */}
-               <div className="grid grid-cols-2 gap-6">
+               <Grid cols={2} gap={6}>
                   <div>
                      <Typography variant="caption" className="block text-sm font-medium text-slate-300 mb-2">Klien Awal</Typography>
                      <div className="relative">
@@ -368,9 +369,9 @@ const PartnersPage: React.FC = () => {
                         />
                      </div>
                   </div>
-               </div>
+               </Grid>
 
-            </div>
+            </Stack>
 
             {/* Results */}
             <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl text-slate-900 dark:text-white">
@@ -468,7 +469,7 @@ const PartnersPage: React.FC = () => {
             </CardSlider>
          </div>
 
-         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+         <Grid cols={4} gap={8} className="hidden">
             {partnerContent.benefits.map((benefit, idx) => (
                <div key={idx} className="flex flex-col items-start h-full p-4 md:p-0 bg-white dark:bg-slate-900/50 md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none border border-slate-100 dark:border-slate-800 md:border-none">
                   <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-900 dark:text-white mb-4">
@@ -478,7 +479,7 @@ const PartnersPage: React.FC = () => {
                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{benefit.desc}</Typography>
                </div>
             ))}
-         </div>
+         </Grid>
       </section>
 
     </div>

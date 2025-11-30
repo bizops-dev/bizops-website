@@ -128,10 +128,10 @@ const RoadmapPage: React.FC = () => {
               
               {/* SIDEBAR FILTER (Desktop Sticky) */}
               <div className="hidden md:block w-64 flex-shrink-0">
-                 <div className="sticky top-28 space-y-8">
+                 <Stack direction="col" gap={8} className="sticky top-28">
                     <div>
                        <Typography variant="h3" as="h3">Filter by Category</Typography>
-                       <div className="space-y-1">
+                       <Stack direction="col" gap={1}>
                           {allTags.map(tag => (
                              <button
                                 key={tag}
@@ -148,7 +148,7 @@ const RoadmapPage: React.FC = () => {
                                 )}
                              </button>
                           ))}
-                       </div>
+                       </Stack>
                     </div>
 
                     <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg">
@@ -164,7 +164,7 @@ const RoadmapPage: React.FC = () => {
                           </button>
                        </div>
                     </div>
-                 </div>
+                 </Stack>
               </div>
 
               {/* MOBILE FILTER MODAL */}
@@ -224,7 +224,7 @@ const RoadmapPage: React.FC = () => {
                           </div>
 
                           {/* Items List */}
-                          <div className="flex-1 space-y-3">
+                          <Stack direction="col" gap={3} className="flex-1">
                              <AnimatePresence mode='popLayout'>
                                 {column.items
                                    .filter(item => activeFilter === 'All' || item.tag === activeFilter)
@@ -284,7 +284,7 @@ const RoadmapPage: React.FC = () => {
                                    </button>
                                 </motion.div>
                              )}
-                          </div>
+                          </Stack>
                        </div>
                     ))}
                  </Grid>

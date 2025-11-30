@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import CardSlider from '../components/CardSlider';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 const TrustPage: React.FC = () => {
   return (
@@ -20,7 +22,7 @@ const TrustPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-900/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        <Container size="5xl" className="relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +64,7 @@ const TrustPage: React.FC = () => {
                Laporkan Celah Keamanan <AlertTriangle className="w-4 h-4 ml-2" />
              </Button>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* --- LIVE SYSTEM STATUS BAR --- */}
@@ -144,7 +146,7 @@ const TrustPage: React.FC = () => {
               </CardSlider>
            </div>
 
-           <div className="hidden md:grid md:grid-cols-4 gap-8">
+           <Grid cols={4} gap={8} className="hidden">
               {/* ISO 27001 */}
               <div className="h-full group p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 hover:shadow-xl transition-all flex flex-col items-center text-center">
                  <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -192,7 +194,7 @@ const TrustPage: React.FC = () => {
                     In Progress
                  </span>
               </div>
-           </div>
+           </Grid>
         </section>
 
         {/* --- SECURITY ARCHITECTURE --- */}
@@ -236,7 +238,7 @@ const TrustPage: React.FC = () => {
                  </CardSlider>
               </div>
 
-              <div className="hidden lg:block space-y-6">
+              <Stack direction="col" gap={6} className="hidden lg:block">
                  <div className="flex gap-4 p-4 border border-transparent hover:border-emerald-500/30 rounded-xl transition-colors">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0 text-emerald-600">
                        <Database className="w-5 h-5" />
@@ -264,15 +266,15 @@ const TrustPage: React.FC = () => {
                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Tim Security Operations Center (SOC) kami memantau anomali traffic dan upaya intrusi secara real-time.</Typography>
                     </div>
                  </div>
-              </div>
+              </Stack>
            </div>
 
-           <div className="relative max-w-md mx-auto w-full">
+           <Container className="relative w-full">
                {/* Illustration Placeholder - Abstract Layered Shield */}
                <div className="aspect-square bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 relative overflow-hidden shadow-2xl border border-slate-800">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-emerald-500/20 rounded-full blur-[80px] animate-pulse"></div>
                   
-                  <div className="relative z-10 flex flex-col gap-4 h-full justify-center">
+                  <Stack direction="col" gap={4} className="relative z-10 h-full justify-center">
                       <div className="bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-xl flex items-center justify-between">
                          <div className="flex items-center gap-3 text-emerald-400 text-xs">
                             <Globe className="w-4 h-4" /> Cloudflare WAF
@@ -299,14 +301,14 @@ const TrustPage: React.FC = () => {
                             <Lock className="w-3 h-3 text-emerald-400" />
                          </div>
                       </div>
-                  </div>
+                  </Stack>
                </div>
-           </div>
+           </Container>
         </section>
 
         {/* --- TRANSPARENCY & DATA --- */}
         <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800">
-           <div className="max-w-4xl mx-auto">
+           <Container size="4xl">
                <Typography variant="h2" as="h2">Data Sub-processors</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.</Typography>
 
@@ -345,7 +347,7 @@ const TrustPage: React.FC = () => {
                      </table>
                   </div>
                </div>
-           </div>
+           </Container>
         </section>
 
         {/* --- CTA: ACCESS REPORTS --- */}

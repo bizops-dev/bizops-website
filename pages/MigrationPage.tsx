@@ -215,7 +215,7 @@ const MigrationPage: React.FC = () => {
         
         {/* 1. HERO SECTION */}
         <Container size="7xl" className="mb-24">
-           <div className="text-center max-w-4xl mx-auto">
+           <Container size="4xl" className="text-center">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -269,7 +269,7 @@ const MigrationPage: React.FC = () => {
                     <Table className="w-5 h-5 mr-2" /> Lihat Format Data
                  </Button>
               </motion.div>
-           </div>
+           </Container>
         </Container>
 
         {/* 2. VISUAL PROCESS FLOW */}
@@ -347,7 +347,7 @@ const MigrationPage: React.FC = () => {
                        <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Cek Kesehatan Data Anda</Typography>
                        <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Algoritma kami akan memindai struktur file Excel Anda secara lokal untuk memastikan kompatibilitas sebelum proses upload sesungguhnya.</Typography>
                        
-                       <div className="space-y-4 mb-8">
+                       <Stack direction="col" gap={4} className="mb-8">
                           {[
                             "Deteksi Header & Kolom Wajib",
                             "Validasi Format Tanggal & Angka",
@@ -361,7 +361,7 @@ const MigrationPage: React.FC = () => {
                                <span className="text-slate-700 dark:text-slate-300 font-medium">{feat}</span>
                             </div>
                           ))}
-                       </div>
+                       </Stack>
 
                        <div className="p-4 bg-amber-50 dark:bg-amber-900/10 rounded-xl border border-amber-200 dark:border-amber-800/30 flex gap-3">
                           <Info className="w-5 h-5 text-amber-600 dark:text-amber-500 flex-shrink-0 mt-0.5" />
@@ -445,7 +445,7 @@ const MigrationPage: React.FC = () => {
            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[500px]">
               {/* Sidebar Tabs */}
               <div className="w-full md:w-1/4 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 p-2 md:p-4">
-                 <div className="space-y-1">
+                 <Stack direction="col" gap={1}>
                     {sampleStructures.map(sample => (
                        <button
                           key={sample.id}
@@ -460,7 +460,7 @@ const MigrationPage: React.FC = () => {
                           <span className="truncate">{sample.label}</span>
                        </button>
                     ))}
-                 </div>
+                 </Stack>
               </div>
 
               {/* Content Area */}
@@ -560,7 +560,7 @@ const MigrationPage: React.FC = () => {
                        </div>
                        
                        {/* Content */}
-                       <div className="p-8 flex-grow space-y-6">
+                       <Stack direction="col" gap={6} className="p-8 flex-grow">
                           <div className="flex gap-4">
                              <div className="flex-shrink-0 mt-1">
                                 <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
@@ -584,7 +584,7 @@ const MigrationPage: React.FC = () => {
                                 <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.solution}</Typography>
                              </div>
                           </div>
-                       </div>
+                       </Stack>
 
                        <div className="px-8 pb-8 pt-0 mt-auto">
                           <div className="h-px w-full bg-slate-100 dark:bg-slate-800 mb-6"></div>
@@ -597,7 +597,7 @@ const MigrationPage: React.FC = () => {
            </div>
 
            {/* Desktop Grid */}
-           <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+           <Grid cols={3} gap={8} className="hidden">
               {migrationData.map((item, idx) => (
                  <motion.div 
                     key={idx}
@@ -621,7 +621,7 @@ const MigrationPage: React.FC = () => {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-8 flex-grow space-y-6">
+                    <Stack direction="col" gap={6} className="p-8 flex-grow">
                        <div className="flex gap-4">
                           <div className="flex-shrink-0 mt-1">
                              <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 flex items-center justify-center">
@@ -645,7 +645,7 @@ const MigrationPage: React.FC = () => {
                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.solution}</Typography>
                           </div>
                        </div>
-                    </div>
+                    </Stack>
 
                     <div className="px-8 pb-8 pt-0 mt-auto">
                        <div className="h-px w-full bg-slate-100 dark:bg-slate-800 mb-6"></div>
@@ -654,7 +654,7 @@ const MigrationPage: React.FC = () => {
                     </div>
                  </motion.div>
               ))}
-           </div>
+           </Grid>
         </div>
 
         {/* 6. FAQ (Compact) */}
@@ -662,7 +662,7 @@ const MigrationPage: React.FC = () => {
            <div className="text-center mb-10">
               <Typography variant="h2" as="h2">Pertanyaan Umum</Typography>
            </div>
-           <div className="space-y-3">
+           <Stack direction="col" gap={3}>
               {migrationFaqs.slice(0, 4).map((faq, idx) => (
                  <div key={idx} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                     <button 
@@ -688,7 +688,7 @@ const MigrationPage: React.FC = () => {
                     </AnimatePresence>
                  </div>
               ))}
-           </div>
+           </Stack>
         </Container>
 
       </div>
@@ -705,7 +705,7 @@ const MigrationPage: React.FC = () => {
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
          </div>
 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <Container size="7xl" className="relative z-10 text-center">
             <Typography variant="h2" as="h2">Siap untuk Berpindah?</Typography>
             <Typography variant="body-xl" className="text-slate-400">Setiap perusahaan memiliki kompleksitas data yang unik. Pilih pendekatan migrasi yang paling sesuai dengan sumber daya tim Anda.</Typography>
 
@@ -759,7 +759,7 @@ const MigrationPage: React.FC = () => {
                   </Button>
                </div>
             </Grid>
-         </div>
+         </Container>
       </div>
     </div>
   );

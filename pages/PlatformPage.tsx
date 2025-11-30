@@ -15,6 +15,7 @@ import { modulesData, capabilitiesData, integrationsData } from '../data/content
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Container from '../components/Container';
 
 const PlatformPage: React.FC = () => {
   
@@ -48,7 +49,7 @@ const PlatformPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent dark:from-primary-900/20 pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container size="7xl" className="relative z-10 text-center">
           <Badge variant="outline" className="mb-8">The Operating System for Business</Badge>
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Satu Platform, <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span></Typography>
@@ -63,23 +64,23 @@ const PlatformPage: React.FC = () => {
           </Stack>
 
           {/* Abstract Connection Visual */}
-          <div className="mt-20 relative max-w-4xl mx-auto h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+          <Container size="4xl" className="mt-20 relative h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
              <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent absolute top-1/2 left-0"></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Users className="w-6 h-6 text-pink-500"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><DollarSign className="w-6 h-6 text-emerald-500"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border-4 border-primary-100 dark:border-primary-900/50 p-4 rounded-2xl shadow-lg transform scale-125"><Layers className="w-8 h-8 text-primary-600"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Briefcase className="w-6 h-6 text-blue-500"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><TrendingUp className="w-6 h-6 text-amber-500"/></div>
-          </div>
-        </div>
+          </Container>
+        </Container>
       </div>
 
       {/* 2. CORE CAPABILITIES (Why Platform?) */}
       <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-         <div className="text-center max-w-3xl mx-auto mb-12">
+         <Container size="3xl" className="text-center mb-12">
             <Typography variant="h2" as="h2">Fondasi Teknologi Modern</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.</Typography>
-         </div>
+         </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {capabilities.map((cap) => {
@@ -131,15 +132,15 @@ const PlatformPage: React.FC = () => {
                      <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase">Drag & Drop Mode</div>
                   </div>
                   
-                  <div className="space-y-4">
+                  <Stack direction="col" gap={4}>
                      {/* Form Builder Simulation */}
                      <div className="flex gap-4">
-                        <div className="w-1/3 space-y-3">
+                        <Stack direction="col" gap={3} className="w-1/3">
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Input Text</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Dropdown</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Date Picker</div>
                            <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 flex items-center px-3 text-xs text-slate-400 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors">Signature</div>
-                        </div>
+                        </Stack>
                         <div className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 flex flex-col justify-center items-center text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
                               <div className="text-[10px] text-blue-400 mb-1">Field Label</div>
@@ -152,7 +153,7 @@ const PlatformPage: React.FC = () => {
                            <div className="mt-4 text-xs text-slate-500">Preview Form Layout</div>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                   
                   {/* Floating Badge */}
                   <div className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
@@ -206,11 +207,11 @@ const PlatformPage: React.FC = () => {
 
       {/* 3. MODULES GRID */}
       <Section>
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <Container size="3xl" className="text-center mb-12">
            <Badge variant="outline" className="mb-4">Comprehensive Suite</Badge>
            <Typography variant="h2" as="h2">Modul yang Saling Terhubung</Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.</Typography>
-        </div>
+        </Container>
 
         <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
           {modules.map((mod) => (
@@ -262,7 +263,7 @@ const PlatformPage: React.FC = () => {
                </div>
                
                {/* Integration Grid Visualization */}
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+               <Grid cols={1} gap={4}>
                   {integrationsData.map((cat, idx) => (
                      <div key={idx} className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 hover:border-slate-600 transition-colors group">
                         <div className="flex items-center justify-between mb-4">
@@ -279,7 +280,7 @@ const PlatformPage: React.FC = () => {
                         </ul>
                      </div>
                   ))}
-               </div>
+               </Grid>
             </Grid>
          </div>
       </Section>
@@ -289,7 +290,7 @@ const PlatformPage: React.FC = () => {
          {/* Background Decoration */}
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-         <div className="max-w-5xl mx-auto text-center relative z-10">
+         <Container size="5xl" className="text-center relative z-10">
             <Badge variant="outline" className="mb-6 bg-white dark:bg-slate-900">Engineering Excellence</Badge>
             <Typography variant="h2" as="h2">Dibangun dengan Teknologi Enterprise-Grade</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.</Typography>
@@ -333,13 +334,13 @@ const PlatformPage: React.FC = () => {
                   </Button>
                </Link>
             </div>
-         </div>
+         </Container>
       </Section>
 
       {/* 6. CTA */}
       <Section className="py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
          <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 -z-10"></div>
-         <div className="max-w-4xl mx-auto text-center">
+         <Container size="4xl" className="text-center">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
             <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
             <Stack direction="col" gap={4} className="justify-center">
@@ -350,7 +351,7 @@ const PlatformPage: React.FC = () => {
                   <Button variant="outline" size="lg" className="h-16 px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
                </Link>
             </Stack>
-         </div>
+         </Container>
       </Section>
     </div>
   );

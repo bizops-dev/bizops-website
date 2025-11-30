@@ -22,6 +22,7 @@ import {
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
+import Stack from '../components/Stack';
 
 // --- COLOR SYSTEM MAPPING (FIX FOR TAILWIND DYNAMIC CLASSES) ---
 const COLOR_THEMES: Record<string, {
@@ -359,7 +360,7 @@ const UseCaseDetailPage: React.FC = () => {
           <Grid cols={12} gap={12}>
             
             {/* LEFT CONTENT (Story) */}
-            <div className="lg:col-span-7 space-y-20">
+            <Stack direction="col" gap={20} className="lg:col-span-7">
               
               {/* Challenge */}
               <motion.div 
@@ -405,11 +406,11 @@ const UseCaseDetailPage: React.FC = () => {
                    "Transformasi digital ini memungkinkan perusahaan untuk beralih dari proses manual yang rentan kesalahan menuju ekosistem terintegrasi yang akurat dan real-time."
                 </div>
               </motion.div>
-            </div>
+            </Stack>
 
             {/* RIGHT SIDEBAR (Sticky) */}
             <div className="lg:col-span-5 relative">
-              <div className="sticky top-32 space-y-8">
+              <Stack direction="col" gap={8} className="sticky top-32">
                 
                 {/* Tech Stack Card */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
@@ -445,20 +446,20 @@ const UseCaseDetailPage: React.FC = () => {
                   </Link>
                 </div>
 
-              </div>
+              </Stack>
             </div>
 
           </Grid>
 
           {/* --- 3. IMPACT SECTION (Metrics) --- */}
           <div className="mt-24 lg:mt-32 pt-12 border-t border-slate-100 dark:border-slate-800">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <Container size="3xl" className="text-center mb-16">
               <span className={`inline-block px-3 py-1 rounded-full ${theme.bgLight} ${theme.bgDark} ${theme.primary} font-bold uppercase tracking-widest text-xs mb-4 border ${theme.border}`}>
                  Key Outcomes
               </span>
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Impact</Typography>
               <Typography variant="body-lg" className="text-slate-500 dark:text-slate-400">Hasil nyata yang terukur setelah implementasi sistem BizOps.</Typography>
-            </div>
+            </Container>
 
             <Grid cols={3} gap={6}>
               {data.results.map((result, i) => (

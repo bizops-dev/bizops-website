@@ -135,7 +135,7 @@ const UseCasesPage: React.FC = () => {
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <Container size="7xl" className="relative z-10 text-center">
            <motion.div 
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
@@ -166,7 +166,7 @@ const UseCasesPage: React.FC = () => {
            >
               Jelajahi koleksi implementasi strategis BizOps di berbagai industri. Temukan solusi yang relevan untuk tantangan bisnis Anda.
            </motion.p>
-        </div>
+        </Container>
       </div>
 
       {/* Main Content with Sidebar Layout */}
@@ -176,12 +176,12 @@ const UseCasesPage: React.FC = () => {
                
                {/* Sidebar Filter (Desktop) */}
                <div className="hidden lg:block w-72 flex-shrink-0">
-                  <div className="sticky top-28 space-y-10">
+                  <Stack direction="col" gap={10} className="sticky top-28">
                      
                      {/* Filter by Category/Function */}
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Layers className="w-3.5 h-3.5" /> Solution Type</Typography>
-                        <div className="space-y-1">
+                        <Stack direction="col" gap={1}>
                            {categories.map((cat) => (
                               <button
                                  key={cat}
@@ -204,7 +204,7 @@ const UseCasesPage: React.FC = () => {
                                  </span>
                               </button>
                            ))}
-                        </div>
+                        </Stack>
                      </div>
 
                      <div className="w-full h-px bg-slate-200 dark:bg-slate-800"></div>
@@ -212,7 +212,7 @@ const UseCasesPage: React.FC = () => {
                      {/* Filter by Industry */}
                      <div>
                         <Typography variant="h3" as="h3" className="font-bold text-slate-400 dark:text-slate-500 tracking-wider"><Briefcase className="w-3.5 h-3.5" /> Industry</Typography>
-                        <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
+                        <Stack direction="col" gap={1} className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
                            {industries.map((ind) => (
                               <button
                                  key={ind}
@@ -235,7 +235,7 @@ const UseCasesPage: React.FC = () => {
                                  </span>
                               </button>
                            ))}
-                        </div>
+                        </Stack>
                      </div>
 
                      {/* CTA Mini Sidebar */}
@@ -249,11 +249,11 @@ const UseCasesPage: React.FC = () => {
                            </Button>
                         </Link>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
                {/* Mobile Filter (Horizontal Scroll - Two Rows) */}
-               <div className="lg:hidden -mx-4 px-4 space-y-3 pb-4 sticky top-16 bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-sm z-30 py-4 border-b border-slate-200 dark:border-slate-800">
+               <Stack direction="col" gap={3} className="lg:hidden -mx-4 px-4 pb-4 sticky top-16 bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-sm z-30 py-4 border-b border-slate-200 dark:border-slate-800">
                   {/* Category Pills */}
                   <div className="overflow-x-auto scrollbar-hide pb-1">
                      <div className="flex gap-2 w-max px-4">
@@ -292,12 +292,12 @@ const UseCasesPage: React.FC = () => {
                         ))}
                      </div>
                   </div>
-               </div>
+               </Stack>
 
                {/* Grid Content */}
                <div className="flex-1 min-h-[600px]">
                   {/* Search Bar & Result Info Moved Here */}
-                  <div className="mb-8 space-y-6">
+                  <Stack direction="col" gap={6} className="mb-8">
                      {/* Search Bar */}
                      <div className="relative group max-w-lg">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl opacity-0 group-focus-within:opacity-100 transition duration-500 blur-sm"></div>
@@ -331,7 +331,7 @@ const UseCasesPage: React.FC = () => {
                            </button>
                         )}
                      </div>
-                  </div>
+                  </Stack>
 
                   {filteredCases.length === 0 ? (
                      <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[2rem] border border-dashed border-slate-300 dark:border-slate-700">

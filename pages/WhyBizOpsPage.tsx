@@ -24,7 +24,7 @@ const WhyBizOpsPage: React.FC = () => {
          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+         <Container size="5xl" className="relative z-10 text-center">
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const WhyBizOpsPage: React.FC = () => {
             >
                BizOps dirancang sebagai 'Unified Layer' yang menghubungkan sistem legacy Anda (SAP, Mesin Absensi, Excel) atau bisa berfungsi sebagai sistem ERP tunggal yang lengkap. Pilihan di tangan Anda.
             </motion.p>
-         </div>
+         </Container>
       </section>
 
       {/* --- THE SWEET SPOT (Visual Comparison) --- */}
@@ -65,7 +65,7 @@ const WhyBizOpsPage: React.FC = () => {
             
             <Stack direction="col" gap={16} className="items-center">
                {/* Quadrant Chart */}
-               <div className="w-full lg:w-1/2 aspect-square max-w-[500px] relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8 mx-auto">
+               <Container className="w-full lg:w-1/2 aspect-square relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8">
                   {/* Axes */}
                   <div className="absolute top-8 bottom-8 left-1/2 w-px bg-slate-300 dark:bg-slate-600 transform -translate-x-1/2 border-l border-dashed border-slate-400 dark:border-slate-500"></div>
                   <div className="absolute left-8 right-8 top-1/2 h-px bg-slate-300 dark:bg-slate-600 transform -translate-y-1/2 border-t border-dashed border-slate-400 dark:border-slate-500"></div>
@@ -97,7 +97,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                      <Typography variant="caption" className="text-primary-700 dark:text-primary-300">BizOps</Typography>
                   </div>
-               </div>
+               </Container>
 
                {/* Explanation */}
                <div className="w-full lg:w-1/2">
@@ -135,7 +135,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </CardSlider>
                   </div>
                   
-                  <div className="hidden lg:block space-y-6">
+                  <Stack direction="col" gap={6} className="hidden lg:block">
                      <div className="group p-6 rounded-2xl border border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 transition-all">
                         <div className="flex gap-4">
                            <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-500 font-bold flex-shrink-0">1</div>
@@ -165,7 +165,7 @@ const WhyBizOpsPage: React.FC = () => {
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
             </Stack>
          </Container>
@@ -204,7 +204,7 @@ const WhyBizOpsPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Grid cols={3} gap={8} className="hidden">
                {whyBizOpsContent.reasons.map((reason, idx) => (
                   <Card key={idx} hoverEffect className="h-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flex flex-col">
                      <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 transition-colors">
@@ -228,7 +228,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <Button fullWidth className="bg-white text-slate-900 hover:bg-slate-100 border-none font-bold">Mulai Sekarang</Button>
                   </Link>
                </div>
-            </div>
+            </Grid>
          </Container>
       </section>
 
@@ -246,7 +246,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="font-extrabold text-slate-900 dark:text-white leading-tight">Clean Code, <br/>Lean Infrastructure.</Typography>
                   <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 leading-relaxed">Efisiensi kode bukan hanya soal kecepatan, tapi juga biaya dan jejak karbon. BizOps dibangun dengan arsitektur modern (Python/JS) yang membutuhkan resource server jauh lebih sedikit dibandingkan legacy Java-based ERP.</Typography>
                   
-                  <div className="space-y-6">
+                  <Stack direction="col" gap={6}>
                      <div className="flex gap-4 items-start">
                         <div className="w-10 h-10 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-green-600 shadow-sm border border-green-100 dark:border-green-900/30 shrink-0">
                            <Database className="w-5 h-5" />
@@ -265,7 +265,7 @@ const WhyBizOpsPage: React.FC = () => {
                            <Typography variant="caption" className="text-slate-600 dark:text-slate-400">Optimasi query database dan lazy-loading assets mengurangi konsumsi energi data center secara signifikan.</Typography>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
                {/* Resource Usage Chart */}
@@ -278,7 +278,7 @@ const WhyBizOpsPage: React.FC = () => {
                      <Typography variant="caption" className="text-green-700">-75% Usage</Typography>
                   </div>
                   
-                  <div className="space-y-8">
+                  <Stack direction="col" gap={8}>
                      <div className="relative">
                         <div className="flex justify-between text-sm mb-2 font-semibold">
                            <span className="text-slate-900 dark:text-white flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"></div> BizOps ERP</span>
@@ -308,7 +308,7 @@ const WhyBizOpsPage: React.FC = () => {
                            ></motion.div>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                   
                   <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-4 text-xs text-slate-500">
                      <div className="flex items-center gap-2">
@@ -326,7 +326,7 @@ const WhyBizOpsPage: React.FC = () => {
       {/* --- FINAL CTA --- */}
       <section className="py-32 bg-[#0B1120] text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
-         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+         <Container size="4xl" className="relative z-10 text-center">
             <Typography variant="h2" as="h2" className="font-extrabold leading-tight">Masa Depan Operasional Anda <br/>Dimulai Di Sini.</Typography>
             <Typography variant="body-xl" className="text-slate-300">Jangan biarkan inefisiensi menjadi budaya. Ambil langkah pertama menuju transformasi digital yang nyata, terukur, dan berdaulat.</Typography>
             <Stack direction="col" gap={6} className="justify-center">
@@ -337,7 +337,7 @@ const WhyBizOpsPage: React.FC = () => {
                   <Button size="lg" variant="outline" className="h-14 px-8 border-slate-700 text-white hover:bg-white/10 font-bold text-lg w-full sm:w-auto">Jadwalkan Audit Kebutuhan</Button>
                </Link>
             </Stack>
-         </div>
+         </Container>
       </section>
 
     </div>

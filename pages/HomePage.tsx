@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
              <div className="absolute top-[40%] left-[60%] w-64 h-64 bg-purple-500/10 rounded-full blur-[80px] animate-pulse-slow delay-1000"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Container size="7xl" className="relative z-10 text-center">
             
             {/* Announcement Pill */}
             <motion.div 
@@ -93,12 +93,12 @@ const HomePage: React.FC = () => {
             </motion.div>
             
             {/* Main Headline with Staggered Animation */}
-            <div className="mb-8 max-w-5xl mx-auto">
+            <Container size="5xl" className="mb-8">
               <Typography variant="h1" as="h1" className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]"><StaggeredText text="Satu Sistem Kendali untuk" className="flex w-full justify-center mb-2" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 dark:from-primary-400 dark:via-blue-400 dark:to-purple-400">
                   Seluruh Operasional Bisnis.
                 </span></Typography>
-            </div>
+            </Container>
 
             {/* Subheadline */}
             <motion.p 
@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
                   ))}
                </InfiniteScrollLoop>
             </div>
-          </div>
+          </Container>
       </div>
 
       {/* 2. PROBLEMS SECTION (Pain Points) */}
@@ -177,10 +177,10 @@ const HomePage: React.FC = () => {
          </div>
 
          <Container size="7xl" className="relative z-10">
-            <div className="max-w-3xl mx-auto text-center mb-16">
+            <Container size="3xl" className="text-center mb-16">
                 <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Mengapa Bisnis Anda <span className="text-red-500">Stuck?</span></Typography>
                 <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Pertumbuhan bisnis seringkali terhambat bukan karena kurangnya penjualan, tapi karena kekacauan operasional internal.</Typography>
-            </div>
+            </Container>
              
              <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
                 {homeProblems.map((prob, idx) => (
@@ -202,7 +202,7 @@ const HomePage: React.FC = () => {
          {/* Abstract BG */}
          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/20 via-slate-900 to-slate-950 pointer-events-none"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl" className="relative z-10">
             <Stack direction="col" gap={8} className="items-end justify-between mb-16">
                <div className="max-w-2xl">
                   <Badge variant="outline-white" className="mb-4">BizOps Platform</Badge>
@@ -298,15 +298,15 @@ const HomePage: React.FC = () => {
                   </div>
                </div>
             </Grid>
-         </div>
+         </Container>
       </section>
 
       {/* 4. VALUE PROPOSITION (UVP) */}
       <section aria-labelledby="uvp-heading" className="py-16 md:py-24 bg-white dark:bg-slate-950">
-         <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+         <Container size="3xl" className="text-center mb-16">
             <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Bukan Sekadar ERP Biasa</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami membangun BizOps dengan filosofi "Indonesia-First". Sesuai regulasi lokal, fleksibel untuk budaya kerja lokal.</Typography>
-         </div>
+         </Container>
 
          <Container size="7xl">
             <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -368,7 +368,7 @@ const HomePage: React.FC = () => {
                      <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Menggabungkan 3-5 aplikasi SaaS berbeda. Akibatnya: <span className="text-red-500">Data Silo & Vendor Fatigue.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
-                     <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                     <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
                         <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
                            <span>CRM License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 150rb<span className="font-normal text-[8px]">/user</span></span>
@@ -381,7 +381,7 @@ const HomePage: React.FC = () => {
                            <span>HRIS App</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">Rp 20rb<span className="font-normal text-[8px]">/user</span></span>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <div className="flex justify-between items-end mb-1">
@@ -412,7 +412,7 @@ const HomePage: React.FC = () => {
                      <Typography variant="body" className="text-slate-500 dark:text-slate-400 leading-relaxed">Model lisensi per user yang kaku. Akibatnya: <span className="text-amber-500">Growth Penalty & Mahal.</span></Typography>
 
                      {/* Detailed Cost Breakdown */}
-                     <div className="space-y-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                     <Stack direction="col" gap={2} className="mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
                         <div className="flex justify-between items-center text-[10px] text-slate-500 dark:text-slate-400">
                            <span>Standard License</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~Rp 210rb<span className="font-normal text-[8px]">/user</span></span>
@@ -425,7 +425,7 @@ const HomePage: React.FC = () => {
                            <span>Maintenance</span>
                            <span className="font-bold text-slate-700 dark:text-slate-300">~20% / year</span>
                         </div>
-                     </div>
+                     </Stack>
                      
                      <div className="bg-slate-50 dark:bg-slate-950/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
                         <div className="flex justify-between items-end mb-1">
@@ -473,7 +473,7 @@ const HomePage: React.FC = () => {
                            {/* Main Metric */}
                            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/10 mb-8 relative group-hover:bg-white/10 transition-colors duration-500">
                                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-green-400 to-emerald-600 rounded-l-3xl"></div>
-                               <div className="grid grid-cols-2 gap-8">
+                               <Grid cols={2} gap={8}>
                                    <div>
                                        <Typography variant="body" className="text-slate-400 tracking-wider">Flat Monthly Cost</Typography>
                                        <p className="text-4xl md:text-5xl font-black text-white tracking-tighter">Rp 3 Jt</p>
@@ -485,7 +485,7 @@ const HomePage: React.FC = () => {
                                        </div>
                                        <Typography variant="body" className="text-slate-400">vs Fragmented Stack</Typography>
                                    </div>
-                               </div>
+                               </Grid>
                            </div>
 
                            {/* Features Grid */}
@@ -527,7 +527,7 @@ const HomePage: React.FC = () => {
          {/* Background Grid */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <Container size="7xl" className="relative z-10">
             <Stack direction="col" gap={6} className="justify-between items-end mb-16">
                <div className="max-w-2xl">
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Go-Live dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">30 Hari.</span></Typography>
@@ -556,7 +556,7 @@ const HomePage: React.FC = () => {
                   </div>
                ))}
             </CardSlider>
-         </div>
+         </Container>
       </section>
 
       {/* 7. INDUSTRIES & ROLES */}
@@ -617,7 +617,7 @@ const HomePage: React.FC = () => {
                   <Typography variant="h2" as="h2" className="text-3xl md:text-4xl font-bold text-white tracking-tight">Tenang, Data Anda Aman.</Typography>
                   <Typography variant="body-lg" className="text-slate-300 leading-relaxed">Fokuslah mengembangkan bisnis, biarkan kami menjaga infrastruktur Anda. BizOps menjamin keamanan data setara standar perbankan.</Typography>
                   
-                  <div className="space-y-6">
+                  <Stack direction="col" gap={6}>
                      {[
                         { title: "Enkripsi End-to-End", desc: "Data sensitif (gaji, profit) terenkripsi saat dikirim dan disimpan (AES-256).", icon: Lock },
                         { title: "99.9% Uptime SLA", desc: "Server kami selalu aktif. Redundansi otomatis mencegah downtime saat jam sibuk.", icon: CheckCircle2 },
@@ -633,7 +633,7 @@ const HomePage: React.FC = () => {
                            </div>
                         </div>
                      ))}
-                  </div>
+                  </Stack>
                </div>
 
                {/* Visual Representation of Security/Scale instead of Stats */}
@@ -658,7 +658,7 @@ const HomePage: React.FC = () => {
                      </div>
                      
                      {/* Mock Activity Graph */}
-                     <div className="space-y-4">
+                     <Stack direction="col" gap={4}>
                         <div className="flex justify-between text-xs text-slate-500">
                            <span>00:00</span>
                            <span>06:00</span>
@@ -686,7 +686,7 @@ const HomePage: React.FC = () => {
                            <CheckCircle2 className="w-4 h-4 text-green-500" aria-hidden="true" />
                            <span>Backup terakhir berhasil: Hari ini, 03:00 WIB</span>
                         </div>
-                     </div>
+                     </Stack>
                   </div>
                </div>
             </Grid>
@@ -695,10 +695,10 @@ const HomePage: React.FC = () => {
 
       {/* 9. INTEGRATIONS */}
       <section aria-labelledby="integration-heading" className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-         <div className="max-w-4xl mx-auto text-center mb-12 px-4">
+         <Container size="4xl" className="text-center mb-12">
             <Typography variant="h2" as="h2" className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Terhubung dengan Ekosistem</Typography>
             <Typography variant="body" className="text-slate-600 dark:text-slate-400">Open API kami memudahkan integrasi dengan bank, pajak, dan marketplace.</Typography>
-         </div>
+         </Container>
          
          <div className="max-w-full overflow-hidden">
             <InfiniteScrollLoop speed={40} direction="right">
@@ -725,7 +725,7 @@ const HomePage: React.FC = () => {
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none"></div>
          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+         <Container size="4xl" className="relative z-10 text-center">
             <Typography variant="h2" as="h2" className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Siap Mengubah Cara Anda Bekerja?</Typography>
             <Typography variant="body-xl" className="text-primary-100">Bergabunglah dengan 500+ perusahaan yang telah beralih ke BizOps. Tanpa komitmen jangka panjang, batalkan kapan saja.</Typography>
             <Stack direction="col" gap={4} className="justify-center">
@@ -741,7 +741,7 @@ const HomePage: React.FC = () => {
                </Link>
             </Stack>
             <Typography variant="caption" className="text-primary-200/60">14-day free trial available. No credit card required.</Typography>
-         </div>
+         </Container>
       </section>
 
     </div>

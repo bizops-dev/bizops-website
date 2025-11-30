@@ -135,7 +135,7 @@ const BlogDetailPage: React.FC = () => {
             <OptimizedImage src={post.image} alt={post.title} className="w-full h-full object-cover opacity-80" />
          </motion.div>
 
-         <div className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+         <Container size="7xl" className="absolute inset-0 z-20 flex flex-col justify-end pb-20 sm:pb-32 w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
                <div className="flex flex-wrap items-center gap-3 mb-8">
                   <Link to="/blog" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-white/20">
@@ -170,7 +170,7 @@ const BlogDetailPage: React.FC = () => {
                   </div>
                </div>
             </motion.div>
-         </div>
+         </Container>
       </div>
 
       {/* --- CONTENT BODY --- */}
@@ -205,7 +205,7 @@ const BlogDetailPage: React.FC = () => {
                   />
 
                   {/* Tags & Share */}
-                  <div className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-8 font-sans">
+                  <Stack direction="col" gap={8} className="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 justify-between items-center font-sans">
                      <div className="flex flex-wrap gap-2">
                         {['Strategy', 'Enterprise', 'Management'].map(tag => (
                            <span key={tag} className="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-default">
@@ -222,12 +222,12 @@ const BlogDetailPage: React.FC = () => {
                            <button className="p-3 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-slate-900 hover:bg-slate-200 transition-colors"><Share2 className="w-5 h-5" /></button>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
                {/* RIGHT: STICKY SIDEBAR (4 cols) */}
                <div className="lg:col-span-4 relative font-sans hidden lg:block">
-                  <div className="sticky top-32 space-y-12">
+                  <Stack direction="col" gap={12} className="sticky top-32">
                      
                      {/* 1. Table of Contents */}
                      {headings.length > 0 && (
@@ -281,7 +281,7 @@ const BlogDetailPage: React.FC = () => {
                            <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-500 border-none rounded-xl font-bold">Subscribe</Button>
                         </div>
                      </div>
-                  </div>
+                  </Stack>
                </div>
 
             </Grid>
@@ -363,7 +363,7 @@ const BlogDetailPage: React.FC = () => {
                </div>
 
                {/* Right: Actions */}
-               <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4">
+               <Stack direction="col" gap={4} className="w-full lg:w-auto">
                   <Link to="/demo" className="w-full sm:w-auto">
                      <Button size="lg" className="w-full bg-white text-slate-900 hover:bg-blue-50 border-none h-16 px-10 text-lg font-bold shadow-2xl shadow-blue-900/20 rounded-2xl transition-transform hover:-translate-y-1">
                         Book a Live Demo
@@ -374,7 +374,7 @@ const BlogDetailPage: React.FC = () => {
                         Talk to Expert
                      </Button>
                   </Link>
-               </div>
+               </Stack>
 
             </Stack>
          </Container>

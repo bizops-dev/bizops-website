@@ -87,12 +87,12 @@ const SolutionsPage: React.FC = () => {
       </div>
 
       <Section className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto">
+        <Container size="7xl">
            {/* Industry Section */}
-           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+           <Container size="3xl" className="text-center mb-12 md:mb-20">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Solusi Spesifik Industri</Typography>
               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.</Typography>
-           </div>
+           </Container>
            
            <div className="mb-16 md:mb-32">
              <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -137,11 +137,11 @@ const SolutionsPage: React.FC = () => {
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
                
                <div className="relative z-10 px-6 py-12 md:p-24">
-                  <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                  <Container size="3xl" className="text-center mb-12 md:mb-16">
                      <Badge variant="outline" className="mb-4 bg-white dark:bg-slate-800">Role-Based Experience</Badge>
                      <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Satu Platform, Beda Perspektif.</Typography>
                      <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.</Typography>
-                  </div>
+                  </Container>
 
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[250px]">
                      {roles.map((role) => (
@@ -166,7 +166,7 @@ const SolutionsPage: React.FC = () => {
                   </CardSlider>
                </div>
            </div>
-        </div>
+        </Container>
       </Section>
 
       {/* Final CTA */}

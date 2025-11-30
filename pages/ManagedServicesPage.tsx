@@ -31,7 +31,7 @@ const ManagedServicesPage: React.FC = () => {
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[100px] animate-pulse-slow"></div>
 
-         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+         <Container size="7xl" className="relative z-10 md:px-6">
             <div className="mb-8">
               <Breadcrumbs items={[
                 { label: 'Services', path: '/services' },
@@ -77,7 +77,7 @@ const ManagedServicesPage: React.FC = () => {
                  transition={{ duration: 0.8 }}
                  className="flex-1 relative hidden md:block"
                >
-                  <div className="relative w-full aspect-square max-w-md mx-auto">
+                  <Container className="relative w-full aspect-square">
                     {/* Central Hub */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden">
                         <OptimizedImage src="/logo-icon.svg" alt="BizOps" className="w-16 h-16 opacity-80" onError={() => {}} />
@@ -102,18 +102,18 @@ const ManagedServicesPage: React.FC = () => {
                      <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none stroke-slate-200 dark:stroke-slate-700" style={{ transform: 'scale(0.8)' }}>
                         <circle cx="50%" cy="50%" r="48%" fill="none" strokeWidth="2" strokeDasharray="8 8" className="animate-spin-slow" />
                      </svg>
-                  </div>
+                  </Container>
                </motion.div>
             </Stack>
-         </div>
+         </Container>
       </Section>
 
       {/* --- PROBLEM & SOLUTION --- */}
       <Section className="bg-slate-50 dark:bg-slate-950 py-20">
-         <div className="max-w-4xl mx-auto text-center mb-16 px-4">
+         <Container size="4xl" className="text-center mb-16">
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Business Operations is Distracting.</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">CEO seharusnya fokus pada Strategi, Inovasi, dan Pertumbuhan. Bukan terjebak mengurus laporan pajak bulanan, rekrutmen staff admin, atau maintenance server.</Typography>
-         </div>
+         </Container>
 
          {/* Mobile Slider (< md) */}
          <div className="md:hidden">
@@ -138,7 +138,7 @@ const ManagedServicesPage: React.FC = () => {
          </div>
 
          {/* Desktop Grid (>= md) */}
-         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4 md:px-6">
+         <Container size="7xl" className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 md:px-6">
             {[
                { title: "Finance & Tax", desc: "Virtual CFO, Bookkeeping, Tax Planning & Reporting.", icon: DollarSign, color: "text-green-500" },
                { title: "HR & Payroll", desc: "Talent Acquisition, Payroll Processing, Compliance.", icon: Users, color: "text-blue-500" },
@@ -153,7 +153,7 @@ const ManagedServicesPage: React.FC = () => {
                   <Typography variant="body" className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.desc}</Typography>
                </div>
             ))}
-         </div>
+         </Container>
       </Section>
 
       {/* --- PARTNER ECOSYSTEM --- */}
@@ -187,7 +187,7 @@ const ManagedServicesPage: React.FC = () => {
                <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-purple-500/20 rounded-[2rem] transform rotate-3"></div>
                   <div className="relative bg-slate-50 dark:bg-slate-800 rounded-[2rem] p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-700">
-                      <div className="grid grid-cols-2 gap-6">
+                      <Grid cols={2} gap={6}>
                          {[
                             { name: "Global Tax Firm", type: "Tax Partner", logo: "Building" },
                             { name: "Elite Talents", type: "HR Partner", logo: "Users" },
@@ -202,7 +202,7 @@ const ManagedServicesPage: React.FC = () => {
                                <div className="text-xs text-slate-500">{partner.type}</div>
                             </div>
                          ))}
-                      </div>
+                      </Grid>
                       <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
                          <Typography variant="caption" className="text-slate-500">Ingin bergabung sebagai partner ahli?</Typography>
                          <Link to="/partners" className="text-primary-600 font-bold hover:underline">
