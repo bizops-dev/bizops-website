@@ -379,19 +379,23 @@ const HomePage: React.FC = () => {
                      
                      <div className="space-y-3 mb-6">
                          <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
-                             <span className="font-semibold">Multiple Subscriptions</span>
-                             <span className="font-mono font-bold">$$$</span>
+                             <span className="font-semibold">CRM License</span>
+                             <span className="font-mono font-bold">Rp 150rb</span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
-                             <span className="font-semibold">Integration Cost</span>
-                             <span className="font-mono font-bold">High</span>
+                             <span className="font-semibold">Accounting App</span>
+                             <span className="font-mono font-bold">Rp 250rb</span>
+                         </div>
+                         <div className="flex justify-between items-center text-sm p-3 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-400">
+                             <span className="font-semibold">HRIS App</span>
+                             <span className="font-mono font-bold">Rp 20rb</span>
                          </div>
                      </div>
                   </div>
 
                   <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
-                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Impact:</p>
-                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Biaya IT membengkak seiring bertambahnya aplikasi.</p>
+                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Total Cost for 50 Users:</p>
+                     <p className="text-2xl font-bold text-slate-700 dark:text-slate-300">Rp 21.000.000<span className="text-sm font-normal text-slate-500">/bln</span></p>
                   </div>
                </div>
 
@@ -403,24 +407,28 @@ const HomePage: React.FC = () => {
                      <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold uppercase tracking-wider">
                         Old Way #2
                      </div>
-                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Legacy / Global ERP</h3>
+                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Global ERP / Odoo</h3>
                      <p className="text-sm text-slate-500 mb-6">Model lisensi per user. Makin banyak karyawan, makin mahal.</p>
 
                      <div className="space-y-3 mb-6">
                          <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
-                             <span className="font-semibold">License Fee</span>
-                             <span className="font-mono font-bold">Per User</span>
+                             <span className="font-semibold">Standard License</span>
+                             <span className="font-mono font-bold">~Rp 210rb<span className="text-[10px] font-normal">/user</span></span>
                          </div>
                          <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
                              <span className="font-semibold">Implementation</span>
-                             <span className="font-mono font-bold">Expensive</span>
+                             <span className="font-mono font-bold">$$$</span>
+                         </div>
+                         <div className="flex justify-between items-center text-sm p-3 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/20 text-amber-700 dark:text-amber-400">
+                             <span className="font-semibold">Dengan Rp 3 Jt</span>
+                             <span className="font-mono font-bold">Hanya ~14 User</span>
                          </div>
                      </div>
                   </div>
 
                   <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
-                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Impact:</p>
-                     <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">Menghambat rekrutmen user baru karena biaya lisensi.</p>
+                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Total Cost for 50 Users:</p>
+                     <p className="text-2xl font-bold text-slate-700 dark:text-slate-300">Rp 10.500.000<span className="text-sm font-normal text-slate-500">/bln</span></p>
                   </div>
                </div>
 
@@ -443,7 +451,7 @@ const HomePage: React.FC = () => {
 
                         <h3 className="text-2xl font-bold text-white mb-2">Unified Platform Model</h3>
                         <p className="text-sm text-slate-300 mb-8 leading-relaxed">
-                           Harga paket flat berdasarkan kapasitas bisnis, bukan jumlah kepala. Scale-up fleksibel sesuai kebutuhan.
+                           Harga paket flat berdasarkan kapasitas bisnis. Lebih hemat, lebih transparan.
                         </p>
 
                         <div className="space-y-4 mb-8">
@@ -453,7 +461,7 @@ const HomePage: React.FC = () => {
                               </div>
                               <div>
                                  <h4 className="font-bold text-white text-sm">Flat Core Package</h4>
-                                 <p className="text-xs text-slate-400 mt-1">Include kuota user & core modules dalam satu harga bulanan tetap.</p>
+                                 <p className="text-xs text-slate-400 mt-1">Include 50 user & core modules dalam satu harga.</p>
                               </div>
                            </div>
 
@@ -462,8 +470,8 @@ const HomePage: React.FC = () => {
                                  <ArrowRight className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                 <h4 className="font-bold text-white text-sm">Flexible Scaling</h4>
-                                 <p className="text-xs text-slate-400 mt-1">Upgrade ke "Growth Plan" untuk fitur advanced, atau beli Add-on modul/service spesifik.</p>
+                                 <h4 className="font-bold text-white text-sm">Equivalent Value</h4>
+                                 <p className="text-xs text-slate-400 mt-1">Setara dengan value <strong>Rp 10.5 Jt</strong> di kompetitor lain.</p>
                               </div>
                            </div>
                         </div>
