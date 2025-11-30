@@ -586,8 +586,6 @@ const HomePage: React.FC = () => {
             </div>
          </div>
       </section>
-         </div>
-      </section>
 
       {/* 6. PROCESS SECTION (How it works) */}
       <section aria-labelledby="process-heading" className="py-24 bg-[#0B1120] overflow-hidden relative">
