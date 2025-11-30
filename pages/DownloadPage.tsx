@@ -153,7 +153,7 @@ const DownloadPage: React.FC = () => {
       {/* --- FEATURES GRID --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
          <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-            <Container size="3xl" className="text-center mb-16">
+            <Container noPadding size="3xl" className="text-center mb-16">
                <Typography variant="h2" as="h2">Built for the Field Workforce</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Didesain khusus untuk Salesman, Kurir, Teknisi, dan Warehouse Staff yang bekerja di lapangan.</Typography>
             </Container>

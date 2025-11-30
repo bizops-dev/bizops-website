@@ -89,7 +89,7 @@ const ResourcesPage = () => {
           </motion.p>
 
           {/* Quick Category Nav */}
-          <Grid cols={5} gap={4} className="max-w-5xl mx-auto">
+          <Grid cols={5} mdCols={3} smCols={2} gap={4} className="max-w-5xl mx-auto">
             {resourceCategories.map((cat, idx) => (
               <motion.div
                 key={idx}

@@ -20,38 +20,7 @@ import Container from '../components/Container';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
 
-// --- Spotlight Card Component ---
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(59, 130, 246, 0.1)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  return (
-    <div
-      className={`group relative border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden ${className}`}
-      onMouseMove={handleMouseMove}
-    >
-      <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              600px circle at ${mouseX}px ${mouseY}px,
-              ${spotlightColor},
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      <div className="relative h-full">{children}</div>
-    </div>
-  );
-};
+import SpotlightCard from '../components/SpotlightCard';
 
 const ITEMS_PER_PAGE = 6;
 

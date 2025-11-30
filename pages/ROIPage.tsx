@@ -20,13 +20,14 @@ import {
   FileText,
   Database
 } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Input } from '../components/Form';
 import SEO from '../components/SEO';
 import { logger } from '../utils/logger';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import { useNavigate } from 'react-router-dom';
 
 // Pricing Tiers for Comparison
 const PRICING_TIERS = [
@@ -67,7 +68,7 @@ const ROIPage: React.FC = () => {
   const hourlyRate = salary / 173;
   const overtimeCostPerMonth = adminCount * overtime * hourlyRate * 1.5;
   const overtimeSavings = overtimeCostPerMonth * 0.9; 
-
+  
   // 3. Fraud/Loss Prevention
   // Asumsi sistem mengurangi risiko sebesar 80% (bukan 100% karena faktor human error tetap ada)
   const monthlyLossSavings = (losses / 12) * 0.8;
@@ -120,7 +121,7 @@ const ROIPage: React.FC = () => {
       <Container size="7xl" className="relative z-10">
         
         {/* Header */}
-        <Container size="3xl" className="text-center mb-16">
+        <Container noPadding size="3xl" className="text-center mb-16">
            <Stack direction="horizontal" gap={2} align="center" className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 dark:text-blue-300 text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" /> ROI Calculator
            </Stack>
@@ -340,15 +341,16 @@ const ROIPage: React.FC = () => {
                     </Stack>
 
                     <Stack direction="vertical" gap={3} className="w-full md:w-auto min-w-[200px]">
-                       <Button size="md" 
+                       <Button 
                          onClick={() => setShowLeadForm(true)} 
                          size="lg"
                          className="w-full bg-white text-slate-950 hover:bg-slate-200 border-none font-bold shadow-xl shadow-white/10"
                        >
                           <Download className="w-4 h-4 mr-2" /> Unduh Proposal
                        </Button>
-                       <Button size="md" 
+                       <Button 
                          variant="outline-white"
+                         size="lg"
                          onClick={() => navigate('/contact')}
                          className="w-full border-white/20 text-slate-300 hover:text-slate-900 dark:text-white hover:bg-white/5"
                        >
@@ -402,61 +404,50 @@ const ROIPage: React.FC = () => {
                 </div>
 
                 <form onSubmit={handleLeadSubmit} className="space-y-4">
-                  <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Nama Lengkap</Typography>
-                    <div className="relative">
-                      <User className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
-                      <input 
-                        required
-                        type="text" 
-                        value={leadData.name}
-                        onChange={e => setLeadData({...leadData, name: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                        placeholder="Nama Anda"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Perusahaan</Typography>
-                    <div className="relative">
-                      <Building2 className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
-                      <input 
-                        required
-                        type="text" 
-                        value={leadData.company}
-                        onChange={e => setLeadData({...leadData, company: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                        placeholder="Nama PT"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">Email Bisnis</Typography>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
-                      <input 
-                        required
-                        type="email" 
-                        value={leadData.email}
-                        onChange={e => setLeadData({...leadData, email: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                        placeholder="email@kantor.com"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1">WhatsApp</Typography>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-500 dark:text-slate-400 dark:text-slate-300" />
-                      <input 
-                        type="tel" 
-                        value={leadData.phone}
-                        onChange={e => setLeadData({...leadData, phone: e.target.value})}
-                        className="w-full bg-slate-950 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white focus:border-emerald-500 focus:outline-none [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                        placeholder="0812..."
-                      />
-                    </div>
-                  </div>
+                  <Input 
+                    label="Nama Lengkap"
+                    labelClassName="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1"
+                    icon={<User className="w-4 h-4" />}
+                    required
+                    value={leadData.name}
+                    onChange={e => setLeadData({...leadData, name: e.target.value})}
+                    className="bg-slate-950 border-white/10 text-white focus:border-emerald-500 py-2.5"
+                    placeholder="Nama Anda"
+                  />
+                  
+                  <Input 
+                    label="Perusahaan"
+                    labelClassName="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1"
+                    icon={<Building2 className="w-4 h-4" />}
+                    required
+                    value={leadData.company}
+                    onChange={e => setLeadData({...leadData, company: e.target.value})}
+                    className="bg-slate-950 border-white/10 text-white focus:border-emerald-500 py-2.5"
+                    placeholder="Nama PT"
+                  />
+
+                  <Input 
+                    type="email"
+                    label="Email Bisnis"
+                    labelClassName="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1"
+                    icon={<Mail className="w-4 h-4" />}
+                    required
+                    value={leadData.email}
+                    onChange={e => setLeadData({...leadData, email: e.target.value})}
+                    className="bg-slate-950 border-white/10 text-white focus:border-emerald-500 py-2.5"
+                    placeholder="email@kantor.com"
+                  />
+
+                  <Input 
+                    type="tel"
+                    label="WhatsApp"
+                    labelClassName="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase mb-1"
+                    icon={<Phone className="w-4 h-4" />}
+                    value={leadData.phone}
+                    onChange={e => setLeadData({...leadData, phone: e.target.value})}
+                    className="bg-slate-950 border-white/10 text-white focus:border-emerald-500 py-2.5"
+                    placeholder="0812..."
+                  />
 
                   <Button size="md" type="submit" fullWidth className="bg-emerald-600 hover:bg-emerald-500 mt-2">
                     Unduh PDF Sekarang

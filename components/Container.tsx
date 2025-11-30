@@ -14,7 +14,7 @@ type ContainerProps = {
   /** Content */
   children: React.ReactNode;
   /** Container max-width */
-  size?: 'sm' | 'default' | 'lg' | 'xl' | 'full';
+  size?: 'sm' | 'default' | 'lg' | 'xl' | 'full' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
   /** Remove horizontal padding */
   noPadding?: boolean;
   /** Additional CSS classes */
@@ -30,18 +30,27 @@ const Container: React.FC<ContainerProps> = memo(({
   className = '',
   as: Component = 'div',
 }) => {
-  const sizeClasses = {
-    sm: 'max-w-4xl',
-    default: 'max-w-7xl',
-    lg: 'max-w-[1400px]',
-    xl: 'max-w-[1600px]',
-    full: 'max-w-full',
+  const sizeClasses: Record<string, string> = {
+    'sm': 'max-w-4xl',
+    '3xl': 'max-w-3xl',
+    '4xl': 'max-w-4xl',
+    '5xl': 'max-w-5xl',
+    '6xl': 'max-w-6xl',
+    '7xl': 'max-w-7xl',
+    'default': 'max-w-7xl',
+    'lg': 'max-w-[1400px]',
+    'xl': 'max-w-[1600px]',
+    'full': 'max-w-full',
   };
 
-  const paddingClass = noPadding ? '' : 'px-4 sm:px-6 lg:px-8';
+  // If invalid size passed, fallback to default or allow it if it matches a class? 
+  // For safety, fallback to default (7xl) if not found, but we added all used ones.
+  const maxWidthClass = sizeClasses[size] || sizeClasses['default'];
+
+  const paddingClass = noPadding ? '' : 'px-4 md:px-6 lg:px-8';
 
   const classes = [
-    sizeClasses[size],
+    maxWidthClass,
     'mx-auto',
     paddingClass,
     className,
@@ -57,4 +66,3 @@ const Container: React.FC<ContainerProps> = memo(({
 Container.displayName = 'Container';
 
 export default Container;
-

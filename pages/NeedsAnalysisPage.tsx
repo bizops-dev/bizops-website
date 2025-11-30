@@ -12,30 +12,19 @@ import {
   Layers,
   Lightbulb,
   ArrowLeft,
-  Building,
-  Users,
   Server,
-  Factory,
-  ShoppingCart,
-  HardHat,
-  Coffee,
   Activity,
-  GraduationCap,
-  Globe,
   Search,
   Clock,
   Wallet,
-  Puzzle,
-  Network,
   GitMerge,
-  FileWarning,
   BarChart,
   Calendar,
   Calculator,
   PieChart,
-  TrendingUp,
   Mail,
-  Phone
+  Phone,
+  Users
 } from 'lucide-react';
 import Button from '../components/Button';
 import { 

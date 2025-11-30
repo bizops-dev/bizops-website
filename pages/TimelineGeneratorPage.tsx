@@ -71,7 +71,7 @@ const TimelineGeneratorPage: React.FC = () => {
       <Container size="7xl" className="relative z-10">
         
         {/* Header */}
-        <Container size="3xl" className="text-center mb-12">
+        <Container noPadding size="3xl" className="text-center mb-12">
            <Stack direction="horizontal" gap={2} align="center" className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 dark:text-blue-300 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-200 dark:border-blue-800">
               <Calendar className="w-4 h-4" /> Project Planner
            </Stack>

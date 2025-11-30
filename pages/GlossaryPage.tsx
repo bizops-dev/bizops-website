@@ -18,7 +18,7 @@ const GlossaryPage: React.FC = () => {
       <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         
         {/* Hero */}
-        <Container size="3xl" className="text-center mb-16">
+        <Container noPadding size="3xl" className="text-center mb-16">
            <Stack direction="horizontal" gap={4} align="center" justify="center" className="p-3 bg-primary-50 rounded-xl mb-6 text-primary-600">
               <BookOpen className="w-8 h-8" />
            </Stack>
@@ -26,7 +26,7 @@ const GlossaryPage: React.FC = () => {
            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-300">Dunia manajemen perusahaan penuh dengan akronim yang membingungkan. Kami menyusun pusat pengetahuan ini untuk Anda.</Typography>
            
            {/* Search Bar */}
-           <Container className="mt-8 relative">
+           <Container noPadding className="mt-8 relative">
               <input 
                  type="text" 
                  placeholder="Cari istilah (e.g. 'TER', 'Lead Time')..." 
@@ -62,7 +62,7 @@ const GlossaryPage: React.FC = () => {
 
         {/* CTA */}
         <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-           <Container size="2xl" className="relative z-10">
+           <Container noPadding size="2xl" className="relative z-10">
               <Typography variant="h2" as="h2">Ingin Menerapkan Konsep Ini Secara Otomatis?</Typography>
               <Typography variant="body" className="text-slate-300">BizOps menerjemahkan teori manajemen ini menjadi fitur software yang praktis. Tidak perlu menghitung manual.</Typography>
               <Link to="/demo">

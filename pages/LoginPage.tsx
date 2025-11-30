@@ -233,7 +233,7 @@ const LoginPage: React.FC = () => {
                            +125% <span className="text-sm font-normal text-slate-300">YoY</span>
                         </div>
                         <div className="space-y-2">
-                           <div className="flex justify-between text-sm text-indigo-200 gap-4">
+                           <div className="flex justify-between text-sm text-indigo-200 gap-2">
                               <span>Active Clients</span>
                               <span className="font-bold text-white">14</span>
                            </div>

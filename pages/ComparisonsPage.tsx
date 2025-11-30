@@ -63,7 +63,7 @@ const ComparisonsPage: React.FC = () => {
       <Container size="7xl" className="relative z-10">
         
         {/* HEADER */}
-        <Container size="3xl" className="text-center mb-16">
+        <Container noPadding size="3xl" className="text-center mb-16">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,8 +123,7 @@ const ComparisonsPage: React.FC = () => {
                       </div>
                       <Typography variant="h3" as="h3">Hitung Kerugian</Typography>
                       <Typography variant="body" className="leading-relaxed">Lihat berapa banyak biaya yang terbuang karena inefisiensi sistem lama.</Typography>
-                      <Button size="md" 
-                          size="sm" 
+                      <Button size="sm" 
                           fullWidth 
                           onClick={() => navigate('/tools/roi-calculator')}
                           className="bg-white text-blue-700 dark:text-slate-200 hover:bg-blue-50 border-none font-bold"
@@ -222,7 +221,7 @@ const ComparisonsPage: React.FC = () => {
                                         {/* Col 1: Feature & Limit */}
                                         <Stack direction="vertical" gap={4} className="md:col-span-4">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold text-sm gap-4">
+                                                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 dark:text-slate-300 font-bold text-sm gap-2">
                                                    {idx + 1}
                                                 </div>
                                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{point.feature}</Typography>
@@ -278,7 +277,7 @@ const ComparisonsPage: React.FC = () => {
                                 <div>
                                    <Typography variant="h3" as="h3" className="font-bold"><AlertTriangle className="w-6 h-6 text-amber-500 dark:text-amber-400 dark:text-amber-300" /> Why Upgrade Now?</Typography>
                                    <Typography variant="body" className="text-slate-400 dark:text-slate-300 leading-relaxed">Sistem lama Anda memiliki keterbatasan yang menahan laju pertumbuhan. Lihat daftar di samping untuk mengetahui apa yang menghambat Anda saat ini.</Typography>
-                                   <Button size="md" 
+                                   <Button 
                                       onClick={() => navigate('/tools/roi-calculator')}
                                       className="bg-white text-slate-900 dark:text-white hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10"
                                       size="lg"
@@ -291,7 +290,7 @@ const ComparisonsPage: React.FC = () => {
                                    <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-widest mb-6">Identified Bottlenecks</div>
                                    <ul className="space-y-4">
                                       {selectedData.limitations.map((lim, idx) => (
-                                          <li key={idx} className="flex gap-4 text-sm text-slate-200 items-start">
+                                          <li key={idx} className="flex gap-2 text-sm text-slate-200 items-start">
                                               <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 gap-4">
                                                 <XCircle className="w-4 h-4 text-red-400 dark:text-red-300" />
                                               </div>

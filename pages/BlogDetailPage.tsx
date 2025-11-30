@@ -129,7 +129,7 @@ const BlogDetailPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <div className="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-slate-900">
+      <div className="relative h-[60vh] md:h-[80vh] min-h-[400px] md:min-h-[600px] w-full overflow-hidden bg-slate-900">
          <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
             <OptimizedImage src={post.image} alt={post.title} className="w-full h-full object-cover opacity-80" />

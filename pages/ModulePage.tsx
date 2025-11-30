@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import Badge from '../components/Badge';
 import CardSlider from '../components/CardSlider';
 import Card from '../components/Card';
+import SpotlightCard from '../components/SpotlightCard'; // Updated
 import { 
   Check, Smartphone, ArrowRight, ChevronRight,
   Users, TrendingUp, Package, Briefcase, MessageSquare, AlertTriangle, Handshake, Sparkles, Code, Server, Cloud,
@@ -21,6 +22,7 @@ import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Section from '../components/Section'; // Added
 
 // Motion Components
 import { CounterUp } from '../components/ui/motion-scroll';
@@ -165,13 +167,13 @@ const ModulePage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION (Standardized Premium Style) */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5 py-16 md:py-24">
+      <Section id="hero" className="!bg-[#0B1120] relative overflow-hidden border-b border-white/5" noPadding containerClassName="py-20 md:py-32">
          {/* Premium Background Effects */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
          
-         <Container size="7xl" className="relative z-10 text-center">
+         <div className="text-center">
             
             {/* Breadcrumbs (Visual) */}
             <motion.div 
@@ -242,278 +244,268 @@ const ModulePage: React.FC = () => {
                   </Button>
                </Link>
             </motion.div>
-         </Container>
-      </section>
+         </div>
+      </Section>
 
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
-         <section className="relative mt-8 md:-mt-20 z-20 pb-12 py-16 md:py-24">
-            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-               <Grid cols={3} gap={6}>
-                  {data.metrics.map((metric, idx) => {
-                     // Parse value for CounterUp (remove %, +, etc)
-                     const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
-                     const prefix = metric.value.match(/^[^0-9]*/) ? metric.value.match(/^[^0-9]*/)![0] : '';
-                     const suffix = metric.value.match(/[^0-9]*$/) ? metric.value.match(/[^0-9]*$/)![0] : '';
-                     const isNumber = !isNaN(numericValue);
+         <Section id="metrics" className="relative mt-8 md:-mt-20 z-20 pb-12 py-20 md:py-32" noPadding>
+            <Grid cols={3} gap={6}>
+               {data.metrics.map((metric, idx) => {
+                  // Parse value for CounterUp (remove %, +, etc)
+                  const numericValue = parseFloat(metric.value.replace(/[^0-9.]/g, ''));
+                  const prefix = metric.value.match(/^[^0-9]*/) ? metric.value.match(/^[^0-9]*/)![0] : '';
+                  const suffix = metric.value.match(/[^0-9]*$/) ? metric.value.match(/[^0-9]*$/)![0] : '';
+                  const isNumber = !isNaN(numericValue);
 
-                     return (
-                       <motion.div 
-                          key={idx}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.2 + idx * 0.1 }}
-                          className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden gap-4"
-                       >
-                          {/* Top Highlight Line */}
-                          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                          
-                          {/* Background Glow */}
-                          <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  return (
+                    <motion.div 
+                       key={idx}
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: 0.2 + idx * 0.1 }}
+                       className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-2xl flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden gap-4"
+                    >
+                       {/* Top Highlight Line */}
+                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                       
+                       {/* Background Glow */}
+                       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                          {isNumber ? (
-                            <div className="relative z-10">
-                              <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
-                            </div>
-                          ) : (
-                            <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2 relative z-10 leading-tight">
-                               {metric.value}
-                            </div>
-                          )}
-                          {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider relative z-10">{metric.label}</div>}
-                       </motion.div>
-                     );
-                  })}
-               </Grid>
-            </Container>
-         </section>
+                       {isNumber ? (
+                         <div className="relative z-10">
+                           <CounterUp to={numericValue} label={metric.label} prefix={prefix} suffix={suffix} />
+                         </div>
+                       ) : (
+                         <div className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600 mb-2 relative z-10 leading-tight">
+                            {metric.value}
+                         </div>
+                       )}
+                       {!isNumber && <div className="text-sm font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider relative z-10">{metric.label}</div>}
+                    </motion.div>
+                  );
+               })}
+            </Grid>
+         </Section>
       )}
 
       {/* 3. Problem & Solution (New) */}
       {data.problems && (
-         <section className="py-24 bg-white dark:bg-slate-950">
-            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-               <Grid cols={2} gap={16} className="items-center">
-                  <div>
-                     <Badge variant="outline" className="mb-6">The Challenge</Badge>
-                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Tantangan {data.title} Tradisional</Typography>
-                     <Stack direction="vertical" gap={8}>
-                        {data.problems.map((prob, idx) => {
-                           const ProbIcon = prob.icon || AlertTriangle;
-                           return (
-                              <motion.div 
-                                key={idx}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="flex gap-4"
-                              >
-                                 <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20">
-                                    <ProbIcon className="w-6 h-6 text-red-500 dark:text-red-400 dark:text-red-300" />
-                                 </Stack>
-                                 <div>
-                                    <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
-                                    <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{prob.desc}</Typography>
-                                 </div>
-                              </motion.div>
-                           );
-                        })}
-                     </Stack>
-                  </div>
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 relative"
-                  >
-                     <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-100 dark:bg-primary-900/50 rounded-full blur-2xl"></div>
-                     <Typography variant="h3" as="h3">Solusi BizOps</Typography>
-                     <ul className="space-y-4 relative z-10">
-                        {data.features.slice(0, 4).map((feat, i) => (
-                           <li key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
-                              <Check className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4" />
-                              <span className="font-medium text-slate-700 dark:text-slate-300">{feat.title}</span>
-                           </li>
-                        ))}
-                     </ul>
-                  </motion.div>
-               </Grid>
-            </Container>
-         </section>
+         <Section id="problems" className="bg-white dark:bg-slate-950">
+            <Grid cols={2} gap={16} className="items-center">
+               <div>
+                  <Badge variant="outline" className="mb-6">The Challenge</Badge>
+                  <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">Tantangan {data.title} Tradisional</Typography>
+                  <Stack direction="vertical" gap={8}>
+                     {data.problems.map((prob, idx) => {
+                        const ProbIcon = prob.icon || AlertTriangle;
+                        return (
+                           <motion.div 
+                             key={idx}
+                             initial={{ opacity: 0, x: -20 }}
+                             whileInView={{ opacity: 1, x: 0 }}
+                             viewport={{ once: true }}
+                             transition={{ delay: idx * 0.1 }}
+                             className="flex gap-4"
+                           >
+                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20">
+                                 <ProbIcon className="w-6 h-6 text-red-500 dark:text-red-400 dark:text-red-300" />
+                              </Stack>
+                              <div>
+                                 <Typography variant="h4" as="h4" className="font-bold text-slate-900 dark:text-white">{prob.title}</Typography>
+                                 <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{prob.desc}</Typography>
+                              </div>
+                           </motion.div>
+                        );
+                     })}
+                  </Stack>
+               </div>
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 relative"
+               >
+                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary-100 dark:bg-primary-900/50 rounded-full blur-2xl"></div>
+                  <Typography variant="h3" as="h3">Solusi BizOps</Typography>
+                  <ul className="space-y-4 relative z-10">
+                     {data.features.slice(0, 4).map((feat, i) => (
+                        <li key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                           <Check className="w-5 h-5 text-green-500 dark:text-green-400 dark:text-green-300 flex-shrink-0 gap-4" />
+                           <span className="font-medium text-slate-700 dark:text-slate-300">{feat.title}</span>
+                        </li>
+                     ))}
+                  </ul>
+               </motion.div>
+            </Grid>
+         </Section>
       )}
 
       {/* 4. Features Grid */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-        <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-          <Container size="3xl" className="text-center mb-16">
-            <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
-          </Container>
-
-          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
-            {data.features.map((feature, index) => {
-               const FeatureIcon = feature.icon || Check;
-               return (
-                  <motion.div 
-                    key={index} 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    whileHover={{ y: -5 }}
-                    className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group h-full"
-                  >
-                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
-                        <FeatureIcon className="w-6 h-6" />
-                     </Stack>
-                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{feature.desc}</Typography>
-                  </motion.div>
-               );
-            })}
-          </CardSlider>
+      <Section id="features" className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <Container noPadding size="3xl" className="text-center mb-16">
+          <Typography variant="h2" as="h2">Fitur Unggulan</Typography>
+          <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Dirancang untuk menyelesaikan masalah nyata, bukan sekadar fitur kosmetik.</Typography>
         </Container>
-      </section>
+
+        <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
+          {data.features.map((feature, index) => {
+             const FeatureIcon = feature.icon || Check;
+             return (
+                <motion.div 
+                  key={index} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ y: -5 }}
+                  className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group h-full"
+                >
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl mb-6 group-hover:bg-primary-600 transition-colors text-primary-600 group-hover:text-white">
+                      <FeatureIcon className="w-6 h-6" />
+                   </Stack>
+                   <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{feature.title}</Typography>
+                   <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{feature.desc}</Typography>
+                </motion.div>
+             );
+          })}
+        </CardSlider>
+      </Section>
 
       {/* 5. Mobile Advantage (Conditional) */}
       {data.mobileAdvantage && (
-         <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
-            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-               <div className="bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl">
-                  {/* Background decoration */}
-                  <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-900/40 to-transparent pointer-events-none"></div>
-                  
-                  <Grid cols={2} gap={12} className="items-center p-8 lg:p-16 relative z-10">
-                     <div>
-                        <Stack direction="horizontal" gap={2} align="center" className="px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
-                           <Smartphone className="w-4 h-4" /> Mobile Native
-                        </Stack>
-                        <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
-                        <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
-                        <Stack direction="vertical" gap={4}>
-                           <Button size="md" variant="white" className="gap-2">
-                              Download App <ArrowRight className="w-4 h-4" />
-                           </Button>
+         <Section id="mobile" className="bg-white dark:bg-slate-950 overflow-hidden">
+            <div className="bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl">
+               {/* Background decoration */}
+               <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary-900/40 to-transparent pointer-events-none"></div>
+               
+               <Grid cols={2} gap={12} className="items-center p-8 lg:p-16 relative z-10">
+                  <div>
+                     <Stack direction="horizontal" gap={2} align="center" className="px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-bold mb-6 uppercase tracking-wider">
+                        <Smartphone className="w-4 h-4" /> Mobile Native
+                     </Stack>
+                     <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.mobileAdvantage.title}</Typography>
+                     <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">{data.mobileAdvantage.desc}</Typography>
+                     <Stack direction="vertical" gap={4}>
+                        <Button size="md" variant="white" className="gap-2">
+                           Download App <ArrowRight className="w-4 h-4" />
+                        </Button>
+                     </Stack>
+                  </div>
+                  {/* Phone Mockup (CSS only) */}
+                  <motion.div 
+                     initial={{ opacity: 0, y: 50 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: 0.2 }}
+                     className="relative flex justify-center lg:justify-end gap-4"
+                  >
+                     <div className="relative w-72 h-[500px] bg-slate-950 rounded-[3rem] border-8 border-slate-800 shadow-2xl overflow-hidden ring-1 ring-white/10">
+                        {/* Notch */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-xl z-20"></div>
+                        {/* Screen Content */}
+                        <Stack direction="vertical" gap={4} className="w-full h-full bg-slate-900">
+                           {/* Header */}
+                           <Stack direction="horizontal" gap={4} align="end" className="bg-slate-800 h-20 p-6">
+                              <div className="text-white font-bold text-lg">{data.mobileAdvantage.title}</div>
+                           </Stack>
+                           {/* Body */}
+                           <Stack direction="vertical" gap={4} className="p-4">
+                              <div className="h-32 bg-slate-800 rounded-xl animate-pulse"></div>
+                              <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-75"></div>
+                              <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-100"></div>
+                              <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-150"></div>
+                           </Stack>
+                           {/* FAB */}
+                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="absolute bottom-6 right-6 w-14 h-14 bg-primary-600 rounded-full shadow-lg">
+                              <Plus className="w-6 h-6 text-white" />
+                           </Stack>
                         </Stack>
                      </div>
-                     {/* Phone Mockup (CSS only) */}
-                     <motion.div 
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="relative flex justify-center lg:justify-end gap-4"
-                     >
-                        <div className="relative w-72 h-[500px] bg-slate-950 rounded-[3rem] border-8 border-slate-800 shadow-2xl overflow-hidden ring-1 ring-white/10">
-                           {/* Notch */}
-                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-xl z-20"></div>
-                           {/* Screen Content */}
-                           <Stack direction="vertical" gap={4} className="w-full h-full bg-slate-900">
-                              {/* Header */}
-                              <Stack direction="horizontal" gap={4} align="end" className="bg-slate-800 h-20 p-6">
-                                 <div className="text-white font-bold text-lg">{data.mobileAdvantage.title}</div>
-                              </Stack>
-                              {/* Body */}
-                              <Stack direction="vertical" gap={4} className="p-4">
-                                 <div className="h-32 bg-slate-800 rounded-xl animate-pulse"></div>
-                                 <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-75"></div>
-                                 <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-100"></div>
-                                 <div className="h-16 bg-slate-800 rounded-xl animate-pulse delay-150"></div>
-                              </Stack>
-                              {/* FAB */}
-                              <Stack direction="horizontal" gap={4} align="center" justify="center" className="absolute bottom-6 right-6 w-14 h-14 bg-primary-600 rounded-full shadow-lg">
-                                 <Plus className="w-6 h-6 text-white" />
-                              </Stack>
-                           </Stack>
-                        </div>
-                     </motion.div>
-                  </Grid>
-               </div>
-            </Container>
-         </section>
+                  </motion.div>
+               </Grid>
+            </div>
+         </Section>
       )}
 
       {/* 6. Integration / Connections */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
-         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-            <div className="text-center mb-16">
-               <Badge variant="outline" className="mb-4">Ecosystem</Badge>
-               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
-               <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{moduleId === 'integration' 
-                     ? 'Jelajahi berbagai aplikasi dan layanan yang sudah terhubung dengan ekosistem BizOps.'
-                     : 'Data mengalir otomatis antar modul. Hilangkan duplikasi input dan rekonsiliasi manual.'}</Typography>
-            </div>
+      <Section id="integrations" className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+         <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Ecosystem</Badge>
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{moduleId === 'integration' ? 'Direktori Integrasi' : 'Integrasi Tanpa Batas'}</Typography>
+            <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">{moduleId === 'integration' 
+                  ? 'Jelajahi berbagai aplikasi dan layanan yang sudah terhubung dengan ekosistem BizOps.'
+                  : 'Data mengalir otomatis antar modul. Hilangkan duplikasi input dan rekonsiliasi manual.'}</Typography>
+         </div>
 
-            {moduleId === 'integration' ? (
-               // MARKETPLACE GRID VIEW
-               <Stack direction="vertical" gap={12}>
-                  <Stack direction="horizontal" gap={4} align="start" className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-2xl mb-12">
-                     <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-lg text-blue-600 dark:text-blue-300">
-                        <Handshake className="w-6 h-6" />
-                     </div>
-                     <div>
-                        <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
-                        <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
-                     </div>
-                  </Stack>
-                  
-                  <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
-                     {integrationsData.map((cat, idx) => (
-                        <div key={idx} className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 h-full">
-                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Layers className="w-5 h-5 text-primary-500" />
-                              {cat.category}</Typography>
-                           <ul className="space-y-4">
-                              {cat.apps.map((app, i) => (
-                                 <li key={i} className="flex flex-col gap-1 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                                    <Stack direction="horizontal" gap={4} align="center" justify="between">
-                                       <span className="font-bold text-slate-700 dark:text-slate-300">{app.name}</span>
-                                       <Badge size="sm" variant="outline" className="text-[10px] py-0 h-5">Managed</Badge>
-                                    </Stack>
-                                    <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{app.desc}</Typography>
-                                 </li>
-                              ))}
-                           </ul>
-                        </div>
-                     ))}
-                  </CardSlider>
+         {moduleId === 'integration' ? (
+            // MARKETPLACE GRID VIEW
+            <Stack direction="vertical" gap={12}>
+               <Stack direction="horizontal" gap={4} align="start" className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-2xl mb-12">
+                  <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-lg text-blue-600 dark:text-blue-300">
+                     <Handshake className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <Typography variant="h3" as="h3">Assisted Integration Required</Typography>
+                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Integrasi di bawah ini memerlukan konfigurasi teknis oleh tim expert kami (Managed Integration). Kami akan membantu mapping data dan setup konektor untuk memastikan alur bisnis Anda berjalan lancar.</Typography>
+                  </div>
                </Stack>
-            ) : (
-               // CIRCUIT VIEW (Standard)
-               <div className="relative">
-                  {/* Connectors Visual */}
-                  <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 -z-10"></div>
-                  
-                  <Grid cols={3} gap={8}>
-                     {data.connections?.map((conn, idx) => (
-                        <motion.div 
-                           key={idx}
-                           initial={{ opacity: 0, scale: 0.8 }}
-                           whileInView={{ opacity: 1, scale: 1 }}
-                           viewport={{ once: true }}
-                           transition={{ delay: idx * 0.1 }}
-                           className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 relative group hover:-translate-y-1 transition-transform"
-                        >
-                           <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400 dark:text-slate-300">
-                              <LinkIcon className="w-4 h-4" />
-                           </Stack>
-                           <div className="mt-6 text-center">
-                              <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
-                              <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
-                              <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{conn.desc}</Typography>
-                           </div>
-                        </motion.div>
-                     ))}
-                  </Grid>
-               </div>
-            )}
-         </Container>
-      </section>
+               
+               <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
+                  {integrationsData.map((cat, idx) => (
+                     <div key={idx} className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 h-full">
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white"><Layers className="w-5 h-5 text-primary-500" />
+                           {cat.category}</Typography>
+                        <ul className="space-y-4">
+                           {cat.apps.map((app, i) => (
+                              <li key={i} className="flex flex-col gap-1 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                 <Stack direction="horizontal" gap={4} align="center" justify="between">
+                                    <span className="font-bold text-slate-700 dark:text-slate-300">{app.name}</span>
+                                    <Badge size="sm" variant="outline" className="text-[10px] py-0 h-5">Managed</Badge>
+                                 </Stack>
+                                 <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">{app.desc}</Typography>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  ))}
+               </CardSlider>
+            </Stack>
+         ) : (
+            // CIRCUIT VIEW (Standard)
+            <div className="relative">
+               {/* Connectors Visual */}
+               <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 -z-10"></div>
+               
+               <Grid cols={3} gap={8}>
+                  {data.connections?.map((conn, idx) => (
+                     <motion.div 
+                        key={idx}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="bg-white dark:bg-slate-950 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 relative group hover:-translate-y-1 transition-transform"
+                     >
+                        <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full absolute -top-5 left-1/2 -translate-x-1/2 border-4 border-slate-50 dark:border-slate-900 group-hover:border-primary-50 dark:group-hover:border-primary-900 group-hover:bg-primary-600 group-hover:text-white transition-colors text-slate-400 dark:text-slate-300">
+                           <LinkIcon className="w-4 h-4" />
+                        </Stack>
+                        <div className="mt-6 text-center">
+                           <div className="text-xs font-bold text-primary-500 uppercase tracking-wider mb-2">Connects to</div>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{conn.target}</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{conn.desc}</Typography>
+                        </div>
+                     </motion.div>
+                  ))}
+               </Grid>
+            </div>
+         )}
+      </Section>
 
       {/* 7. Testimonial (Re-ordered above FAQ) */}
-      <section className="py-24 bg-white dark:bg-slate-950">
-         <Container size="7xl" className="text-center">
+      <Section id="testimonial" className="bg-white dark:bg-slate-950">
+         <div className="text-center">
             <Quote className="w-12 h-12 text-primary-200 dark:text-primary-900 mx-auto mb-8" />
             <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">"{testimonial.quote}"</Typography>
             <Stack direction="horizontal" gap={4} align="center" justify="center">
@@ -529,68 +521,66 @@ const ModulePage: React.FC = () => {
                   <div className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-300">{testimonial.role}</div>
                </div>
             </Stack>
-         </Container>
-      </section>
+         </div>
+      </Section>
 
       {/* 8. FAQ */}
       {data.faqs && (
-         <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-            <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-               <div className="text-center mb-12">
-                  <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
-               </div>
-               <div className="bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-6">
-                  {data.faqs.map((faq, i) => (
-                     <FAQItem key={i} question={faq.question} answer={faq.answer} />
-                  ))}
-               </div>
-            </Container>
-         </section>
+         <Section id="faq" className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+            <div className="text-center mb-12">
+               <Typography variant="h2" as="h2">Frequently Asked Questions</Typography>
+            </div>
+            <div className="bg-white dark:bg-slate-950 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-2 sm:p-6">
+               {data.faqs.map((faq, i) => (
+                  <FAQItem key={i} question={faq.question} answer={faq.answer} />
+               ))}
+            </div>
+         </Section>
       )}
 
       {/* 9. Related Modules (Carousel Style) */}
-      <section className="py-24 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
-            <div className="text-center mb-12">
-               <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
-               <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
-            </div>
-            
-            <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
-               {relatedModules.map((mod, idx) => {
-                  // NEW LOGIC FOR RELATED LINKS
-                  let linkPath = '';
-                  if (mod.type === 'module') {
-                     linkPath = `/platform/modules/${mod.id}`;
-                  } else if (mod.id === 'integration' || mod.id === 'self-hosted') {
-                     linkPath = `/platform/technologies/${mod.id}`;
-                  } else {
-                     linkPath = `/platform/capabilities/${mod.id}`;
-                  }
+      <Section id="related" className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+         <div className="text-center mb-12">
+            <Typography variant="h2" as="h2">Eksplorasi Modul Lainnya</Typography>
+            <Typography variant="body" className="text-slate-500 dark:text-slate-400 dark:text-slate-300">Bangun ekosistem bisnis yang lengkap bertahap.</Typography>
+         </div>
+         
+         <CardSlider desktopClassName="md:grid md:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
+            {relatedModules.map((mod, idx) => {
+               // NEW LOGIC FOR RELATED LINKS
+               let linkPath = '';
+               if (mod.type === 'module') {
+                  linkPath = `/platform/modules/${mod.id}`;
+               } else if (mod.id === 'integration' || mod.id === 'self-hosted') {
+                  linkPath = `/platform/technologies/${mod.id}`;
+               } else {
+                  linkPath = `/platform/capabilities/${mod.id}`;
+               }
 
-                  const ModIcon = mod.icon || Package;
+               const ModIcon = mod.icon || Package;
 
-                  return (
-                  <Link key={idx} to={linkPath} className="group h-full block">
-                     <Card className="h-full border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg transition-all" padding="lg">
+               return (
+               <Link key={idx} to={linkPath} className="group h-full block">
+                  <SpotlightCard className="h-full rounded-2xl" spotlightColor="rgba(37, 99, 235, 0.1)">
+                     <div className="p-8 h-full flex flex-col">
                         <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-400 mb-6 group-hover:bg-primary-600 group-hover: text-slate-900 dark:text-white transition-colors shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                            <ModIcon className="w-6 h-6" />
                         </Stack>
-                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{mod.title}</Typography>
-                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{mod.description}</Typography>
-                        <Stack direction="horizontal" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                        <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 mb-2">{mod.title}</Typography>
+                        <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed flex-grow">{mod.description}</Typography>
+                        <Stack direction="horizontal" gap={4} align="center" className="text-primary-600 dark:text-primary-400 text-sm font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mt-4">
                            Lihat Detail <ArrowRight className="w-4 h-4 ml-1" />
                         </Stack>
-                     </Card>
-                  </Link>
-                  );
-               })}
-            </CardSlider>
-         </Container>
-      </section>
+                     </div>
+                  </SpotlightCard>
+               </Link>
+               );
+            })}
+         </CardSlider>
+      </Section>
 
       {/* 10. CTA Final */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
+      <Section id="cta" className="bg-slate-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
          <Container size="7xl" className="text-center relative z-10">
             <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">{data.cta?.text || "Siap untuk transformasi digital?"}</Typography>
@@ -605,7 +595,7 @@ const ModulePage: React.FC = () => {
                </Link>
             </Stack>
          </Container>
-      </section>
+      </Section>
 
     </Stack>
   );

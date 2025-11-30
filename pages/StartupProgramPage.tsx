@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
-import { Rocket, CheckCircle, Zap, ShieldCheck, TrendingUp, Code, Server, Users, ArrowRight, HelpCircle, Clock, Layout, FileText, ChevronRight, Play, Plus, Minus } from 'lucide-react';
+import { Rocket, CheckCircle, Zap, ShieldCheck, TrendingUp, Code, Server, Users, ArrowRight, HelpCircle, Clock, Layout, FileText, ChevronRight, Play, Plus, Minus, DollarSign } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,6 +9,7 @@ import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
+import Accordion from '../components/Accordion';
 
 const StartupProgramPage: React.FC = () => {
   return (
@@ -365,7 +366,7 @@ const StartupProgramPage: React.FC = () => {
                </CardSlider>
             </div>
 
-            <Container size="5xl" className="hidden md:grid md:grid-cols-2 gap-10">
+            <Container noPadding size="5xl" className="hidden md:grid md:grid-cols-2 gap-10">
                {/* Bootstrap Track */}
                <div className="h-full bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-blue-500/50 transition-all group relative overflow-hidden flex flex-col gap-4">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-colors"></div>
@@ -543,7 +544,7 @@ const StartupProgramPage: React.FC = () => {
                   { q: "Bisakah kami pindah ke Self-Hosted nanti?", a: "Tentu saja. Salah satu keunggulan BizOps adalah Data Sovereignty. Jika startup Anda berkembang dan membutuhkan infrastruktur on-premise atau private cloud sendiri, kami menyediakan jalur migrasi data yang mulus." },
                   { q: "Apakah ini termasuk support?", a: "Ya. Paket startup mendapatkan akses Standard Support (Email & Chat) dengan SLA 24 jam. Untuk Scale-Up Track, Anda mendapatkan Prioritas Support dengan SLA 4 jam." }
                ].map((item, idx) => (
-                  <FAQAccordion key={idx} question={item.q} answer={item.a} />
+                  <Accordion key={idx} question={item.q} answer={item.a} />
                ))}
             </Stack>
          </Container>
@@ -574,47 +575,5 @@ const StartupProgramPage: React.FC = () => {
     </div>
   );
 };
-
-const FAQAccordion: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
-   const [isOpen, setIsOpen] = useState(false);
-
-   return (
-      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all hover:border-purple-300 dark:hover:border-purple-700">
-         <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="w-full px-6 py-5 flex justify-between items-center text-left gap-4"
-         >
-            <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{question}</Typography>
-            <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-300'}`}>
-               {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-            </div>
-         </button>
-         <AnimatePresence>
-            {isOpen && (
-               <motion.div 
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-               >
-                  <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/50 pt-4">
-                     {answer}
-                  </div>
-               </motion.div>
-            )}
-         </AnimatePresence>
-      </div>
-   );
-};
-
-function DollarSign({ className }: { className?: string }) {
-   return (
-      <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-         <line x1="12" y1="1" x2="12" y2="23"></line>
-         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-      </svg>
-   );
-}
 
 export default StartupProgramPage;

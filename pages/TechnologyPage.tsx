@@ -25,7 +25,7 @@ const TechnologyPage: React.FC = () => {
       />
 
       {/* HERO */}
-      <div className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0B1120]">
+      <div className="relative overflow-hidden bg-[#0B1120] py-16 md:py-24">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         
@@ -391,7 +391,7 @@ const TechnologyPage: React.FC = () => {
                   </div>
                   <Stack direction="vertical" gap={8}>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-2">
                            <span>Web Server (Gunicorn/Werkzeug)</span>
                            <span className="text-green-400 dark:text-green-300">Active</span>
                         </div>
@@ -400,7 +400,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-2">
                            <span>Background Workers (Default/Short/Long)</span>
                            <span className="text-green-400 dark:text-green-300">Processing</span>
                         </div>
@@ -409,7 +409,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-2">
                            <span>Socket.io Service</span>
                            <span className="text-green-400 dark:text-green-300">Connected: 1,240</span>
                         </div>
@@ -418,7 +418,7 @@ const TechnologyPage: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-2">
                            <span>Redis Cache Hit Rate</span>
                            <span className="text-green-400 dark:text-green-300">98.5%</span>
                         </div>

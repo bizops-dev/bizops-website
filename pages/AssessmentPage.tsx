@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronLeft, 
+import { Input } from '../components/Form'; 
+import {
   BarChart, 
   Crosshair, 
   ArrowRight,
-  Loader2,
   RefreshCw,
   Lightbulb,
   Heart,
@@ -13,7 +12,6 @@ import {
   Cpu,
   Users,
   CheckCircle,
-  Play,
   LayoutDashboard,
   Clock,
   Download,
@@ -28,7 +26,9 @@ import {
   Phone,
   Calculator,
   Search,
-  ChevronRight
+  ChevronRight,
+  ChevronLeft,
+  AlertTriangle
 } from 'lucide-react';
 import Button from '../components/Button';
 import { assessmentQuestions, maturityLevels, recommendations } from '../data/assessmentQuestions';
@@ -415,77 +415,64 @@ const AssessmentPage = () => {
 
             <form onSubmit={handleLeadSubmit} className="space-y-6">
               <Grid cols={2} gap={5}>
-                <div>
-                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Nama Lengkap</Typography>
-                  <input 
-                    type="text" 
-                    required
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                    value={leadForm.name}
-                    onChange={e => setLeadForm({...leadForm, name: e.target.value})}
-                    placeholder="Nama Anda"
-                    autoFocus
-                  />
-                </div>
-                <div>
-                  <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Perusahaan</Typography>
-                  <input 
-                    type="text" 
-                    required
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                    value={leadForm.company}
-                    onChange={e => setLeadForm({...leadForm, company: e.target.value})}
-                    placeholder="Nama PT"
-                  />
-                </div>
+                <Input 
+                  label="Nama Lengkap"
+                  labelClassName="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1"
+                  required
+                  className="bg-slate-950 border-white/10 text-white placeholder-slate-600 h-[50px] focus:border-primary-500 focus:ring-primary-500"
+                  value={leadForm.name}
+                  onChange={e => setLeadForm({...leadForm, name: e.target.value})}
+                  placeholder="Nama Anda"
+                  autoFocus
+                />
+                <Input 
+                  label="Perusahaan"
+                  labelClassName="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1"
+                  required
+                  className="bg-slate-950 border-white/10 text-white placeholder-slate-600 h-[50px] focus:border-primary-500 focus:ring-primary-500"
+                  value={leadForm.company}
+                  onChange={e => setLeadForm({...leadForm, company: e.target.value})}
+                  placeholder="Nama PT"
+                />
               </Grid>
 
               <Grid cols={2} gap={5}>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
-                    <Mail className="w-3 h-3" /> Email Bisnis
-                  </label>
-                  <input 
-                    type="email" 
-                    required
-                    className={`w-full bg-slate-950 border rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:ring-1 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white ${
-                      emailError ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary-500 focus:ring-primary-500'
-                    }`}
-                    value={leadForm.email}
-                    onChange={e => {
-                      setLeadForm({...leadForm, email: e.target.value});
-                      if (emailError) setEmailError('');
-                    }}
-                    placeholder="name@company.com"
-                  />
-                  {emailError && (
-                    <Typography variant="body"><AlertCircle className="w-3 h-3 mr-1" /> {emailError}</Typography>
-                  )}
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1 flex items-center gap-2">
-                    <Phone className="w-3 h-3" /> WhatsApp (Opsional)
-                  </label>
-                  <input 
-                    type="tel" 
-                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                    value={leadForm.phone}
-                    onChange={e => setLeadForm({...leadForm, phone: e.target.value})}
-                    placeholder="0812..."
-                  />
-                </div>
-              </Grid>
-
-              <div>
-                <Typography variant="caption" className="block text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1">Posisi / Jabatan</Typography>
-                <input 
-                  type="text" 
-                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all [&:-webkit-autofill]:shadow-[0_0_0_100px_#0f172a_inset] [&:-webkit-autofill]:-webkit-text-fill-color-white"
-                  value={leadForm.role}
-                  onChange={e => setLeadForm({...leadForm, role: e.target.value})}
-                  placeholder="Manager IT / Ops"
+                <Input 
+                  type="email"
+                  label="Email Bisnis"
+                  labelClassName="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1"
+                  icon={<Mail className="w-4 h-4" />}
+                  required
+                  className={`bg-slate-950 text-white placeholder-slate-600 h-[50px] ${
+                    emailError ? 'border-red-500 focus:ring-red-500' : 'border-white/10 focus:border-primary-500 focus:ring-primary-500'
+                  }`}
+                  value={leadForm.email}
+                  onChange={e => {
+                    setLeadForm({...leadForm, email: e.target.value});
+                    if (emailError) setEmailError('');
+                  }}
+                  placeholder="name@company.com"
+                  error={emailError}
                 />
-              </div>
+                <Input 
+                  type="tel"
+                  label="WhatsApp (Opsional)"
+                  labelClassName="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1"
+                  icon={<Phone className="w-4 h-4" />}
+                  className="bg-slate-950 border-white/10 text-white placeholder-slate-600 h-[50px] focus:border-primary-500 focus:ring-primary-500"
+                  value={leadForm.phone}
+                  onChange={e => setLeadForm({...leadForm, phone: e.target.value})}
+                  placeholder="0812..."
+                />
+              </Grid>
+              <Input 
+                label="Posisi / Jabatan"
+                labelClassName="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider mb-2 ml-1"
+                className="bg-slate-950 border-white/10 text-white placeholder-slate-600 h-[50px] focus:border-primary-500 focus:ring-primary-500"
+                value={leadForm.role}
+                onChange={e => setLeadForm({...leadForm, role: e.target.value})}
+                placeholder="Manager IT / Ops"
+              />
 
               <div className="pt-6">
                 <Button type="submit" fullWidth size="lg" className="bg-primary-600 hover:bg-primary-500 shadow-lg shadow-primary-900/20">
@@ -769,7 +756,7 @@ const AssessmentPage = () => {
 
           {/* FLOATING ACTION BAR (Fixed Bottom) - Hidden when printing */}
           <div className="fixed bottom-0 left-0 right-0 p-4 bg-slate-950/80 backdrop-blur-lg border-t border-white/10 print:hidden z-40">
-            <Container size="6xl" className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <Container noPadding size="6xl" className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="text-sm text-slate-400 dark:text-slate-300 hidden sm:block">
                 Langkah selanjutnya: Simpan laporan ini atau konsultasikan dengan ahli kami.
               </div>

@@ -437,7 +437,7 @@ const MediaKitPage: React.FC = () => {
         </section>
 
         {/* --- PRESS CONTACT --- */}
-        <section className="bg-slate-900 rounded-[3rem] p-12 relative overflow-hidden text-center lg:text-left py-16 md:py-24">
+        <section className="bg-slate-900 rounded-3xl md:rounded-[3rem] p-8 md:p-12 relative overflow-hidden text-center lg:text-left py-16 md:py-24">
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
            

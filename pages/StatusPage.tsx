@@ -75,7 +75,7 @@ const StatusPage: React.FC = () => {
                  ></div>
               ))}
            </div>
-           <div className="flex justify-between text-xs text-slate-400 dark:text-slate-300 font-medium gap-4">
+           <div className="flex justify-between text-xs text-slate-400 dark:text-slate-300 font-medium gap-2">
               <span>90 days ago</span>
               <span>Today</span>
            </div>
@@ -151,7 +151,7 @@ const StatusPage: React.FC = () => {
         {/* --- SUBSCRIBE CTA --- */}
         <div className="bg-slate-900 rounded-2xl p-8 text-center text-white relative overflow-hidden">
            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
-           <Container className="relative z-10">
+           <Container noPadding className="relative z-10">
               <Bell className="w-8 h-8 mx-auto mb-4 text-primary-400" />
               <Typography variant="h3" as="h3">Get Status Updates</Typography>
               <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Subscribe to get email notifications whenever BizOps creates, updates or resolves an incident.</Typography>
@@ -161,7 +161,7 @@ const StatusPage: React.FC = () => {
                     <input 
                        type="email" 
                        placeholder="user@company.com" 
-                       className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm gap-4"
+                       className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:ring-2 focus:ring-primary-500 outline-none text-sm gap-2"
                     />
                     <Button onClick={() => setSubscribed(true)} size="sm" className="whitespace-nowrap">Subscribe</Button>
                  </div>

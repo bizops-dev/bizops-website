@@ -215,7 +215,7 @@ const MigrationPage: React.FC = () => {
         
         {/* 1. HERO SECTION */}
         <Container size="7xl" className="mb-24">
-           <Container size="4xl" className="text-center">
+           <Container noPadding size="4xl" className="text-center">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -253,15 +253,13 @@ const MigrationPage: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col sm:flex-row justify-center gap-5"
               >
-                 <Button size="md" 
-                   size="lg" 
+                 <Button size="lg" 
                    onClick={() => document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })} 
                    className="shadow-xl shadow-blue-500/20 hover:shadow-blue-500/30 text-base px-8 py-4 h-auto rounded-xl"
                  >
                     <Upload className="w-5 h-5 mr-2" /> Cek File Excel Anda
                  </Button>
-                 <Button size="md" 
-                   size="lg" 
+                 <Button size="lg" 
                    variant="outline" 
                    onClick={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })}
                    className="backdrop-blur-sm border-slate-300 dark:border-slate-700 text-base px-8 py-4 h-auto rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800"

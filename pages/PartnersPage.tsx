@@ -75,7 +75,7 @@ const PartnersPage: React.FC = () => {
                 <motion.div 
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
-                   className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold text-blue-400 dark:text-blue-300 mb-8 uppercase tracking-wider gap-4"
+                   className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-bold text-blue-400 dark:text-blue-300 mb-8 uppercase tracking-wider gap-2"
                 >
                    <Users className="w-3 h-3 mr-2" /> Partner Ecosystem
                 </motion.div>

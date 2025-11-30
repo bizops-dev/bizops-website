@@ -41,7 +41,7 @@ const SearchPage: React.FC = () => {
         {/* Search Header */}
         <div className="mb-12 text-center">
            <Typography variant="h1" as="h1">Pencarian Global</Typography>
-           <Container size="2xl" className="relative">
+           <Container noPadding size="2xl" className="relative">
               <input 
                 type="text" 
                 value={query}

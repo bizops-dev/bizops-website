@@ -24,14 +24,14 @@ const SolutionsPage: React.FC = () => {
   // Color mapping for industries to make them distinct
   const getColor = (id: string) => {
     const map: Record<string, string> = {
-      'construction': 'bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400 dark:text-amber-300',
-      'retail': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 dark:text-emerald-300',
-      'outsourcing': 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 dark:text-blue-300',
-      'consulting': 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 dark:text-purple-300',
-      'manufacturing': 'bg-rose-50 text-rose-600 dark:bg-rose-900/20 dark:text-rose-400 dark:text-rose-300',
+      'construction': 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300',
+      'retail': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300',
+      'outsourcing': 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300',
+      'consulting': 'bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-300',
+      'manufacturing': 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-300',
       'enterprise': 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
     };
-    return map[id] || 'bg-slate-50 text-slate-600 dark:text-slate-300';
+    return map[id] || 'bg-slate-50 text-slate-600 dark:bg-slate-800/50 dark:text-slate-300';
   };
 
   return (
@@ -89,10 +89,10 @@ const SolutionsPage: React.FC = () => {
       <Section className="relative overflow-hidden bg-white dark:bg-slate-950 py-16 md:py-24">
         <Container className="px-4 md:px-6 lg:px-8" size="7xl">
            {/* Industry Section */}
-           <Container size="3xl" className="text-center mb-12 md:mb-20">
+           <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Solusi Spesifik Industri</Typography>
               <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami tidak percaya pada "Satu Ukuran untuk Semua". Lihat bagaimana BizOps menangani nuansa unik—dari perhitungan Kurva-S Konstruksi hingga manajemen expiry date Ritel.</Typography>
-           </Container>
+           </div>
            
            <div className="mb-16 md:mb-32">
              <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8" mobileItemWidth="w-[85vw] sm:w-[350px]">
@@ -137,11 +137,11 @@ const SolutionsPage: React.FC = () => {
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
                
                <div className="relative z-10 px-6 py-12 md:p-24">
-                  <Container size="3xl" className="text-center mb-12 md:mb-16">
+                  <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
                      <Badge variant="outline" className="mb-4 bg-white dark:bg-slate-800">Role-Based Experience</Badge>
                      <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">Satu Platform, Beda Perspektif.</Typography>
                      <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">CEO butuh Big Picture. CFO butuh Audit Trail. Manajer Lapangan butuh Kecepatan. BizOps memberikan dashboard yang dipersonalisasi untuk KPI spesifik mereka.</Typography>
-                  </Container>
+                  </div>
 
                   <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[250px]">
                      {roles.map((role) => (

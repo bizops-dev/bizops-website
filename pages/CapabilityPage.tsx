@@ -31,7 +31,7 @@ const CapabilityPage: React.FC = () => {
       <SEO title={`${data.title} | BizOps Technical Specs`} description={data.description} />
 
       {/* Hero */}
-      <section className="bg-slate-900 py-24 text-white">
+      <section className="bg-slate-900 py-16 md:py-24 text-white">
          <Container size="7xl" className="text-center">
             <Stack direction="horizontal" gap={4} className="p-4 bg-slate-800 rounded-2xl mb-6 shadow-lg border border-slate-700">
                <Icon className="w-10 h-10 text-primary-400" />

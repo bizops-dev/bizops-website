@@ -7,7 +7,8 @@ import Section from '../components/Section';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CardSlider from '../components/CardSlider'; // Imported CardSlider
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import SpotlightCard from '../components/SpotlightCard';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, AlertCircle, CheckCircle2, ShieldCheck, 
   Zap, Layers, PackageCheck, ArrowRight, Sparkles, FileText, Check
@@ -18,39 +19,6 @@ import Typography from '../components/Typography';
 import Grid from '../components/Grid';
 import Stack from '../components/Stack';
 import Container from '../components/Container';
-
-// --- COMPONENT: SPOTLIGHT CARD (Reused for consistency) ---
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  return (
-    <div
-      className={`group relative border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden ${className}`}
-      onMouseMove={handleMouseMove}
-    >
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              ${spotlightColor},
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      <div className="relative h-full">{children}</div>
-    </div>
-  );
-};
 
 const ServiceDetailPage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -97,7 +65,7 @@ const ServiceDetailPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <Section className="relative pt-20 pb-32 overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-16 md:py-24">
+      <Section className="relative overflow-hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-16 md:py-24">
         {/* Abstract Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-slate-950/80 dark:to-slate-950 pointer-events-none"></div>

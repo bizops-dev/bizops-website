@@ -11,6 +11,7 @@ import Section from '../components/Section';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
 import CardSlider from '../components/CardSlider';
+import SpotlightCard from '../components/SpotlightCard'; // Updated
 import { modulesData, capabilitiesData, integrationsData } from '../data/content';
 import Typography from '../components/Typography';
 import Grid from '../components/Grid';
@@ -26,14 +27,14 @@ const PlatformPage: React.FC = () => {
   // Default color fallback
   const getColor = (id: string) => {
     const map: Record<string, string> = {
-      'hr': 'bg-pink-50 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400 dark:text-pink-300',
-      'finance': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 dark:text-emerald-300',
-      'operations': 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 dark:text-blue-300',
-      'sales': 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400 dark:text-amber-300',
-      'supply-chain': 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400 dark:text-indigo-300',
+      'hr': 'bg-pink-50 text-pink-600 dark:bg-pink-500/10 dark:text-pink-300',
+      'finance': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300',
+      'operations': 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300',
+      'sales': 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300',
+      'supply-chain': 'bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300',
       'governance': 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
     };
-    return map[id] || 'bg-slate-50 text-slate-600 dark:text-slate-300';
+    return map[id] || 'bg-slate-50 text-slate-600 dark:bg-slate-800/50 dark:text-slate-300';
   };
 
   return (
@@ -44,12 +45,13 @@ const PlatformPage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION */}
-      <div className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+      <Section id="hero" className="relative overflow-hidden" noPadding containerClassName="py-24 md:py-36">
         {/* Background Gradients */}
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent dark:from-primary-900/20 pointer-events-none"></div>
 
-        <Container size="7xl" className="relative z-10 text-center">
+        <div className="text-center">
           <Badge variant="outline" className="mb-8">The Operating System for Business</Badge>
           <Typography variant="h1" as="h1" className="font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">Satu Platform, <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Kendali Tanpa Batas.</span></Typography>
@@ -64,51 +66,54 @@ const PlatformPage: React.FC = () => {
           </Stack>
 
           {/* Abstract Connection Visual */}
-          <Container size="4xl" className="mt-20 relative h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+          <div className="max-w-4xl mx-auto mt-20 relative h-24 hidden md:flex justify-center items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
              <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent absolute top-1/2 left-0"></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Users className="w-6 h-6 text-pink-500 dark:text-pink-400 dark:text-pink-300"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><DollarSign className="w-6 h-6 text-emerald-500 dark:text-emerald-400 dark:text-emerald-300"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border-4 border-primary-100 dark:border-primary-900/50 p-4 rounded-2xl shadow-lg transform scale-125"><Layers className="w-8 h-8 text-primary-600"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><Briefcase className="w-6 h-6 text-blue-500 dark:text-blue-400 dark:text-blue-300"/></div>
              <div className="z-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-xl shadow-sm"><TrendingUp className="w-6 h-6 text-amber-500 dark:text-amber-400 dark:text-amber-300"/></div>
-          </Container>
-        </Container>
-      </div>
+          </div>
+        </div>
+      </Section>
 
       {/* 2. CORE CAPABILITIES (Why Platform?) */}
-      <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-16 md:py-24">
-         <Container size="3xl" className="text-center mb-12">
+      <Section className="bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 py-20 md:py-32">
+         <Container size="3xl" className="text-center mb-16">
             <Typography variant="h2" as="h2">Fondasi Teknologi Modern</Typography>
             <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Kami membangun BizOps di atas pilar teknologi yang fleksibel, aman, dan siap untuk skala enterprise.</Typography>
          </Container>
 
          <CardSlider desktopClassName="md:grid md:grid-cols-2 lg:grid-cols-3 gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
             {capabilities.map((cap) => {
-               // Updated Link to New Path Structure
                const linkUrl = `/platform/capabilities/${cap.id}`;
                
                return (
-                  <Link key={cap.id} to={linkUrl} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 group hover:shadow-xl hover:-translate-y-1 block h-full">
-                     <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
-                        <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:text-primary-600 transition-colors">
-                           <cap.icon className="w-8 h-8" />
+                  <Link key={cap.id} to={linkUrl} className="group block h-full">
+                     <SpotlightCard className="h-full rounded-3xl" spotlightColor="rgba(59, 130, 246, 0.1)">
+                        <div className="p-8 h-full flex flex-col">
+                           <Stack direction="horizontal" gap={4} align="center" justify="between" className="mb-6">
+                              <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:text-primary-600 transition-colors">
+                                 <cap.icon className="w-8 h-8" />
+                              </div>
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity text-primary-500">
+                                 <ArrowRight className="w-5 h-5" />
+                              </div>
+                           </Stack>
+                           <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white mb-3">{cap.title}</Typography>
+                           <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed mb-6 flex-grow">{cap.description}</Typography>
+                           <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-auto">
+                              <ul className="space-y-3">
+                                 {cap.features.slice(0, 3).map((feat: any, i: number) => (
+                                    <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-500 dark:text-slate-500 group-hover:text-slate-700 dark:text-slate-200 dark:group-hover:text-slate-300 transition-colors">
+                                       <Check className="w-4 h-4 text-primary-500 flex-shrink-0 gap-4" />
+                                       <span>{feat.title}</span>
+                                    </li>
+                                 ))}
+                              </ul>
+                           </div>
                         </div>
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity text-primary-500">
-                           <ArrowRight className="w-5 h-5" />
-                        </div>
-                     </Stack>
-                     <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white">{cap.title}</Typography>
-                     <Typography variant="caption" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{cap.description}</Typography>
-                     <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
-                        <ul className="space-y-3">
-                           {cap.features.slice(0, 3).map((feat: any, i: number) => (
-                              <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-500 dark:text-slate-500 group-hover:text-slate-700 dark:text-slate-200 dark:group-hover:text-slate-300 transition-colors">
-                                 <Check className="w-4 h-4 text-primary-500 flex-shrink-0 gap-4" />
-                                 <span>{feat.title}</span>
-                              </li>
-                           ))}
-                        </ul>
-                     </div>
+                     </SpotlightCard>
                   </Link>
                );
             })}
@@ -116,7 +121,7 @@ const PlatformPage: React.FC = () => {
       </Section>
 
       {/* 2.5. LOW CODE REVOLUTION (NEW) */}
-      <Section>
+      <Section className="py-20 md:py-32">
          <Grid cols={2} gap={16} className="items-center">
             <div className="order-2 lg:order-1 relative">
                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-[3rem] transform -rotate-3"></div>
@@ -127,7 +132,7 @@ const PlatformPage: React.FC = () => {
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300">App Builder Studio</Typography>
+                        <Typography variant="caption" className="text-slate-400 dark:text-slate-300 font-mono">App Builder Studio</Typography>
                      </Stack>
                      <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 dark:text-blue-300 text-[10px] font-bold uppercase">Drag & Drop Mode</div>
                   </Stack>
@@ -136,10 +141,10 @@ const PlatformPage: React.FC = () => {
                      {/* Form Builder Simulation */}
                      <Stack direction="horizontal" gap={4}>
                         <Stack direction="vertical" gap={3} className="w-1/3">
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📝 Text Field</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📅 Date Picker</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">✅ Checkbox</div>
-                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-4">📊 Dropdown</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-2">📝 Text Field</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-2">📅 Date Picker</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-2">✅ Checkbox</div>
+                           <div className="h-10 bg-slate-800 rounded-lg border border-slate-700 px-3 text-xs text-slate-400 dark:text-slate-300 cursor-grab active:cursor-grabbing hover:border-blue-500 transition-colors flex items-center gap-2">📊 Dropdown</div>
                         </Stack>
                         <Stack direction="vertical" gap={4} align="center" justify="center" className="w-2/3 bg-slate-950 rounded-xl border border-slate-800 border-dashed p-4 text-center">
                            <div className="w-full bg-slate-900 rounded-lg p-3 mb-3 text-left">
@@ -156,7 +161,7 @@ const PlatformPage: React.FC = () => {
                   </Stack>
                   
                   {/* Floating Badge */}
-                  <Stack direction="horizontal" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark: dark:text-white p-4 rounded-2xl shadow-xl">
+                  <Stack direction="horizontal" gap={3} align="center" className="absolute -bottom-6 -right-6 bg-white dark:bg-blue-600 text-slate-900 dark:text-white p-4 rounded-2xl shadow-xl">
                      <div className="bg-blue-100 dark:bg-white/20 p-2 rounded-lg"><Zap className="w-5 h-5 text-blue-600 dark:text-white" /></div>
                      <div>
                         <div className="text-xs opacity-80">Development Time</div>
@@ -206,8 +211,8 @@ const PlatformPage: React.FC = () => {
       </Section>
 
       {/* 3. MODULES GRID */}
-      <Section>
-        <Container size="3xl" className="text-center mb-12">
+      <Section className="bg-slate-50 dark:bg-slate-900/30 py-20 md:py-32">
+        <Container size="3xl" className="text-center mb-16">
            <Badge variant="outline" className="mb-4">Comprehensive Suite</Badge>
            <Typography variant="h2" as="h2">Modul yang Saling Terhubung</Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Input data di satu modul, update otomatis di modul lainnya. Hilangkan duplikasi dan rekonsiliasi manual.</Typography>
@@ -217,36 +222,39 @@ const PlatformPage: React.FC = () => {
           {modules.map((mod) => (
             <Link 
               key={mod.id} 
-              // Updated Link to New Path Structure
               to={`/platform/modules/${mod.id}`}
               className="group h-full block"
             >
-              <Card className="h-full hover:border-primary-500 transition-all flex flex-col p-8 bg-white dark:bg-slate-900/50 shadow-lg hover:shadow-xl transition-shadow gap-4" hoverEffect>
-                <Stack direction="horizontal" gap={4} align="start" justify="between" className="mb-8">
-                   <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
-                     <mod.icon className="w-8 h-8" />
+              <SpotlightCard className="h-full rounded-3xl" spotlightColor="rgba(37, 99, 235, 0.1)">
+                <div className="flex flex-col h-full p-8 gap-6">
+                   <Stack direction="horizontal" gap={4} align="start" justify="between">
+                      <div className={`w-16 h-16 ${getColor(mod.id)} rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm`}>
+                        <mod.icon className="w-8 h-8" />
+                      </div>
+                      <ArrowRight className="w-6 h-6 text-slate-300 group-hover:text-primary-500 -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
+                   </Stack>
+                   
+                   <div>
+                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 mb-2">{mod.title}</Typography>
+                       <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed text-sm">{mod.subtitle}</Typography>
                    </div>
-                   <ArrowRight className="w-6 h-6 text-slate-300 group-hover:text-primary-500 -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all" />
-                </Stack>
-                
-                <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600">{mod.title}</Typography>
-                <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{mod.subtitle}</Typography>
-                
-                <Stack direction="horizontal" gap={2} className="mt-auto">
-                   {mod.features.slice(0, 3).map((f: any, idx: number) => (
-                      <span key={idx} className="text-xs font-bold px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-700 group-hover:shadow-sm transition-all border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600">
-                         {f.title}
-                      </span>
-                   ))}
-                </Stack>
-              </Card>
+                   
+                   <div className="flex flex-wrap gap-2 mt-auto">
+                      {mod.features.slice(0, 3).map((f: any, idx: number) => (
+                         <span key={idx} className="text-[10px] uppercase tracking-wider font-bold px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-300 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-700 group-hover:shadow-sm transition-all border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600">
+                            {f.title}
+                         </span>
+                      ))}
+                   </div>
+                </div>
+              </SpotlightCard>
             </Link>
           ))}
         </CardSlider>
       </Section>
 
       {/* 4. INTEGRATION ECOSYSTEM */}
-      <Section dark className="relative overflow-hidden py-16 md:py-24">
+      <Section dark className="relative overflow-hidden py-20 md:py-32">
          {/* Abstract Lines */}
          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')] pointer-events-none"></div>
          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none"></div>
@@ -254,9 +262,9 @@ const PlatformPage: React.FC = () => {
          <div className="relative z-10">
             <Grid cols={2} gap={16} className="items-center mb-12">
                <div>
-                  <Typography variant="h2" as="h2" className="font-bold text-white leading-tight">API-First Ecosystem. <br />
+                  <Typography variant="h2" as="h2" className="font-bold text-white leading-tight mb-4">API-First Ecosystem. <br />
                      <span className="text-primary-400">Bukan Pulau Terisolasi.</span></Typography>
-                  <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed">BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.</Typography>
+                  <Typography variant="body-lg" className="text-slate-400 dark:text-slate-300 leading-relaxed mb-8">BizOps dirancang untuk hidup berdampingan dengan tools favorit Anda. Hubungkan dengan Bank, Marketplace, IoT, dan software legacy Anda melalui REST API standar kami.</Typography>
                   <Link to="/platform/technologies/integration">
                      <Button variant="white" size="lg">Jelajahi Library Integrasi</Button>
                   </Link>
@@ -286,16 +294,16 @@ const PlatformPage: React.FC = () => {
       </Section>
 
       {/* 5. TECH STACK */}
-      <Section className="bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden py-16 md:py-24">
+      <Section className="bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden py-20 md:py-32">
          {/* Background Decoration */}
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
          <Container size="5xl" className="text-center relative z-10">
             <Badge variant="outline" className="mb-6 bg-white dark:bg-slate-900">Engineering Excellence</Badge>
             <Typography variant="h2" as="h2">Dibangun dengan Teknologi Enterprise-Grade</Typography>
-            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.</Typography>
+            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 mt-4 mb-12">Stack teknologi modern yang menjamin performa tinggi, keamanan standar perbankan, dan skalabilitas tanpa batas.</Typography>
             
-            <Stack direction="horizontal" gap={6} justify="center" className="mb-12">
+            <Stack direction="horizontal" gap={6} justify="center" className="mb-12 flex-wrap">
                {[
                   { name: 'Python', icon: 'PY', desc: 'Backend Logic' },
                   { name: 'React', icon: 'RC', desc: 'Frontend UI' },
@@ -304,7 +312,7 @@ const PlatformPage: React.FC = () => {
                   { name: 'Docker', icon: 'DK', desc: 'Containerization' },
                   { name: 'Flutter', icon: 'FL', desc: 'Native Mobile' }
                ].map((tech) => (
-                  <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32">
+                  <div key={tech.name} className="flex flex-col items-center gap-3 group cursor-default p-4 rounded-2xl hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-300 w-28 md:w-32 border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
                      <Stack direction="horizontal" gap={4} align="center" justify="center" className="h-14 w-14 bg-white dark:bg-slate-800 rounded-2xl shadow-sm font-black text-sm text-slate-400 dark:text-slate-300 border border-slate-200 dark:border-slate-700 group-hover:border-primary-500 group-hover:text-primary-600 transition-colors">
                         {tech.icon}
                      </Stack>
@@ -317,14 +325,16 @@ const PlatformPage: React.FC = () => {
             </Stack>
 
             {/* Frappe Partner Badge */}
-            <Stack direction="horizontal" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
-               <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
-                  <Check className="w-5 h-5 text-primary-600" />
-               </Stack>
-               <div className="text-left">
-                  <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider">Official Partner</div>
-                  <div className="text-sm font-bold text-slate-900 dark:text-white">Frappe Technologies</div>
-               </div>
+            <Stack direction="horizontal" gap={4} align="center" justify="center">
+                <Stack direction="horizontal" gap={4} align="center" className="p-4 pr-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 hover:border-primary-500 transition-colors cursor-default">
+                   <Stack direction="horizontal" gap={4} align="center" justify="center" className="w-10 h-10 bg-primary-50 dark:bg-primary-900/20 rounded-full">
+                      <Check className="w-5 h-5 text-primary-600" />
+                   </Stack>
+                   <div className="text-left">
+                      <div className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase tracking-wider">Official Partner</div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">Frappe Technologies</div>
+                   </div>
+                </Stack>
             </Stack>
 
             <Stack direction="horizontal" gap={4} justify="center">
@@ -341,14 +351,14 @@ const PlatformPage: React.FC = () => {
       <Section className="py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
          <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 -z-10"></div>
          <Container size="4xl" className="text-center">
-            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
-            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
-            <Stack direction="vertical" gap={4} className="justify-center">
+            <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white leading-tight mb-6">Siap untuk Upgrade <br/> <span className="text-primary-600">Sistem Operasi Bisnis</span> Anda?</Typography>
+            <Typography variant="body-xl" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 mb-10">Jadwalkan demo 30 menit untuk melihat bagaimana platform ini bekerja secara real-time. Tanpa komitmen.</Typography>
+            <Stack direction="vertical" gap={4} className="justify-center sm:flex-row">
                <Link to="/demo">
                   <Button size="lg" className="px-10 text-xl shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform">Jadwalkan Demo Sekarang</Button>
                </Link>
                <Link to="/contact">
-                  <Button variant="outline" size="lg" className="px-10 text-xl bg-white dark:bg-transparent">Hubungi Sales</Button>
+                  <Button variant="outline" size="lg" className="px-10 text-xl bg-white dark:bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800">Hubungi Sales</Button>
                </Link>
             </Stack>
          </Container>

@@ -114,7 +114,7 @@ const PricingPage: React.FC = () => {
         </Container>
       </div>
 
-      <Section className="-mt-12 pt-0 relative z-20 py-16 md:py-24">
+      <Section className="relative z-20 py-16 md:py-24">
         {/* --- PRICING CARDS --- */}
         <div className="mb-24">
            <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-8 md:items-start" mobileItemWidth="w-[85vw] sm:w-[350px]" className="pb-12 shadow-lg hover:shadow-xl transition-shadow">
@@ -163,7 +163,7 @@ const PricingPage: React.FC = () => {
              </Stack>
 
              {/* Plan 2: Growth (Popular) */}
-             <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl p-8 h-full border-2 border-primary-600 dark:border-primary-500 relative md:transform md:-translate-y-4 shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10">
+             <Stack direction="vertical" gap={4} className="bg-white dark:bg-slate-900 rounded-3xl p-8 h-full border-2 border-primary-600 dark:border-primary-500 relative shadow-2xl shadow-primary-900/10 dark:shadow-primary-900/20 z-10 md:scale-105 md:origin-top">
                <Stack direction="horizontal" gap={4} justify="center" className="absolute -top-5 left-0 right-0">
                  <Stack direction="horizontal" gap={1} align="center" className="bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg tracking-wide uppercase">
                    <Zap className="w-3.5 h-3.5 fill-current" />
@@ -302,7 +302,7 @@ const PricingPage: React.FC = () => {
            <div className="text-center mb-12">
              <Typography variant="h2" as="h2">Standar Keamanan Enterprise</Typography>
            </div>
-           <Container className="px-4 md:px-6 lg:px-8" size="7xl">
+           <Container noPadding className="px-4 md:px-6 lg:px-8" size="7xl">
              <Grid cols={4} gap={6}>
                {[
                  { icon: Shield, title: "Secure Payment", desc: "Midtrans & Xendit Gateway", color: "text-green-500 dark:text-green-400 dark:text-green-300" },

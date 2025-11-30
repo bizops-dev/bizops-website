@@ -6,46 +6,14 @@ import Section from '../components/Section';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Pagination from '../components/Pagination';
-import { motion, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
+import SpotlightCard from '../components/SpotlightCard'; // Imported from component
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, BookOpen, Filter, Search, X, Briefcase, Layers } from 'lucide-react';
 import { FADE_UP_VARIANTS, STAGGER_CONTAINER } from '../utils/animation';
 import { StaggeredText } from '../components/ui/motion-text';
 import Typography from '../components/Typography';
 import Container from '../components/Container';
 import Stack from '../components/Stack';
-
-// --- Reusing SpotlightCard Concept ---
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(14, 165, 233, 0.15)" }: { children: React.ReactNode; className?: string; spotlightColor?: string }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  return (
-    <div
-      className={`group relative border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden ${className}`}
-      onMouseMove={handleMouseMove}
-    >
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              ${spotlightColor},
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      <div className="relative h-full">{children}</div>
-    </div>
-  );
-};
 
 const ITEMS_PER_PAGE = 6;
 
@@ -381,7 +349,7 @@ const UseCasesPage: React.FC = () => {
                                           <div className="h-px w-10 bg-slate-200 dark:bg-slate-700 mb-4"></div>
                                           <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{item.challenge}</Typography>
 
-                                          <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800 gap-4">
+                                          <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white group-hover:translate-x-2 transition-transform duration-300 pt-6 border-t border-slate-100 dark:border-slate-800 gap-2">
                                              Read Full Story <ArrowRight className="w-4 h-4 ml-2 text-primary-500" />
                                           </div>
                                        </SpotlightCard>

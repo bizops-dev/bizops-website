@@ -344,14 +344,14 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]"></div>
            <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27c93f]"></div>
         </div>
-        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 dark:text-slate-300 border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap gap-4">
+        <div className="ml-4 flex-1 bg-slate-900/80 rounded-md h-5 md:h-6 flex items-center px-3 text-[10px] md:text-xs text-slate-400 dark:text-slate-300 border border-slate-800/50 shadow-inner overflow-hidden whitespace-nowrap gap-2">
            <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 mr-1">https://</span>app.bizops.id/desk
         </div>
      </div>
      <div className="flex-1 flex overflow-hidden bg-slate-50 dark:bg-[#0B1120] text-slate-900 dark:text-white gap-4">
         <div className="w-48 md:w-64 bg-slate-900 border-r border-slate-800 flex flex-col p-3 md:p-4 hidden sm:flex shrink-0 gap-4">
            <div className="flex items-center gap-3 mb-6 md:mb-8 text-white font-bold text-base md:text-lg px-2">
-              <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center text-xs md:text-sm shadow-lg shadow-primary-900/50 gap-4">B</div>
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center text-xs md:text-sm shadow-lg shadow-primary-900/50 gap-2">B</div>
               <span className="tracking-tight">BizOps</span>
            </div>
            <Stack direction="vertical" gap={1}>
@@ -369,7 +369,7 @@ const DesktopFrame: React.FC<{children: React.ReactNode, role: string}> = ({ chi
               </div>
            </Stack>
            <div className="mt-auto flex items-center gap-3 pt-4 border-t border-slate-800/50">
-              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs text-white font-bold shadow-md border border-white/10 gap-4">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xs text-white font-bold shadow-md border border-white/10 gap-2">
                  {role.charAt(0)}
               </div>
               <div className="flex-1 overflow-hidden gap-4">
@@ -470,7 +470,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                <Stack direction="vertical" gap={5} className="flex-1 p-4 gap-4">
                   <Stack direction="vertical" gap={2}>
                      <Typography variant="caption" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">Customer</Typography>
-                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white flex justify-between items-center shadow-sm gap-4">
+                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white flex justify-between items-center shadow-sm gap-2">
                         PT Mitra Abadi Teknik
                         <div className="w-5 h-5 bg-green-500/20 rounded-full flex items-center justify-center gap-4"><Check className="w-3 h-3 text-green-500 dark:text-green-400 dark:text-green-300" /></div>
                      </div>
@@ -478,7 +478,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   <Stack direction="vertical" gap={2}>
                      <Typography variant="caption" className="text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 uppercase">Items</Typography>
                      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 shadow-sm">
-                        <div className="flex justify-between text-sm mb-1 text-white font-medium gap-4">
+                        <div className="flex justify-between text-sm mb-1 text-white font-medium gap-2">
                            <span>MacBook Pro M3</span>
                            <span>x 5</span>
                         </div>
@@ -488,11 +488,11 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   
                   <div className="mt-auto">
                      <div className="p-5 bg-slate-800/50 rounded-xl border border-slate-800 mb-4">
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-2 gap-2">
                            <span>Subtotal</span>
                            <span>Rp 125.000.000</span>
                         </div>
-                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-4 gap-4">
+                        <div className="flex justify-between text-sm text-slate-400 dark:text-slate-300 mb-4 gap-2">
                            <span>Tax (11%)</span>
                            <span>Rp 13.750.000</span>
                         </div>
@@ -572,7 +572,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                   </Stack>
                   
                   <div className="col-span-1 bg-slate-800/50 rounded-2xl border border-slate-700/50 flex flex-col h-full min-h-[200px] gap-4">
-                     <div className="p-4 md:p-5 border-b border-slate-700/50 font-bold text-white flex justify-between items-center text-sm md:text-base gap-4">
+                     <div className="p-4 md:p-5 border-b border-slate-700/50 font-bold text-white flex justify-between items-center text-sm md:text-base gap-2">
                         Pending <span className="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-lg shadow-red-900/50">1</span>
                      </div>
                      <div className="p-3 md:p-4 flex-1 gap-4">
@@ -619,7 +619,7 @@ const ScenarioContent: React.FC<{id: string, step: number, onNext: () => void, o
                         <Stack direction="vertical" gap={2}>
                            <div className="text-slate-500 dark:text-slate-400 dark:text-slate-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">Items</div>
                            <div className="bg-slate-900 rounded-xl border border-slate-700 overflow-hidden">
-                              <div className="p-3 border-b border-slate-700 flex justify-between text-xs md:text-sm text-slate-300 gap-4">
+                              <div className="p-3 border-b border-slate-700 flex justify-between text-xs md:text-sm text-slate-300 gap-2">
                                  <span>MacBook Pro M3 14"</span>
                                  <span>x 5</span>
                               </div>

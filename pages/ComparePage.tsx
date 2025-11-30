@@ -30,7 +30,7 @@ const ComparePage: React.FC = () => {
 
       <Container className="px-4 md:px-6 lg:px-8" size="7xl">
         {/* Hero */}
-        <Container size="4xl" className="text-center mb-16">
+        <Container noPadding size="4xl" className="text-center mb-16">
           <div className="inline-block bg-white border border-slate-200 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 dark:text-slate-300 mb-6 shadow-sm">
             BizOps vs {data.name}
           </div>
@@ -159,7 +159,7 @@ const ComparePage: React.FC = () => {
         )}
 
         {/* Verdict & CTA */}
-        <Container size="4xl" className="text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
+        <Container noPadding size="4xl" className="text-center bg-white p-10 rounded-2xl border border-primary-100 shadow-lg">
            <Typography variant="h2" as="h2">The Verdict</Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-300 leading-relaxed">"{data.verdict}"</Typography>
            <Stack direction="vertical" gap={4} className="justify-center">

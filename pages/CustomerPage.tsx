@@ -116,7 +116,7 @@ const CustomerPage: React.FC = () => {
       <SEO title="Customer Success Stories | BizOps" description="Lihat bagaimana perusahaan terkemuka di Indonesia mentransformasi operasional mereka dengan BizOps." />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#0B1120] overflow-hidden text-white py-16 md:py-24">
+      <section className="relative overflow-hidden bg-[#0B1120] text-white py-16 md:py-24">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
          

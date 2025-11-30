@@ -26,7 +26,7 @@ const ManagedServicesPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <Section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-white dark:bg-slate-900 py-16 md:py-24">
+      <Section className="relative overflow-hidden bg-white dark:bg-slate-900 py-16 md:py-24">
          {/* Background Elements */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[100px] animate-pulse-slow"></div>
@@ -77,7 +77,7 @@ const ManagedServicesPage: React.FC = () => {
                  transition={{ duration: 0.8 }}
                  className="flex-1 relative hidden md:block gap-4"
                >
-                  <Container className="relative w-full aspect-square">
+                  <Container noPadding className="relative w-full aspect-square">
                     {/* Central Hub */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center z-20 border-4 border-slate-50 dark:border-slate-700 overflow-hidden gap-4">
                         <OptimizedImage src="/logo-icon.svg" alt="BizOps" className="w-16 h-16 opacity-80" onError={() => {}} />

@@ -110,7 +110,7 @@ const DocsPage: React.FC = () => {
                          </div>
                          <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                          <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{cat.desc}</Typography>
-                         <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link gap-4">
+                         <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link gap-2">
                             Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                          </div>
                       </Card>
@@ -135,7 +135,7 @@ const DocsPage: React.FC = () => {
                       </div>
                       <Typography variant="h3" as="h3" className="font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">{cat.title}</Typography>
                       <Typography variant="caption" className="text-slate-500 dark:text-slate-400 dark:text-slate-300 leading-relaxed">{cat.desc}</Typography>
-                      <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link gap-4">
+                      <div className="mt-auto flex items-center text-primary-600 dark:text-primary-400 text-sm font-bold group/link gap-2">
                          Explore Guides <ChevronRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                       </div>
                    </Card>

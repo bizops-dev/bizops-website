@@ -43,7 +43,7 @@ const RolePage: React.FC = () => {
       <SEO title={data.metaTitle} description={data.metaDesc} />
 
       {/* 1. HERO (Dark Enterprise Style - Premium Upgrade) */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-slate-950 text-white overflow-hidden py-16 md:py-24">
+      <section className="relative bg-slate-950 text-white overflow-hidden py-16 md:py-24">
         {/* Dynamic Lighting */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-blue-900/20 to-transparent pointer-events-none"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>

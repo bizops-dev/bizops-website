@@ -65,7 +65,7 @@ const WhyBizOpsPage: React.FC = () => {
             
             <Stack direction="vertical" gap={16} className="items-center">
                {/* Quadrant Chart */}
-               <Container className="w-full lg:w-1/2 aspect-square relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8">
+               <Container noPadding className="w-full lg:w-1/2 aspect-square relative bg-slate-50 dark:bg-slate-800/50 rounded-3xl shadow-inner border border-slate-200 dark:border-slate-700 p-8">
                   {/* Axes */}
                   <div className="absolute top-8 bottom-8 left-1/2 w-px bg-slate-300 dark:bg-slate-600 transform -translate-x-1/2 border-l border-dashed border-slate-400 dark:border-slate-500"></div>
                   <div className="absolute left-8 right-8 top-1/2 h-px bg-slate-300 dark:bg-slate-600 transform -translate-y-1/2 border-t border-dashed border-slate-400 dark:border-slate-500"></div>
@@ -280,7 +280,7 @@ const WhyBizOpsPage: React.FC = () => {
                   
                   <Stack direction="vertical" gap={8}>
                      <div className="relative">
-                        <div className="flex justify-between text-sm mb-2 font-semibold gap-4">
+                        <div className="flex justify-between text-sm mb-2 font-semibold gap-2">
                            <span className="text-slate-900 dark:text-white flex items-center gap-2"><div className="w-2 h-2 bg-green-500 rounded-full"></div> BizOps ERP</span>
                            <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">2GB RAM</span>
                         </div>
@@ -295,7 +295,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                      
                      <div className="relative opacity-60">
-                        <div className="flex justify-between text-sm mb-2 font-semibold gap-4">
+                        <div className="flex justify-between text-sm mb-2 font-semibold gap-2">
                            <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300 flex items-center gap-2"><div className="w-2 h-2 bg-slate-400 rounded-full"></div> Legacy Java ERP</span>
                            <span className="text-slate-500 dark:text-slate-400 dark:text-slate-300">8GB RAM</span>
                         </div>
@@ -310,7 +310,7 @@ const WhyBizOpsPage: React.FC = () => {
                      </div>
                   </Stack>
                   
-                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">
+                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex gap-2 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300">
                      <div className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 dark:text-green-300" /> Docker Ready
                      </div>

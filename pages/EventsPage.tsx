@@ -161,7 +161,7 @@ const EventsPage: React.FC = () => {
                              <div className="flex -space-x-2 gap-4">
                                 {/* Dummy avatars for participants */}
                                 {[1,2,3].map(i => (
-                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
+                                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-2">
                                       {String.fromCharCode(64 + i)}
                                    </div>
                                 ))}
@@ -215,7 +215,7 @@ const EventsPage: React.FC = () => {
                           <div className="flex -space-x-2 gap-4">
                              {/* Dummy avatars for participants */}
                              {[1,2,3].map(i => (
-                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-4">
+                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-400 dark:text-slate-300 gap-2">
                                    {String.fromCharCode(64 + i)}
                                 </div>
                              ))}
@@ -264,7 +264,7 @@ const EventsPage: React.FC = () => {
                              </div>
                           </div>
                           <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
-                          <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
+                          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
                              <span>{rec.views} views</span>
                              <span>•</span>
                              <span>Webinar Recording</span>
@@ -286,7 +286,7 @@ const EventsPage: React.FC = () => {
                           </div>
                        </div>
                        <Typography variant="h3" as="h3" className="font-bold text-white leading-snug group-hover:text-primary-400">{rec.title}</Typography>
-                       <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
+                       <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-300 font-medium">
                           <span>{rec.views} views</span>
                           <span>•</span>
                           <span>Webinar Recording</span>
@@ -295,7 +295,7 @@ const EventsPage: React.FC = () => {
                  ))}
               </Grid>
               
-              <Container size="3xl" className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center border border-slate-700/50">
+              <Container noPadding size="3xl" className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center border border-slate-700/50">
                  <Typography variant="h3" as="h3">Unlock Full Access</Typography>
                  <Typography variant="caption" className="text-slate-400 dark:text-slate-300">Dapatkan akses ke 50+ jam materi pembelajaran premium.</Typography>
                  <Stack direction="vertical" gap={4} className="justify-center">

@@ -255,7 +255,7 @@ const PartnerApplyPage: React.FC = () => {
                   <Stack direction="vertical" gap={8} className="relative z-10">
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform gap-4">1</div>
+                           <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform gap-2">1</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </div>
                         <div>
@@ -265,7 +265,7 @@ const PartnerApplyPage: React.FC = () => {
                      </div>
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">2</div>
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-2">2</div>
                            <div className="w-0.5 h-full bg-slate-700 my-2"></div>
                         </div>
                         <div>
@@ -275,7 +275,7 @@ const PartnerApplyPage: React.FC = () => {
                      </div>
                      <div className="flex gap-4 group">
                         <div className="flex flex-col items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-4">3</div>
+                           <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-sm text-slate-400 dark:text-slate-300 group-hover:border-primary-500 group-hover:text-primary-400 transition-colors gap-2">3</div>
                         </div>
                         <div>
                            <Typography variant="h4" as="h4">Onboarding</Typography>
@@ -303,7 +303,7 @@ const PartnerApplyPage: React.FC = () => {
                      </div>
                      <Typography variant="caption">"BizOps memberikan dukungan penuh untuk tim teknis kami. Bukan sekadar jualan lisensi, tapi transfer knowledge yang nyata."</Typography>
                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs gap-4">RS</div>
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-xs gap-2">RS</div>
                         <div>
                            <div className="font-bold text-xs">Rudi Setiawan</div>
                            <div className="text-[10px] opacity-75">CTO, Mitra Solusi Digital</div>

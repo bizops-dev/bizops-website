@@ -269,7 +269,7 @@ const TrustPage: React.FC = () => {
               </Stack>
            </div>
 
-           <Container className="relative w-full">
+           <Container noPadding className="relative w-full">
                {/* Illustration Placeholder - Abstract Layered Shield */}
                <div className="aspect-square bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 relative overflow-hidden shadow-2xl border border-slate-800">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-emerald-500/20 rounded-full blur-[80px] animate-pulse"></div>
@@ -308,7 +308,7 @@ const TrustPage: React.FC = () => {
 
         {/* --- TRANSPARENCY & DATA --- */}
         <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 py-16 md:py-24">
-           <Container className="px-4 md:px-6 lg:px-8" size="4xl">
+           <Container noPadding className="px-4 md:px-6 lg:px-8" size="4xl">
                <Typography variant="h2" as="h2">Data Sub-processors</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400 dark:text-slate-300">Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.</Typography>
 

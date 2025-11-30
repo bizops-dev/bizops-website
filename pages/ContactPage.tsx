@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
                         </Stack>
                         
                         <div className="mt-8 pt-6 border-t border-slate-800">
-                           <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-sm font-medium text-slate-300 hover:text-white group gap-4">
+                           <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-sm font-medium text-slate-300 hover:text-white group gap-2">
                               <span>View on Google Maps</span>
                               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                            </a>
