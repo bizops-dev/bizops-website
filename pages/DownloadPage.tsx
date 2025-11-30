@@ -18,7 +18,7 @@ const DownloadPage: React.FC = () => {
       <SEO title="Download BizOps Mobile App (iOS/Android)" description="Aplikasi ERP Mobile Native untuk Android dan iOS. Fitur offline mode, GPS attendance, dan stock opname." />
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-32 pb-20 overflow-hidden">
+      <section className="pt-32 pb-20 overflow-hidden py-16 md:py-24">
         <Container size="7xl">
           <Grid cols={2} gap={16} className="items-center">
             

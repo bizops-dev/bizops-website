@@ -88,7 +88,7 @@ const IndustryPage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION - Premium Upgrade */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5 py-16 md:py-24">
          {/* Premium Background Effects */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
@@ -166,7 +166,7 @@ const IndustryPage: React.FC = () => {
 
       {/* 2. METRICS (Impact) - Upgraded Design */}
       {data.metrics && (
-         <section className="relative -mt-16 z-20 pb-16">
+         <section className="relative -mt-16 z-20 pb-16 py-16 md:py-24">
             <Container size="7xl">
                <CardSlider desktopClassName="md:grid md:grid-cols-3 md:gap-6" mobileItemWidth="w-[85vw] sm:w-[350px]">
                   {data.metrics.map((metric, idx) => {
@@ -363,8 +363,8 @@ const IndustryPage: React.FC = () => {
       {/* 7. CTA (Final Push - Premium Style) */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-[#020617]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-[#020617]"></div>
+        <div className="absolute inset-0 bg-slate-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-slate-950"></div>
         
         {/* Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>

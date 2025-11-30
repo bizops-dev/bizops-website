@@ -43,7 +43,7 @@ const RolePage: React.FC = () => {
       <SEO title={data.metaTitle} description={data.metaDesc} />
 
       {/* 1. HERO (Dark Enterprise Style - Premium Upgrade) */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#020617] text-white overflow-hidden">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-slate-950 text-white overflow-hidden py-16 md:py-24">
         {/* Dynamic Lighting */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-blue-900/20 to-transparent pointer-events-none"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -257,8 +257,8 @@ const RolePage: React.FC = () => {
       {/* 3. PAIN VS GAIN (Evolution - Premium Upgrade) */}
       <Section className="relative border-t border-white/5 py-16 md:py-24 overflow-hidden">
          {/* Cinematic Background */}
-         <div className="absolute inset-0 bg-[#020617]"></div>
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-[#020617] to-[#020617] pointer-events-none"></div>
+         <div className="absolute inset-0 bg-slate-950"></div>
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-slate-950 to-slate-950 pointer-events-none"></div>
          {/* Dual Tone Ambient Glow */}
          <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
          <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-emerald-900/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -280,7 +280,7 @@ const RolePage: React.FC = () => {
                      className="relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden group transition-all duration-500 h-full shadow-2xl shadow-black/50 ring-1 ring-white/10 hover:ring-white/20"
                   >
                      {/* Connector Arrow (Desktop) */}
-                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-slate-900 border-4 border-[#020617] rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
+                     <Stack direction="horizontal" gap={4} align="center" justify="center" className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-slate-900 border-4 border-slate-950 rounded-full shadow-xl group-hover:scale-110 transition-transform duration-300">
                         <ArrowRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
                      </Stack>
 
@@ -328,8 +328,8 @@ const RolePage: React.FC = () => {
       {/* 4. CTA (Final Push - Premium Style) */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-[#020617]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-[#020617]"></div>
+        <div className="absolute inset-0 bg-slate-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] to-slate-950"></div>
         
         {/* Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none opacity-50"></div>

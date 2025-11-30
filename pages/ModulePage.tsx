@@ -165,7 +165,7 @@ const ModulePage: React.FC = () => {
       />
 
       {/* 1. HERO SECTION (Standardized Premium Style) */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0B1120] border-b border-white/5 py-16 md:py-24">
          {/* Premium Background Effects */}
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
@@ -247,7 +247,7 @@ const ModulePage: React.FC = () => {
 
       {/* 2. Impact Metrics (New) */}
       {data.metrics && (
-         <section className="relative mt-8 md:-mt-20 z-20 pb-12">
+         <section className="relative mt-8 md:-mt-20 z-20 pb-12 py-16 md:py-24">
             <Container size="7xl">
                <Grid cols={3} gap={6}>
                   {data.metrics.map((metric, idx) => {

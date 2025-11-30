@@ -19,7 +19,7 @@ const WhyBizOpsPage: React.FC = () => {
       <SEO title="Mengapa Memilih BizOps? | Keunggulan Kompetitif" description="Rangkuman nilai unik BizOps: Mobile Native, Data Sovereignty, dan Integrasi Seamless." />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden py-16 md:py-24">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>

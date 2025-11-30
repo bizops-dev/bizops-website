@@ -16,7 +16,7 @@ const TrustPage: React.FC = () => {
       <SEO title="Trust Center | Security, Compliance & Privacy" description="Pusat transparansi keamanan BizOps. ISO 27001, Enkripsi AES-256, dan Kepatuhan GDPR/UU PDP." />
       
       {/* --- HERO SECTION (Trust Center Style) --- */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden">
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         {/* Animated Green Glow for Security Vibes */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-900/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
@@ -198,7 +198,7 @@ const TrustPage: React.FC = () => {
         </section>
 
         {/* --- SECURITY ARCHITECTURE --- */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-16 items-center py-16 md:py-24">
            <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                  <Layers className="w-3 h-3" /> Defense in Depth
@@ -307,7 +307,7 @@ const TrustPage: React.FC = () => {
         </section>
 
         {/* --- TRANSPARENCY & DATA --- */}
-        <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800">
+        <section className="bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-200 dark:border-slate-800 py-16 md:py-24">
            <Container size="4xl">
                <Typography variant="h2" as="h2">Data Sub-processors</Typography>
                <Typography variant="body" className="text-slate-600 dark:text-slate-400">Daftar penyedia layanan pihak ketiga yang kami gunakan untuk memproses data. Kami meminimalkan jumlah pihak ketiga untuk mengurangi risiko.</Typography>
@@ -351,7 +351,7 @@ const TrustPage: React.FC = () => {
         </section>
 
         {/* --- CTA: ACCESS REPORTS --- */}
-        <section className="text-center">
+        <section className="text-center py-16 md:py-24">
            <Typography variant="h2" as="h2">Butuh Dokumen Audit?</Typography>
            <Typography variant="body-lg" className="text-slate-600 dark:text-slate-400">Akses laporan audit keamanan lengkap kami (Penetration Test Result & Compliance Certifications) melalui portal khusus klien Enterprise.</Typography>
            <Button size="lg" className="h-14 px-8 font-bold">

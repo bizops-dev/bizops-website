@@ -29,7 +29,7 @@ const MediaKitPage: React.FC = () => {
       <SEO title="Brand Assets, Logo & Press Resources | BizOps Media Kit" description="Unduh aset resmi BizOps. Logo High-Res, Panduan Brand, dan Boilerplate perusahaan." />
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden">
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0B1120] text-white overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         
@@ -350,7 +350,7 @@ const MediaKitPage: React.FC = () => {
         </section>
 
         {/* --- TYPOGRAPHY --- */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16 md:py-24">
            <div>
               <div className="flex items-center gap-4 mb-8">
                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400">
@@ -437,7 +437,7 @@ const MediaKitPage: React.FC = () => {
         </section>
 
         {/* --- PRESS CONTACT --- */}
-        <section className="bg-slate-900 rounded-[3rem] p-12 relative overflow-hidden text-center lg:text-left">
+        <section className="bg-slate-900 rounded-[3rem] p-12 relative overflow-hidden text-center lg:text-left py-16 md:py-24">
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
            

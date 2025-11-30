@@ -158,7 +158,7 @@ const SitemapPage: React.FC = () => {
           {sitemapData.map((section, idx) => (
             <div key={idx} className="border border-slate-100 dark:border-slate-800 rounded-2xl p-6 hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 bg-white dark:bg-slate-900">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${section.color}`}>
-                <section.icon className="w-5 h-5" />
+                <section.icon className="w-5 h-5 py-16 md:py-24" />
               </div>
               <Typography variant="h2" as="h2" className="font-bold text-slate-900 dark:text-white">{section.title}</Typography>
               <ul className="space-y-2.5">

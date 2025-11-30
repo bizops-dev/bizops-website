@@ -55,7 +55,7 @@ const AboutPage: React.FC = () => {
       <SEO title="Tentang Kami - PT Divistant Teknologi Indonesia" description="Profil perusahaan, visi kedaulatan digital, dan tim praktisi di balik BizOps." />
 
       {/* --- HERO SECTION (Cinematic) --- */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 bg-[#0B1120] text-white overflow-hidden">
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 bg-[#0B1120] text-white overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         {/* Animated Glow Orbs */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>

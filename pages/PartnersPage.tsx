@@ -63,7 +63,7 @@ const PartnersPage: React.FC = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative bg-[#0B1120] pt-32 pb-24 lg:pt-48 lg:pb-32 text-white overflow-hidden">
+      <section className="relative bg-[#0B1120] pt-32 pb-24 lg:pt-48 lg:pb-32 text-white overflow-hidden py-16 md:py-24">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         {/* Abstract shapes */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
