@@ -390,7 +390,7 @@ const MediaKitPage: React.FC = () => {
                     <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">Jumps Over The Lazy Dog</h2>
                     <h3 className="text-2xl font-medium text-slate-900 dark:text-white">1234567890</h3>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                       BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                       BizOps adalah platform Business Operating System yang membantu perusahaan Indonesia mendigitalisasi operasional dari hulu ke hilir. Satu sistem terintegrasi untuk HR, Finance, Operations, Sales, dan Supply Chain.
                     </p>
                  </div>
               </div>
