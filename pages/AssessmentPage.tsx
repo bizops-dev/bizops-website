@@ -121,7 +121,7 @@ const AssessmentPage = () => {
           setCurrentStep(lastAnsweredIndex !== -1 ? lastAnsweredIndex : 0);
         }
       } catch (e) {
-        console.error("Failed to restore assessment state", e);
+        // Failed to restore assessment state - silent fail for better UX
         localStorage.removeItem(STORAGE_KEY);
       }
     }
